@@ -49,7 +49,7 @@ Screencasts
  * [[Creating and editing a grade entry form as an admin: December 4, 2009 |
    http://www.youtube.com/watch?v=r7UnaNYe2rw]]
  * [[Notes tab: December 11, 2009 |
- * http://www.youtube.com/watch?v=IcuG6AlJfvQ]]
+   http://www.youtube.com/watch?v=IcuG6AlJfvQ]]
  * [[Entering and releasing the marks for a grade entry form as an admin: April
    4, 2010 | http://www.youtube.com/watch?v=-v6eVy94pdI]]
 
@@ -79,9 +79,9 @@ Project Vitals
 
 Subversion repository: `svn co` ${RepositoryUrl}`/`
 
-Mailing list address: [markus-dev@cs.toronto.edu](mailto:markus-dev@cs.toronto.edu)
+Mailing list address: markus-dev@cs.toronto.edu
 
-Mailing [list archive at marc.info](http://marc.info/?l=markus-dev&r=1&w=2)
+Mailing [[list archive at marc.info|http://marc.info/?l=markus-dev&r=1&w=2]]
 
 Project Members
 --------------------------------------------------------------------------------
@@ -91,47 +91,55 @@ Project Members
 Term Work
 --------------------------------------------------------------------------------
 
-* __Fall 2010__
+.. TODO Some of the following links have been removed during the migration to
+  github.
+  They should all be out on the blog
 
-      * [Who is doing what? (punchlines/minutes)](http://blog.markusproject.org/?p=1713)
+* **Fall 2010**
 
-* __Summer 2010__
+      * [[Who is doing what? (punchlines/minutes) |
+      * http://blog.markusproject.org/?p=1713]]
 
-      * [Goals for Summer 2010](wiki:GoalsMay2010)
+* **Summer 2010**
 
-* __Winter 2010__
+      * Goals for Summer 2010
 
-      * [Who is doing what? (punchlines/minutes)](http://blog.markusproject.org/?p=1049)
+* **Winter 2010**
 
-* __Fall 2009__
+      * [[Who is doing what? (punchlines/minutes) | http://blog.markusproject.org/?p=1049]]
 
-      * [Who is in charge of what, administratively?](http://blog.markusproject.org/?p=504)
-      * [September 18 - Pre-meeting Status](http://blog.markusproject.org/?p=296)
-      * [September 11 - Pre-meeting Status](wiki:PreMeetingStatusSept1109)
+* **Fall 2009**
 
-* __Summer 2009__
+      * [[Who is in charge of what, administratively? |
+        http://blog.markusproject.org/?p=504]]
+      * [[September 18 - Pre-meeting Status | http://blog.markusproject.org/?p=296]]
+      * September 11 - Pre-meeting Status
 
-      * Have a look at our [Blog](http://blog.markusproject.org)!
+* **Summer 2009**
 
-* __Winter 2009__ (Meeting Notes)
+      * Have a look at our [[Blog | http://blog.markusproject.org]]!
 
-       * [Jan 09: Introductions](wiki:MeetingJan09)
-       * [Jan 16: Useful rails plugins](wiki:MeetingJan16)
+* **Winter 2009** (Meeting Notes)
+
+       * Jan 09: Introductions
+       * Jan 16: Useful rails plugins
 
 Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 --------------------------------------------------------------------------------
 
-* __Getting Started with Ruby, Ruby on Rails and MarkUs__
+* **Getting Started with Ruby, Ruby on Rails and MarkUs**
 
-    * [Documentation MarkUs Tag Cloud](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud)
-    * [Short Rails Debugging HOWTO](wiki:RailsDebugging)
-    * [How to program in Ruby, Rubybook](http://www.rubycentral.com/pickaxe)
-    * [Rails API](http://api.rubyonrails.org)
-    * [Rails Guides](http://guides.rubyonrails.org)
-    * [Using metric_fu](wiki:MetricFu)
-    * [General Guide Lines to code - Code review from Mike Gunderloy](wiki:GeneralGuideLines)
-    * <http://apidock.com/rails>
-    * [Some notes from a Ruby book taken by Tara Clark](http://taraclark.wordpress.com/category/ruby-on-rails)
+    * [[Short Rails Debugging HOWTO | RailsDebugging]]
+    * [[How to program in Ruby, Rubybook |
+    * http://www.rubycentral.com/pickaxe]]
+    * [[Rails API | http://api.rubyonrails.org]]
+    * [Rails Guides] | http://guides.rubyonrails.org]]
+    * [[Using metric_fu | MetricFu]]
+    * [[General Guide Lines to code - Code review from Mike Gunderloy |
+      GeneralGuideLines]]
+    * http://apidock.com/rails
+    * [[Some notes from a Ruby book taken by Tara Clark |
+      http://taraclark.wordpress.com/category/ruby-on-rails]]
     * [How to run Selenium tests](wiki:SeleniumTesting)
     * [Acceptance/Cucumber tests](wiki:CucumberTesting)
     * [How to use the MarkUs API](wiki:ApiHowTo)
