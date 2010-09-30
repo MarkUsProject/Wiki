@@ -168,7 +168,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
         * [[Rubrics are not allowed to change once Submissions have been
 collected|GeneralUseCase_NoRubricChangesAfterCollection]]
 
-    * [[Instructor_|Role_Instructor_]]
+    * [[Instructor|Role_Instructor]]
 
         * [[Instructors can create / edit assignments|Instructor_CreateEditAssignments]]
         * [[Instructors can download/export files|Instructor_DownloadExportFiles]]
@@ -180,7 +180,7 @@ collected|GeneralUseCase_NoRubricChangesAfterCollection]]
         * [[Instructors can upload a file that will do the Student_/Grouping mapping to Graders|Instructor_UploadMapGradersToGroupings]]
         * [[Instructors can manage groups without restrictions|Instructor_ManageGroupsWithoutRestrictions]]
 
-    * [[Grader_|RoleGrader_]]
+    * [[Grader|Role_Grader]]
 
         * [[Graders can easily tell which submissions are assigned to them to mark|Grader_EasyToSeeWhatToMark]]
         * [[Graders can view a Submission from a Student_ / Grouping|Grader_ViewSubmissions]]
@@ -194,11 +194,11 @@ collected|GeneralUseCase_NoRubricChangesAfterCollection]]
         * [[Graders can modify the marking state of a submission result|Grader_CanModifyMarkingStatus]]
         * [[Graders can easily switch to the next / previous Submission for marking|Grader_CanSwitchToNextSubmission]]
 
-    * [[Student_|RoleStudent_]]
+    * [[Student|Role_Student]]
 
         * [[Students can view marks of submissions|Student_ViewMarks]]
         * [[Students can view annotations of marked submissions/assignments|Student_ViewAnnotations]]
-        * [[Students can submit files for their assignments|StudentsubmitFiles]]
+        * [[Students can submit files for their assignments|Student_SubmitFiles]]
         * [[Students can view/edit submission files for assignments|Student_ViewEditFiles]]
 
 * __Database Schema__
