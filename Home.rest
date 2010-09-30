@@ -63,7 +63,8 @@ Linux
 
 Mac OS X
 --------------------------------------------------------------------------------
-  * [Setting up a development environment on Mac OS X 10.6 (Snow Leopard)](wiki:InstallationForSnowLeopard)
+  * [[Setting up a development environment on Mac OS X 10.6 (Snow Leopard) |
+    InstallationMacOsX]]
 
 Windows (Note: Linux and Mac OS X development environments generally caused less problems)
 ------------------------------------------------------------------------------------------------------------------------
