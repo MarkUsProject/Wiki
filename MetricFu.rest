@@ -1,0 +1,21 @@
+# Using metric_fu with OLM
+
+**This document is incomplete (but it is postmortem time)**
+
+
+[Metric_fu](http://metric-fu.rubyforge.org/) is a set of rake tasks that generate metrics reports.  It runs several tools that generate reports.  To use metric_fu, you will need to install a number of gems:
+
+ * sudo gem install rcov
+ * sudo gem install flay
+ * sudo gem install flog
+ * sudo gem install reek
+ * sudo gem install roodi
+ * sudo gem install jscruggs-metric_fu -s http://gems.github.com/
+
+One of the gems also required hoe (sudo gem install hoe).
+
+To get rcov working by itself with OLM, I also needed to install the rails_rcov [plugin](http://agilewebdevelopment.com/plugins/rails_rcov)
+
+    ./script/plugin install -x http://svn.codahale.com/rails_rcov
+
+I am still having trouble getting rcov to work with metric_fu
