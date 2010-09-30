@@ -6,36 +6,32 @@ MarkUs (pronounced "mark us") is an open-source tool which recreates the ease
 and flexibility of grading assignments with pen on paper, within a web
 application.  It also allows students and instructors to form groups, and
 collaborate on assignments. It's predecessor OLM (Online Marking) was
-[originally written](https://stanley.cdf.toronto.edu/drproject/csc49x/olm) in
-Python on top of the TurboGears framework.
+[[originally written|https://stanley.cdf.toronto.edu/drproject/csc49x/olm]]
+in Python on top of the TurboGears framework.
 
 The MarkUs project is a re-implementation of the Online Marking system using
 Ruby on Rails. The goal of this project is to take what we learned from OLM
-and our forays into [Web-CAT](http://web-cat.cs.vt.edu/), and build a
+and our forays into [[Web-CAT|http://web-cat.cs.vt.edu/]], and build a
 web-based marking tool that includes an early submission and testing system in
 support of test driven development.
 
---------
 
 Project Resources
 ================================================================================
 
-  * **Project Website**
-    [http://www.markusproject.org](http://www.markusproject.org)
-  * **Developer's Blog**
-    [http://blog.markusproject.org](http://blog.markusproject.org)
-  * **Review Board**
-    [http://review.markusproject.org](http://review.markusproject.org)
+  * **Project Website** http://www.markusproject.org
+  * **Developer's Blog** http://blog.markusproject.org
+  * **Review Board** http://review.markusproject.org
   * **IRC Channel:** Our channel is #markus on irc.freenode.net.
-    [Logs of the channel](http://www.markusproject.org/irc/) are also available.
-  * **Sandbox**
-    [http://www.markusproject.org/admin-demo/](http://www.markusproject.org/admin-demo/)
+    [[Logs of the channel|http://www.markusproject.org/irc/]] are also available.
+  * **Sandbox** http://www.markusproject.org/admin-demo/
   * **User Guide:** [MarkUs Documentation](wiki:User_Guide)
 
---------
+.. todo Modify User Guide link
 
 Screencasts
 --------------------------------------------------------------------------------
+
  * [Student File Submission: September 2, 2009](http://www.youtube.com/watch?v=ofpyaty20FQ)
  * [Student Group Formation: August 17, 2009](http://www.youtube.com/watch?v=Ed_z_tHCAg8)
  * [The Grader View: June 6, 2009](http://www.cs.toronto.edu/~reid/screencasts/OLM-2009-06-03.swf)
