@@ -1,0 +1,37 @@
+# MarkUs deployment on a Linux/Unix machine without root access
+
+Since we don't have root (but shell) access on our to-be demo-server, I needed to figure out a way to deploy MarkUs without root access. Our hosting provider has Ruby and Rails installed, so the main roadblock is to get over is the Subversion (including Ruby bindings) repository used as storage back-end.
+
+So far it seems to suffice to compile subversion from source with all required options. This is an outline what I did:
+
+1. Get the Subversion source tar-ball [see http://subversion.tigris.org/getting.html#source-release](http://subversion.tigris.org/getting.html#source-release)
+2. I recommend to read the INSTALL file first to get an idea of the Subversion dependencies
+3. Get the Subversion dependencies tar-ball
+4. Extract tar-balls (for example) like so:
+    tar xzvf subversion-1.x.x.tar.gz\
+    tar xzvf subversion-deps-1.x.x.tar.gz\
+    cd subversion-1.x.x\
+5. The second line extracts Subversion dependencies right into the subversion source code and those libraries are built during compilation. Makes things a little easier.
+6. Make sure you've had a look at the configure script help page to read up upon the possible options
+    ./configure --help
+7. This is how I configured subversion (take particular attention to the quotes; they are required!):
+    ./configure --prefix='/home/markuspr/svn/svn-build' --with-ruby-sitedir='/home/markuspr/ruby-lib'
+8. Do a 'make' and if everything goes OK a 'make install'
+9. Install the ruby-bindings (Read subversion/bindings/swig/INSTALL first!):
+    1. Run 'make swig-rb'
+    2. Run (if the previous make went OK): 'make install-swig-rb'
+10. Install the required gems to your home directory. For example, do:
+    gem install --user-install fastercsv
+
+
+#Problems
+
+When trying to compile and install subversion I had problems when the pathname of 'prefix' has not been quoted properly. I assume, since the path contained dashes 'make install' failed. Hence, make sure you quote the prefix-path properly:
+
+    ./configure --prefix='/home/markuspr/svn/svn-build' --with-ruby-sitedir='/home/markuspr/ruby-lib'
+
+instead of
+
+    ./configure --prefix=/home/markuspr/svn/svn-build --with-ruby-sitedir=/home/markuspr/ruby-lib
+
+
