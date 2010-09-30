@@ -1,22 +1,41 @@
-# Welcome to MarkUs (formerly known as OLM on Rails)
+================================================================================
+Welcome to MarkUs (formerly known as OLM on Rails)
+================================================================================
 
-MarkUs (pronounced "mark us") is an open-source tool which recreates the ease and flexibility of grading assignments with pen on paper, within a web application.  It also allows students and instructors to form groups, and collaborate on assignments. It's predecessor OLM (Online Marking) was [originally written](https://stanley.cdf.toronto.edu/drproject/csc49x/olm) in Python on top of the TurboGears framework.
+MarkUs (pronounced "mark us") is an open-source tool which recreates the ease
+and flexibility of grading assignments with pen on paper, within a web
+application.  It also allows students and instructors to form groups, and
+collaborate on assignments. It's predecessor OLM (Online Marking) was
+[originally written](https://stanley.cdf.toronto.edu/drproject/csc49x/olm) in
+Python on top of the TurboGears framework.
 
-The MarkUs project is a re-implementation of the Online Marking system using Ruby on Rails. The goal of this project is to take what we learned from OLM and our forays into [Web-CAT](http://web-cat.cs.vt.edu/), and build a web-based marking tool that includes an early submission and testing system in support of test driven development.  
+The MarkUs project is a re-implementation of the Online Marking system using
+Ruby on Rails. The goal of this project is to take what we learned from OLM
+and our forays into [Web-CAT](http://web-cat.cs.vt.edu/), and build a
+web-based marking tool that includes an early submission and testing system in
+support of test driven development.
 
 --------
 
-# Project Resources
-  * **Project Website** [http://www.markusproject.org](http://www.markusproject.org)
-  * **Developer's Blog** [http://blog.markusproject.org](http://blog.markusproject.org) 
-  * **Review Board** [http://review.markusproject.org](http://review.markusproject.org)
-  * **IRC Channel:** Our channel is #markus on irc.freenode.net. [Logs of the channel](http://www.markusproject.org/irc/) are also available.
-  * **Sandbox** [http://www.markusproject.org/admin-demo/](http://www.markusproject.org/admin-demo/)
+Project Resources
+================================================================================
+
+  * **Project Website**
+    [http://www.markusproject.org](http://www.markusproject.org)
+  * **Developer's Blog**
+    [http://blog.markusproject.org](http://blog.markusproject.org)
+  * **Review Board**
+    [http://review.markusproject.org](http://review.markusproject.org)
+  * **IRC Channel:** Our channel is #markus on irc.freenode.net.
+    [Logs of the channel](http://www.markusproject.org/irc/) are also available.
+  * **Sandbox**
+    [http://www.markusproject.org/admin-demo/](http://www.markusproject.org/admin-demo/)
   * **User Guide:** [MarkUs Documentation](wiki:User_Guide)
 
 --------
 
-# Screencasts
+Screencasts
+--------------------------------------------------------------------------------
  * [Student File Submission: September 2, 2009](http://www.youtube.com/watch?v=ofpyaty20FQ)
  * [Student Group Formation: August 17, 2009](http://www.youtube.com/watch?v=Ed_z_tHCAg8)
  * [The Grader View: June 6, 2009](http://www.cs.toronto.edu/~reid/screencasts/OLM-2009-06-03.swf)
@@ -29,52 +48,75 @@ The MarkUs project is a re-implementation of the Online Marking system using Rub
  * [Entering and releasing the marks for a grade entry form as an admin: April 4, 2010](http://www.youtube.com/watch?v=-v6eVy94pdI)
 
 ---------
-<wiki:#dev-setup>
-# MarkUs Developer Installation Guides
-## Linux
+
+MarkUs Developer Installation Guides
+================================================================================
+Linux
+--------------------------------------------------------------------------------
   * [Setting up a development environment on GNU/Linux](wiki:InstallationRorRadrailsDebian) (i.e. Debian based systems) including Ruby on Rails, MarkUs and **Radrails IDE** (Eclipse plug-in)
-## Mac OS X
+
+Mac OS X
+--------------------------------------------------------------------------------
   * [Setting up a development environment on Mac OS X 10.6 (Snow Leopard)](wiki:InstallationForSnowLeopard)
-## Windows (Note: Linux and Mac OS X development environments generally caused less problems)
+
+Windows (Note: Linux and Mac OS X development environments generally caused less problems)
+------------------------------------------------------------------------------------------------------------------------
   * [Setting up a development environment on Windows using InstantRails](wiki:InstantRailsAndWindows)
 
 ---------
 
-# MarkUs Developer Documentation
+MarkUs Developer Documentation
+================================================================================
 
-## Project Vitals
+Project Vitals
+--------------------------------------------------------------------------------
 
-Subversion repository: `svn co` ${RepositoryUrl}`/`   
+Subversion repository: `svn co` ${RepositoryUrl}`/`
 
 Mailing list address: [markus-dev@cs.toronto.edu](mailto:markus-dev@cs.toronto.edu)
 
 Mailing [list archive at marc.info](http://marc.info/?l=markus-dev&r=1&w=2)
 
-## Project Members
+Project Members
+--------------------------------------------------------------------------------
 
-${ProjectMembers}
+.. TODO Add manually the projects members
 
-## Term Work
+Term Work
+--------------------------------------------------------------------------------
+
 * __Fall 2010__
+
       * [Who is doing what? (punchlines/minutes)](http://blog.markusproject.org/?p=1713)
+
 * __Summer 2010__
+
       * [Goals for Summer 2010](wiki:GoalsMay2010)
+
 * __Winter 2010__
+
       * [Who is doing what? (punchlines/minutes)](http://blog.markusproject.org/?p=1049)
+
 * __Fall 2009__
+
       * [Who is in charge of what, administratively?](http://blog.markusproject.org/?p=504)
       * [September 18 - Pre-meeting Status](http://blog.markusproject.org/?p=296)
       * [September 11 - Pre-meeting Status](wiki:PreMeetingStatusSept1109)
+
 * __Summer 2009__
+
       * Have a look at our [Blog](http://blog.markusproject.org)!
+
 * __Winter 2009__ (Meeting Notes)
+
        * [Jan 09: Introductions](wiki:MeetingJan09)
        * [Jan 16: Useful rails plugins](wiki:MeetingJan16)
 
-<wiki:#getting_started>
-## Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
+Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
+--------------------------------------------------------------------------------
 
 * __Getting Started with Ruby, Ruby on Rails and MarkUs__
+
     * [Documentation MarkUs Tag Cloud](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud)
     * [Short Rails Debugging HOWTO](wiki:RailsDebugging)
     * [How to program in Ruby, Rubybook](http://www.rubycentral.com/pickaxe)
@@ -90,9 +132,8 @@ ${ProjectMembers}
     * [How to use MarkUs Testing Framework](wiki:TestingFramework) (still in alpha)
 
 
-<wiki:#markus_dev_intro>
-
 * __MarkUs Coding Style/Coding Practices/Rails Gotchas__
+
     * [Basic Guidelines for MarkUs Development](wiki:DeveloperGuidelines)(**IMPORTANT!**)
     * [How to use Review Board](wiki:HowToReviewBoard)
     * [Rails erb quirks](wiki:RailsERbStyle)
@@ -104,18 +145,24 @@ ${ProjectMembers}
     * [Internationalisation](wiki:Internationalization)
 
 * __MarkUs API/Test Coverage__
+
     * [MarkUs Ruby Doc](http://www.markusproject.org/dev/app_doc)
-    * [MarkUs Test Coverage](http://www.markusproject.org/dev/test_coverage)     
+    * [MarkUs Test Coverage](http://www.markusproject.org/dev/test_coverage)
 
 * __MarkUs Releases__
+
     * [Preparing a Release and Patch](wiki:Preparing_Release_And_Patch)
 
 * __User Roles and Stories for MarkUs__
+
     * General / Constraints
+
         * [MarkUs is internationalized](wiki:GeneralUseCase_Internationalized)
         * [MarkUs is configurable](wiki:GeneralUseCase_Configurable)
         * [Rubrics are not allowed to change once Submissions have been collected](wiki:GeneralUseCase_No_Rubric_Changes_After_Collection)
+
     * [Instructor](wiki:Role_Instructor)
+
         * [Instructors can create / edit assignments](wiki:UserStory_Instructor_Create_Edit_Assignments)
         * [Instructors can download/export files](wiki:UserStory_Instructor_Download_Export_Files)
         * [Instructors can hide students](wiki:UserStory_Instructor_Hide_Students)
@@ -125,7 +172,9 @@ ${ProjectMembers}
         * [Instructors can download / export a file that describes the Student/Grouping mapping to Graders](wiki:UserStory_Instructor_Download_Map_Graders_To_Groupings)
         * [Instructors can upload a file that will do the Student/Grouping mapping to Graders](wiki:UserStory_Instructor_Upload_Map_Graders_To_Groupings)
         * [Instructors can manage groups without restrictions](wiki:UserStory_Instructor_Manage_Groups_Without_Restrictions)
+
     * [Grader](wiki:Role_Grader)
+
         * [Graders can easily tell which submissions are assigned to them to mark](wiki:UserStory_Grader_Easy_To_See_What_To_Mark)
         * [Graders can view a Submission from a Student / Grouping](wiki:UserStory_Grader_View_Submissions)
         * [Graders can view/annotate/mark a particular file from a Submission](wiki:UserStory_Grader_View_Annotate_Mark_Particular_File)
@@ -137,18 +186,22 @@ ${ProjectMembers}
         * [Graders can add bonuses / penalties to submissions](wiki:UserStory_Grader_Add_Bonuses_Penalties)
         * [Graders can modify the marking state of a submission result](wiki:UserStory_Grader_Can_Modify_Marking_Status)
         * [Graders can easily switch to the next / previous Submission for marking](wiki:UserStory_Grader_Can_Switch_To_Next_Submission)
+
     * [Student](wiki:Role_Student)
+
         * [Students can view marks of submissions](wiki:UserStory_Student_View_Marks)
         * [Students can view annotations of marked submissions/assignments](wiki:UserStory_Student_View_Annotations)
         * [Students can submit files for their assignments](wiki:UserStory_Student_Submit_Files)
         * [Students can view/edit submission files for assignments](wiki:UserStory_Student_View_Edit_Files)
 
 * __Database Schema__
+
     * [AutoGenerate Database Schema](wiki:auto_generate_schema_diagram)
     * [View Schema Diagram](wiki:schema_diagram)
     * [Questions and Answers (Old Document)](wiki:Schema_Questions)
 
 * __MarkUs Component Descriptions__
+
     * [File Persistence Layer](wiki:File_Persistence_Layer)
     * [Group / Grouping Behaviours](wiki:Groups_Grouping)
     * [Groupings and Repositories](wiki:GroupsGroupingsRepositories)
@@ -163,6 +216,7 @@ ${ProjectMembers}
     * [Notes System](wiki:NotesSystem)
 
 * __Quicklinks for Browsing User Stories__
+
     * [Constraint Stories](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Constraints)
     * [Role Stories](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Roles)
     * [User Stories, excluding Roles/Constraints](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Stories)
@@ -173,17 +227,21 @@ ${ProjectMembers}
 
 
 * __Feedback Notes__
+
     * [2009-05-22: Phyliss](wiki:PhylissFeedback)
     * [2009-06-22: Ryan](wiki:RyanFeedback)
 
 * __Tips and Tricks__
+
     * [Dropping/Rebuilding Database Quickly and Easily](wiki:DropAndRebuildDb)
 
 * __IDE/Editor Notes__
+
     * [jEdit](wiki:JEdit)
     * [NetBeans](wiki:NetBeans)
 
 * __Other__
+
     * [MarkUs and Subversion compilation proceedings (RHEL, on markusproject.org)](wiki:CompileSVN)
     * [Load-testing a deployed MarkUs installation](wiki:LoadTesting)
 
@@ -191,7 +249,9 @@ ${ProjectMembers}
 
 ---------
 
-# MarkUs Deployment Documents (Installation Instructions for MarkUs using RAILS_ENV=production)
+MarkUs Deployment Documents (Installation Instructions for MarkUs using RAILS_ENV=production)
+===============================================================================================
+
   * [Setup Instructions for MarkUs "Stable"](wiki:InstallProdStable)
   * [Hosting several MarkUs applications on one machine (for Production)](wiki:MultipleHosting)
   * [How to use LDAP with MarkUs](wiki:LDAP)
