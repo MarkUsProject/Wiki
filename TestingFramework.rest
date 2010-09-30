@@ -1,0 +1,27 @@
+# MarkUs Testing Framewok
+
+## Step for installing and activating the testing framework on Linux
+
+Tests are running under a user which is not the user running MarkUs. It is safer and prevent security issues.
+
+So, create a user with his own home.
+
+    useradd -m -d HOME_PATH -p PASSWORD markus_test -N
+
+
+the -N option don't create a group with the same name as the user  
+where HOME_PATH is the path were you want to put markus_test files  
+where PASSWORD is the password of markus_test  
+
+
+This user must share the same group as your MarkUs instance
+
+    gpasswd -a markus_test MARKUS_GROUP
+
+where MARKUS_GROUP is the group of the user running the MarkUs instance.
+
+
+
+
+
+
