@@ -50,17 +50,17 @@ Screencasts
    http://www.youtube.com/watch?v=r7UnaNYe2rw]]
  * [[Notes tab: December 11, 2009 |
  * http://www.youtube.com/watch?v=IcuG6AlJfvQ]]
- * [Entering and releasing the marks for a grade entry form as an admin: April
+ * [[Entering and releasing the marks for a grade entry form as an admin: April
    4, 2010 | http://www.youtube.com/watch?v=-v6eVy94pdI]]
-
----------
 
 MarkUs Developer Installation Guides
 ================================================================================
 Linux
 --------------------------------------------------------------------------------
-  * [Setting up a development environment on GNU/Linux](wiki:InstallationRorRadrailsDebian)
-    (i.e. Debian based systems) including Ruby on Rails, MarkUs and **Radrails IDE** (Eclipse plug-in)
+  * [[Setting up a development environment on GNU/Linux |
+    Installation/InstallationGnuLinux]]
+    (i.e. Debian based systems) including Ruby on Rails, MarkUs and **Radrails
+    IDE** (Eclipse plug-in)
 
 Mac OS X
 --------------------------------------------------------------------------------
