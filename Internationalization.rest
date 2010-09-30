@@ -1,33 +1,39 @@
-# Internationalisation
+================================================================================
+Internationalization
+================================================================================
 
-More and more universities are interested by using Markus, and some foreign universities are starting to look at it. In order to have them use it, Markus must be ready for internationalisation. Here are a few guidelines to help for internationalisation
+More and more universities are interested by using Markus, and some foreign
+universities are starting to look at it. In order to have them use it, Markus
+must be ready for internationalisation. Here are a few guidelines to help for
+internationalisation
 
-All locales are located in config/locales/\*\*.yml in YAML format.
+All locales are located in config/locales in YAML format.
 
+Internationalisation
+================================================================================
 
+Internationalisation of models, views and controllers
+--------------------------------------------------------------------------------
 
-## Internationalisation
+Make sure models, views and controllers are internationalised : 
+For exemple: groups_controller.rb::
+  301 raise "You must select at least one grader for random assignment"</pre>
+needs to be:: 
+  301 raise I18n.t(:groups.no_graders_selected)</pre>
+or::
+  301 raise t(:groups.no_graders_selected)</pre>
 
-### Internationalisation of models, views and controllers
+The html tags that can appear in the internationalisation are:
+  * ``<strong>``
+  * <em>
+  * <span>
+  * <sup>
+  * <sub>
+  * <a>, and the link. **Note that the link can sometimes be different from one language to another**. For example, the link that points to the MIT licence can point to the MIT licence translated in french.
 
-* Make sure models, views and controllers are internationalised : 
-For exemple: groups_controller.rb 
-<pre>301 raise "You must select at least one grader for random assignment"</pre>
-needs to be 
-<pre>301 raise I18n.t(:groups.no_graders_selected)</pre>
-or
-<pre>301 raise t(:groups.no_graders_selected)</pre>
-
- *  The html tags that can appear in the internationalisation are:
-    *  \<strong\>
-    *  \<em\>
-    *  \<span\>
-    *  \<sup\>
-    *  \<sub\>
-    *  \<a\>, and the link. *Note that the link can sometimes be different from one language to another**. For example, the link that points to the MIT licence can point to the MIT licence translated in french.
- *  The html tags that **should not** appear in the translation are:
-    *  \<p\>
-    *  \<div\>
+ The html tags that **should not** appear in the translation are:
+    *  <p>
+    *  <div>
 
 
 ### Missing ActiveRecord Translations
@@ -71,7 +77,8 @@ SHORT_DATE_TIME_FORMAT = "%B %d, %Y"
 # Long form (displays month, day, year, hour, minute)
 LONG_DATE_TIME_FORMAT = "%B %d, %Y: %I:%M%p"</pre>
 
-Configurations can be found in the config/environments/_ENVIRONMENT_.rb files (where _ENVIRONMENT_ is development, test, production)
+Configurations can be found in the config/environments/_ENVIRONMENT_.rb files
+(where _ENVIRONMENT_ is development, test, production)
 
 We are no longer using this vars in config/environments/_ENVIRONMENT_.rb
 
