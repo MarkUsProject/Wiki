@@ -58,7 +58,7 @@ MarkUs Developer Installation Guides
 Linux
 --------------------------------------------------------------------------------
   * [[Setting up a development environment on GNU/Linux |
-    InstallationGnuLinux.rest]]
+    Installation/InstallationGnuLinux.rest]]
     (i.e. Debian based systems) including Ruby on Rails, MarkUs and **Radrails
     IDE** (Eclipse plug-in)
 
