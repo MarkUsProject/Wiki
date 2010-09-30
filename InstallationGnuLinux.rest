@@ -17,8 +17,7 @@ Unfortunately, as the time of this writing, the rails package features rails
 2.1.x. In order to get a rails version \>= 2.2 (which features I18n support)
 follow these [instructions](wiki:UpdateRailsDebian). As of September 14, 2009
 the previous step is essential! Once you have gem and rails updated (including
-required dependencies), and
-[Radrails](wiki:InstallationRorRadrailsDebian#radrails) installed reset the
+required dependencies), and Radrails) installed reset the
 correct rails path in the Eclipse Preferences (usually
 ``/var/lib/gems/\<your-ruby-version\>/bin/rails``). Also, set the corrected rake
 and mongrel path there. This should prepare you for rails >=2.2 development.
