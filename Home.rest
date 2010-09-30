@@ -6,18 +6,15 @@ MarkUs (pronounced "mark us") is an open-source tool which recreates the ease
 and flexibility of grading assignments with pen on paper, within a web
 application.  It also allows students and instructors to form groups, and
 collaborate on assignments. It's predecessor OLM (Online Marking) was
-`originally written`__ in Python on top of the TurboGears framework.
-
-__ https://stanley.cdf.toronto.edu/drproject/csc49x/olm
-
+[[originally written|https://stanley.cdf.toronto.edu/drproject/csc49x/olm]]
+in Python on top of the TurboGears framework.
 
 The MarkUs project is a re-implementation of the Online Marking system using
 Ruby on Rails. The goal of this project is to take what we learned from OLM
-and our forays into `Web-CAT`__ , and build a web-based marking tool that
-includes an early submission and testing system in support of test driven
-development.
+and our forays into [[Web-CAT|http://web-cat.cs.vt.edu/]], and build a
+web-based marking tool that includes an early submission and testing system in
+support of test driven development.
 
-__ http://web-cat.cs.vt.edu/
 
 Project Resources
 ================================================================================
