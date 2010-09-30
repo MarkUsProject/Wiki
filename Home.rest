@@ -1,229 +1,209 @@
-Welcome to MarkUs (formerly known as OLM on Rails)
+# Welcome to MarkUs (formerly known as OLM on Rails)
 
-MarkUs (pronounced "mark us") is an open-source tool which recreates the ease and flexibility of grading assignments with pen on paper, within a web application. It also allows students and instructors to form groups, and collaborate on assignments. It's predecessor OLM (Online Marking) was originally written in Python on top of the TurboGears framework.
+MarkUs (pronounced "mark us") is an open-source tool which recreates the ease and flexibility of grading assignments with pen on paper, within a web application.  It also allows students and instructors to form groups, and collaborate on assignments. It's predecessor OLM (Online Marking) was [originally written](https://stanley.cdf.toronto.edu/drproject/csc49x/olm) in Python on top of the TurboGears framework.
 
-The MarkUs project is a re-implementation of the Online Marking system using Ruby on Rails. The goal of this project is to take what we learned from OLM and our forays into Web-CAT, and build a web-based marking tool that includes an early submission and testing system in support of test driven development.
-Project Resources
+The MarkUs project is a re-implementation of the Online Marking system using Ruby on Rails. The goal of this project is to take what we learned from OLM and our forays into [Web-CAT](http://web-cat.cs.vt.edu/), and build a web-based marking tool that includes an early submission and testing system in support of test driven development.  
 
-    * Project Website http://www.markusproject.org
-    * Developer's Blog http://blog.markusproject.org
-    * Review Board http://review.markusproject.org
-    * IRC Channel: Our channel is #markus on irc.freenode.net. Logs of the channel are also available.
-    * Sandbox http://www.markusproject.org/admin-demo/
-    * User Guide: MarkUs Documentation
+--------
 
-Screencasts
+# Project Resources
+  * **Project Website** [http://www.markusproject.org](http://www.markusproject.org)
+  * **Developer's Blog** [http://blog.markusproject.org](http://blog.markusproject.org) 
+  * **Review Board** [http://review.markusproject.org](http://review.markusproject.org)
+  * **IRC Channel:** Our channel is #markus on irc.freenode.net. [Logs of the channel](http://www.markusproject.org/irc/) are also available.
+  * **Sandbox** [http://www.markusproject.org/admin-demo/](http://www.markusproject.org/admin-demo/)
+  * **User Guide:** [MarkUs Documentation](wiki:User_Guide)
 
-    * Student File Submission: September 2, 2009
-    * Student Group Formation: August 17, 2009
-    * The Grader View: June 6, 2009
-    * Flexible Marking Scheme Selection: December 1, 2009
-    * Flexible Marking Scheme Criterion: December 1, 2009
-    * Notes created through the Modal dialog as an Admin: December 3, 2009
-    * Notes created through the Modal dialog as a TA: December 3, 2009
-    * Creating and editing a grade entry form as an admin: December 4, 2009
-    * Notes tab: December 11, 2009
-    * Entering and releasing the marks for a grade entry form as an admin: April 4, 2010
+--------
 
-MarkUs Developer Installation Guides
-Linux
+# Screencasts
+ * [Student File Submission: September 2, 2009](http://www.youtube.com/watch?v=ofpyaty20FQ)
+ * [Student Group Formation: August 17, 2009](http://www.youtube.com/watch?v=Ed_z_tHCAg8)
+ * [The Grader View: June 6, 2009](http://www.cs.toronto.edu/~reid/screencasts/OLM-2009-06-03.swf)
+ * [Flexible Marking Scheme Selection: December 1, 2009](http://www.youtube.com/watch?v=x4mbE3WBgog)
+ * [Flexible Marking Scheme Criterion: December 1, 2009](http://www.youtube.com/watch?v=tVkti9y91RA)
+ * [Notes created through the Modal dialog as an Admin: December 3, 2009](http://www.youtube.com/watch?v=eoxriy2cYW0)
+ * [Notes created through the Modal dialog as a TA: December 3, 2009](http://www.youtube.com/watch?v=J4r18LNDwPs)
+ * [Creating and editing a grade entry form as an admin: December 4, 2009](http://www.youtube.com/watch?v=r7UnaNYe2rw)
+ * [Notes tab: December 11, 2009](http://www.youtube.com/watch?v=IcuG6AlJfvQ)
+ * [Entering and releasing the marks for a grade entry form as an admin: April 4, 2010](http://www.youtube.com/watch?v=-v6eVy94pdI)
 
-    * Setting up a development environment on GNU/Linux (i.e. Debian based systems) including Ruby on Rails, MarkUs and Radrails IDE (Eclipse plug-in)
+---------
+<wiki:#dev-setup>
+# MarkUs Developer Installation Guides
+## Linux
+  * [Setting up a development environment on GNU/Linux](wiki:InstallationRorRadrailsDebian) (i.e. Debian based systems) including Ruby on Rails, MarkUs and **Radrails IDE** (Eclipse plug-in)
+## Mac OS X
+  * [Setting up a development environment on Mac OS X 10.6 (Snow Leopard)](wiki:InstallationForSnowLeopard)
+## Windows (Note: Linux and Mac OS X development environments generally caused less problems)
+  * [Setting up a development environment on Windows using InstantRails](wiki:InstantRailsAndWindows)
 
-Mac OS X
+---------
 
-    * Setting up a development environment on Mac OS X 10.6 (Snow Leopard)
+# MarkUs Developer Documentation
 
-Windows (Note: Linux and Mac OS X development environments generally caused less problems)
+## Project Vitals
 
-    * Setting up a development environment on Windows using InstantRails
+Subversion repository: `svn co` ${RepositoryUrl}`/`   
 
-MarkUs Developer Documentation
-Project Vitals
+Mailing list address: [markus-dev@cs.toronto.edu](mailto:markus-dev@cs.toronto.edu)
 
-Subversion repository: svn co https://stanley.cdf.toronto.edu/svn/csc49x/olm_rails/
+Mailing [list archive at marc.info](http://marc.info/?l=markus-dev&r=1&w=2)
 
-Mailing list address: markus-dev@cs.toronto.edu
+## Project Members
 
-Mailing list archive at marc.info
-Project Members
+${ProjectMembers}
 
-With the 'admin' role:
-    benjaminvialle, c9varoqu, reid
-With the 'anonymous' role:
-    bryanshen, bxa, c8braver, dianetam, fabob, fgarces, g4alouis, g6farah, g6flores, g6mandi, g7foongj, g7hyp, g7muivic, g7veve, g8mochi, g8rkms, g9sabied, gabrl, horatiu, jiahuix, jmate, kneha, kurtisschmidt, lawson, legege, magnin, melagaud, mikeg, rburke, simonlg, tlclark, victorivri, zingard
-With the 'developer' role:
-    agoucher, c6conley, g9browni, g9jerboa
+## Term Work
+* __Fall 2010__
+      * [Who is doing what? (punchlines/minutes)](http://blog.markusproject.org/?p=1713)
+* __Summer 2010__
+      * [Goals for Summer 2010](wiki:GoalsMay2010)
+* __Winter 2010__
+      * [Who is doing what? (punchlines/minutes)](http://blog.markusproject.org/?p=1049)
+* __Fall 2009__
+      * [Who is in charge of what, administratively?](http://blog.markusproject.org/?p=504)
+      * [September 18 - Pre-meeting Status](http://blog.markusproject.org/?p=296)
+      * [September 11 - Pre-meeting Status](wiki:PreMeetingStatusSept1109)
+* __Summer 2009__
+      * Have a look at our [Blog](http://blog.markusproject.org)!
+* __Winter 2009__ (Meeting Notes)
+       * [Jan 09: Introductions](wiki:MeetingJan09)
+       * [Jan 16: Useful rails plugins](wiki:MeetingJan16)
 
-Term Work
+<wiki:#getting_started>
+## Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 
-    * Fall 2010
-          o Who is doing what? (punchlines/minutes)
-    * Summer 2010
-          o Goals for Summer 2010
-    * Winter 2010
-          o Who is doing what? (punchlines/minutes)
-    * Fall 2009
-          o Who is in charge of what, administratively?
-          o September 18 - Pre-meeting Status
-          o September 11 - Pre-meeting Status
-    * Summer 2009
-          o Have a look at our Blog!
-    * Winter 2009 (Meeting Notes)
-          o Jan 09: Introductions
-          o Jan 16: Useful rails plugins
+* __Getting Started with Ruby, Ruby on Rails and MarkUs__
+    * [Documentation MarkUs Tag Cloud](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud)
+    * [Short Rails Debugging HOWTO](wiki:RailsDebugging)
+    * [How to program in Ruby, Rubybook](http://www.rubycentral.com/pickaxe)
+    * [Rails API](http://api.rubyonrails.org)
+    * [Rails Guides](http://guides.rubyonrails.org)
+    * [Using metric_fu](wiki:MetricFu)
+    * [General Guide Lines to code - Code review from Mike Gunderloy](wiki:GeneralGuideLines)
+    * <http://apidock.com/rails>
+    * [Some notes from a Ruby book taken by Tara Clark](http://taraclark.wordpress.com/category/ruby-on-rails)
+    * [How to run Selenium tests](wiki:SeleniumTesting)
+    * [Acceptance/Cucumber tests](wiki:CucumberTesting)
+    * [How to use the MarkUs API](wiki:ApiHowTo)
+    * [How to use MarkUs Testing Framework](wiki:TestingFramework) (still in alpha)
 
-Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 
-    * Getting Started with Ruby, Ruby on Rails and MarkUs
-          o Documentation MarkUs Tag Cloud
-          o Short Rails Debugging HOWTO
-          o How to program in Ruby, Rubybook
-          o Rails API
-          o Rails Guides
-          o Using metric_fu
-          o General Guide Lines to code - Code review from Mike Gunderloy
-          o http://apidock.com/rails
-          o Some notes from a Ruby book taken by Tara Clark
-          o How to run Selenium tests
-          o Acceptance/Cucumber tests
-          o How to use the MarkUs API
-          o How to use MarkUs Testing Framework (still in alpha)
+<wiki:#markus_dev_intro>
 
-    *
+* __MarkUs Coding Style/Coding Practices/Rails Gotchas__
+    * [Basic Guidelines for MarkUs Development](wiki:DeveloperGuidelines)(**IMPORTANT!**)
+    * [How to use Review Board](wiki:HowToReviewBoard)
+    * [Rails erb quirks](wiki:RailsERbStyle)
+    * [Use h (alias for html_escape) and sanitize in views](wiki:RailsViewsConventions)
+    * **Please document your code according to the RDoc specification** (see [how to use RDOC](http://rdoc.sourceforge.net/doc/))
+    * **Ruby compatibility:** Please check ticket: #206. Also check out the [difference between COUNT, LENGTH, and SIZE](http://blog.hasmanythrough.com/2008/2/27/count-length-size)
+    * [Our Ruby/Rails testing guidelines](wiki:TestingGuidelines)
+    * [Security testing guidelines](wiki:SecurityTesting)
+    * [Internationalisation](wiki:Internationalization)
 
-      MarkUs Coding Style/Coding Practices/Rails Gotchas
-          o Basic Guidelines for MarkUs Development(IMPORTANT!)
-          o How to use Review Board
-          o Rails erb quirks
-          o Use h (alias for html_escape) and sanitize in views
-          o Please document your code according to the RDoc specification (see how to use RDOC)
-          o Ruby compatibility: Please check ticket:#206. Also check out the difference between COUNT, LENGTH, and SIZE
-          o Our Ruby/Rails testing guidelines
-          o Security testing guidelines
-          o Internationalisation
-    *
+* __MarkUs API/Test Coverage__
+    * [MarkUs Ruby Doc](http://www.markusproject.org/dev/app_doc)
+    * [MarkUs Test Coverage](http://www.markusproject.org/dev/test_coverage)     
 
-      MarkUs API/Test Coverage
-          o MarkUs Ruby Doc
-          o MarkUs Test Coverage
+* __MarkUs Releases__
+    * [Preparing a Release and Patch](wiki:Preparing_Release_And_Patch)
 
-    *
+* __User Roles and Stories for MarkUs__
+    * General / Constraints
+        * [MarkUs is internationalized](wiki:GeneralUseCase_Internationalized)
+        * [MarkUs is configurable](wiki:GeneralUseCase_Configurable)
+        * [Rubrics are not allowed to change once Submissions have been collected](wiki:GeneralUseCase_No_Rubric_Changes_After_Collection)
+    * [Instructor](wiki:Role_Instructor)
+        * [Instructors can create / edit assignments](wiki:UserStory_Instructor_Create_Edit_Assignments)
+        * [Instructors can download/export files](wiki:UserStory_Instructor_Download_Export_Files)
+        * [Instructors can hide students](wiki:UserStory_Instructor_Hide_Students)
+        * [Instructors can do everything that Graders can do](wiki:UserStory_Instructor_Can_Do_What_Graders_Do)
+        * [Instructors can release/unrelease completed marking results](wiki:UserStory_Instructor_Release_Marking_Results)
+        * [Instructors can map particular students/groups to Grader(s) for marking](wiki:UserStory_Instructor_Map_Graders_To_Groupings)
+        * [Instructors can download / export a file that describes the Student/Grouping mapping to Graders](wiki:UserStory_Instructor_Download_Map_Graders_To_Groupings)
+        * [Instructors can upload a file that will do the Student/Grouping mapping to Graders](wiki:UserStory_Instructor_Upload_Map_Graders_To_Groupings)
+        * [Instructors can manage groups without restrictions](wiki:UserStory_Instructor_Manage_Groups_Without_Restrictions)
+    * [Grader](wiki:Role_Grader)
+        * [Graders can easily tell which submissions are assigned to them to mark](wiki:UserStory_Grader_Easy_To_See_What_To_Mark)
+        * [Graders can view a Submission from a Student / Grouping](wiki:UserStory_Grader_View_Submissions)
+        * [Graders can view/annotate/mark a particular file from a Submission](wiki:UserStory_Grader_View_Annotate_Mark_Particular_File)
+        * [Graders can add annotations to particular lines of code within a Submission File](wiki:UserStory_Grader_Annotate_Lines_Of_Code)
+        * [Graders can create reusable Annotations](wiki:UserStory_Grader_Create_Reusable_Annotations)
+        * [Graders can create short, formatted overall comments on a Submission](wiki:UserStory_Grader_Create_Overall_Comment)
+        * [Graders can view and use a Rubric for marking a Submission for an Assignment](wiki:UserStory_Grader_View_Use_Rubric)
+        * [Graders can view a summary of marked submissions](wiki:UserStory_Grader_View_Summary_Of_Marked_Submissions)
+        * [Graders can add bonuses / penalties to submissions](wiki:UserStory_Grader_Add_Bonuses_Penalties)
+        * [Graders can modify the marking state of a submission result](wiki:UserStory_Grader_Can_Modify_Marking_Status)
+        * [Graders can easily switch to the next / previous Submission for marking](wiki:UserStory_Grader_Can_Switch_To_Next_Submission)
+    * [Student](wiki:Role_Student)
+        * [Students can view marks of submissions](wiki:UserStory_Student_View_Marks)
+        * [Students can view annotations of marked submissions/assignments](wiki:UserStory_Student_View_Annotations)
+        * [Students can submit files for their assignments](wiki:UserStory_Student_Submit_Files)
+        * [Students can view/edit submission files for assignments](wiki:UserStory_Student_View_Edit_Files)
 
-      MarkUs Releases
-          o Preparing a Release and Patch
-    *
+* __Database Schema__
+    * [AutoGenerate Database Schema](wiki:auto_generate_schema_diagram)
+    * [View Schema Diagram](wiki:schema_diagram)
+    * [Questions and Answers (Old Document)](wiki:Schema_Questions)
 
-      User Roles and Stories for MarkUs
-          o General / Constraints
-                + MarkUs is internationalized
-                + MarkUs is configurable
-                + Rubrics are not allowed to change once Submissions have been collected
-          o Instructor
-                + Instructors can create / edit assignments
-                + Instructors can download/export files
-                + Instructors can hide students
-                + Instructors can do everything that Graders can do
-                + Instructors can release/unrelease completed marking results
-                + Instructors can map particular students/groups to Grader(s) for marking
-                + Instructors can download / export a file that describes the Student/Grouping mapping to Graders
-                + Instructors can upload a file that will do the Student/Grouping mapping to Graders
-                + Instructors can manage groups without restrictions
-          o Grader
-                + Graders can easily tell which submissions are assigned to them to mark
-                + Graders can view a Submission from a Student / Grouping
-                + Graders can view/annotate/mark a particular file from a Submission
-                + Graders can add annotations to particular lines of code within a Submission File
-                + Graders can create reusable Annotations
-                + Graders can create short, formatted overall comments on a Submission
-                + Graders can view and use a Rubric for marking a Submission for an Assignment
-                + Graders can view a summary of marked submissions
-                + Graders can add bonuses / penalties to submissions
-                + Graders can modify the marking state of a submission result
-                + Graders can easily switch to the next / previous Submission for marking
-          o Student
-                + Students can view marks of submissions
-                + Students can view annotations of marked submissions/assignments
-                + Students can submit files for their assignments
-                + Students can view/edit submission files for assignments
-    *
+* __MarkUs Component Descriptions__
+    * [File Persistence Layer](wiki:File_Persistence_Layer)
+    * [Group / Grouping Behaviours](wiki:Groups_Grouping)
+    * [Groupings and Repositories](wiki:GroupsGroupingsRepositories)
+    * [Authentication and Authorization](wiki:Authentication)
+    * [Annotations](wiki:Annotations)
+    * [Instructor, TA, and Student Use Cases; TA to Groups Mapping; Users](wiki:VeronicaDocumentation)
+    * [Rubrics and Grading](wiki:RubricsAndGrading)
+    * [How Student Work is Graded](wiki:How_Grading_Works)
+    * [Submission Rules](wiki:Submission_Rules)
+    * [The FilterTable Class](wiki:FilterTable)
+    * [Simple Grade Entry](wiki:SimpleGradeEntry)
+    * [Notes System](wiki:NotesSystem)
 
-      Database Schema
-          o AutoGenerate Database Schema
-          o View Schema Diagram
-          o Questions and Answers (Old Document)
-    *
+* __Quicklinks for Browsing User Stories__
+    * [Constraint Stories](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Constraints)
+    * [Role Stories](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Roles)
+    * [User Stories, excluding Roles/Constraints](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Stories)
+    * [User Stories, Students Role](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Stories+StudentsRole)
+    * [User Stories, TAs Role](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Stories+TAsRole)
+    * [User Stories, Instructors Role](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Stories+InstructorsRole)
+    * [Show all Stories, excluding Tickets](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories)
 
-      MarkUs Component Descriptions
-          o File Persistence Layer
-          o Group / Grouping Behaviours
-          o Groupings and Repositories
-          o Authentication and Authorization
-          o Annotations
-          o Instructor, TA, and Student Use Cases; TA to Groups Mapping; Users
-          o Rubrics and Grading
-          o How Student Work is Graded
-          o Submission Rules
-          o The FilterTable Class
-          o Simple Grade Entry
-          o Notes System
-    *
 
-      Quicklinks for Browsing User Stories
-          o Constraint Stories
-          o Role Stories
-          o User Stories, excluding Roles/Constraints
-          o User Stories, Students Role
-          o User Stories, TAs Role
-          o User Stories, Instructors Role
-          o Show all Stories, excluding Tickets
-    *
+* __Feedback Notes__
+    * [2009-05-22: Phyliss](wiki:PhylissFeedback)
+    * [2009-06-22: Ryan](wiki:RyanFeedback)
 
-      Feedback Notes
-          o 2009-05-22: Phyliss
-          o 2009-06-22: Ryan
-    *
+* __Tips and Tricks__
+    * [Dropping/Rebuilding Database Quickly and Easily](wiki:DropAndRebuildDb)
 
-      Tips and Tricks
-          o Dropping/Rebuilding Database Quickly and Easily
-    *
+* __IDE/Editor Notes__
+    * [jEdit](wiki:JEdit)
+    * [NetBeans](wiki:NetBeans)
 
-      IDE/Editor Notes
-          o jEdit
-          o NetBeans
-    *
+* __Other__
+    * [MarkUs and Subversion compilation proceedings (RHEL, on markusproject.org)](wiki:CompileSVN)
+    * [Load-testing a deployed MarkUs installation](wiki:LoadTesting)
 
-      Other
-          o MarkUs and Subversion compilation proceedings (RHEL, on markusproject.org)
-          o Load-testing a deployed MarkUs installation
-    *
+* [MarkUs Feature Requests](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=FeatureRequest)
 
-      MarkUs Feature Requests
+---------
 
-MarkUs Deployment Documents (Installation Instructions for MarkUs using RAILS_ENV=production)
+# MarkUs Deployment Documents (Installation Instructions for MarkUs using RAILS_ENV=production)
+  * [Setup Instructions for MarkUs "Stable"](wiki:InstallProdStable)
+  * [Hosting several MarkUs applications on one machine (for Production)](wiki:MultipleHosting)
+  * [How to use LDAP with MarkUs](wiki:LDAP)
+  * [How to use Phusion Passenger instead of Mongrel](wiki:Passenger)
+  * *Old deployment instructions*:
+    * Deploying and Configuring MarkUs for Production. [Instructions MarkUs version 0.5.](wiki:InstallProd). [Instructions MarkUs version 0.6.](wiki:InstallProd_0.6). 
 
-    * Setup Instructions for MarkUs "Stable"
-    * Hosting several MarkUs applications on one machine (for Production)
-    * How to use LDAP with MarkUs
-    * How to use Phusion Passenger instead of Mongrel
-    * Old deployment instructions:
-          o Deploying and Configuring MarkUs for Production. Instructions MarkUs version 0.5.. Instructions MarkUs version 0.6..
+---------
 
-DrProject info
+# DrProject info
 
-    * DrProjectGuide -- Built-in Documentation
-    * The DrProject Project
+*  [[DrProjectGuide]] --  Built-in Documentation
+*  [The DrProject Project](https://www.drproject.org/DrProject)
 
-For a complete list of local wiki pages, see TitleIndex.
-	
-Tags
-
-    *
-       
-      ▼
-
-      Χ
-
-Attachments
-
-    * newSchema.ps (version 1) (46.2 KB) - "New database schema ( May, 11, 2009)" added by c9varoqu 1 year ago
+For a complete list of local wiki pages, see [[TitleIndex]].
