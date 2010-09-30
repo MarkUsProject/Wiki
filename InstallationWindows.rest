@@ -188,7 +188,7 @@ Edit this page to include them!
 
  * See if it works:
 
-    - Start InstantRails 
+    - Start InstantRails
     - Start the servers
     - Open the Ruby console window (InstantRails black I button > Rails Applications > Open Ruby Console Window)
     - cd to the directory where you put the markus source code you checked out

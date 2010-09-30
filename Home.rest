@@ -133,15 +133,15 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
     * [[How to program in Ruby, Rubybook |
     * http://www.rubycentral.com/pickaxe]]
     * [[Rails API | http://api.rubyonrails.org]]
-    * [Rails Guides] | http://guides.rubyonrails.org]]
+    * [[Rails Guides | http://guides.rubyonrails.org]]
     * [[Using metric_fu | MetricFu]]
     * [[General Guide Lines to code - Code review from Mike Gunderloy |
       GeneralGuideLines]]
     * http://apidock.com/rails
     * [[Some notes from a Ruby book taken by Tara Clark |
       http://taraclark.wordpress.com/category/ruby-on-rails]]
-    * [How to run Selenium tests](wiki:SeleniumTesting)
-    * [Acceptance/Cucumber tests](wiki:CucumberTesting)
+    * [[How to run Selenium tests | SeleniumTesting]]
+    * [[Acceptance/Cucumber tests | CucumberTesting]]
     * [How to use the MarkUs API](wiki:ApiHowTo)
     * [How to use MarkUs Testing Framework](wiki:TestingFramework) (still in alpha)
 
