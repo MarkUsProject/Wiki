@@ -5,8 +5,7 @@ MarkUS development on Mac OS X - Snow Leopard
 .. contents::
 
 Setting up Ruby and Ruby on Rails
---------------------------------------------------------------------------------
-
+================================================================================
 
 Run the following commands. You will be required to enter the Administrator
 password.::
@@ -28,12 +27,12 @@ this doesn't work, because there are missing required gems. See ticket #635).
 Edit this page to include them!
 
 Setting up the Database
---------------------------------------------------------------------------------
+================================================================================
 
 MarkUs works with either SQLite3, PostgreSQL, or MySQL databases.
 
 Setting up SQLite3
-********************************************************************************
+--------------------------------------------------------------------------------
 
 WARNING: Do not use SQLite3 for production environments.
 
@@ -42,7 +41,7 @@ To install SQLite3 run the following command::
     #>gem install sqlite3-ruby
 
 Setting up PostgreSQL
-********************************************************************************
+--------------------------------------------------------------------------------
 
 To install postgres 8.3, you can use the one-click installer on the following
 site : [[Postgresql 8.3 One-Click Installer |
@@ -83,7 +82,7 @@ You will be asked for a password, so type "olm_db_admin". After that you
 should see the console of PostgreSQL.
 
 Installing the PostgreSQL Ruby gem:
-********************************************************************************
+--------------------------------------------------------------------------------
 
 Next, you'll need to install the PostgreSQL Ruby gem by entering the following
 command::
@@ -95,7 +94,7 @@ If this command doesn't work, you can use this one.::
     #>sudo env ARCHFLAGS="-arch x86_64 gem install pg
 
 Setting up MySQL
---------------------------------------------------------------------------------
+================================================================================
 
 To install MySQL, you can use the installer from this site: [[MySQL Downloads |
 (http://dev.mysql.com/downloads/mysql/5.1.html#macosx-dmg]] You can also
@@ -110,7 +109,7 @@ you installed MySQL via MacPorts, add <code>/opt/local/lib/mysql5/bin</code>
 to your <code>PATH</code>. 
 
 Creating a database user
-********************************************************************************
+--------------------------------------------------------------------------------
 
 To create a database user, enter the following commands: (In this example, the
 user is named 'markus', his password is 'markus', and he will be given
@@ -127,7 +126,7 @@ You can now try connecting to the server using the user you just created::
 You should see the MySQL console.
 
 Installing the MySQL Ruby gem
-********************************************************************************
+--------------------------------------------------------------------------------
 
 Next, you need to install the MySQL gem by entering the following command::
 
