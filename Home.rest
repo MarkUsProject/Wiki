@@ -19,17 +19,15 @@ support of test driven development.
 Project Resources
 ================================================================================
 
-  * **Project Website**
-    [http://www.markusproject.org](http://www.markusproject.org)
-  * **Developer's Blog**
-    [http://blog.markusproject.org](http://blog.markusproject.org)
-  * **Review Board**
-    [http://review.markusproject.org](http://review.markusproject.org)
+  * **Project Website** http://www.markusproject.org
+  * **Developer's Blog** http://blog.markusproject.org
+  * **Review Board** http://review.markusproject.org
   * **IRC Channel:** Our channel is #markus on irc.freenode.net.
-    [Logs of the channel](http://www.markusproject.org/irc/) are also available.
-  * **Sandbox**
-    [http://www.markusproject.org/admin-demo/](http://www.markusproject.org/admin-demo/)
+    [[Logs of the channel|http://www.markusproject.org/irc/]] are also available.
+  * **Sandbox** http://www.markusproject.org/admin-demo/
   * **User Guide:** [MarkUs Documentation](wiki:User_Guide)
+
+.. todo Modify User Guide link
 
 Screencasts
 --------------------------------------------------------------------------------
