@@ -1,30 +1,37 @@
-#Setting up a development environment for MarkUs development on GNU/Linux
+================================================================================
+Setting up a development environment for MarkUs development on GNU/Linux
+================================================================================
 
-##Outline
-1. [Essential Software: Ruby, Ruby on Rails, Subversion Ruby bindings](wiki:InstallationRorRadrailsDebian#ROR)
-2. [Database setup (PostgreSQL)](wiki:InstallationRorRadrailsDebian#dbsetup)
-2. [Required gems for MarkUs](wiki:InstallationRorRadrailsDebian#gems)
-2. [Configure MarkUs](wiki:InstallationRorRadrailsDebian#configure)
-2. [Test plain MarkUs installation](wiki:InstallationRorRadrailsDebian#testInstall)
-3. [Setup Radrails IDE (optional)](wiki:InstallationRorRadrailsDebian#radrails) (as Eclipse plug-in)
-    1. [Installing Aptana Radrails](wiki:InstallationRorRadrailsDebian#radrails)
-    2. [Installing Subclipse](wiki:InstallationRorRadrailsDebian#subclipse)
-    3. [Checking out MarkUs Code from Repository](wiki:InstallationRorRadrailsDebian#OLMcheckout)
-    3. [Getting Started with MarkUs Development](wiki:InstallationRorRadrailsDebian#OLMdev)
+.. contents::
 
-<wiki:#ROR>
-##Setting up Ruby, Ruby on Rails, Subversion and the Subversion Ruby bindings
+Setting up Ruby, Ruby on Rails, Subversion and the Subversion Ruby bindings
+--------------------------------------------------------------------------------
 
-Issue the following command on a terminal. You need to be root or use "sudo" (the Ubuntu way) to do that.
+Issue the following command on a terminal. You need to be root or use "sudo"
+(the Ubuntu way) to do that::
 
-    #> aptitude install ruby-full build-essential rails rubygems rake libsvn-ruby subversion
+    #> aptitude install ruby-full build-essential rails rubygems rake
+    libsvn-ruby subversion
 
-Unfortunately, as the time of this writing, the rails package features rails 2.1.x. In order to get a rails version \>= 2.2 (which features I18n support) follow these [instructions](wiki:UpdateRailsDebian). As of September 14, 2009 the previous step is essential! Once you have gem and rails updated (including required dependencies), and [Radrails](wiki:InstallationRorRadrailsDebian#radrails) installed reset the correct rails path in the Eclipse Preferences (usually /var/lib/gems/\<your-ruby-version\>/bin/rails). Also, set the corrected rake and mongrel path there. This should prepare you for rails >=2.2 development.
+Unfortunately, as the time of this writing, the rails package features rails
+2.1.x. In order to get a rails version \>= 2.2 (which features I18n support)
+follow these [instructions](wiki:UpdateRailsDebian). As of September 14, 2009
+the previous step is essential! Once you have gem and rails updated (including
+required dependencies), and
+[Radrails](wiki:InstallationRorRadrailsDebian#radrails) installed reset the
+correct rails path in the Eclipse Preferences (usually
+``/var/lib/gems/\<your-ruby-version\>/bin/rails``). Also, set the corrected rake
+and mongrel path there. This should prepare you for rails >=2.2 development.
 
-<wiki:#dbsetup>
-##Setting up the Database (PostgreSQL)
+.. TODO update previous radrails link
 
-Make sure that you have set an UTF-8 locale/encoding (e.g. set LANG=en_CA.UTF-8 environment variable). The postgresql cluster will be created in the encoding which is currently set. Type locale in the term and you should see something similar to the following:
+Setting up the Database (PostgreSQL)
+--------------------------------------------------------------------------------
+
+Make sure that you have set an UTF-8 locale/encoding (e.g. set
+LANG=en_CA.UTF-8 environment variable). The postgresql cluster will be created
+in the encoding which is currently set. Type locale in the term and you should
+see something similar to the following::
 
     locale
     LANG=en_CA.UTF-8
@@ -43,7 +50,8 @@ Make sure that you have set an UTF-8 locale/encoding (e.g. set LANG=en_CA.UTF-8 
     LC_ALL=
 
 
-Then execute the following command on a terminal. You need to be root or use "sudo" (the Ubuntu way) to do that.
+Then execute the following command on a terminal. You need to be root or use
+"sudo" (the Ubuntu way) to do that::
 
     #> aptitude install postgresql postgresql-contrib
 
