@@ -25,7 +25,7 @@ Project Resources
   * **IRC Channel:** Our channel is #markus on irc.freenode.net.
     [[Logs of the channel|http://www.markusproject.org/irc/]] are also available.
   * **Sandbox** http://www.markusproject.org/admin-demo/
-  * **User Guide:** [MarkUs Documentation](wiki:User_Guide)
+  * **User Guide:** [[MarkUs Documentation | UserGuide]]
 
 .. todo Modify User Guide link
 
@@ -37,11 +37,11 @@ Screencasts
  * [[Student Group Formation: August 17, 2009 |
    http://www.youtube.com/watch?v=Ed_z_tHCAg8]]
  * [[The Grader View: June 6, 2009 |
- * http://www.cs.toronto.edu/~reid/screencasts/OLM-2009-06-03.swf]]
+   http://www.cs.toronto.edu/~reid/screencasts/OLM-2009-06-03.swf]]
  * [[Flexible Marking Scheme Selection: December 1, 2009 |
- * http://www.youtube.com/watch?v=x4mbE3WBgog]]
+   http://www.youtube.com/watch?v=x4mbE3WBgog]]
  * [[Flexible Marking Scheme Criterion: December 1, 2009 |
- * http://www.youtube.com/watch?v=tVkti9y91RA]]
+   http://www.youtube.com/watch?v=tVkti9y91RA]]
  * [[Notes created through the Modal dialog as an Admin: December 3, 2009 |
    http://www.youtube.com/watch?v=eoxriy2cYW0]]
  * [[Notes created through the Modal dialog as a TA: December 3, 2009 |
