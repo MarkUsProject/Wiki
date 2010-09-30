@@ -69,7 +69,7 @@ Mac OS X
 Windows (Note: Linux and Mac OS X development environments generally caused less problems)
 ------------------------------------------------------------------------------------------------------------------------
   * [[Setting up a development environment on Windows using
-    InstantRails | wiki:InstantRailsAndWindows]]
+    InstantRails | InstallationWindows]]
 
 MarkUs Developer Documentation
 ================================================================================
