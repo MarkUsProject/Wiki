@@ -15,7 +15,7 @@ Issue the following command on a terminal. You need to be root or use "sudo"
 
 Unfortunately, as the time of this writing, the rails package features rails
 2.1.x. In order to get a rails version \>= 2.2 (which features I18n support)
-follow these [instructions](wiki:UpdateRailsDebian). As of September 14, 2009
+follow these [[instructions | RailsDebianUpdate]]. As of September 14, 2009
 the previous step is essential! Once you have gem and rails updated (including
 required dependencies), and Radrails) installed reset the
 correct rails path in the Eclipse Preferences (usually
