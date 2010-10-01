@@ -216,7 +216,7 @@ collected|GeneralUseCase_NoRubricChangesAfterCollection]]
 * **Database Schema**
 
     * AutoGenerate Database Schema
-    * View Schema Diagram
+    * [[View Schema Diagram|database_20101001.png]]
     * [[Questions and Answers (Old Document) | Schema_Questions])
 
 * **MarkUs Component Descriptions**
