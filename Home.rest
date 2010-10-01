@@ -236,9 +236,9 @@ collected|GeneralUseCase_NoRubricChangesAfterCollection]]
     * [[2009-05-22: Phyliss | PhylissFeedback]]
     * [[2009-06-22: Ryan | RyanFeedback]]
 
-* **Tips and Trick**_
+* **Tips and Trick**
 
-    * [[Dropping/Rebuilding Database Quickly and Easily | DropAndRebuildDb)]]
+    * [[Dropping/Rebuilding Database Quickly and Easily | DropAndRebuildDb]]
 
 * **IDE/Editor Notes**
 
