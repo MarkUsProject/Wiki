@@ -26,6 +26,7 @@ Project Resources
     [[Logs of the channel|http://www.markusproject.org/irc/]] are also available.
   * **Sandbox** http://www.markusproject.org/admin-demo/
   * **User Guide:** [[MarkUs Documentation | UserGuide]]
+  * **Git HowTo** [[Git HowTo | GitHowTo]]
 
 .. todo Modify User Guide link
 

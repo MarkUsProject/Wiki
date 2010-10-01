@@ -1,0 +1,38 @@
+================================================================================
+Git How To
+================================================================================
+
+.. contents::
+
+
+Setting up a github account
+================================================================================
+
+- Open a github account
+- Ask an admin to add you to the organization developpers
+- Fork the repositories
+- Clone them on your local computers
+
+Coding
+================================================================================
+- For each feature/bug, create a branch
+- Checkout the branch ``git checkout BranchName``
+- Code
+- commit your code (see git's documentation) (and push it if you want)
+- Diff: `git diff master BranchName > name.patch``
+
+ReviewBoard
+================================================================================
+
+- post diff on ReviewBoard
+- Once you have one or more ship it
+
+  - push all the code to your github repository
+  - ask for a pull request
+  - wait for a nice administrator to merge your code :-)
+
+
+
+
+
+
