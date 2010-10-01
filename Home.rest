@@ -225,47 +225,25 @@ collected|GeneralUseCase_NoRubricChangesAfterCollection]]
     * [[Groupings and Repositories | GroupsGroupingsRepositories]]
     * [[Authentication and Authorization | Authentication]]
     * [[Annotations | Annotations]]
-    * [Instructor, TA, and Student Use Cases; TA to Groups Mapping; Users](wiki:VeronicaDocumentation)
-    * [Rubrics and Grading](wiki:RubricsAndGrading)
-    * [How Student Work is Graded](wiki:How_Grading_Works)
-    * [Submission Rules](wiki:Submission_Rules)
-    * [The FilterTable Class](wiki:FilterTable)
-    * [Simple Grade Entry](wiki:SimpleGradeEntry)
-    * [Notes System](wiki:NotesSystem)
+    * [[How Student Work is Graded | How_Grading_Works]]
+    * [[Submission Rules | Submission_Rules]]
+    * [[The FilterTable Class | FilterTable]]
+    * [[Simple Grade Entry | SimpleGradeEntry]]
+    * [[Notes System | NotesSystem]]
 
-* __Quicklinks for Browsing User Stories__
+* **Feedback Notes**
 
-    * [Constraint Stories](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Constraints)
-    * [Role Stories](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Roles)
-    * [User Stories, excluding Roles/Constraints](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Stories)
-    * [User Stories, Students Role](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Stories+StudentsRole)
-    * [User Stories, TAs Role](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Stories+TAsRole)
-    * [User Stories, Instructors Role](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories+Stories+InstructorsRole)
-    * [Show all Stories, excluding Tickets](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=UserStories)
+    * [[2009-05-22: Phyliss | PhylissFeedback]]
+    * [[2009-06-22: Ryan | RyanFeedback]]
 
+* **Tips and Trick**_
 
-* __Feedback Notes__
+    * [[Dropping/Rebuilding Database Quickly and Easily | DropAndRebuildDb)]]
 
-    * [2009-05-22: Phyliss](wiki:PhylissFeedback)
-    * [2009-06-22: Ryan](wiki:RyanFeedback)
+* **IDE/Editor Notes**
 
-* __Tips and Tricks__
-
-    * [Dropping/Rebuilding Database Quickly and Easily](wiki:DropAndRebuildDb)
-
-* __IDE/Editor Notes__
-
-    * [jEdit](wiki:JEdit)
-    * [NetBeans](wiki:NetBeans)
-
-* __Other__
-
-    * [MarkUs and Subversion compilation proceedings (RHEL, on markusproject.org)](wiki:CompileSVN)
-    * [Load-testing a deployed MarkUs installation](wiki:LoadTesting)
-
-* [MarkUs Feature Requests](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails/tagcloud/tagsearch?perproject=True&q=FeatureRequest)
-
----------
+    * [[jEdit | JEdit]]
+    * [[NetBeans | NetBeans]]
 
 MarkUs Deployment Documents (Installation Instructions for MarkUs using RAILS_ENV=production)
 ===============================================================================================
