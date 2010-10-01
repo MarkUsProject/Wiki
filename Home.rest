@@ -162,16 +162,16 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
     * [[Security testing guidelines | SecurityTesting]]
     * [[Internationalisation | Internationalization]]
 
-* __MarkUs API/Test Coverage__
+* **MarkUs API/Test Coverage**
 
-    * [MarkUs Ruby Doc](http://www.markusproject.org/dev/app_doc)
-    * [MarkUs Test Coverage](http://www.markusproject.org/dev/test_coverage)
+    * [[MarkUs Ruby Doc | http://www.markusproject.org/dev/app_doc]]
+    * [[MarkUs Test Coverage | http://www.markusproject.org/dev/test_coverage]]
 
-* __MarkUs Releases__
+* **MarkUs Releases**
 
-    * [Preparing a Release and Patch](wiki:Preparing_Release_And_Patch)
+    * [[Preparing a Release and Patch | Preparing_Release_And_Patch]]
 
-* __User Roles and Stories for MarkUs__
+* **User Roles and Stories for MarkUs**
 
     * General / Constraints
 
@@ -213,17 +213,16 @@ collected|GeneralUseCase_NoRubricChangesAfterCollection]]
         * [[Students can submit files for their assignments|Student_SubmitFiles]]
         * [[Students can view/edit submission files for assignments|Student_ViewEditFiles]]
 
-* __Database Schema__
+* **Database Schema**
 
-    * [AutoGenerate Database Schema|auto_generate_schema_diagram)
-    * [View Schema Diagram](wiki:schema_diagram)
-    * [Questions and Answers (Old Document)](wiki:Schema_Questions)
+    * AutoGenerate Database Schema
+    * View Schema Diagram
+    * [[Questions and Answers (Old Document) | Schema_Questions])
 
-* __MarkUs Component Descriptions__
+* **MarkUs Component Descriptions**
 
-    * [File Persistence Layer](wiki:File_Persistence_Layer)
-    * [Group / Grouping Behaviours](wiki:Groups_Grouping)
-    * [Groupings and Repositories](wiki:GroupsGroupingsRepositories)
+    * [[Group / Grouping Behaviours | Groups_Grouping]]
+    * [[Groupings and Repositories | GroupsGroupingsRepositories]]
     * [Authentication and Authorization](wiki:Authentication)
     * [Annotations](wiki:Annotations)
     * [Instructor, TA, and Student Use Cases; TA to Groups Mapping; Users](wiki:VeronicaDocumentation)
