@@ -248,18 +248,10 @@ collected|GeneralUseCase_NoRubricChangesAfterCollection]]
 MarkUs Deployment Documents (Installation Instructions for MarkUs using RAILS_ENV=production)
 ===============================================================================================
 
-  * [Setup Instructions for MarkUs "Stable"](wiki:InstallProdStable)
-  * [Hosting several MarkUs applications on one machine (for Production)](wiki:MultipleHosting)
-  * [How to use LDAP with MarkUs](wiki:LDAP)
-  * [How to use Phusion Passenger instead of Mongrel](wiki:Passenger)
-  * *Old deployment instructions*:
-    * Deploying and Configuring MarkUs for Production. [Instructions MarkUs version 0.5.](wiki:InstallProd). [Instructions MarkUs version 0.6.](wiki:InstallProd_0.6). 
+  * [[Setup Instructions for MarkUs Stable|InstallProdStable]]
+  * [[Hosting several MarkUs applications on one machine (for Production)|MultipleHosting]]
+  * [[How to use LDAP with MarkUs|LDAP]]
+  * [[How to use Phusion Passenger instead of Mongrel|Passenger]]
 
----------
 
-# DrProject info
-
-*  [[DrProjectGuide]] --  Built-in Documentation
-*  [The DrProject Project](https://www.drproject.org/DrProject)
-
-For a complete list of local wiki pages, see [[TitleIndex]].
+For a complete list of local wiki pages, see [[TitleIndex|http://github.com/MarkUsProject/Markus/wiki/_pages]].
