@@ -223,8 +223,8 @@ collected|GeneralUseCase_NoRubricChangesAfterCollection]]
 
     * [[Group / Grouping Behaviours | Groups_Grouping]]
     * [[Groupings and Repositories | GroupsGroupingsRepositories]]
-    * [Authentication and Authorization](wiki:Authentication)
-    * [Annotations](wiki:Annotations)
+    * [[Authentication and Authorization | Authentication]]
+    * [[Annotations | Annotations]]
     * [Instructor, TA, and Student Use Cases; TA to Groups Mapping; Users](wiki:VeronicaDocumentation)
     * [Rubrics and Grading](wiki:RubricsAndGrading)
     * [How Student Work is Graded](wiki:How_Grading_Works)
