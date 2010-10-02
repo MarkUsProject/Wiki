@@ -34,5 +34,6 @@ ReviewBoard
 Git
 ================================================================================
 - Once your pull request have been merged to MarkUs, you can delete branches : 
+
   - ``git branch -d YourBranch will delete the branch locally``
   - ``git push origin :YourBranch`` will delete the branch on your fork (on github)
