@@ -78,7 +78,7 @@ MarkUs Developer Documentation
 Project Vitals
 --------------------------------------------------------------------------------
 
-Subversion repository: `svn co` ${RepositoryUrl}`/`
+Repository: Create a Github account and fork MarkUsProject/MarkUs (see Github help for more info).
 
 Mailing list address: markus-dev@cs.toronto.edu
 
