@@ -9,7 +9,7 @@ Setting up a github account
 ================================================================================
 
 - Open a github account
-- Ask an admin to add you to the organization developpers
+- Ask an admin to add you to the organization developers
 - Fork the repositories
 - Clone them on your local computers
 
