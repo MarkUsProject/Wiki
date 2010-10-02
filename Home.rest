@@ -1,5 +1,5 @@
 ================================================================================
-Welcome to MarkUs (formerly known as OLM on Rails)
+Welcome to MarkUs
 ================================================================================
 
 MarkUs (pronounced "mark us") is an open-source tool which recreates the ease
