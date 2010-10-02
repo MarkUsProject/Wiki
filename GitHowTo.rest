@@ -10,8 +10,8 @@ Setting up a github account
 
 - Open a github account
 - Ask an admin to add you to the organization developers
-- Fork the repositories
-- Clone them on your local computers
+- Fork the MarkUsProject/MarkUs repository
+- Clone your fork (it should be namespaced like: <your-github-user>/MarkUs) onto your machine. This is the repository you should be working on. Make sure you use the read+write URL Github shows you. 
 
 Coding
 ================================================================================
@@ -32,12 +32,6 @@ ReviewBoard
   - wait for a nice administrator to merge your code :-)
 
 
-Git
-================================================================================
-- Once your pull request have been merged to MarkUs, you can delete branches :
-
-  - ``git branch -d YourBranch`` will delete the branch locally
-  - ``git push origin :YourBranch`` will delete the branch on your fork (on github)
 
 
 
