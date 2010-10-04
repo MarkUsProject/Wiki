@@ -5,7 +5,7 @@ Git How To
 .. contents::
 
 
-Setting up a github account
+Github Things
 ================================================================================
 
 - Open a github account
@@ -15,25 +15,25 @@ Setting up a github account
 
 Coding
 ================================================================================
-- For each feature/bug, create a branch
-- Checkout the branch ``git checkout BranchName``
-- Code
-- commit your code (see git's documentation) (and push it if you want)
-- Diff: `git diff master BranchName > name.patch``
+- For each feature/bug, create a branch. To do this, make sure you are on branch ``master``. You can check which branch you are on by ``git status``. Then create the new branch by ``git branch <branch-name>``. This has created a branch, which is based on ``master``, since you've been on ``master`` at the time you've created the branch. Yay!
+- Checkout the branch ``git checkout <branch-name>``.
+- Code.
+- Commit your code (see git's documentation) (and push it if you want to your personal MarkUs fork)
+- Generate diff for code review: `git diff master <branch-name> > name.patch``
 
 ReviewBoard
 ================================================================================
 
-- post diff on ReviewBoard
+- Post diff on ReviewBoard
 - Once you have one or more ship it
 
-  - push all the code to your github repository
-  - ask for a pull request
-  - wait for a nice administrator to merge your code :-)
+  - Push code to your github repository
+  - Ask for a pull request
+  - Wait for a nice administrator to merge your code :-)
 
-Git
+Git Tricks
 ================================================================================
-- Once your pull request have been merged to MarkUs, you can delete branches : 
+- Once your pull request have been merged to main MarkUs, you can delete branches (this is entirely optional): 
 
-  - ``git branch -d YourBranch`` will delete the branch locally
-  - ``git push origin :YourBranch`` will delete the branch on your fork (on github)
+  - ``git branch -d <your-branch>`` will delete the branch locally
+  - ``git push origin :<your-branch>`` will delete the branch on your personal fork on Github (Note the colon).
