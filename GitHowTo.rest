@@ -8,7 +8,7 @@ Git How To
 Github Things
 ================================================================================
 
-- Open a github account
+- Open a Github account
 - Ask an admin to add you as a MarkUs developer
 - Fork the MarkUsProject/MarkUs repository
 - Clone your fork (it should be namespaced like: <your-github-user>/MarkUs) onto your machine. This is the repository you should be working on. Make sure you use the read+write URL Github shows you. 
