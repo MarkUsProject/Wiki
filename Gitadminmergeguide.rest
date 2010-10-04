@@ -1,6 +1,8 @@
 Merging MarkUs Pull Requests
 =======================
+
 This is what I've been doing for merging things into master so far (feedback welcome):
+
 * Clone main MarkUs: ``git clone git@github.com:MarkUsProject/Markus.git``. If you have it cloned, make sure to be on master and pull from origin/master.
 * Add remote for fork of developer: ``git remote add <developer-github-name>-fork <read-only-url>``
 * Fetch changes in fork: ``git fetch <developer-github-name>-fork``
