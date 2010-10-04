@@ -1,4 +1,4 @@
-What to do when main MarkUs is further ahead than when I created the branch for my feature/bug
+What to do when main MarkUs is further ahead than when I created the branch for my feature/bug?
 =======================================================================
 * If you don't have the "upstream" remote add it: ``git remote add upstream git://github.com/MarkUsProject/Markus.git``
 * Fetch main MarkUs changes: ``git fetch upstream``
