@@ -24,7 +24,7 @@ Coding
 ReviewBoard
 ================================================================================
 
-- Post diff on ReviewBoard
+- Post diff on ReviewBoard. Note that main MarkUs may have advanced since you last updated your review. The best way to deal with this case is described in [["How to rebase my feature branch"|GitRebaseFeatureBranch]]
 - Once you have one or more ship it
 
   - Push code to your github repository
@@ -33,6 +33,7 @@ ReviewBoard
 
 Git Tricks
 ================================================================================
+- How to keep your copy of the MarkUs repository up-to-date. See [[GitKeepingPace]]. 
 - Once your pull request have been merged to main MarkUs, you can delete branches (this is entirely optional): 
 
   - ``git branch -d <your-branch>`` will delete the branch locally
