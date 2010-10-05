@@ -3,14 +3,15 @@ Merging MarkUs Pull Requests
 
 This is what I've been doing for merging things into master so far (feedback welcome):
 
-* Clone main MarkUs: ``git clone git@github.com:MarkUsProject/Markus.git``. If you have it cloned, make sure to be on master and pull from origin/master.
+* Clone main MarkUs: ``git clone git@github.com:MarkUsProject/Markus.git``. If you have it cloned, make sure to be on master and pull from origin/master. Note, if you have the repo already cloned, a ``git fetch origin && git checkout master && git rebase origin/master`` should bring you up to date.
 * Add remote for fork of developer: ``git remote add <developer-github-name>-fork <read-only-url>``
 * Fetch changes in fork: ``git fetch <developer-github-name>-fork``
-* Create a local branch and see if everything is in order: ``git checkout -b <feature-branch-name> <developer-github-name>-fork/<feature-branch-name>``
-* Use ``git log``, ``gitk`` or whatever you prefer to make sure feature-branch is properly based on latest HEAD of origin/master.
-* If it isn't, rebase feature branch: ``git rebase master``. You may also fixup some history, squash things and what not (i.e. ``git rebase -i HEAD~<#of-commits-back>`` may be useful too).
-* Double-check. Do the git log, gitk, conflict resolution (maybe ``git mergetool``), etc.
-* Finally merge feature-branch into master: ``git checkout master && git merge <feature-branch-name>``.
-* Again, make sure history looks ok. If everything is ok you shouldn't need to ``git pull origin master`` before you can cleanly push.
+* Create a local branch to double-check if everything is in order: ``git checkout -b <feature-branch-name>``
+* Bring in changes from pull-request remote on top of current HEAD of origin/master: ``git rebase <developer-github-name>-fork/<feature-branch-name>``
+* Use ``git log``, ``gitk`` or whatever you prefer to make sure feature-branch has nice history based on latest HEAD of origin/master.
+* If it isn't, try again or ask. You may also fixup some history, squash things and what not (i.e. ``git rebase -i HEAD~<#of-commits-back>`` may be useful).
+* If the rebase caused conflicts, it's likely that the developer did not keep up-to-date with HEAD of origin/master. The developer should do the merging and resolve conflicts (maybe ``git mergetool`` helps).
+* Finally merge feature-branch into master: ``git checkout master && git merge <feature-branch-name>``. This usually is only a Fast-forward merge.
+* Again, make sure history looks ok. If everything looks good, push to origin: ``git push origin master``
 
 Let me know if you see problems with this approach (Severin).
