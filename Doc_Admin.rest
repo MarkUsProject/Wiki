@@ -52,14 +52,30 @@ API key is only useful if you want to connect the application by command line.**
 
    When you click “Assignements”, you can see the different assignments
 
-It's possible to create a new assignment clicking “Add Assignment”.
+.. figure:: Doc_Admin_Assignments.png
+   :width: 808px
+   :height: 399px
+   :scale: 100%
+   :align: center
+   :alt: Assignments
+   
+   It's possible to create a new assignment clicking “Add Assignment”.
 
-The deadline is chosen by the administrator and every assignment has its own
-deadline If you want to let the students submit their work with the web
-interface, you need to let check “yes” in the option “Allow Web Submits”. If
-you check”no”, the students have to send their files by command line with
-Subversion.
+* The deadline is chosen by the administrator and every assignment has its own
+  deadline
+* If you want to let the students submit their work with the web
+  interface, you need to let check “yes” in the option “Allow Web Submits”. If
+  you check”no”, the students have to send their files by command line with
+  Subversion.
 
+.. figure:: Doc_Admin_AddAssignment1.png
+   :width: 889px
+   :height: 575px
+   :scale: 100%
+   :align: center
+   :alt: Add a new assignment
+
+   How To add a new assignment
 
 The option marking scheme allows the administrator to choose if the grader has
 to respect a scheme defined by the administrator (Rubric) or if the grader can
@@ -70,24 +86,14 @@ to complete the assignment. The students need to respect the names chosen by
 the administrator for the files. They can besides submit only one part of their
 work on MarkUs.
 
+.. figure:: Doc_Admin_AddAssignment2.png
+   :width: 512px
+   :height: 376px
+   :scale: 100%
+   :align: center
+   :alt: Add a new assignment
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   How To add a new assignment
 
 In the rubric “Assignment type”, it's possible to choose if students can work
 in team, or work alone and even to choose a limit number of students for a
@@ -95,20 +101,29 @@ group.  Eventually, the rubric “Submission rules” allow to choose the rules
 concerning the delays : it's possible to forbid any delay to submit the work,
 to deduct grace period credits or to use a penalty.
 
+* the first choice is strict and clear :  no delay will be accepted 
+* The second option consists in giving grace credits to every student 
+  at the beginning of the assignment. Every delay may implied the 
+  deduction of grace credits as long as the student have some.
+* Eventually, penalties allows to depreciate the grade
+  of the student. The later the student submit the work, the worse will be the
+  grade.
 
-the first choice is strict and clear :  no delay will be accepted The second
-option consists in giving grace credits to every student at the beginning of
-the assignment. Every delay may implied the deduction of grace credits as long
-as the student have some.  Eventually, penalties allows to depreciate the grade
-of the student. The later the student submit the work, the worse will be the
-grade.
+.. figure:: Doc_Admin_AddAssignment3.png
+   :width: 823px
+   :height: 555px
+   :scale: 100%
+   :align: center
+   :alt: Add a new assignment
+
+   How To add a new assignment
 
 Once the assignment created, you have to define the marking scheme, and
 annotation models that the grader can use (of course the grader can add his own
 markings) and the identity of the graders for this assignment.
 
-
 Define the marking scheme
+================================================================================
 
 The section “Marking Scheme” allows the administrator to define the way to
 evaluate the assignment. This scheme cans be used in an other assignment thanks
@@ -116,7 +131,17 @@ to the tags “Upload” and “Download”. Once this scheme saved in MarkUs, i
 possible to recover it in the formate CSV for save and then upload it in a new
 assignment.
 
+.. figure:: Doc_Admin_RubricScheme.png
+   :width: 1594px
+   :height: 454px
+   :scale: 100%
+   :align: center
+   :alt: Configure Marking Scheme
+
+   Marking Scheme
+
 Define annotation models
+================================================================================
 
 MarkUs allows the administrator to define annotation models for graders. It's
 therefor possible to help graders to correct with defining models for comments
@@ -124,8 +149,8 @@ and annotations that they will probably use. It's also convenient to unify the
 correction. Of course, graders can besides  add their own comments on the work
 of the students .
 
-NB : The annotation models are very easy to used for source code, however it's
-not yet possible to use it for pdf files, but it will be soon possible.
+*The annotation models are very easy to used for source code, however it's
+not yet possible to use it for pdf files, but it will be soon possible.*
 
 Firstly, it's possible to recover a list of annotation models already saved to
 use it in another implementation of MarkUs (thanks to “Upload”). You should
@@ -134,11 +159,30 @@ saved in MarkUs because the application will maybe delete the list already
 saved to keep the one which is uploaded.  You can arrange the annotation in
 different categories clicking “Add Annotation Category”
 
+.. figure:: Doc_Admin_Annotations1.png
+   :width: 1272px
+   :height: 412px
+   :scale: 100%
+   :align: center
+   :alt: Configure Annotations
+
+   Annotations Configuration
+
+
 Once you have created the category choose “Add annotation”, write the
 annotation and save it. Every grader will have access to it.
 
+.. figure:: Doc_Admin_Annotations2.png
+   :width: 1058px
+   :height: 419px
+   :scale: 100%
+   :align: center
+   :alt: Configure Annotations
+
+   Annotations Configuration
 
 Affect students to an assignment
+================================================================================
 
 This step is necessary to make MarkUs work well : affect students to an
 assignment.  Firstly, you need to check that students are correctly registered
@@ -149,7 +193,14 @@ with “Download” in order to use it in another implementation (with
 have already been saved in MarkUs because the application will maybe delete the
 list already saved to keep the one which is uploaded.
 
+.. figure:: Doc_Admin_ManageStudents.png
+   :width: 1593px
+   :height: 441px
+   :scale: 100%
+   :align: center
+   :alt: Manage Students
 
+   Annotations Configuration
 
 To affect students to an assignment you need to go back in the section
 “Assginements” and subsection “Groups”. It's then possible to forbid groups or
@@ -157,9 +208,17 @@ to choose the list of groups able to take part in the assignment. As the
 students are supposed to affect themselves to their assignment, it's possible
 not to modify this step.
 
+.. figure:: Doc_Admin_ManageGroups.png
+   :width: 1589px
+   :height: 473px
+   :scale: 100%
+   :align: center
+   :alt: Manage Groups
 
+   Manage Groups
 
 Define the graders list
+================================================================================
 
 You eventually need to define the list of graders.
 
@@ -167,11 +226,19 @@ Firstly, it's useful to check if all the graders have been registered in
 MarkUs. Choose the section “Users” and subsection “Graders”. We thus check that
 the list is good. You can add graders who are not present in this list clicking
 “Add new”. It's possible to save the graders list with “Download” in order to
-use it in another implementation (with        “Upload”).You should avoid to
+use it in another implementation (with “Upload”).You should avoid to
 upload a list of graders if some annotations have already been saved in MarkUs
 because the application will maybe delete the list already saved to keep the
 one which is uploaded.
 
+.. figure:: Doc_Admin_GradersList.png
+   :width: 1598px
+   :height: 386px
+   :scale: 100%
+   :align: center
+   :alt: Graders' list
+
+   Manage Graders
 
 It's possible to use several different graders in a same assignment : In the
 section “Graders” of the assignment concerned, you can see in the left column
@@ -182,11 +249,30 @@ of students on the right column and finally click the green arrow. We thus
 notice that the right column has changed with a link between the grader and the
 group of students selected.
 
+.. figure:: Doc_Admin_Graders1.png
+   :width: 1597px
+   :height: 444px
+   :scale: 100%
+   :align: center
+   :alt: Assigning graders to groups
+
+   Assigning graders to groups
+
+.. figure:: Doc_Admin_Graders2.png
+   :width: 1012px
+   :height: 309px
+   :scale: 100%
+   :align: center
+   :alt: Assigning graders to groups
+
+   Assigning graders to groups
+ 
 To delete the link between the students and the grader you only have to click
 the red arrow : Once you completed this step the students can submit their
 files on MarkUs!
 
 Automatic recovery
+================================================================================
 
 Once the deadline reached , the administrator can force the recovery of all the
 files submitted by the students. This option allows to obtain automatically the
@@ -196,31 +282,42 @@ correct a work, he only has to follow what is described in the documentation
 for the grader. The grader must not launch himself the recovery of the files of
 students because he would lost the annotations saved.
 
+.. figure:: Doc_Admin_Collect.png
+   :width: 941px
+   :height: 45px
+   :scale: 100%
+   :align: center
+   :alt: Collect Button
 
+   Collect All Submissions
 
 Recover the work of a group to test on your computer
+================================================================================
 
 MakUs doesn't allow to test the files with the interface web yet but it will be
 possible soon. The administrator can however recover the work of a group of
 students to test in your computer. You have two solutions :
 
-The first one consists in downloading the files you want from the annotation
-interface of the code. You only need to click “Download”. It's possible to
-recover the annotation already saved by checking “Add Annotations”. In this
-case, annotations will appear as comments in the code downloaded with MarkUs
-The second solution uses Subversion. Only the administrator has this
-possibility. You have to go to the section “Submissions” and then export the
-files with SVN. It allows to download a file with the commands required to
-write as a command line in order to recover the files of every group of
-students.
+* The first one consists in downloading the files you want from the annotation
+  interface of the code. You only need to click “Download”. It's possible to
+  recover the annotation already saved by checking “Add Annotations”. In this
+  case, annotations will appear as comments in the code downloaded with MarkUs
+* The second solution uses Subversion. Only the administrator has this
+  possibility. You have to go to the section “Submissions” and then export the
+  files with SVN. It allows to download a file with the commands required to
+  write as a command line in order to recover the files of every group of
+  students.
 
 Publish the evaluation
+================================================================================
 
 After the works have been evaluated, there is still something to do : publish
 the comments made by the grader. There are two ways to do that :
 
-The first way is to “unlock” in the same time the annotations of several groups
-of students. In the section “Submissions”, check the different submissions of
-which you want to publish the grades and then select “Release Marks” The second
-way is when you are both administrator and grader in the same time : you can
-(in the section Annotation) to choose “complete” and directly click “release”.
+* The first way is to “unlock” in the same time the annotations of several
+  groups of students. In the section “Submissions”, check the different
+  submissions of
+  which you want to publish the grades and then select “Release Marks”
+* The second
+  way is when you are both administrator and grader in the same time : you can
+  (in the section Annotation) to choose “complete” and directly click “release”.
