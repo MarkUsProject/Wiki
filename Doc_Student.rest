@@ -1,5 +1,5 @@
 ================================================================================
-Documentation for the Grader
+Documentation for the Student
 ================================================================================
 
 It allows any user which is pre-registered to connect, either as a student, as
