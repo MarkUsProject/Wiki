@@ -23,6 +23,16 @@ teacher as examiner of the various subgroups of this project. If the teacher
 does not see any subgroup, then he will have to contact the person in charge of
 the course to ask for this affectation. 
 
+
+.. figure:: Doc_Grader_WelcomePage.png
+   :width: 1599px
+   :height: 502px
+   :scale: 100%
+   :align: center
+   :alt: Welcome Page
+
+   Welcome Page for the Grader
+
 Start an evaluation session 
 --------------------------------------------------------------------------------
 From the welcome screen, the examiner chooses the project he has to correct.
@@ -64,6 +74,16 @@ assessor:
   returned by the selected subgroup, click on "Get back and estimate this
   revision ".
 
+.. figure:: Doc_Grader_Dashboard.png
+   :width: 1597px
+   :height: 502px
+   :scale: 100%
+   :align: center
+   :alt: Dashboard
+
+   Dashboard for the Grader
+
+
 Remark: on the screen which recapitulates the various versions deposited for a
 project, the field " Name of the group " is followed by one or several logins,
 corresponding to the students who validated their membership common to a
@@ -72,11 +92,29 @@ subgroup did not connect to MarkUs to make this administrative validation. In
 that case, the submission is considered as valid, but the login does not appear
 to this level of the summary.
 
+.. figure:: Doc_Grader_ViewRevision.png
+   :width: 1599px
+   :height: 549px
+   :scale: 100%
+   :align: center
+   :alt: View Revisions
+
+   View Revisions
+
 *Please note*: if the examiner had previously begun the evaluation of the
 subgroup and would like to resume its work, it is essential not to re-launch a
 session of "recovery" of the work of the pupils! Indeed, the examiner would
 lose then the previous note deposited on the work of this subgroup. We will
 explain how to resume an evaluation and to complete it.
+
+.. figure:: Doc_Grader_PopUp.png
+   :width: 1599px
+   :height: 507px
+   :scale: 100%
+   :align: center
+   :alt: Pop Up
+
+   Pop Up before collecting documents
 
 Once the session of evaluation is started, the examiner consults the various
 files submitted by the subgroup of students (with the line "Sent File"). 
@@ -86,8 +124,26 @@ on "New Note" to add a specific note which is not a part of the comments
 prerecorded by the administrator, or to navigate in the prerecorded categories
 of note and to click the considered note.
 
+.. figure:: Doc_Grader_Annotations.png
+   :width: 1585px
+   :height: 653px
+   :scale: 100%
+   :align: center
+   :alt: Annotation Categories
+
+   Annotation Categories seen by the Grader
+
 Then, by clicking on “Note List”, it is possible to overview directly all the
 written notes of the homework, and put a global appreciation. 
+
+.. figure:: Doc_Grader_AnnotationList.png
+   :width: 1579px
+   :height: 613px
+   :scale: 100%
+   :align: center
+   :alt: Annotation List
+
+   Annotation List during the grading
 
 Resume an evaluation session
 --------------------------------------------------------------------------------
@@ -101,6 +157,15 @@ the name of the subgroup (column "Group Name") and not on the identifier
 (column "Directory") of the subgroup in question. The examiner finds the notes
 previously organized and can pursue its work.
 
+.. figure:: Doc_Grader_Resume.png
+   :width: 1599px
+   :height: 502px
+   :scale: 100%
+   :align: center
+   :alt: Resume an evaluation session
+
+   Resume an evaluation session
+
 Finish an evaluation session
 --------------------------------------------------------------------------------
 When the examiner ended to evaluate the work of a subgroup, he has to modify
@@ -108,6 +173,15 @@ the "State of the evaluation". In this screen " State of the evaluation ",
 choose "complete".
 
 Only the administrator can, finally, reveal the notes of the students.
+
+.. figure:: Doc_Grader_End.png
+   :width: 1561px
+   :height: 107px
+   :scale: 100%
+   :align: center
+   :alt: Marking state
+
+   Marking state
 
 Annotate PDF documents
 --------------------------------------------------------------------------------
@@ -124,6 +198,15 @@ defined by the examiner.
 But the individual notes are obviously possible. It is necessary to select the
 zone concerned and, then, to write a note down. A powerful asset for the
 generalization of MarkUs in the other teachings !
+
+.. figure:: Doc_Grader_PDF.png
+   :width: 1585px
+   :height: 555px
+   :scale: 100%
+   :align: center
+   :alt: PDF annotations
+
+   PDF annotations
 
 Get back the work of a subgroup to test it on his machine
 --------------------------------------------------------------------------------
