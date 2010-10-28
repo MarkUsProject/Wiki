@@ -21,10 +21,10 @@ Coding
 - Commit your code (see git's documentation) (and push it if you want to your personal MarkUs fork)
 - Generate diff for code review: `git diff master <branch-name> > name.patch``
 
-ReviewBoard
+Review Board
 ================================================================================
 
-- Post diff on ReviewBoard. Note that main MarkUs may have advanced since you last updated your review. The best way to deal with this case is described in [["How to rebase my feature branch"|GitRebaseFeatureBranch]]
+- Post diff on Review Board. Note that main MarkUs may have advanced since you last updated your review. The best way to deal with this case is described in [["How to rebase my feature branch"|GitRebaseFeatureBranch]]
 - Once you have one or more ship it
 
   - Push code to your github repository
