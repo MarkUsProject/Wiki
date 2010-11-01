@@ -26,6 +26,6 @@ Prepare the tar archive from the Git tree
 Prepare a patch from Git
 ==================
 
-```
+```sh
   $ git diff refs/tags/<markus-version> refs/tags/<markus-version> > markus-<markus-version>.patch
 ```
