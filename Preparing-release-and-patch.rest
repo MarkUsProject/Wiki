@@ -1,15 +1,15 @@
 Steps may be something along those lines
 ===============================
 
-1 Make sure app/MARKUS_VERSION is updated
-2 Make sure Changelog gets updated.
-2 Make sure a tag gets created for the according release
-3 Make sure a branch for the minor version number (0.7.x for 0.7.0) gets created and pushed
-4 Prepare the archive (see below)
-5 Prepare a patch for micro release updates.
-6 Upload patch and archive
-7 Update latest-stable symlink in /download directory on markusproject.org
-8 Update index.html on markusproject.org and release note (blog.markusproject.org)
+1. Make sure app/MARKUS_VERSION is updated
+2. Make sure Changelog gets updated.
+2. Make sure a tag gets created for the according release
+3. Make sure a branch for the minor version number (0.7.x for 0.7.0) gets created and pushed
+4. Prepare the archive (see below)
+5. Prepare a patch for micro release updates.
+6. Upload patch and archive
+7. Update latest-stable symlink in /download directory on markusproject.org
+8. Update index.html on markusproject.org and release note (blog.markusproject.org)
 
 
 Prepare the tar archive from the Git tree
