@@ -21,6 +21,7 @@ Prepare the tar archive from the Git tree
   $ git checkout <branchname>
   $ git log
   $ git archive --format=tar -o markus-<version-number> --prefix=markus-<version-number>/ refs/tags/<markus-version-number>
+  $ gzip markus-<version-number>.tar
 ```
 
 Prepare a patch from Git
