@@ -139,20 +139,17 @@ which works just fine. So, the list of gems required for MarkUs is as follows:
 * rubyzip
 * ya2yaml
 
+We are now using bundler to manage all gems. Install only bundler as a gem and 
+bundler will install all other Gems.
+
 To install the gems execute the following as root::
 
-    #> gem install rake mongrel ruby-debug ruby-pg postgres fastercsv \
-    thoughtbot-shoulda factory_data_preloader machinist faker will_paginate \
-    rubyzip
-    #> gem install rails -v=2.3.8
+    #> gem install bundler
+    #> bundle install
 
 If you get a message saying "Missing these required gems", then it is likely
 that some new gems have been integrated into Markus development and also need
-to be installed using ``gem install`` as described above (or use ``rake
-gems:install``; Note: rake gems:install might not work correctly, because of a
-rake chicken/egg problem. It seems rake requires the environment task, but
-this doesn't work, because there are missing required gems. See ticket #635).
-Edit this page to include them!
+to be installed using ``bundle install`` as described above.
 
 Now, check that everything worked fine. Do the following on a terminal (as an
 ordinary user, *not* root)::
@@ -238,7 +235,7 @@ application-root of the MarkUs source code; you can check out MarkUs' source
 code contained in folder "trunk" into folder "markus_trunk" by issuing: ``svn
 co` ${RepositoryUrl}`/trunk/ markus_trunk``)::
 
-    #> rake gems:install     # gets gems that you do not have yet, like thoughtbot-shoulda
+    #> bundle install        # gets gems that you do not have yet, like thoughtbot-shoulda
     #> rake db:create        # creates development database
     #> rake db:schema:load   # loads required relations into database
     #> rake db:populate      # populates database with some data
