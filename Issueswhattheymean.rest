@@ -1,4 +1,4 @@
-MarkUs Issue Labels: What They Mean
+MarkUs' Issue Labels: What They Mean
 =============================
 
 Unfortunately, the ordering of issues (which should represent priorities on Github) doesn't quite work. That's why a new set of labels has been added to suit our needs. Their meaning is as follows:
