@@ -27,6 +27,7 @@ Project Resources
 * **Sandbox** http://www.markusproject.org/admin-demo/
 * **User Guide:** [[MarkUs Documentation | UserGuide]]
 * **Git HowTo** [[Git HowTo | GitHowTo]]
+* **Issue Labels:** [[Their meaning is described here | LabelsWhatTheyMean]]
 
 .. todo Modify User Guide link
 
