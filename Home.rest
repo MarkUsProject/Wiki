@@ -26,6 +26,9 @@ Project Resources
   [[Logs of the channel|http://www.markusproject.org/irc/]] are also available.
 * **Sandbox** http://www.markusproject.org/admin-demo/
 * **User Guide:** [[MarkUs Documentation | UserGuide]]
+  * **Administrator Guide:** [[Administrator Guide | Doc_Admin]]
+  * **Grader Guide:** [[Grader Guide | Doc_Grader]]
+  * **Student Guide:** [[Student Guide | Doc_Student]]
 * **Git HowTo** [[Git HowTo | GitHowTo]]
 * **Issue Labels:** [[Their meaning is described here | LabelsWhatTheyMean]]
 
@@ -155,10 +158,10 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
   * [[Use h (alias for html_escape) and sanitize in
     views | RailsViewsConventions]]
   * **Please document your code according to the RDoc specification** (see
-   [[how to use RDOC | http://rdoc.sourceforge.net/doc/]])
+    [[how to use RDOC | http://rdoc.sourceforge.net/doc/]])
   * **Ruby compatibility:** Please check ticket: #206. Also check out the 
-   [[difference between COUNT, LENGTH, and
-   SIZE | http://blog.hasmanythrough.com/2008/2/27/count-length-size]
+    [[difference between COUNT, LENGTH, and
+    SIZE | http://blog.hasmanythrough.com/2008/2/27/count-length-size]
   * [[Our Ruby/Rails testing guidelinesi | TestingGuidelines]]
   * [[Security testing guidelines | SecurityTesting]]
   * [[Internationalisation | Internationalization]]
@@ -249,10 +252,10 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 MarkUs Deployment Documents (Installation Instructions for MarkUs using RAILS_ENV=production)
 ===============================================================================================
 
-  * [[Setup Instructions for MarkUs Stable|InstallProdStable]]
-  * [[Hosting several MarkUs applications on one machine (for Production)|MultipleHosting]]
-  * [[How to use LDAP with MarkUs|LDAP]]
-  * [[How to use Phusion Passenger instead of Mongrel|Passenger]]
+* [[Setup Instructions for MarkUs Stable|InstallProdStable]]
+* [[Hosting several MarkUs applications on one machine (for Production)|MultipleHosting]]
+* [[How to use LDAP with MarkUs|LDAP]]
+* [[How to use Phusion Passenger instead of Mongrel|Passenger]]
 
 
 For a complete list of local wiki pages, see [[TitleIndex|http://github.com/MarkUsProject/Markus/wiki/_pages]].
