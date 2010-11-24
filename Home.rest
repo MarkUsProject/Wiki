@@ -26,9 +26,11 @@ Project Resources
   [[Logs of the channel|http://www.markusproject.org/irc/]] are also available.
 * **Sandbox** http://www.markusproject.org/admin-demo/
 * **User Guide:** [[MarkUs Documentation | UserGuide]]
+
   * **Administrator Guide:** [[Administrator Guide | Doc_Admin]]
   * **Grader Guide:** [[Grader Guide | Doc_Grader]]
   * **Student Guide:** [[Student Guide | Doc_Student]]
+
 * **Git HowTo** [[Git HowTo | GitHowTo]]
 * **Issue Labels:** [[Their meaning is described here | LabelsWhatTheyMean]]
 
