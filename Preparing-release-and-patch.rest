@@ -28,5 +28,10 @@ Prepare a patch from Git
 -----------------------------------
 
 ```sh
-  $ git diff --no-prefix refs/tags/<markus-version> refs/tags/<markus-version> > markus-<markus-version>.patch
+  $ git diff refs/tags/<markus-version> refs/tags/<markus-version> > markus-<markus-version>.patch
+```
+
+This will generate a Git style patch. Apply it by:
+```sh
+  $ cd path/to/markus/root && patch -p1 < path/to/patch
 ```
