@@ -11,6 +11,7 @@ students' piece of code.
 How does it work ?
 ================================================================================
 Check these blog articles :
+
 * http://blog.markusproject.org/?p=1561
 * http://blog.markusproject.org/?p=1634
 * http://blog.markusproject.org/?p=2198
