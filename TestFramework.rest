@@ -136,6 +136,74 @@ are resetted to the number given by the Administrator.
 
 Writting a build.xml
 ================================================================================
+Ant is using a file called build.xml to construct the project. It is this file
+that will describe all tasks that Ant will have to do.
+
+We eventually add a file called build.properties where we put some variable
+definitions. 
+
+MarkUs will create a folder where it will put students' files :
+
+:: 
+  
+  automated_tests/group_0001/A1/
+                             |
+                             |-build/
+                             |
+                             |-lib/
+                             |
+                             |-parse/
+                             |
+                             |-reports/
+                             |
+                             |-src/
+                             |
+                             |-test/
+                             |
+                             |-api.txt
+                             |
+                             |-api_helper.py
+                             |
+                             |-api_helper.rb
+                             |
+                             |-build.properties
+                             |
+                             |-build.xml
+
+
+MarkUs will put student's files in src. MarkUs will put test files given by the
+Administrator in test. It will also pul librairies given by the Administrator
+in lib.
+
+api_helper.py and api_helper.rb are two identical scripts used by Ant to return
+results to MarkUs.  api.txt contains the user api key. It allows api_helper to
+communicate with MarkUs.
+
+Java
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+build.xml
+--------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------
+build.properties
+--------------------------------------------------------------------------------
+
+:: 
+
+  #build.properties
+  #Here you can add some properties for your project
+
+  src.dir = src
+  build.dir = build
+  test.dir = test
+
+  reports.dir = reports
+
+  api_key.file = api.txt
 
 Usage of the API Key
 ================================================================================
