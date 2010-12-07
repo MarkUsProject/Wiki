@@ -1,0 +1,140 @@
+================================================================================
+Test Framework
+================================================================================
+
+Definition
+================================================================================
+The thing called "Test Framework" is the system given with MarkUs to test
+students' piece of code.
+
+
+How does it work ?
+================================================================================
+Check these blog articles :
+* http://blog.markusproject.org/?p=1561
+* http://blog.markusproject.org/?p=1634
+* http://blog.markusproject.org/?p=2198
+
+Can I use it ?
+================================================================================
+The Test Framework is still in alpha. Use it at your own risks !
+
+How can I use it ?
+================================================================================
+The Test Framework is not yet in stable release of MarkUs. You will have to
+use the master branch of the code on GitHub to be able to test it.
+
+As a SysAdmin of MarkUs instance
+--------------------------------------------------------------------------------
+You will need **Ant**. Install *ant* and *ant-contrib* packages on Debian/Ubuntu
+distributions. 
+
+In particular, if you have errors about a *for task not found*, it is because
+Ant has difficulties with ant-contrib.
+
+As an Administrator
+--------------------------------------------------------------------------------
+The administrator can define tests to be private or public. Public tests
+results will be available to Students. Private tests results won't be. Both
+private and public tests results will be available for Graders and
+Administrator.
+
+
+.. figure:: Test_Framework-01.png
+   :width: 1280px
+   :height: 1024px
+   :scale: 100%
+   :align: center
+   :alt: Default Test Framework configuration page
+
+   Default Test Framework configuration page
+
+.. figure:: Test_Framework-02.png
+   :width: 1280px
+   :height: 1024px
+   :scale: 100%
+   :align: center
+   :alt: Test Framework configuration page once completed
+
+   Test Framework configuration page once completed
+
+The Administrator is deciding how many tokens Students will have per day.
+Tokens are given to the Students if the Student is alone and to the group if
+the Student work in group. All Students of the group will be able to use the
+tokens.
+
+As a Grader
+--------------------------------------------------------------------------------
+The Grader can run tests as many times as he wants. He will have the result on
+the grading page. If tests doesn't run properly, he will have access to the
+logs. But with no possibility to correct **Ant** files. 
+
+.. figure:: Test_Framework-07.png
+   :width: 1280px
+   :height: 703px
+   :scale: 100%
+   :align: center
+   :alt: Grader View
+
+   The Grader has the same tool to run the tests.
+
+.. figure:: Test_Framework-08.png
+   :width: 1280px
+   :height: 703px
+   :scale: 100%
+   :align: center
+   :alt: Grader View
+
+   The Grader can see the result of the tests in a modal window
+
+Graders will have to report to the Admin if tests doesn't run.
+
+As a Student
+--------------------------------------------------------------------------------
+The Student has tokens for running tests. Tokens are resetted every day by
+default. If a group has remaining tokens, they won't be save. Each day, tokens
+are resetted to the number given by the Administrator. 
+
+.. figure:: Test_Framework-03.png
+   :width: 1280px
+   :height: 586px
+   :scale: 100%
+   :align: center
+   :alt: Test frame is not available if the group is not valid
+
+   Test frame is not available if the group is not valid
+
+.. figure:: Test_Framework-04.png
+   :width: 1276px
+   :height: 735px
+   :scale: 100%
+   :align: center
+   :alt: Test frame is available once the group is valid
+
+   Test frame is available once the group is valid
+
+.. figure:: Test_Framework-05.png
+   :width: 1280px
+   :height: 703px
+   :scale: 100%
+   :align: center
+   :alt: Test Frame
+
+   The student can see the revision used for the tests.
+   The student can click to see the results of the public tests.
+
+.. figure:: Test_Framework-06.png
+   :width: 1280px
+   :height: 703px
+   :scale: 100%
+   :align: center
+   :alt: Test Frame
+
+   The student have access to all test history.
+
+
+Writting a build.xml
+================================================================================
+
+Usage of the API Key
+================================================================================
