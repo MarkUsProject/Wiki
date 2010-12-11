@@ -4,7 +4,7 @@ Test Framework
 
 Definition
 ================================================================================
-The Test Framework is a system in MarkUs allowing the automatic testing students' code.
+The Test Framework is a system in MarkUs allowing the automatic testing of students' code.
 
 
 How does it work ?
