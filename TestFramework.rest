@@ -4,8 +4,7 @@ Test Framework
 
 Definition
 ================================================================================
-The thing called "Test Framework" is the system given with MarkUs to test
-students' piece of code.
+The Test Framework is a system in MarkUs allowing the automatic testing students' code.
 
 
 How does it work ?
@@ -18,11 +17,11 @@ Check these blog articles :
 
 Can I use it ?
 ================================================================================
-The Test Framework is still in alpha. Use it at your own risks !
+The Test Framework is still in alpha. Use it at your own risks!
 
 How can I use it ?
 ================================================================================
-The Test Framework is not yet in stable release of MarkUs. You will have to
+The Test Framework is not yet in the stable release of MarkUs. You will have to
 use the master branch of the code on GitHub to be able to test it.
 
 As a SysAdmin of MarkUs instance
@@ -31,7 +30,7 @@ You will need **Ant**. Install *ant* and *ant-contrib* packages on Debian/Ubuntu
 distributions. 
 
 In particular, if you have errors about a *for task not found*, it is because
-Ant has difficulties with ant-contrib.
+Ant has difficulties with ant-contrib.  This could be a result of not using a high enough version.
 
 As an Administrator
 --------------------------------------------------------------------------------
@@ -59,16 +58,19 @@ Administrator.
 
    Test Framework configuration page once completed
 
-The Administrator is deciding how many tokens Students will have per day.
-Tokens are given to the Students if the Student is alone and to the group if
-the Student work in group. All Students of the group will be able to use the
-tokens.
+Student access to the test framework is controlled using test tokens.  
+A student or group can run tests as many times as they have tokens.
+On the test framework configuration page, the administrator can decide 
+how many tokens to allocate to each student/group.  Currently tokens
+refresh every day, but very soon it will be possible for an administrator to
+choose how often to refresh tokens (daily, hourly or never).
 
 As a Grader
 --------------------------------------------------------------------------------
-The Grader can run tests as many times as he wants. He will have the result on
-the grading page. If tests doesn't run properly, he will have access to the
-logs. But with no possibility to correct **Ant** files. 
+A Grader can run tests as many times as they want. Results will
+show up on the grading page.  If tests don't run properly, 
+graders have access to the test logs to determine problems,
+but do not have the ability to correct **Ant** files. 
 
 .. figure:: Test_Framework-07.png
    :width: 1280px
@@ -88,13 +90,14 @@ logs. But with no possibility to correct **Ant** files.
 
    The Grader can see the result of the tests in a modal window
 
-Graders will have to report to the Admin if tests doesn't run.
+Graders will have to report to the Admin if tests do not run.
 
 As a Student
 --------------------------------------------------------------------------------
-The Student has tokens for running tests. Tokens are resetted every day by
-default. If a group has remaining tokens, they won't be save. Each day, tokens
-are resetted to the number given by the Administrator. 
+As mentioned above, the Student is assigned tokens for running tests. 
+Tokens are reset every day by default, though this will easily be
+changeable. If a group or student has remaining tokens, they 
+do not carry over to the new day. 
 
 .. figure:: Test_Framework-03.png
    :width: 1280px
@@ -131,15 +134,15 @@ are resetted to the number given by the Administrator.
    :align: center
    :alt: Test Frame
 
-   The student have access to all test history.
+   The student has access to the history of all test runs.
 
 
 Writting a build.xml
 ================================================================================
-Ant is using a file called build.xml to construct the project. It is this file
-that will describe all tasks that Ant will have to do.
+Ant uses a file called build.xml to construct the project. It is this file
+that will describe all tasks that Ant will run when running tests.
 
-We eventually add a file called build.properties where we put some variable
+There is also a file called build.properties where we put some variable
 definitions. 
 
 MarkUs will create a folder where it will put students' files :
@@ -176,7 +179,7 @@ Administrator in test. It will also pul librairies given by the Administrator
 in lib.
 
 api_helper.py and api_helper.rb are two identical scripts used by Ant to return
-results to MarkUs.  api.txt contains the user api key. It allows api_helper to
+test results to MarkUs.  api.txt contains the user api key. It allows api_helper to
 communicate with MarkUs.
 
 Java
