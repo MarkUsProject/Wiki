@@ -19,7 +19,7 @@ Coding
 - Checkout the branch ``git checkout <branch-name>``.
 - Code.
 - Commit your code (see git's documentation) (and push it if you want to your personal MarkUs fork)
-- Generate diff for code review: `git diff master <branch-name> > name.patch``
+- Generate diff for code review: `git diff --full-index master <branch-name> > name.patch``
 
 Review Board
 ================================================================================
