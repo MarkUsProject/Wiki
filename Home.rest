@@ -141,7 +141,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 * **Getting Started with Ruby, Ruby on Rails and MarkUs**
 
   * [[Short Rails Debugging HOWTO | RailsDebugging]]
-  * [[How to program in Ruby, Rubybook |http://www.rubycentral.com/pickaxe]]
+  * [[How to program in Ruby, Rubybook |http://ruby-doc.org/docs/ProgrammingRuby/]]
   * [[Rails API | http://api.rubyonrails.org]]
   * [[Rails Guides | http://guides.rubyonrails.org]]
   * [[Using metric_fu | MetricFu]]
