@@ -95,8 +95,15 @@ Mailing list address: markus-dev@cs.toronto.edu
 
 Mailing [[list archive at marc.info|http://marc.info/?l=markus-dev&r=1&w=2]]
 
-Project Members
+Project Contributors
 --------------------------------------------------------------------------------
+Geoffrey Flores, Mike Conley, Andrew Louis, Justin Foong, Veronica Wong, Amanda Manarin, Severin Gehwolf, Catherine Fawcett
+Nelle Varoquaux, Neha Kumar, Gabriel Roy-Lortie, Simon Lavigne-Giroux, Mélanie Gaudet, Fernando Garces, Tara Clark, Farah Juma,
+Benjamin Vialle, Christian Jacques, Victoria Mui, Joseph Maté, Robert Burke, Bryan Shen, Brian Xu, Anton Braverman, Diane Tam, Evan Browning, Dina Sabie
+
+**Industry Advisors:** Mike Gunderloy, Adam Goucher
+
+**Supervisor:** Karen Reid
 
 .. TODO Add manually the projects members
 
@@ -111,10 +118,6 @@ Term Work
 
   * [[Who is doing what? (punchlines/minutes) | http://blog.markusproject.org/?p=1713]]
 
-* **Summer 2010**
-
-  * Goals for Summer 2010
-
 * **Winter 2010**
 
   * [[Who is doing what? (punchlines/minutes) | http://blog.markusproject.org/?p=1049]]
@@ -124,16 +127,6 @@ Term Work
   * [[Who is in charge of what, administratively? |
     http://blog.markusproject.org/?p=504]]
   * [[September 18 - Pre-meeting Status | http://blog.markusproject.org/?p=296]]
-  * September 11 - Pre-meeting Status
-
-* **Summer 2009**
-
-  * Have a look at our [[Blog | http://blog.markusproject.org]]!
-
-* **Winter 2009** (Meeting Notes)
-
-  * Jan 09: Introductions
-  * Jan 16: Useful rails plugins
 
 Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 --------------------------------------------------------------------------------
