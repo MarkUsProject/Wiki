@@ -27,15 +27,15 @@ Project Resources
 * **Sandbox** http://www.markusproject.org/admin-demo/
 * **User Guide:** [[MarkUs Documentation | UserGuide]]
 
-  * **Administrator Guide:** [[Administrator Guide | Doc_Admin]]
+  * **Instructor Guide:** [[Instructor Guide | Doc_Admin]]
   * **Grader Guide:** [[Grader Guide | Doc_Grader]]
   * **Student Guide:** [[Student Guide | Doc_Student]]
 
 * **Git Resources:**
 
-  * **[[MarkUs and Git HowTo| GitHowTo]]
-  * **[[A Git Tutorial| http://library.edgecase.com/git_immersion/index.html]]
-  * **[[Progit Book| http://progit.org/book/]]
+  * **MarkUs and Git** [[HowTo| GitHowTo]]
+  * [[A Git Tutorial| http://library.edgecase.com/git_immersion/index.html]]
+  * [[Progit Book| http://progit.org/book/]]
 
 * **Issue Labels:** [[Their meaning is described here | LabelsWhatTheyMean]]
 
