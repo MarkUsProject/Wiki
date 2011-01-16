@@ -31,7 +31,12 @@ Project Resources
   * **Grader Guide:** [[Grader Guide | Doc_Grader]]
   * **Student Guide:** [[Student Guide | Doc_Student]]
 
-* **Git HowTo** [[Git HowTo | GitHowTo]]
+* **Git Resources:**
+
+  * **[[MarkUs and Git HowTo| GitHowTo]]
+  * **[[A Git Tutorial| http://library.edgecase.com/git_immersion/index.html]]
+  * **[[Progit Book| http://progit.org/book/]]
+
 * **Issue Labels:** [[Their meaning is described here | LabelsWhatTheyMean]]
 
 .. todo Modify User Guide link
