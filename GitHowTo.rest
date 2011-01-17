@@ -58,7 +58,7 @@ Coding
 - Checkout the branch ``git checkout <branch-name>``.
 - Code.
 - Commit your code (see git's documentation) and push the feature branch to your personal MarkUs fork
-- Generate diff for code review: `git diff --full-index master <branch-name> > name.patch` **IMPORTANT:** The `--full-index` option is essential!
+- Generate diff for code review: ``git diff --full-index master <branch-name> > name.patch`` **IMPORTANT:** The `--full-index` option is essential!
 
 Review Board
 ================================================================================
