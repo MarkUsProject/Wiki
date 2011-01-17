@@ -10,6 +10,20 @@ Overview
 
 Note that the following few paragraphs (prior section "Github Things") might be a bit confusing. Hang in there, there are always people around you can ask.
 
+MarkUs Development Workflow
+-----------------------------------------------
+
+The steps involved until your code ends up in the main MarkUs Git repository are the following:
+
+1. Create feature branch based on up-to-date local master branch
+2. Develop and commit (small commits are beatiful) on your feature branch
+3. Once an early version of your code is ready upload the diff onto Review Board and push your feature branch to your Github fork
+4. Get code reviewed, fix (i.e. repeat step 2-4 as needed)
+5. Once you have a ship-it, create a pull-request on Github
+6. Wait until a core MarkUs developer gets your code merged (you should see commit emails on markus-dev once that has happened)
+
+More on those steps below.
+
 The Three MarkUs Git Repositories
 ----------------------------------------------------
 
