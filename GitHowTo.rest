@@ -8,7 +8,7 @@ Overview
 ================================================================================
 [[markus-git-workflow.png]]
 
-Note that the following few paragraphs (prior section "Github Things") might be a bit confusing. Hang in there, there are always people around you can ask.
+Note that the following few paragraphs might be a bit confusing. Hang in there, there are always people around you can ask.
 
 MarkUs Development Workflow
 -----------------------------------------------
