@@ -10,8 +10,8 @@ Setting up Ruby, Ruby on Rails, Subversion and the Subversion Ruby bindings
 Issue the following command on a terminal. You need to be root or use "sudo"
 (the Ubuntu way) to do that::
 
-    #> aptitude install ruby-full build-essential rails rubygems rake
-    libsvn-ruby subversion
+    #> aptitude install ruby-full build-essential rubygems rake libsvn-ruby
+    subversion
 
 Unfortunately, as the time of this writing, the rails package features rails
 2.1.x. In order to get a rails version \>= 2.2 (which features I18n support)
