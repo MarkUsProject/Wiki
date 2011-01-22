@@ -13,16 +13,21 @@ Issue the following command on a terminal. You need to be root or use "sudo"
     #> aptitude install ruby-full build-essential rubygems rake libsvn-ruby
     subversion
 
-Unfortunately, as the time of this writing, the rails package features rails
-2.1.x. In order to get a rails version \>= 2.2 (which features I18n support)
-follow these [[instructions | RailsDebianUpdate]]. As of September 14, 2009
-the previous step is essential! Once you have gem and rails updated (including
-required dependencies), and Radrails) installed reset the
-correct rails path in the Eclipse Preferences (usually
-``/var/lib/gems/\<your-ruby-version\>/bin/rails``). Also, set the corrected rake
-and mongrel path there. This should prepare you for rails >=2.2 development.
-
 .. TODO update previous radrails link
+
+** Note : You can either use PostgreSQL or MySQL or SQLite3 as database **
+SQLite3 is easier to install, but should only used in development, not in
+production. You may also experience database conflicts.
+
+Setting up the Database (SQLite3)
+--------------------------------------------------------------------------------
+::
+    #> aptitude install sqlite3 libsqlite3-dev
+
+Setting up the Database (MySQL)
+--------------------------------------------------------------------------------
+
+Need to be done :-)
 
 Setting up the Database (PostgreSQL)
 --------------------------------------------------------------------------------
@@ -142,9 +147,10 @@ which works just fine. So, the list of gems required for MarkUs is as follows:
 We are now using bundler to manage all gems. Install only bundler as a gem and 
 bundler will install all other Gems.
 
-To install the gems execute the following as root::
+To install the gems execute the following as root (please adapt the following
+command)::
 
-    #> gem install bundler
+    #> gem install bundler --without (postgresql) (sqlite) (mysql)
     #> bundle install
 
 If you get a message saying "Missing these required gems", then it is likely
@@ -219,8 +225,10 @@ Look at config/environments/development.rb
 
 Setup the database.yml file:
 
-* cp config/database.yml.sample config/database.yml
-* change the usernames and password to olm_db_admin
+* cp config/database.yml.sample config/database.yml (replace sample by the
+  database you use (PostgreSQL, SQLite3 or MySQl)
+
+* change the usernames and password to olm_db_admin 
 
 
 Test plain MarkUs installation
@@ -231,9 +239,7 @@ a working MarkUs installation (in terms of required software and required
 configuration). But first you would need to create the development database,
 load relations into it and populate the db with some data. You can do so by
 the following series of commands (as non-root user, assuming you are in the
-application-root of the MarkUs source code; you can check out MarkUs' source
-code contained in folder "trunk" into folder "markus_trunk" by issuing: ``svn
-co` ${RepositoryUrl}`/trunk/ markus_trunk``)::
+application-root of the MarkUs source code;)::
 
     #> bundle install        # gets gems that you do not have yet, like thoughtbot-shoulda
     #> rake db:create        # creates development database
