@@ -53,6 +53,17 @@ Github Things
 - Fork the MarkUsProject/MarkUs repository
 - Clone your fork (it should be namespaced like: <your-github-user>/MarkUs) onto your machine. This is the repository you should be working on. Make sure you use the read+write URL Github shows you. 
 
+Imperative Git Configuration
+================================================================================
+
+```
+  $ git config --global user.name "First name last name"
+  $ git config --global user.email "youremail@example.com"
+  $ git config --global core.autocrlf input
+```
+
+Please do them! You may omit the ``--global`` switch if you wish. Make sure to read up on the differences between global and non-global git configuration, though. Thanks.
+
 Coding
 ================================================================================
 - For each feature/bug, create a branch. To do this, make sure you are on branch ``master``. You can check which branch you are on by ``git status``. Then create the new branch by ``git branch <branch-name>``. This creates a branch, which is based on ``master``, since you've been on ``master`` at the time you've created the branch. Yay!
