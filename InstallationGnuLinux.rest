@@ -147,10 +147,9 @@ which works just fine. So, the list of gems required for MarkUs is as follows:
 We are now using bundler to manage all gems. Install only bundler as a gem and 
 bundler will install all other Gems.
 
-To install the gems execute the following as root (please adapt the following
-command)::
+To install the gems execute the following as root::
 
-    #> gem install bundler --without (postgresql) (sqlite) (mysql)
+    #> gem install bundler
     #> bundle install
 
 If you get a message saying "Missing these required gems", then it is likely
@@ -239,9 +238,11 @@ a working MarkUs installation (in terms of required software and required
 configuration). But first you would need to create the development database,
 load relations into it and populate the db with some data. You can do so by
 the following series of commands (as non-root user, assuming you are in the
-application-root of the MarkUs source code;)::
+application-root of the MarkUs source code;)(please adapt the following
+command)::
 
-    #> bundle install        # gets gems that you do not have yet, like thoughtbot-shoulda
+    # gets gems that you do not have yet, like thoughtbot-shoulda 
+    #> bundle install  --without (postgresql) (sqlite) (mysql)
     #> rake db:create        # creates development database
     #> rake db:schema:load   # loads required relations into database
     #> rake db:populate      # populates database with some data
