@@ -152,6 +152,11 @@ To install the gems execute the following as root::
     #> gem install bundler
     #> bundle install
 
+On Ubuntu and Debian systems, the system can't find bundler. You need to add
+bundler to your PATH or run it directly ::
+
+    #>/var/lib/gems/1.8/bin/bundle
+
 If you get a message saying "Missing these required gems", then it is likely
 that some new gems have been integrated into Markus development and also need
 to be installed using ``bundle install`` as described above.
