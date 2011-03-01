@@ -40,7 +40,7 @@ private and public tests results will be available for Graders and
 Administrator.
 
 
-.. figure:: Test_Framework-01.png
+.. figure:: images/Test_Framework-01.png
    :width: 1280px
    :height: 1024px
    :scale: 100%
@@ -49,7 +49,7 @@ Administrator.
 
    Default Test Framework configuration page
 
-.. figure:: Test_Framework-02.png
+.. figure:: images/Test_Framework-02.png
    :width: 1280px
    :height: 1024px
    :scale: 100%
@@ -72,7 +72,7 @@ show up on the grading page.  If tests don't run properly,
 graders have access to the test logs to determine problems,
 but do not have the ability to correct **Ant** files. 
 
-.. figure:: Test_Framework-07.png
+.. figure:: images/Test_Framework-07.png
    :width: 1280px
    :height: 703px
    :scale: 100%
@@ -81,7 +81,7 @@ but do not have the ability to correct **Ant** files.
 
    The Grader has the same tool to run the tests.
 
-.. figure:: Test_Framework-08.png
+.. figure:: images/Test_Framework-08.png
    :width: 1280px
    :height: 703px
    :scale: 100%
@@ -99,7 +99,7 @@ Tokens are reset every day by default, though this will easily be
 changeable. If a group or student has remaining tokens, they 
 do not carry over to the new day. 
 
-.. figure:: Test_Framework-03.png
+.. figure:: images/Test_Framework-03.png
    :width: 1280px
    :height: 586px
    :scale: 100%
@@ -108,7 +108,7 @@ do not carry over to the new day.
 
    Test frame is not available if the group is not valid
 
-.. figure:: Test_Framework-04.png
+.. figure:: images/Test_Framework-04.png
    :width: 1276px
    :height: 735px
    :scale: 100%
@@ -117,7 +117,7 @@ do not carry over to the new day.
 
    Test frame is available once the group is valid
 
-.. figure:: Test_Framework-05.png
+.. figure:: images/Test_Framework-05.png
    :width: 1280px
    :height: 703px
    :scale: 100%
@@ -127,7 +127,7 @@ do not carry over to the new day.
    The student can see the revision used for the tests.
    The student can click to see the results of the public tests.
 
-.. figure:: Test_Framework-06.png
+.. figure:: images/Test_Framework-06.png
    :width: 1280px
    :height: 703px
    :scale: 100%

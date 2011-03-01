@@ -231,7 +231,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 * **Database Schema**
 
   * AutoGenerate Database Schema
-  * [[View Schema Diagram|database_20101001.png]]
+  .. * [[View Schema Diagram|database_20101001.png]]
   * [[Questions and Answers (Old Document) | Schema_Questions])
 
 * **MarkUs Component Descriptions**

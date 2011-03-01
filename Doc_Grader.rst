@@ -2,6 +2,8 @@
 Documentation for the Grader
 ================================================================================
 
+.. contents::
+
 In this note, we will see the rights reserved for the examiners. We recommend
 to the examiners to use preferentially to the browser FireFox to use MarkUs.
 
@@ -74,7 +76,7 @@ assessor:
   returned by the selected subgroup, click on "Get back and estimate this
   revision ".
 
-.. figure:: Doc_Grader_Dashboard.jpg
+.. figure:: images/Doc_Grader_Dashboard.jpg
    :width: 1597px
    :height: 502px
    :scale: 100%
@@ -92,7 +94,7 @@ subgroup did not connect to MarkUs to make this administrative validation. In
 that case, the submission is considered as valid, but the login does not appear
 to this level of the summary.
 
-.. figure:: Doc_Grader_ViewRevision.jpg
+.. figure:: images/Doc_Grader_ViewRevision.jpg
    :width: 1599px
    :height: 549px
    :scale: 100%
@@ -107,7 +109,7 @@ session of "recovery" of the work of the pupils! Indeed, the examiner would
 lose then the previous note deposited on the work of this subgroup. We will
 explain how to resume an evaluation and to complete it.
 
-.. figure:: Doc_Grader_PopUp.jpg
+.. figure:: images/Doc_Grader_PopUp.jpg
    :width: 1599px
    :height: 507px
    :scale: 100%
@@ -124,7 +126,7 @@ on "New Note" to add a specific note which is not a part of the comments
 prerecorded by the administrator, or to navigate in the prerecorded categories
 of note and to click the considered note.
 
-.. figure:: Doc_Grader_Annotations.jpg
+.. figure:: images/Doc_Grader_Annotations.jpg
    :width: 1585px
    :height: 653px
    :scale: 100%
@@ -136,7 +138,7 @@ of note and to click the considered note.
 Then, by clicking on “Note List”, it is possible to overview directly all the
 written notes of the homework, and put a global appreciation. 
 
-.. figure:: Doc_Grader_AnnotationList.jpg
+.. figure:: images/Doc_Grader_AnnotationList.jpg
    :width: 1579px
    :height: 613px
    :scale: 100%
@@ -157,7 +159,7 @@ the name of the subgroup (column "Group Name") and not on the identifier
 (column "Directory") of the subgroup in question. The examiner finds the notes
 previously organized and can pursue its work.
 
-.. figure:: Doc_Grader_Resume.jpg
+.. figure:: images/Doc_Grader_Resume.jpg
    :width: 1599px
    :height: 502px
    :scale: 100%
@@ -174,7 +176,7 @@ choose "complete".
 
 Only the administrator can, finally, reveal the notes of the students.
 
-.. figure:: Doc_Grader_End.jpg
+.. figure:: image/Doc_Grader_End.jpg
    :width: 1561px
    :height: 107px
    :scale: 100%
@@ -199,7 +201,7 @@ But the individual notes are obviously possible. It is necessary to select the
 zone concerned and, then, to write a note down. A powerful asset for the
 generalization of MarkUs in the other teachings !
 
-.. figure:: Doc_Grader_PDF.jpg
+.. figure:: images/Doc_Grader_PDF.jpg
    :width: 1585px
    :height: 555px
    :scale: 100%

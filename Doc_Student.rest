@@ -10,7 +10,7 @@ to the software and see the panel of various projects that he can take part in
 / he has already participated. This assumes that a project has been previously
 created and configured by the administrator / manager of material. 
 
-.. figure:: Doc_Student_Dashboard.png
+.. figure:: images/Doc_Student_Dashboard.png
    :width: 1334px
    :height: 352px
    :scale: 100%
@@ -45,7 +45,7 @@ Once the subgroup of pupils is constituted, new tabs appear on the screen:
 * "Results" will allow, later, getting back the mark and the notes left by
   the practical class examiner.
 
-.. figure:: Doc_Student_Assignment.png
+.. figure:: images/Doc_Student_Assignment.png
    :width: 1334px
    :height: 662px
    :scale: 100%
@@ -65,7 +65,7 @@ position of the file on your disk and click”Submit”. The name of the file yo
 want to submit absolutely has to be the same that the name of the file
 required. 
 
-.. figure:: Doc_Student_FileManager.png
+.. figure:: images/Doc_Student_FileManager.png
    :width: 1538px
    :height: 490px
    :scale: 100%
@@ -80,7 +80,7 @@ File Manager.
 Of course, if you want to modify the file you want to submit or submit a new
 version, it's possible using the function “Replace”.
 
-.. figure:: Doc_Student_Flash.png
+.. figure:: images/Doc_Student_Flash.png
    :width: 1538px
    :height: 576px
    :scale: 100%
@@ -95,7 +95,7 @@ submitted before this date will be evaluated(it's possible to submit after).**
 The grader can annotate the version he wants.
 
 
-.. figure:: Doc_Student_FileManagerEmpty.png
+.. figure:: images/Doc_Student_FileManagerEmpty.png
    :width: 1599px
    :height: 578px
    :scale: 100%
@@ -115,7 +115,7 @@ detailed results, click on “Results”. After that, the student may see the
 different files he submitted and, by pointing the selected text, look at the
 commentaries let by the teacher.
 
-.. figure:: Doc_Student_Grading.png
+.. figure:: images/Doc_Student_Grading.png
    :width: 518px
    :height: 428px
    :scale: 100%

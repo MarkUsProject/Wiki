@@ -27,7 +27,7 @@ administrators.**
 *It's better to connect MarkUs navigating with Firefox.*
 
 
-.. figure:: Doc_Admin_Authentication.png
+.. figure:: images/Doc_Admin_Authentication.png
    :width: 449px
    :height: 352px
    :scale: 100%
@@ -43,7 +43,7 @@ Create a new project
 Once logged in MarkUs, the administrator is welcomed in the application. **The
 API key is only useful if you want to connect the application by command line.**
 
-.. figure:: Doc_Admin_Dashboard.png
+.. figure:: images/Doc_Admin_Dashboard.png
    :width: 816px
    :height: 324px
    :scale: 100%
@@ -52,7 +52,7 @@ API key is only useful if you want to connect the application by command line.**
 
    When you click “Assignements”, you can see the different assignments
 
-.. figure:: Doc_Admin_Assignments.png
+.. figure:: images/Doc_Admin_Assignments.png
    :width: 808px
    :height: 399px
    :scale: 100%
@@ -68,7 +68,7 @@ API key is only useful if you want to connect the application by command line.**
   you check”no”, the students have to send their files by command line with
   Subversion.
 
-.. figure:: Doc_Admin_AddAssignment1.png
+.. figure:: images/Doc_Admin_AddAssignment1.png
    :width: 889px
    :height: 575px
    :scale: 100%
@@ -86,7 +86,7 @@ to complete the assignment. The students need to respect the names chosen by
 the administrator for the files. They can besides submit only one part of their
 work on MarkUs.
 
-.. figure:: Doc_Admin_AddAssignment2.png
+.. figure:: images/Doc_Admin_AddAssignment2.png
    :width: 512px
    :height: 376px
    :scale: 100%
@@ -109,7 +109,7 @@ to deduct grace period credits or to use a penalty.
   of the student. The later the student submit the work, the worse will be the
   grade.
 
-.. figure:: Doc_Admin_AddAssignment3.png
+.. figure:: images/Doc_Admin_AddAssignment3.png
    :width: 823px
    :height: 555px
    :scale: 100%
@@ -131,7 +131,7 @@ to the tags “Upload” and “Download”. Once this scheme saved in MarkUs, i
 possible to recover it in the formate CSV for save and then upload it in a new
 assignment.
 
-.. figure:: Doc_Admin_RubricScheme.png
+.. figure:: images/Doc_Admin_RubricScheme.png
    :width: 1594px
    :height: 454px
    :scale: 100%
@@ -159,7 +159,7 @@ saved in MarkUs because the application will maybe delete the list already
 saved to keep the one which is uploaded.  You can arrange the annotation in
 different categories clicking “Add Annotation Category”
 
-.. figure:: Doc_Admin_Annotations1.png
+.. figure:: images/Doc_Admin_Annotations1.png
    :width: 1272px
    :height: 412px
    :scale: 100%
@@ -172,7 +172,7 @@ different categories clicking “Add Annotation Category”
 Once you have created the category choose “Add annotation”, write the
 annotation and save it. Every grader will have access to it.
 
-.. figure:: Doc_Admin_Annotations2.png
+.. figure:: images/Doc_Admin_Annotations2.png
    :width: 1058px
    :height: 419px
    :scale: 100%
@@ -193,7 +193,7 @@ with “Download” in order to use it in another implementation (with
 have already been saved in MarkUs because the application will maybe delete the
 list already saved to keep the one which is uploaded.
 
-.. figure:: Doc_Admin_ManageStudents.png
+.. figure:: images/Doc_Admin_ManageStudents.png
    :width: 1593px
    :height: 441px
    :scale: 100%
@@ -208,7 +208,7 @@ to choose the list of groups able to take part in the assignment. As the
 students are supposed to affect themselves to their assignment, it's possible
 not to modify this step.
 
-.. figure:: Doc_Admin_ManageGroups.png
+.. figure:: images/Doc_Admin_ManageGroups.png
    :width: 1589px
    :height: 473px
    :scale: 100%
@@ -231,7 +231,7 @@ upload a list of graders if some annotations have already been saved in MarkUs
 because the application will maybe delete the list already saved to keep the
 one which is uploaded.
 
-.. figure:: Doc_Admin_GradersList.png
+.. figure:: images/Doc_Admin_GradersList.png
    :width: 1598px
    :height: 386px
    :scale: 100%
@@ -249,7 +249,7 @@ of students on the right column and finally click the green arrow. We thus
 notice that the right column has changed with a link between the grader and the
 group of students selected.
 
-.. figure:: Doc_Admin_Graders1.png
+.. figure:: images/Doc_Admin_Graders1.png
    :width: 1597px
    :height: 444px
    :scale: 100%
@@ -258,7 +258,7 @@ group of students selected.
 
    Assigning graders to groups
 
-.. figure:: Doc_Admin_Graders2.png
+.. figure:: images/Doc_Admin_Graders2.png
    :width: 1012px
    :height: 309px
    :scale: 100%
@@ -282,7 +282,7 @@ correct a work, he only has to follow what is described in the documentation
 for the grader. The grader must not launch himself the recovery of the files of
 students because he would lost the annotations saved.
 
-.. figure:: Doc_Admin_Collect.png
+.. figure:: images/Doc_Admin_Collect.png
    :width: 941px
    :height: 45px
    :scale: 100%
