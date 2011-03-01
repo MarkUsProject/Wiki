@@ -24,7 +24,7 @@ does not see any subgroup, then he will have to contact the person in charge of
 the course to ask for this affectation. 
 
 
-.. figure:: Doc_Grader_WelcomePage.jpg
+.. figure:: images/Doc_Grader_WelcomePage.jpg
    :width: 1599px
    :height: 502px
    :scale: 100%
