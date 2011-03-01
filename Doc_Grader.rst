@@ -176,7 +176,7 @@ choose "complete".
 
 Only the administrator can, finally, reveal the notes of the students.
 
-.. figure:: image/Doc_Grader_End.jpg
+.. figure:: images/Doc_Grader_End.jpg
    :width: 1561px
    :height: 107px
    :scale: 100%
