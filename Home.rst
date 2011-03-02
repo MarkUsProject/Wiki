@@ -1,5 +1,5 @@
 ================================================================================
-Welcome to MarkUs
+Welcome to MarkUs (this is a test)
 ================================================================================
 
 MarkUs (pronounced "mark us") is an open-source tool which recreates the ease
