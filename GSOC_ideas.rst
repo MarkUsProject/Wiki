@@ -10,6 +10,8 @@ Here is the summary of all the ideas we have for GSoC
 Performance analysis 
 ================================================================================
 
+Profile the current application, spot the bottlenecks and improve the overall
+speed.
 
 Integrating Git, bzr and hg to Markus
 ================================================================================
@@ -41,4 +43,12 @@ Nantes):
 - Map graders favoring students NOT graded by these graders
 - Map graders to all students of one section
 - Map graders randomly to all students of a section
+
+Integrated doc/odt support
+================================================================================
+
+Convert doc or odt into images, or plain text in order to be able to annotate
+them.
+
+
 
