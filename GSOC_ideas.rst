@@ -30,5 +30,15 @@ current implementation limits the pdf being annotated to 30pages: not enough
 to annotate a full project reports. The whole process needs to be rethinked
 and reimplemented.
 
+Mapping Graders to Groups
+================================================================================
 
+Graders are for now either mapped by hand, or randomly. Professors have
+requested more advanced ways to map graders to groups (Ecole Centrale de
+Nantes):
+
+- Map graders favoring students priviously graded by these graders
+- Map graders favoring students NOT graded by these graders
+- Map graders to all students of one section
+- Map graders randomly to all students of a section
 
