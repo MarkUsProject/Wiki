@@ -17,12 +17,14 @@ This project would involve setting up a test environment, profiling, and stress 
 Integrating Git, bzr and hg to Markus
 ================================================================================
 
-Markus can be configured either to allow students to submit code throught a
-web interface, or to provide students an svn repository. As DCVS are
-becoming more and more popular, students often use svn2X tools in order to
+Markus can be configured either to allow students to submit code through a
+web interface, or to provide students an svn repository. As DCVS
+becomes more and more popular, students often use svn2X tools in order to
 use DCVS, hosting the code in plateforms like github, launchpad or
 bitbucket. The idea would be to create an interface for Markus to retrieve
 automatically the code to be graded (student providing a url).
+
+Requirements for this project are good familiarity with at least one DCVS, and preferably some experience with Ruby to explore the library bindings.
 
 Web based PDF annotations
 ================================================================================
