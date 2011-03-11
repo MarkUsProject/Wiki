@@ -65,7 +65,7 @@ Integrated Microsoft docx/Open Document Format Support
 
 Convert Microsoft's docx or Open Document suite of formats (such as ODT,ODF and ODP) into a reasonable format which can be annotated. Suggested format conversions could be properly styled HTML, images, or plain text. For HTML and plain text conversion use of XSL-T stylesheets could be used to leverage XSL-T translation support of modern Web browsers.
 
-Migrating MarKus to Rails3 (and eventually to Ruby 1.9)
+Migrating MarkUs to Rails3 (and eventually to Ruby 1.9)
 ================================================================================
 
 Ruby on Rails version 3 is the new major release of Ruby on Rails. MarkUs is now three years old and migrating to Ruby on Rails is a long work. The work has already started (see branch 'rails_3_migration' on http://github.com ). Moreover, Ruby 1.9.2 is the new implementation of the Ruby language. MarkUs and Ruby on Rails 2 are based on Ruby 1.8.
