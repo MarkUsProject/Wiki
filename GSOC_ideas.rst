@@ -76,3 +76,12 @@ Moving to new Ruby and Ruby on Rails 3 is a step to have a more and more profess
 
 This project requires good Ruby and Ruby on Rails skills, with deployment abilities (MarkUs must still be deployable once the migration will be done)
 
+Develop a plug-in integrating Markus core to an existing e-learning whole platform
+================================================================================
+
+E-learning platforms have become a keystone to educational environment. Free software-based platforms arise and are now widely used (at least in Europe). The major two software are Claroline and Moodle. For every course, it provides features like publishing documents w.r.t. courses, manage public and private forums, create groups of students, prepare online exercises, … The MarkUs tool nowadays appears as an additional tool to branch to the existing e-learning environment in many institutions, which could restrain its use. It would be useful, for both teachers and students, to be able to access to MarkUs features through the usual platform they use in their daily tasks. This will result in no differentiation between CS courses and other courses, meaning that everyone would be benefit from the annotation features provided by MarkUs. 
+
+The idea of this proposal is to create a MarkUs plug-in for either Claroline or Moodle. Claroline has the advantage to be currently in use in École Centrale de Nantes (France) and in many french . This engineering school collaborates with École Centrale de Lyon, which is part of the consortium leading the Claroline development. The integration of MarkUs to 
+
+[1] http://www.claroline.net/
+[2] http://moodle.org/
