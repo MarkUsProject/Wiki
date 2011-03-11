@@ -9,5 +9,4 @@ Please answer the following questions for your MarkUs GSoC project application. 
   5. Rate your Subversion skills (1 = Subversion? what's that?; 5 = I'm comfortable using it; 10 = I have written most the Subversion code)
   6. Do you know how to profile Ruby code? If you have any experience, explain what you've done.
   7. If you were to develop something involving Apache Ant, Ruby, virtual machines, SSH, and Linux how would that make you feel? Rating: 1 = Sounds like a little too much for my taste. 5 = I'm intrigued. Might be able to pull that off. 10 = I'm excited, when can I start. I've pretty much used all of it before.
-  8. What do you like most about open source projects? What would make you stay after doing GSoc? What motivates you doing GSoC?
-
+  8. What do you like most about open source projects? What would make you stay as a MarkUs contributor after doing GSoc?
