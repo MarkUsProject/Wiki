@@ -22,7 +22,7 @@ web interface, or to provide students an svn repository. As DCVS
 becomes more and more popular, students often use svn2X tools in order to
 use DCVS, hosting the code on hosting platforms such as Github, Launchpad or
 Bitbucket. The idea would be to create an interface for MarkUs to retrieve
-automatically the code to be graded (student providing a URL to their clone of the repository).
+the code to be graded automatically (students provide a URL to their clone of the repository).
 
 Requirements for this project are good familiarity with at least one DCVS, and preferably some experience with Ruby to explore the library bindings.
 
