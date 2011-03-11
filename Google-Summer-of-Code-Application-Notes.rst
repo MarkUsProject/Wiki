@@ -16,7 +16,7 @@ another online grading tool OLM that had been in development and use since
 Engineering courses in three
 universities: University of Toronto, University of Waterloo, and Ecole
 Centrale de Nantes. It is fully internationalized, with current support for French and English.
-We have received positive feedback from users uses MarkUs through a screen reader, and heavily use the accessibility features of MarkUs.
+We have received positive feedback from users who interact with MarkUs through a screen reader, and whoheavily use the accessibility features of MarkUs.
 
 Although MarkUs began as a project developed entirely by undergraduate
 students either as part time project students, or full-time summer students funded by a grant,
@@ -25,18 +25,13 @@ people on the developers mailing list, and a core group of developers who
 manage releases, review submitted code, and mentor new developers.  We have
 also had three industry advisors, Mike Gunderloy, Adam Goucher, and Blake
 Winton who have help us both in refining our development process and with
-technical issues.  
+technical issues.  The project originated with and is supervised by Karen Reid, a faculty member at the University of Toronto.
 
 
 **2. Why is your organization applying to participate in Google Summer of Code
 2011? What do you hope to gain by participating?**
 
-We have a history of working with students in an open source environment, and
-our project has reached a level of maturity where we have a core group of
-developers, a clear development and review process, and substantial experience
-mentoring newcomers to the project. MarkUs is now at a stage where students
-will learn good open source practices, and will be able to make significant contributions to the
-project. We rely almost entirely on volunteer work, and the support from Google Summer of Code will be most appreciated.
+We have a history of working with students in an open source environment, and our project has reached a level of maturity where we have a core group of developers, a clear development and review process, and substantial experience mentoring newcomers to the project. MarkUs is now at a stage where students will learn good open source practices, and will be able to make significant contributions to the project. We rely almost entirely on volunteer work, and the support from Google Summer of Code will be most appreciated.
 
 **3. Did your organization participate in past Google Summer of Codes? If so,
 please summarize your involvement and the successes and challenges of your
