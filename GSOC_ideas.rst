@@ -1,7 +1,7 @@
 ================================================================================
 Google Summer of Code Ideas
 ================================================================================
-
+MarkUs is a web application for grading programming assignments.  The main project page is http://markusproject.org.  There is a demo instance of MarkUs running there that you can play with.  Login with user id "a" and any non-empty password.
 
 Here is the summary of all the ideas we have for GSoC
 
