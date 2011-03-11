@@ -26,9 +26,10 @@ MIT
 6.What is the URL for your Ideas page?
 
 7. What is the main development mailing list for your organization?
-What is the main IRC channel for your organization?
+markus-dev@cs.toronto.edu
 
-The main development mailing list is markus-dev@cs.toronto.edu. We use also use channel #markus on irc.freenode.net.
+What is the main IRC channel for your organization?
+#markus on irc.freenode.net
 
 8. Does your organization have an application template you would like to see students use? If so, please provide it now.
 
@@ -36,9 +37,13 @@ We would ask applicants to use the following application template: [[GsocApplica
 
 9. Who will be your backup organization administrator?
 
+Any of the potential project mentors could take over as a backup organization administrator. They have a clean grasp of the inner workings of the MarkUs, and also understand the current goals.
+
+
 10. What criteria did you use to select these individuals as mentors? Please be as specific as possible.
 
 All the people who have agreed to be mentors have had experience mentoring students in different capacities. 
+Mike Conley has been a project mentor for undergraduate students students working on ReviewBoard, and he 
 
 11. What is your plan for dealing with disappearing students?
 
@@ -48,7 +53,7 @@ Three core developers have committed to mentor GSoC Students for MarkUs. If one 
 
 13. What steps will you take to encourage students to interact with your project's community before, during and after the program?
 
-Our experience showed that students have their best development experience if they have at least completed their basic MarkUs development setup before the start date. We usually get in touch with students as soon as we have their contact information. Communication in general is done via email, our mailing list or the MarkUs IRC channel.
+Our experience showed that students have their best development experience if they have at least completed their basic MarkUs development setup before the start date. We will encourage students to tackle a small outstanding issue as way to fimilliare We usually get in touch with students as soon as we have their contact information. Communication in general is done via email, our mailing list or the MarkUs IRC channel.
 
 In order to keep students engaged, we try to get back to them on a regular bases and make sure that students will get matched up with projects in which they are most interested in. We try hard to keep our community welcoming and supportive. 
 
