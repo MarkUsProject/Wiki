@@ -105,9 +105,9 @@ project's community before, during and after the program?**
 Our experience showed that students have their best development experience if
 they have at least completed their basic MarkUs development setup before the
 start date. We will encourage students to tackle a small outstanding issue as
-way to fimilliare We usually get in touch with students as soon as we have
+way to familiarize themselves with MarkUs development. We usually get in touch with students as soon as we have
 their contact information. Communication in general is done via email, our
-mailing list or the MarkUs IRC channel.
+mailing list or the MarkUs IRC channel. The core developers, organization mentor, and other developers are almost always on the IRC channel.
 
 In order to keep students engaged, we try to get back to them on a regular
 bases and make sure that students will get matched up with projects in which
