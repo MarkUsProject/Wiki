@@ -37,7 +37,7 @@ All the people who have agreed to be mentors have had experience mentoring stude
 
 12. What is your plan for dealing with disappearing mentors?
 
-Three mentors have committed to mentor GSoC Students for MarkUs. If one of them is unavailable, the other two mentors will step in. Moreover, we've assured for a fourth mentor to step in if need be.
+Three core developers have committed to mentor GSoC Students for MarkUs. If one of them is unavailable, the other two mentors will step in. Moreover, we've assured for a fourth mentor to step in if need be.
 
 13. What steps will you take to encourage students to interact with your project's community before, during and after the program?
 
