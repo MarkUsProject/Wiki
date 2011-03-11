@@ -19,7 +19,7 @@ support. Accessibility has been another goal, and we have received approval
 from an instructor who used a screen reader to make us of MarkUs.
 
 Although MarkUs began as a project developed entirely by undergraduate
-students either as part time project students, or full time funded by a grant,
+students either as part time project students, or full-time summer students funded by a grant,
 it has grown into a full-fledged open source project. There are currently 47
 people on the developers mailing list, and a core group of developers who
 manage releases, review submitted code, and mentor new developers.  We have
