@@ -8,15 +8,15 @@ feedback to students. Students form groups, submit their assignments, and
 receive their results and feedback using MarkUs. Instructors map graders to
 students, manage assignments, due dates and penalties, view the progress of
 the graders, and release results to the students. Graders annotate students
-code, fill in rubrics and keep track of their work.
+code, fill in rubrics and keep track of their work. 
 
 We have been working on MarkUs since August 2008, but MarkUs grew out of
 another online grading tool OLM that had been in development and use since
-2004. MarkUs is used in Computer Science and Engineering courses in three
+2004. MarkUs is used by several thousand students in Computer Science and 
+Engineering courses in three
 universities: University of Toronto, University of Waterloo, and Ecole
-Centrale de Nantes. It is internationalized with French and English language
-support. Accessibility has been another goal, and we have received approval
-from an instructor who used a screen reader to make us of MarkUs.
+Centrale de Nantes. It is fully internationalized, with current support for French and English.
+We have received positive feedback from users uses MarkUs through a screen reader, and heavily use the accessibility features of MarkUs.
 
 Although MarkUs began as a project developed entirely by undergraduate
 students either as part time project students, or full-time summer students funded by a grant,
@@ -35,8 +35,8 @@ We have a history of working with students in an open source environment, and
 our project has reached a level of maturity where we have a core group of
 developers, a clear development and review process, and substantial experience
 mentoring newcomers to the project. MarkUs is now at a stage where students
-will learn good open source practices, and will be able to contribute to the
-project.
+will learn good open source practices, and will be able to make significant contributions to the
+project. We rely almost entirely on volunteer work, and the support from Google Summer of Code will be most appreciated.
 
 **3. Did your organization participate in past Google Summer of Codes? If so,
 please summarize your involvement and the successes and challenges of your
@@ -44,7 +44,7 @@ participation.**
 
 MarkUs has not participated in past Google Summer of Codes, but a number of
 our developers and administrators have been involved both as students and
-mentors for different organizations.
+mentors for different organizations.  I have mentored a student on an Eclipse project. Mike Conley one of our potential mentors was a GSoC student on ReviewBoard last year, and has mentored several students working on MarkUs and ReviewBoard since. 
 
 **4. If your organization has not previously participated in Google Summer of
 Code, have you applied in the past? If so, for what year(s)?**
@@ -75,7 +75,7 @@ We would ask applicants to use the following application template:
 **9. Who will be your backup organization administrator?**
 
 Any of the potential project mentors could take over as a backup organization
-administrator. They have a clean grasp of the inner workings of the MarkUs,
+administrator. They have a clear grasp of the inner workings of the MarkUs,
 and also understand the current goals.
 
 
@@ -92,6 +92,8 @@ All three are core developpers, and have a very good knowledge of the code base,
 and are very active in the IRC chanel and on the mailing list.
 
 **11. What is your plan for dealing with disappearing students?**
+
+We will insist on regular (twice a week) meetings with students to monitor their progress.  If a student does not communicate appropriately, we will make every effort to contact them, and work with the Google Summer of Code organization to contact students. If students are given sufficient opportunity to reconnect, but fail to do so we will contact Google and fail the student.
 
 **12. What is your plan for dealing with disappearing mentors?**
 
