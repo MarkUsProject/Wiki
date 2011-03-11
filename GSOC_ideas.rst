@@ -64,25 +64,25 @@ Here are a few other projects that we would like to tackle but may not be as app
 Mapping Graders to Groups
 ================================================================================
 
-The facility in MarkUs that maps Graders to the groups that they are responsible for marking currently provides only very simple mapping functions. Professors can either assign graders randomly to groups, or can upload a specific mapping. We have had requests to implement more sophisticated mapping ability.  For example:
+The feature in MarkUs that maps Graders to the groups that they are responsible for marking currently provides only very simple mapping functions. Professors can either assign graders randomly to groups, or can upload a specific mapping. We have had requests to implement more sophisticated mappings.  For example:
 
-- Map graders favoring students previously graded by these graders
-- Map graders favoring students NOT graded by these graders
-- Map graders to all students of one section
-- Map graders randomly to all students of a section
+- Assign graders such that students previously graded by these graders are prioritized
+- Assign graders such that students who haven't been graded by these graders so far are prioritized
+- Assign graders to all students of a specific section
+- Assign graders randomly to students of a specific section
 
-This project will require Ruby and Rails skills. It will involve some interesting UI work, but should be a fairly straightforward project. A student who chooses this project will also end up working on several other small projects.
+This project will require Ruby and Rails skills. It will involve some interesting UI work, but should be a fairly straightforward project overall. A student who chooses this project will likely end up working on additional other small projects.
 
 Migrating MarkUs to Rails3 (and eventually to Ruby 1.9)
 ================================================================================
 
-Ruby on Rails version 3 is the new major release of Ruby on Rails. MarkUs is now three years old and migrating to Ruby on Rails is a long work. The work has already started (see branch 'rails_3_migration' on http://github.com ). Moreover, Ruby 1.9.2 is the new implementation of the Ruby language. MarkUs and Ruby on Rails 2 are based on Ruby 1.8.
+Ruby on Rails version 3 is the new major release of Ruby on Rails. MarkUs is now three years old and we would do good by migrating it to be Ruby on Rails 3 compatible. Work has already started (see branch 'rails_3_migration'). Moreover, Ruby on Rails 3 has been designed to work with Ruby 1.8.7 and 1.9.2. MarkUs currently uses Ruby on Rails 2.3.10 which works with Ruby 1.8.6.
 
-MarkUs tests (units and functionals) will need some updates. Some gems used are deprecated and will not work anymore.
+The following issues have been determined so far due to Ruby on Rails 3 migration: MarkUs tests (units and functionals) will require updates. Some gems we currently use are not supported anymore and replacements will have to be found or code has to be adapted accordingly.
 
-Moving to new Ruby and Ruby on Rails 3 is a step to have a more and more professional web application.
+It is an important goal to make MarkUs Ruby on Rails 3 ready.
 
-This project requires good Ruby and Ruby on Rails skills, with deployment abilities (MarkUs must still be deployable once the migration will be done)
+This project requires good Ruby and Ruby on Rails skills, with deployment abilities. While working on this task the student should keep ease of deployment in mind.
 
 
 Integrated documentation system
