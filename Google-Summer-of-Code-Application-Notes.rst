@@ -58,10 +58,13 @@ MIT
 
 **6.What is the URL for your Ideas page?**
 
+https://github.com/MarkUsProject/Markus/wiki/GSOC_ideas
+
+
 **7. What is the main development mailing list for your organization?**
 markus-dev@cs.toronto.edu
 
-What is the main IRC channel for your organization?
+**What is the main IRC channel for your organization?**
 #markus on irc.freenode.net
 
 **8. Does your organization have an application template you would like to see
