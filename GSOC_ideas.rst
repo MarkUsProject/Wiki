@@ -10,8 +10,9 @@ Here is the summary of all the ideas we have for GSoC
 Performance analysis 
 ================================================================================
 
-Profile the current application, spot the bottlenecks and improve the overall
-speed.
+As we begin to use MarkUs is classes larger than 500 students, we need to get a better picture of the performance limitations, and what we can do to mitigate them. If a large number of students try to submit their assignments using MarkUs in a short time window, where are the performance bottlenecks? Rails? The database? Subversion?
+
+This project would involve setting up a test environment, profiling, and stress testing MarkUs. An applicant should have enough Linux knowledge to be able to set up concurrent tests and measure performance, and enough database knowledge to be able to do some profiling. Basic Ruby and Rails knowledge, web application knowledge would be a strong asset. (We realize this is a lot to ask, but for the right student, this could be a really rewarding project.)
 
 Integrating Git, bzr and hg to Markus
 ================================================================================
