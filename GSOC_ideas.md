@@ -29,29 +29,46 @@ Requirements for this project are good familiarity with at least one DCVS, and p
 Web based PDF annotations
 ================================================================================
 
-Markus has a web based PDF annotations module that used ImageMagick to convert
-pdf into an image, in order to be able to annotate it. Unfortunately, the
-current implementation limits the pdf being annotated to 30pages: not enough
-to annotate a full project reports. The whole process needs to be rethinked
-and reimplemented.
+Markus has a web-based PDF annotations module that uses [ImageMagick](http://www.imagemagick.org/script/index.php) to convert a pdf file into an image, in order to be able to annotate it. There are several limitations to this approach: the pdf document is limited to 30pages, substantial processing time is required to perform the conversion, documents cannot easily be viewed in different sizes. This project is of an exploratory nature, to find a better solution to pdf annotations.
+
 
 Mapping Graders to Groups
 ================================================================================
 
-Graders are for now either mapped by hand, or randomly. Professors have
-requested more advanced ways to map graders to groups (Ecole Centrale de
-Nantes):
+The facility in MarkUs that maps Graders to the groups that they are responsible for marking currently provides only very simple mapping functions. Professors can either assign graders randomly to groups, or can upload a specific mapping. We have had requests to implement more sophisticated mapping ability.  For example:
 
-- Map graders favoring students priviously graded by these graders
+- Map graders favoring students previously graded by these graders
 - Map graders favoring students NOT graded by these graders
 - Map graders to all students of one section
 - Map graders randomly to all students of a section
+
+This project will require Ruby and Rails skills. It will involve some interesting UI work, but should be a fairly straightforward project. A student who chooses this project will also end up working on several other small projects.
+
+Integrated documentation system
+================================================================================
+
+As the user base for MarkUs grows, the need for better documentation becomes clear. It will be an interesting software design problem to create an integrated documentation system that tracks versions and configurations.
+
+This project requires some Ruby/Rails knowledge and a desire to create simple, elegant software.
+
+A VM harness for the automated test framework
+================================================================================
+
+We have been working towards an automated test framework that
+            allows students to submit their work and receive immediate feedback.
+            To run student submitted code on a server, we need to think
+            carefully about how to do this securely. Running the tests inside a
+            locked down VM seems to be the most promising solution. 
+
+This project requires Linux and VM knowledge, preferably with
+            some system administration skills.
+
+
 
 Integrated doc/odt support
 ================================================================================
 
 Convert doc or odt into images, or plain text in order to be able to annotate
 them.
-
 
 
