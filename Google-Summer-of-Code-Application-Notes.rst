@@ -1,4 +1,3 @@
-
 .. contents::
 
 **1. Describe your organization.**
@@ -85,7 +84,12 @@ be as specific as possible.**
 
 All the people who have agreed to be mentors have had experience mentoring
 students in different capacities. Mike Conley has been a project mentor for
-undergraduate students students working on ReviewBoard, and he 
+undergraduate students students working on ReviewBoard and Markus.
+Severin Gehwolf has been helping students getting 
+involved in Markus, and very active in reviewing patches. Nelle Varoquaux
+has been a project mentor for engineering students working on Markus.
+All three are core developpers, and have a very good knowledge of the code base,
+and are very active in the IRC chanel and on the mailing list.
 
 **11. What is your plan for dealing with disappearing students?**
 
