@@ -14,7 +14,7 @@ As we begin to use MarkUs is classes larger than 500 students, we need to get a 
 
 This project would involve setting up a test environment, profiling, and stress testing MarkUs. An applicant should have enough Linux knowledge to be able to set up concurrent tests and measure performance, and enough database knowledge to be able to do some profiling. Basic Ruby and Rails knowledge, web application knowledge would be a strong asset. (We realize this is a lot to ask, but for the right student, this could be a really rewarding project.)
 
-Integrating Git, Bazaar and Merkurial into MarkUs
+Integrate Git, Bazaar and Merkurial into MarkUs
 ================================================================================
 
 MarkUs can be configured either to allow students to submit code through a
