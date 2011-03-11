@@ -45,7 +45,7 @@ This project requires Linux and VM knowledge, preferably with some system admini
 Integrated Microsoft docx/Open Document Format Support
 ================================================================================
 
-Convert Microsoft's docx or Open Document suite of formats (such as ODT,ODF and ODP) into a reasonable format which can be annotated. Suggested format conversions could be properly styled HTML, images, or plain text. For HTML and plain text conversion use of XSL-T stylesheets could be used to leverage XSL-T translation support of modern Web browsers.
+Convert Microsoft's docx or Open Document suite of formats (such as ODT,ODF and ODP) into a reasonable format which can be annotated. Suggested format conversions could be properly styled HTML, images, or plain text. For HTML and plain text conversion XSL-T stylesheets could be used to leverage XSL-T translation support of modern Web browsers.
 
 
 Develop a plug-in integrating Markus core to an existing e-learning whole platform
