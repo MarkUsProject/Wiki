@@ -3,7 +3,7 @@ Google Summer of Code Ideas
 ================================================================================
 MarkUs is a web application for grading programming assignments.  The main project page is http://markusproject.org.  There is a demo instance of MarkUs running there that you can play with.  Login with user id "a" and any non-empty password.
 
-Here is the summary of all the ideas we have for GSoC
+Here is the summary of all the ideas we have for GSoC.  We are also open to student-suggested projects.  Our user base is growing which means that the number of things people want to do with MarkUs is expanding as well!
 
 .. contents::
 
@@ -32,24 +32,6 @@ Web based PDF annotations
 Markus has a web-based PDF annotations module that uses ImageMagick (http://www.imagemagick.org) to convert a PDF file into an image, in order to be able to annotate it. There are several limitations to this approach: the PDF document is limited to 30pages, substantial processing time is required to perform the conversion, documents cannot easily be viewed in different sizes. This project is of an exploratory nature, to find a better solution to PDF annotations.
 
 
-Mapping Graders to Groups
-================================================================================
-
-The facility in MarkUs that maps Graders to the groups that they are responsible for marking currently provides only very simple mapping functions. Professors can either assign graders randomly to groups, or can upload a specific mapping. We have had requests to implement more sophisticated mapping ability.  For example:
-
-- Map graders favoring students previously graded by these graders
-- Map graders favoring students NOT graded by these graders
-- Map graders to all students of one section
-- Map graders randomly to all students of a section
-
-This project will require Ruby and Rails skills. It will involve some interesting UI work, but should be a fairly straightforward project. A student who chooses this project will also end up working on several other small projects.
-
-Integrated documentation system
-================================================================================
-
-As the user base for MarkUs grows, the need for better documentation becomes clear. It will be an interesting software design problem to create an integrated documentation system that tracks versions and configurations.
-
-This project requires some Ruby/Rails knowledge and a desire to create simple, elegant software.
 
 A VM harness for the automated test framework
 ================================================================================
@@ -65,6 +47,32 @@ Integrated Microsoft docx/Open Document Format Support
 
 Convert Microsoft's docx or Open Document suite of formats (such as ODT,ODF and ODP) into a reasonable format which can be annotated. Suggested format conversions could be properly styled HTML, images, or plain text. For HTML and plain text conversion use of XSL-T stylesheets could be used to leverage XSL-T translation support of modern Web browsers.
 
+
+Develop a plug-in integrating Markus core to an existing e-learning whole platform
+================================================================================
+
+E-learning platforms have become a keystone to educational environment. Free software-based platforms arise and are now widely used (at least in Europe). The major two software are Claroline and Moodle. For every course, it provides features like publishing documents w.r.t. courses, manage public and private forums, create groups of students, prepare online exercises, … The MarkUs tool nowadays appears as an additional tool to branch to the existing e-learning environment in many institutions, which could restrain its use. It would be useful, for both teachers and students, to be able to access to MarkUs features through the usual platform they use in their daily tasks. This will result in no differentiation between CS courses and other courses, meaning that everyone would be benefit from the annotation features provided by MarkUs. 
+
+The idea of this proposal is to create a MarkUs plug-in for either Claroline or Moodle. Claroline has the advantage to be currently in use in École Centrale de Nantes (France) and in many french schools. This engineering school collaborates with École Centrale de Lyon, which is part of the consortium leading the Claroline development. 
+
+[1] http://www.claroline.net/
+[2] http://moodle.org/
+
+
+Here are a few other projects that we would like to tackle but may not be as appealing to Summer of Code students.  However, if you want to propose one of these, please feel free! 
+
+Mapping Graders to Groups
+================================================================================
+
+The facility in MarkUs that maps Graders to the groups that they are responsible for marking currently provides only very simple mapping functions. Professors can either assign graders randomly to groups, or can upload a specific mapping. We have had requests to implement more sophisticated mapping ability.  For example:
+
+- Map graders favoring students previously graded by these graders
+- Map graders favoring students NOT graded by these graders
+- Map graders to all students of one section
+- Map graders randomly to all students of a section
+
+This project will require Ruby and Rails skills. It will involve some interesting UI work, but should be a fairly straightforward project. A student who chooses this project will also end up working on several other small projects.
+
 Migrating MarkUs to Rails3 (and eventually to Ruby 1.9)
 ================================================================================
 
@@ -76,12 +84,10 @@ Moving to new Ruby and Ruby on Rails 3 is a step to have a more and more profess
 
 This project requires good Ruby and Ruby on Rails skills, with deployment abilities (MarkUs must still be deployable once the migration will be done)
 
-Develop a plug-in integrating Markus core to an existing e-learning whole platform
+
+Integrated documentation system
 ================================================================================
 
-E-learning platforms have become a keystone to educational environment. Free software-based platforms arise and are now widely used (at least in Europe). The major two software are Claroline and Moodle. For every course, it provides features like publishing documents w.r.t. courses, manage public and private forums, create groups of students, prepare online exercises, … The MarkUs tool nowadays appears as an additional tool to branch to the existing e-learning environment in many institutions, which could restrain its use. It would be useful, for both teachers and students, to be able to access to MarkUs features through the usual platform they use in their daily tasks. This will result in no differentiation between CS courses and other courses, meaning that everyone would be benefit from the annotation features provided by MarkUs. 
+As the user base for MarkUs grows, the need for better documentation becomes clear. It will be an interesting software design problem to create an integrated documentation system that tracks versions and configurations.
 
-The idea of this proposal is to create a MarkUs plug-in for either Claroline or Moodle. Claroline has the advantage to be currently in use in École Centrale de Nantes (France) and in many french schools. This engineering school collaborates with École Centrale de Lyon, which is part of the consortium leading the Claroline development. 
-
-[1] http://www.claroline.net/
-[2] http://moodle.org/
+This project requires some Ruby/Rails knowledge and a desire to create simple, elegant software.
