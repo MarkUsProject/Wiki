@@ -54,14 +54,9 @@ This project requires some Ruby/Rails knowledge and a desire to create simple, e
 A VM harness for the automated test framework
 ================================================================================
 
-We have been working towards an automated test framework that
-            allows students to submit their work and receive immediate feedback.
-            To run student submitted code on a server, we need to think
-            carefully about how to do this securely. Running the tests inside a
-            locked down VM seems to be the most promising solution. 
+We have been working towards an automated test framework that allows students to submit their work and receive immediate feedback. To run student submitted code on a server, we need to think carefully about how to do this securely. Running the tests inside a locked down VM seems to be the most promising solution. 
 
-This project requires Linux and VM knowledge, preferably with
-            some system administration skills.
+This project requires Linux and VM knowledge, preferably with some system administration skills.
 
 
 
