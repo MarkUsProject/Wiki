@@ -1,5 +1,12 @@
 1. Describe your organization.
 
+MarkUs is a Ruby on Rails application for grading student assignments.  The goal of the project is to make it easy for graders to give high quality feedback to students. Students form groups, submit their assignments, and receive their results and feedback using MarkUs. Instructors map graders to students, manage assignments, due dates and penalties, view the progress of the graders, and release results to the students. Graders annotate students code, fill in rubrics and keep track of their work.
+
+We have been working on MarkUs since August 2008, but MarkUs grew out of another online grading tool OLM that had been in development and use since 2004. MarkUs is used in Computer Science and Engineering courses in three universities: University of Toronto, University of Waterloo, and Ecole Centrale de Nantes. It is internationalized with French and English language support. Accessibility has been another goal, and we have received approval from an instructor who used a screen reader to make us of MarkUs.
+
+Although MarkUs began as a project developed entirely by undergraduate students either as part time project students, or full time funded by a grant, it has grown into a full-fledged open source project. There are currently 47 people on the developers mailing list, and a core group of developers who manage releases, review submitted code, and mentor new developers.  We have also had three industry advisors, Mike Gunderloy, Adam Goucher, and Blake Winton who have help us both in refining our development process and with technical issues.  
+
+
 2. Why is your organization applying to participate in Google Summer of Code 2011? What do you hope to gain by participating?
 
 We have a history of working with students in an open source environment, and our project has reached a level of maturity where we have a core group of developers, a clear development and review process, and substantial experience mentoring newcomers to the project. MarkUs is now at a stage where students will learn good open source practices, and will be able to contribute to the project.
