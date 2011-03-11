@@ -114,7 +114,7 @@ mailing list or the MarkUs IRC channel. The core developers, organization mentor
 In order to keep students engaged, we try to get back to them on a regular
 bases and make sure that students will get matched up with projects in which
 they are most interested in. We try hard to keep our community welcoming and
-supportive. 
+supportive. The code review process is a specific example of the working atmosphere on MarkUs. The core developers nearly always preface their comments with praise for getting the work done, and gently redirect novices to adopt standard practices and complete tests.
 
 **14. What will you do to ensure that your accepted students stick with the
 project after Google Summer of Code concludes?**
@@ -123,7 +123,9 @@ We are always at the lookout for new core developers and regular contributors.
 Depending on the knowledge of the student and his or her aptitudes there are
 various roles a new developer of MarkUs could play. It will depend on the
 individual student, but we'll ensure to get back to them on a regular basis,
-be open for new ideas and try to connect as a community.
+be open for new ideas and try to connect as a community. Not every participant 
+will want to stick around, but we have a pretty good track record so far, partly because
+MarkUs is an excellent training ground for relatively new web programmers.
 
 
 
