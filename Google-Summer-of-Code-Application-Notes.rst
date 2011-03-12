@@ -24,7 +24,7 @@ it has grown into a full-fledged open source project. There are currently 47
 people on the developers mailing list, and a core group of developers who
 manage releases, review submitted code, and mentor new developers.  We have
 also had three industry advisors, Mike Gunderloy, Adam Goucher, and Blake
-Winton who have help us both in refining our development process and with
+Winton who have helped us in refining our development process and with resolving
 technical issues.  The project originated with and is supervised by Karen Reid, a faculty member at the University of Toronto.
 
 
