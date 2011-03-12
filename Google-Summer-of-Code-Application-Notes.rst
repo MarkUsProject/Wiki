@@ -16,7 +16,7 @@ another online grading tool OLM that had been in development and use since
 Engineering courses in three
 universities: University of Toronto, University of Waterloo, and Ecole
 Centrale de Nantes. It is fully internationalized, with current support for French and English.
-We have received positive feedback from users who interact with MarkUs through a screen reader, and whoheavily use the accessibility features of MarkUs.
+We have received positive feedback from users who interact with MarkUs through a screen reader, and who heavily use the accessibility features of MarkUs.
 
 Although MarkUs began as a project developed entirely by undergraduate
 students either as part time project students, or full-time summer students funded by a grant,
