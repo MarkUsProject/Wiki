@@ -73,7 +73,7 @@ The feature in MarkUs that maps Graders to the groups that they are responsible 
 
 This project will require Ruby and Rails skills. It will involve some interesting UI work, but should be a fairly straightforward project overall. A student who chooses this project will likely end up working on additional other small projects.
 
-Migrating MarkUs to Rails3 (and eventually to Ruby 1.9)
+Migrating MarkUs to Rails 3
 ================================================================================
 
 Ruby on Rails version 3 is the new major release of Ruby on Rails. MarkUs is now three years old and we would do good by migrating it to be Ruby on Rails 3 compatible. Work has already started (see branch 'rails_3_migration'). Moreover, Ruby on Rails 3 has been designed to work with Ruby 1.8.7 and 1.9.2. MarkUs currently uses Ruby on Rails 2.3.10 which works with Ruby 1.8.6.
