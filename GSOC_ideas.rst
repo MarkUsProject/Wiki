@@ -48,7 +48,7 @@ Integrated Microsoft docx/Open Document Format Support
 Convert Microsoft's docx or Open Document suite of formats (such as ODT,ODF and ODP) into a reasonable format which can be annotated. Suggested format conversions could be properly styled HTML, images, or plain text. For HTML and plain text conversion XSL-T stylesheets could be used to leverage XSL-T translation support of modern Web browsers.
 
 
-Develop a plug-in integrating Markus core to an existing e-learning whole platform
+Markus e-learning Platform Integration
 ================================================================================
 
 E-learning platforms have become a keystone to educational environment. Free software-based platforms arise and are now widely used (at least in Europe). The major two software are Claroline and Moodle. For every course, it provides features like publishing documents w.r.t. courses, manage public and private forums, create groups of students, prepare online exercises, … The MarkUs tool nowadays appears as an additional tool to branch to the existing e-learning environment in many institutions, which could restrain its use. It would be useful, for both teachers and students, to be able to access to MarkUs features through the usual platform they use in their daily tasks. This will result in no differentiation between CS courses and other courses, meaning that everyone would be benefit from the annotation features provided by MarkUs. 
