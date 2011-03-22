@@ -147,10 +147,15 @@ which works just fine. So, the list of gems required for MarkUs is as follows:
 We are now using bundler to manage all gems. Install only bundler as a gem and 
 bundler will install all other Gems.
 
-To install the gems execute the following as root::
+To install the **all** gems execute the following::
 
     #> gem install bundler
     #> bundle install
+
+Bundle allows also some selective installation. To install only sqlite3
+supportr, execute the following::
+
+    #> bundle install --without postgresql mysql
 
 On Ubuntu and Debian systems, the system can't find bundler. You need to add
 bundler to your PATH or run it directly ::
