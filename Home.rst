@@ -36,6 +36,7 @@ Project Resources
   * **MarkUs and Git** [[HowTo| GitHowTo]]
   * [[A Git Tutorial| http://library.edgecase.com/git_immersion/index.html]]
   * [[Progit Book| http://progit.org/book/]]
+  * [[Gitref.org| http://gitref.org]]
 
 * **Issue Labels:** [[Their meaning is described here | LabelsWhatTheyMean]]
 
