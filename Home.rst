@@ -176,7 +176,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
     SIZE | http://blog.hasmanythrough.com/2008/2/27/count-length-size]
   * [[Our Ruby/Rails testing guidelinesi | TestingGuidelines]]
   * [[Security testing guidelines | SecurityTesting]]
-  * [[Internationalisation | Internationalization]]
+  * [[Internationalization | Internationalization]]
 
 * **MarkUs API/Test Coverage**
 

@@ -1,5 +1,5 @@
 ================================================================================
-Story Description
+General Use Case : Configurable
 ================================================================================
 
 Configuration of the MarkUs application should be at a central location. In
