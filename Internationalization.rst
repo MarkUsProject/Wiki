@@ -17,12 +17,15 @@ Internationalisation of models, views and controllers
 
 Make sure models, views and controllers are internationalised : 
 For exemple: groups_controller.rb::
+
   301 raise "You must select at least one grader for random assignment"
 
 needs to be::
+
   301 raise I18n.t(:groups.no_graders_selected)
 
 or::
+
   301 raise t(:groups.no_graders_selected)
 
 The html tags that can appear in the internationalisation are:
