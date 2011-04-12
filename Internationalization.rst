@@ -106,10 +106,10 @@ with appropriate references in the config/_LANG_.yml (en.yml default)
 
 ::
   date:
-   #MarkUs LONG_DATE_TIME_FORMAT
-   long_date: "%B %d, %Y: %I:%M%p"
-   #MarkUs SHORT_DATE_TIME_FORMAT
-   short_date: "%B %d, %Y"
+    #MarkUs LONG_DATE_TIME_FORMAT
+    long_date: "%B %d, %Y: %I:%M%p"
+    #MarkUs SHORT_DATE_TIME_FORMAT
+    short_date: "%B %d, %Y"
 
 Internationalizers 
 ================================================================================
