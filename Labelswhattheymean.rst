@@ -21,4 +21,4 @@ suit our needs. Their meaning is as follows:
 
 Moreover, we now use milestones to see which bugs need to be corrected as soon
 as possible. See
-[[Milestones|https://github.com/MarkUsProject/Markus/issues/milestones]
+[[Milestones|https://github.com/MarkUsProject/Markus/issues/milestones]].
