@@ -56,6 +56,7 @@ Bash command to find text in source files
 --------------------------------------------------------------------------------
 
 ::
+
   find PATH_OF_THE_PROJECT -name "*" -exec grep --color -Hn "KEY_TO_FIND" {} \;
 
 
@@ -64,11 +65,13 @@ Internationalization of Javascript files
 --------------------------------------------------------------------------------
 
 ::
+
   alert('You must select the Penalty Period Submission Rule to add a grace period.');
 
 becomes
 
 ::
+
   alert("#{I18n.t("submission_rules.penalty_period_submission_rule.alert")}");
 
 
@@ -105,6 +108,7 @@ becomes ::
 with appropriate references in the config/_LANG_.yml (en.yml default)
 
 ::
+
   date:
     #MarkUs LONG_DATE_TIME_FORMAT
     long_date: "%B %d, %Y: %I:%M%p"
