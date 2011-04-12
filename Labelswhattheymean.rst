@@ -17,7 +17,17 @@ suit our needs. Their meaning is as follows:
  * UW: University of Waterloo. Can be used to mark UW specific things.
  * UT: University of Toronto. Same thing.
  * REJECTED: Rejected issues.
+ * EASY FIX: Ideal for beginners. Should be tricky to fix it!
+ * Rails3: Particular things remaining to complete the Rails3 migration.
  * Documentation: Request for documentation
+
+
+.. figure:: images/Labels.png
+   :scale: 100%
+   :align: center
+   :alt: Labels
+
+   Labels colors on GitHub.
 
 Moreover, we now use milestones to see which bugs need to be corrected as soon
 as possible. See
