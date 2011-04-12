@@ -159,7 +159,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
   * [[How to run Selenium tests | SeleniumTesting]]
   * [[Acceptance/Cucumber tests | CucumberTesting]]
   * [[How to use the MarkUs API | ApiHowTo]]
-  * [[How to use MarkUs Testing Framework | TestingFramework]] (still in alpha)
+  * [[How to use MarkUs Testing Framework | TestFramework]] (still in alpha)
 
 
 * **MarkUs Coding Style/Coding Practices/Rails Gotchas**
