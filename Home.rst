@@ -108,9 +108,13 @@ Gabriel Roy-Lortie, Simon Lavigne-Giroux, Mélanie Gaudet, Fernando Garces, Tara
 Clark, Farah Juma, Benjamin Vialle, Christian Jacques, Victoria Mui, Joseph
 Maté, Robert Burke, Bryan Shen, Brian Xu, Anton Braverman, Diane Tam, Evan
 Browning, Dina Sabie, Misa Sakamoto, Vivien Suen, Horatiu Halmaghi, Kurtis
-Schmidt, Jiahui Xu, Victor Ivri, Benjamin Vialle, Clément Delafargue
+Schmidt, Jiahui Xu, Victor Ivri, Benjamin Vialle, Clément Delafargue, Mickaël
+Lumbroso, Anthony Le Jallé, Benjamin Thorent, Shion Kashimura, Noé Bedetti,
+Jérôme Gazel, Clément Schiano de Collela, Valentin Roger
 
 **Industry Advisors:** Mike Gunderloy, Adam Goucher
+
+**(ECN) Supervisor:** Morgan Magnin
 
 **Supervisor:** Karen Reid
 
