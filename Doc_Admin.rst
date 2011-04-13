@@ -118,6 +118,23 @@ to deduct grace period credits or to use a penalty.
 
    How To add a new assignment
 
+In the “Remark Request Rules” section, it's possible to choose if students can
+submit remark requests once their initial marks have been released. Students
+can continue to edit remark requests until they choose to submit to the
+instructor.  However, they can only do so until the remark request deadline.
+If no deadline is specified, there will be no date restrictions on remark
+requests.  You can also provide detailed instructions for students to follow
+when submitting remark requests.
+
+.. figure:: images/Doc_Admin_AddAssignment4.png
+   :width: 783px
+   :height: 311px
+   :scale: 100%
+   :align: center
+   :alt: Add a new assignment
+
+   How To add a new assignment
+
 Once the assignment created, you have to define the marking scheme, and
 annotation models that the grader can use (of course the grader can add his own
 markings) and the identity of the graders for this assignment.
@@ -321,3 +338,100 @@ the comments made by the grader. There are two ways to do that :
 * The second
   way is when you are both administrator and grader in the same time : you can
   (in the section Annotation) to choose “complete” and directly click “release”.
+
+Processing re-evaluation requests
+================================================================================
+
+If students are allowed to submit remark requests for an assignment, such remark
+request submissions will be indicated in the "Submissions" tab.  Only the
+instructor can process remark requests.
+
+Although students can save and edit their remark requests multiple times, the
+instructor will not be notified until the student has actually decided to submit
+the request. Once a request has been submitted, the submission is indicated by
+a double-exclamation icon. Click on the group/student name to view the request.
+
+.. figure:: images/Doc_Admin_Remark_Request_Submitted.png
+   :width: 1111px
+   :height: 358px
+   :scale: 100%
+   :align: center
+   :alt: Submissions Table with Remark Request
+
+   Submissions table indicating remark request
+
+Click on the Remark Request tab to view the request details.  The instructor
+can write any additional overall comments regarding the request in this tab.
+
+*Please note that once a remark request has been submitted by the student,
+the student will be unable to view both the original and partially remarked
+results. Only after the instructor releases the grades again will results be
+availabe to the students.
+
+.. figure:: images/Doc_Admin_Remark_Request_Tab.png
+   :width: 763px
+   :height: 572px
+   :scale: 100%
+   :align: center
+   :alt: Remark Request Tab
+
+   View and Process Remark Request
+
+In the marks tab, the instructor can see both the old (original) marks
+and the new marks.
+
+.. figure:: images/Doc_Admin_Remarking.png
+   :width: 469px
+   :height: 543px
+   :scale: 100%
+   :align: center
+   :alt: Marks Tab While Remarking
+
+   View Old Marks and Edit New Marks
+
+The summary tab will show the summary of new marks.
+
+.. figure:: images/Doc_Admin_Remarks_Summary.png
+   :width: 450px
+   :height: 420px
+   :scale: 100%
+   :align: center
+   :alt: Remarks new marks summary
+
+   The tab containing new summary of marks
+
+The old marks summary can be viewed upon hovering over the "Show Old
+Mark Summary" link.
+
+.. figure:: images/Doc_Admin_Remarks_Oldmarks_Summary.png
+   :width: 453px
+   :height: 420px
+   :scale: 100%
+   :align: center
+   :alt: Remarks old marks summary
+
+   The tab containing old summary of marks on mouseover
+
+Finally, in order to release results, the marking state needs to be
+changed to "Complete," and the "Released" checkbox checked off.
+
+.. figure:: images/Doc_Admin_Remark_State.png
+   :width: 1235px
+   :height: 90px
+   :scale: 100%
+   :align: center
+   :alt: Remarks state
+
+   The portion of the screen indicating remarks marking/release state
+
+The students will be able to see both the old and new marks summary. Once released,
+the student will see a read-only version of what the instructor is able to see.
+
+.. figure:: images/Doc_Admin_Remarks_Released.png
+   :width: 453px
+   :height: 395px
+   :scale: 100%
+   :align: center
+   :alt: Remarks released
+
+   The tab containing old and new marks

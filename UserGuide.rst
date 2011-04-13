@@ -87,6 +87,18 @@ Note: It is possible for an admin or a grader to bypass an assignment's
 submission rule by manual collection, but more on this in the 'Collecting
 Submissions' section
 
+Remark Request Rules
+--------------------------------------------------------------------------------
+
+* Allow remark requests - Checking this box allows students to request remarks
+  after original results have been released.
+
+* Remark Due Date - Students will not be able to submit remark requests after
+  this date.
+
+* Remark Message - Text to provide instructions that students should follow for
+  remark requests.
+
 Adding Marking Criteria
 --------------------------------------------------------------------------------
 

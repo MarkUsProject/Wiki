@@ -123,3 +123,90 @@ commentaries let by the teacher.
    :alt: Results
 
    Page seen by the student once marks have been released
+
+Submitting remark requests
+--------------------------------------------------------------------------------
+
+If the instructor has allowed students to submit remark requests on an
+assignment, a "Remark Request" tab will be shown when clicking on "Results."
+This tab will show instructions on what the remark request should contain, as
+well as any due dates.  Students can write their request in the text box, and
+choose to either "Save" (and come back later to continue editing) or "Submit."
+
+.. figure:: images/Doc_Student_Remark_Request.png
+   :width: 661px
+   :height: 572px
+   :scale: 100%
+   :align: center
+   :alt: Remark request tab
+
+   Remark request tab seen by the student once marks have been released
+
+*It is important to note that the instructor will be unaware of any remark
+requests until it has been submitted.  Once a remark request has been
+submitted, students will not be able to edit their request.  Students will
+also be unable to view original marks until remark results have been
+released by the instructor.
+
+When the student chooses to submit the remark request, the student will see
+a pop-up confirming the submission.
+
+.. figure:: images/Doc_Student_Confirm_Remark_Submission.png
+   :width: 664px
+   :height: 127px
+   :scale: 100%
+   :align: center
+   :alt: Confirmation pop-up
+
+   Remark request submission confirmation pop-up
+
+When the student clicks "Ok," the screen will change to show that the
+remark request has been submitted.  The student will be able to see the
+request details. The student can also choose to cancel the remark
+request.
+
+.. figure:: images/Doc_Student_Remark_Request_Submitted.png
+   :width: 691px
+   :height: 340px
+   :scale: 100%
+   :align: center
+   :alt: Remark request submitted
+
+   The screen that students will see upon remark request submission
+
+When the remarked results have been released by the instructor, the
+student can click on the results tab to view any comments and changes
+made.  They will be able to see the old marks and the new marks in the
+marks tab.
+
+.. figure:: images/Doc_Student_Remarks_Released.png
+   :width: 453px
+   :height: 395px
+   :scale: 100%
+   :align: center
+   :alt: Remarks released
+
+   The tab containing old and new marks
+
+The summary tab will show the summary of the new marks.
+
+.. figure:: images/Doc_Student_Remarks_Summary.png
+   :width: 450px
+   :height: 420px
+   :scale: 100%
+   :align: center
+   :alt: Remarks new marks summary
+
+   The tab containing new summary of marks
+
+The old marks summary can be viewed upon hovering over the "Show Old
+Mark Summary" link.
+
+.. figure:: images/Doc_Student_Remarks_Oldmarks_Summary.png
+   :width: 453px
+   :height: 420px
+   :scale: 100%
+   :align: center
+   :alt: Remarks old marks summary
+
+   The tab containing old summary of marks on mouseover
