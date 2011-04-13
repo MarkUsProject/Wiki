@@ -1,34 +1,54 @@
+Prepare a MarkUs Release
 ================================================================================
-Préparing Release and Patch
-================================================================================
 
-(Temporary until I write it up proper)
+1. Run tests on PostgreSQL and MySQL Databases
 
-0. Run tests on a PostgreSQL DB and probably MySQL
+2. Make sure app/MARKUS_VERSION is updated
 
-1. Change MARKUS_VERSION
+3. Make sure Changelog gets updated.
 
-2. Update NAMED_REVISIONS
+4. Make sure INSTALL is up-to-date in the repository and a most recent version
+   is exported on markusproject.org (i.e. /path/to/www/INSTALL)
 
-3. Make sure INSTALL is up-to-date in the repository and a most recent version
-is exported on markusproject.org (i.e. /path/to/www/INSTALL)
+5. If it is possible, run rake i18n:missing_keys and add them to locales (you
+   can keep the english key if you don't know how to translate it.) It will
+   avoid missing locales errors.
 
-3. Make sure [deployment instructions](wiki:InstallProdStable) match latest
-requirements
+6. Make sure [deployment instructions](wiki:InstallProdStable) match latest
+   requirements
 
-3. Update Changelog
+7. Make sure a tag gets created for the according release
 
-  ``svn log --verbose --stop-on-copy`` is your friend.
+8. Make sure a branch for the minor version number (0.7.x for 0.7.0) gets
+   created and pushed
 
-4. Make sure that config/environments/production.rb has reasonable settings
+9. Prepare the archive (see below)
 
-5. Commit version/release files changes to repo
+10. Prepare a patch for micro release updates.
 
-6. If it is possible, run rake i18n:missing_keys and add them to locales (you
-can keep the english key if you don't know how to translate it.) It will avoid
-missing locales errors.
+11. Upload patch and archive
 
-7. Package everything up and put it on markusproject.org
+12. Update latest-stable symlink in /download directory on markusproject.org
 
-8. Update the symlink on markusproject.org in the path/to/www/download/ folder
-(markus-latest-stable.tar.gz)
+13. Update index.html on markusproject.org and release note
+    (blog.markusproject.org)
+
+
+Prepare the tar archive from the Git tree
+--------------------------------------------------------------------------------
+::
+
+  $ git checkout <branchname>
+  $ git log
+  $ git archive --format=tar -o markus-<version-number> --prefix=markus-<version-number>/ refs/tags/<markus-version-number>
+  $ gzip markus-<version-number>.tar
+
+Prepare a patch from Git
+--------------------------------------------------------------------------------
+::
+
+  $ git diff refs/tags/<markus-version> refs/tags/<markus-version> > markus-<markus-version>.patch
+
+This will generate a Git style patch. Apply it by::
+
+  $ cd path/to/markus/root && patch -p1 < path/to/patch
