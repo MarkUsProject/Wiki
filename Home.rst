@@ -244,7 +244,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
   * [[Groupings and Repositories | GroupsGroupingsRepositories]]
   * [[Authentication and Authorization | Authentication]]
   * [[Annotations | Annotations]]
-  * [[How Student Work is Graded | How_Grading_Works]]
+  * [[How Student Work is Graded | HowGradingWorks]]
   * [[Submission Rules | Submission_Rules]]
   * [[The FilterTable Class | FilterTable]]
   * [[Simple Grade Entry | SimpleGradeEntry]]
