@@ -154,7 +154,6 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
   * [[How to program in Ruby, Rubybook | http://ruby-doc.org/docs/ProgrammingRuby/]]
   * [[Rails API | http://api.rubyonrails.org]]
   * [[Rails Guides | http://guides.rubyonrails.org]]
-  * [[Using metric_fu | MetricFu]]
   * [[General Guide Lines to code - Code review from Mike Gunderloy |
     GeneralGuideLines]]
   * http://apidock.com/rails
