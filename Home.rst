@@ -188,7 +188,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 
 * **MarkUs Releases**
 
-  * [[Preparing a Release and Patch | Preparing-release-and-patch]]
+  * [[Preparing a Release and Patch | PreparingReleaseAndPatch]]
 
 * **User Roles and Stories for MarkUs**
 
