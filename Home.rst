@@ -263,6 +263,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 
   * [[jEdit | JEdit]]
   * [[NetBeans | NetBeans]]
+  * [[Aptana RadRails / Eclipse | AptanaRadRails]]
 
 MarkUs Deployment Documents (Installation Instructions for MarkUs using RAILS_ENV=production)
 ===============================================================================================
