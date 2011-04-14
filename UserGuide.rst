@@ -4,7 +4,7 @@ MarkUs User Guide
 
 
 
-This guide is designed to familiarize users with all of MarkUs' features.
+This guide is attempts to describe all features of MarkUs. Note that some features may not be available in all versions. Some features might not be available in any released version (yet).
 
 .. contents::
 
