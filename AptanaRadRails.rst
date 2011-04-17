@@ -23,8 +23,7 @@ Install Aptana Radrails
 ********************************************************************************
 
 * Start Eclipse (as normal user, *not* root)
-* Go to: “Help” - “Software Updates”
-* Select “Available Software”
+* Go to: “Help” - “Install New Software”
 * Click on “Add Site” (*Note:* The next 4 steps for determining the URL to
   enter next work as of September 15, 2009; Maybe these steps need a little
   adaption at some point later)
@@ -60,45 +59,28 @@ install them or not (I did).
 * Now, go to "Rails"
 * Rails should be auto-detected as well as Mongrel
 
-Install Subclipse
+Install EGit
 ********************************************************************************
 
-* Again go to: “Help” - “Software Updates”
-* Select “Available Software”
-* Click on “Add Site”
-* Enter Location: “http://subclipse.tigris.org/update_1.2.x” (depending on which
-  version you want to install; for me version 1.2.x worked best)
-* Select (check) “Subclipse” from "http://subclipse.tigris.org/update_1.2.x"
-* Click "Install..." and click the “Next >” button
-* Read the License Agreement, accept the terms, and click the “Finish >” button.
-* The downloads should be installed into the .eclipse folder in your home
-  directory by default. If this is acceptable click the “Finish” button.
-* Wait for the downloads to complete.
-* Once the downloads are complete click the “Install” button on the
-  “Verification” screen.
-* When it is recommended that Eclipse be restarted click “Yes”.
-* After installation go to "Window" - "Preferences" and select "Team" - "SVN"
-  (there might be an Error message popping up, but you can ignore it)
-* Now, in the "SVN interface" section select "SVNKit (Pure Java)" instead of
-  "JavaHL (JNI)" and click "Apply"
+* Again go to: “Help” - “Install New Software...”
+* Check if the EGit update site is available (in “Available Software Sites”. Its
+  URL is “http://download.eclipse.org/egit/updates”.
+* If not available, click on “Add Site”
+* Enter Location: “http://download.eclipse.org/egit/updates”
+* The rest of the installation should be really straight forward.
+* Check out the EGit user guide: http://wiki.eclipse.org/EGit/User_Guide
 
 Checkout MarkUs Source Code
 ********************************************************************************
 
+* Create a Github user account
+* Got to http://github.com/MarkusProject/Markus
+* "Fork" the MarkUs repository, by clicking the "Fork" button.
+* Figure out the Git clone URL of your fork. Should be something like
+  git@github.com:<yourgithub-username>/Markus.git
 * Start Eclipse and switch to the RadRails perspective
-* Go to "File" - "New" and select "Project..."
-* At the "New Project" wizard select "SVN" - "Checkout Projects from SVN" and
-  click on "Next >"
-* Use "Create a new repository location" and click "Next >"
-* Enter URL: "https://stanley.cdf.toronto.edu/svn/csc49x/olm_rails" and click
-  "Next >"
-* Accept the "invalid certificate warning".
-* Select "trunk" and click "Next >"
-* Keep the default options and click "Finish"
-* At the "New Project" wizard select "Rails" - "Rails Project" and click "Next >"
-* Enter a project name of your choosing, deselect "Generate Rails application
- skeleton" and "Automatically start server after project is created"
-* Click "Finish" and let Subclipse checkout the code from the repository
+* Clone the MarkUs repository of your Github fork (use URL as described above) as described here:
+  http://wiki.eclipse.org/EGit/User_Guide#Cloning_Remote_Repositories
 
 Getting Started with MarkUs Development
 ********************************************************************************
@@ -107,19 +89,15 @@ First, we need to configure MarkUs. Please have a careful look at
 config/environment.rb (and please read the comments) and config/database.yml
 
 
-
-Setup the config/environments/development.rb file:
-
-* Also make sure your the REPOSITORY_STORAGE constant points to a location
-  actually existent.
-
 Start your newly installed RadRails and by using the "Ruby Explorer" navigate
-to folder "config" and copy the file "database.yml.sample". Paste and rename
-it to "database.yml". Now open the newly created "database.yml" file and
-modify the "username: ..." and "password: ..." lines as follows::
+to folder "config" and copy the file "database.yml.myslq" (or
+"database.yml.postgres" depending on the DB you are using). Paste and rename it
+to "database.yml". Now open the newly created "database.yml" file and modify
+the "username: ..." and "password: ..." lines as follows (make sure this DB
+user actually exists and works)::
 
-    username: olm_db_admin
-    password: olm_db_admin
+    username: markus
+    password: markus-password
 
 Do that for "development", "test" and "production" and save your modified
 "database.yml".
@@ -136,11 +114,15 @@ Restart Eclipse.*
 
      * If it doesn't work in the command line, it won't work in Aptana
 
+Make sure that you have rubygems > 1.3.7 and bundler installed. You most
+likely have to do that on the commandline.
+
+If that succeeded, then you are ready to try in Aptana's Rake console:
+
 Run, in order,::
 
-* gems:install
 * db:create
-* db:schema:loa
+* db:schema:load
 * db:populate
 * db:test:prepare
 * test:units
