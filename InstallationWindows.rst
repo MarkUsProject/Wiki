@@ -91,18 +91,8 @@ Installing MarkUs
 Once you have the required software installed, it should be pretty
 straight-forpward to install MarkUs.
 
-In order to checkout Markus you will need to have [[subversion |
-http://subversion.apache.org/]] installed on Windows.  The
-standard command line client is fine, but it is also possible to integrate
-subversion into the Windows shell using [[ Tortoise SVN |
-http://tortoisesvn.net/]].
-
- * Go to the folder where you'd like to put the MarkUs source code (a folder called "markus_trunk" is recommended) and checkout the MarkUs source code.  The source code can be found at `https://stanley.cdf.toronto.edu/svn/csc49x/olm_rails/trunk`. The command to checkout is:
-
-    `svn co https://stanley.cdf.toronto.edu/svn/csc49x/olm_rails/trunk markus_trunk`
-
- * If you are using Rails > 2.3.2 comment out the line containing
-    `RAILS_GEM_VERSION="2.3.2"` in config/environment.rb
+In order to checkout Markus you will need to have a Git client installed on Windows.
+ * Clone your personal MarkUs fork, which you created on Github.
 
  * You need to select the proper database connection settings file to match the database you are using.  To do this, you must copy the appropriate file in the `config` folder to `database.yml`:
 
@@ -123,29 +113,7 @@ http://tortoisesvn.net/]].
    window)::
       `rake db:create`
 
-If you have a problem executing the above command then it is likely that there is something wrong with the file `database.yml` that you just edited.
-
- * Install other gems required for Markus development:
-      - `gem install ruby-debug`
-
-Note: use `gem install ruby-debug -v 0.9.3` to install an earlier version of ruby-debug if the latest version will not install.
-      - `gem install fastercsv`
-      - `gem install selenium_client`
-      - `gem install throughbot-shoulda`
-      - `gem install will_paginate`
-      - `gem install machinist`
-      - `gem install faker`
-      - `gem install factory_data_preloader`
-      - `gem install rubyzip`
-      - `gem install ya2yaml`
-
-If you get a message saying "Missing these required gems", then it is likely
-that some new gems have been integrated into Markus development and also need
-to be installed using `gem install` as described above (or use `rake
-gems:install`; Note: rake gems:install might not work correctly, because of a
-rake chicken/egg problem. It seems rake requires the environment task, but
-this doesn't work, because there are missing required gems. See ticket #635).
-Edit this page to include them!
+If you have a problem executing the above command then it is likely that there is something wrong with the file `database.yml` that you just edited. Make sure bundler is set up properly.
 
  * Now you need to install the Ruby/Subversion bindings. ( <http://danintouch.blogspot.com/2008/08/svn-151-ruby-bindings-on-windows.html> for original tutorial and <http://subversion.tigris.org/servlets/ProjectDocumentList?folderID=8100> for the latest downloads)
 
@@ -161,9 +129,6 @@ Edit this page to include them!
       `rake db:schema:load`
 
  * I recommend that you restart your computer at this point, especially if you get a error about an invalid Win32 application when trying the next step.
-
- * Create an instructor (for initial login):
-      `rake markus:instructor first_name="test" last_name="test" user_name="markus"`
 
  * If you want you can populate MarkUs with sample data:
       `rake db:populate`
@@ -181,8 +146,6 @@ Edit this page to include them!
 
       - Just above the line that says `pipe = IO.popen(VALIDATE_FILE...`, add the line
             `return AUTHENTICATE_SUCCESS`
-
- * Change the REPOSITORY_STORAGE constant value in 'config/environment.rb' to a Windows-like value. Mine is `C:/markus-src/svn-repos-root` for example. If the MarkUs rails app is currently running, restart it since you've changed configuration.
 
  * Markus Installation is now done!!!
 
