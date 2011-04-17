@@ -246,36 +246,18 @@ If you are asked if you want to auto-install some gems it is up to you to instal
 * Now, go to "Rails"
 * Rails should be auto-detected as well as Mongrel
 
-Install Subclipse
+Install EGit
 --------------------------------------------------------------------------------
 
-* Again go to: “Help” - “Software Updates”
-* Select “Available Software”
-* Click on “Add Site”
-* Enter Location: “http://subclipse.tigris.org/update_1.2.x” (depending on which version you want to install; for me version 1.2.x worked best)
-* Select (check) “Subclipse” from "http://subclipse.tigris.org/update_1.2.x"
-* Click "Install..." and click the “Next >” button
-* Read the License Agreement, accept the terms, and click the “Finish >” button.
-* The downloads should be installed into the .eclipse folder in your home directory by default. If this is acceptable click the “Finish” button.
-* Wait for the downloads to complete.
-* Once the downloads are complete click the “Install” button on the “Verification” screen.
-* When it is recommended that Eclipse be restarted click “Yes”.
-* After installation go to "Window" - "Preferences" and select "Team" - "SVN" (there might be an Error message popping up, but you can ignore it)
-* Now, in the "SVN interface" section select "SVNKit (Pure Java)" instead of "JavaHL (JNI)" and click "Apply"
+* Please refer to: http://help.eclipse.org/helios/index.jsp?topic=/org.eclipse.platform.doc.user/tasks/tasks-129.htm
+* Use EGit's update site at: http://download.eclipse.org/egit/updates
 
 Checkout out the MarkUs Source Code
 --------------------------------------------------------------------------------
 
 * Start Eclipse and switch to the RadRails perspective
-* Go to "File" - "New" and select "Project..."
-* At the "New Project" wizard select "SVN" - "Checkout Projects from SVN" and click on "Next >"
-* Use "Create a new repository location" and click "Next >"
-* Enter URL: "https://stanley.cdf.toronto.edu/svn/csc49x/olm_rails" and click "Next >"
-* Accept the "invalid certificate warning" and select "trunk" - "checkmark" and click "Next >"
-* Keep the default options and click "Finish"
-* At the "New Project" wizard select "Rails" - "Rails Project" and click "Next >"
-* Enter a project name of your choosing, deselect "Generate Rails application skeleton" and "Automatically start server after project is created"
-* Click "Finish" and let Subclipse checkout the code from the repository
+* Refer to EGit's user guide: http://wiki.eclipse.org/EGit/User_Guide#Cloning_Remote_Repositories
+* Use the Git URL of your personal fork of MarkUs on Github.com
 
 Install Xcode
 ================================================================================
@@ -295,10 +277,6 @@ Getting started with Xcode
 Some more information about getting started with Xcode can be found here:
 [[Developing Rails Applications using Xcode |
 (http://developer.apple.com/Tools/developonrailsleopard.html]]
-You can also find step-by-step instructions for working with Xcode and
-Subversion here: [[Using Subversion with Xcode 3 |
-http://developer.apple.com/mac/articles/server/subversionwithxcode3.html]]
-(The repository that contains the MarkUs source code can be found here: https://stanley.cdf.toronto.edu/svn/csc49x/olm_rails/trunk)
 
 Getting Started with MarkUs Development
 ================================================================================
@@ -312,8 +290,8 @@ Start your newly installed RadRails and by using the "Ruby Explorer" navigate
 to folder "config". Open the "database.yml" file and modify the "username:
 ..." and "password: ..." lines as follows::
 
-    username: olm_db_admin
-    password: olm_db_admin
+    username: markus
+    password: markus-password
 
 (Make sure the username and password you specify match the username and
 password you set when you created a user.)
@@ -334,19 +312,6 @@ PostgreSQL and MySQL::
 
     #>rake db:create:all     # creates all the databases defined in config/database.yml
     #>rake db:create         # creates the database defined in config/database.yml for your current RAILS_ENV
-
-Modifying config/environment.rb
-================================================================================
-
-The RAILS_GEM_VERSION is different in MAC OS X. Modify line 4 in
-config/environnement.rb in MarkUs for::
-
-    #>RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
-
-If your version differs (rails --version), use yours.
-
-SVN repositories are used to contain files for every student groups. You need
-to modify the REPOSITORY_STORAGE for a folder you created on your hard drive.
 
 Rake tasks
 ================================================================================
@@ -369,14 +334,6 @@ If you're using MySQL::
 Next, you can load the initial database models for the current environment::
 
     #>rake db:populate
-
-Next, you can create an instructor to log into MarkUs::
-
-    #>rake markus:instructor user_name=Admin first_name=Admin last_name=Istrator
-
-You can use this command to add students::
-
-    #>rake markus:add_students
 
 Now, start the server using::
 
