@@ -10,13 +10,14 @@ to use Review Board.
 Creating New Review Requests
 ================================================================================
 
-Once you have changed the source code of your locally checked out copy of
-MarkUs you need to create a new review request for these changes. This are the
-steps you need to do:
+Once you have created a branch, worked on your code and committed your changes
+to your local git repository you are ready to create a review request.
 
- 1. Create a diff file for your changes made (Do _not_ include files in the
- diff file, which you do not plan to commit to the MarkUs source code
- repository). Usually one would use svn diff and redirect output to a file.
+ 1. Create a diff file of your changes::
+
+* git checkout master
+* git pull markus-upstream master
+* git diff --full-index master <your-feature-branch-name> > your_feature.diff
 
  2. Go to <http://review.markusproject.org/> and log in with your credentials
  (If you do not have a Review Board account, request one from the
@@ -24,25 +25,16 @@ steps you need to do:
 
  2. Click on "New Review Request"
 
-    223. Enter "Base Diff Path" (this is the directory - inside the MarkUs
-    source code repository - you checked out **plus** possibly some
-    sub-folders inside the MarkUs app you created the diff in). For instance,
-    if you have checked out the "trunk" directory of the MarkUs code base and
-    you created the diff by running <code>svn diff \> out.diff</code> in the
-    application root directory, you should enter "trunk" as a "Base Diff
-    Path". You can find out what folders there are in the MarkUs source code
-    repository by [browsing the source code
-    online](https://stanley.cdf.toronto.edu/svn/csc49x/olm_rails/)
+    2.1 Select the MarkUs Git source code repository
 
-    232. Upload the diff you created in step 1
+    2.2. Select your local diff file you've just created above.
 
  4. Check the diff by clicking on "View Diff"
 
  3. Enter appropriate "Summary" and "Description"
 
- 3. If this is a review request for a particular branch enter the branch name in "Branch"
-
- 3. If this review request addresses a particular bug for which there exists a ticket enter ticket number in "Bugs"
+ 3. If this review request addresses a particular bug for which there exists a ticket enter ticket number in "Bugs".
+    Please just add the ticket number nothing more.
 
  3. If you want to get review of any MarkUs developer, enter
     "markus_developers" in field "Groups". If you want to get review by one
