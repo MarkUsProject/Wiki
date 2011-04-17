@@ -22,6 +22,9 @@ Project Resources
 * **Project Website** http://www.markusproject.org
 * **Developer's Blog** http://blog.markusproject.org
 * **Review Board** http://review.markusproject.org
+
+  * [[How to create a MarkUs review | HowToReviewBoard]]
+
 * **IRC Channel:** Our channel is #markus on irc.freenode.net.
   [[Logs of the channel|http://www.markusproject.org/irc/]] are also available.
 * **Sandbox** http://www.markusproject.org/admin-demo/
