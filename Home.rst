@@ -105,23 +105,10 @@ Mailing [[list archive at marc.info|http://marc.info/?l=markus-dev&r=1&w=2]]
 
 Project Contributors
 --------------------------------------------------------------------------------
-Geoffrey Flores, Mike Conley, Andrew Louis, Justin Foong, Veronica Wong, Amanda
-Manarin, Severin Gehwolf, Catherine Fawcett Nelle Varoquaux, Neha Kumar,
-Gabriel Roy-Lortie, Simon Lavigne-Giroux, Mélanie Gaudet, Fernando Garces, Tara
-Clark, Farah Juma, Benjamin Vialle, Christian Jacques, Victoria Mui, Joseph
-Maté, Robert Burke, Bryan Shen, Brian Xu, Anton Braverman, Diane Tam, Evan
-Browning, Dina Sabie, Misa Sakamoto, Vivien Suen, Horatiu Halmaghi, Kurtis
-Schmidt, Jiahui Xu, Victor Ivri, Benjamin Vialle, Clément Delafargue, Mickaël
-Lumbroso, Anthony Le Jallé, Benjamin Thorent, Shion Kashimura, Noé Bedetti,
-Jérôme Gazel, Clément Schiano de Collela, Valentin Roger
+Adam Goucher, Amanda Manarin, Andrew Louis, Anthony Le Jallé, Anton Braverman, Benjamin Thorent, Benjamin Vialle, Bertan Guven, Brian Xu, Bryan Shen, Catherine Fawcett, Christian Jacques, Clément Delafargue, Clément Schiano, Danesh Dadachanji, Diane Tam, Dina Sabie, Evan Browning, Farah Juma, Fernando Garces, Gabriel Roy-Lortie, Geoffrey Flores, Horatiu Halmaghi, Ibrahim Shahin, Jérôme Gazel, Jiahui Xu, Joseph Mate, Joseph Maté, Justin Foong, Karel Kahula, Kurtis Schmidt, Mélanie Gaudet, Michael Lumbroso, Mike Conley, Mike Gunderloy, Misa Sakamoto, Neha Kumar, Nelle Varoquaux, Noé Bedetti, Oloruntobi Ogunbiyi, Robert Burke, Samuel Gougeon, Severin Gehwolf, Shion Kashimura, Simon Lavigne-Giroux, Tara Clark, Valentin Roger, Veronica Wong, Victoria Mui, Victor Ivri, Vivien Suen, Yansong Zang
 
-**Industry Advisors:** Mike Gunderloy, Adam Goucher
+**Supervisors:** Morgan Magnin, Karen Reid
 
-**(ECN) Supervisor:** Morgan Magnin
-
-**Supervisor:** Karen Reid
-
-.. TODO Add manually the projects members
 
 Term Work
 --------------------------------------------------------------------------------
