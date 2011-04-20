@@ -7,6 +7,39 @@ Every MarkUs developer has to use Review Board (even for the smallest commit).
 peer-reviewing to-be-checked-in source code. This is a short guide as to how
 to use Review Board.
 
+Using post-markus-review script for review posting
+================================================================================
+
+Software Requirements
+----------------------------------
+::
+
+ $ sudo aptitude install python-setuptools   # or equivalent to install easy_install
+ $ sudo easy_install RBTools
+
+That's it.
+
+Posting a review using post-markus-review
+-------------------------------------------
+
+::
+
+  $ cd path/to/markus/root
+
+Make sure to create a file called ".markusdev-creds" (without the quotes, in the current working directory)
+which contains at least the following content (replace <username> with your username on GitHub:
+
+::
+
+  GITHUB_USER=<username>
+
+Now, you are ready to run the script. The script is interactive and will ask for the required information.
+::
+
+  $ ./lib/tools/post-markus-review
+
+Note that post-markus-review uses the editor as specified by the EDITOR environment variable when it opens some editor (e.g. when it asks for the review description). For instance, if you'd like to use gedit for editing, make sure to export EDITOR=gedit in your .bashrc. Happy posting.
+
 Creating New Review Requests
 ================================================================================
 
