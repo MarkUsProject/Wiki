@@ -27,7 +27,7 @@ Posting a review using post-markus-review
   $ cd path/to/markus/root
 
 Make sure to create a file called ".markusdev-creds" (without the quotes, in the current working directory)
-which contains at least the following content (replace <username> with your username on GitHub:
+which contains at least the following content (replace <username> with your username on GitHub):
 
 ::
 
