@@ -1,6 +1,30 @@
 ================================================================================
-Aptana RadRails plugin for Eclipse
+Aptana RadRails
 ================================================================================
+
+You can still install RadRails as an Eclipse plugin, but it is a bit deprecated
+and using standalone version is easiest 
+
+Install Aptana Radrails
+================================================================================
+
+Standalone version
+--------------------------------------------------------------------------------
+**This tutorial deals with the beta3 version of AptanaRadRails**
+
+* Go to http://www.aptana.com/radrails using your preferred Web browser
+* Click on "Download Now"
+* Select "Standalone" from the drop down selection menu and click on
+  "Download Now"
+* Unzip tarball and a execute "Aptana RadRails"
+
+.. figure:: images/Aptana.png
+   :scale: 100%
+   :align: center
+   :alt: Aptana RadRails beta3
+
+   Aptana RadRails beta3 with MarkUs
+
 
 Install the Radrails Plug-in for Eclipse (optional)
 --------------------------------------------------------------------------------
@@ -20,7 +44,7 @@ otherwise you may not be able to install Eclipse plug-ins.::
     #>  apt-get install eclipse-pde
 
 Install Aptana Radrails
-********************************************************************************
+--------------------------------------------------------------------------------
 
 * Start Eclipse (as normal user, *not* root)
 * Go to: “Help” - “Install New Software”
@@ -48,6 +72,10 @@ Install Aptana Radrails
 * Wait for the downloads to complete.
 * When it is recommended that Eclipse be restarted click “Yes”.
 
+
+Configuration of Aptana RadRails
+================================================================================
+
 **Check Ruby and Rails Configuration**
 
 If you are asked if you want to auto-install some gems it is up to you to
@@ -60,7 +88,7 @@ install them or not (I did).
 * Rails should be auto-detected as well as Mongrel
 
 Install EGit
-********************************************************************************
+--------------------------------------------------------------------------------
 
 * Again go to: “Help” - “Install New Software...”
 * Check if the EGit update site is available (in “Available Software Sites”. Its
@@ -70,8 +98,15 @@ Install EGit
 * The rest of the installation should be really straight forward.
 * Check out the EGit user guide: http://wiki.eclipse.org/EGit/User_Guide
 
+.. figure:: images/Aptana_Git.png
+   :scale: 100%
+   :align: center
+   :alt: Aptana RadRails Git
+
+   Aptana RadRails beta3 with Git support
+
 Checkout MarkUs Source Code
-********************************************************************************
+--------------------------------------------------------------------------------
 
 * Create a Github user account
 * Got to http://github.com/MarkusProject/Markus
@@ -79,76 +114,14 @@ Checkout MarkUs Source Code
 * Figure out the Git clone URL of your fork. Should be something like
   git@github.com:<yourgithub-username>/Markus.git
 * Start Eclipse and switch to the RadRails perspective
-* Clone the MarkUs repository of your Github fork (use URL as described above) as described here:
+* Clone the MarkUs repository of your Github fork (use URL as described above)
+  as described here:
   http://wiki.eclipse.org/EGit/User_Guide#Cloning_Remote_Repositories
 
-Getting Started with MarkUs Development
-********************************************************************************
 
-First, we need to configure MarkUs. Please have a careful look at
-config/environment.rb (and please read the comments) and config/database.yml
+.. figure:: images/Aptana_Project.png
+   :scale: 100%
+   :align: center
+   :alt: Aptana RadRails Project
 
-
-Start your newly installed RadRails and by using the "Ruby Explorer" navigate
-to folder "config" and copy the file "database.yml.myslq" (or
-"database.yml.postgres" depending on the DB you are using). Paste and rename it
-to "database.yml". Now open the newly created "database.yml" file and modify
-the "username: ..." and "password: ..." lines as follows (make sure this DB
-user actually exists and works)::
-
-    username: markus
-    password: markus-password
-
-Do that for "development", "test" and "production" and save your modified
-"database.yml".
-
-Now switch to the "Rake Tasks" view.
-
-* If you get an error message complaining about the absence of RakeFile in
-the project, go to "Window" - "Preferences", then in "Ruby" - "Rake" and
-enter your rake path, e.g. "/var/lib/gems/1.8/bin/rake" (the rake version
-installed by gem, not the debian package). Click "OK" to close the dialog.
-Restart Eclipse.*
-
-* If the error persists, try running rake --tasks from the command line
-
-     * If it doesn't work in the command line, it won't work in Aptana
-
-Make sure that you have rubygems > 1.3.7 and bundler installed. You most
-likely have to do that on the commandline.
-
-If that succeeded, then you are ready to try in Aptana's Rake console:
-
-Run, in order,::
-
-* db:create
-* db:schema:load
-* db:populate
-* db:test:prepare
-* test:units
-* test:functionals
-
-
-by selecting them and clicking on the "Play"-like button on the right. The
-output of rake should show up in the "Console" view.
-
-Finally go back to RadRails and switch to the "Servers" view. There should be
-a server named exactly the same as your Rails project. Select it and start it
-using the "Start server" icon (it looks like a "Play" key). Once the server is
-started, check the port the server is listening on, fire up your Web-browser
-(or use the Eclipse built-in) and go to "http://localhost:\<serverport\>/" and
-log in with username "a" and any password (it must not be empty). That's it!
-
-If the login in fails with an error message similar to::
-
-    /usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:380:
-           command not found: /home/jmate/Aptana RadRails Workspace/MarkUs/config/dummy_validate.sh
-           [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
-           [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
-
-then you will have to go to /config/environments/development.rb and change
-VALIDATE_FILE to the absolute path to the config/dummy_validate.sh file with
-the characters properly escaped. Example::
-
-    VALIDATE_FILE = "/home/jmate/Aptana\\ RadRails\\ Workspace/MarkUs/config/dummy_validate.sh"
-
+   Aptana RadRails - Project configuration
