@@ -2,6 +2,15 @@
 Setting up a development environment for MarkUs development on GNU/Linux
 ================================================================================
 
+**Please note the difference between $> and #>. The $ means execute the command
+as simple user, the # means execute the command as the super-user or use sudo
+as normal user (#> is equivalent to $> sudo)**
+
+If your system complains about gems not found when trying to run, for example,
+`bundle install`, it is because you don't have the path of the binary in your
+PATH variable. Find the path of the gem (usually `/var/lib/gems/1.8/bin/`) and
+add it to your $PATH.
+
 Setting up Ruby, Ruby on Rails, Subversion and the Subversion Ruby bindings
 --------------------------------------------------------------------------------
 
@@ -41,27 +50,55 @@ Once you have decided what database best suits you :
 Required gems for MarkUs
 --------------------------------------------------------------------------------
 
+First, you will need rubygems (previously installed)
+
+To ensure you have the good version of rubygems, please do::
+
+    $> gem --version
+
+if your version of rubygems is < 1.3.6, please update it !
+
 This section assumes, you have gem version >= 1.3.6 (required for rails version
 > 2.3.7).
 
-Note that ruby-postgres is unmaintained and does not compile against
-postgresql-8.3+. Therefore, do **not** install it. Instead, install ruby-pg
-which works just fine. So, the list of gems required for MarkUs is as follows:
+So, the list of gems required for MarkUs is as follows:
 
 * rails
+* db_populate
+* i18n
+* mongrel_cluster
+* routing-filter
 * rake
 * mongrel
-* ruby-pg
-* postgres
 * fastercsv
-* ruby-debug
-* shoulda
-* machinist
-* factory_data_preloader
-* faker
 * will_paginate
 * rubyzip
 * ya2yaml
+
+specific gems for databases:
+
+* pg
+* mysql
+* sqlite3-ruby, sqlite3
+
+specific gems for tests and development:
+
+* shoulda
+* selenium-client
+* machinist
+* faker
+* factory_data_preloader
+* time-warp
+* ruby-debug
+* mocha
+
+and a gem to manage them all:
+
+* bundler
+
+Note that ruby-postgres is unmaintained and does not compile against
+postgresql-8.3+. Therefore, do **not** install it. Instead, install pg
+which works just fine. 
 
 We are now using bundler to manage all gems. Install only bundler as a gem and 
 bundler will install all other Gems.
@@ -71,22 +108,32 @@ To install the **all** gems execute the following::
     #> gem install bundler
     #> bundle install
 
+Please note that bundler may ask you for your root password.
+
 Bundle allows also some selective installation. To install only sqlite3
-supportr, execute the following::
+support, execute the following::
 
     #> bundle install --without postgresql mysql
+
+To install only postgresql support support, execute the following::
+
+    #> bundle install --without sqlite mysql
+
+To install only mysql support, execute the following::
+
+    #> bundle install --without postgresql sqlite
 
 On Ubuntu and Debian systems, the system can't find bundler. You need to add
 bundler to your PATH or run it directly ::
 
-    #>/var/lib/gems/1.8/bin/bundle
+    #> /var/lib/gems/1.8/bin/bundle install
 
 If you get a message saying "Missing these required gems", then it is likely
 that some new gems have been integrated into Markus development and also need
 to be installed using ``bundle install`` as described above.
 
 Now, check that everything worked fine. Do the following on a terminal (as an
-ordinary user, *not* root)::
+ordinary user, **not** root)::
 
     #> irb
     irb(main):001:0> require 'rubygems'
