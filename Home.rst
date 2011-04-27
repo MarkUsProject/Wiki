@@ -71,11 +71,10 @@ Screencasts
 
 MarkUs Developer Installation Guides
 ================================================================================
-Linux
+GNU/Linux
 --------------------------------------------------------------------------------
 * [[Setting up a development environment on GNU/Linux|InstallationGnuLinux]]
-  (i.e. Debian based systems) including Ruby on Rails, MarkUs and **Radrails
-  IDE** (Eclipse plug-in)
+  including Ruby on Rails and MarkUs
 
 Mac OS X
 --------------------------------------------------------------------------------
@@ -84,11 +83,19 @@ Mac OS X
 
 Windows
 --------------------------------------------------------------------------------
-**(Note: Linux and Mac OS X development environments generally caused less
+**(Note: GNU/Linux and Mac OS X development environments generally caused less
 problems)**
 
 * [[Setting up a development environment on Windows using
   InstantRails | InstallationWindows]]
+
+Databases
+--------------------------------------------------------------------------------
+
+* [[Setting up the Database (SQLite)|SettingUpSQLite]]
+* [[Setting up the Database (MySQL)|SettingUpMySQL]]
+* [[Setting up the Database (PostgreSQL)|SettingUpPostgreSQL]]
+
 
 MarkUs Developer Documentation
 ================================================================================
