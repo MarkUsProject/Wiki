@@ -8,16 +8,28 @@ Setting up Ruby, Ruby on Rails, Subversion and the Subversion Ruby bindings
 --------------------------------------------------------------------------------
 
 Issue the following command on a terminal. You need to be root or use "sudo"
-(the Ubuntu way) to do that::
+(the Ubuntu way) to do that. Both methods are correct. Use only one of the
+following methods :
 
+(as root)::
+
+    $> su  # and then enter your root password
     #> aptitude install ruby-full build-essential rubygems rake libsvn-ruby
     subversion
 
-.. TODO update previous radrails link
+(as normal user, with the "sudo" method)::
 
-** Note : You can either use PostgreSQL or MySQL or SQLite3 as database **
+    $> sudo aptitude install ruby-full build-essential rubygems rake libsvn-ruby
+    subversion # and then enter your root password
+
+
+
+**Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
+
 SQLite3 is easier to install, but should only used in development, not in
-production. You may also experience database conflicts.
+production. You may also experience database conflicts, in particular if you
+want to test **PDF Conversion**. In case of PDF Conversion, you **MUST** use
+PostgreSQL or MySQL
 
 Setting up the Database (SQLite3)
 --------------------------------------------------------------------------------
@@ -37,7 +49,7 @@ LANG=en_CA.UTF-8 environment variable). The postgresql cluster will be created
 in the encoding which is currently set. Type locale in the term and you should
 see something similar to the following::
 
-    locale
+    $> locale
     LANG=en_CA.UTF-8
     LC_CTYPE="en_CA.UTF-8"
     LC_NUMERIC="en_CA.UTF-8"
