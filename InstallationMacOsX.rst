@@ -27,6 +27,8 @@ Edit this page to include them!
 Setting up the Database
 ================================================================================
 
+.. TODO : Export database documentation to SettingUp***.rst files
+
 MarkUs works with either SQLite3, PostgreSQL, or MySQL databases.
 
 Setting up SQLite3
