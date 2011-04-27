@@ -43,7 +43,7 @@ Project Resources
 
 * **Issue Labels:** [[Their meaning is described here | LabelsWhatTheyMean]]
 
-.. todo Modify User Guide link
+.. TODO Modify User Guide link
 
 Screencasts
 --------------------------------------------------------------------------------
@@ -74,7 +74,6 @@ MarkUs Developer Installation Guides
 GNU/Linux
 --------------------------------------------------------------------------------
 * [[Setting up a development environment on GNU/Linux|InstallationGnuLinux]]
-  including Ruby on Rails and MarkUs
 
 Mac OS X
 --------------------------------------------------------------------------------

@@ -2,8 +2,6 @@
 Setting up the Database (PostgreSQL)
 ================================================================================
 
-.. contents::
-
 Make sure that you have set an UTF-8 locale/encoding (e.g. set
 LANG=en_CA.UTF-8 environment variable). The postgresql cluster will be created
 in the encoding which is currently set. Type locale in the term and you should
@@ -95,11 +93,16 @@ Need to be done :-)
 Now go back to the MarkUs tutorial :
 
 * Installation on GNU/Linux
+
   * [[Development environment|InstallationGnuLinux]]
   * [[Production environment|InstallProdStable]]
   * [[Old Stable (deprecated) environment|InstallOldStable]]
+
 * Installation on Mac OS X
+
   * [[Development environment|InstallationMacOsX]]
   * Production (need to be done)
+
 * Installation on Windows
+
   * [[Development environment|InstallationWindows]]

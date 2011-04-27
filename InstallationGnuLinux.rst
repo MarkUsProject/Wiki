@@ -2,8 +2,6 @@
 Setting up a development environment for MarkUs development on GNU/Linux
 ================================================================================
 
-.. contents::
-
 Setting up Ruby, Ruby on Rails, Subversion and the Subversion Ruby bindings
 --------------------------------------------------------------------------------
 
