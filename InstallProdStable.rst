@@ -13,6 +13,8 @@ How to Install MarkUs
 For more detailed instructions, please see our
 [[INSTALL | http://www.markusproject.org/INSTALL]] file.
 
+.. TODO: Don't forget to add a part for setting timezone !
+
 Required Software (including known to be working versions)
 --------------------------------------------------------------------------------
 
