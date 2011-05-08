@@ -276,7 +276,7 @@ Getting started with Xcode
 
 Some more information about getting started with Xcode can be found here:
 [[Developing Rails Applications using Xcode |
-(http://developer.apple.com/Tools/developonrailsleopard.html]]
+http://developer.apple.com/Tools/developonrailsleopard.html]]
 
 Getting Started with MarkUs Development
 ================================================================================
