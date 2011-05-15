@@ -270,3 +270,10 @@ You can learn more about other rake tasks by entering::
 You should now be able to access MarkUs at http://localhost:3000 in your browser.
 
 **Happy Coding!**
+
+.. figure:: images/Installation_MacOsX-MarkUs.png
+   :scale: 100%
+   :align: center
+   :alt: Installation complete !
+
+   MarkUs is now working on your computer !
