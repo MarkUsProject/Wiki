@@ -1,11 +1,6 @@
-
 ================================================================================
-MarkUs Version >= 0.6 Deployment Documentation (A System Administrator's Guide)
+MarkUs Version > 0.9 Deployment Documentation (A System Administrator's Guide)
 ================================================================================
-
-.. contents::
-
------------------
 
 How to Install MarkUs
 ================================================================================
