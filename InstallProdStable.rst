@@ -5,10 +5,20 @@ MarkUs Version > 0.9 Deployment Documentation (A System Administrator's Guide)
 How to Install MarkUs
 ================================================================================
 
-For more detailed instructions, please see our
-[[INSTALL | http://www.markusproject.org/INSTALL]] file.
+**Note: This documentation is made for System Administrators. We expect some
+technical background from people using this documentation. All commands won't
+be fully described here. If you need tips and help, you can look at [[the
+GNU/Linux documentation for developpers|InstallationGnuLinux]] or [[the MacOSX
+documentation for developpers|InstallationMacOsX]]**
 
+.. TODO: Update Documentation for Bundler
+.. TODO: Add svn webdav explanation
+.. TODO: Add different authentication mechanisms (see InstallProdOld.rst)
+.. TODO: Add externaly created repositories documentation
 .. TODO: Don't forget to add a part for setting timezone !
+.. TODO: ImageMagick
+.. TODO: Ant
+.. TODO: Libsvn-ruby
 
 Required Software (including known to be working versions)
 --------------------------------------------------------------------------------
