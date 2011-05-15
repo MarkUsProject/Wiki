@@ -2,13 +2,17 @@
 Installing MarkUs on Windows
 ================================================================================
 
-.. contents::
-
-
 (Note: Though there have been instances where developers have been able to get
 a MarkUs development environment running on Windows, it is more difficult than
 an install on either Linux or OS X.  We suggest developing on either of these
 two other platforms.)
+
+Setting up Git
+================================================================================
+
+Git is the Source Content Management used by MarkUs. You can find some
+documentation on GitHub. You will also have to set-up a GitHub account. [[How
+to set-up Git on Windows|http://help.github.com/win-set-up-git]]
 
 Installing InstantRails
 ================================================================================

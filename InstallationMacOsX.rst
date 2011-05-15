@@ -2,6 +2,15 @@
 MarkUS development on Mac OS X - Snow Leopard
 ================================================================================
 
+*Tutorial updated in May 2011, on Snow Leopard, version 10.6.7*
+
+Setting up Git
+================================================================================
+
+Git is the Source Content Management used by MarkUs. You can find some
+documentation on GitHub. You will also have to set-up a GitHub account. [[How
+to set-up Git on Mac Os X|http://help.github.com/mac-set-up-git]]
+
 Setting up Ruby and Ruby on Rails
 ================================================================================
 

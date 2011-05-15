@@ -11,6 +11,13 @@ If your system complains about gems not found when trying to run, for example,
 PATH variable. Find the path of the gem (usually `/var/lib/gems/1.8/bin/`) and
 add it to your $PATH.
 
+Setting up Git
+--------------------------------------------------------------------------------
+
+Git is the Source Content Management used by MarkUs. You can find some
+documentation on GitHub. You will also have to set-up a GitHub account. [[How
+to set-up Git on GNU/Linux|http://help.github.com/linux-set-up-git]]
+
 Setting up Ruby, Ruby on Rails, Subversion and the Subversion Ruby bindings
 --------------------------------------------------------------------------------
 
