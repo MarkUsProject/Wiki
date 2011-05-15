@@ -15,6 +15,14 @@ On Debian and Ubuntu, a simple ::
 Mac OS X
 --------------------------------------------------------------------------------
 
+To install postgres 8.3, you can use the one-click installer on the following
+site : [[Postgresql 8.3 One-Click Installer |
+http://www.postgresql.org/download/macosx]]
+
+You can also follow the instruction on this site : [[Postgresql 8.3 MacPorts
+installation |
+http://shifteleven.com/articles/2008/03/21/installing-postgresql-on-leopard-using-macports]]
+
 Microsoft Windows
 --------------------------------------------------------------------------------
 
