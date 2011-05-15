@@ -2,6 +2,26 @@
 Setting up the Database (PostgreSQL)
 ================================================================================
 
+Installing the Database
+================================================================================
+
+GNU/Linux
+--------------------------------------------------------------------------------
+
+On Debian and Ubuntu, a simple ::
+
+   apt-get install postgresql postgresql-client
+
+Mac OS X
+--------------------------------------------------------------------------------
+
+Microsoft Windows
+--------------------------------------------------------------------------------
+
+
+Configuring PostgreSQL
+================================================================================
+
 Make sure that you have set an UTF-8 locale/encoding (e.g. set
 LANG=en_CA.UTF-8 environment variable). The postgresql cluster will be created
 in the encoding which is currently set. Type locale in the term and you should
