@@ -43,6 +43,17 @@ production. You may also experience database conflicts, in particular if you
 want to test **PDF Conversion**. In case of PDF Conversion, you **MUST** use
 PostgreSQL or MySQL
 
+Installing ImageMagick
+--------------------------------------------------------------------------------
+
+If you need to use test and work on image and PDF annotation, you will need
+ImageMagick. Otherwise, you can skip this part.
+
+* [[Setting up ImageMagick|ImageMagick]]
+
+If your want to test PDF conversion on MarkUs, don't forget to set to true the
+`PDF_SUPPORT` variable in `config/environments/development.rb`
+
 
 Setting up the Database
 --------------------------------------------------------------------------------

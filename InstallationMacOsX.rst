@@ -221,22 +221,30 @@ At the end, you will see a green message telling you everything is perfect:
 
    Bundler complete message
 
+Installing ImageMagick
+--------------------------------------------------------------------------------
+
+If you need to use test and work on image and PDF annotation, you will need
+ImageMagick. Otherwise, you can skip this part.
+
+* [[Setting up ImageMagick|ImageMagick]]
+
+If your want to test PDF conversion on MarkUs, don't forget to set to true the
+`PDF_SUPPORT` variable in `config/environments/development.rb`
+
 Getting Started with MarkUs Development
 ================================================================================
 
-Create databases:
-
-::
+Create databases:::
 
     $> rake db:create:all     # creates all the databases defined in config/database.yml
-    $> rake db:create         # creates the database defined in config/database.yml for your current RAILS_ENV
+    $> rake db:create         # creates the database defined in config/database.yml 
 
 Next, you can execute some rake tasks to test your MarkUs installation.
 Sometimes, the "Rake Tasks" view doesn't work in RadRails but you can run the
 commands from the Terminal.
 
-Open the Terminal and <code>cd</code> to the MarkUs root directory. Then,
-enter the following commands: ::
+Enter the following commands: ::
 
     $> rake db:migrate
     $> rake db:schema:load

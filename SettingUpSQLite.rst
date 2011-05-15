@@ -25,8 +25,8 @@ Microsoft Windows
 Configuring SQLite3
 ================================================================================
 
-If you are using SQLite3, save the following text as config/database.yml (in
-the MarkUs root directory)::
+If you are using SQLite3, save the following text as `config/database.yml` (in
+the MarkUs root directory). You can use `config/database.yml.sqlite3` as example::
 
     # SQLite version 3.x
     #   gem install sqlite3-ruby (not necessary on OS X Leopard)
@@ -50,19 +50,6 @@ the MarkUs root directory)::
       database: db/production.sqlite3
       pool: 5
       timeout: 5000
-
-If you are using PostgreSQL, enter the following command (from the MarkUs root
-directory)::
-
-    #>cp config/database.yml.postgresql config/database.yml
-
-If you are using MySQL, enter the following command (from the MarkUs root
-directory)::
-
-    #>cp config/database.yml.mysql config/database.yml
-
-You can then uncomment the "development" section of <code>config/database.yml</code>.
-
 
 Now go back to the MarkUs tutorial :
 
