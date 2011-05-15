@@ -96,7 +96,7 @@ Now go back to the MarkUs tutorial :
 
   * [[Development environment|InstallationGnuLinux]]
   * [[Production environment|InstallProdStable]]
-  * [[Old Stable (deprecated) environment|InstallOldStable]]
+  * [[Old Stable (deprecated) environment|InstallProdOld]]
 
 * Installation on Mac OS X
 
