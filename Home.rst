@@ -238,7 +238,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 
 * **MarkUs Component Descriptions**
 
-  * [[Group / Grouping Behaviours | Groups_Grouping]]
+  * [[Group / Grouping Behaviours | GroupsGrouping]]
   * [[Groupings and Repositories | GroupsGroupingsRepositories]]
   * [[Authentication and Authorization | Authentication]]
   * [[Annotations | Annotations]]
