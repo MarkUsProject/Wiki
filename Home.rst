@@ -232,7 +232,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 
   * AutoGenerate Database Schema
   .. * [[View Schema Diagram|database_20101001.png]]
-  * [[Questions and Answers (Old Document) | Schema_Questions])
+  * [[Questions and Answers (Old Document) | SchemaQuestions])
 
 * **MarkUs Component Descriptions**
 
