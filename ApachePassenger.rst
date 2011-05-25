@@ -1,5 +1,5 @@
 ================================================================================
-How to use Phusion Passenger instead of Mongrel
+Configuration of Apache with Phusion Passenger
 ================================================================================
 
 Passenger is not interesting when you are in development mode. It is only

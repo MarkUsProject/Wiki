@@ -26,27 +26,68 @@ Required Software (including known to be working versions)
 We know that the following versions work and believe that whatever version
 "gem" provides by issuing "gem install package" should also work.
 
- * Ruby (>=1.8.7) including development package (e.g. ruby-dev)
- * net/https Ruby library ('libopenssl-ruby' Debian package)
- * Gem (>= 1.3.6) see [Update gem on Debian](wiki:UpdateRailsDebian)
+* Ruby (>=1.8.7) including development package (e.g. ruby-dev) (see 'ruby-full'
+  Debian package)
+* net/https Ruby library ('libopenssl-ruby' Debian package)
+* Gem (>= 1.3.6)
+* PostgreSQL including libpq-dev (>= 8.2, but any PostgreSQL version should
+  work; We also know that MarkUs works with MySQL)
+* Apache httpd (1.3/2.x) (including mod_proxy, mod_rewrite, Subversion server
+  modules if using Subversion as a backend) Note: Any other Webserver with
+  similar features should also work.
+* 'build-essential' Debian package (required to build/compile some gem packages
+  from source)
+* 'subversion' and 'libsvn-ruby1.8' (Ruby bindings for Subversion) if using an
+  SVN Repository as back-end
+* ImageMagick (>=6.5.7, older versions should be fine too) Only required if you
+  plan to be able to view and annotate pdfs within the browser (PDF_SUPPORT
+  setting in config files) 
+* Ant (any recent version) if you plan to use the Test Framework (still in
+  alpha) Don't forget to embed all tools you would need to complete your test
+  toolchain (like gcc, make,…)
 
-     * rails (gem) (2.3.2)
-     * daemons (gem) (1.0.10)
-     * mongrel (gem) (1.1.5)
-     * mongrel_cluster (gem) (1.0.5)
-     * ruby-pg (gem) (>=0.7.9.2008.01.28)
-     * postgres (gem) (>=0.7.9.2008.01.28)
-     * fastercsv (gem) (>=1.4.0)
-     * rake (gem) (0.8.7)
-     * ya2yaml
-     * ruby-debug (gem)
-     * will_paginate (gem) (>=2.3.11)
+Issue the following command on a terminal.::
 
- * PostgreSQL including libpq-dev (>= 8.2, but any PostgreSQL version should work; We also know that MarkUs works with MySQL)
- * Apache httpd (1.3/2.x) (including mod_proxy, mod_rewrite, Subversion server modules if using Subversion as a backend) Note: Any other Webserver with similar features should also work.
- * 'build-essential' Debian package (required to build/compile some gem packages from source)
- * 'subversion' and 'libsvn-ruby1.8' (Ruby bindings for Subversion) if using an SVN Repository as back-end
- * ImageMagick (>=6.5.7, older versions should be fine too) Only required if you plan to be able to view and annotate pdfs within the browser (PDF_SUPPORT setting in config files) 
+    #> aptitude install ruby-full build-essential rubygems rake libsvn-ruby
+    subversion imagemagick ruby-dev libopenssl-ruby ant
+
+Install Bundler, a gem for managing gems. ::
+
+    #> gem install bundler
+
+**NOTE** Apache installation will not be described here. Only configuration
+will be.
+
+**NOTE** In Production, you MUST either use PostgreSQL or MySQL databases. NOT
+SQLite3
+
+
+Setting up the Database
+--------------------------------------------------------------------------------
+
+Once you have decided what database best suits you :
+
+* [[Setting up the Database (MySQL)|SettingUpMySQL]]
+* [[Setting up the Database (PostgreSQL)|SettingUpPostgreSQL]]
+
+
+Get MarkUs
+--------------------------------------------------------------------------------
+
+[[Get latest stable release |
+http://www.markusproject.org/download/markus-latest-stable.tar.gz]]
+
+Extract it and setup all gems with bundler.
+
+
+Setting up the Rack Server
+--------------------------------------------------------------------------------
+
+Once you have decided what rack server best suits you :
+
+* [[Setting up Apache with Mongrel|ApacheMongrel]]
+* [[Setting up Apache with Passenger|ApachePassenger]]
+
 
 Installation Proceedings (using a PostgreSQL database)
 --------------------------------------------------------------------------------

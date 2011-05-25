@@ -269,7 +269,7 @@ MarkUs Deployment Documents (Installation Instructions for MarkUs using RAILS_EN
 * [[Setup Instructions for MarkUs Stable (MarkUs 0.9.5)|InstallProdStable]]
 * [[Hosting several MarkUs applications on one machine (for Production)|MultipleHosting]]
 * [[How to use LDAP with MarkUs|LDAP]]
-* [[How to use Phusion Passenger instead of Mongrel|Passenger]]
+* [[How to use Phusion Passenger instead of Mongrel|ApachePassenger]]
 
 * [[Old Setup Instructions for MarkUs Stable (MarkUs 0.5, 0.6, 0.7 and 0.8 branches)|InstallProdOld]]
 
