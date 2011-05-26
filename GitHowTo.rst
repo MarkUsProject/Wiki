@@ -125,7 +125,8 @@ Coding
 Review Board
 ================================================================================
 
-- Post diff on Review Board. Note that main MarkUs may have advanced since you
+- Post diff on Review Board. See our [[Review Board how-to | HowToReviewBoard]]
+  for tips and tricks. Note that main MarkUs may have advanced since you
   last updated your review. The best way to deal with this case is described in
   [["How to rebase my feature branch"| GitRebaseFeatureBranch]]
 
