@@ -97,7 +97,6 @@ Imperative Git Configuration
 
   $ git config --global user.name "First name last name"
   $ git config --global user.email "youremail@example.com"
-  $ git config --global core.autocrlf input
 
 Please do them! You may omit the ``--global`` switch if you wish. Make sure to
 read up on the differences between global and non-global git configuration,
@@ -126,7 +125,8 @@ Coding
 Review Board
 ================================================================================
 
-- Post diff on Review Board. Note that main MarkUs may have advanced since you
+- Post diff on Review Board. See our [[Review Board how-to | HowToReviewBoard]]
+  for tips and tricks. Note that main MarkUs may have advanced since you
   last updated your review. The best way to deal with this case is described in
   [["How to rebase my feature branch"| GitRebaseFeatureBranch]]
 
