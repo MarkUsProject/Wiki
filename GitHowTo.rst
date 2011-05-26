@@ -97,7 +97,6 @@ Imperative Git Configuration
 
   $ git config --global user.name "First name last name"
   $ git config --global user.email "youremail@example.com"
-  $ git config --global core.autocrlf input
 
 Please do them! You may omit the ``--global`` switch if you wish. Make sure to
 read up on the differences between global and non-global git configuration,
