@@ -116,7 +116,15 @@ using our newly created user::
 
 You will be asked for a password, so type "olm_db_admin". After that you
 should see the console of PostgreSQL.
-Need to be done :-)
+
+Configuring MarkUs
+--------------------------------------------------------------------------------
+
+Setup the database.yml file, in the MarkUs' root directory:
+
+* `cp config/database.yml.postgresql config/database.yml`
+
+* change the usernames and password to the ones you used in the section above
 
 Now go back to the MarkUs tutorial :
 

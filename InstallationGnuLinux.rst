@@ -156,8 +156,6 @@ ordinary user, **not** root)::
     #> irb
     irb(main):001:0> require 'rubygems'
     => true
-    irb(main):002:0> require 'postgres'
-    => true
     irb(main):003:0> require 'fastercsv'
     => true
     irb(main):003:0> require 'ruby-debug'
@@ -170,30 +168,44 @@ to the next step. Also, <code>rake --version</code> should report a version >=
 
 You can also run the following to check your gems::
 
-    #> gem list --local
+    #> bundle exec gem list --local
     *** LOCAL GEMS ***
-    actionmailer (2.3.5)
-    actionpack (2.3.5)
-    activerecord (2.3.5)
-    activeresource (2.3.5)
-    activesupport (2.3.5)
-    columnize (0.3.1)
-    fastercsv (1.5.0)
+
+    actionmailer (2.3.10)
+    actionpack (2.3.10)
+    activerecord (2.3.10)
+    activeresource (2.3.10)
+    activesupport (2.3.10)
+    bundler (1.0.12)
+    cgi_multipart_eof_fix (2.5.0)
+    columnize (0.3.2)
+    daemons (1.1.0)
+    db_populate (0.2.6)
+    factory_data_preloader (0.5.2)
+    faker (0.9.4)
+    fastercsv (1.5.4)
+    fastthread (1.0.7)
+    gem_plugin (0.2.3)
+    i18n (0.5.0)
     linecache (0.43)
+    machinist (1.0.6)
+    mocha (0.9.10)
     mongrel (1.1.5)
-    postgres (0.7.9.2008.01.28)
-    rack (1.1.0, 1.0.1)
-    rails (2.3.5)
+    mongrel_cluster (1.0.5)
+    rack (1.1.0)
+    rails (2.3.10)
     rake (0.8.7)
-    ruby-debug (0.10.3)
-    ruby-debug-base (0.10.3)
-    ruby-debug-ide (0.4.9, 0.4.5)
-    ruby-pg (0.7.9.2008.01.28)
+    routing-filter (0.2.2)
+    ruby-debug (0.10.4)
+    ruby-debug-base (0.10.4)
+    rubyzip (0.9.4)
     selenium-client (1.2.18)
-    shoulda (2.10.2)
-    thoughtbot-shoulda (2.10.2)
-    will_paginate (2.3.11)
-    rubyzip (1.3.6)
+    shoulda (2.11.3)
+    sqlite3 (1.3.3)
+    sqlite3-ruby (1.3.3)
+    time-warp (1.0.7)
+    will_paginate (2.3.15)
+    ya2yaml (0.30
 
 Configure MarkUs
 --------------------------------------------------------------------------------
@@ -202,27 +214,11 @@ Precondition: You have the MarkUs source-code checked out and do not plan to
 use RadRails (see the following sections if you _plan_ to use RadRails for
 development).
 
-MarkUs is configured by editing config/environment.rb (If you have a rails
-version > 2.3.2 comment out the line containing RAILS_GEM_ENV; minimum rails
-version is 2.2.x). Read through all settings in environment.rb
+Read through all settings in environment.rb
 
 Look at config/environments/development.rb
 
 * Change the REPOSITORY_STORAGE path to an appropriate path for your setup.
-* if you see: #config.gem 'thoughtbot-shoulda' then changed it to
-  config.gem 'thoughtbot-shoulda'
-
-    * since we use thoughtbot-shoulda as a testing framework (it builds on top
-      of Test::Unit and is fully backwards compatible) and install it as
-      directed when you run 'rake' the next time.
-
-Setup the database.yml file:
-
-* cp config/database.yml.sample config/database.yml (replace sample by the
-  database you use (PostgreSQL, SQLite3 or MySQl)
-
-* change the usernames and password to olm_db_admin 
-
 
 Test plain MarkUs installation
 --------------------------------------------------------------------------------

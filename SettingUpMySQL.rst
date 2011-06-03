@@ -51,6 +51,14 @@ You can now try connecting to the server using the user you just created::
 
 You should see the MySQL console.
 
+Configuring MarkUs
+--------------------------------------------------------------------------------
+
+Setup the database.yml file, in the MarkUs' root directory:
+
+* `cp config/database.yml.mysql config/database.yml`
+
+* change the usernames and password to the ones you used in the section above
 
 Now go back to the MarkUs tutorial :
 
