@@ -188,6 +188,31 @@ See Also:
 MarkUs Configuration Options
 ================================================================================
 
+Timezone
+--------------------------------------------------------------------------------
+Every Ruby on Rails application needs to have its timezone set correctly.
+
+As MarkUs uses deadlines, it is needed to have a correct timezone.
+
+The timezone is set in `config/environment.rb`::
+
+    config.time_zone = 'Eastern Time (US & Canada)'
+
+Or, for France::
+
+    config.time_zone = 'Paris'
+
+All timezone availables for RoR applications can be found using the rake command::
+
+    bundle exec rake time:zones:all
+
+or::
+
+    bundle exec rake time:zones:local
+
+
+
+
 The main application-wide configuration file for MarkUs is::
 
     <app-root>/config/environments/production.rb
