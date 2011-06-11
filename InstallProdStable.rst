@@ -8,8 +8,8 @@ How to Install MarkUs
 **Note: This documentation is made for System Administrators. We expect some
 technical background from people using this documentation. All commands won't
 be fully described here. If you need tips and help, you can look at [[the
-GNU/Linux documentation for developpers|InstallationGnuLinux]] or [[the MacOSX
-documentation for developpers|InstallationMacOsX]]**
+GNU/Linux documentation for developers|InstallationGnuLinux]] or [[the MacOSX
+documentation for developers|InstallationMacOsX]]**
 
 .. TODO: Update Documentation for Bundler
 .. TODO: Add svn webdav explanation
