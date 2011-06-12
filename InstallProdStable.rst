@@ -26,10 +26,10 @@ Required Software (including known to be working versions)
 We know that the following versions work and believe that whatever version
 "gem" provides by issuing "gem install package" should also work.
 
-* Ruby (>=1.8.7) including development package (e.g. ruby-dev) (see 'ruby-full'
+* Ruby 1.8.7 including development package (e.g. ruby-dev) (see 'ruby-full'
   Debian package)
 * net/https Ruby library ('libopenssl-ruby' Debian package)
-* Gem (>= 1.3.6)
+* Gem (>= 1.3.7)
 * PostgreSQL including libpq-dev (>= 8.2, but any PostgreSQL version should
   work; We also know that MarkUs works with MySQL)
 * Apache httpd (1.3/2.x) (including mod_proxy, mod_rewrite, Subversion server
@@ -77,7 +77,9 @@ Get MarkUs
 [[Get latest stable release |
 http://www.markusproject.org/download/markus-latest-stable.tar.gz]]
 
-Extract it and setup all gems with bundler.
+Extract it and setup all gems with bundler.::
+
+    $> bundle install
 
 
 Setting up the Rack Server
@@ -95,9 +97,8 @@ Installation Proceedings (using a PostgreSQL database)
 **NOTE** An important thing to have installed prior installing the Rails gems
 is the libpq-dev package (i.e. development files for PostgreSQL).
 
-
-Install PostgreSQL (make sure that the created cluster is UTF-8 encoded; If
-  not required, it also works with latin-1 and ) and Apache Httpd  
+Install PostgreSQL (make sure that the created cluster is UTF-8 encoded; If not
+required, it also works with latin-1 and ) and Apache Httpd  
   
 Update gem, so that a version >= 1.3.6 is installed (If you would like to
   install gems to a non-standard location, please see the [Rubygems
