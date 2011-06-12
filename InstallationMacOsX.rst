@@ -237,8 +237,8 @@ Getting Started with MarkUs Development
 
 Create databases:::
 
-    $> rake db:create:all     # creates all the databases defined in config/database.yml
-    $> rake db:create         # creates the database defined in config/database.yml 
+    $> bundle exec rake db:create:all     # creates all the databases defined in config/database.yml
+    $> bundle exec rake db:create         # creates the database defined in config/database.yml 
 
 Next, you can execute some rake tasks to test your MarkUs installation.
 Sometimes, the "Rake Tasks" view doesn't work in RadRails but you can run the
@@ -246,25 +246,25 @@ commands from the Terminal.
 
 Enter the following commands: ::
 
-    $> rake db:migrate
-    $> rake db:schema:load
+    $> bundle exec rake db:migrate
+    $> bundle exec rake db:schema:load
 
 Next, you can load the initial database models for the current environment::
 
-    $> rake db:populate
+    $> bundle exec rake db:populate
 
 Now, start the server using::
 
-    $> script/server
+    $> bundle exec script/server
 
 Another rake task that might be useful if you ever want to drop and recreate
 the database from db/schema.rb::
 
-    $> rake db:reset
+    $> bundle exec rake db:reset
 
 You can learn more about other rake tasks by entering::
 
-    $> rake -T
+    $> bundle exec rake -T
 
 
 You should now be able to access MarkUs at http://localhost:3000 in your browser.

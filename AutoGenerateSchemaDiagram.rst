@@ -6,13 +6,13 @@ You can find the plugin at this address [http://momo.brauchtman.net/2009/02/rail
 
 This is how you would install the plugin (You will need to have a git client installed in order for this to work):
 
-    script/plugin install git://github.com/moritzh/superdumper.git
+    bundle exec script/plugin install git://github.com/moritzh/superdumper.git
 
 [You will also need a copy of GraphViz to generate the schema PDF](http://www.graphviz.org/Download..php)
 
 You can launch the autogeneration by typing
 
-    rake db:superdumper
+    bundle exec rake db:superdumper
 
 If you want to generate the dot file *and* the pdf file, edit
 

@@ -233,12 +233,12 @@ command)::
 
     # gets gems that you do not have yet, like thoughtbot-shoulda 
     #> bundle install  --without (postgresql) (sqlite) (mysql)
-    #> rake db:create        # creates development database
-    #> rake db:schema:load   # loads required relations into database
-    #> rake db:populate      # populates database with some data
-    #> rake db:test:prepare
-    #> rake test:units
-    #> rake test:functionals
+    #> bundle exec rake db:create        # creates development database
+    #> bundle exec rake db:schema:load   # loads required relations into database
+    #> bundle exec rake db:populate      # populates database with some data
+    #> bundle exec rake db:test:prepare
+    #> bundle exec rake test:units
+    #> bundle exec rake test:functionals
 
 Note: there are still tests that are failing.
 
@@ -246,7 +246,7 @@ Now, you are ready to test your plain MarkUs installation. The most straight
 forward way to do this is to start the mongrel server on the command-line. You
 can do so by::
 
-    script/server  #boots up mongrel (or WebRink, if mongrel is not installed/found)
+    bundle exec script/server  #boots up mongrel (or WebRink, if mongrel is not installed/found)
 
 **Common Problems**
 
@@ -271,7 +271,7 @@ smoothly as possible for you. This is what you'd need to do (If you know what
 you are doing, you might find this silly. But this guide tries to give
 detailed instructions for Rails newcomers)::
 
-    #> rake db:drop          # get rid of the database, created previously (it'll be recreated again later)
+    #> bundle exec rake db:drop          # get rid of the database, created previously (it'll be recreated again later)
     #> rm -rf markus_trunk   # get rid of the MarkUs source code possibly checked out previously (you might do a "cd .." prior to that)
 
 **Happy Coding!**

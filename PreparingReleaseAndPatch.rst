@@ -10,9 +10,9 @@ Prepare a MarkUs Release
 4. Make sure INSTALL is up-to-date in the repository and a most recent version
    is exported on markusproject.org (i.e. /path/to/www/INSTALL)
 
-5. If it is possible, run rake i18n:missing_keys and add them to locales (you
-   can keep the english key if you don't know how to translate it.) It will
-   avoid missing locales errors.
+5. If it is possible, run `bundle exec rake i18n:missing_keys` and add them to
+   locales (you can keep the english key if you don't know how to translate
+   it.) It will avoid missing locales errors.
 
 6. Make sure [deployment instructions](wiki:InstallProdStable) match latest
    requirements

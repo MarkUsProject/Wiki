@@ -15,13 +15,13 @@ local OLM copy.
 
 Next, type in the following to reset your database::
 
-    rake db:reset
+    $> bundle exec rake db:reset
 
 This will drop the database, recreate it, and load the latest version of the
 schema that was in db/schema.rb.  Finally, you can (optionally) populate the
 database with some quick and dirty records to get you going::
 
-    rake db:populate
+    $> bundle exec rake db:populate
 
 Check out the Ruby scripts in db/populate - these are what rake db:populate is
 running.

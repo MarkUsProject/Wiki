@@ -65,7 +65,7 @@ In case of stolen authentication tokens, API keys can be globally reset by the
 system administrator using the *markus:reset_api_key* rake task. Example::
 
     $ cd path/to/markus/app
-    $ rake markus:reset_api_key
+    $ bundle exec rake markus:reset_api_key
 
 Loading Test Results into MarkUs
 ================================================================================

@@ -121,17 +121,17 @@ If you are using a rails version >2.3.2, please uncomment the line featuring "RA
   
 Run the following rake tasks (non-root)::
 
-    rake db:create                # creates the "production" database according to database.yml
-    rake db:schema:load           # creates the necessary database schema relations
+    bundle exec rake db:create                # creates the "production" database according to database.yml
+    bundle exec rake db:schema:load           # creates the necessary database schema relations
 
 Create an "instructor" user for the person responsible for the course::
 
-    rake markus:instructor first_name='Markus' last_name='Maximilian' user_name='markus'
+    bundle exec rake markus:instructor first_name='Markus' last_name='Maximilian' user_name='markus'
 
 Optionally, load some default data into the database (The database can be
 reset using ``rake db:reset``)::
 
-    rake db:populate
+    bundle exec rake db:populate
 
 Configure the MarkUs application in
 \<MarkUs-APP-Root\>/config/environments/production.rb (see our MarkUs
