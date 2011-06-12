@@ -61,6 +61,16 @@ will be.
 **NOTE** In Production, you MUST either use PostgreSQL or MySQL databases. NOT
 SQLite3
 
+Installing ImageMagick
+--------------------------------------------------------------------------------
+
+If you need to use test and work on image and PDF annotation, you will need
+ImageMagick. Otherwise, you can skip this part.
+
+* [[Setting up ImageMagick|ImageMagick]]
+
+If your want to test PDF conversion on MarkUs, don't forget to set to true the
+`PDF_SUPPORT` variable in `config/environments/development.rb`
 
 Setting up the Database
 --------------------------------------------------------------------------------
@@ -90,35 +100,8 @@ Once you have decided what rack server best suits you :
 * [[Setting up Apache with Mongrel|ApacheMongrel]]
 * [[Setting up Apache with Passenger|ApachePassenger]]
 
-
-Installation Proceedings (using a PostgreSQL database)
+Configuring Requirements
 --------------------------------------------------------------------------------
-
-**NOTE** An important thing to have installed prior installing the Rails gems
-is the libpq-dev package (i.e. development files for PostgreSQL).
-
-Install PostgreSQL (make sure that the created cluster is UTF-8 encoded; If not
-required, it also works with latin-1 and ) and Apache Httpd  
-  
-Update gem, so that a version >= 1.3.6 is installed (If you would like to
-  install gems to a non-standard location, please see the [Rubygems
-  Non-Standard-Path Wiki document](wiki:RubygemsNonStandardPath))
-  
-Install gem packages:: 
-
-    sudo gem install rails daemons mongrel mongrel_cluster ruby-pg postgres fastercsv rake ruby-debug will_paginate
-
-Create an administrative database user and allow this user to connect using md5 passwords  
-  
-Take the MarkUs application and extract it to an appropriate location  
-  
-Set an environment variable RAILS_ENV="production"  
-  
-Change to the "root" of the MarkUs Rails application  
-  
-Set database connection settings accordingly in \<MarkUs-APP-Root\>/config/database.yml (see \<MarkUs-APP-Root\>/config/database.yml.postgresql for a sample setup)  
-
-If you are using a rails version >2.3.2, please uncomment the line featuring "RAILS_GEM_VERSION = 2.3.2 unless defined? RAILS_GEM_VERSION" in config/environment.rb
   
 Run the following rake tasks (non-root)::
 
@@ -136,9 +119,10 @@ reset using ``rake db:reset``)::
 
 Configure the MarkUs application in
 \<MarkUs-APP-Root\>/config/environments/production.rb (see our MarkUs
-[configuration documentation](wiki:InstallProd#Configure) below). **Note:**
-Please change the "secret" in the cookies related configuration section in
-config/environment.rb of your MarkUs instance (see
+[configuration documentation](wiki:InstallProd#Configure) below). 
+
+**Note:** Please change the "secret" in the cookies related configuration
+section in config/environment.rb of your MarkUs instance (see
 <http://api.rubyonrails.org/classes/ActionController/Session/CookieStore.html>)
 
 Configure the mongrel cluster (see config/mongrel_cluster.yml) and start the

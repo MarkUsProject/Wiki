@@ -117,6 +117,9 @@ using our newly created user::
 You will be asked for a password, so type "olm_db_admin". After that you
 should see the console of PostgreSQL.
 
+Install PostgreSQL (make sure that the created cluster is UTF-8 encoded; If not
+required, it also works with latin-1)
+
 Configuring MarkUs
 --------------------------------------------------------------------------------
 
