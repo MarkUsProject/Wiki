@@ -27,6 +27,11 @@ correctly installed, by doing:::
 
    Test for ImageMagick Installation
 
+You may have to install GhostScript and FootMatic in addition to ImageMagick.
+You can download binaries for Mac OS X here :
+http://www.linuxfoundation.org/collaborate/workgroups/openprinting/macosx/foomatic
+
+
 Microsoft Windows
 --------------------------------------------------------------------------------
 
