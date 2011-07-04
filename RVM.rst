@@ -40,7 +40,7 @@ If not, install OpenSSL with RVM::
 
     $ rvm package install openssl
 
-Ruby 1.8.7
+Ruby
 --------------------------------------------------------------------------------
 
 MarkUs stable tree works only with Ruby 1.8.7. We will install it by default,
