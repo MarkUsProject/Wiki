@@ -114,3 +114,18 @@ Check everything was setup correctly: ::
     $ irb
     :001 > require 'svn/repos'
     => true  
+
+Update RVM
+================================================================================
+
+If a new version of Ruby is out, you will want to install it.
+
+First, you will have to update RVM (for example, Ruby-1.9.2-p290 is out, and I
+used Ruby-1.9.2-p180)::
+
+    $ rvm get head
+    $ rvm install 1.9.2
+
+**Note** Use the same options as before if you need them. Moreover, don't
+forget to recompile libsvn-ruby for this version of Ruby! You will have to
+reinstall all gems too.
