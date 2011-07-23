@@ -94,7 +94,8 @@ You can run the following instead::
 
 Finally, we need to change a line in the configuration file of the PostgreSQL
 database. As root open "pg_hba.conf" (sometimes "pg_hdb.conf") in
-``/etc/postgres/\<pg-version\>/main/`` and look for the following lines (the
+``/etc/postgres/\<pg-version\>/main/``  or in
+``/etc/postgresql/\<pg-version\>/main/`` and look for the following lines (the
 first one is actually only a comment)::
 
     # "local" is for Unix domain socket connections only
