@@ -266,7 +266,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 MarkUs Deployment Documents (Installation Instructions for MarkUs using RAILS_ENV=production)
 ===============================================================================================
 
-* [[Setup Instructions for MarkUs Stable (MarkUs 0.9.5)|InstallProdStable]]
+* [[Setup Instructions for MarkUs Stable (MarkUs 0.10.0)|InstallProdStable]]
 * [[Hosting several MarkUs applications on one machine (for Production)|MultipleHosting]]
 * [[How to use LDAP with MarkUs|LDAP]]
 * [[How to use Phusion Passenger instead of Mongrel|ApachePassenger]]
