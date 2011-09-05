@@ -1,5 +1,5 @@
 ================================================================================
-Documentation for the administrator
+Documentation for the Administrator
 ================================================================================
 
 *MarkUs is a web application supposed to help the grader to evaluate, mark and
