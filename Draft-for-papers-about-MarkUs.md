@@ -1,11 +1,18 @@
 # How to improve the assessment of student papers? MarkUs, an open-source web application to annotate student papers on-line.
 ## Karen Reid (1), Mike Conley (2), Severin Gehwolf (3), Morgan Magnin (4), Guillaume Moreau (4), Nelle Varoquaux (5) and Benjamin Vialle (6) 
+
 Affiliations: 
+
 (1) University of Toronto, Toronto, Ontario, Canada
+
 (2) ?
+
 (3) ? 
+
 (4) LUNAM Université, École Centrale de Nantes, Nantes, France.
+
 (5) ? 
+
 (6) ? 
 
 ## Abstract (which should be 400 words at most) : 
