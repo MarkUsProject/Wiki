@@ -94,11 +94,10 @@ Be sure to use the good ruby you wanted to compile svn bindings with: ::
 
     $ rvm use 1.8.7
 
-For example, here are instructions for Ruby 1.8.7-p334 (don't forget to replace
-the username by your username): ::
+For example, here are instructions for Ruby 1.8.7-p334: ::
 
     $ ./configure --with-ruby-sitedir=~/.rvm/rubies/ruby-1.8.7-p334/lib/ruby \
-      --prefix=/home/benjamin/.rvm/rubies/ruby-1.8.7-p334
+      --prefix=`echo ~`/.rvm/rubies/ruby-1.8.7-p334
     $ make
     $ make swig-rb
     $ make install
