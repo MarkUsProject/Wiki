@@ -106,10 +106,8 @@ http://www.open.collab.net/downloads/community/]].
 Then add the following lines to config/local_environment_override.rb 
 from the MarkUs root directory (if this file does not exist, create it)::
 
-    Markus::Application.configure do
-        config.autoload_paths << "/opt/subversion/lib/svn-ruby"
-        config.autoload_paths << "/opt/subversion/lib/svn-ruby/universal-darwin/"
-    end
+    config.autoload_paths << "/opt/subversion/lib/svn-ruby"
+    config.autoload_paths << "/opt/subversion/lib/svn-ruby/universal-darwin/"
 
 Setting up Rubygems
 --------------------------------------------------------------------------------
