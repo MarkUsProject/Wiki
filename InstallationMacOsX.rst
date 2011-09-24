@@ -103,7 +103,7 @@ http://www.open.collab.net/downloads/community/]].
 
    Subversion Ruby bindings for Mac OS X
 
-Then add the following lines to config/local_environment_override.rb 
+Then add the following lines to config/environments/local_environment_override.rb 
 from the MarkUs root directory (if this file does not exist, create it)::
 
     config.autoload_paths << "/opt/subversion/lib/svn-ruby"
