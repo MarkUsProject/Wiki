@@ -103,11 +103,13 @@ http://www.open.collab.net/downloads/community/]].
 
    Subversion Ruby bindings for Mac OS X
 
-Then add the following lines to config.load_paths in config/environment.rb
-(from the MarkUs root directory)::
+Then add the following lines to config/local_environment_override.rb 
+from the MarkUs root directory (if this file does not exist, create it)::
 
-    /opt/subversion/lib/svn-ruby
-    /opt/subversion/lib/svn-ruby/universal-darwin/
+    Markus::Application.configure do
+        config.autoload_paths << "/opt/subversion/lib/svn-ruby"
+        config.autoload_paths << "/opt/subversion/lib/svn-ruby/universal-darwin/"
+    end
 
 Setting up Rubygems
 --------------------------------------------------------------------------------
