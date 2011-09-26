@@ -29,12 +29,12 @@ following methods :
 
     $> su  # and then enter your root password
     #> aptitude install ruby-full build-essential rubygems rake libsvn-ruby
-    subversion
+    subversion #make sure ruby-full points to the correct ruby version (1.8)
 
 (as normal user, with the "sudo" method)::
 
     $> sudo aptitude install ruby-full build-essential rubygems rake libsvn-ruby
-    subversion # and then enter your root password
+    subversion # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8)
 
 **Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
 
@@ -218,7 +218,7 @@ Read through all settings in environment.rb
 
 Look at config/environments/development.rb
 
-* Change the REPOSITORY_STORAGE path to an appropriate path for your setup.
+* Change the REPOSITORY_STORAGE path to an appropriate path for your setup. NOTE: it is unlikely that you need to change these values for development
 
 Test plain MarkUs installation
 --------------------------------------------------------------------------------
@@ -233,20 +233,23 @@ command)::
 
     # gets gems that you do not have yet, like thoughtbot-shoulda 
     #> bundle install  --without (postgresql) (sqlite) (mysql)
-    #> bundle exec rake db:create        # creates development database
+    #> bundle exec rake db:create:all        # creates all the databases uncommented in config/database.yml
     #> bundle exec rake db:schema:load   # loads required relations into database
     #> bundle exec rake db:populate      # populates database with some data
     #> bundle exec rake db:test:prepare
     #> bundle exec rake test:units
     #> bundle exec rake test:functionals
 
-Note: there are still tests that are failing.
+Note: if you are using RVM, follow [[these instuctions|RVM]] to install subversion into the correct path
 
 Now, you are ready to test your plain MarkUs installation. The most straight
 forward way to do this is to start the mongrel server on the command-line. You
 can do so by::
 
     bundle exec script/server  #boots up mongrel (or WebRink, if mongrel is not installed/found)
+
+If this doesn't work try::
+	rails s
 
 **Common Problems**
 
