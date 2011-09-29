@@ -139,6 +139,9 @@ do not carry over to the new day.
 
 Writting a build.xml
 ================================================================================
+
+You can find some useful ressources here : http://www.markusproject.org/dev/ant_files.zip
+
 Ant uses a file called build.xml to construct the project. It is this file
 that will describe all tasks that Ant will run when running tests.
 
