@@ -246,8 +246,8 @@ commands from the Terminal.
 
 Enter the following commands: ::
 
-    $> bundle exec rake db:migrate
     $> bundle exec rake db:schema:load
+    $> bundle exec rake db:migrate
 
 Next, you can load the initial database models for the current environment::
 
