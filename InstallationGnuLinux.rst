@@ -246,7 +246,7 @@ Now, you are ready to test your plain MarkUs installation. The most straight
 forward way to do this is to start the mongrel server on the command-line. You
 can do so by::
 
-    bundle exec script/server  #boots up mongrel (or WebRink, if mongrel is not installed/found)
+    bundle exec rails server  #boots up mongrel (or WebRink, if mongrel is not installed/found)
 
 If this doesn't work try::
 	rails s
