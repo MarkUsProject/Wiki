@@ -38,7 +38,7 @@ If OpenSSL version < 1.0.0, you can continue to Subversion part.
 
 If not, install OpenSSL with RVM::
 
-    $ rvm package install openssl
+    $ rvm pkg install openssl
 
 Ruby
 --------------------------------------------------------------------------------
