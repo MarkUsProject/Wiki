@@ -10,17 +10,12 @@ MarkUs, an open-source web application to annotate student papers on-line.
 
 Affiliations: 
 
-(1) University of Toronto, Toronto, Ontario, Canada
-
-(2) ?
-
-(3) ? 
-
-(4) LUNAM Université, École Centrale de Nantes, Nantes, France.
-
-(5) ? 
-
-(6) ? 
+ (1) University of Toronto, Toronto, Ontario, Canada
+ (2) ?
+ (3) University of Toronto Student, Toronto, Ontario, Canada
+ (4) LUNAM Université, École Centrale de Nantes, Nantes, France.
+ (5) ? 
+ (6) ? 
 
 ================================================================================
 Abstract (which should be 400 words at most) : 
