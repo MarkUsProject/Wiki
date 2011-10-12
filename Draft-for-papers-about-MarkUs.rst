@@ -5,7 +5,7 @@ How To Improve The Assessment Of Student Papers?
 **Karen Reid (1), Mike Conley (2), Severin Gehwolf (3), Morgan Magnin (4),
 Guillaume Moreau (4), Nelle Varoquaux (5) and Benjamin Vialle (6)**
 
-MarkUs, an open-source web application to annotate student papers on-line.
+MarkUs, An Open-Source Web Application To Annotate Student Papers On-Line.
 --------------------------------------------------------------------------------
 
 Affiliations: 
