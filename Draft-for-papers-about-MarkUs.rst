@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-How to improve the assessment of student papers?
+How To Improve The Assessment Of Student Papers?
 --------------------------------------------------------------------------------
 
 **Karen Reid (1), Mike Conley (2), Severin Gehwolf (3), Morgan Magnin (4),
