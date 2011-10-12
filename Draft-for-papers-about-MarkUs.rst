@@ -15,7 +15,7 @@ Affiliations:
  (3) University of Toronto Student, Toronto, Ontario, Canada
  (4) LUNAM Université, École Centrale de Nantes, Nantes, France.
  (5) ? 
- (6) ? 
+ (6) École Centrale de Nantes, Nantes, France
 
 ================================================================================
 Abstract (which should be 400 words at most) : 
