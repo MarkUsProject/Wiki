@@ -81,6 +81,9 @@ every version of Ruby you installed.
 Fist, download Subversion source code here :
 http://subversion.tigris.org/downloads/subversion-1.6.17.tar.gz
 
+**Note** : An issue remains with subversion-1.7.1 and Ruby-1.9.3-p0 (during
+compilation). Consider using version 1.6.17
+
 Extract it and cd into the repository: ::
 
     $ tar xvzf subversion-1.6.17.tar.gz
