@@ -100,7 +100,8 @@ Be sure to use the good ruby you wanted to compile svn bindings with: ::
 For example, here are instructions for Ruby 1.8.7-p334: ::
 
     $ ./configure --with-ruby-sitedir=~/.rvm/rubies/ruby-1.8.7-p334/lib/ruby \
-      --prefix=`echo ~`/.rvm/rubies/ruby-1.8.7-p334
+      --prefix=`echo ~`/.rvm/rubies/ruby-1.8.7-p334 --disable-mod-activation \
+      --without-apache-libexecdir
     $ make
     $ make swig-rb
     $ make install
