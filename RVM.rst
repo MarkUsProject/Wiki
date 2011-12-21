@@ -82,12 +82,12 @@ Fist, download Subversion source code here :
 http://subversion.tigris.org/downloads/subversion-1.6.17.tar.gz
 
 **Note** : An issue remains with subversion-1.7.1 and Ruby-1.9.3-p0 (during
-compilation). Consider using version 1.6.17
+compilation). Consider using version 1.6.17 or 1.7.2
 
 Extract it and cd into the repository: ::
 
-    $ tar xvzf subversion-1.6.17.tar.gz
-    $ cd subversion-1.6.17
+    $ tar xvzf subversion-1.7.2.tar.gz
+    $ cd subversion-1.7.2
 
 You will need libaprutil-dev on your system::
 
