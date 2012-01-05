@@ -15,7 +15,9 @@ Internationalisation
 Internationalisation of models, views and controllers
 --------------------------------------------------------------------------------
 
-Make sure models, views and controllers are internationalised : 
+Make sure models, views and controllers are internationalised :
+Everything should be internationalised, **except from logging messages**.
+
 For exemple: groups_controller.rb::
 
   301 raise "You must select at least one grader for random assignment"

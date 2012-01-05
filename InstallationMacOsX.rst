@@ -246,8 +246,8 @@ commands from the Terminal.
 
 Enter the following commands: ::
 
-    $> bundle exec rake db:migrate
     $> bundle exec rake db:schema:load
+    $> bundle exec rake db:migrate
 
 Next, you can load the initial database models for the current environment::
 
@@ -255,7 +255,7 @@ Next, you can load the initial database models for the current environment::
 
 Now, start the server using::
 
-    $> bundle exec script/server
+    $> bundle exec rails s
 
 Another rake task that might be useful if you ever want to drop and recreate
 the database from db/schema.rb::

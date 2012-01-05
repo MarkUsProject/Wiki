@@ -38,7 +38,7 @@ If OpenSSL version < 1.0.0, you can continue to Subversion part.
 
 If not, install OpenSSL with RVM::
 
-    $ rvm package install openssl
+    $ rvm pkg install openssl
 
 Ruby
 --------------------------------------------------------------------------------
@@ -81,6 +81,9 @@ every version of Ruby you installed.
 Fist, download Subversion source code here :
 http://subversion.tigris.org/downloads/subversion-1.6.17.tar.gz
 
+**Note** : An issue remains with subversion-1.7.1 and Ruby-1.9.3-p0 (during
+compilation). Consider using version 1.6.17
+
 Extract it and cd into the repository: ::
 
     $ tar xvzf subversion-1.6.17.tar.gz
@@ -97,7 +100,8 @@ Be sure to use the good ruby you wanted to compile svn bindings with: ::
 For example, here are instructions for Ruby 1.8.7-p334: ::
 
     $ ./configure --with-ruby-sitedir=~/.rvm/rubies/ruby-1.8.7-p334/lib/ruby \
-      --prefix=`echo ~`/.rvm/rubies/ruby-1.8.7-p334
+      --prefix=`echo ~`/.rvm/rubies/ruby-1.8.7-p334 --disable-mod-activation \
+      --without-apache-libexecdir
     $ make
     $ make swig-rb
     $ make install
@@ -113,3 +117,18 @@ Check everything was setup correctly: ::
     $ irb
     :001 > require 'svn/repos'
     => true  
+
+Update RVM
+================================================================================
+
+If a new version of Ruby is out, you will want to install it.
+
+First, you will have to update RVM (for example, Ruby-1.9.2-p290 is out, and I
+used Ruby-1.9.2-p180)::
+
+    $ rvm get head
+    $ rvm install 1.9.2
+
+**Note** Use the same options as before if you need them. Moreover, don't
+forget to recompile libsvn-ruby for this version of Ruby! You will have to
+reinstall all gems too.
