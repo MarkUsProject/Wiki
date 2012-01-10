@@ -124,27 +124,27 @@ bundler will install all other Gems.
 To install the **all** gems execute the following::
 
     #> gem install bundler
-    #> bundle install
+    $> bundle install
 
 Please note that bundler may ask you for your root password.
 
 Bundle allows also some selective installation. To install only sqlite3
 support, execute the following::
 
-    #> bundle install --without postgresql mysql
+    $> bundle install --without postgresql mysql
 
 To install only postgresql support support, execute the following::
 
-    #> bundle install --without sqlite mysql
+    $> bundle install --without sqlite mysql
 
 To install only mysql support, execute the following::
 
-    #> bundle install --without postgresql sqlite
+    $> bundle install --without postgresql sqlite
 
 On Ubuntu and Debian systems, the system can't find bundler. You need to add
 bundler to your PATH or run it directly ::
 
-    #> /var/lib/gems/1.8/bin/bundle install
+    $> /var/lib/gems/1.8/bin/bundle install
 
 If you get a message saying "Missing these required gems", then it is likely
 that some new gems have been integrated into Markus development and also need
@@ -153,7 +153,7 @@ to be installed using ``bundle install`` as described above.
 Now, check that everything worked fine. Do the following on a terminal (as an
 ordinary user, **not** root)::
 
-    #> irb
+    $> irb
     irb(main):001:0> require 'rubygems'
     => true
     irb(main):003:0> require 'fastercsv'
@@ -168,7 +168,7 @@ to the next step. Also, <code>rake --version</code> should report a version >=
 
 You can also run the following to check your gems::
 
-    #> bundle exec gem list --local
+    $> bundle exec gem list --local
     *** LOCAL GEMS ***
 
     actionmailer (2.3.10)
@@ -232,13 +232,13 @@ application-root of the MarkUs source code;)(please adapt the following
 command)::
 
     # gets gems that you do not have yet, like thoughtbot-shoulda 
-    #> bundle install  --without (postgresql) (sqlite) (mysql)
-    #> bundle exec rake db:create:all        # creates all the databases uncommented in config/database.yml
-    #> bundle exec rake db:schema:load   # loads required relations into database
-    #> bundle exec rake db:populate      # populates database with some data
-    #> bundle exec rake db:test:prepare
-    #> bundle exec rake test:units
-    #> bundle exec rake test:functionals
+    $> bundle install  --without (postgresql) (sqlite) (mysql)
+    $> bundle exec rake db:create:all        # creates all the databases uncommented in config/database.yml
+    $> bundle exec rake db:schema:load   # loads required relations into database
+    $> bundle exec rake db:populate      # populates database with some data
+    $> bundle exec rake db:test:prepare
+    $> bundle exec rake test:units
+    $> bundle exec rake test:functionals
 
 Note: if you are using RVM, follow [[these instuctions|RVM]] to install subversion into the correct path
 
@@ -246,10 +246,10 @@ Now, you are ready to test your plain MarkUs installation. The most straight
 forward way to do this is to start the mongrel server on the command-line. You
 can do so by::
 
-    bundle exec rails server  #boots up mongrel (or WebRink, if mongrel is not installed/found)
+    $> bundle exec rails server  #boots up mongrel (or WebRink, if mongrel is not installed/found)
 
 If this doesn't work try::
-	rails s
+    $> rails s
 
 **Common Problems**
 
@@ -274,7 +274,7 @@ smoothly as possible for you. This is what you'd need to do (If you know what
 you are doing, you might find this silly. But this guide tries to give
 detailed instructions for Rails newcomers)::
 
-    #> bundle exec rake db:drop          # get rid of the database, created previously (it'll be recreated again later)
-    #> rm -rf markus_trunk   # get rid of the MarkUs source code possibly checked out previously (you might do a "cd .." prior to that)
+    $> bundle exec rake db:drop          # get rid of the database, created previously (it'll be recreated again later)
+    $> rm -rf markus_trunk   # get rid of the MarkUs source code possibly checked out previously (you might do a "cd .." prior to that)
 
 **Happy Coding!**
