@@ -28,12 +28,12 @@ following methods :
 (as root)::
 
     $> su  # and then enter your root password
-    #> aptitude install ruby-full build-essential rubygems rake libsvn-ruby
+    #> apt-get install ruby-full build-essential rubygems rake libsvn-ruby
     subversion #make sure ruby-full points to the correct ruby version (1.8)
 
 (as normal user, with the "sudo" method)::
 
-    $> sudo aptitude install ruby-full build-essential rubygems rake libsvn-ruby
+    $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby
     subversion # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8)
 
 **Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
@@ -121,10 +121,13 @@ which works just fine.
 We are now using bundler to manage all gems. Install only bundler as a gem and 
 bundler will install all other Gems.
 
-To install the **all** gems execute the following::
+To install the **all** gems, go in the project folder, and execute the following::
 
     #> gem install bundler
     $> bundle install
+
+If you get the error "Could not locate Gemfile", it means you are not in the
+correct folder.
 
 Please note that bundler may ask you for your root password.
 
