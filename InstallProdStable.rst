@@ -119,11 +119,11 @@ reset using ``rake db:reset``)::
 
 Configure the MarkUs application in
 \<MarkUs-APP-Root\>/config/environments/production.rb (see our MarkUs
-[configuration documentation](wiki:InstallProd#Configure) below). 
+configuration documentation below). 
 
 **Note:** Please change the "secret" in the cookies related configuration
 section in config/environment.rb of your MarkUs instance (see 
-[[http://api.rubyonrails.org/classes/ActionController/Session/CookieStore.html | Rails API for cookies]])
+[[ Rails API for cookies | http://api.rubyonrails.org/classes/ActionController/Session/CookieStore.html]])
 
 Configure the mongrel cluster (see config/mongrel_cluster.yml) and start the
 mongrel servers::
