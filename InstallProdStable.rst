@@ -122,8 +122,8 @@ Configure the MarkUs application in
 [configuration documentation](wiki:InstallProd#Configure) below). 
 
 **Note:** Please change the "secret" in the cookies related configuration
-section in config/environment.rb of your MarkUs instance (see
-<http://api.rubyonrails.org/classes/ActionController/Session/CookieStore.html>)
+section in config/environment.rb of your MarkUs instance (see 
+[[http://api.rubyonrails.org/classes/ActionController/Session/CookieStore.html | Rails API for cookies]])
 
 Configure the mongrel cluster (see config/mongrel_cluster.yml) and start the
 mongrel servers::
@@ -131,7 +131,7 @@ mongrel servers::
     mongrel_rails cluster::start   # uses config settings defined in config/mongrel_cluster.yml
 
 The ``mongrel_cluster`` gem isn't really necessary. It is a nice utility for starting/stopping mongrels for your MarkUs app, though.
-For more information concerning mongrel clusters see: [http://mongrel.rubyforge.org/wiki/MongrelCluster](http://mongrel.rubyforge.org/wiki/MongrelCluster).
+For more information concerning mongrel clusters see: [[http://mongrel.rubyforge.org/wiki/MongrelCluster | http://mongrel.rubyforge.org/wiki/MongrelCluster]].
 
 Configure an httpd VirtualHost similar to the following (Reverse-Proxy-Setup)::
 
@@ -164,7 +164,7 @@ See Also:
 
 * [[How to host several MarkUs applications on a single server | MultipleHosting]]
 * [[Example Apache httpd virtual host configuration file | http://www.markusproject.org/dev/markus_httpd_vhost.conf]]
-* You might find it worthwhile skimming through one or more of our [development environment setup instructions](https://stanley.cdf.toronto.edu/drproject/csc49x/olm_rails#dev-setup)
+* You might find it worthwhile skimming through one or more of our [[development environment setup instructions | InstallationGnuLinux ]]
 * See available rake tasks for MarkUs: ``rake -T``
 * Our current [[INSTALL | http://www.markusproject.org/INSTALL]] file
 
@@ -371,8 +371,8 @@ Hence, the workflow is as follows:
 **Requirements**
 
 In order to be able to use this feature, one requires a working
-[Subversion/Apache configuration as documented in the Subversion
-book](http://svnbook.red-bean.com/en/1.5/svn.serverconfig.httpd.html). We
+[[ Subversion/Apache configuration as documented in the Subversion
+book | http://svnbook.red-bean.com/en/1.5/svn.serverconfig.httpd.html ]]. We
 assume that user authentication is handled by Apache httpd (whatever
 authentication scheme one chooses). Once a username (the identical
 username/user-id as defined in MarkUs) has been authenticated by the httpd,
