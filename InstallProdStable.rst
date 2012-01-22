@@ -278,9 +278,9 @@ What follows is an example of 'production.rb'::
     ###################################################################
     # Change this to 'REPOSITORY_EXTERNAL_SUBMITS_ONLY = true' if you
     # are using Subversion as a storage backend and the instructor wants his/her
-    # students to submit to the repositories by command-line only. Set this
-    # to true if you plan to let students submit via the standard subversion
-    # client.
+    # students to submit to repositories via Subversion clients only. Set this
+    # to true if you intend to make students submit via a Subversion
+    # client only. This disables submissions through MarkUs' Web interface
     REPOSITORY_EXTERNAL_SUBMITS_ONLY = false
 
     ###################################################################
@@ -354,19 +354,19 @@ What follows is an example of 'production.rb'::
     ###################################################################
 ------------------------------
 
-Allow Subversion Commandline Commits
+Allow Subversion Client Commits
 ================================================================================
 
-When using Subversion as a storage backend for students' submissions, it is
+When using Subversion as a storage backend for students' submissions, MarkUs is
 capable of exposing created Subversion repositories. Example: An instructor
-configures an assignment so that students can submit using the Subversion
-command-line client only (i.e. the Web interface will be disabled). In that
+configures an assignment so that students can submit using a Subversion client
+directly (i.e. the MarkUs Web interface will not allow submissions). In that
 case, the Subversion repositories will be created once the student logs in.
 Hence, the workflow is as follows:
 
 1. The instructor creates users and (at least one) assignment
-2. The instructor tells students to log in to MarkUs and find out their repository URL
-3. Students can connect to their repositories using svn
+2. The instructor tells students to log in to MarkUs and find out their repository's Subversion URL
+3. Students checkout/submit to their repositories using a Subversion client
 
 **Requirements**
 
