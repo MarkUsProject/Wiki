@@ -12,12 +12,58 @@ On Debian and Ubuntu, a simple ::
 
    apt-get install mysql libmysqlclient-dev
 
-Mac OS X
+Mac OS X - MySQL Installer
 --------------------------------------------------------------------------------
 
 To install MySQL, you can use the installer from this site: [[MySQL Downloads |
-(http://dev.mysql.com/downloads/mysql/5.1.html#macosx-dmg]] You can also
-install MySQL using MacPorts instead by following the instructions on this
+http://dev.mysql.com/downloads/mysql/]] 
+
+Select the MySQL for your OS. I have Mac Snow Leopard, so I selected Mac OS X ver. 10.6 (x86, 64-bit), DMG. 
+Please select the dmg file.
+
+.. figure:: images/InstallationMySQL1.png
+   :scale: 100%
+   :align: center
+   :alt: Git
+
+In order to use the software you would have to register as a new user. 
+
+The downloading should start and the file will be saved in your “Downloads” folder. Double click on the Dmg file to start the installation. 
+
+You will get a new window as shown below:-
+
+.. figure:: images/Installation_MySQL2.png
+   :scale: 100%
+   :align: center
+   :alt: Git
+
+Run the “mysql-5.5.20-osx10.6-x86_64.pkg” first
+Then run the MySQlStartupitem.pkg
+Then run the MySQL.prefPane
+
+A window like this should be displayed
+
+.. figure:: images/Installation_MySQL3.png
+   :scale: 100%
+   :align: center
+   :alt: Git
+
+Install it depending on your preference.
+
+After the installation is completed, a window like this should be displayed. 
+
+.. figure:: images/Installation_MySQL4.png
+   :scale: 100%
+   :align: center
+   :alt: Git
+
+Click on Start MySQL Server, to start the server.
+
+
+Mac OS X - MySQL 5 MacPorts Installation
+--------------------------------------------------------------------------------
+
+You can also install MySQL using MacPorts instead by following the instructions on this
 site: [[MySQL 5 MacPorts installation |
 http://www.freerobby.com/2009/09/01/installing-mysql-via-macports-on-snow-leopard-for-ruby-development/]]
 
