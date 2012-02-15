@@ -10,7 +10,7 @@ GNU/Linux
 
 On Debian and Ubuntu, a simple ::
 
-   apt-get install mysql libmysqlclient-dev
+   apt-get install mysql-server libmysqlclient-dev
 
 Mac OS X - MySQL Installer
 --------------------------------------------------------------------------------
