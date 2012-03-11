@@ -20,6 +20,8 @@ suit our needs. Their meaning is as follows:
  * EASY FIX: Ideal for beginners. Should be tricky to fix it!
  * Rails3: Particular things remaining to complete the Rails3 migration.
  * Documentation: Request for documentation
+ * Chrome: Issues that only occur when using Chrome.
+ * Not Triaged: New bugs created by MarkUs users from the bug reporter modal.
 
 
 .. figure:: images/Labels.png
