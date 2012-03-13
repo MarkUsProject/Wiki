@@ -89,7 +89,7 @@ Create an "instructor" user for the person responsible for the course::
 Optionally, load some default data into the database (The database can be reset
 using `rake db:reset`) ::
 
-    rake db:populate
+    rake db:seed
 
 Configure the MarkUs application in config/environment.rb.
 

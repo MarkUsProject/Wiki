@@ -251,7 +251,7 @@ Enter the following commands: ::
 
 Next, you can load the initial database models for the current environment::
 
-    $> bundle exec rake db:populate
+    $> bundle exec rake db:seed
 
 Now, start the server using::
 
