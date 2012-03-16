@@ -82,7 +82,6 @@ This section assumes, you have gem version >= 1.3.6 (required for rails version
 So, the list of gems required for MarkUs is as follows:
 
 * rails
-* db_populate
 * i18n
 * mongrel_cluster
 * routing-filter
@@ -183,7 +182,6 @@ You can also run the following to check your gems::
     cgi_multipart_eof_fix (2.5.0)
     columnize (0.3.2)
     daemons (1.1.0)
-    db_populate (0.2.6)
     factory_data_preloader (0.5.2)
     faker (0.9.4)
     fastercsv (1.5.4)
@@ -238,7 +236,7 @@ command)::
     $> bundle install  --without (postgresql) (sqlite) (mysql)
     $> bundle exec rake db:create:all        # creates all the databases uncommented in config/database.yml
     $> bundle exec rake db:schema:load   # loads required relations into database
-    $> bundle exec rake db:populate      # populates database with some data
+    $> bundle exec rake db:seed          # populates database with some data
     $> bundle exec rake db:test:prepare
     $> bundle exec rake test:units
     $> bundle exec rake test:functionals
