@@ -135,7 +135,7 @@ If you have a problem executing the above command then it is likely that there i
  * I recommend that you restart your computer at this point, especially if you get a error about an invalid Win32 application when trying the next step.
 
  * If you want you can populate MarkUs with sample data:
-      `rake db:populate`
+      `rake db:seed`
 
  * Because Markus uses an external password validation program, authenticating
    a user externally only works on * nix platforms and not on Windows.  To

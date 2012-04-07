@@ -150,7 +150,6 @@ This section assumes, you have gem version >= 1.3.6 (required for rails version
 So, the list of gems required for MarkUs is as follows:
 
 * rails
-* db_populate
 * i18n
 * mongrel_cluster
 * routing-filter
@@ -251,7 +250,7 @@ Enter the following commands: ::
 
 Next, you can load the initial database models for the current environment::
 
-    $> bundle exec rake db:populate
+    $> bundle exec rake db:seed
 
 Now, start the server using::
 
