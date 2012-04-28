@@ -249,6 +249,8 @@ can do so by::
 
     $> bundle exec rails server  #boots up mongrel (or WebRink, if mongrel is not installed/found)
 
+The default admin user is 'a' with any non-empty password. Look at db/seeds.rb for other users.
+
 If this doesn't work try::
     $> rails s
 

@@ -164,6 +164,7 @@ If you have a problem executing the above command then it is likely that there i
     - use the instructor user name that you set up before (for example "markus") and any number of characters > 0 as password
 
  * If you see MarkUs login screen, Congratulations!! Your installation is a success!!
+    - The default admin user is 'a' with any non-empy password. Look at db/seeds.rb for other users.
 
 Optional: Install an Editor
 ================================================================================
