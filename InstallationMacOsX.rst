@@ -268,6 +268,8 @@ You can learn more about other rake tasks by entering::
 
 You should now be able to access MarkUs at http://localhost:3000 in your browser.
 
+The default admin user is 'a' with any non-empty password. Look at db/seeds.rb for other users.
+
 **Happy Coding!**
 
 .. figure:: images/Installation_MacOsX-MarkUs.png
