@@ -58,8 +58,8 @@ Install Bundler, a gem for managing gems. ::
 **NOTE** Apache installation will not be described here. Only configuration
 will be.
 
-**NOTE** In Production, you MUST either use PostgreSQL or MySQL databases. NOT
-SQLite3
+**NOTE** In Production it is highly recommended to either use PostgreSQL or MySQL databases. Do NOT use
+SQLite.
 
 Installing ImageMagick
 --------------------------------------------------------------------------------
