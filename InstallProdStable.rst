@@ -87,9 +87,9 @@ Get MarkUs
 [[Get latest stable release |
 http://www.markusproject.org/download/markus-latest-stable.tar.gz]]
 
-Extract it and setup all gems with bundler.::
+Extract it and setup all gems with bundler. Note that you might have to add "--without" options depending on the DB backend you are going to use. See the comments in Gemfile for more info::
 
-    $> bundle install
+    $> bundle install --deployment
 
 
 Setting up the Rack Server
