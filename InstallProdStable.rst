@@ -105,12 +105,12 @@ Configuring Requirements
   
 Run the following rake tasks (non-root)::
 
-    bundle exec rake db:create                # creates the "production" database according to database.yml
-    bundle exec rake db:schema:load           # creates the necessary database schema relations
+    RAILS_ENV=production bundle exec rake db:create                # creates the "production" database according to database.yml
+    RAILS_ENV=production bundle exec rake db:schema:load           # creates the necessary database schema relations
 
 Create an "instructor" user for the person responsible for the course::
 
-    bundle exec rake markus:instructor first_name='Markus' last_name='Maximilian' user_name='markus'
+    RAILS_ENV=production bundle exec rake markus:instructor first_name='Markus' last_name='Maximilian' user_name='markus'
 
 Configure the MarkUs application in
 \<MarkUs-APP-Root\>/config/environments/production.rb (see our MarkUs
