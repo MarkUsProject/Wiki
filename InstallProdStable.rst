@@ -112,11 +112,6 @@ Create an "instructor" user for the person responsible for the course::
 
     bundle exec rake markus:instructor first_name='Markus' last_name='Maximilian' user_name='markus'
 
-Optionally, load some default data into the database (The database can be
-reset using ``rake db:reset``)::
-
-    bundle exec rake db:seed
-
 Configure the MarkUs application in
 \<MarkUs-APP-Root\>/config/environments/production.rb (see our MarkUs
 configuration documentation below). 
