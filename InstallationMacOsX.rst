@@ -124,7 +124,7 @@ To ensure you have the good version of rubygems, please do::
 
    How to see rubygems version
 
-If your version of rubygems is < 1.3.6, please update it ! To update Rubygems, please do::
+If your version of rubygems is < 1.8.15, please update it ! To update Rubygems, please do::
 
     $> sudo gem update --system
 
@@ -137,8 +137,8 @@ If your version of rubygems is < 1.3.6, please update it ! To update Rubygems, p
    Updating rubygems
 
 
-This section assumes, you have gem version >= 1.3.6 (required for rails version
-> 2.3.7).
+This section assumes, you have gem version >= 1.8.15 (required for rails version
+> 3.0.13).
 
 .. figure:: images/Installation_MacOsX-Gem_version2.png
    :scale: 100%
@@ -168,14 +168,21 @@ specific gems for databases:
 
 specific gems for tests and development:
 
+* rdoc
+* rcov
+* simplecov
 * shoulda
-* selenium-client
 * machinist
 * faker
-* factory_data_preloader
+* railroady
 * time-warp
 * ruby-debug
+* debugger
 * mocha
+
+specific gems for annotating PDF files
+
+* rghost
 
 and a gem to manage them all:
 
@@ -220,18 +227,9 @@ At the end, you will see a green message telling you everything is perfect:
 
    Bundler complete message
 
-Installing ImageMagick
---------------------------------------------------------------------------------
-
-If you need to use test and work on image and PDF annotation, you will need
-ImageMagick. Otherwise, you can skip this part.
-
-* [[Setting up ImageMagick|ImageMagick]]
-
-If your want to test PDF conversion on MarkUs, don't forget to set to true the
+**Note : If your want to test PDF conversion on MarkUs, don't forget to set to true the
 `PDF_SUPPORT` variable in `config/environments/development.rb`
 
-Getting Started with MarkUs Development
 ================================================================================
 
 Create databases:::
