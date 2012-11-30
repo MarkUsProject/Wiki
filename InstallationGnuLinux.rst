@@ -69,7 +69,7 @@ To ensure you have the good version of rubygems, please do::
 if your version of rubygems is < 1.8.15, please update it !
 
 This section assumes, you have gem version >= 1.8.15 (required for rails version
-> 3.0.13).
+>= 3.0.13).
 
 So, the list of gems required for MarkUs is as follows:
 

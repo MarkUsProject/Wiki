@@ -138,7 +138,7 @@ If your version of rubygems is < 1.8.15, please update it ! To update Rubygems, 
 
 
 This section assumes, you have gem version >= 1.8.15 (required for rails version
-> 3.0.13).
+>= 3.0.13).
 
 .. figure:: images/Installation_MacOsX-Gem_version2.png
    :scale: 100%

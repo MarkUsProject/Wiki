@@ -21,9 +21,9 @@ Project Resources
 
 * **Project Website** http://www.markusproject.org
 * **Developer's Blog** http://blog.markusproject.org
-* **Review Board** http://review.markusproject.org
+* **Code Review** https://github.com/MarkUsProject/Markus/pulls/
 
-  * [[How to create a MarkUs review | HowToReviewBoard]]
+  * [[How to create a MarkUs review | HowToCodeReview]]
 
 * **IRC Channel:** Our channel is #markus on irc.freenode.net.
   [[Logs of the channel|http://www.markusproject.org/irc/]] are also available.
@@ -164,7 +164,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 * **MarkUs Coding Style/Coding Practices/Rails Gotchas**
 
   * [[Basic Guidelines for MarkUs Development | DeveloperGuidelines]] (**IMPORTANT!**)
-  * [[How to use Review Board | HowToReviewBoard]]
+  * [[How To Do a Code Review | HowToCodeReview]]
   * [[Rails erb quirks | RailsERbStyle]]
   * [[Use h (alias for html_escape) and sanitize in
     views | RailsViewsConventions]]

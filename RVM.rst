@@ -27,13 +27,29 @@ Next we need to reload the ~/.bash_profile file::
 
     $ . ~/.bash_profile
 
+Run rvm requirements to produce a list of all the require packages::
+
+    $ rvm requirements
+
+    # For Ruby / Ruby HEAD (MRI, Rubinius, & REE), install the following:
+    ruby: /usr/bin/apt-get install build-essential openssl libreadline6 libreadline6-dev 
+    curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev
+    libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config
+
+Next, install any missing packages::
+
+    $ sudo apt-get install build-essential openssl libreadline6 libreadline6-dev \
+    curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 \
+    libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison  \
+    subversion pkg-config
+
 Next, install Rubies (Ruby 1.8.7, Ruby 1.9.2, JRuby, Rubinius…)
 
 Ruby
 --------------------------------------------------------------------------------
 
 MarkUs stable tree works only with Ruby 1.8.7. We will install it by default,
-to ensure everything is build correctly::
+to ensure everything is build correctly:: 
 
     $ rvm install 1.8.7
     $ rvm install 1.9.2
