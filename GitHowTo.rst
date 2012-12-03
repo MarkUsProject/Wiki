@@ -122,19 +122,16 @@ Coding
   name.patch``
   **IMPORTANT:** The `--full-index` option is essential!
 
-Review Board
+Code Review
 ================================================================================
 
-- Post diff on Review Board. See our [[Review Board how-to | HowToReviewBoard]]
+- Post diff to do a Code Review. See our [[Code Review how-to | HowToCodeReview]]
   for tips and tricks. Note that main MarkUs may have advanced since you
   last updated your review. The best way to deal with this case is described in
   [["How to rebase my feature branch"| GitRebaseFeatureBranch]]
 
-- Once you have one or more ship it
-
-  - Push code to your github repository
-  - Ask for a pull request
-  - Wait for a core MarkUs developer to merge your code :-)
+- Once you have an approved code review,  a core MarkUs developer to merge your
+ code :-)
 
 Git Tricks
 ================================================================================
