@@ -10,7 +10,7 @@ GNU/Linux
 
 On Debian and Ubuntu, a simple ::
 
-   apt-get install postgresql postgresql-client
+   #> apt-get install postgresql postgresql-client
 
 Mac OS X
 --------------------------------------------------------------------------------
@@ -69,8 +69,7 @@ password, to which superuser privileges will be granted. We will use this user
 for OLM later. As root execute the following (be careful not to forget any
 backslashes or single-/doublequotes)::
 
-    #> su -c "psql -c \"create user olm_db_admin with superuser password
-    'olm_db_admin';\"" postgres
+    #> su -c "psql -c \"create user olm_db_admin with superuser password 'olm_db_admin';\"" postgres
 
 The above command should output the following::
 

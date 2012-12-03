@@ -30,7 +30,7 @@ Thomas and David Heinemeier Hanssson, 2nd edition.
  * Say "OK" when prompted about regenerating the configuration files.
  * By now you should see the InstantRail window on which you can monitor all your application.
 
-We require a gem with version > 1.3.x and Rails version > 2.2, which InstantRails 2.0 does not come with. To upgrade these:
+We require a gem with version > 1.3.x and Rails version > 3.0.13, which InstantRails 2.0 does not come with. To upgrade these:
 
 * Click on the black I button in your Instant Rails window. Click on Rails Applications > Open Ruby Console Window. You should see a window that looks just like the Windows command prompt, but it is much more useful.
 * Run `gem update --system` to upgrade the Gem. This may take a few minutes, so be patient.

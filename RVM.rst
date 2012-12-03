@@ -8,7 +8,7 @@ RVM (Ruby Version Manager) is a command line tool which allows us to easily
 install, manage and work with multiple ruby environments from interpreters to
 sets of gems.
 
-Official website: https://rvm.beginrescueend.com/
+Official website: https://rvm.io
 
 RVM can help you working with different versions of Ruby with MarkUs (or other
 projets). Here, you will find particular installation instructions for
@@ -19,37 +19,40 @@ Install RVM
 ================================================================================
 First, install RVM::
 
-    $ bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
+    $ sudo apt-get install curl
+    $ curl -L get.rvm.io | bash -s stable --auto
+
+Next we need to reload the ~/.bash_profile file::
+
+
+    $ . ~/.bash_profile
+
+Run rvm requirements to produce a list of all the require packages::
+
+    $ rvm requirements
+
+    # For Ruby / Ruby HEAD (MRI, Rubinius, & REE), install the following:
+    ruby: /usr/bin/apt-get install build-essential openssl libreadline6 libreadline6-dev 
+    curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev
+    libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config
+
+Next, install any missing packages::
+
+    $ sudo apt-get install build-essential openssl libreadline6 libreadline6-dev \
+    curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 \
+    libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison  \
+    subversion pkg-config
 
 Next, install Rubies (Ruby 1.8.7, Ruby 1.9.2, JRuby, Rubinius…)
-
-OpenSSL
---------------------------------------------------------------------------------
-If you have openssl >= 1.0.0, Ruby 1.8.7 and Ruby 1.9.2 won't build on your
-system. You will have to locally install a 0.9.8 version.
-
-To find the version of openssl built on your system (if you have one), try::
-
-     $ openssl
-     OpenSSL> version
-     OpenSSL 1.0.0d 8 Feb 2011
-
-If OpenSSL version < 1.0.0, you can continue to Subversion part.
-
-If not, install OpenSSL with RVM::
-
-    $ rvm pkg install openssl
 
 Ruby
 --------------------------------------------------------------------------------
 
 MarkUs stable tree works only with Ruby 1.8.7. We will install it by default,
-to ensure everything is build correctly::
+to ensure everything is build correctly:: 
 
-    $ rvm install 1.8.7 -C --with-openssl-dir=$HOME/.rvm/usr
-    $ rvm install 1.9.2 -C --with-openssl-dir=$HOME/.rvm/usr 
-
-Add --with-openssl only if you did `rvm package install openssl` before
+    $ rvm install 1.8.7
+    $ rvm install 1.9.2
 
 Now, if you do `rvm list`, you will see two version of ruby available. You can
 choose one by doing `rvm use 1.8.7` or `rvm use 1.9.2`.
@@ -58,6 +61,9 @@ choose one by doing `rvm use 1.8.7` or `rvm use 1.9.2`.
 
 **Note:** You will have to do `rvm use 1.x.y` in every shell you use.
 
+To make a version of ruby default::
+
+    $ rvm --default use 1.8.7-p334
 
 Rubygems
 --------------------------------------------------------------------------------
@@ -126,7 +132,7 @@ If a new version of Ruby is out, you will want to install it.
 First, you will have to update RVM (for example, Ruby-1.9.2-p290 is out, and I
 used Ruby-1.9.2-p180)::
 
-    $ rvm get head
+    $ rvm get stable
     $ rvm install 1.9.2
 
 **Note** Use the same options as before if you need them. Moreover, don't

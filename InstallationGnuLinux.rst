@@ -29,12 +29,12 @@ following methods :
 
     $> su  # and then enter your root password
     #> apt-get install ruby-full build-essential rubygems rake libsvn-ruby
-    subversion #make sure ruby-full points to the correct ruby version (1.8)
+    subversion #make sure ruby-full points to the correct ruby version (1.8.7)
 
 (as normal user, with the "sudo" method)::
 
     $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby
-    subversion # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8)
+    subversion # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8.7)
 
 **Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
 
@@ -43,15 +43,7 @@ production. You may also experience database conflicts, in particular if you
 want to test **PDF Conversion**. In case of PDF Conversion, you **MUST** use
 PostgreSQL or MySQL
 
-Installing ImageMagick
---------------------------------------------------------------------------------
-
-If you need to use test and work on image and PDF annotation, you will need
-ImageMagick. Otherwise, you can skip this part.
-
-* [[Setting up ImageMagick|ImageMagick]]
-
-If your want to test PDF conversion on MarkUs, don't forget to set to true the
+**Note : If your want to test PDF conversion on MarkUs, don't forget to set to true the
 `PDF_SUPPORT` variable in `config/environments/development.rb`
 
 
@@ -74,10 +66,10 @@ To ensure you have the good version of rubygems, please do::
 
     $> gem --version
 
-if your version of rubygems is < 1.3.6, please update it !
+if your version of rubygems is < 1.8.15, please update it !
 
-This section assumes, you have gem version >= 1.3.6 (required for rails version
-> 2.3.7).
+This section assumes, you have gem version >= 1.8.15 (required for rails version
+>= 3.0.13).
 
 So, the list of gems required for MarkUs is as follows:
 
@@ -100,14 +92,21 @@ specific gems for databases:
 
 specific gems for tests and development:
 
+* rdoc
+* rcov
+* simplecov
 * shoulda
-* selenium-client
 * machinist
 * faker
-* factory_data_preloader
+* railroady
 * time-warp
 * ruby-debug
+* debugger
 * mocha
+
+specific gems for annotating PDF files
+
+* rghost
 
 and a gem to manage them all:
 
@@ -143,8 +142,8 @@ To install only mysql support, execute the following::
 
     $> bundle install --without postgresql sqlite
 
-On Ubuntu and Debian systems, the system can't find bundler. You need to add
-bundler to your PATH or run it directly ::
+On older version of Ubuntu and Debian systems, the system can't find bundler. 
+You will need to add bundler to your PATH or run it directly ::
 
     $> /var/lib/gems/1.8/bin/bundle install
 
@@ -166,47 +165,67 @@ ordinary user, **not** root)::
 
 The "true" output indicates that everything went fine and you are ready to go
 to the next step. Also, <code>rake --version</code> should report a version >=
-0.8.7 and <code>rails --version</code> should report a rails version >= 2.2.x
+0.8.7 and <code>rails --version</code> should report a rails version >= 3.0.13
 
 You can also run the following to check your gems::
 
     $> bundle exec gem list --local
     *** LOCAL GEMS ***
 
-    actionmailer (2.3.10)
-    actionpack (2.3.10)
-    activerecord (2.3.10)
-    activeresource (2.3.10)
-    activesupport (2.3.10)
-    bundler (1.0.12)
-    cgi_multipart_eof_fix (2.5.0)
-    columnize (0.3.2)
-    daemons (1.1.0)
-    factory_data_preloader (0.5.2)
-    faker (0.9.4)
-    fastercsv (1.5.4)
-    fastthread (1.0.7)
-    gem_plugin (0.2.3)
+    abstract (1.0.0)
+    actionmailer (3.0.13)
+    actionpack (3.0.13)
+    activemodel (3.0.13)
+    activerecord (3.0.13)
+    activeresource (3.0.13)
+    activesupport (3.0.13)
+    arel (2.0.10)
+    builder (2.1.2)
+    bundler (1.1.5)
+    columnize (0.3.6)
+    dynamic_form (1.1.4)
+    erubis (2.6.6)
+    exception_notification (2.6.1)
+    faker (1.0.1)
+    fastercsv (1.5.5)
     i18n (0.5.0)
-    linecache (0.43)
+    json (1.7.3)
+    kgio (2.7.4)
+    linecache (0.46)
     machinist (1.0.6)
-    mocha (0.9.10)
-    mongrel (1.1.5)
-    mongrel_cluster (1.0.5)
-    rack (1.1.0)
-    rails (2.3.10)
-    rake (0.8.7)
-    routing-filter (0.2.2)
+    mail (2.2.19)
+    metaclass (0.0.1)
+    mime-types (1.19)
+    mocha (0.11.4)
+    pg (0.13.2)
+    polyglot (0.3.3)
+    rack (1.2.5)
+    rack-mount (0.6.14)
+    rack-test (0.5.7)
+    railroady (1.0.7)
+    rails (3.0.13)
+    railties (3.0.13)
+    raindrops (0.10.0)
+    rake (0.9.2.2)
+    rbx-require-relative (0.0.9)
+    rcov (1.0.0)
+    rdoc (3.12)
+    rghost (0.8.7.8)
+    routing-filter (0.3.1)
     ruby-debug (0.10.4)
     ruby-debug-base (0.10.4)
-    rubyzip (0.9.4)
-    selenium-client (1.2.18)
-    shoulda (2.11.3)
-    sqlite3 (1.3.3)
-    sqlite3-ruby (1.3.3)
-    time-warp (1.0.7)
-    will_paginate (2.3.15)
-    ya2yaml (0.30
+    rubyzip (0.9.9)
+    shoulda (3.0.1)
+    shoulda-context (1.0.0)
+    shoulda-matchers (1.0.0)
+    thor (0.14.6)
+    time-warp (1.0.12)
+    treetop (1.4.10)
+    tzinfo (0.3.33)
+    unicorn (4.3.1)
+    will_paginate (3.0.3)
+    ya2yaml (0.31)
+
 
 Configure MarkUs
 --------------------------------------------------------------------------------
