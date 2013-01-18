@@ -218,7 +218,7 @@ PDF Files
 
 If MarkUs is configured to support in-browser display of PDF files, it will have
 an impact on the submission collection process. In order to display the file in
-the browser, MarkUs first converts it to jpg format via ImageMagick when the
+the browser, MarkUs first converts it to jpg format via rghost when the
 submission containing the file gets collected. Conversion is a time consuming 
 process, and can take about a minute for a 10 page document. Thus keep in mind
 that it will take some time for all the submissions to be collected.

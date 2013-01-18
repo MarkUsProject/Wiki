@@ -16,8 +16,6 @@ documentation for developers|InstallationMacOsX]]**
 .. TODO: Add different authentication mechanisms (see InstallProdOld.rst)
 .. TODO: Add externaly created repositories documentation
 .. TODO: Don't forget to add a part for setting timezone !
-.. TODO: ImageMagick
-.. TODO: Ant
 .. TODO: Libsvn-ruby
 
 Required Software (including known to be working versions)
@@ -38,18 +36,11 @@ We know that the following versions work and believe that whatever version
 * 'build-essential' Debian package (required to build/compile some gem packages
   from source)
 * 'subversion' and 'libsvn-ruby1.8' (Ruby bindings for Subversion) if using an
-  SVN Repository as back-end
-* ImageMagick (>=6.5.7, older versions should be fine too) Only required if you
-  plan to be able to view and annotate pdfs within the browser (PDF_SUPPORT
-  setting in config files) 
-* Ant (any recent version) if you plan to use the Test Framework (still in
-  alpha) Don't forget to embed all tools you would need to complete your test
-  toolchain (like gcc, make,…)
+  SVN Repository as back-end 
 
 Issue the following command on a terminal.::
 
-    #> aptitude install ruby-full build-essential rubygems rake libsvn-ruby
-    subversion imagemagick ruby-dev libopenssl-ruby ant
+    #> aptitude install ruby-full build-essential rubygems rake libsvn-ruby subversion ruby-dev libopenssl-ruby
 
 Install Bundler, a gem for managing gems. ::
 
@@ -61,15 +52,7 @@ will be.
 **NOTE** In Production it is highly recommended to either use PostgreSQL or MySQL databases. Do NOT use
 SQLite.
 
-Installing ImageMagick
---------------------------------------------------------------------------------
-
-If you need to use test and work on image and PDF annotation, you will need
-ImageMagick. Otherwise, you can skip this part.
-
-* [[Setting up ImageMagick|ImageMagick]]
-
-If your want to test PDF conversion on MarkUs, don't forget to set to true the
+**NOTE** If your want to test PDF conversion on MarkUs, don't forget to set to true the
 `PDF_SUPPORT` variable in `config/environments/development.rb`
 
 Setting up the Database
