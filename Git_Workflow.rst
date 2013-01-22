@@ -101,10 +101,10 @@ Useful Misc. Commands
 ::
 
 	git stash pop
-- If you ever find that you accidentally left something out of your last commit, you can use amend
+- Revert the last commit
 ::
-	
-	git commit --amend
+
+	git reset --hard HEAD~1
 - Remove all changes made to a specific file. Let's say I no longer want the changes I've made to app/models/membership.rb
 :: 
 
