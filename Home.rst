@@ -111,9 +111,9 @@ Mailing [[list archive at marc.info|http://marc.info/?l=markus-dev&r=1&w=2]]
 
 Project Contributors
 --------------------------------------------------------------------------------
-Adam Goucher, Alexandre Lissy, Amanda Manarin, Andrew Louis, Anthony Le Jallé, Anton Braverman, Benjamin Thorent, Benjamin Vialle, Bertan Guven, Brian Xu, Bryan Shen, Catherine Fawcett, Christian Jacques, Clément Delafargue, Clément Schiano, Danesh Dadachanji, Diane Tam, Dina Sabie, Evan Browning, Farah Juma, Fernando Garces, Gabriel Roy-Lortie, Geoffrey Flores, Horatiu Halmaghi, Ibrahim Shahin, Jérôme Gazel, Jiahui Xu, Joseph Mate, Joseph Maté, Justin Foong, Karel Kahula, Kurtis Schmidt, Mélanie Gaudet, Michael Lumbroso, Mike Conley, Mike Gunderloy, Misa Sakamoto, Neha Kumar, Nelle Varoquaux, Nicolas Carougeau, Noé Bedetti, Oloruntobi Ogunbiyi, Robert Burke, Samuel Gougeon, Severin Gehwolf, Shion Kashimura, Simon Lavigne-Giroux, Tara Clark, Valentin Roger, Veronica Wong, Victoria Mui, Victor Ivri, Vivien Suen, Yansong Zang
+Aaron Lee, Adam Goucher, Aimen Khan, Alexandre Lissy, Alex Krassikov, Alysha Kwok, Amanda Manarin, Andrew Louis, Anthony Le Jallé, Anton Braverman, Benjamin Thorent, Benjamin Vialle, Bertan Guven, Brian Xu, Bryan Shen, Camille Guérin, Catherine Fawcett, Christian Jacques, Christine Yu, Clément Delafargue, Clément Schiano, Danesh Dadachanji, Dina Sabie, Daniel St. Jules, Diane Tam, Egor Philippov, Erik Traikov, Evan Browning, Farah Juma, Fernando Garces, Gabriel Roy-Lortie, Geoffrey Flores, Hanson Wu, Horatiu Halmaghi, Ian Smith, Ibrahim Shahin, Jay Parekh, Jérôme Gazel, Jiahui Xu, Jordan Saleh, Joseph Mate, Joseph Maté, Justin Foong, Karel Kahula, Kurtis Schmidt, Luke Kysow, Marc Bodmer, Mélanie Gaudet, Michael Lumbroso, Mike Conley, Mike Gunderloy, Mike Stewart, Mike Wu, Misa Sakamoto, Neha Kumar, Nelle Varoquaux, Nicolas Bouillon, Nick Lee, Nicolas Carougeau, Noé Bedetti, Oloruntobi Ogunbiyi, Razvan Vlaicu, Robert Burke, Samuel Gougeon, Sean Budning, Severin Gehwolf, Shion Kashimura, Simon Lavigne-Giroux, Tara Clark, Tianhai Hu, Valentin Roger, Veronica Wong, Victoria Mui, Victor Ivri, Vivien Suen, Yansong Zang
 
-**Supervisors:** Morgan Magnin, Karen Reid
+**Supervisors:** Karen Reid, Morgan Magnin
 
 
 Term Work
