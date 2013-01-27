@@ -119,27 +119,12 @@ Adam Goucher, Alexandre Lissy, Amanda Manarin, Andrew Louis, Anthony Le Jallé, 
 Term Work
 --------------------------------------------------------------------------------
 
-.. TODO Some of the following links have been removed during the migration to
-  github.
-  They should all be out on the blog
-
-* **Fall 2010**
-
-  * [[Who is doing what? (punchlines/minutes) |
-    http://blog.markusproject.org/?p=1713]]
-
-* **Winter 2010**
-
-  * [[Who is doing what? (punchlines/minutes) |
-    http://blog.markusproject.org/?p=1049]]
-
-* **Fall 2009**
-
-  * [[Who is in charge of what, administratively? |
-    http://blog.markusproject.org/?p=504]]
-
-  * [[September 18 - Pre-meeting Status |
-    http://blog.markusproject.org/?p=296]]
+Status Reports:
+* [[2013 | http://blog.markusproject.org/?m=2013&cat=73]]
+* [[2012 | http://blog.markusproject.org/?m=2012&cat=73]]
+* [[2011 | http://blog.markusproject.org/?m=2011&cat=73]]
+* [[2010 | http://blog.markusproject.org/?m=2010&cat=73]]
+* [[2009 | http://blog.markusproject.org/?m=2009&cat=73]]
 
 Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 --------------------------------------------------------------------------------
