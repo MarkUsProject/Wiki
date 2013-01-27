@@ -164,8 +164,6 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
   * [[Basic Guidelines for MarkUs Development | DeveloperGuidelines]] (**IMPORTANT!**)
   * [[How To Do a Code Review | HowToCodeReview]]
   * [[Rails erb quirks | RailsERbStyle]]
-  * [[Use h (alias for html_escape) and sanitize in
-    views | RailsViewsConventions]]
   * **Please document your code according to the RDoc specification** (see
     [[how to use RDOC | http://rdoc.sourceforge.net/doc/]])
   * **Ruby compatibility:** Please check ticket: #206. Also check out the 
