@@ -111,35 +111,20 @@ Mailing [[list archive at marc.info|http://marc.info/?l=markus-dev&r=1&w=2]]
 
 Project Contributors
 --------------------------------------------------------------------------------
-Adam Goucher, Alexandre Lissy, Amanda Manarin, Andrew Louis, Anthony Le Jallé, Anton Braverman, Benjamin Thorent, Benjamin Vialle, Bertan Guven, Brian Xu, Bryan Shen, Catherine Fawcett, Christian Jacques, Clément Delafargue, Clément Schiano, Danesh Dadachanji, Diane Tam, Dina Sabie, Evan Browning, Farah Juma, Fernando Garces, Gabriel Roy-Lortie, Geoffrey Flores, Horatiu Halmaghi, Ibrahim Shahin, Jérôme Gazel, Jiahui Xu, Joseph Mate, Joseph Maté, Justin Foong, Karel Kahula, Kurtis Schmidt, Mélanie Gaudet, Michael Lumbroso, Mike Conley, Mike Gunderloy, Misa Sakamoto, Neha Kumar, Nelle Varoquaux, Nicolas Carougeau, Noé Bedetti, Oloruntobi Ogunbiyi, Robert Burke, Samuel Gougeon, Severin Gehwolf, Shion Kashimura, Simon Lavigne-Giroux, Tara Clark, Valentin Roger, Veronica Wong, Victoria Mui, Victor Ivri, Vivien Suen, Yansong Zang
+Aaron Lee, Adam Goucher, Aimen Khan, Alexandre Lissy, Alex Krassikov, Alysha Kwok, Amanda Manarin, Andrew Louis, Anthony Le Jallé, Anton Braverman, Benjamin Thorent, Benjamin Vialle, Bertan Guven, Brian Xu, Bryan Shen, Camille Guérin, Catherine Fawcett, Christian Jacques, Christine Yu, Clément Delafargue, Clément Schiano, Danesh Dadachanji, Dina Sabie, Daniel St. Jules, Diane Tam, Egor Philippov, Erik Traikov, Evan Browning, Farah Juma, Fernando Garces, Gabriel Roy-Lortie, Geoffrey Flores, Hanson Wu, Horatiu Halmaghi, Ian Smith, Ibrahim Shahin, Jay Parekh, Jérôme Gazel, Jiahui Xu, Jordan Saleh, Joseph Mate, Joseph Maté, Justin Foong, Karel Kahula, Kurtis Schmidt, Luke Kysow, Marc Bodmer, Mélanie Gaudet, Michael Lumbroso, Mike Conley, Mike Gunderloy, Mike Stewart, Mike Wu, Misa Sakamoto, Neha Kumar, Nelle Varoquaux, Nicolas Bouillon, Nick Lee, Nicolas Carougeau, Noé Bedetti, Oloruntobi Ogunbiyi, Razvan Vlaicu, Robert Burke, Samuel Gougeon, Sean Budning, Severin Gehwolf, Shion Kashimura, Simon Lavigne-Giroux, Tara Clark, Tianhai Hu, Valentin Roger, Veronica Wong, Victoria Mui, Victor Ivri, Vivien Suen, Yansong Zang
 
-**Supervisors:** Morgan Magnin, Karen Reid
+**Supervisors:** Karen Reid, Morgan Magnin
 
 
 Term Work
 --------------------------------------------------------------------------------
 
-.. TODO Some of the following links have been removed during the migration to
-  github.
-  They should all be out on the blog
-
-* **Fall 2010**
-
-  * [[Who is doing what? (punchlines/minutes) |
-    http://blog.markusproject.org/?p=1713]]
-
-* **Winter 2010**
-
-  * [[Who is doing what? (punchlines/minutes) |
-    http://blog.markusproject.org/?p=1049]]
-
-* **Fall 2009**
-
-  * [[Who is in charge of what, administratively? |
-    http://blog.markusproject.org/?p=504]]
-
-  * [[September 18 - Pre-meeting Status |
-    http://blog.markusproject.org/?p=296]]
+Status Reports:
+* [[2013 | http://blog.markusproject.org/?m=2013&cat=73]]
+* [[2012 | http://blog.markusproject.org/?m=2012&cat=73]]
+* [[2011 | http://blog.markusproject.org/?m=2011&cat=73]]
+* [[2010 | http://blog.markusproject.org/?m=2010&cat=73]]
+* [[2009 | http://blog.markusproject.org/?m=2009&cat=73]]
 
 Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 --------------------------------------------------------------------------------
@@ -155,8 +140,6 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
   * http://apidock.com/rails
   * [[Some notes from a Ruby book taken by Tara Clark |
     http://taraclark.wordpress.com/category/ruby-on-rails]]
-  * [[How to run Selenium tests | SeleniumTesting]]
-  * [[Acceptance/Cucumber tests | CucumberTesting]]
   * [[How to use the MarkUs API | ApiHowTo]]
   * [[How to use MarkUs Testing Framework | TestFramework]] (still in alpha)
 
@@ -166,13 +149,9 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
   * [[Basic Guidelines for MarkUs Development | DeveloperGuidelines]] (**IMPORTANT!**)
   * [[How To Do a Code Review | HowToCodeReview]]
   * [[Rails erb quirks | RailsERbStyle]]
-  * [[Use h (alias for html_escape) and sanitize in
-    views | RailsViewsConventions]]
   * **Please document your code according to the RDoc specification** (see
     [[how to use RDOC | http://rdoc.sourceforge.net/doc/]])
-  * **Ruby compatibility:** Please check ticket: #206. Also check out the 
-    [[difference between COUNT, LENGTH, and
-    SIZE | http://blog.hasmanythrough.com/2008/2/27/count-length-size]
+  * [[Difference between COUNT, LENGTH, and SIZE | http://blog.hasmanythrough.com/2008/2/27/count-length-size]]
   * [[Our Ruby/Rails testing guidelinesi | TestingGuidelines]]
   * [[Security testing guidelines | SecurityTesting]]
   * [[Internationalization | Internationalization]]
