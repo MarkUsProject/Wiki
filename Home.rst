@@ -166,9 +166,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
   * [[Rails erb quirks | RailsERbStyle]]
   * **Please document your code according to the RDoc specification** (see
     [[how to use RDOC | http://rdoc.sourceforge.net/doc/]])
-  * **Ruby compatibility:** Please check ticket: #206. Also check out the 
-    [[difference between COUNT, LENGTH, and
-    SIZE | http://blog.hasmanythrough.com/2008/2/27/count-length-size]
+  * [[Difference between COUNT, LENGTH, and SIZE | http://blog.hasmanythrough.com/2008/2/27/count-length-size]]
   * [[Our Ruby/Rails testing guidelinesi | TestingGuidelines]]
   * [[Security testing guidelines | SecurityTesting]]
   * [[Internationalization | Internationalization]]
