@@ -36,7 +36,7 @@ following methods :
     $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby
     subversion # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8.7)
 
-Since ruby 1.8.7 is no longer the latest version, you can download it using rvm: https://rvm.io/. Once installed, execute the following::
+Since Ruby 1.8.7 is no longer the latest version, you can download it using rvm: https://rvm.io/. Once rvm is installed, execute the following::
 
     $> rvm install 1.8.7
     $> rvm use 1.8.7 --default
@@ -48,7 +48,7 @@ You may also encounter the errors::
     cannot load such file -- svn/repos
     cannot load such file -- svn/ext/core
 
-If so, execute the following (using svn/repos as the example, similarly for svn/ext/core)::
+If so, execute the following (using ``svn/repos`` as the example, similarly for ``svn/ext/core``)::
 
     $> locate 'svn/repos'
     /usr/lib/ruby/vendor_ruby/svn/repos.rb # note the path of the directory
@@ -56,10 +56,16 @@ If so, execute the following (using svn/repos as the example, similarly for svn/
     $> irb
     1.8.7 :001 >$:
 
-Find the directory path that ends with "vendor_ruby", i.e. the parent directory of "svn" in the path where we located 'svn/repos', then navigate to it and create a symbolic link::
+Find the directory path that ends with ``vendor_ruby``, i.e. the parent directory of ``svn`` in the path where we located ``svn/repos``, then navigate to it and create a symbolic link::
 
     $> cd /home/mike/.rvm/rubies/ruby-1.8.7-p371/lib/ruby/site_ruby/1.8/x86_64-linux
     $> ln -s /usr/lib/ruby/vendor_ruby/svn svn
+
+To confirm that the symbolic links worked, execute the following::
+
+    $> irb
+    1.8.7 :001 > require 'svn/repos'
+     => true # should return true or false instead of an error
 
 **Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
 
@@ -185,6 +191,8 @@ ordinary user, **not** root)::
     irb(main):003:0> require 'fastercsv'
     => true
     irb(main):003:0> require 'ruby-debug'
+    => true
+    irb(main):003:0> require 'svn-repo'
     => true
 
 
