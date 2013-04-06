@@ -1,6 +1,6 @@
-================================================================================
+*************************
 RESTful API Documentation
-================================================================================
+*************************
 
 This document provides an overview of the MarkUs RESTful API for use by developers 
 as well as instructors. The API allows the use of standard HTTP methods such as 
@@ -8,6 +8,10 @@ GET, PUT, POST and DELETE to manipulate and retrieve resources. Those resources
 may also be retrieved either individually or from within collections. 
 
 .. contents::
+
+================================================================================
+General
+================================================================================
 
 Authentication
 --------------------------------------------------------------------------------
@@ -146,8 +150,10 @@ user of type admin, you can make use of "limit"::
 
     curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/users.xml?filter=type:admin&limit=1"
 
-Currently Available Routes
---------------------------------------------------------------------------------
+
+================================================================================
+Available Routes
+================================================================================
 
 ::
 
@@ -172,7 +178,7 @@ Currently Available Routes
     PUT     /api/assignments/id/groups/id/test_results/id
     DELETE  /api/assignments/id/groups/id/test_results/id
 
-/api/users
+Users
 --------------------------------------------------------------------------------
 
 | **POST /api/users**
@@ -252,7 +258,7 @@ Currently Available Routes
     Success
     </rsp>
 
-/api/assignments
+Assignments
 --------------------------------------------------------------------------------
 
 | **POST /api/assignments**
@@ -390,7 +396,7 @@ Currently Available Routes
     Success
     </rsp>
 
-/api/assignments/id/groups
+Groups
 --------------------------------------------------------------------------------
 
 | **GET /api/assignments/id/groups**
@@ -477,7 +483,7 @@ Currently Available Routes
       </student-memberships>
     </group>
 
-/api/assignments/id/groups/id/submission_downloads
+Submission Downloads
 --------------------------------------------------------------------------------
 
 | **GET /api/assignments/id/groups/id/submission_downloads**
