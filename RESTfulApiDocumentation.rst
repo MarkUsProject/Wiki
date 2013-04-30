@@ -489,7 +489,7 @@ Submission Downloads
 | **GET /api/assignments/id/groups/id/submission_downloads**
 | Description: If filename is specified, it returns the given file from the 
                submission, otherwise it returns a zip containing all submitted 
-               files.
+               files
 | Optional: filename
 | Example:
 ::
@@ -500,28 +500,105 @@ Submission Downloads
                                      Dload  Upload   Total   Spent    Left  Speed
     100 26898  100 26898    0     0  26271      0  0:00:01  0:00:01 --:--:-- 26396
 
-Notes on Test Results
+Test Results
 --------------------------------------------------------------------------------
 
-Filenames of test results per submission have to be unique. Several HTTP POST requests with
-the same filename, but different file_content parameter, will overwrite
-already existing test results.
+| **POST /api/assignments/id/groups/id/test_results**
+| Description: Creates a new test result for a group's latest assignment submission
+| Optional: 
+| Example:
+::
 
-A typical request in order to load test results into MarkUs looks like the
-following (using curl)::
+    $ curl -H "Authorization: MarkUsAuth YourAuthKey" --data \
+    "filename=exampletestresult.txt&file_content=ExampleContent" \
+    "http://example.com/api/assignments/1/groups/5/test_results.xml"
+    <?xml version="1.0"?>
+    <rsp status="201">
+    The resource has been created.
+    </rsp>
 
-    $ file_content=`cat app/controllers/assignments_controller.rb`; curl --header 'Authorization: MarkUsAuth NmY3NGUxNjEyY2FlNzk0NTMwMmQ5YTY1YTE1NzNhZmY=' \
-      -F group_name=c5anthei -F assignment=A1 -F filename=test.txt -F "file_content=$file_content" http://example.com/markus/api/test_results
+| Example with file:
+::
 
-**NOTE** This only works, if for the specified assignment and group a
-submission has been "collected". This usually happens after the assignment due
-date and after the grace period.
+      $ file_content=`cat test.txt`; curl --header "Authorization: MarkUsAuth YourAuthKey" \
+      -F filename=test.txt -F "file_content=$file_content" \ 
+      "http://example.com/api/assignments/1/groups/5/test_results.xml"
+      <?xml version="1.0"?>
+      <rsp status="201">
+      The resource has been created.
+      </rsp>
 
-**IMPORTANT** The current implementation of
-test results, does not allow binary files to be pushed into MarkUs. The
-behaviour of submitting binary test results this way is undefined.
 
-**Note:** MarkUs versions > 0.7 ship with a Python (api_helper.py) and Ruby
+| **GET /api/assignments/id/groups/id/test_resultss**
+| Description: Returns a list of all test results associated with a particular 
+               group's assignment submission
+| Attributes: id, filename
+| Optional: filter, fields
+| Example:
+::
+
+    $ curl -H "Authorization: MarkUsAuth YourAuthKey" \
+    "http://localhost:3000/api/assignments/1/groups/5/test_results.xml"
+    <?xml version="1.0" encoding="UTF-8"?>
+    <test-results>
+      <test-result>
+        <filename>exampletestresult.txt</filename>
+        <id>1</id>
+      </test-result>
+      <test-result>
+        <filename>testresult.txt</filename>
+        <id>2</id>
+      </test-result>
+    </test-results>
+
+| **GET /api/assignments/id/groups/id/test_results/id**
+| Description: Returns the contents of the specified test result
+| Example:
+::
+
+    $ curl --header "Authorization: YourAuthKey" \
+    "http://example.com/api/assignments/1/groups/5/test_results/4" > test.txt
+    % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                   Dload  Upload   Total   Spent    Left  Speed
+    0    21    0    21    0     0     28      0 --:--:-- --:--:-- --:--:--    28
+
+
+| **PUT /api/assignments/id/groups/id/test_results/id**
+| Description: Updates a test result's filename and/or file_content
+| Optional: filename, file_content
+| Example:
+::
+
+    $ curl -H "Authorization: MarkUsAuth YourAuthKey" -X PUT --data \
+    "filename=example.txt&file_content=ExampleContent" \
+    "http://example.com/api/assignments/1/groups/5/test_results/4.xml"
+    <?xml version="1.0"?>
+    <rsp status="200">
+    Success
+    </rsp>
+
+| **DELETE /api/assignments/id/groups/id/test_results/id**
+| Description: Deletes the specified test_results file
+| Example:
+::
+
+    $ curl -H "Authorization: MarkUsAuth YourAuthKey" -X DELETE \
+    "http://example.com/api/assignments/1/groups/5/test_results/4.xml"
+    <?xml version="1.0"?>
+    <rsp status="200">
+    Success
+    </rsp>
+
+| **Notes on Test Results**
+| Filenames of test results have to be unique, and can only be uploaded once a
+  a submission has been collected. This generally occurs after the assignment 
+  due date, or after the grace period. Furthermore, the API does not support 
+  uploading binary files.
+
+================================================================================
+Other
+================================================================================
+
+MarkUs versions > 0.7 ship with a Python (api_helper.py) and Ruby
 (api_helper.rb) script in lib/tools/ which may be of some help for generating
-those requests.
-
+API requests.
