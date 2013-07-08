@@ -33,6 +33,7 @@ Project Resources
   * **Instructor Guide:** [[Instructor Guide | Doc_Admin]]
   * **Grader Guide:** [[Grader Guide | Doc_Grader]]
   * **Student Guide:** [[Student Guide | Doc_Student]]
+  * **RESTful API: [[RESTful API Documentation| RESTfulApiDocumentation]]
 
 * **Git Resources:**
 
@@ -140,7 +141,6 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
   * http://apidock.com/rails
   * [[Some notes from a Ruby book taken by Tara Clark |
     http://taraclark.wordpress.com/category/ruby-on-rails]]
-  * [[How to use the MarkUs API | ApiHowTo]]
   * [[How to use MarkUs Testing Framework | TestFramework]] (still in alpha)
 
 
