@@ -1,5 +1,5 @@
 ================================================================================
-How Grading Works
+How Grading and Re-grading Works
 ================================================================================
 
 .. contents::
@@ -83,3 +83,46 @@ used, and Brandon is able to see his mark has changed.
 
 Essentially, the advantage to versioning, is the ability to see the history of
 remarks, and to allow rollbacks.
+
+The Life Cycle of a Remark Request
+================================================================================
+Relevant files:
+
+- app/controllers/results_controller.rb
+- app/models/submission.rb
+
+New remark requests are created by ``results_controller.update_remark_request``,
+which calls ``Submission.create_remark_result``, where a new ``Result`` is 
+created and linked to the ``Submission`` by setting 
+``Submission.remark_result_id`` to the new ``Result.id``. All of the ``Mark`` 
+and ``ExtraMark`` in the new remark ``Result`` are populated with the original
+marks at the time of creation.
+
+A remark request can be cancelled by the student before submitting or before 
+the instructor completes the remarking. A count for the number of outstanding
+remark requests of an assignment is stored as 
+``Assignment.outstanding_remark_request_count``.
+
+The following table shows the results of several relevant function calls at 
+different stage of the lifecycle of remark requests.
+
++----------------------------------------+-------------------+------------------------+--------------------------+-----------------------+--------------------------+
+|                                        | No remark request | Remark request created | Remark request submitted | Remark request marked | Remark request cancelled |
++========================================+===================+========================+==========================+=======================+==========================+
+| (remark) Result.marking_state          | N/A               | ``unmarked``           | ``partial``              | ``complete``          | (unchanged)              |
++----------------------------------------+-------------------+------------------------+--------------------------+-----------------------+--------------------------+
+| Submission.remark_result_id            | ``nil``           | (remark) ``Result.id``                                                    | ``nil``                  |
++----------------------------------------+-------------------+------------------------+--------------------------+-----------------------+--------------------------+
+| Submission.has_remark?                 | ``false``         | ``true``                                                                  | ``false``                |
++----------------------------------------+-------------------+------------------------+--------------------------+-----------------------+--------------------------+
+| Submission.remark_submitted?           | ``false``                                  | ``true``                                         | ``false``                |
++----------------------------------------+-------------------+------------------------+--------------------------+-----------------------+--------------------------+
+| Submission.get_latest_result           | original Result                            | remark Result                                    | original Result          |
++----------------------------------------+-------------------+------------------------+--------------------------+-----------------------+--------------------------+
+| Submission.get_latest_completed_result | original Result (or ``nil``)                                          | remark Result         | original Result          |
++----------------------------------------+-------------------+------------------------+--------------------------+-----------------------+--------------------------+
+
+Note that currently, cancelling a remark request does not delete the remark 
+result that’s been created, and `Alysha <https://github.com/akwok18>`_ has 
+proposed to change this behaviour in 
+`issue 1017 <https://github.com/MarkUsProject/Markus/issues/1017>`_.
