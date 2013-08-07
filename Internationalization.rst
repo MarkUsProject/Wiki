@@ -77,7 +77,7 @@ becomes
 
 ::
 
-  alert("#{I18n.t("submission_rules.penalty_period_submission_rule.alert")}");
+  alert('<%= I18n.t('submission_rules.penalty_period_submission_rule.alert') %>');
 
 
 
