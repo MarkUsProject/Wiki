@@ -33,7 +33,7 @@ Project Resources
   * **Instructor Guide:** [[Instructor Guide | Doc_Admin]]
   * **Grader Guide:** [[Grader Guide | Doc_Grader]]
   * **Student Guide:** [[Student Guide | Doc_Student]]
-  * **RESTful API: [[RESTful API Documentation| RESTfulApiDocumentation]]
+  * **RESTful API:** [[RESTful API Documentation| RESTfulApiDocumentation]]
 
 * **Git Resources:**
 
