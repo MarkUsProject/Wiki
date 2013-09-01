@@ -83,11 +83,10 @@ Mac OS X
 
 Windows
 --------------------------------------------------------------------------------
-**(Note: GNU/Linux and Mac OS X development environments generally caused less
-problems)**
+**(Note: Windows is not supported anymore)**
 
 * [[Setting up a development environment on Windows using
-  InstantRails | InstallationWindows]]
+  InstantRails (DEPRECATED) | InstallationWindows]]
 
 Databases
 --------------------------------------------------------------------------------
