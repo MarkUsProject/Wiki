@@ -2,7 +2,8 @@
 MarkUS development on Mac OS X - Snow Leopard
 ================================================================================
 
-*Tutorial updated August 2013, on Snow Leopard 10.6.8*
+*Tutorial updated September 2013, with support for Snow Leopard 10.6.8 and
+Snow Lion 10.8.4*
 
 Setting up Git
 ================================================================================
@@ -51,7 +52,8 @@ Setting up Xcode
 To correctly build some libraries, you need ruby headers. On Mac OS X,
 ruby-headers are provided with Xcode. Xcode 3.2.6 is only available to those with
 a developer account, and Xcode 4.6.x is available for free to users running the
-latest versions of OS X.
+latest versions of OS X. If you're running OS X 10.7+, you'll also need the
+Command Line Tools package.
 
 To download Xcode, go to http://developer.apple.com/xcode/
 
@@ -63,7 +65,7 @@ the installer:
    :align: center
    :alt: XCode3 Package
 
-   Install Xcode 3 for Mac OS X
+   Install Xcode 3/4 for Mac OS X
 
 Install RVM
 --------------------------------------------------------------------------------
@@ -129,7 +131,7 @@ support, execute the following::
 
     $ bundle install --without postgresql mysql
 
-To install only postgresql support support, execute the following::
+To install only postgresql support, execute the following::
 
     $ PATH=$PATH:/Library/PostgreSQL/9.0/bin/ bundle install --without sqlite mysql
 
@@ -137,10 +139,39 @@ To install only mysql support, execute the following::
 
     $ PATH=$PATH:/usr/local/mysql/bin/ bundle install --without postgresql sqlite
 
-As you can see, you will have to indicate to Bundler the path where PostgreSQL
+As you can see, you may have to indicate to Bundler the path where PostgreSQL
 or MySQL were installed.
 
-At the end, you will see a green message telling you everything is perfect:
+If during install you receive the following error::
+
+    Installing mysql2 (0.2.18)
+    Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+
+    /Users/username/.rvm/rubies/ruby-1.8.7-p374/bin/ruby extconf.rb
+    checking for rb_thread_blocking_region()... no
+    checking for rb_wait_for_single_fd()... no
+    checking for mysql.h... no
+    checking for mysql/mysql.h... no
+    -----
+    mysql.h is missing.  please check your installation of mysql and try again.
+    -----
+    *** extconf.rb failed ***
+    Could not create Makefile due to some reason, probably lack of
+    necessary libraries and/or headers.  Check the mkmf.log file for more
+    details.  You may need configuration options.
+
+Then at around line 120, remove the two instances of `-Wno-null-conversion` and
+`-Wno-unused-private-field` from `/usr/local/mysql/bin/mysql_config`.
+
+If instead, during install, you receive the following error::
+
+    Library not loaded: libmysqlclient.18.dylib
+
+Then try::
+
+    sudo ln -s /usr/local/mysql/lib/libmysqlclient.18.dylib /usr/lib/libmysqlclient.18.dylib
+
+Once installed, you will see a green message telling you everything is ready:
 
 .. figure:: images/Installation_MacOsX-Bundler_complete.png
    :scale: 100%
@@ -149,7 +180,7 @@ At the end, you will see a green message telling you everything is perfect:
 
    Bundler complete message
 
-**Note : If your want to test PDF conversion on MarkUs, don't forget to set to true the
+Note : If your want to test PDF conversion on MarkUs, don't forget to set to true the
 `PDF_SUPPORT` variable in `config/environments/development.rb`
 
 After installation, you can run the following to list all gems used by MarkUs::
