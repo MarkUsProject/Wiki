@@ -2,10 +2,10 @@
 RESTful API Documentation
 *************************
 
-This document provides an overview of the MarkUs RESTful API for use by developers 
-as well as instructors. The API allows the use of standard HTTP methods such as 
-GET, PUT, POST and DELETE to manipulate and retrieve resources. Those resources 
-may also be retrieved either individually or from within collections. 
+This document provides an overview of the MarkUs RESTful API for use by developers
+as well as instructors. The API allows the use of standard HTTP methods such as
+GET, PUT, POST and DELETE to manipulate and retrieve resources. Those resources
+may also be retrieved either individually or from within collections.
 
 .. contents::
 
@@ -16,15 +16,15 @@ General
 Authentication
 --------------------------------------------------------------------------------
 
-Authentication with the RESTful API is done using the HTTP Authorization header. 
-The authorization method used is "MarkUsAuth", and should precede the encoded API 
-token that can be found on the MarkUs Dashboard. 
+Authentication with the RESTful API is done using the HTTP Authorization header.
+The authorization method used is "MarkUsAuth", and should precede the encoded API
+token that can be found on the MarkUs Dashboard.
 
 To retrieve your API token:
 1. Log in to MarkUs as an Admin or TA
 2. Scroll to the bottom of the page, where you'll find your API key/token
 
-Given ``MzNjMDcwMDhjZjMzY2E0NjdhODM2YWRkZmFhZWVjOGE=`` as one's MarkUs API token, 
+Given ``MzNjMDcwMDhjZjMzY2E0NjdhODM2YWRkZmFhZWVjOGE=`` as one's MarkUs API token,
 an example header would include:
 ``Authorization: MarkUsAuth MzNjMDcwMDhjZjMzY2E0NjdhODM2YWRkZmFhZWVjOGE=``
 
@@ -32,9 +32,9 @@ To test your auth key, feel free to try the following from a terminal::
 
     curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/users"
 
-Replacing YourAuthKey and the example.com as necessary, the above command would 
-return a list of all users in that particular MarkUs installation. Otherwise, if 
-the authentication isn't successful, you'll receive an error with a 403 Forbidden 
+Replacing YourAuthKey and the example.com as necessary, the above command would
+return a list of all users in that particular MarkUs installation. Otherwise, if
+the authentication isn't successful, you'll receive an error with a 403 Forbidden
 HTTP Status Code. (should be 401 Unauthorized)
 
 **Resetting Authentication Keys**
@@ -48,27 +48,27 @@ system administrator using the *markus:reset_api_key* rake task. For example::
 Response Formats
 --------------------------------------------------------------------------------
 
-As with other RESTful APIs, both XML and JSON responses are supported. XML version 
-1.0 with UTF-8 encoding is the default response format used by the API. As would 
-be expected, the response consists of an XML declaration followed by a root element, 
-attributes, and may contain child elements and nested attributes. Due to it being 
-the default format, the API will respond with XML if a .xml extension is present 
-in the URL, or if no extension is provided. The following is an example XML 
+As with other RESTful APIs, both XML and JSON responses are supported. XML version
+1.0 with UTF-8 encoding is the default response format used by the API. As would
+be expected, the response consists of an XML declaration followed by a root element,
+attributes, and may contain child elements and nested attributes. Due to it being
+the default format, the API will respond with XML if a .xml extension is present
+in the URL, or if no extension is provided. The following is an example XML
 response::
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <users>
+    <user>
+      <notes-count>1</notes-count>
+      <grace-credits>0</grace-credits>
       <last-name>admin</last-name>
       <type>Admin</type>
+      <first-name>admin</first-name>
       <id>1</id>
       <user-name>a</user-name>
-      <notes-count>0</notes-count>
-      <first-name>admin</first-name>
-      <grace-credits>0</grace-credits>
-    </users>
+    </user>
 
-If a .json extension is used in the URL, a JSON response will be rendered. Its 
-simpler format consists of objects, represented as associative arrays. To request 
+If a .json extension is used in the URL, a JSON response will be rendered. Its
+simpler format consists of objects, represented as associative arrays. To request
 a JSON response using CURL, one can use the following::
 
     curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/users/1.json"
@@ -76,21 +76,19 @@ a JSON response using CURL, one can use the following::
 Which would result in the following output (which has been formatted for readability)::
 
     {
-      "admin":{
-        "last_name":"admin",
-        "type":"Admin",
-        "id":1,
-        "user_name":"a",
-        "first_name":"admin",
-        "notes_count":0,
-        "grace_credits":0
-      }
+      "id":1,
+      "last_name":"admin",
+      "first_name":"admin",
+      "notes_count":1,
+      "type":"Admin",
+      "user_name":"a",
+      "grace_credits":0
     }
 
 RESTful Resources
 --------------------------------------------------------------------------------
 
-Methods on resources and collections available via the MarkUs API conform to Rails' 
+Methods on resources and collections available via the MarkUs API conform to Rails'
 RESTful routes. They consist of the following::
 
     GET    - collection - List resources along with attributes in a collection
@@ -99,23 +97,23 @@ RESTful routes. They consist of the following::
     PUT    - resource   - Replace a resource, or update parts of a resource
     DELETE - resource   - Delete a resource
 
-And the above correspond to the following default Rails routes: index, new, 
-show, update, and destroy. Furthermore, nested routes allow us to take advantage 
-of the relationship between different collections, sub-collections, and resources. 
+And the above correspond to the following default Rails routes: index, new,
+show, update, and destroy. Furthermore, nested routes allow us to take advantage
+of the relationship between different collections, sub-collections, and resources.
 
-For example, a GET request on ``/api/users``, with users being a collection, 
-would return all users by default assuming no filters or other arguments. 
-``/api/users/1``, which corresponds to a resource in the collection of users, 
-would return only that user which identified by the unique id 1. To further 
-illustrate, ``/api/users/1/notes``, with notes being a sub-collection, would 
-return a list of all notes related to the user identified by the id 1. 
-Sub-collections return only those resources which belong or apply to the parent 
+For example, a GET request on ``/api/users``, with users being a collection,
+would return all users by default assuming no filters or other arguments.
+``/api/users/1``, which corresponds to a resource in the collection of users,
+would return only that user which identified by the unique id 1. To further
+illustrate, ``/api/users/1/notes``, with notes being a sub-collection, would
+return a list of all notes related to the user identified by the id 1.
+Sub-collections return only those resources which belong or apply to the parent
 resource.
 
 Common Parameters
 --------------------------------------------------------------------------------
 
-The parameters below are available to most of the MarkUS RESTful API features, 
+The parameters below are available to most of the MarkUS RESTful API features,
 unless otherwise specified::
 
     limit:
@@ -139,13 +137,13 @@ unless otherwise specified::
       Only return the fields listed in the request parameters.
       Ie: fields=user_name,first_name,last_name
 
-For example, the filter parameter is available to collections such as api/users 
-and api/assignments. To return only users that are of type TA, you can use the 
+For example, the filter parameter is available to collections such as api/users
+and api/assignments. To return only users that are of type TA, you can use the
 filter parameter with the argument "type:TA"::
 
     curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/users.xml?filter=type:Ta"
 
-You can also use parameters in combination with others. So, to return only a single 
+You can also use parameters in combination with others. So, to return only a single
 user of type admin, you can make use of "limit"::
 
     curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/users.xml?filter=type:admin&limit=1"
@@ -186,6 +184,7 @@ Users
 | Requires: user_name, type, first_name, last_name
 | Optional: section_name, grace_credits
 | CURL example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" --data \
@@ -201,6 +200,7 @@ Users
 | Attributes: id, user_name, type, first_name, last_name, section_name, grace_credits
 | Optional: filter, fields
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/users.xml"
@@ -231,11 +231,12 @@ Users
 | Attributes: id, user_name, type, first_name, last_name, section_name, grace_credits
 | Optional: fields
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/users/1.xml"
     <?xml version="1.0" encoding="UTF-8"?>
-    <users>
+    <user>
       <grace-credits>0</grace-credits>
       <type>Admin</type>
       <id>1</id>
@@ -243,12 +244,13 @@ Users
       <last-name>admin</last-name>
       <user-name>a</user-name>
       <first-name>admin</first-name>
-    </users>
+    </user>
 
 | **PUT /api/users/id**
 | Description: Updates the attributes of the given user
 | Optional: user_name, type, first_name, last_name, section_name, grace_credits
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" -X PUT --data \
@@ -265,12 +267,13 @@ Assignments
 | Description: Creates a new assignment
 | Requires: short_identifier, due_date [YYYY-MM-DD]
 | Optional: repository_folder, group_min, group_max, tokens_per_day,
-            submission_rule_type, marking_scheme_type, allow_web_submits, 
-            display_grader_names_to_students, enable_test, assign_graders_to_criteria, 
+            submission_rule_type, marking_scheme_type, allow_web_submits,
+            display_grader_names_to_students, enable_test, assign_graders_to_criteria,
             description, message, allow_remarks, remark_due_date, remark_message,
             student_form_groups, group_name_autogenerated, submission_rule_deduction,
             submission_rule_hours, submission_rule_interval
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" --data \
@@ -282,14 +285,15 @@ Assignments
 
 | **GET /api/assignments**
 | Description: Returns assignments and their attributes
-| Attributes: id, description, short_identifier, message, due_date, 
-              group_min, group_max, tokens_per_day, allow_web_submits, 
+| Attributes: id, description, short_identifier, message, due_date,
+              group_min, group_max, tokens_per_day, allow_web_submits,
               student_form_groups, remark_due_date, remark_message,
               assign_graders_to_criteria, enable_test, allow_remarks,
               display_grader_names_to_students, group_name_autogenerated,
               marking_scheme_type, repository_folder
 | Optional: filter, fields
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/assignments.xml"
@@ -343,14 +347,15 @@ Assignments
 
 | **GET /api/assignments/id**
 | Description: Returns an assignment and its attributes
-| Attributes: id, description, short_identifier, message, due_date, 
-              group_min, group_max, tokens_per_day, allow_web_submits, 
+| Attributes: id, description, short_identifier, message, due_date,
+              group_min, group_max, tokens_per_day, allow_web_submits,
               student_form_groups, remark_due_date, remark_message,
               assign_graders_to_criteria, enable_test, allow_remarks,
               display_grader_names_to_students, group_name_autogenerated,
               marking_scheme_type, repository_folder
 | Optional: fields
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/assignments/1.xml"
@@ -381,12 +386,13 @@ Assignments
 | Description: Updates an assignment
 | Requires: short_identifier, due_date [YYYY-MM-DD]
 | Optional: repository_folder, group_min, group_max, tokens_per_day,
-            submission_rule_type, marking_scheme_type, allow_web_submits, 
-            display_grader_names_to_students, enable_test, assign_graders_to_criteria, 
+            submission_rule_type, marking_scheme_type, allow_web_submits,
+            display_grader_names_to_students, enable_test, assign_graders_to_criteria,
             description, message, allow_remarks, remark_due_date, remark_message,
             student_form_groups, group_name_autogenerated, submission_rule_deduction,
             submission_rule_hours, submission_rule_interval
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" -X PUT --data \
@@ -401,10 +407,11 @@ Groups
 
 | **GET /api/assignments/id/groups**
 | Description: Returns an assignment's groups along with their attributes
-| Attributes:  id, group_name, created_at, updated_at, first_name, last_name, 
+| Attributes:  id, group_name, created_at, updated_at, first_name, last_name,
                user_name, membership_status, student_memberships
 | Optional: filter, fields
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/assignments/1/groups.xml"
@@ -454,10 +461,11 @@ Groups
 
 | **GET /api/assignments/id/groups/id**
 | Description: Returns a single group along with its attributes
-| Attributes:  id, group_name, created_at, updated_at, first_name, last_name, 
+| Attributes:  id, group_name, created_at, updated_at, first_name, last_name,
                user_name, membership_status, student_memberships
 | Optional: fields
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/assignments/1/groups/1.xml"
@@ -487,11 +495,12 @@ Submission Downloads
 --------------------------------------------------------------------------------
 
 | **GET /api/assignments/id/groups/id/submission_downloads**
-| Description: If filename is specified, it returns the given file from the 
-               submission, otherwise it returns a zip containing all submitted 
+| Description: If filename is specified, it returns the given file from the
+               submission, otherwise it returns a zip containing all submitted
                files
 | Optional: filename
 | Example:
+
 ::
 
     $ curl --header "Authorization: MarkUsAuth YourAuthKey" \
@@ -505,8 +514,9 @@ Test Results
 
 | **POST /api/assignments/id/groups/id/test_results**
 | Description: Creates a new test result for a group's latest assignment submission
-| Optional: 
+| Optional:
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" --data \
@@ -518,10 +528,11 @@ Test Results
     </rsp>
 
 | Example with file:
+
 ::
 
       $ file_content=`cat test.txt`; curl --header "Authorization: MarkUsAuth YourAuthKey" \
-      -F filename=test.txt -F "file_content=$file_content" \ 
+      -F filename=test.txt -F "file_content=$file_content" \
       "http://example.com/api/assignments/1/groups/5/test_results.xml"
       <?xml version="1.0"?>
       <rsp status="201">
@@ -530,11 +541,12 @@ Test Results
 
 
 | **GET /api/assignments/id/groups/id/test_resultss**
-| Description: Returns a list of all test results associated with a particular 
+| Description: Returns a list of all test results associated with a particular
                group's assignment submission
 | Attributes: id, filename
 | Optional: filter, fields
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" \
@@ -554,6 +566,7 @@ Test Results
 | **GET /api/assignments/id/groups/id/test_results/id**
 | Description: Returns the contents of the specified test result
 | Example:
+
 ::
 
     $ curl --header "Authorization: YourAuthKey" \
@@ -567,6 +580,7 @@ Test Results
 | Description: Updates a test result's filename and/or file_content
 | Optional: filename, file_content
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" -X PUT --data \
@@ -580,6 +594,7 @@ Test Results
 | **DELETE /api/assignments/id/groups/id/test_results/id**
 | Description: Deletes the specified test_results file
 | Example:
+
 ::
 
     $ curl -H "Authorization: MarkUsAuth YourAuthKey" -X DELETE \
@@ -591,14 +606,21 @@ Test Results
 
 | **Notes on Test Results**
 | Filenames of test results have to be unique, and can only be uploaded once a
-  a submission has been collected. This generally occurs after the assignment 
-  due date, or after the grace period. Furthermore, the API does not support 
+  a submission has been collected. This generally occurs after the assignment
+  due date, or after the grace period. Furthermore, the API does not support
   uploading binary files.
 
 ================================================================================
 Other
 ================================================================================
 
-MarkUs versions > 0.7 ship with a Python (api_helper.py) and Ruby
-(api_helper.rb) script in lib/tools/ which may be of some help for generating
-API requests.
+MarkUs versions > 0.7 ship with both Python and Ruby helpers in `/lib/tools` to
+help with API requests. Furthermore, as of version 1.0.0-alpha, MarkUs also
+contains an API wrapper located in `/lib/tools/api_wrapper`. The wrapper
+contains a file called `example.rb`, which after updating the Authentication
+key, can be ran using:
+::
+
+    cd lib/tools/api_wrapper
+    bundle install
+    bundle exec ruby example.rb
