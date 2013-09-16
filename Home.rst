@@ -78,7 +78,7 @@ GNU/Linux
 
 Mac OS X
 --------------------------------------------------------------------------------
-* [[Setting up a development environment on Mac OS X 10.6 (Snow Leopard) |
+* [[Setting up a development environment on Mac OS X 10.6 - 10.8 |
   InstallationMacOsX]]
 
 Windows
@@ -102,7 +102,7 @@ MarkUs Developer Documentation
 Project Vitals
 --------------------------------------------------------------------------------
 
-Repository: Create a Github account and fork MarkUsProject/MarkUs (see Github
+Repository: Create a GitHub account and fork MarkUsProject/MarkUs (see GitHub
 help for more info).
 
 Mailing list address: markus-dev@cs.toronto.edu
@@ -133,8 +133,8 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 
   * [[Short Rails Debugging HOWTO | RailsDebugging]]
   * [[How to program in Ruby, Rubybook | http://ruby-doc.org/docs/ProgrammingRuby/]]
-  * [[Rails API | http://api.rubyonrails.org]]
-  * [[Rails Guides | http://guides.rubyonrails.org]]
+  * [[Rails 3.0 API | http://railsapi.com/doc/rails-v3.0.8rc1/]]
+  * [[Rails 3.2 Guides | http://guides.rubyonrails.org/v3.2.13/]]
   * [[General Guide Lines to code - Code review from Mike Gunderloy |
     GeneralGuideLines]]
   * http://apidock.com/rails
@@ -151,7 +151,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
   * **Please document your code according to the RDoc specification** (see
     [[how to use RDOC | http://rdoc.sourceforge.net/doc/]])
   * [[Difference between COUNT, LENGTH, and SIZE | http://blog.hasmanythrough.com/2008/2/27/count-length-size]]
-  * [[Our Ruby/Rails testing guidelinesi | TestingGuidelines]]
+  * [[Our Ruby/Rails testing guidelines | TestingGuidelines]]
   * [[Security testing guidelines | SecurityTesting]]
   * [[Internationalization | Internationalization]]
 
@@ -176,11 +176,11 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
     * [[Instructor|Role_Instructor]]
 
       * [[Instructors can create / edit assignments|Instructor_CreateEditAssignments]]
-      * [[Instructors can download/export files|Instructor_DownloadExportFiles]]
+      * [[Instructors can download / export files|Instructor_DownloadExportFiles]]
       * [[Instructors can hide students|Instructor_HideStudents]]
       * [[Instructors can do everything that Graders can do|Instructor_CanDoWhatGradersDo]]
-      * [[Instructors can release/unrelease completed marking results|Instructor_ReleaseMarkingResults]]
-      * [[Instructors can map particular students/groups to Grader_(s) for marking|Instructor_MapGradersToGroupings]]
+      * [[Instructors can release / unrelease completed marking results|Instructor_ReleaseMarkingResults]]
+      * [[Instructors can map particular students / groups to Grader_(s) for marking|Instructor_MapGradersToGroupings]]
       * [[Instructors can download / export a file that describes the Student /Grouping mapping to Graders|Instructor_DownloadMapGradersToGroupings]]
       * [[Instructors can upload a file that will do the Student /Grouping mapping to Graders|Instructor_UploadMapGradersToGroupings]]
       * [[Instructors can manage groups without restrictions|Instructor_ManageGroupsWithoutRestrictions]]
@@ -189,7 +189,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 
       * [[Graders can easily tell which submissions are assigned to them to mark|Grader_EasyToSeeWhatToMark]]
       * [[Graders can view a Submission from a Student  / Grouping|Grader_ViewSubmissions]]
-      * [[Graders can view/annotate/mark a particular file from a Submission|Grader_ViewAnnotateMarkParticularFile]]
+      * [[Graders can view / annotate / mark a particular file from a Submission|Grader_ViewAnnotateMarkParticularFile]]
       * [[Graders can add annotations to particular lines of code within a Submission File|Grader_AnnotateLinesOfCode]]
       * [[Graders can create reusable Annotations|Grader_CreateReusableAnnotations]]
       * [[Graders can create short, formatted overall comments on a Submission|Grader_CreateOverallComment]]
@@ -204,7 +204,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
       * [[Students can view marks of submissions|Student_ViewMarks]]
       * [[Students can view annotations of marked submissions/assignments|Student_ViewAnnotations]]
       * [[Students can submit files for their assignments|Student_SubmitFiles]]
-      * [[Students can view/edit submission files for assignments|Student_ViewEditFiles]]
+      * [[Students can view / edit submission files for assignments|Student_ViewEditFiles]]
 
 * **Database Schema**
 
@@ -216,7 +216,7 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 
 * **MarkUs Component Descriptions**
 
-  * [[Group / Grouping Behaviours | GroupsGrouping]]
+  * [[Group / Grouping Behaviour | GroupsGrouping]]
   * [[Groupings and Repositories | GroupsGroupingsRepositories]]
   * [[Authentication and Authorization | Authentication]]
   * [[Annotations | Annotations]]
@@ -241,8 +241,11 @@ Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
   * [[NetBeans | NetBeans]]
   * [[Aptana RadRails / Eclipse | AptanaRadRails]]
 
-MarkUs Deployment Documents (Installation Instructions for MarkUs using RAILS_ENV=production)
-===============================================================================================
+MarkUs Deployment Documents
+================================================================================
+
+Installation Instructions for MarkUs using RAILS_ENV=production
+--------------------------------------------------------------------------------
 
 * [[Setup Instructions for MarkUs Stable (MarkUs 0.10.0)|InstallProdStable]]
 * [[Hosting several MarkUs applications on one machine (for Production)|MultipleHosting]]
