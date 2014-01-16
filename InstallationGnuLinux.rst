@@ -28,12 +28,12 @@ following methods :
 (as root)::
 
     $> su  # and then enter your root password
-    #> apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion
+    #> apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion ruby-execjs
     #> # make sure ruby-full points to the correct ruby version (1.8)
 
 (as normal user, with the "sudo" method)::
 
-    $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion
+    $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion ruby-execjs
     $> # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8)
 
 **Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
