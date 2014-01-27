@@ -98,16 +98,16 @@ database. As root open "pg_hba.conf" (sometimes "pg_hdb.conf") in
 first one is actually only a comment)::
 
     # "local" is for Unix domain socket connections only
-    local   all         all                               ident sameuser
+    local   all         all                               peer
 
 Now change the second line like so::
 
     local   all         all                               md5
 
 Restart PostgresSQL in order to apply those configuration changes to the
-server (please adjust the version accordingly)::
+server::
 
-    #> /etc/init.d/postgresql-8.3 restart
+    #> /etc/init.d/postgresql restart
 
 To test if everything went fine we try to connect to the "postgres" database
 using our newly created user::
@@ -127,7 +127,7 @@ Setup the database.yml file, in the MarkUs' root directory:
 
 * `cp config/database.yml.postgresql config/database.yml`
 
-* change the usernames and password to the ones you used in the section above
+* change the usernames and password to the ones you used in the section above ('olm_db_admin' if you copy/pasted the instructions)
 
 Now go back to the MarkUs tutorial :
 
