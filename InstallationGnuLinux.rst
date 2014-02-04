@@ -243,6 +243,28 @@ command)::
 
 Note: if you are using RVM, follow [[these instuctions|RVM]] to install subversion into the correct path
 
+If the "bundle exec" commands do not work due to svn related errors, the following steps may fix it::
+
+    1) sudo apt-get install ruby-svn
+    2) Download http://apache.mirror.gtcomm.net/subversion/subversion-1.8.5.tar.gz
+    3) 'tar xvzf subversion-1.8.5.tar.gz' in the download directory for the file
+    4) 'cd' into the folder you just extracted 
+    5) sudo aptitude install libaprutil1-dev
+    6) sudo ./configure
+    7) sudo make 
+    8) sudo make swig-rb 
+    9) sudo make install 
+    10) sudo make install-swig-rb
+
+You may also need to install JDK6 as outlined here: http://stackoverflow.com/questions/14788345/how-to-install-jdk-on-ubuntulinux
+
+In case that link goes down, the steps are repeated here::
+    
+    sudo apt-get install openjdk-6-jdk
+    apt-cache search jdk
+    export JAVA_HOME=/usr/lib/jvm/java-6-openjdk
+    export PATH=$PATH:/usr/lib/jvm/java-6-openjdk/bin
+
 Now, you are ready to test your plain MarkUs installation. The most straight
 forward way to do this is to start the mongrel server on the command-line. You
 can do so by::
@@ -262,7 +284,19 @@ missing Ruby gem by issuing ``gem install \<missing-ruby-gem\>`` and retry the
 step which failed.
 
 If everything above went fine: Congratulations! You have a working MarkUs
-installation. Go to http://0.0.0.0:3000/ and enjoy MarkUs!
+installation. Go to http://0.0.0.0:3000/ and enjoy MarkUs! This may fail if running Virtualbox, see below. 
+
+If you using Virtualbox, you may need to run Markus doing the following::
+
+    Start virtualbox (open a terminal and type 'virtualbox')
+    Select your Markus virtual machine in the Virtualbox GUI and click 'Network'
+    Go to Adapter 1 and check that it is attached to 'NAT'. Then click 'Advanced'
+    Click 'Port forwarding'
+    You should see a row where the "Guest Port" value is 3000. 
+    Check what the "Host port" value is and remember it (or copy/paste it)
+    Open your browser to go to http://0.0.0.0:<Host port value>/ 
+
+The preceding concludes how to setup and access your local Markus server. 
 
 However, since you are a MarkUs developer, this is only _half_ of the game.
 You also **need** (yes, this is not optional!) _some_ sort of IDE for MarkUs
