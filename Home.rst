@@ -38,7 +38,7 @@ Project Resources
 * **Git Resources:**
 
   * **MarkUs and Git** [[HowTo| GitHowTo]]
-  * [[A Git Tutorial| http://library.edgecase.com/git_immersion/index.html]]
+  * [[A Git Tutorial| http://gitimmersion.com/]]
   * [[Progit Book| http://progit.org/book/]]
   * [[Gitref.org| http://gitref.org]]
 
