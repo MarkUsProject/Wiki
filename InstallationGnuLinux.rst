@@ -28,15 +28,19 @@ following methods :
 (as root)::
 
     $> su  # and then enter your root password
-    #> apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion
+    #> apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion ruby-execjs
     #> # make sure ruby-full points to the correct ruby version (1.8)
 
 (as normal user, with the "sudo" method)::
 
-    $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion
+    $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion ruby-execjs
     $> # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8)
 
-**Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
+**Note : If you're using Ubuntu, and ruby-execjs cannot be located, use this instead of the above line**::
+
+    $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion nodejs
+
+**Note : You can either use PostgreSQL or MySQL as a database**
 
 SQLite3 is easier to install, but should only used in development, not in
 production. You may also experience database conflicts, in particular if you
@@ -120,7 +124,7 @@ which works just fine.
 We are now using bundler to manage all gems. Install only bundler as a gem and 
 bundler will install all other Gems.
 
-To install the **all** gems, go in the project folder, and execute the following::
+To install the **all** gems (please read below before executing this command, as you'll likely be installing for one database type), go in the project folder, and execute the following::
 
     #> gem install bundler
     $> bundle install
@@ -143,7 +147,7 @@ To install only mysql support, execute the following::
 
     $> bundle install --without postgresql sqlite
 
-On Ubuntu and Debian systems, the system can't find bundler. You need to add
+On Ubuntu and Debian systems, the system may not be able to find bundler. In this case, you need to add
 bundler to your PATH or run it directly ::
 
     $> /var/lib/gems/1.8/bin/bundle install
@@ -219,7 +223,19 @@ Read through all settings in environment.rb
 
 Look at config/environments/development.rb
 
-* Change the REPOSITORY_STORAGE path to an appropriate path for your setup. NOTE: it is unlikely that you need to change these values for development
+* If required, change the REPOSITORY_STORAGE path to an appropriate path for your setup. You can ignore this step unless you run into an error like:
+
+    The setting REPOSITORY_STORAGE with path Home/MarkUsProject/Markus/data/dev/repos is not writable.
+    Please double check the setting in config/environments/development.rb
+
+In this case, an appropriate fix may be change REPOSITORY_STORAGE to::
+
+    REPOSITORY_STORAGE="data/dev/repos"
+
+In the following database creation steps, the following may also help resolve errors relating to repository storage::
+
+    $>  sudo bundle update rake
+    $>  sudo chmod +w data/dev/repos
 
 Test plain MarkUs installation
 --------------------------------------------------------------------------------
