@@ -165,8 +165,8 @@ ordinary user, **not** root)::
 
 
 The "true" output indicates that everything went fine and you are ready to go
-to the next step. Also, <code>rake --version</code> should report a version >=
-0.8.7 and <code>rails --version</code> should report a rails version >= 2.2.x
+to the next step. Also, ``rake --version`` should report a version >=
+0.8.7 and ``rails --version`` should report a rails version >= 2.2.x
 
 You can also run the following to check your gems::
 
