@@ -64,12 +64,12 @@ package by executing the following command::
 
 **Creating a Database User and Changing Authentication Scheme**
 
-For simplicity we create a database user "olm_db_admin" with the same
+For simplicity we create a database user "markus" with the same
 password, to which superuser privileges will be granted. We will use this user
-for OLM later. As root execute the following (be careful not to forget any
+for MarkUs later. As root execute the following (be careful not to forget any
 backslashes or single-/doublequotes)::
 
-    #> su -c "psql -c \"create user olm_db_admin with superuser password 'olm_db_admin';\"" postgres
+    #> su -c "psql -c \"create user markus with superuser password 'markus';\"" postgres
 
 The above command should output the following::
 
@@ -78,8 +78,8 @@ The above command should output the following::
 However if you keep getting the following everytime you try to enter your
 password::
 
-    #> su -c "psql -c \"create user olm_db_admin with superuser password
-    'olm_db_admin';\""
+    #> su -c "psql -c \"create user markus with superuser password
+    'markus';\""
     postgres Password:
     su: Authentication failure
 
@@ -87,8 +87,8 @@ You can run the following instead::
 
     #>sudo su
     Password:
-    #> su -c "psql -c \"create user olm_db_admin with superuser password
-    'olm_db_admin';\"" postgres
+    #> su -c "psql -c \"create user markus with superuser password
+    'markus';\"" postgres
     CREATE ROLE
 
 Finally, we need to change a line in the configuration file of the PostgreSQL
@@ -112,9 +112,9 @@ server::
 To test if everything went fine we try to connect to the "postgres" database
 using our newly created user::
 
-    #> psql postgres olm_db_admin
+    #> psql postgres markus
 
-You will be asked for a password, so type "olm_db_admin". After that you
+You will be asked for a password, so type "markus". After that you
 should see the console of PostgreSQL.
 
 Install PostgreSQL (make sure that the created cluster is UTF-8 encoded; If not
@@ -127,7 +127,7 @@ Setup the database.yml file, in the MarkUs' root directory:
 
 * `cp config/database.yml.postgresql config/database.yml`
 
-* change the usernames and password to the ones you used in the section above ('olm_db_admin' if you copy/pasted the instructions)
+* change the usernames and password to the ones you used in the section above ('markus' if you copy/pasted the instructions)
 
 Now go back to the MarkUs tutorial :
 
