@@ -55,7 +55,7 @@ see something similar to the following::
 Then execute the following command on a terminal. You need to be root or use
 "sudo" (the Ubuntu way) to do that::
 
-    #> apt-get install postgresql postgresql-contrib
+    #> aptitude install postgresql postgresql-contrib
 
 You also need the development package of PostreSQL. You can install the
 package by executing the following command::
