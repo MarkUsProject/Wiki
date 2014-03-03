@@ -41,6 +41,7 @@ Project Resources
   * [[A Git Tutorial| http://library.edgecase.com/git_immersion/index.html]]
   * [[Progit Book| http://progit.org/book/]]
   * [[Gitref.org| http://gitref.org]]
+  * **Git Backend Wiki** [[GitBackEnd | GitBackEnd]]
 
 * **Issue Labels:** [[Their meaning is described here | LabelsWhatTheyMean]]
 
