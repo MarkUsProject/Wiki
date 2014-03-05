@@ -35,6 +35,8 @@ Confirm that it is the current version being used.
 
 `$ rvm list`
 
+If 1.9.3 is not the selected ruby version `$ rvm use 1.9.3` should switch it accordingly.
+
 Onto the bundle install. This can be a rough go - known issues are the pg gem. If another one fails, it most likely is due to a connection issue. Try installing it on its own to diagnose the issue.
 
 `$ sudo apt-get install libpq-dev` # required for pg gem
