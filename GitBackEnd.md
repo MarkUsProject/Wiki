@@ -59,3 +59,6 @@ Best to install libgit2 somewhere else from MarkUs less you want to deal with ig
 
 `$ gem install rugged`
 
+`$ gem install gitolite`
+
+
