@@ -28,13 +28,16 @@ Enter
 `$ type rvm | head -1`
 
 and if `rvm is a function` is not the output, go to Terminal Edit>Profile Preferences>Title and Command and ensure "Run command as a login shell" is selected. Try that line again and continue. MarkUs' supported versions are 1.8.7 and 1.9.2.
+
 `$rvm install ruby-1.8.7-p334`
+
 `$ rvm install ruby-1.9.2-p320` 
 
 Confirm that it is the current version being used. 
 
 `$ rvm list`
 
+Refer to [this entry](https://github.com/MarkUsProject/Markus/wiki/RVM) if you wish to also continue development with ruby 1.8.7. 
 sidenotes: In 1.9.2, `$ require 'fastercsv'` and `$ require 'rubygems'` will throw an error and return false, respectively. Since the update (past 1.8) they are called 'csv' and baked directly into ruby, respectively. `$ require 'ruby-debug'` should still return true, however.
 
 ###Git specific gem installation 
