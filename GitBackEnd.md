@@ -29,9 +29,9 @@ Enter
 
 and if `rvm is a function` is not the output, go to Terminal Edit>Profile Preferences>Title and Command and ensure "Run command as a login shell" is selected. Try that line again and continue. MarkUs' supported versions are 1.8.7 and 1.9.2.
 
-`$rvm install ruby-1.8.7-p334`
-
 `$ rvm install ruby-1.9.2-p320` 
+
+`$rvm install ruby-1.8.7-p334`
 
 Confirm that it is the current version being used. 
 
@@ -44,7 +44,7 @@ sidenotes: In 1.9.2, `$ require 'fastercsv'` and `$ require 'rubygems'` will thr
 
 Copied from [this previous MarkUs dev blog post](http://blog.markusproject.org/?p=5262)
 
-Best to install libgit2 somewhere else from MarkUs less you want to deal with ignoring the files on every subsequent git commit.
+Best to install libgit2 somewhere else from MarkUs lest you want to deal with ignoring the files on every subsequent git commit.
 
 `$ sudo apt-get install cmake`
 
@@ -69,7 +69,10 @@ Best to install libgit2 somewhere else from MarkUs less you want to deal with ig
 
 Create a directory in /data/dev/repos called git_auth.
 
-All that is left to do is start the server.
+Update your gems and start the server.
 
-`$ bundle exec rails server`  
+`$ bundle install`
+
+`$ bundle exec rails server`
+
 
