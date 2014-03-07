@@ -51,7 +51,7 @@ Ruby
 MarkUs stable tree works only with Ruby 1.8.7. We will install it by default,
 to ensure everything is build correctly:: 
 
-    $ rvm install 1.8.7
+    $ rvm install ruby-1.8.7-p334
     $ rvm install 1.9.2
 
 Now, if you do `rvm list`, you will see two version of ruby available. You can
@@ -102,6 +102,9 @@ You will need libaprutil-dev on your system::
 Be sure to use the good ruby you wanted to compile svn bindings with: ::
 
     $ rvm use 1.8.7
+
+**Note** : Ensure that the path below (.../ruby-1.8.7-p334/...) is correct and you
+do not have a different patchlevel installed through rvm.
 
 For example, here are instructions for Ruby 1.8.7-p334: ::
 
