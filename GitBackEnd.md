@@ -7,7 +7,7 @@ There are a number of gems that could be used. Here is a short outline of each. 
 
 [**git**](http://rubygems.org/gems/git)
 
-rugged is more efficient and more actively maintained. I'm sticking with the gem previously chosen.
+rugged is more efficient and more actively maintained. I'm sticking with the gem previously chosen. Furthermore, work has been put into the rugged gem with regard to MarkUs already.
 
 ## Installing Ruby/Gems
 If you installed your environment according to one of the guides on the Wiki, chances are you will be required to update your environment to support rugged. 
@@ -28,14 +28,14 @@ Enter
 `$ type rvm | head -1`
 
 and if `rvm is a function` is not the output, go to Terminal Edit>Profile Preferences>Title and Command and ensure "Run command as a login shell" is selected. Try that line again and continue. MarkUs' supported versions are 1.8.7 and 1.9.2.
-
-`$ rvm install 1.9.2` 
+`$rvm install ruby-1.8.7-p334`
+`$ rvm install ruby-1.9.2-p320` 
 
 Confirm that it is the current version being used. 
 
 `$ rvm list`
 
-sidenotes: `$ require 'fastercsv'` and `$ require 'rubygems'` will throw an error and return false, respectively. Since the update (past 1.8) they are called 'csv' and baked directly into ruby, respectively. `$ require 'ruby-debug'` should still return true, however.
+sidenotes: In 1.9.2, `$ require 'fastercsv'` and `$ require 'rubygems'` will throw an error and return false, respectively. Since the update (past 1.8) they are called 'csv' and baked directly into ruby, respectively. `$ require 'ruby-debug'` should still return true, however.
 
 ###Git specific gem installation 
 
@@ -61,4 +61,12 @@ Best to install libgit2 somewhere else from MarkUs less you want to deal with ig
 
 `$ gem install gitolite`
 
+### Set up the git branch
+`$ git checkout git`
+
+Create a directory in /data/dev/repos called git_auth.
+
+All that is left to do is start the server.
+
+`$ bundle exec rails server`  
 
