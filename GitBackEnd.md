@@ -1,4 +1,4 @@
-## Git Backend Development Wiki / Guide / Stream of Conscience
+## Git Backend Development Wiki/Guide
 
 ### Gem Options
 There are a number of gems that could be used. Here is a short outline of each. At one point the git gem was depreciated but now it appears that both are under active development. Reading through the Documentation of both it appears they support a majority of common git commands.
@@ -27,27 +27,15 @@ Enter
 
 `$ type rvm | head -1`
 
-and if `rvm is a function` is not the output, go to Terminal Edit>Profile Preferences>Title and Command and ensure "Run command as a login shell" is selected. Try that line again and continue.
+and if `rvm is a function` is not the output, go to Terminal Edit>Profile Preferences>Title and Command and ensure "Run command as a login shell" is selected. Try that line again and continue. MarkUs' supported versions are 1.8.7 and 1.9.2.
 
-`$ rvm install 1.9.3`
+`$ rvm install 1.9.2` 
 
 Confirm that it is the current version being used. 
 
 `$ rvm list`
 
-If 1.9.3 is not the selected ruby version `$ rvm use 1.9.3` should switch it accordingly.
-
-Onto the bundle install. This can be a rough go - known issues are the pg gem. If another one fails, it most likely is due to a connection issue. Try installing it on its own to diagnose the issue.
-
-`$ sudo apt-get install libpq-dev` # required for pg gem
-
-`$ gem install nodejs` # some ubuntu reason here (noted by Sheng and Zach)
-
-`$ bundle install --without sqlite mysql` # assumes PostgreSQL. YMMV for other ones.
-
-That's for the base MarkUs install. 
-
-Fun notes: `$ require 'fastercsv'` and `$ require 'rubygems'` will throw an error and return false, respectively. Since the update (past 1.8) they are called 'csv' and baked directly into ruby, respectively. `$ require 'ruby-debug'` should still return true, however.
+sidenotes: `$ require 'fastercsv'` and `$ require 'rubygems'` will throw an error and return false, respectively. Since the update (past 1.8) they are called 'csv' and baked directly into ruby, respectively. `$ require 'ruby-debug'` should still return true, however.
 
 ###Git specific gem installation 
 
