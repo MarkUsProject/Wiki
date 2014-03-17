@@ -1,4 +1,4 @@
-================================================================================
+﻿================================================================================
 Setting up a development environment for MarkUs development on GNU/Linux
 ================================================================================
 
@@ -158,7 +158,14 @@ ordinary user, **not** root)::
     => true
     irb(main):003:0> require 'ruby-debug'
     => true
+    irb(main):003:0> require 'svn/repos'
+    => true
 
+Note: if the last one doesn't work, you are missing the svn library for ruby, and you need to install it. This can be done from the command below:: 
+
+    $> apt-get install libsvn-ruby
+
+    
 
 The "true" output indicates that everything went fine and you are ready to go
 to the next step. Also, ``rake --version`` should report a version >=
