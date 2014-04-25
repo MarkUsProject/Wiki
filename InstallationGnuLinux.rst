@@ -1,4 +1,4 @@
-================================================================================
+﻿================================================================================
 Setting up a development environment for MarkUs development on GNU/Linux
 ================================================================================
 
@@ -28,12 +28,12 @@ following methods :
 (as root)::
 
     $> su  # and then enter your root password
-    #> apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion
+    #> apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion ruby-execjs
     #> # make sure ruby-full points to the correct ruby version (1.8)
 
 (as normal user, with the "sudo" method)::
 
-    $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion
+    $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion ruby-execjs
     $> # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8)
 
 **Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
@@ -43,12 +43,8 @@ production. You may also experience database conflicts, in particular if you
 want to test **PDF Conversion**. In case of PDF Conversion, you **MUST** use
 PostgreSQL or MySQL
 
-Installing ImageMagick
---------------------------------------------------------------------------------
-
-If you need to use test and work on image and PDF annotation, you will need
-ImageMagick. Otherwise, you can skip this part.
-
+Older versions of MarkUs used ImageMagick for pdf conversion. You shouldn't need
+to install it, but the instructions are below.
 * [[Setting up ImageMagick|ImageMagick]]
 
 If your want to test PDF conversion on MarkUs, don't forget to set to true the
@@ -162,7 +158,14 @@ ordinary user, **not** root)::
     => true
     irb(main):003:0> require 'ruby-debug'
     => true
+    irb(main):003:0> require 'svn/repos'
+    => true
 
+Note: if the last one doesn't work, you are missing the svn library for ruby, and you need to install it. This can be done from the command below:: 
+
+    $> apt-get install libsvn-ruby
+
+    
 
 The "true" output indicates that everything went fine and you are ready to go
 to the next step. Also, ``rake --version`` should report a version >=

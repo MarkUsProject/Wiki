@@ -38,9 +38,10 @@ Project Resources
 * **Git Resources:**
 
   * **MarkUs and Git** [[HowTo| GitHowTo]]
-  * [[A Git Tutorial| http://gitimmersion.com/]]
+  * [[A Git Tutorial| http://library.edgecase.com/git_immersion/index.html]]
   * [[Progit Book| http://progit.org/book/]]
   * [[Gitref.org| http://gitref.org]]
+  * **Git Backend Wiki** [[GitBackEnd | GitBackEnd]]
 
 * **Issue Labels:** [[Their meaning is described here | LabelsWhatTheyMean]]
 
