@@ -113,35 +113,55 @@ Keeping Your Local Code Up-To-Date
 Also note the dashed arrow coming from the main ("upstream") MarkUs Git
 repository and pointing to your local clone of your personal MarkUs Github
 fork. This arrow represents interaction you have to do to keep up-to-date with
-the upstream MarkUs Git repository. After all, this is the authoritative MarkUs
-repository. How to keep up-to-date? The easiest way is to create a remote (call
-it "upstream", say) and when on branch master pull changes. Note,
-however, that you cannot push to remote "upstream". Your code gets into
-the main MarkUs Git repository by the pull requests you create (more on that
-below and in [[Gitkeepingpace]]). A key observation is that your master branch
-of your local MarkUs Git repo should mirror the contents of branch master in
-"upstream". What's more, you shouldn't do ANY development on it. Your
-development should happen on a feature branch which should be based on branch
-master. If this sounds too confusing for you, don't worry, we are here to help.
+the authoritative MarkUs repository, which is constantly being updated by
+other developers on the MarkUs team. (More on how you can do this later.)
 
-Now for the instructions:
+This subsection describes the steps you need to take to make sure your local
+repository is up-to-date. Generally, your ``master`` branch should mirror the 
+contents of ``upstream/master``, the master branch of the main MarkUs repository.
+Remember that **you should be doing all development on local feature branches,
+NOT your local master branch**! This makes merging as painless as possible.
 
-1.  First, make sure you have already set up your upstream remote. Note, mine is
-    called "upstream". Substitute your remote name whenever you see this.
+If this sounds too confusing for you, don't worry, we are here to help.
 
-2.  To update your local master branch
+1.  Make sure you have already set up your "upstream" remote.
+    (See Steps 5 and 6 of "Setting up MarkUs" above.)
+
+2.  Switch to your local ``master`` branch.
+
+    :: 
+    
+      $ git checkout master
+
+3.  Update the current local branch with the ``master`` branch
+    of the ``upstream`` repository.
 
     ::
-
-      $ git checkout master
+    
       $ git pull upstream master
 
-3.  To integrate these changes into your current issue branch
+    Note: if you've followed our advice and done your development only on feature
+    branches, this step shouldn't produce any merge errors!
+
+4.  If you're currently working on a feature branch, switch back to that branch
+    and merge the new changes in.
+    This step might require some manual merging.
 
     ::
 
       $ git checkout issue-1234
-      $ git merge/rebase master
+      $ git merge master
+
+Rather than running ``git merge master``, you may want to *rebase* to HEAD of 
+``upstream/master`` instead, by running the following:
+
+::
+  
+  $ git rebase upstream/master
+  
+If this doesn't mean anything to you, you may want to ask for help first.
+Seriously, ask for help! There's always somebody around to clarify things. :)
+
 
 Next Steps
 --------------------------------------------------------------------------------
