@@ -59,7 +59,11 @@ password, to which superuser privileges will be granted. We will use this user
 for MarkUs later. As root execute the following (be careful not to forget any
 backslashes or single-/doublequotes)::
 
-    #> su -c "psql -c \"create user markus with superuser password 'markus';\"" postgres
+    #> sudo -u postgres psql postgres
+    postgres=# \password postgres
+    postgres=# create role markus createdb login password 'markus';
+    postgres=# \q
+    #> sudo psql -c "create user markus with superuser password 'markus';" postgres
 
 The above command should output the following::
 
