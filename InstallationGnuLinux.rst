@@ -1,4 +1,4 @@
-﻿================================================================================
+================================================================================
 Setting up a development environment for MarkUs development on GNU/Linux
 ================================================================================
 
@@ -28,12 +28,12 @@ following methods :
 (as root)::
 
     $> su  # and then enter your root password
-    #> apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion ruby-execjs
-    #> # make sure ruby-full points to the correct ruby version (1.8)
+    #> apt-get install ruby-full build-essential git ruby-svn subversion ruby-execjs
+    #> # make sure ruby-full points to the correct ruby version (1.9)
 
 (as normal user, with the "sudo" method)::
 
-    $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion ruby-execjs
+    $> sudo apt-get install ruby-full build-essential ruby-svn subversion ruby-execjs
     $> # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8)
 
 **Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
@@ -118,6 +118,7 @@ bundler will install all other Gems.
 
 To install the **all** gems, go in the project folder, and execute the following::
 
+    #> gem install libv8 -- --with-system-v8
     #> gem install bundler
     $> bundle install
 
@@ -163,8 +164,7 @@ ordinary user, **not** root)::
 
 Note: if the last one doesn't work, you are missing the svn library for ruby, and you need to install it. This can be done from the command below:: 
 
-    $> apt-get install libsvn-ruby
-
+    $> apt-get install ruby-svn
     
 
 The "true" output indicates that everything went fine and you are ready to go
@@ -237,12 +237,8 @@ command)::
 
     # gets gems that you do not have yet, like thoughtbot-shoulda 
     $> bundle install  --without (postgresql) (sqlite) (mysql)
-    $> bundle exec rake db:create:all        # creates all the databases uncommented in config/database.yml
-    $> bundle exec rake db:schema:load   # loads required relations into database
-    $> bundle exec rake db:seed          # populates database with some data
-    $> bundle exec rake db:test:prepare
-    $> bundle exec rake test:units
-    $> bundle exec rake test:functionals
+    $> bundle exec rake db:setup         # creates, initializes, and populates all the databases uncommented in config/database.yml
+    $> bundle exec rake db:test
 
 Note: if you are using RVM, follow [[these instuctions|RVM]] to install subversion into the correct path
 
