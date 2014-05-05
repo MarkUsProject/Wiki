@@ -238,7 +238,7 @@ command)::
     # gets gems that you do not have yet, like thoughtbot-shoulda 
     $> bundle install  --without (postgresql) (sqlite) (mysql)
     $> bundle exec rake db:setup         # creates, initializes, and populates all the databases uncommented in config/database.yml
-    $> bundle exec rake db:test
+    $> bundle exec rake test
 
 Note: if you are using RVM, follow [[these instuctions|RVM]] to install subversion into the correct path
 
