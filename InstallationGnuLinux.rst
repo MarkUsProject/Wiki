@@ -28,12 +28,12 @@ following methods :
 (as root)::
 
     $> su  # and then enter your root password
-    #> apt-get install ruby-full build-essential git ruby-svn subversion ruby-execjs
+    #> apt-get install ruby-full build-essential git ruby-svn subversion libv8-dev
     #> # make sure ruby-full points to the correct ruby version (1.9)
 
 (as normal user, with the "sudo" method)::
 
-    $> sudo apt-get install ruby-full build-essential ruby-svn subversion ruby-execjs
+    $> sudo apt-get install ruby-full build-essential ruby-svn subversion libv8-dev
     $> # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8)
 
 **Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
