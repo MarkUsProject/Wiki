@@ -118,8 +118,8 @@ bundler will install all other Gems.
 
 To install the **all** gems, go in the project folder, and execute the following::
 
-    #> gem install libv8 -- --with-system-v8
     #> gem install bundler
+    #> bundle config libv8 -- --with-system-v8
     $> bundle install
 
 If you get the error "Could not locate Gemfile", it means you are not in the
