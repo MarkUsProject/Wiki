@@ -10,7 +10,7 @@ GNU/Linux
 
 On Debian and Ubuntu, a simple ::
 
-   #> apt-get install postgresql postgresql-client
+   #> apt-get install postgresql postgresql-client postgresql-contrib libpq-dev
 
 Mac OS X
 --------------------------------------------------------------------------------
@@ -51,16 +51,6 @@ see something similar to the following::
     LC_IDENTIFICATION="en_CA.UTF-8"
     LC_ALL=
 
-
-Then execute the following command on a terminal. You need to be root or use
-"sudo" (the Ubuntu way) to do that::
-
-    #> aptitude install postgresql postgresql-contrib
-
-You also need the development package of PostreSQL. You can install the
-package by executing the following command::
-
-    #> apt-get install libpq-dev
 
 **Creating a Database User and Changing Authentication Scheme**
 
