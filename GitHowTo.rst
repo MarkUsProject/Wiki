@@ -1,5 +1,5 @@
 ================================================================================
-MarkUs, Git and Github: How it Works
+MarkUs, Git and GitHub: How it Works
 ================================================================================
 
 .. contents::
@@ -15,41 +15,63 @@ there are always people around you can ask.
 Setting up MarkUs
 --------------------------------------------------------------------------------
 
-1.  Open a GitHub account
+1.  Open a GitHub account and set up an `SSH public key for Git 
+    <https://help.github.com/articles/generating-ssh-keys>`__
+2.  Set up your Git configuration settings.
+    ::
+      
+      $ git config --global user.name "First-name Last-name"
+      $ git config --global user.email "your-email@example.com"
+      
+    You may omit the ``--global`` switch if you wish. Make sure to read up on 
+    the differences between global and non-global git configuration, though. 
+    Thanks.
+3.  Ask an Admin to add you as a MarkUs developer.
 
-2.  Ask an Admin to add you as a MarkUs developer
+4.  Visit the `MarkUs GitHub repository <https://github.com/MarkUsProject/Markus>`__
+    and press “Fork”. This will create a clone of the repository for your GitHub 
+    account.
 
-3.  Visit the upstream repo on GitHub and select “Fork”. This will create a clone
-    of the repository on your GitHub account.
-
-4.  From your fork, copy the URL that allows you to access it using SSH.
-    Run the following command in terminal using the URL you just copied
+5.  From your fork, copy the URL that allows you to access it using SSH.
+    In the terminal, navigate to your intended local development directory, and
+    run the following command using the URL you just copied.
 
     ::
 
       $ git clone git@github.com:YOUR_GIT_USERNAME/Markus.git
+      
+    This will create a new local "Markus" folder with a copy of your repository.
 
-5.  Next, create a remote to the master repository of MarkUs upstream. This
+6.  Next, create a "remote" to the master repository of MarkUs upstream. This
     will be used to keep your local copy up to date.
 
     ::
 
       $ git remote add upstream git://github.com/MarkUsProject/Markus.git
 
-6.  Make sure the remote was added. The following command should output "upstream"
+    Note the remote origin should point to the SSH URL you cloned with. 
+    If this URL contains “https”, then you have not cloned using SSH. 
+    Run the following command to change it to the URL used when cloning.
+    
+    ::
+    
+      $ git remote set-url origin git@github.com:YOUR_GIT_USERNAME/Markus.git
+
+7.  Make sure the remote was added. The following command should output "upstream"
     and "origin".
 
     ::
 
       $ git remote -v
 
+
 MarkUs Development Workflow
 --------------------------------------------------------------------------------
 
-The steps involved until your code ends up in the main MarkUs Git repository
+The steps involved until your code ends up in the main MarkUs repository
 are the following:
 
-1.  Create feature branch based on up-to-date local master branch
+1.  Create and switch to a feature branch based on up to date local master branch
 
     ::
 
@@ -72,20 +94,24 @@ are the following:
       # Or "git add ."
       $ git commit -m "Fix for issue 1234: Implemented x behaviour in file.rb"
 
-4.  Before setting up a review request, make sure your issue and master branches
+4.  Repeat Steps 2 & 3 until you are satisfied with your work and want to
+    contribute to the main MarkUs repository.
+    
+5.  Before setting up a review request, make sure your issue and master branches
     are up to date (see section below), making sure the change-sets you just
-    pulled in do not affect your code. Once they are, setup a review request.
+    pulled in do not affect your code.
 
-5.  To submit a pull request, first push your branch to your fork:
+6.  Ready to submit? Push your branch to your personal MarkUs fork:
 
     ::
 
       $ git push origin issue-1234
 
-6.  Go to your GitHub fork and change to your issue branch. You should see the
-    button "Pull Request" (right by the button to fork). In the write fill, fill
-    it in with the issue number, quick summary of the issue, description of the
-    fix and what testing was performed.
+7.  Go to your GitHub fork and change to your issue branch. You should see the
+    button "Pull Request". Fill in the issue number, quick summary of the issue,
+    description of the fix, and what testing was performed.
+    
+8.  Click "Create Pull Request" and wait for feedback!
 
 The Three MarkUs Git Repositories
 --------------------------------------------------------------------------------
@@ -113,35 +139,55 @@ Keeping Your Local Code Up-To-Date
 Also note the dashed arrow coming from the main ("upstream") MarkUs Git
 repository and pointing to your local clone of your personal MarkUs Github
 fork. This arrow represents interaction you have to do to keep up-to-date with
-the upstream MarkUs Git repository. After all, this is the authoritative MarkUs
-repository. How to keep up-to-date? The easiest way is to create a remote (call
-it "upstream", say) and when on branch master pull changes. Note,
-however, that you cannot push to remote "upstream". Your code gets into
-the main MarkUs Git repository by the pull requests you create (more on that
-below and in [[Gitkeepingpace]]). A key observation is that your master branch
-of your local MarkUs Git repo should mirror the contents of branch master in
-"upstream". What's more, you shouldn't do ANY development on it. Your
-development should happen on a feature branch which should be based on branch
-master. If this sounds too confusing for you, don't worry, we are here to help.
+the authoritative MarkUs repository, which is constantly being updated by
+other developers on the MarkUs team. (More on how you can do this later.)
 
-Now for the instructions:
+This subsection describes the steps you need to take to make sure your local
+repository is up-to-date. Generally, your ``master`` branch should mirror the 
+contents of ``upstream/master``, the master branch of the main MarkUs repository.
+Remember that **you should be doing all development on local feature branches,
+NOT your local master branch**! This makes merging as painless as possible.
 
-1.  First, make sure you have already set up your upstream remote. Note, mine is
-    called "upstream". Substitute your remote name whenever you see this.
+If this sounds too confusing for you, don't worry, we are here to help.
 
-2.  To update your local master branch
+1.  Make sure you have already set up your "upstream" remote.
+    (See Steps 5 and 6 of "Setting up MarkUs" above.)
+
+2.  Switch to your local ``master`` branch.
+
+    :: 
+    
+      $ git checkout master
+
+3.  Update the current local branch with the ``master`` branch
+    of the ``upstream`` repository.
 
     ::
-
-      $ git checkout master
+    
       $ git pull upstream master
 
-3.  To integrate these changes into your current issue branch
+    Note: if you've followed our advice and done your development only on feature
+    branches, this step shouldn't produce any merge errors!
+
+4.  If you're currently working on a feature branch, switch back to that branch
+    and merge the new changes in.
+    This step might require some manual merging.
 
     ::
 
       $ git checkout issue-1234
-      $ git merge/rebase master
+      $ git merge master
+
+Rather than running ``git merge master``, you may want to *rebase* to HEAD of 
+``upstream/master`` instead, by running the following:
+
+::
+  
+  $ git rebase upstream/master
+  
+If this doesn't mean anything to you, you may want to ask for help first.
+Seriously, ask for help! There's always somebody around to clarify things. :)
+
 
 Next Steps
 --------------------------------------------------------------------------------
@@ -149,48 +195,100 @@ Next Steps
 The next step should be to continue reading this document and post questions
 you may have on IRC or the markus-dev mailing list.
 
-Imperative Git Configuration
-================================================================================
 
-::
-
-  $ git config --global user.name "First name last name"
-  $ git config --global user.email "youremail@example.com"
-
-Please do them! You may omit the ``--global`` switch if you wish. Make sure to
-read up on the differences between global and non-global git configuration,
-though. Thanks.
 
 Git Tricks
 ================================================================================
 
-- How to keep your copy of the MarkUs repository up-to-date. See
-  [[GitKeepingPace]].
+Useful Commands
+--------------------------------------------------------------------------------
 
-- View what changes you have made on branch "issue-1234"
-  ``$ git diff --full-index master issue-1234``
+- View what changes you have made on branch ``issue-1234``.
+  ::
+  
+    $ git diff --full-index master issue-1234
 
-- Temporarily put your changes aside to have a cleanly tracked branch
-  ``$ git stash``
+- Temporarily put your changes aside to have a cleanly tracked branch.
+  ::
+    
+    $ git stash
 
 - Bring these changes back (even onto another branch, as long as it is within the
-  same repository) ``$ git stash pop``
+  same repository) 
+  ::
+  
+    $ git stash pop
 
-- Remove all changes made to a specific file. Let's say I no longer want the
-  changes I've made to app/models/membership.rb
-  ``$ git checkout app/models/membership.rb``
+- Remove all changes made to a specific file.
+  ::
+    
+    $ git checkout <filename>
 
-- Revert all changes made to the current branch (WARNING: All changes will be
-  lost). ``$ git reset --hard HEAD``
+- Revert all changes made to the current branch. **WARNING: All changes will be
+  lost.** 
+  ::
+  
+    $ git reset --hard HEAD
 
-- Once your branch, issue-1234, has been integrated into master, you might want
-  to delete it.
-
+- Once your branch ``issue-1234`` has been integrated into ``master``, 
+  you might want to delete it.
   ::
 
     $ git branch -d issue-1234
-    $ git push origin :issue-1234
 
 - You might want to see who modified a line last, and what other changes
-  they brought in with that commit. ``$ git blame config/routes.rb`` You can
-  also use the GitHub interface for this by clicking "Blame" when viewing a file.
+  they brought in with that commit. 
+  ::
+  
+    $ git blame config/routes.rb 
+  
+  You can also use the GitHub interface for this by clicking "Blame" when 
+  viewing a file, which will take you to a page like `this
+  <https://github.com/MarkUsProject/Markus/blame/master/config/routes.rb>`__.
+
+Issues & Solutions
+--------------------------------------------------------------------------------
+**I forgot to create an issue branch and instead made changes to my master branch. 
+I have not committed anything yet.**
+
+- Create and move to a new issue branch and then commit. 
+  You don't lose your uncommited changes when moving to another branch.
+
+::
+
+  git branch issue-1234
+	git checkout issue-1234
+
+**I made x number of commits to my master branch and forgot to create an issue branch.**
+
+- Let's say you want ``master`` to go back to state C, and move D and E to the new branch. 
+  Here's what it looks like at first:
+
+  ::
+  
+  	A-B-C-D-E (HEAD)
+  	        ↑
+  	      master
+  	
+  After creating a new branch using ``git branch issue-1234``:
+  
+  ::
+  
+  	    issue-1234
+  	        ↓
+  	A-B-C-D-E (HEAD)
+  	        ↑
+  	      master
+  	
+  Note that the current branch is still ``master``. We now move this branch back by 2 commits
+  using ``git reset --hard HEAD~2``. You *will* lose uncommitted work here!
+  
+  ::
+  
+  	    issue-1234
+  	        ↓
+  	A-B-C-D-E (HEAD)
+  	    ↑
+  	  master
+  
+  Finally, switch over to the new branch and get to work: ``git checkout issue-1234``.

@@ -1,27 +1,27 @@
-﻿================================================================================
+================================================================================
 Setting up a development environment for MarkUs development on GNU/Linux
 ================================================================================
 
-**Please note the difference between $> and #>. The $ means execute the command
-as simple user, the # means execute the command as the super-user or use sudo
-as normal user (#> is equivalent to $> sudo)**
+**Please note the difference between "$>" and "#>". The former means execute 
+the command as simple user, the latter means execute the command as the 
+super-user or use sudo as normal user ("#>" is equivalent to "> sudo").**
 
 If your system complains about gems not found when trying to run, for example,
-`bundle install`, it is because you don't have the path of the binary in your
-PATH variable. Find the path of the gem (usually `/var/lib/gems/1.8/bin/`) and
-add it to your $PATH.
+``bundle install``, it is because you don't have the path of the binary in your
+``$PATH`` variable. Find the path of the gem (usually ``/var/lib/gems/1.8/bin/``)
+and add it to your ``$PATH``.
 
 Setting up Git
 --------------------------------------------------------------------------------
 
 Git is the Source Content Management used by MarkUs. You can find some
-documentation on GitHub. You will also have to set-up a GitHub account. [[How
-to set-up Git on GNU/Linux|http://help.github.com/linux-set-up-git]]
+documentation on GitHub. You will also have to set-up a GitHub account. 
+`How to set-up Git on GNU/Linux <http://help.github.com/linux-set-up-git>`__
 
 Setting up Ruby, Ruby on Rails, Subversion and the Subversion Ruby bindings
 --------------------------------------------------------------------------------
 
-Issue the following command on a terminal. You need to be root or use "sudo"
+Issue the following command on a terminal. You need to be root or use ``sudo``
 (the Ubuntu way) to do that. Both methods are correct. Use only one of the
 following methods :
 
@@ -31,7 +31,7 @@ following methods :
     #> apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion ruby-execjs
     #> # make sure ruby-full points to the correct ruby version (1.8)
 
-(as normal user, with the "sudo" method)::
+(as normal user, with the ``sudo`` method)::
 
     $> sudo apt-get install ruby-full build-essential rubygems rake libsvn-ruby subversion ruby-execjs
     $> # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8)
@@ -45,10 +45,11 @@ PostgreSQL or MySQL
 
 Older versions of MarkUs used ImageMagick for pdf conversion. You shouldn't need
 to install it, but the instructions are below.
-* [[Setting up ImageMagick|ImageMagick]]
+
+- `Setting up ImageMagick <ImageMagick.rst>`__
 
 If your want to test PDF conversion on MarkUs, don't forget to set to true the
-`PDF_SUPPORT` variable in `config/environments/development.rb`
+``PDF_SUPPORT`` variable in ``config/environments/development.rb``
 
 
 Setting up the Database
@@ -56,9 +57,9 @@ Setting up the Database
 
 Once you have decided what database best suits you :
 
-* [[Setting up the Database (SQLite)|SettingUpSQLite]]
-* [[Setting up the Database (MySQL)|SettingUpMySQL]]
-* [[Setting up the Database (PostgreSQL)|SettingUpPostgreSQL]]
+* `Setting up the Database (SQLite) <SettingUpSQLite.rst>`__
+* `Setting up the Database (MySQL) <SettingUpMySQL.rst>`__
+* `Setting up the Database (PostgreSQL) <SettingUpPostgreSQL.rst>`__
 
 
 Required gems for MarkUs
@@ -215,14 +216,15 @@ Configure MarkUs
 --------------------------------------------------------------------------------
 
 Precondition: You have the MarkUs source-code checked out and do not plan to
-use RadRails (see the following sections if you _plan_ to use RadRails for
+use RadRails (see the following sections if you *plan* to use RadRails for
 development).
 
-Read through all settings in environment.rb
+- Read through all settings in ``environment.rb``
 
-Look at config/environments/development.rb
+- Look at ``config/environments/development.rb``
 
-* Change the REPOSITORY_STORAGE path to an appropriate path for your setup. NOTE: it is unlikely that you need to change these values for development
+- Change the REPOSITORY_STORAGE path to an appropriate path for your setup. 
+  NOTE: it is unlikely that you need to change these values for development
 
 Test plain MarkUs installation
 --------------------------------------------------------------------------------
@@ -244,7 +246,7 @@ command)::
     $> bundle exec rake test:units
     $> bundle exec rake test:functionals
 
-Note: if you are using RVM, follow [[these instuctions|RVM]] to install subversion into the correct path
+Note: if you are using RVM, follow `these instuctions <RVM.rst>`__ to install subversion into the correct path
 
 Now, you are ready to test your plain MarkUs installation. The most straight
 forward way to do this is to start the mongrel server on the command-line. You
@@ -252,29 +254,32 @@ can do so by::
 
     $> bundle exec rails server  #boots up mongrel (or WebRink, if mongrel is not installed/found)
 
-The default admin user is 'a' with any non-empty password. Look at db/seeds.rb for other users.
+The default admin user is 'a' with any non-empty password. Look at ``db/seeds.rb`` 
+for other users.
 
-If this doesn't work try::
+If this doesn't work try
+::
+
     $> rails s
 
 **Common Problems**
 
 If some of the previous commands fail with error message similar to
-``LoadError: no such file to load -- \<some-ruby-gem\>``, try to install the
-missing Ruby gem by issuing ``gem install \<missing-ruby-gem\>`` and retry the
+``LoadError: no such file to load -- <some-ruby-gem>``, try to install the
+missing Ruby gem by issuing ``gem install <missing-ruby-gem>`` and retry the
 step which failed.
 
 If everything above went fine: Congratulations! You have a working MarkUs
 installation. Go to http://0.0.0.0:3000/ and enjoy MarkUs!
 
-However, since you are a MarkUs developer, this is only _half_ of the game.
-You also **need** (yes, this is not optional!) _some_ sort of IDE for MarkUs
+However, since you are a MarkUs developer, this is only *half* of the game.
+You also **need** (yes, this is not optional!) *some* sort of IDE for MarkUs
 development. For instance, the next section describes how to install RadRails
 IDE, an Eclipse based Rails development environment. If you plan to use
-something _else_ for MarkUs development, such as JEdit (with some tweaks) or
+something *else* for MarkUs development, such as JEdit (with some tweaks) or
 VIM, you should now start configuring them.
 
-But if you _do_ plan to use RadRails for development, you should get rid of
+But if you *do* plan to use RadRails for development, you should get rid of
 some left-overs from previous steps, so that the following instructions run as
 smoothly as possible for you. This is what you'd need to do (If you know what
 you are doing, you might find this silly. But this guide tries to give

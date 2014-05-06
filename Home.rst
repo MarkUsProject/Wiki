@@ -4,14 +4,14 @@ Welcome to MarkUs
 
 MarkUs (pronounced "mark us") is an open-source tool which recreates the ease
 and flexibility of grading assignments with pen on paper, within a web
-application.  It also allows students and instructors to form groups, and
-collaborate on assignments. It's predecessor OLM (Online Marking) was
-[[originally written|https://stanley.cdf.toronto.edu/drproject/csc49x/olm]]
+application.  It also allows students and instructors to form groups and
+collaborate on assignments. Its predecessor `OLM (Online Marking) <http://olmonrails.wordpress.com>`__ was
+originally written
 in Python on top of the TurboGears framework.
 
 The MarkUs project is a re-implementation of the Online Marking system using
 Ruby on Rails. The goal of this project is to take what we learned from OLM
-and our forays into [[Web-CAT|http://web-cat.cs.vt.edu/]], and build a
+and our forays into `Web-CAT <http://web-cat.cs.vt.edu/>`__, and build a
 web-based marking tool that includes an early submission and testing system in
 support of test driven development.
 
@@ -19,82 +19,81 @@ support of test driven development.
 Project Resources
 ================================================================================
 
-* **Project Website** http://www.markusproject.org
-* **Developer's Blog** http://blog.markusproject.org
-* **Code Review** https://github.com/MarkUsProject/Markus/pulls/
+* `Project Website <http://www.markusproject.org>`__
+* `Developer's Blog <http://blog.markusproject.org>`__
+* `Code Review <https://github.com/MarkUsProject/Markus/pulls>`__
+  
+  * `How to create a MarkUs review <HowToCodeReview.rst>`__
 
-  * [[How to create a MarkUs review | HowToCodeReview]]
+* IRC Channel: Our channel is #markus on irc.freenode.net.
+  `Logs of the channel <http://www.markusproject.org/irc/>`__ are also available.
+* `Sandbox <http://www.markusproject.org/admin-demo>`__
+* `User Guide <UserGuide.rst>`__
 
-* **IRC Channel:** Our channel is #markus on irc.freenode.net.
-  [[Logs of the channel|http://www.markusproject.org/irc/]] are also available.
-* **Sandbox** http://www.markusproject.org/admin-demo/
-* **User Guide:** [[MarkUs Documentation | UserGuide]]
+  * `Instructor Guide <Doc_Admin.rst>`__
+  * `Grader Guide <Doc_Grader.rst>`__
+  * `Student Guide <Doc_Student.rst>`__
+  * `RESTful API <RESTfulApiDocumentation.rst>`__
 
-  * **Instructor Guide:** [[Instructor Guide | Doc_Admin]]
-  * **Grader Guide:** [[Grader Guide | Doc_Grader]]
-  * **Student Guide:** [[Student Guide | Doc_Student]]
-  * **RESTful API:** [[RESTful API Documentation| RESTfulApiDocumentation]]
+* Git Resources:
 
-* **Git Resources:**
+  * `MarkUs and Git <GitHowTo>`__
+  * `A Git Tutorial <http://library.edgecase.com/git_immersion/index.html>`__
+  * `Progit Book <http://progit.org/book>`__
+  * `Gitref.org <http://gitref.org>`__
+  * `Git Backend Wiki <GitBackEnd>`__
 
-  * **MarkUs and Git** [[HowTo| GitHowTo]]
-  * [[A Git Tutorial| http://library.edgecase.com/git_immersion/index.html]]
-  * [[Progit Book| http://progit.org/book/]]
-  * [[Gitref.org| http://gitref.org]]
-  * **Git Backend Wiki** [[GitBackEnd | GitBackEnd]]
-
-* **Issue Labels:** [[Their meaning is described here | LabelsWhatTheyMean]]
+* `Issue Labels <LabelsWhatTheyMean.rst>`__
 
 .. TODO Modify User Guide link
 
 Screencasts
 --------------------------------------------------------------------------------
 
-* [[Student File Submission: September 2 2009 |
-  http://www.youtube.com/watch?v=ofpyaty20FQ]]
-* [[Student Group Formation: August 17, 2009 |
-  http://www.youtube.com/watch?v=Ed_z_tHCAg8]]
-* [[The Grader View: June 6, 2009 |
-  http://www.cs.toronto.edu/~reid/screencasts/OLM-2009-06-03.swf]]
-* [[Flexible Marking Scheme Selection: December 1, 2009 |
-  http://www.youtube.com/watch?v=x4mbE3WBgog]]
-* [[Flexible Marking Scheme Criterion: December 1, 2009 |
-  http://www.youtube.com/watch?v=tVkti9y91RA]]
-* [[Notes created through the Modal dialog as an Admin: December 3, 2009 |
-  http://www.youtube.com/watch?v=eoxriy2cYW0]]
-* [[Notes created through the Modal dialog as a TA: December 3, 2009 |
-  http://www.youtube.com/watch?v=J4r18LNDwPs]]
-* [[Creating and editing a grade entry form as an admin: December 4, 2009 |
-  http://www.youtube.com/watch?v=r7UnaNYe2rw]]
-* [[Notes tab: December 11, 2009 |
-  http://www.youtube.com/watch?v=IcuG6AlJfvQ]]
-* [[Entering and releasing the marks for a grade entry form as an admin: April
-  4, 2010 | http://www.youtube.com/watch?v=-v6eVy94pdI]]
+* `Student File Submission: September 2 2009 
+  <http://www.youtube.com/watch?v=ofpyaty20FQ>`__
+* `Student Group Formation: August 17, 2009
+  <http://www.youtube.com/watch?v=Ed_z_tHCAg8>`__
+* `The Grader View: June 6, 2009
+  <http://www.cs.toronto.edu/~reid/screencasts/OLM-2009-06-03.swf>`__
+* `Flexible Marking Scheme Selection: December 1, 2009
+  <http://www.youtube.com/watch?v=x4mbE3WBgog>`__
+* `Flexible Marking Scheme Criterion: December 1, 2009
+  <http://www.youtube.com/watch?v=tVkti9y91RA>`__
+* `Notes created through the Modal dialog as an Admin: December 3, 2009
+  <http://www.youtube.com/watch?v=eoxriy2cYW0>`__
+* `Notes created through the Modal dialog as a TA: December 3, 2009
+  <http://www.youtube.com/watch?v=J4r18LNDwPs>`__
+* `Creating and editing a grade entry form as an admin: December 4, 2009
+  <http://www.youtube.com/watch?v=r7UnaNYe2rw>`__
+* `Notes tab: December 11, 2009
+  <http://www.youtube.com/watch?v=IcuG6AlJfvQ>`__
+* `Entering and releasing the marks for a grade entry form as an admin: April
+  4, 2010 <http://www.youtube.com/watch?v=-v6eVy94pdI>`__
 
 MarkUs Developer Installation Guides
 ================================================================================
 GNU/Linux
 --------------------------------------------------------------------------------
-* [[Setting up a development environment on GNU/Linux|InstallationGnuLinux]]
+* `Setting up a development environment on GNU/Linux <InstallationGnuLinux.rst>`__
 
 Mac OS X
 --------------------------------------------------------------------------------
-* [[Setting up a development environment on Mac OS X 10.6 - 10.8 |
-  InstallationMacOsX]]
+* `Setting up a development environment on Mac <InstallationMacOsX.rst>`__
 
 Windows
 --------------------------------------------------------------------------------
-**(Note: Windows is not supported anymore)**
+**NOTE: Windows is not supported anymore**
 
-* [[Setting up a development environment on Windows using
-  InstantRails (DEPRECATED) | InstallationWindows]]
+* `Setting up a development environment on Windows using
+  InstantRails <InstallationWindows.rst>`__ (DEPRECATED)
 
-Databases
+Setting up the Database
 --------------------------------------------------------------------------------
 
-* [[Setting up the Database (SQLite)|SettingUpSQLite]]
-* [[Setting up the Database (MySQL)|SettingUpMySQL]]
-* [[Setting up the Database (PostgreSQL)|SettingUpPostgreSQL]]
+* `SQLite <SettingUpSQLite.rst>`__
+* `MySQL <SettingUpMySQL.rst>`__
+* `PostgreSQL <SettingUpPostgreSQL.rst>`__
 
 
 MarkUs Developer Documentation
@@ -108,7 +107,7 @@ help for more info).
 
 Mailing list address: markus-dev@cs.toronto.edu
 
-Mailing [[list archive at marc.info|http://marc.info/?l=markus-dev&r=1&w=2]]
+Mailing list archive at `marc.info <http://marc.info/?l=markus-dev&r=1&w=2>`__
 
 Project Contributors
 --------------------------------------------------------------------------------
@@ -121,126 +120,146 @@ Term Work
 --------------------------------------------------------------------------------
 
 Status Reports:
-* [[2013 | http://blog.markusproject.org/?m=2013&cat=73]]
-* [[2012 | http://blog.markusproject.org/?m=2012&cat=73]]
-* [[2011 | http://blog.markusproject.org/?m=2011&cat=73]]
-* [[2010 | http://blog.markusproject.org/?m=2010&cat=73]]
-* [[2009 | http://blog.markusproject.org/?m=2009&cat=73]]
+
+* `2013 <http://blog.markusproject.org/?m=2013&cat=73>`__
+
+* `2012 <http://blog.markusproject.org/?m=2012&cat=73>`__
+
+* `2011 <http://blog.markusproject.org/?m=2011&cat=73>`__
+
+* `2010 <http://blog.markusproject.org/?m=2010&cat=73>`__
+
+* `2009 <http://blog.markusproject.org/?m=2009&cat=73>`__
 
 Everything a Developer Needs to Know about Ruby, Ruby on Rails and MarkUs
 --------------------------------------------------------------------------------
 
 * **Getting Started with Ruby, Ruby on Rails and MarkUs**
 
-  * [[Short Rails Debugging HOWTO | RailsDebugging]]
-  * [[How to program in Ruby, Rubybook | http://ruby-doc.org/docs/ProgrammingRuby/]]
-  * [[Rails 3.0 API | http://railsapi.com/doc/rails-v3.0.8rc1/]]
-  * [[Rails 3.2 Guides | http://guides.rubyonrails.org/v3.2.13/]]
-  * [[General Guide Lines to code - Code review from Mike Gunderloy |
-    GeneralGuideLines]]
+  * `Short Rails Debugging HOWTO <RailsDebugging.rst>`__
+  * `How to program in Ruby, Rubybook <http://ruby-doc.org/docs/ProgrammingRuby/>`__
+  * `Rails 3.0 API <http://railsapi.com/doc/rails-v3.0.8rc1/>`__
+  * `Rails 3.2 Guides <http://guides.rubyonrails.org/v3.2.13/>`__
+  * `General Guide Lines to code - Code review from Mike Gunderloy 
+    <GeneralGuideLines.rst>`__
   * http://apidock.com/rails
-  * [[Some notes from a Ruby book taken by Tara Clark |
-    http://taraclark.wordpress.com/category/ruby-on-rails]]
-  * [[How to use MarkUs Testing Framework | TestFramework]] (still in alpha)
+  * `Some notes from a Ruby book taken by Tara Clark
+    <http://taraclark.wordpress.com/category/ruby-on-rails>`__
+  * `How to use MarkUs Testing Framework <TestFramework.rst>`__ (still in alpha)
 
 
 * **MarkUs Coding Style/Coding Practices/Rails Gotchas**
 
-  * [[Basic Guidelines for MarkUs Development | DeveloperGuidelines]] (**IMPORTANT!**)
-  * [[How To Do a Code Review | HowToCodeReview]]
-  * [[Rails erb quirks | RailsERbStyle]]
+  * `Basic Guidelines for MarkUs Development <DeveloperGuidelines.rst>`__ (**IMPORTANT!**)
+  * `How To Do a Code Review <HowToCodeReview.rst>`__
+  * `Rails erb quirks <RailsERbStyle.rst>`__
   * **Please document your code according to the RDoc specification** (see
-    [[how to use RDOC | http://rdoc.sourceforge.net/doc/]])
-  * [[Difference between COUNT, LENGTH, and SIZE | http://blog.hasmanythrough.com/2008/2/27/count-length-size]]
-  * [[Our Ruby/Rails testing guidelines | TestingGuidelines]]
-  * [[Security testing guidelines | SecurityTesting]]
-  * [[Internationalization | Internationalization]]
+    `How to Use RDOC <http://rdoc.sourceforge.net/doc/>`__)
+  * `Difference between COUNT, LENGTH, and SIZE <http://blog.hasmanythrough.com/2008/2/27/count-length-size>`__
+  * `Our Ruby/Rails testing guidelines <TestingGuidelines.rst>`__
+  * `Security testing guidelines <SecurityTesting.rst>`__
+  * `Internationalization <Internationalization.rst>`__
 
 * **MarkUs API/Test Coverage**
 
-  * [[MarkUs Ruby Doc | http://www.markusproject.org/dev/app_doc]]
-  * [[MarkUs Test Coverage | http://www.markusproject.org/dev/test_coverage]]
+  * `MarkUs Ruby Doc <http://www.markusproject.org/dev/app_doc>`__
+  * `MarkUs Test Coverage <http://www.markusproject.org/dev/test_coverage>`__
 
 * **MarkUs Releases**
 
-  * [[Preparing a Release and Patch | PreparingReleaseAndPatch]]
+  * `Preparing a Release and Patch <PreparingReleaseAndPatch.rst>`__
 
 * **User Roles and Stories for MarkUs**
 
   * General / Constraints
 
-    * [[MarkUs is internationalized|GeneralUseCase_Internationalized]]
-    * [[MarkUs is configurable|GeneralUseCase_Configurable]]
-    * [[Rubrics are not allowed to change once Submissions have been
-      collected|GeneralUseCase_NoRubricChangesAfterCollection]]
+    * `MarkUs is internationalized <GeneralUseCase_Internationalized.rst>`__
+    * `MarkUs is configurable <GeneralUseCase_Configurable.rst>`__
+    * `Rubrics are not allowed to change once Submissions have been
+      collected <GeneralUseCase_NoRubricChangesAfterCollection.rst>`__
 
-    * [[Instructor|Role_Instructor]]
+    * `Instructor <Role_Instructor.rst>`__
 
-      * [[Instructors can create / edit assignments|Instructor_CreateEditAssignments]]
-      * [[Instructors can download / export files|Instructor_DownloadExportFiles]]
-      * [[Instructors can hide students|Instructor_HideStudents]]
-      * [[Instructors can do everything that Graders can do|Instructor_CanDoWhatGradersDo]]
-      * [[Instructors can release / unrelease completed marking results|Instructor_ReleaseMarkingResults]]
-      * [[Instructors can map particular students / groups to Grader_(s) for marking|Instructor_MapGradersToGroupings]]
-      * [[Instructors can download / export a file that describes the Student /Grouping mapping to Graders|Instructor_DownloadMapGradersToGroupings]]
-      * [[Instructors can upload a file that will do the Student /Grouping mapping to Graders|Instructor_UploadMapGradersToGroupings]]
-      * [[Instructors can manage groups without restrictions|Instructor_ManageGroupsWithoutRestrictions]]
+      * `Instructors can create / edit assignments <Instructor_CreateEditAssignments.rst>`__
+      * `Instructors can download / export files <Instructor_DownloadExportFiles.rst>`__
+      * `Instructors can hide students <Instructor_HideStudents.rst>`__
+      * `Instructors can do everything that Graders can do <Instructor_CanDoWhatGradersDo.rst>`__
+      * `Instructors can release / unrelease completed marking results 
+        <Instructor_ReleaseMarkingResults.rst>`__
+      * `Instructors can map particular students / groups to Grader_(s) for marking 
+        <Instructor_MapGradersToGroupings.rst>`__
+      * `Instructors can download / export a file that describes the Student /Grouping mapping to Graders 
+        <Instructor_DownloadMapGradersToGroupings.rst>`__
+      * `Instructors can upload a file that will do the Student /Grouping mapping to Graders 
+        <Instructor_UploadMapGradersToGroupings.rst>`__
+      * `Instructors can manage groups without restrictions 
+        <Instructor_ManageGroupsWithoutRestrictions.rst>`__
 
-    * [[Grader|Role_Grader]]
+    * `Grader <Role_Grader.rst>`__
 
-      * [[Graders can easily tell which submissions are assigned to them to mark|Grader_EasyToSeeWhatToMark]]
-      * [[Graders can view a Submission from a Student  / Grouping|Grader_ViewSubmissions]]
-      * [[Graders can view / annotate / mark a particular file from a Submission|Grader_ViewAnnotateMarkParticularFile]]
-      * [[Graders can add annotations to particular lines of code within a Submission File|Grader_AnnotateLinesOfCode]]
-      * [[Graders can create reusable Annotations|Grader_CreateReusableAnnotations]]
-      * [[Graders can create short, formatted overall comments on a Submission|Grader_CreateOverallComment]]
-      * [[Graders can view and use a Rubric for marking a Submission for an Assignment|Grader_ViewUseRubric]]
-      * [[Graders can view a summary of marked submissions|Grader_ViewSummaryOfMarkedSubmissions]]
-      * [[Graders can add bonuses / penalties to submissions|Grader_AddBonusesPenalties]]
-      * [[Graders can modify the marking state of a submission result|Grader_CanModifyMarkingStatus]]
-      * [[Graders can easily switch to the next / previous Submission for marking|Grader_CanSwitchToNextSubmission]]
+      * `Graders can easily tell which submissions are assigned to them to mark 
+        <Grader_EasyToSeeWhatToMark.rst>`__
+      * `Graders can view a Submission from a Student  / Grouping 
+        <Grader_ViewSubmissions.rst>`__
+      * `Graders can view / annotate / mark a particular file from a Submission 
+        <Grader_ViewAnnotateMarkParticularFile.rst>`__
+      * `Graders can add annotations to particular lines of code within a Submission File 
+        <Grader_AnnotateLinesOfCode.rst>`__
+      * `Graders can create reusable Annotations <Grader_CreateReusableAnnotations.rst>`__
+      * `Graders can create short, formatted overall comments on a Submission 
+        <Grader_CreateOverallComment.rst>`__
+      * `Graders can view and use a Rubric for marking a Submission for an Assignment 
+        <Grader_ViewUseRubric.rst>`__
+      * `Graders can view a summary of marked submissions 
+        <Grader_ViewSummaryOfMarkedSubmissions.rst>`__
+      * `Graders can add bonuses / penalties to submissions 
+        <Grader_AddBonusesPenalties.rst>`__
+      * `Graders can modify the marking state of a submission result 
+        <Grader_CanModifyMarkingStatus.rst>`__
+      * `Graders can easily switch to the next / previous Submission for marking 
+        <Grader_CanSwitchToNextSubmission.rst>`__
 
-    * [[Student|Role_Student]]
+    * `Student <Role_Student.rst>`__
 
-      * [[Students can view marks of submissions|Student_ViewMarks]]
-      * [[Students can view annotations of marked submissions/assignments|Student_ViewAnnotations]]
-      * [[Students can submit files for their assignments|Student_SubmitFiles]]
-      * [[Students can view / edit submission files for assignments|Student_ViewEditFiles]]
+      * `Students can view marks of submissions <Student_ViewMarks.rst>`__
+      * `Students can view annotations of marked submissions/assignments <Student_ViewAnnotations.rst>`__
+      * `Students can submit files for their assignments <Student_SubmitFiles.rst>`__
+      * `Students can view / edit submission files for assignments <Student_ViewEditFiles.rst>`__
 
 * **Database Schema**
 
   * AutoGenerate Database Schema
 
-    * [[View Schema Diagram|images/database_20101001.png]]
+    * `View Schema Diagram <images/database_20101001.png>`__
 
-  * [[Questions and Answers (Old Document) | SchemaQuestions]]
+  * `Questions and Answers (Old Document) <SchemaQuestions.rst>`__
 
 * **MarkUs Component Descriptions**
 
-  * [[Group / Grouping Behaviour | GroupsGrouping]]
-  * [[Groupings and Repositories | GroupsGroupingsRepositories]]
-  * [[Authentication and Authorization | Authentication]]
-  * [[Annotations | Annotations]]
-  * [[How Student Work is Graded and Re-graded  | HowGradingWorks]]
-  * [[Submission Rules | SubmissionRules]]
-  * [[The FilterTable Class | FilterTable]]
-  * [[Simple Grade Entry | SimpleGradeEntry]]
-  * [[Notes System | NotesSystem]]
+  * `Group / Grouping Behaviour <GroupsGrouping.rst>`__
+  * `Groupings and Repositories <GroupsGroupingsRepositories.rst>`__
+  * `Authentication and Authorization <Authentication.rst>`__
+  * `Annotations <Annotations.rst>`__
+  * `How Student Work is Graded and Re-graded  <HowGradingWorks.rst>`__
+  * `Submission Rules <SubmissionRules.rst>`__
+  * `The FilterTable Class <FilterTable.rst>`__
+  * `Simple Grade Entry <SimpleGradeEntry.rst>`__
+  * `Notes System <NotesSystem.rst>`__
 
 * **Feedback Notes**
 
-  * [[2009-05-22: Phyliss | PhylissFeedback]]
-  * [[2009-06-22: Ryan | RyanFeedback]]
+  * `2009-05-22: Phyliss <PhylissFeedback.rst>`__
+  * `2009-06-22: Ryan <RyanFeedback.rst>`__
 
 * **Tips and Trick**
 
-  * [[Dropping/Rebuilding Database Quickly and Easily | DropAndRebuildDb]]
+  * `Dropping/Rebuilding Database Quickly and Easily <DropAndRebuildDb.rst>`__
 
 * **IDE/Editor Notes**
 
-  * [[jEdit | JEdit]]
-  * [[NetBeans | NetBeans]]
-  * [[Aptana RadRails / Eclipse | AptanaRadRails]]
+  * `jEdit <JEdit.rst>`__
+  * `NetBeans <NetBeans.rst>`__
+  * `Aptana RadRails / Eclipse <AptanaRadRails.rst>`__
 
 MarkUs Deployment Documents
 ================================================================================
@@ -248,11 +267,11 @@ MarkUs Deployment Documents
 Installation Instructions for MarkUs using RAILS_ENV=production
 --------------------------------------------------------------------------------
 
-* [[Setup Instructions for MarkUs Stable (MarkUs 0.10.0)|InstallProdStable]]
-* [[Hosting several MarkUs applications on one machine (for Production)|MultipleHosting]]
-* [[How to use LDAP with MarkUs|LDAP]]
-* [[How to use Phusion Passenger instead of Mongrel|ApachePassenger]]
+* `Setup Instructions for MarkUs Stable (MarkUs 0.10.0) <InstallProdStable.rst>`__
+* `Hosting several MarkUs applications on one machine (for Production) <MultipleHosting.rst>`__
+* `How to use LDAP with MarkUs <LDAP.rst>`__
+* `How to use Phusion Passenger instead of Mongrel <ApachePassenger.rst>`__
 
-* [[Old Setup Instructions for MarkUs Stable (MarkUs 0.5, 0.6, 0.7 and 0.8 branches)|InstallProdOld]]
+* `Old Setup Instructions for MarkUs Stable (MarkUs 0.5, 0.6, 0.7 and 0.8 branches) <InstallProdOld.rst>`__
 
-For a complete list of local wiki pages, see [[TitleIndex|http://github.com/MarkUsProject/Markus/wiki/_pages]].
+For a complete list of local wiki pages, see `TitleIndex <http://github.com/MarkUsProject/Markus/wiki/_pages>`__.
