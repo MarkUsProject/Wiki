@@ -23,7 +23,7 @@ Project Resources
 * `Developer's Blog <http://blog.markusproject.org>`__
 * `Code Review <https://github.com/MarkUsProject/Markus/pulls>`__
   
-  * `How to create a MarkUs review <HowToCodeReview.rst>`__
+  * `How to create a MarkUs review <HowToCodeReview>`__
 
 * IRC Channel: Our channel is #markus on irc.freenode.net.
   `Logs of the channel <http://www.markusproject.org/irc/>`__ are also available.
