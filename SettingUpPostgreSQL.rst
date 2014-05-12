@@ -10,7 +10,7 @@ GNU/Linux
 
 On Debian and Ubuntu, a simple ::
 
-   #> apt-get install postgresql postgresql-client
+   #> apt-get install postgresql postgresql-client postgresql-contrib libpq-dev
 
 Mac OS X
 --------------------------------------------------------------------------------
@@ -52,16 +52,6 @@ see something similar to the following::
     LC_ALL=
 
 
-Then execute the following command on a terminal. You need to be root or use
-"sudo" (the Ubuntu way) to do that::
-
-    #> aptitude install postgresql postgresql-contrib
-
-You also need the development package of PostreSQL. You can install the
-package by executing the following command::
-
-    #> apt-get install libpq-dev
-
 **Creating a Database User and Changing Authentication Scheme**
 
 For simplicity we create a database user "markus" with the same
@@ -69,7 +59,11 @@ password, to which superuser privileges will be granted. We will use this user
 for MarkUs later. As root execute the following (be careful not to forget any
 backslashes or single-/doublequotes)::
 
-    #> su -c "psql -c \"create user markus with superuser password 'markus';\"" postgres
+    #> sudo -u postgres psql postgres
+    postgres=# \password postgres
+    postgres=# create role markus createdb login password 'markus';
+    postgres=# \q
+    #> sudo psql -c "create user markus with superuser password 'markus';" postgres
 
 The above command should output the following::
 
@@ -125,7 +119,7 @@ Configuring MarkUs
 
 Setup the database.yml file, in the MarkUs' root directory:
 
-* `cp config/database.yml.postgresql config/database.yml`
+* `ln -s config/database.yml.postgresql config/database.yml`
 
 * change the usernames and password to the ones you used in the section above ('markus' if you copy/pasted the instructions)
 
