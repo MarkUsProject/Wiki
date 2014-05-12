@@ -121,7 +121,11 @@ Setup the database.yml file, in the MarkUs' root directory:
 
 * `ln -s config/database.yml.postgresql config/database.yml`
 
-* change the usernames and password to the ones you used in the section above ('markus' if you copy/pasted the instructions)
+* in config/database.yml, make sure that "development:" and the 5 lines under it (adapter, encoding, database, username, password) are not commented out
+
+* do the same for "test:" and the 5 lines under it to be able to run unit tests and functional tests
+
+* change the usernames and password (in development and test) to the ones you used in the section above ('markus' if you copy/pasted the instructions)
 
 Now go back to the MarkUs tutorial :
 
