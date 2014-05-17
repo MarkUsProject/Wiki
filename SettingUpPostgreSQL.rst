@@ -119,7 +119,7 @@ Configuring MarkUs
 
 Setup the database.yml file, in the MarkUs' root directory:
 
-* `ln -s config/database.yml.postgresql config/database.yml`
+* `cp config/database.yml.postgresql config/database.yml`
 
 * in config/database.yml, make sure that "development:" and the 5 lines under it (adapter, encoding, database, username, password) are not commented out
 
