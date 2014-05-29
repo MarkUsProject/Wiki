@@ -8,8 +8,8 @@ super-user or use sudo as normal user ("#>" is equivalent to "> sudo").**
 
 If your system complains about gems not found when trying to run, for example,
 ``bundle install``, it is because you don't have the path of the binary in your
-``$PATH`` variable. Find the path of the gem (usually ``/var/lib/gems/1.8/bin/``)
-and add it to your ``$PATH``.
+``$PATH`` variable. Find the path of the gem (usually 
+``/var/lib/gems/1.9.1/bin/``) and add it to your ``$PATH``.
 
 Setting up Git
 --------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ following methods :
 (as normal user, with the ``sudo`` method)::
 
     $> sudo apt-get install ruby-full build-essential ruby-svn subversion libv8-dev
-    $> # and then enter your root password, make sure ruby-full points to the correct ruby version (1.8)
+    $> # and then enter your root password, make sure ruby-full points to the correct ruby version (1.9)
 
 **Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
 
@@ -65,57 +65,11 @@ Once you have decided what database best suits you :
 Required gems for MarkUs
 --------------------------------------------------------------------------------
 
-First, you will need rubygems (previously installed)
+The list of gems required for MarkUs is given in the Gemfile for MarkUs, found
+at https://github.com/MarkUsProject/Markus/blob/master/Gemfile
 
-To ensure you have the good version of rubygems, please do::
-
-    $> gem --version
-
-if your version of rubygems is < 1.3.6, please update it !
-
-This section assumes, you have gem version >= 1.3.6 (required for rails version
-> 2.3.7).
-
-So, the list of gems required for MarkUs is as follows:
-
-* rails
-* i18n
-* mongrel_cluster
-* routing-filter
-* rake
-* mongrel
-* fastercsv
-* will_paginate
-* rubyzip
-* ya2yaml
-
-specific gems for databases:
-
-* pg
-* mysql
-* sqlite3-ruby, sqlite3
-
-specific gems for tests and development:
-
-* shoulda
-* selenium-client
-* machinist
-* faker
-* factory_data_preloader
-* time-warp
-* ruby-debug
-* mocha
-
-and a gem to manage them all:
-
-* bundler
-
-Note that ruby-postgres is unmaintained and does not compile against
-postgresql-8.3+. Therefore, do **not** install it. Instead, install pg
-which works just fine. 
-
-We are now using bundler to manage all gems. Install only bundler as a gem and 
-bundler will install all other Gems.
+We use bundler to manage all gems. Install only bundler as a gem and bundler
+will install all other Gems.
 
 To install the **all** gems, go in the project folder, and execute the following::
 
@@ -144,7 +98,7 @@ To install only mysql support, execute the following::
 On Ubuntu and Debian systems, the system can't find bundler. You need to add
 bundler to your PATH or run it directly ::
 
-    $> /var/lib/gems/1.8/bin/bundle install
+    $> /var/lib/gems/1.9.1/bin/bundle install
 
 If you get a message saying "Missing these required gems", then it is likely
 that some new gems have been integrated into Markus development and also need
@@ -154,63 +108,30 @@ Now, check that everything worked fine. Do the following on a terminal (as an
 ordinary user, **not** root)::
 
     $> irb
-    irb(main):001:0> require 'rubygems'
+    irb(main):003:0> require 'csv'
     => true
-    irb(main):003:0> require 'fastercsv'
-    => true
-    irb(main):003:0> require 'ruby-debug'
+    irb(main):003:0> require 'debugger'
     => true
     irb(main):003:0> require 'svn/repos'
     => true
 
-Note: if the last one doesn't work, you are missing the svn library for ruby, and you need to install it. This can be done from the command below:: 
+Note: if the last one doesn't work, you are missing the svn library for ruby,
+and you need to install it. This can be done from the command below:: 
 
     $> apt-get install ruby-svn
     
 
 The "true" output indicates that everything went fine and you are ready to go
 to the next step. Also, ``rake --version`` should report a version >=
-0.8.7 and ``rails --version`` should report a rails version >= 2.2.x
+10.1.1 and ``rails --version`` should report a rails version >= 3.2.x
 
 You can also run the following to check your gems::
 
     $> bundle exec gem list --local
-    *** LOCAL GEMS ***
 
-    actionmailer (2.3.10)
-    actionpack (2.3.10)
-    activerecord (2.3.10)
-    activeresource (2.3.10)
-    activesupport (2.3.10)
-    bundler (1.0.12)
-    cgi_multipart_eof_fix (2.5.0)
-    columnize (0.3.2)
-    daemons (1.1.0)
-    factory_data_preloader (0.5.2)
-    faker (0.9.4)
-    fastercsv (1.5.4)
-    fastthread (1.0.7)
-    gem_plugin (0.2.3)
-    i18n (0.5.0)
-    linecache (0.43)
-    machinist (1.0.6)
-    mocha (0.9.10)
-    mongrel (1.1.5)
-    mongrel_cluster (1.0.5)
-    rack (1.1.0)
-    rails (2.3.10)
-    rake (0.8.7)
-    routing-filter (0.2.2)
-    ruby-debug (0.10.4)
-    ruby-debug-base (0.10.4)
-    rubyzip (0.9.4)
-    selenium-client (1.2.18)
-    shoulda (2.11.3)
-    sqlite3 (1.3.3)
-    sqlite3-ruby (1.3.3)
-    time-warp (1.0.7)
-    will_paginate (2.3.15)
-    ya2yaml (0.30
+The gems, including version numbers, should include everything listed in the
+Gemfile.lock located in the MarkUs repository root (also available online at
+https://github.com/MarkUsProject/Markus/blob/master/Gemfile.lock).
 
 Configure MarkUs
 --------------------------------------------------------------------------------
@@ -248,7 +169,7 @@ Now, you are ready to test your plain MarkUs installation. The most straight
 forward way to do this is to start the mongrel server on the command-line. You
 can do so by::
 
-    $> bundle exec rails server  #boots up mongrel (or WebRink, if mongrel is not installed/found)
+    $> bundle exec rails server  # boots the appropriate web server (e.g. thin)
 
 The default admin user is 'a' with any non-empty password. Look at ``db/seeds.rb`` 
 for other users.
