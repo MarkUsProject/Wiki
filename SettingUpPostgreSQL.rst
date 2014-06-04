@@ -62,7 +62,6 @@ backslashes or single-/doublequotes)::
     postgres=# \password postgres
     postgres=# create role markus createdb login password 'markus';
     postgres=# \q
-    #> sudo psql -c "create user markus with superuser password 'markus';" postgres
 
 The above command should output the following::
 
