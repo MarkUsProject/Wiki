@@ -4,16 +4,17 @@ Welcome to MarkUs
 
 MarkUs (pronounced "mark us") is an open-source tool which recreates the ease
 and flexibility of grading assignments with pen on paper, within a web
-application.  It also allows students and instructors to form groups and
-collaborate on assignments. Its predecessor `OLM (Online Marking) <http://olmonrails.wordpress.com>`__ was
-originally written
-in Python on top of the TurboGears framework.
+application.  Designed to support programming assignments, students may submit
+their work through the web interface or through a version control system.  Students
+can form groups to collaborate on assignments.  Instructors add marking schemes, 
+assign graders to students and then later release the marks to the students.  The
+graders can view the students submissions, fill in the marking schemes, and annotate
+the students work.  MarkUs facilitates much of the administrative work of setting
+up and grading an assignment.
 
-The MarkUs project is a re-implementation of the Online Marking system using
-Ruby on Rails. The goal of this project is to take what we learned from OLM
-and our forays into `Web-CAT <http://web-cat.cs.vt.edu/>`__, and build a
-web-based marking tool that includes an early submission and testing system in
-support of test driven development.
+MarkUs is written using Ruby on Rails, and uses Subversion to store the student submissions. MarkUs
+is the successor to the OLM project, an earlier grading tool.
+
 
 
 Project Resources
