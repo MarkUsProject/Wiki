@@ -31,10 +31,10 @@ Project Resources
 * `Sandbox <http://www.markusproject.org/admin-demo>`__
 * `User Guide <UserGuide>`__
 
-  * `Instructor Guide <Doc_Admin.rst>`__
-  * `Grader Guide <Doc_Grader.rst>`__
-  * `Student Guide <Doc_Student.rst>`__
-  * `RESTful API <RESTfulApiDocumentation.rst>`__
+  * `Instructor Guide <Doc_Admin>`__
+  * `Grader Guide <Doc_Grader>`__
+  * `Student Guide <Doc_Student>`__
+  * `RESTful API <RESTfulApiDocumentation>`__
 
 * Git Resources:
 
@@ -44,7 +44,7 @@ Project Resources
   * `Gitref.org <http://gitref.org>`__
   * `Git Backend Wiki <GitBackEnd>`__
 
-* `Issue Labels <LabelsWhatTheyMean.rst>`__
+* `Issue Labels <LabelsWhatTheyMean>`__
 
 .. TODO Modify User Guide link
 
@@ -76,7 +76,7 @@ MarkUs Developer Installation Guides
 ================================================================================
 GNU/Linux
 --------------------------------------------------------------------------------
-* `Setting up a development environment on GNU/Linux <InstallationGnuLinux.rst>`__
+* `Setting up a development environment on GNU/Linux <InstallationGnuLinux>`__
 
 Mac OS X
 --------------------------------------------------------------------------------
