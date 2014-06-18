@@ -29,7 +29,7 @@ Project Resources
 * IRC Channel: Our channel is #markus on irc.freenode.net.
   `Logs of the channel <http://www.markusproject.org/irc/>`__ are also available.
 * `Sandbox <http://www.markusproject.org/admin-demo>`__
-* `User Guide <UserGuide.rst>`__
+* `User Guide <UserGuide>`__
 
   * `Instructor Guide <Doc_Admin.rst>`__
   * `Grader Guide <Doc_Grader.rst>`__
