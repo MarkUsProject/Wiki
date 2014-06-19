@@ -28,7 +28,7 @@ MarkUs Users
 Project Resources
 ================================================================================
 
-* `Project Website <http://www.markusproject.org>`__
+The `Project Website <http://www.markusproject.org>`__
 * `Developer's Blog <http://blog.markusproject.org>`__
 * `Code Review <https://github.com/MarkUsProject/Markus/pulls>`__
   
