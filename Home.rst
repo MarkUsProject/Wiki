@@ -15,15 +15,6 @@ up and grading an assignment.
 MarkUs is written using Ruby on Rails, and uses Subversion to store the student submissions. MarkUs
 is the successor to the OLM project, an earlier grading tool.
 
-MarkUs Users
-================================================================================
-* `User Guide <UserGuide>`__
-
-  * `Instructor Guide <Doc_Admin>`__
-  * `Grader Guide <Doc_Grader>`__
-  * `Student Guide <Doc_Student>`__
-  * `RESTful API <RESTfulApiDocumentation>`__
-
 
 MarkUs Users
 ================================================================================
