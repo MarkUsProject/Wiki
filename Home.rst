@@ -52,29 +52,7 @@ The Issue list on github and `Code Review / Pull Requests <https://github.com/Ma
 
 .. TODO Modify User Guide link
 
-Screencasts
---------------------------------------------------------------------------------
 
-* `Student File Submission: September 2 2009 
-  <http://www.youtube.com/watch?v=ofpyaty20FQ>`__
-* `Student Group Formation: August 17, 2009
-  <http://www.youtube.com/watch?v=Ed_z_tHCAg8>`__
-* `The Grader View: June 6, 2009
-  <http://www.cs.toronto.edu/~reid/screencasts/OLM-2009-06-03.swf>`__
-* `Flexible Marking Scheme Selection: December 1, 2009
-  <http://www.youtube.com/watch?v=x4mbE3WBgog>`__
-* `Flexible Marking Scheme Criterion: December 1, 2009
-  <http://www.youtube.com/watch?v=tVkti9y91RA>`__
-* `Notes created through the Modal dialog as an Admin: December 3, 2009
-  <http://www.youtube.com/watch?v=eoxriy2cYW0>`__
-* `Notes created through the Modal dialog as a TA: December 3, 2009
-  <http://www.youtube.com/watch?v=J4r18LNDwPs>`__
-* `Creating and editing a grade entry form as an admin: December 4, 2009
-  <http://www.youtube.com/watch?v=r7UnaNYe2rw>`__
-* `Notes tab: December 11, 2009
-  <http://www.youtube.com/watch?v=IcuG6AlJfvQ>`__
-* `Entering and releasing the marks for a grade entry form as an admin: April
-  4, 2010 <http://www.youtube.com/watch?v=-v6eVy94pdI>`__
 
 MarkUs Developer Installation Guides
 ================================================================================
@@ -113,6 +91,30 @@ help for more info).
 Mailing list address: markus-dev@cs.toronto.edu
 
 Mailing list archive at `marc.info <http://marc.info/?l=markus-dev&r=1&w=2>`__
+
+Screencasts
+--------------------------------------------------------------------------------
+
+* `Student File Submission: September 2 2009 
+  <http://www.youtube.com/watch?v=ofpyaty20FQ>`__
+* `Student Group Formation: August 17, 2009
+  <http://www.youtube.com/watch?v=Ed_z_tHCAg8>`__
+* `The Grader View: June 6, 2009
+  <http://www.cs.toronto.edu/~reid/screencasts/OLM-2009-06-03.swf>`__
+* `Flexible Marking Scheme Selection: December 1, 2009
+  <http://www.youtube.com/watch?v=x4mbE3WBgog>`__
+* `Flexible Marking Scheme Criterion: December 1, 2009
+  <http://www.youtube.com/watch?v=tVkti9y91RA>`__
+* `Notes created through the Modal dialog as an Admin: December 3, 2009
+  <http://www.youtube.com/watch?v=eoxriy2cYW0>`__
+* `Notes created through the Modal dialog as a TA: December 3, 2009
+  <http://www.youtube.com/watch?v=J4r18LNDwPs>`__
+* `Creating and editing a grade entry form as an admin: December 4, 2009
+  <http://www.youtube.com/watch?v=r7UnaNYe2rw>`__
+* `Notes tab: December 11, 2009
+  <http://www.youtube.com/watch?v=IcuG6AlJfvQ>`__
+* `Entering and releasing the marks for a grade entry form as an admin: April
+  4, 2010 <http://www.youtube.com/watch?v=-v6eVy94pdI>`__
 
 Project Contributors
 --------------------------------------------------------------------------------
