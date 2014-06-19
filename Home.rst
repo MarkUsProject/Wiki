@@ -35,9 +35,13 @@ If you are interested in contributing to MarkUs, there is lots of information be
 
 The `Developer's Blog <http://blog.markusproject.org>`__ has quite a few useful posts to help you get started or understand design decisions that were made along the way.  It also includes status reports from various terms.
 
-The IRC Channel and the `mailing list are the main form of communications. Our channel is #markus on irc.freenode.net. `Logs of the channel <http://www.markusproject.org/irc/>`__ are also available.
+Project communication:
+* IRC Channel: #markus on irc.freenode.net 
+    * `Logs of the channel <http://www.markusproject.org/irc/>`__ are also available.
+* Mailing list address: markus-dev@cs.toronto.edu
+    * Mailing list archive at `marc.info <http://marc.info/?l=markus-dev&r=1&w=2>`__
 
-The Issue list on github and `Code Review / Pull Requests <https://github.com/MarkUsProject/Markus/pulls>`__ are the places where much of the technical discussion takes place. There is a `How to create a MarkUs review guide <HowToCodeReview>`__
+Most of the low-level technical discussion takes place on the `Issue list <https://github.com/MarkUsProject/Markus/issues>` and in `Code Reviews <https://github.com/MarkUsProject/Markus/pulls>`__ . There is a `Guide to creating MarkUs Code Reviews <HowToCodeReview>`__
 
 
 * Git Resources:
@@ -88,9 +92,7 @@ Project Vitals
 Repository: Create a GitHub account and fork MarkUsProject/MarkUs (see GitHub
 help for more info).
 
-Mailing list address: markus-dev@cs.toronto.edu
 
-Mailing list archive at `marc.info <http://marc.info/?l=markus-dev&r=1&w=2>`__
 
 Screencasts
 --------------------------------------------------------------------------------
