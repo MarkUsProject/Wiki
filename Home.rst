@@ -37,9 +37,9 @@ The `Developer's Blog <http://blog.markusproject.org>`__ has quite a few useful 
 
 Project communication:
 * IRC Channel: #markus on irc.freenode.net 
-    * `Logs of the channel <http://www.markusproject.org/irc/>`__ are also available.
+  * `Logs of the channel <http://www.markusproject.org/irc/>`__ are also available.
 * Mailing list address: markus-dev@cs.toronto.edu
-    * Mailing list archive at `marc.info <http://marc.info/?l=markus-dev&r=1&w=2>`__
+  * Mailing list archive at `marc.info <http://marc.info/?l=markus-dev&r=1&w=2>`__
 
 Most of the low-level technical discussion takes place on the `Issue list <https://github.com/MarkUsProject/Markus/issues>` and in `Code Reviews <https://github.com/MarkUsProject/Markus/pulls>`__ . There is a `Guide to creating MarkUs Code Reviews <HowToCodeReview>`__
 
