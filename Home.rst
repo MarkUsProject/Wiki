@@ -25,18 +25,28 @@ MarkUs Users
   * `RESTful API <RESTfulApiDocumentation>`__
 
 
-Project Resources
+MarkUs Users
 ================================================================================
+* `User Guide <UserGuide>`__
 
-The `Project Website <http://www.markusproject.org>`__
-* `Developer's Blog <http://blog.markusproject.org>`__
-* `Code Review <https://github.com/MarkUsProject/Markus/pulls>`__
-  
-  * `How to create a MarkUs review <HowToCodeReview>`__
+  * `Instructor Guide <Doc_Admin>`__
+  * `Grader Guide <Doc_Grader>`__
+  * `Student Guide <Doc_Student>`__
+  * `RESTful API <RESTfulApiDocumentation>`__
 
-* IRC Channel: Our channel is #markus on irc.freenode.net.
-  `Logs of the channel <http://www.markusproject.org/irc/>`__ are also available.
-* `Sandbox <http://www.markusproject.org/admin-demo>`__
+Users may also find the `Sandbox <http://www.markusproject.org/admin-demo>`__ useful.
+
+
+
+Developer Resources
+================================================================================
+If you are interested in contributing to MarkUs, there is lots of information below to help you get set up.  Please help us keep this documentation up to date!
+
+The `Developer's Blog <http://blog.markusproject.org>`__ has quite a few useful posts to help you get started or understand design decisions that were made along the way.  It also includes status reports from various terms.
+
+The IRC Channel and the `mailing list are the main form of communications. Our channel is #markus on irc.freenode.net. `Logs of the channel <http://www.markusproject.org/irc/>`__ are also available.
+
+The Issue list on github and `Code Review / Pull Requests <https://github.com/MarkUsProject/Markus/pulls>`__ are the places where much of the technical discussion takes place. There is a `How to create a MarkUs review guide <HowToCodeReview>`__
 
 
 * Git Resources:
