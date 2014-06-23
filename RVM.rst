@@ -58,7 +58,7 @@ Moreover, as MarkUs uses libruby-svn, you will have to install it locally, for
 every version of Ruby you installed.
 
 Fist, download Subversion source code here :
-http://subversion.tigris.org/downloads/subversion-1.8.9.tar.gz
+http://apache.sunsite.ualberta.ca/subversion/subversion-1.8.9.tar.gz
 
 Extract it and cd into the repository: ::
 
