@@ -16,7 +16,7 @@ or something. This box has GNOME, postgres, subversion, and all of MarkUs's othe
 dependencies installed. When the download is complete, VirtualBox will run the box
 in headless mode.
 
-Now you can connect to the box by doing vagrant ssh. Do rvm use 1.9.3 and then 
+Now you can connect to the box by doing vagrant ssh. Do rvm use 2.1 and then 
 rvm gemset use markus to use the correct gemsets. There is also a configured 'database.yml'
 in the Home directory. Move that to the project's config dir so rails knows how to connect to
 the database. Now you can clone the MarkUs repo from gh and start working on it. When you start the
