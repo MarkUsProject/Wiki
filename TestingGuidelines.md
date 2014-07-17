@@ -59,7 +59,9 @@ Markus/spec/models/group_spec.rb
 
 Factory girl is used to create instances of Models for testing. A great introduction to factory girl can be found [here](http://rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md).
 
-Within the `spec` folder (found in the Markus root folder), you will find a folder called `factories`. This is where all current factories being used for testing are stored. Look through a few of them to get a sense of what the template looks like. Each factory corresponds to one of Markus's Models.
+Within the `spec` folder (found in the Markus root folder), you will find a folder called `factories`. This is where all current factories being used for testing are stored. The name of the factory files should be the same name as the Model it refers to. For example, the `Group` Model is contained in a file called `group.rb` and so the factory file name is also `group.rb`.
+
+Look through a few of them to get a sense of what the template looks like. Each factory corresponds to one of Markus's Models.
 
 Factory Girl's `create` method is used to make and save instances of Model's. The `create` method should only be used when absolutely necessary. It creates instances that will persist within the database making it a culprit to extremely slow tests. It may be difficult to avoid using them in Model specifications because you are testing interactions with the database (Active Record queries). 
 
@@ -150,13 +152,29 @@ let!(:group) { create(:group, group_name: 'g2markus') }
 ```
 The initialization can be placed in various places depending on need. If all methods will need the instance, it would make sense to place it at the beginning of the Model's `describe` block. If only a certain method needs it, place it at the beginning of that method's `describe` block (this would also work for other types of blocks described below).
 
-All examples should be contained within `it` blocks, all of which must be accompanied by a description. 
+All examples should be contained within `it` blocks, all of which must be accompanied by a description written in third person present tense: 
 
 ```
-it 'does describe what this example tests' do
+it 'does ...' do
+it 'is ...'
+```
+Each example is limited to one expectation. Good:
+
+```
+it 'does ...' do
   expect(something).to be_something
 end
 ```
+Bad:
+
+```
+it 'does ...' do
+  expect(something).to be_something
+  expect(another_thing).to be_another_thing
+end
+```
+This improves readibility and ensures all aspects are tested even in the case of a failure (whereas with multiple expectation per example, later expectations won't be run if an earlier expectation fails).
+
 For a simple example of this, within `group_spec.rb`, scroll down to the method `repository_name`. An instance is created using Factory Girl, and used within the `it` block. Looking through the different examples within the specification files is a great resource for learning how to test. A starting point for understanding how to use the `expect` syntax can be found [here](https://github.com/rspec/rspec-expectations). A great introduction, but not free, resource is Aaron Sumnor's [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec).
 
 As you scrolled down to `repository_name` examples, you probably noticed another set of examples testing the `set_repo_name` method. Some methods may have different states in which a different set of instructions will be executed based on the state. This is the case for the `set_repo_name` method which can be called on an instance of `Group`. When the instance was created a repository name may have been specified if it was specified that group names should be automatically generated (if it was not specified an auto generated name will be created). In these cases the `context` block is used to distinguish the different states. Context descriptions begin with `when` or `with`, and the template for this is usually:
@@ -172,7 +190,6 @@ describe '#method_name' do
   end
 end
 ```
-
 You can use as many context blocks as needed to represent the possible states the method can be called in.
 
 All methods within the model being tested, should be tested. If you feel a method should not be tested, leave a comment explaining your reasoning above the method's describe block:
@@ -181,7 +198,6 @@ All methods within the model being tested, should be tested. If you feel a metho
 # This method is not being tested because...
 describe '#method_name'
 ```
-
 This will inform other developers that the method was not accidently forgotten, but instead, just reasoned to not be tested.
 
 ## Controller Specifications
@@ -201,7 +217,6 @@ describe ControllerName do
   end
 end
 ```
-
 `Some type of user` and `some other type of user` describing the context blocks usually correspond to someone who has authorization to perform certain tasks (usually an admin) and someone who does not.
 
 Code from the `groups_controller_spec.rb` file, which tests the `GroupsController` controller, will be used as reference throughout the Controller specification section of the guide. Open that file, and look through it as you follow along below.
@@ -217,25 +232,22 @@ describe 'GET #index' do
   method_example
 end
 ```
-
 Controller testing is not concerned with states of objects, and so mocking instances is preferred (the tests are a lot faster). Also, because we would have already tested the Model methods within the Model specification, we do not need to be retesting them when they are called within a Controller method and so mocking instances are preferred.
 
 A stub is used to create the illusion that a method was called, returning a specified result. A mock is a stub expecting a specified method to be called. A starting point for learning to stubing and mocking can be found [here](https://github.com/rspec/rspec-mocks). If you want another resource on mocking and stubbing, check out Code School’s Testing with Rspec videos ([Level 5 is on Mocking and Stubbing](http://rspec.codeschool.com/)). 
 
 Controller specifications will have both mocks and stubs, so when do you use which? As the examples will illustrate below, you stub a method when you need to prevent it from accessing the database. And you mock a method when you need to ensure it is called.
 
-Lets start with mocking objects (which is different than mocking methods). For creating mock objects we prefer to use Factory Girl:
+Lets start with mocking objects (which is different than mocking methods). As seen in the [Factory Girl](#fatory-girl) section above we make a mock object like this:
 
 ```
 build_stubbed(:object)
 ```
-
-For example, if we wanted to create a mock grouping object, we can use factory girl like so:
+If we wanted to create a mock grouping object:
 
 ```
 grouping = build_stubbed(:grouping)
 ```
-
 Now `grouping` is a mock instance that does not persist in the database. All methods called on `grouping` that requires database access would fail. This is why we need stubs.
 
 Open the `groups_controller_spec.rb` file (if you haven't already). Both mock grouping, and assignment objects are created at the start using `let`. The `before` block just under these mocks contains a whole bunch of stubs. The first few are to ensure we have administrative privileges. Many of the methods tested within this file call the `Assignment` model’s `find` method. This method takes an `id` belonging to an assignment and returns the assignment. To make sure this method isn’t actually executed, we stub it (remember we don’t actually have an assignment so this search will fail). This is what the stub for the `Assignment`’s `find` method looks like:
@@ -243,7 +255,6 @@ Open the `groups_controller_spec.rb` file (if you haven't already). Both mock gr
 ```
 allow(Assignment).to receive(:find).and_return(assignment)
 ```
-
 The above stub will make sure when `find` is called the mocked assignment will be returned. 
 
 All Model methods called within the controller should be mocked. This is a test that ensures the methods that should be called, will be called. For example, the method `new` within the `GroupsController` calls `Assignment` model’s method `add_group`. It is called using the mock assignment we have, and returns a grouping. To make sure this method is called we create the mock, and call the controller method being tested:
@@ -252,4 +263,3 @@ All Model methods called within the controller should be mocked. This is a test 
 expect(assignment).to receive(:add_group).with(nil).and_return(grouping)
 get :new, assignment_id: assignment
 ```
-
