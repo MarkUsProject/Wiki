@@ -2,18 +2,20 @@
 
 ##### Table of Contents
 [Testing with RSpec](#testing-with-rspec)<br>
-[How to Run the Specifications](#how-to-run-the-specifications)<br>
+[How to Run Specifications](#how-to-run-specifications)<br>
 [Factory Girl](#factory-girl)<br>
 [Faker](#faker)<br>
-[Model Specification](#model-specifications)<br>
-[Controller Specification](#controller-specifications)<br>
+[Model Specifications](#model-specifications)<br>
+[Controller Specifications](#controller-specifications)<br>
 [Naming Conventions](#naming-conventions)<br>
 
 ## Testing with RSpec
 
 Testing with RSpec involves specifications (files containing tests), and examples within these specifications (the actual tests). In order to get the most out of this tutorial, it is recommended that you follow along in the `spec` folder, which is located in the Markus root folder.
 
-## How to Run the Specifications
+**Note**: [Better Specs](http://betterspecs.org/) is another resource that illustrates best practices using RSpec (you will notice most of our style uses their suggestions). Refer to this guide for anything not explicitly covered here. It is also a great resource for more examples on most of what *is* covered.
+
+## How to Run Specifications
 
 `Note:` The following commands assume you are within the Markus root folder.
 
@@ -57,26 +59,26 @@ Markus/spec/models/group_spec.rb
 
 Factory girl is used to create instances of Models for testing. A great introduction to factory girl can be found [here](http://rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md).
 
-Within the `spec` folder (found in the Markus root folder), you will find a folder called `factories`. This is where all current factories being used for testing are stored. Look through a few of them to get a sense of what the template looks like.
+Within the `spec` folder (found in the Markus root folder), you will find a folder called `factories`. This is where all current factories being used for testing are stored. Look through a few of them to get a sense of what the template looks like. Each factory corresponds to one of Markus's Models.
 
-There are various ways instances can be initialized within the specifications. One is within a before block:
+Factory Girl's `create` method is used to make and save instances of Model's. The `create` method should only be used when absolutely necessary. It creates instances that will persist within the database making it a culprit to extremely slow tests. It may be difficult to avoid using them in Model specifications because you are testing interactions with the database (Active Record queries). 
 
-```
-before :each do
-  @group = create(:group, group_name: 'g2markus')
-end
-```
+Not using `create` means using `build_stubbed`, another Factory Girl method that makes a mock object (meaning an object that does not persist in the database). We will go into more detail about mock objects in the [Controller Specifications](#controller-specifications) section.
 
-The code within the before block will be executed before every example. Before blocks should only be used if there is something other than initializing variables that needs to be done before each test.
-
-Another way to Initialize instances is by using `let`, or `let!`. This is the preferred method. `let` and `let!` allow for lazy and eager evaluation of an instance, respectively:
+As an example, say we want to create a `Group` instance that will persist within the database, we would use `create`:
 
 ```
-# This will evaluate the instance when `group` is first called in the example.
-let(:group) { create(:group, group_name: 'g2markus') }
+@group = create(:group)
+```
+If the instance does not need to persist within the database we use `build_stubbed`:
 
-# This will evaluate before the example is executed.
-let!(:group) { create(:group, group_name: 'g2markus') }
+```
+@group = build_stubbed(:group)
+```
+It is also possible to explicitly assign a value to attributes of the object you are creating. A `Group` instance has an attribute `group_name` and we'd like to make sure it has the value 'g2markus'. This is done like so: 
+
+```
+@group = create(:group, group_name: 'g2markus')
 ```
 
 ## Faker
@@ -128,14 +130,33 @@ describe '.method_name' do
 end
 ```
 
-The example for this method will be contained within the block, replacing `method_example`. All examples should be contained within `it` blocks, all of which must be accompanied by a description. 
+The example for this method will be contained within the block, replacing `method_example`. Most examples will need instances of Model's to run. There are various ways instances can be initialized. One is within a before block:
 
 ```
-it 'this will describe what this example tests' do
+before :each do
+  @group = create(:group, group_name: 'g2markus')
+end
+```
+The code within the before block will be executed before every example. Before blocks should only be used if there is something other than initializing variables that needs to be done before each test.
+
+Another way to Initialize instances is by using `let`, or `let!`. This is the preferred method. `let` and `let!` allow for lazy and eager evaluation of an instance, respectively:
+
+```
+# This will evaluate the instance when `group` is first called in the example.
+let(:group) { create(:group, group_name: 'g2markus') }
+
+# This will evaluate before the example is executed.
+let!(:group) { create(:group, group_name: 'g2markus') }
+```
+The initialization can be placed in various places depending on need. If all methods will need the instance, it would make sense to place it at the beginning of the Model's `describe` block. If only a certain method needs it, place it at the beginning of that method's `describe` block (this would also work for other types of blocks described below).
+
+All examples should be contained within `it` blocks, all of which must be accompanied by a description. 
+
+```
+it 'does describe what this example tests' do
   expect(something).to be_something
 end
 ```
-
 For a simple example of this, within `group_spec.rb`, scroll down to the method `repository_name`. An instance is created using Factory Girl, and used within the `it` block. Looking through the different examples within the specification files is a great resource for learning how to test. A starting point for understanding how to use the `expect` syntax can be found [here](https://github.com/rspec/rspec-expectations). A great introduction, but not free, resource is Aaron Sumnor's [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec).
 
 As you scrolled down to `repository_name` examples, you probably noticed another set of examples testing the `set_repo_name` method. Some methods may have different states in which a different set of instructions will be executed based on the state. This is the case for the `set_repo_name` method which can be called on an instance of `Group`. When the instance was created a repository name may have been specified if it was specified that group names should be automatically generated (if it was not specified an auto generated name will be created). In these cases the `context` block is used to distinguish the different states. Context descriptions begin with `when` or `with`, and the template for this is usually:
@@ -231,3 +252,4 @@ All Model methods called within the controller should be mocked. This is a test 
 expect(assignment).to receive(:add_group).with(nil).and_return(grouping)
 get :new, assignment_id: assignment
 ```
+
