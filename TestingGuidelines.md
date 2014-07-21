@@ -3,11 +3,11 @@
 ##### Table of Contents
 [Testing with RSpec](#testing-with-rspec)<br>
 [How to Run Specifications](#how-to-run-specifications)<br>
+[Naming Conventions](#naming-conventions)<br>
 [Factory Girl](#factory-girl)<br>
 [Faker](#faker)<br>
 [Model Specifications](#model-specifications)<br>
 [Controller Specifications](#controller-specifications)<br>
-[Naming Conventions](#naming-conventions)<br>
 
 ## Testing with RSpec
 
