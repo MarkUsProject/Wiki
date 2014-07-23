@@ -6,8 +6,8 @@ If you want to get started on working on MarkUs quickly and painlessly, this is
 the way to do it.
 
 1. Install Vagrant and VirtualBox
-2. Download this `Vagrantfile <https://gist.githubusercontent.com/oneohtrix/10fc63dc404e916c0f28/raw/b2a0320f14eb960fc4aad2f25fa9a15a5222f318/Vagrantfile>`_
-3. cd to the directory containing the Vagrantfile
+2. Clone the Markus repo (or just download it)
+3. cd to the repo (make sure you're in the right directory - it should contain the Vagrantfile)
 4. vagrant up
 
 This will download a fairly large (3GB) Debian box from the internet, so go
