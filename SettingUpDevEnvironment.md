@@ -23,5 +23,3 @@ Finally, move the `database.yml` file from the Home directory of the vagrant box
 To run the development server, run `bundle exec rails server` from the project directory.
 
 Access the site from your browser at `http://0.0.0.0:42069`.
-
-  [take a walk]: 
