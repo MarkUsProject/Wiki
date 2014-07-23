@@ -17,7 +17,7 @@ Testing with RSpec involves specifications (files containing tests), and example
 
 ## How to Run Specifications
 
-`Note:` The following commands assume you are within the Markus root folder.
+**Note:** The following commands assume you are within the Markus root folder.
 
 To run all specifications:
 
@@ -57,13 +57,13 @@ Markus/spec/models/group_spec.rb
 
 ## Factory Girl
 
-Factory girl is used to create instances of Models for testing. A great introduction to factory girl can be found [here](http://rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md).
+Factory girl is used to create instances of Models for testing. A great introduction to Factory Girl can be found [here](http://rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md).
 
 Within the `spec` folder (found in the Markus root folder), you will find a folder called `factories`. This is where all current factories being used for testing are stored. The name of the factory files should be the same name as the Model it refers to. For example, the `Group` Model is contained in a file called `group.rb` and so the factory file name is also `group.rb`.
 
 Look through a few of them to get a sense of what the template looks like. Each factory corresponds to one of Markus's Models.
 
-Factory Girl's `create` method is used to make and save instances of Model's. The `create` method should only be used when absolutely necessary. It creates instances that will persist within the database making it a culprit to extremely slow tests. It may be difficult to avoid using them in Model specifications because you are testing interactions with the database (Active Record queries). 
+Factory Girl's `create` method is used to make and save instances of Models. The `create` method should only be used when absolutely necessary. It creates instances that will persist within the database making it a culprit to extremely slow tests. It may be difficult to avoid using them in Model specifications because you are testing interactions with the database (Active Record queries). 
 
 Not using `create` means using `build_stubbed`, another Factory Girl method that makes a mock object (meaning an object that does not persist in the database). We will go into more detail about mock objects in the [Controller Specifications](#controller-specifications) section.
 
