@@ -4,8 +4,7 @@
 [Testing with RSpec](#testing-with-rspec)<br>
 [How to Run Specifications](#how-to-run-specifications)<br>
 [Naming Conventions](#naming-conventions)<br>
-[Factory Girl](#factory-girl)<br>
-[Faker](#faker)<br>
+[Helper Gems](#helper-gems)<br>
 [Model Specifications](#model-specifications)<br>
 [Controller Specifications](#controller-specifications)<br>
 
@@ -55,7 +54,8 @@ Markus/app/models/group.rb
 Markus/spec/models/group_spec.rb
 ```
 
-## Factory Girl
+## Helper Gems
+### Factory Girl
 
 Factory girl is used to create instances of Models for testing. A great introduction to Factory Girl can be found [here](http://rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md).
 
@@ -83,9 +83,9 @@ It is also possible to explicitly assign a value to attributes of the object you
 @group = create(:group, group_name: 'g2markus')
 ```
 
-## Faker
+### Faker
 
-While exploring the files within the factories folder you probably noticed the Faker gem being used. We use Faker alongside Factory Girl to easily create fake data. Faker calls are placed within curly braces to ensure when an instance is created using Factory Girl it has unique values for it's attributes. Types of data available to fake can be found [here](https://github.com/stympy/faker).
+While exploring the files within the factories folder you probably noticed the Faker gem being used. We use Faker alongside Factory Girl to easily create fake data. Faker calls are placed within curly braces to ensure when an instance is created using Factory Girl it has unique values for its attributes. Types of data available to fake can be found [here](https://github.com/stympy/faker).
 
 ## Model Specifications
 
@@ -158,14 +158,7 @@ All examples should be contained within `it` blocks, all of which must be accomp
 it 'does ...' do
 it 'is ...'
 ```
-Each example is limited to one expectation. Good:
-
-```
-it 'does ...' do
-  expect(something).to be_something
-end
-```
-Bad:
+Each example is limited to one expectation. Bad:
 
 ```
 it 'does ...' do
@@ -173,7 +166,18 @@ it 'does ...' do
   expect(another_thing).to be_another_thing
 end
 ```
-This improves readibility and ensures all aspects are tested even in the case of a failure (whereas with multiple expectation per example, later expectations won't be run if an earlier expectation fails).
+Good:
+
+```
+it 'does ...' do
+  expect(something).to be_something
+end
+
+it 'does ...' do
+  expect(another_thing).to be_another_thing
+end
+```
+This improves readibility and ensures all aspects are tested even in the case of a failure (whereas with multiple expectations per example, later expectations won't be run if an earlier expectation fails).
 
 For a simple example of this, within `group_spec.rb`, scroll down to the method `repository_name`. An instance is created using Factory Girl, and used within the `it` block. Looking through the different examples within the specification files is a great resource for learning how to test. A starting point for understanding how to use the `expect` syntax can be found [here](https://github.com/rspec/rspec-expectations). A great introduction, but not free, resource is Aaron Sumnor's [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec).
 
@@ -232,7 +236,7 @@ describe 'GET #index' do
   method_example
 end
 ```
-Controller testing is not concerned with states of objects, and so mocking instances is preferred (the tests are a lot faster). Also, because we would have already tested the Model methods within the Model specification, we do not need to be retesting them when they are called within a Controller method and so mocking instances are preferred.
+Controller testing is not concerned with states of objects, and so mocking instances is preferred (the tests are a lot faster). Also, because we would have already tested the Model methods within the Model specification, we do not need to be retesting them when they are called within a Controller method.
 
 A stub is used to create the illusion that a method was called, returning a specified result. A mock is a stub expecting a specified method to be called. A starting point for learning to stubing and mocking can be found [here](https://github.com/rspec/rspec-mocks). If you want another resource on mocking and stubbing, check out Code School’s Testing with Rspec videos ([Level 5 is on Mocking and Stubbing](http://rspec.codeschool.com/)). 
 
