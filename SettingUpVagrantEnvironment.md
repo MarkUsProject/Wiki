@@ -20,6 +20,8 @@ $> rvm use 2.1
 $> rvm gemset use markus
 ```
 
+**NOTE:** If `rvm use 2.1` says ruby is not installed, run the suggested installation command. It will be similar if not identitcal to `rvm install ruby-2.1.1`
+
 Finally, move the `database.yml` file from the Home directory of the vagrant box to the project’s config directory.
 
 To run the development server, run `bundle exec rails server` from the project directory.
