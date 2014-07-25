@@ -10,6 +10,8 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 
 This will download a fairly large (3GB) Debian box from the internet, so go [take a walk](http://news.stanford.edu/news/2014/april/walking-vs-sitting-042414.html) or something. This box has GNOME, postgres, subversion, and all of MarkUs’s other dependencies installed. When the download is complete, VirtualBox will run the box in headless mode.
 
+**NOTE:** If, for some reason, it fails and complains about SSH, you most likely have timed out. Check your internet connection and attempt to limit network activity to `vagrant up` 
+
 Next, run the following commands to connect to the virtual machine. and set up RVM.
 
 ```
