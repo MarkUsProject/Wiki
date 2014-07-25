@@ -4,8 +4,8 @@ Setting up your Development Environment (hassle-free, I swear!)
 If you want to get started on working on MarkUs quickly and painlessly, this is the way to do it.
 
 1. Install Vagrant and VirtualBox/VMWare Fusion
-2. Clone the Markus repo (or just download it)
-3. `cd` to the repo (make sure you’re in the right directory - it should contain the Vagrantfile)
+2. Clone the MarkUs repo (or just download the Vagrantfile)
+3. `cd` to the Vagrantfile)
 4. `vagrant up`
 
 This will download a fairly large (3GB) Debian box from the internet, so go [take a walk](http://news.stanford.edu/news/2014/april/walking-vs-sitting-042414.html) or something. This box has GNOME, postgres, subversion, and all of MarkUs’s other dependencies installed. When the download is complete, VirtualBox will run the box in headless mode.
@@ -17,12 +17,16 @@ Next, run the following commands to connect to the virtual machine. and set up R
 ```
 $> vagrant ssh
 $> rvm use 2.1
+```
+**NOTE:** If `rvm use 2.1` says ruby is not installed, run the suggested installation command. It will be similar if not identitcal to `rvm install ruby-2.1.1`
+
+Now, clone the MarkUs project again within the Vagrant instance. 
+```
+$> cd Markus
 $> rvm gemset use markus
 ```
 
-**NOTE:** If `rvm use 2.1` says ruby is not installed, run the suggested installation command. It will be similar if not identitcal to `rvm install ruby-2.1.1`
-
-Finally, move the `database.yml` file from the Home directory of the vagrant box to the project’s config directory.
+Finally, move the `database.yml` file from the Home directory of the vagrant box to the MarkUs’s config directory.
 
 To run the development server, run `bundle exec rails server` from the project directory.
 
