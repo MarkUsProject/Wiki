@@ -59,7 +59,7 @@ Markus/spec/models/group_spec.rb
 
 Factory girl is used to create instances of Models for testing. A great introduction to Factory Girl can be found [here](http://rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md).
 
-Within the `spec` folder (found in the Markus root folder), you will find a folder called `factories`. This is where all current factories being used for testing are stored. The name of the factory files should be the same name as the Model it refers to. For example, the `Group` Model is contained in a file called `group.rb` and so the factory file name is also `group.rb`.
+Within the `spec` folder (found in the Markus root folder), you will find a folder called `factories`. This is where all current factories being used for testing are stored. The filename of each factory should be the plural form of the filename of the Model it refers to (because there are multiple factories of the same kind in one file). For example, the `Group` Model is contained in a file called `group.rb` and so the factory filename is `groups.rb`. Another example would be a model filename of `criterion.rb` and a factory filename of `criteria.rb`.
 
 Look through a few of them to get a sense of what the template looks like. Each factory corresponds to one of Markus's Models.
 
