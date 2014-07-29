@@ -7,6 +7,7 @@
 [Helper Gems](#helper-gems)<br>
 [Model Specifications](#model-specifications)<br>
 [Controller Specifications](#controller-specifications)<br>
+[General Tips](#general-tips)<br>
 
 ## Testing with RSpec
 
@@ -267,3 +268,43 @@ All Model methods called within the controller should be mocked. This is a test 
 expect(assignment).to receive(:add_group).with(nil).and_return(grouping)
 get :new, assignment_id: assignment
 ```
+
+## General Tips
+### Code Duplication
+Sometimes you will find youself writing very similar specs for different models or controllers. If you smell such code duplication (e.g., when you are copying and pasting a lot of old spec to create new spec without changing much of the spec code structure), you should probably use [shared examples](https://www.relishapp.com/rspec/rspec-core/docs/example-groups/shared-examples). Shared examples give you a way to specify the abstract common behavior of some objects (a model or a controller in most cases) in a single place, and apply the behavior to multiple specs of concrete objects. Shared examples that logically belong to the same group are given a name appropriate for the concrete objects they are describing. Usually, the name would be a noun starting with an article (e.g., `a duck`, `an apple`), but that might not always be the case. Think of the use case of your shared examples -- how does it read when you say `it_behaves_like 'your_shared_examples_name'` (or any other alias of `it_behaves_like`)?
+
+Shared examples are usually placed in its own file under `spec/support`, unless they are only shared by specs in one file, in which case they can placed within the same file. Name the file using the shared examples name without the article (e.g., `duck.rb`, `apple.rb`). Don't append `_spec` in the filename of shared examples, as that causes RSpec to double load the file (first by RSpec itself and later by `spec_helper.rb`) and generate warnings.
+
+
+```ruby
+# spec/support/duck.rb
+
+shared_examples 'a duck' do
+  # You can write RSpec code like normal in a `shared_examples` block.
+
+  describe '#swim' do
+    # ...
+  end
+  
+  describe '#quack' do
+    # ...
+  end
+end
+
+# spec/model/swan.rb
+
+describe Swan do
+  it_behaves_like_a 'duck'
+end
+
+# spec/model/goose.rb
+
+describe Goose do
+  it_behaves_like_a 'duck'
+end
+
+```
+
+In Markus, one use case of shared examples is [`a criterion`](https://github.com/MarkUsProject/Markus/blob/master/spec/support/criterion_spec.rb), which specifies the common behavior of `RubricCriterion` and a `FlexibleCriterion`.
+
+You can also use an alias for the method `it_behaves_like_a` to make the spec code read better. For example, `it_has_behavior 'enumerability'`. The aliases should be defined in [spec/support/it_behaves_like_aliases.rb](https://github.com/MarkUsProject/Markus/blob/master/spec/support/it_behaves_like_aliases.rb).
