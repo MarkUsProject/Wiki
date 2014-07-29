@@ -3,7 +3,7 @@ Setting up your Development Environment (hassle-free, I swear!)
 
 If you want to get started on working on MarkUs quickly and painlessly, this is the way to do it.
 
-1. Install Vagrant and VirtualBox/VMWare Fusion
+1. Install [VirtualBox](https://www.virtualbox.org/) and [Vagrant](http://www.vagrantup.com/)
 2. Clone the Markus repo (or just download it)
 3. `cd` to the repo (make sure you’re in the right directory - it should contain the Vagrantfile)
 4. `vagrant up`
