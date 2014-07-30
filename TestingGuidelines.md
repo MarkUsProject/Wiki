@@ -92,7 +92,7 @@ While exploring the files within the factories folder you probably noticed the F
 Open the `models` folder within the `spec` folder, and explore the files. All model specifications have the following template:
 
 ```
-require ‘spec_helper’
+require 'spec_helper'
     
 describe ModelName do
   attribute_examples
