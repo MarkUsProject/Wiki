@@ -70,17 +70,17 @@ Not using `create` means using `build_stubbed`, another Factory Girl method that
 
 As an example, say we want to create a `Group` instance that will persist within the database, we would use `create`:
 
-```
+```ruby
 @group = create(:group)
 ```
 If the instance does not need to persist within the database we use `build_stubbed`:
 
-```
+```ruby
 @group = build_stubbed(:group)
 ```
 It is also possible to explicitly assign a value to attributes of the object you are creating. A `Group` instance has an attribute `group_name` and we'd like to make sure it has the value 'g2markus'. This is done like so: 
 
-```
+```ruby
 @group = create(:group, group_name: 'g2markus')
 ```
 
@@ -92,7 +92,7 @@ While exploring the files within the factories folder you probably noticed the F
 
 Open the `models` folder within the `spec` folder, and explore the files. All model specifications have the following template:
 
-```
+```ruby
 require 'spec_helper'
     
 describe ModelName do
@@ -109,7 +109,7 @@ The first set of examples in our model specification will be for the Model’s a
 
 For example, recall the model `Group` has an attribute `group_name`. This attribute must be present in order for a group to be successfully created. Now look in the `group_spec.rb`, and notice the first example is testing that requirement:
 
-```
+```ruby
 it { is_expected.to validate_presence_of(:group_name) }
 ```
 
@@ -119,7 +119,7 @@ We use shoulda-matchers because the examples are easily understood just by readi
 
 As you  have probably noticed in the `group_spec.rb` file, all method examples are written within their own `describe` block. If the method is an instance method, the description of the block will be a hash followed by the method’s name:
 
-```
+```ruby
 describe '#method_name' do
   method_example 
 end
@@ -127,7 +127,7 @@ end
 
 If the method is a class method, the description of the block will be a dot followed by the method name:
 
-```
+```ruby
 describe '.method_name' do
   method_example 
 end
@@ -135,7 +135,7 @@ end
 
 The example for this method will be contained within the block, replacing `method_example`. Most examples will need instances of Model's to run. There are various ways instances can be initialized. One is within a before block:
 
-```
+```ruby
 before :each do
   @group = create(:group, group_name: 'g2markus')
 end
@@ -144,7 +144,7 @@ The code within the before block will be executed before every example. Before b
 
 Another way to Initialize instances is by using `let`, or `let!`. This is the preferred method. `let` and `let!` allow for lazy and eager evaluation of an instance, respectively:
 
-```
+```ruby
 # This will evaluate the instance when `group` is first called in the example.
 let(:group) { create(:group, group_name: 'g2markus') }
 
@@ -155,13 +155,13 @@ The initialization can be placed in various places depending on need. If all met
 
 All examples should be contained within `it` blocks, all of which must be accompanied by a description written in third person present tense: 
 
-```
+```ruby
 it 'does ...' do
 it 'is ...'
 ```
 Each example is limited to one expectation. Bad:
 
-```
+```ruby
 it 'does ...' do
   expect(something).to be_something
   expect(another_thing).to be_another_thing
@@ -169,7 +169,7 @@ end
 ```
 Good:
 
-```
+```ruby
 it 'does ...' do
   expect(something).to be_something
 end
@@ -184,7 +184,7 @@ For a simple example of this, within `group_spec.rb`, scroll down to the method 
 
 As you scrolled down to `repository_name` examples, you probably noticed another set of examples testing the `set_repo_name` method. Some methods may have different states in which a different set of instructions will be executed based on the state. This is the case for the `set_repo_name` method which can be called on an instance of `Group`. When the instance was created a repository name may have been specified if it was specified that group names should be automatically generated (if it was not specified an auto generated name will be created). In these cases the `context` block is used to distinguish the different states. Context descriptions begin with `when` or `with`, and the template for this is usually:
 
-```
+```ruby
 describe '#method_name' do 
   context 'when in this state' do
     method_exmaple
@@ -199,7 +199,7 @@ You can use as many context blocks as needed to represent the possible states th
 
 All methods within the model being tested, should be tested. If you feel a method should not be tested, leave a comment explaining your reasoning above the method's describe block:
 
-```
+```ruby
 # This method is not being tested because...
 describe '#method_name'
 ```
@@ -209,7 +209,7 @@ This will inform other developers that the method was not accidently forgotten, 
 
 Controller specifications will have the following template:
 
-```
+```ruby
 require 'spec_helper'
     
 describe ControllerName do
@@ -232,7 +232,7 @@ Controller methods are placed within `describe` blocks with the description as a
 
 For example, the `GroupController` has a method called `index`, which sends out a GET request, so:
 
-```
+```ruby
 describe 'GET #index' do
   method_example
 end
@@ -245,26 +245,26 @@ Controller specifications will have both mocks and stubs, so when do you use whi
 
 Lets start with mocking objects (which is different than mocking methods). As seen in the [Factory Girl](#fatory-girl) section above we make a mock object like this:
 
-```
+```ruby
 build_stubbed(:object)
 ```
 If we wanted to create a mock grouping object:
 
-```
+```ruby
 grouping = build_stubbed(:grouping)
 ```
 Now `grouping` is a mock instance that does not persist in the database. All methods called on `grouping` that requires database access would fail. This is why we need stubs.
 
 Open the `groups_controller_spec.rb` file (if you haven't already). Both mock grouping, and assignment objects are created at the start using `let`. The `before` block just under these mocks contains a whole bunch of stubs. The first few are to ensure we have administrative privileges. Many of the methods tested within this file call the `Assignment` model’s `find` method. This method takes an `id` belonging to an assignment and returns the assignment. To make sure this method isn’t actually executed, we stub it (remember we don’t actually have an assignment so this search will fail). This is what the stub for the `Assignment`’s `find` method looks like:
 
-```
+```ruby
 allow(Assignment).to receive(:find).and_return(assignment)
 ```
 The above stub will make sure when `find` is called the mocked assignment will be returned. 
 
 All Model methods called within the controller should be mocked. This is a test that ensures the methods that should be called, will be called. For example, the method `new` within the `GroupsController` calls `Assignment` model’s method `add_group`. It is called using the mock assignment we have, and returns a grouping. To make sure this method is called we create the mock, and call the controller method being tested:
 
-```
+```ruby
 expect(assignment).to receive(:add_group).with(nil).and_return(grouping)
 get :new, assignment_id: assignment
 ```
