@@ -169,7 +169,7 @@ Now, you are ready to test your plain MarkUs installation. The most straight
 forward way to do this is to start the mongrel server on the command-line. You
 can do so by::
 
-    $> bundle exec rails server  # boots the appropriate web server (e.g. thin)
+    $> bundle exec rails server  #boots up the apprpropriate web server
 
 The default admin user is 'a' with any non-empty password. Look at ``db/seeds.rb`` 
 for other users.

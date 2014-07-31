@@ -4,36 +4,46 @@ Welcome to MarkUs
 
 MarkUs (pronounced "mark us") is an open-source tool which recreates the ease
 and flexibility of grading assignments with pen on paper, within a web
-application.  It also allows students and instructors to form groups and
-collaborate on assignments. Its predecessor `OLM (Online Marking) <http://olmonrails.wordpress.com>`__ was
-originally written
-in Python on top of the TurboGears framework.
+application.  Designed to support programming assignments, students may submit
+their work through the web interface or through a version control system.  Students
+can form groups to collaborate on assignments.  Instructors add marking schemes, 
+assign graders to students and then later release the marks to the students.  The
+graders can view the students submissions, fill in the marking schemes, and annotate
+the students work.  MarkUs facilitates much of the administrative work of setting
+up and grading an assignment.
 
-The MarkUs project is a re-implementation of the Online Marking system using
-Ruby on Rails. The goal of this project is to take what we learned from OLM
-and our forays into `Web-CAT <http://web-cat.cs.vt.edu/>`__, and build a
-web-based marking tool that includes an early submission and testing system in
-support of test driven development.
+MarkUs is written using Ruby on Rails, and uses Subversion to store the student submissions. MarkUs
+is the successor to the OLM project, an earlier grading tool.
 
 
-Project Resources
+MarkUs Users
 ================================================================================
+* `User Guide <UserGuide>`__
 
-* `Project Website <http://www.markusproject.org>`__
-* `Developer's Blog <http://blog.markusproject.org>`__
-* `Code Review <https://github.com/MarkUsProject/Markus/pulls>`__
-  
-  * `How to create a MarkUs review <HowToCodeReview>`__
+  * `Instructor Guide <Doc_Admin>`__
+  * `Grader Guide <Doc_Grader>`__
+  * `Student Guide <Doc_Student>`__
+  * `RESTful API <RESTfulApiDocumentation>`__
 
-* IRC Channel: Our channel is #markus on irc.freenode.net.
-  `Logs of the channel <http://www.markusproject.org/irc/>`__ are also available.
-* `Sandbox <http://www.markusproject.org/admin-demo>`__
-* `User Guide <UserGuide.rst>`__
+Users may also find the `Sandbox <http://www.markusproject.org/admin-demo>`__ useful.
 
-  * `Instructor Guide <Doc_Admin.rst>`__
-  * `Grader Guide <Doc_Grader.rst>`__
-  * `Student Guide <Doc_Student.rst>`__
-  * `RESTful API <RESTfulApiDocumentation.rst>`__
+
+
+Developer Resources
+================================================================================
+If you are interested in contributing to MarkUs, there is lots of information below to help you get set up.  Please help us keep this documentation up to date!
+
+The `Developer's Blog <http://blog.markusproject.org>`__ has quite a few useful posts to help you get started or understand design decisions that were made along the way.  It also includes status reports from various terms.
+
+Project communication:
+
+* IRC Channel: #markus on irc.freenode.net 
+    * `Logs of the channel <http://www.markusproject.org/irc/>`__ are also available.
+* Mailing list address: markus-dev@cs.toronto.edu
+    * Mailing list archive at `marc.info <http://marc.info/?l=markus-dev&r=1&w=2>`__
+
+Most of the low-level technical discussion takes place on the `Issue list <https://github.com/MarkUsProject/Markus/issues>` and in `Code Reviews <https://github.com/MarkUsProject/Markus/pulls>`__ . There is a `Guide to creating MarkUs Code Reviews <HowToCodeReview>`__
+
 
 * Git Resources:
 
@@ -43,39 +53,17 @@ Project Resources
   * `Gitref.org <http://gitref.org>`__
   * `Git Backend Wiki <GitBackEnd>`__
 
-* `Issue Labels <LabelsWhatTheyMean.rst>`__
+* `Issue Labels <LabelsWhatTheyMean>`__
 
 .. TODO Modify User Guide link
 
-Screencasts
---------------------------------------------------------------------------------
 
-* `Student File Submission: September 2 2009 
-  <http://www.youtube.com/watch?v=ofpyaty20FQ>`__
-* `Student Group Formation: August 17, 2009
-  <http://www.youtube.com/watch?v=Ed_z_tHCAg8>`__
-* `The Grader View: June 6, 2009
-  <http://www.cs.toronto.edu/~reid/screencasts/OLM-2009-06-03.swf>`__
-* `Flexible Marking Scheme Selection: December 1, 2009
-  <http://www.youtube.com/watch?v=x4mbE3WBgog>`__
-* `Flexible Marking Scheme Criterion: December 1, 2009
-  <http://www.youtube.com/watch?v=tVkti9y91RA>`__
-* `Notes created through the Modal dialog as an Admin: December 3, 2009
-  <http://www.youtube.com/watch?v=eoxriy2cYW0>`__
-* `Notes created through the Modal dialog as a TA: December 3, 2009
-  <http://www.youtube.com/watch?v=J4r18LNDwPs>`__
-* `Creating and editing a grade entry form as an admin: December 4, 2009
-  <http://www.youtube.com/watch?v=r7UnaNYe2rw>`__
-* `Notes tab: December 11, 2009
-  <http://www.youtube.com/watch?v=IcuG6AlJfvQ>`__
-* `Entering and releasing the marks for a grade entry form as an admin: April
-  4, 2010 <http://www.youtube.com/watch?v=-v6eVy94pdI>`__
 
 MarkUs Developer Installation Guides
 ================================================================================
 GNU/Linux
 --------------------------------------------------------------------------------
-* `Setting up a development environment on GNU/Linux <InstallationGnuLinux.rst>`__
+* `Setting up a development environment on GNU/Linux <InstallationGnuLinux>`__
 
 Mac OS X
 --------------------------------------------------------------------------------
@@ -105,15 +93,37 @@ Project Vitals
 Repository: Create a GitHub account and fork MarkUsProject/MarkUs (see GitHub
 help for more info).
 
-Mailing list address: markus-dev@cs.toronto.edu
 
-Mailing list archive at `marc.info <http://marc.info/?l=markus-dev&r=1&w=2>`__
+
+Screencasts
+--------------------------------------------------------------------------------
+
+* `Student File Submission: September 2 2009 
+  <http://www.youtube.com/watch?v=ofpyaty20FQ>`__
+* `Student Group Formation: August 17, 2009
+  <http://www.youtube.com/watch?v=Ed_z_tHCAg8>`__
+* `The Grader View: June 6, 2009
+  <http://www.cs.toronto.edu/~reid/screencasts/OLM-2009-06-03.swf>`__
+* `Flexible Marking Scheme Selection: December 1, 2009
+  <http://www.youtube.com/watch?v=x4mbE3WBgog>`__
+* `Flexible Marking Scheme Criterion: December 1, 2009
+  <http://www.youtube.com/watch?v=tVkti9y91RA>`__
+* `Notes created through the Modal dialog as an Admin: December 3, 2009
+  <http://www.youtube.com/watch?v=eoxriy2cYW0>`__
+* `Notes created through the Modal dialog as a TA: December 3, 2009
+  <http://www.youtube.com/watch?v=J4r18LNDwPs>`__
+* `Creating and editing a grade entry form as an admin: December 4, 2009
+  <http://www.youtube.com/watch?v=r7UnaNYe2rw>`__
+* `Notes tab: December 11, 2009
+  <http://www.youtube.com/watch?v=IcuG6AlJfvQ>`__
+* `Entering and releasing the marks for a grade entry form as an admin: April
+  4, 2010 <http://www.youtube.com/watch?v=-v6eVy94pdI>`__
 
 Project Contributors
 --------------------------------------------------------------------------------
-Aaron Lee, Adam Goucher, Aimen Khan, Alexandre Lissy, Alex Krassikov, Alysha Kwok, Amanda Manarin, Andrew Louis, Anthony Le Jallé, Anton Braverman, Arianne Dee, Benjamin Thorent, Benjamin Vialle, Bertan Guven, Brian Xu, Bryan Shen, Camille Guérin, Catherine Fawcett, Christian Jacques, Christine Yu, Clément Delafargue, Clément Schiano, Danesh Dadachanji, Daniel St. Jules, Daniyal Liaqat, Diane Tam, Dina Sabie, Dylan Runkel, Egor Philippov, Erik Traikov, Evan Browning, Farah Juma, Fernando Garces, Gabriel Roy-Lortie, Geoffrey Flores, Hanson Wu, Horatiu Halmaghi, Ian Smith, Ibrahim Shahin, Jay Parekh, Jeremy Merkur, Jérôme Gazel, Jiahui Xu, Jordan Saleh, Joseph Mate, Joseph Maté, Justin Foong, Karel Kahula, Kurtis Schmidt, Luke Kysow, Marc Bodmer, Marc Palermo, Mélanie Gaudet, Michael Lumbroso, Mike Conley, Mike Gunderloy, Mike Stewart, Mike Wu, Misa Sakamoto, Neha Kumar, Nelle Varoquaux, Nicholas Maraston, Nicolas Bouillon, Nick Lee, Nicolas Carougeau, Noé Bedetti, Oloruntobi Ogunbiyi, Razvan Vlaicu, Robert Burke, Samuel Gougeon, Sean Budning, Severin Gehwolf, Shion Kashimura, Simon Lavigne-Giroux, Tara Clark, Tianhai Hu, Valentin Roger, Veronica Wong, Victoria Mui, Victor Ivri, Vivien Suen, William Roy, Xiang Yu, Yansong Zang
+Aaron Lee, Adam Goucher, Aimen Khan, Alexander Kittelberger, Alexandre Lissy, Alex Krassikov, Alysha Kwok, Amanda Manarin, Andrew Hernandez, Andrew Louis, Angelo Maralit, Anthony Le Jallé, Anton Braverman, David Das, Arianne Dee, Benjamin Thorent, Benjamin Vialle, Bertan Guven, Brian Xu, Bryan Shen, Camille Guérin, Catherine Fawcett, Christian Jacques, Christine Yu, Christopher Jonathan, Clément Delafargue, Clément Schiano, Danesh Dadachanji, Daniel St. Jules, Daniyal Liaqat, Daryn Lam, David Liu, Diane Tam, Dina Sabie, Dylan Runkel, Ealona Shmoel, Egor Philippov, Erik Traikov, Eugene Cheung, Evan Browning, Farah Juma, Fernando Garces, Gabriel Roy-Lortie, Gillian Chesnais, Geoffrey Flores, Hanson Wu, Horatiu Halmaghi, Ian Smith, Ibrahim Shahin, Jay Parekh, Jeffrey Ling, Jeremy Merkur, Jeremy Winter, Jérôme Gazel, Jiahui Xu, Jordan Saleh, Joseph Mate, Joseph Maté, Justin Foong, Karel Kahula, Kitiya Srisukvatananan, Kurtis Schmidt, Lawrence Wu, Luke Kysow, Marc Bodmer, Marc Palermo, Mark Rada, Mélanie Gaudet, Michael Lumbroso, Mike Conley, Mike Gunderloy, Mike Stewart, Mike Wu, Misa Sakamoto, Neha Kumar, Nelle Varoquaux, Nicholas Maraston, Nicolas Bouillon, Nick Lee, Nicolas Carougeau, Noé Bedetti, Oloruntobi Ogunbiyi, Ope Akanji, Rafael Padilha, Razvan Vlaicu, Robert Burke, Samuel Gougeon, Sean Budning, Severin Gehwolf, Shenglong Gao, Shion Kashimura, Simon Lavigne-Giroux, Su Zhang, Tara Clark, Tiago Chedraoui Silva, Tianhai Hu, Valentin Roger, Veronica Wong, Victoria Mui, Victor Ivri, Vivien Suen, William Roy, Xiang Yu, Yansong Zang, Zachary Munro-Cape
 
-**Supervisors:** Karen Reid, Morgan Magnin
+**Supervisors:** Karen Reid, Morgan Magnin, Benjamin Vialle, David Liu
 
 
 Term Work
