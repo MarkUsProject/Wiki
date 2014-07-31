@@ -55,7 +55,7 @@ Most of the low-level technical discussion takes place on the `Issue list <https
 
 * `Issue Labels <LabelsWhatTheyMean>`__
 
-* `Updating the Wiki <WikiUpdate>` --
+* `Updating the Wiki <WikiUpdate>`__
 
 .. TODO Modify User Guide link
 
