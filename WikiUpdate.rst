@@ -26,8 +26,7 @@ forget it by tomorrow.)
 
 Keeping the published wiki in sync with the Wiki repo:
 
-* When changes have been made to the Wiki repo that need to be pulled
-in to the published wiki::
+When changes have been made to the Wiki repo that need to be pulled into the published wiki::
 	
 	git clone https://github.com/MarkUsProject/Markus.wiki.git
 	cd MarkUs.wiki
