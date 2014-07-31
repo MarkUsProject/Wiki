@@ -16,7 +16,7 @@ differently than other repos.
 Our workaround is to use a separate repo for the Wiki and it is up to the
 admins to keep this repo synchronized with the published wiki.
 
-Fortunately, as a developer, you can simply fork the `Wiki repo <https://github.com/MarkUsProject/Wiki>`-- the same way as regular repo and make changes and 
+Fortunately, as a developer, you can simply fork the `Wiki repo <https://github.com/MarkUsProject/Wiki>`__ the same way as regular repo and make changes and 
 pull requests the same way.
 
 Administrators
