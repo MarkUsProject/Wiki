@@ -20,63 +20,36 @@ Install RVM
 First, install RVM::
 
     $ sudo apt-get install curl
-    $ curl -L get.rvm.io | bash -s stable --auto
+    $ \curl -sSL https://get.rvm.io | bash -s stable
 
-Next we need to reload the ~/.bash_profile file::
+Next, install Rubies (Ruby 1.9.3, Ruby 2.1.2, JRuby, Rubinius…)
 
-
-    $ . ~/.bash_profile
-
-Run rvm requirements to produce a list of all the require packages::
-
-    $ rvm requirements
-
-    # For Ruby / Ruby HEAD (MRI, Rubinius, & REE), install the following:
-    ruby: /usr/bin/apt-get install build-essential openssl libreadline6 libreadline6-dev 
-    curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev
-    libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion pkg-config
-
-Next, install any missing packages::
-
-    $ sudo apt-get install build-essential openssl libreadline6 libreadline6-dev \
-    curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 \
-    libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison  \
-    subversion pkg-config
-
-Next, install Rubies (Ruby 1.8.7, Ruby 1.9.2, JRuby, Rubinius…)
+    $ rvm install ruby-2.1.2
 
 Ruby
 --------------------------------------------------------------------------------
 
-MarkUs stable tree works only with Ruby 1.8.7. We will install it by default,
-to ensure everything is build correctly:: 
+MarkUs stable tree works only with Ruby 1.9.3 or newer. Ruby 2.1.2 is the
+current stable release as of this writing, so we will install it by default, to
+ensure everything is build correctly:: 
 
-    $ rvm install ruby-1.8.7-p334
-    $ rvm install 1.9.2
+    $ rvm install 1.9.3
+    $ rvm install 2.1.2
 
 Now, if you do `rvm list`, you will see two version of ruby available. You can
-choose one by doing `rvm use 1.8.7` or `rvm use 1.9.2`.
+choose one by doing `rvm use 1.9.3` or `rvm use 2.1.2`.
 
 **Note:** You can check at each moment your version of Ruby by doing `ruby -v`
 
-**Note:** You will have to do `rvm use 1.x.y` in every shell you use.
-
 To make a version of ruby default::
 
-    $ rvm --default use 1.8.7-p334
+    $ rvm --default use 2.1.2
 
 Rubygems
 --------------------------------------------------------------------------------
 
-You will also need Rubygems for each installation of Ruby: ::
-
-    $ rvm use 1.8.7
-    $ gem install bundler
-    $ rvm use 1.9.2
-    $ gem install bundler
-
-Don't forget to re-do a `bundle install` in your MarkUs root repository. It
-will install gems for your local installation of Ruby.
+Don't forget to re-do a `bundle install` in your MarkUs root repository for each
+Ruby that you install.
 
 Subversion Ruby bindings with RVM
 --------------------------------------------------------------------------------
@@ -85,36 +58,39 @@ Moreover, as MarkUs uses libruby-svn, you will have to install it locally, for
 every version of Ruby you installed.
 
 Fist, download Subversion source code here :
-http://subversion.tigris.org/downloads/subversion-1.6.17.tar.gz
-
-**Note** : An issue remains with subversion-1.7.1 and Ruby-1.9.3-p0 (during
-compilation). Consider using version 1.6.17
+http://apache.sunsite.ualberta.ca/subversion/subversion-1.8.9.tar.gz
 
 Extract it and cd into the repository: ::
 
-    $ tar xvzf subversion-1.6.17.tar.gz
-    $ cd subversion-1.6.17
+    $ tar xzf subversion-1.8.9.tar.gz
+    $ cd subversion-1.8.9
 
-You will need libaprutil-dev on your system::
+You will need libaprutil-dev and swig on your system::
 
-    $ sudo aptitude install libaprutil1-dev
+    $ sudo aptitude install libaprutil1-dev swig
 
-Be sure to use the good ruby you wanted to compile svn bindings with: ::
+Be sure to use the ruby you want to compile svn bindings with: ::
 
-    $ rvm use 1.8.7
+    $ rvm use 2.1.2
 
-**Note** : Ensure that the path below (.../ruby-1.8.7-p334/...) is correct and you
+**Note** : Ensure that the path below (.../ruby-2.1.2/...) is correct and you
 do not have a different patchlevel installed through rvm.
 
-For example, here are instructions for Ruby 1.8.7-p334: ::
+For example, here are instructions for Ruby 2.1.2: ::
 
-    $ ./configure --with-ruby-sitedir=~/.rvm/rubies/ruby-1.8.7-p334/lib/ruby \
-      --prefix=`echo ~`/.rvm/rubies/ruby-1.8.7-p334 --disable-mod-activation \
-      --without-apache-libexecdir
+    $ CFLAGS=-fPIC ./configure \
+       --with-ruby-sitedir=~/.rvm/rubies/ruby-2.1.2/lib/ruby/ \
+       --prefix=$HOME/.rvm/rubies/ruby-2.1.2/ --disable-mod-activation \
+       --without-apache-libexecdir \
+       --enable-optimize
     $ make
+    $ make check
     $ make swig-rb
+    $ make check-swig-rb
     $ make install
     $ make install-swig-rb
+
+**Note** : Setting CFLAGS=-fPIC may not need to be explicitly set in the future
 
 You will have to repeat this operation for every version of ruby you use.
 
@@ -132,11 +108,11 @@ Update RVM
 
 If a new version of Ruby is out, you will want to install it.
 
-First, you will have to update RVM (for example, Ruby-1.9.2-p290 is out, and I
-used Ruby-1.9.2-p180)::
+First, you will have to update RVM (for example, Ruby-2.2.0 is out, and I
+used Ruby-2.1.2)::
 
     $ rvm get stable
-    $ rvm install 1.9.2
+    $ rvm install 2.2.0
 
 **Note** Use the same options as before if you need them. Moreover, don't
 forget to recompile libsvn-ruby for this version of Ruby! You will have to
