@@ -279,11 +279,11 @@ MarkUs Deployment Documents
 Installation Instructions for MarkUs using RAILS_ENV=production
 --------------------------------------------------------------------------------
 
-* `Setup Instructions for MarkUs Stable (MarkUs 0.10.0) <InstallProdStable.rst>`__
-* `Hosting several MarkUs applications on one machine (for Production) <MultipleHosting.rst>`__
-* `How to use LDAP with MarkUs <LDAP.rst>`__
-* `How to use Phusion Passenger instead of Mongrel <ApachePassenger.rst>`__
+* `Setup Instructions for MarkUs Stable (MarkUs 0.10.0) <InstallProdStable>`__
+* `Hosting several MarkUs applications on one machine (for Production) <MultipleHosting>`__
+* `How to use LDAP with MarkUs <LDAP>`__
+* `How to use Phusion Passenger instead of Mongrel <ApachePassenger>`__
 
-* `Old Setup Instructions for MarkUs Stable (MarkUs 0.5, 0.6, 0.7 and 0.8 branches) <InstallProdOld.rst>`__
+* `Old Setup Instructions for MarkUs Stable (MarkUs 0.5, 0.6, 0.7 and 0.8 branches) <InstallProdOld>`__
 
 For a complete list of local wiki pages, see `TitleIndex <http://github.com/MarkUsProject/Markus/wiki/_pages>`__.
