@@ -62,17 +62,17 @@ Most of the low-level technical discussion takes place on the [Issue list](https
 - [Setting up a development environment on GNU/Linux](InstallationGnuLinux)
 
 ### Mac OS X
-- [Setting up a development environment on Mac](InstallationMacOsX.rst)
+- [Setting up a development environment on Mac](InstallationMacOsX)
 
 ### Windows
 **NOTE: Windows is not supported anymore**
 
-- [Setting up a development environment on Windows using InstantRails](InstallationWindows.rst) (DEPRECATED)
+- [Setting up a development environment on Windows using InstantRails](InstallationWindows) (DEPRECATED)
 
 ### Setting up the Database
-- [SQLite](SettingUpSQLite.rst)
-- [MySQL](SettingUpMySQL.rst)
-- [PostgreSQL](SettingUpPostgreSQL.rst)
+- [SQLite](SettingUpSQLite)
+- [MySQL](SettingUpMySQL)
+- [PostgreSQL](SettingUpPostgreSQL)
 
 
 ## MarkUs Developer Documentation
@@ -121,26 +121,26 @@ Status Reports:
 
 - **Getting Started with Ruby, Ruby on Rails and MarkUs**
 
-  - [Short Rails Debugging HOWTO](RailsDebugging.rst)
+  - [Short Rails Debugging HOWTO](RailsDebugging)
   - [How to program in Ruby, Rubybook](http://ruby-doc.org/docs/ProgrammingRuby/)
   - [Rails 3.0 API](http://railsapi.com/doc/rails-v3.0.8rc1/)
   - [Rails 3.2 Guides](http://guides.rubyonrails.org/v3.2.13/)
-  - [General Guide Lines to code - Code review from Mike Gunderloy](GeneralGuideLines.rst)
+  - [General Guide Lines to code - Code review from Mike Gunderloy](GeneralGuideLines)
   - http://apidock.com/rails
   - [Some notes from a Ruby book taken by Tara Clark](http://taraclark.wordpress.com/category/ruby-on-rails)
-  - [How to use MarkUs Testing Framework](TestFramework.rst) (still in alpha)
+  - [How to use MarkUs Testing Framework](TestFramework) (still in alpha)
 
 
 - **MarkUs Coding Style/Coding Practices/Rails Gotchas**
 
-  - [Basic Guidelines for MarkUs Development](DeveloperGuidelines.rst) (**IMPORTANT!**)
-  - [How To Do a Code Review](HowToCodeReview.rst)
-  - [Rails ERB quirks](RailsERbStyle.rst)
+  - [Basic Guidelines for MarkUs Development](DeveloperGuidelines) (**IMPORTANT!**)
+  - [How To Do a Code Review](HowToCodeReview)
+  - [Rails ERB quirks](RailsERbStyle)
   - **Please document your code according to the RDoc specification**- (see [How to Use RDOC](http://rdoc.sourceforge.net/doc/))
   - [Difference between COUNT, LENGTH, and SIZE](http://blog.hasmanythrough.com/2008/2/27/count-length-size)
-  - [Our Ruby/Rails testing guidelines](TestingGuidelines.rst)
-  - [Security testing guidelines](SecurityTesting.rst)
-  - [Internationalization](Internationalization.rst)
+  - [Our Ruby/Rails testing guidelines](TestingGuidelines)
+  - [Security testing guidelines](SecurityTesting)
+  - [Internationalization](Internationalization)
 
 - **MarkUs API/Test Coverage**
 
@@ -149,93 +149,93 @@ Status Reports:
 
 - **MarkUs Releases**
 
-  - [Preparing a Release and Patch](PreparingReleaseAndPatch.rst)
+  - [Preparing a Release and Patch](PreparingReleaseAndPatch)
 
 - **User Roles and Stories for MarkUs**
 
   - General / Constraints
 
-    - [MarkUs is internationalized](GeneralUseCase_Internationalized.rst)
-    - [MarkUs is configurable](GeneralUseCase_Configurable.rst)
-    - [Rubrics are not allowed to change once Submissions have been collected](GeneralUseCase_NoRubricChangesAfterCollection.rst)
+    - [MarkUs is internationalized](GeneralUseCase_Internationalized)
+    - [MarkUs is configurable](GeneralUseCase_Configurable)
+    - [Rubrics are not allowed to change once Submissions have been collected](GeneralUseCase_NoRubricChangesAfterCollection)
 
-    - [Instructor](Role_Instructor.rst)
+    - [Instructor](Role_Instructor)
 
-      - [Instructors can create / edit assignments](Instructor_CreateEditAssignments.rst)
-      - [Instructors can download / export files](Instructor_DownloadExportFiles.rst)
-      - [Instructors can hide students](Instructor_HideStudents.rst)
-      - [Instructors can do everything that Graders can do](Instructor_CanDoWhatGradersDo.rst)
-      - [Instructors can release / unrelease completed marking results](Instructor_ReleaseMarkingResults.rst)
-      - [Instructors can map particular students / groups to Grader_(s) for marking](Instructor_MapGradersToGroupings.rst)
-      - [Instructors can download / export a file that describes the Student / Grouping mapping to Graders](Instructor_DownloadMapGradersToGroupings.rst)
-      - [Instructors can upload a file that will do the Student /Grouping mapping to Graders](Instructor_UploadMapGradersToGroupings.rst)
-      - [Instructors can manage groups without restrictions](Instructor_ManageGroupsWithoutRestrictions.rst)
+      - [Instructors can create / edit assignments](Instructor_CreateEditAssignments)
+      - [Instructors can download / export files](Instructor_DownloadExportFiles)
+      - [Instructors can hide students](Instructor_HideStudents)
+      - [Instructors can do everything that Graders can do](Instructor_CanDoWhatGradersDo)
+      - [Instructors can release / unrelease completed marking results](Instructor_ReleaseMarkingResults)
+      - [Instructors can map particular students / groups to Grader_(s) for marking](Instructor_MapGradersToGroupings)
+      - [Instructors can download / export a file that describes the Student / Grouping mapping to Graders](Instructor_DownloadMapGradersToGroupings)
+      - [Instructors can upload a file that will do the Student /Grouping mapping to Graders](Instructor_UploadMapGradersToGroupings)
+      - [Instructors can manage groups without restrictions](Instructor_ManageGroupsWithoutRestrictions)
 
-    - [Grader](Role_Grader.rst)
+    - [Grader](Role_Grader)
 
-      - [Graders can easily tell which submissions are assigned to them to mark](Grader_EasyToSeeWhatToMark.rst)
-      - [Graders can view a Submission from a Student / Grouping](Grader_ViewSubmissions.rst)
-      - [Graders can view / annotate / mark a particular file from a Submission](Grader_ViewAnnotateMarkParticularFile.rst)
-      - [Graders can add annotations to particular lines of code within a Submission File](Grader_AnnotateLinesOfCode.rst)
-      - [Graders can create reusable Annotations](Grader_CreateReusableAnnotations.rst)
-      - [Graders can create short, formatted overall comments on a Submission](Grader_CreateOverallComment.rst)
-      - [Graders can view and use a Rubric for marking a Submission for an Assignment](Grader_ViewUseRubric.rst)
-      - [Graders can view a summary of marked submissions](Grader_ViewSummaryOfMarkedSubmissions.rst)
-      - [Graders can add bonuses / penalties to submissions](Grader_AddBonusesPenalties.rst)
-      - [Graders can modify the marking state of a submission result](Grader_CanModifyMarkingStatus.rst)
-      - [Graders can easily switch to the next / previous Submission for marking](Grader_CanSwitchToNextSubmission.rst)
+      - [Graders can easily tell which submissions are assigned to them to mark](Grader_EasyToSeeWhatToMark)
+      - [Graders can view a Submission from a Student / Grouping](Grader_ViewSubmissions)
+      - [Graders can view / annotate / mark a particular file from a Submission](Grader_ViewAnnotateMarkParticularFile)
+      - [Graders can add annotations to particular lines of code within a Submission File](Grader_AnnotateLinesOfCode)
+      - [Graders can create reusable Annotations](Grader_CreateReusableAnnotations)
+      - [Graders can create short, formatted overall comments on a Submission](Grader_CreateOverallComment)
+      - [Graders can view and use a Rubric for marking a Submission for an Assignment](Grader_ViewUseRubric)
+      - [Graders can view a summary of marked submissions](Grader_ViewSummaryOfMarkedSubmissions)
+      - [Graders can add bonuses / penalties to submissions](Grader_AddBonusesPenalties)
+      - [Graders can modify the marking state of a submission result](Grader_CanModifyMarkingStatus)
+      - [Graders can easily switch to the next / previous Submission for marking](Grader_CanSwitchToNextSubmission)
 
-    - [Student](Role_Student.rst)
+    - [Student](Role_Student)
 
-      - [Students can view marks of submissions](Student_ViewMarks.rst)
-      - [Students can view annotations of marked submissions/assignments](Student_ViewAnnotations.rst)
-      - [Students can submit files for their assignments](Student_SubmitFiles.rst)
-      - [Students can view / edit submission files for assignments](Student_ViewEditFiles.rst)
+      - [Students can view marks of submissions](Student_ViewMarks)
+      - [Students can view annotations of marked submissions/assignments](Student_ViewAnnotations)
+      - [Students can submit files for their assignments](Student_SubmitFiles)
+      - [Students can view / edit submission files for assignments](Student_ViewEditFiles)
 
 - **Database Schema**
 
   - AutoGenerate Database Schema
     - [View Schema Diagram](images/database_20101001.png)
 
-  - [Questions and Answers (Old Document)](SchemaQuestions.rst)
+  - [Questions and Answers (Old Document)](SchemaQuestions)
 
 - **MarkUs Component Descriptions**
 
-  - [Group / Grouping Behaviour](GroupsGrouping.rst)
-  - [Groupings and Repositories](GroupsGroupingsRepositories.rst)
-  - [Authentication and Authorization](Authentication.rst)
-  - [Annotations](Annotations.rst)
-  - [How Student Work is Graded and Re-graded ](HowGradingWorks.rst)
-  - [Submission Rules](SubmissionRules.rst)
-  - [The FilterTable Class](FilterTable.rst)
-  - [Simple Grade Entry](SimpleGradeEntry.rst)
-  - [Notes System](NotesSystem.rst)
+  - [Group / Grouping Behaviour](GroupsGrouping)
+  - [Groupings and Repositories](GroupsGroupingsRepositories)
+  - [Authentication and Authorization](Authentication)
+  - [Annotations](Annotations)
+  - [How Student Work is Graded and Re-graded ](HowGradingWorks)
+  - [Submission Rules](SubmissionRules)
+  - [The FilterTable Class](FilterTable)
+  - [Simple Grade Entry](SimpleGradeEntry)
+  - [Notes System](NotesSystem)
 
 - **Feedback Notes**
 
-  - [2009-05-22: Phyliss](PhylissFeedback.rst)
-  - [2009-06-22: Ryan](RyanFeedback.rst)
+  - [2009-05-22: Phyliss](PhylissFeedback)
+  - [2009-06-22: Ryan](RyanFeedback)
 
 - **Tips and Trick**
 
-  - [Dropping/Rebuilding Database Quickly and Easily](DropAndRebuildDb.rst)
+  - [Dropping/Rebuilding Database Quickly and Easily](DropAndRebuildDb)
 
 - **IDE/Editor Notes**
 
-  - [jEdit](JEdit.rst)
-  - [NetBeans](NetBeans.rst)
-  - [Aptana RadRails / Eclipse](AptanaRadRails.rst)
+  - [jEdit](JEdit)
+  - [NetBeans](NetBeans)
+  - [Aptana RadRails / Eclipse](AptanaRadRails)
 
 
 ## MarkUs Deployment Documents
 
 ### Installation Instructions for MarkUs using RAILS_ENV=production
 
-- [Setup Instructions for MarkUs Stable (MarkUs 0.10.0)](InstallProdStable.rst)
-- [Hosting several MarkUs applications on one machine (for Production)](MultipleHosting.rst)
-- [How to use LDAP with MarkUs](LDAP.rst)
-- [How to use Phusion Passenger instead of Mongrel](ApachePassenger.rst)
+- [Setup Instructions for MarkUs Stable (MarkUs 0.10.0)](InstallProdStable)
+- [Hosting several MarkUs applications on one machine (for Production)](MultipleHosting)
+- [How to use LDAP with MarkUs](LDAP)
+- [How to use Phusion Passenger instead of Mongrel](ApachePassenger)
 
-- [Old Setup Instructions for MarkUs Stable (MarkUs 0.5, 0.6, 0.7 and 0.8 branches)](InstallProdOld.rst)
+- [Old Setup Instructions for MarkUs Stable (MarkUs 0.5, 0.6, 0.7 and 0.8 branches)](InstallProdOld)
 
 For a complete list of local wiki pages, see [TitleIndex](http://github.com/MarkUsProject/Markus/wiki/_pages).
