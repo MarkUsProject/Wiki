@@ -153,7 +153,9 @@ let!(:group) { create(:group, group_name: 'g2markus') }
 ```
 The initialization can be placed in various places depending on need. If all methods will need the instance, it would make sense to place it at the beginning of the Model's `describe` block. If only a certain method needs it, place it at the beginning of that method's `describe` block (this would also work for other types of blocks described below).
 
-All examples should be contained within `it` blocks, all of which must be accompanied by a description written in third person present tense: 
+You almost certainly want to wrap initialization code in either `let` or `before` as it guarentees they are run before each enclosed example is run. If your initialization is outside of `let` and `before`, then they will only be (eagerly) evaluated once before the encloded examples capture the variables in the closures of their blocks. This is often undesired in unit testing.
+
+All examples should be contained within `it` blocks, all of which must be accompanied by a description written in third person present tense ([avoid the use of "should" in the description](http://betterspecs.org/#should)):
 
 ```ruby
 it 'does ...' do
