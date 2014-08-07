@@ -43,7 +43,7 @@ All repository types, git or svn, must implement the methods for the `AbstractRe
 
 #### GitRevision
 
-MarkUs relies on the concept of linear revisions as in Subversion. However, git does not natively support numbered versioning but uses detachable commits. So GitRevision must go through commits chronologically and order them linearly so it can give every commit a version number.
+MarkUs relies on the concept of linear revisions as in Subversion. However, git uses commits, which aren't associated with numbers, so GitRevision must go through commits chronologically and number them so it can give every commit a version number (starting at zero, of course). The methods `get_revision_number(hash)` and `get_revision(revision_number)` convert between a commit's hash and revision.
 
 #### Repository and Revision Classes
 
