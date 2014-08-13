@@ -307,6 +307,6 @@ end
 
 ```
 
-In Markus, one use case of shared examples is [`a criterion`](https://github.com/MarkUsProject/Markus/blob/master/spec/support/criterion_spec.rb), which specifies the common behavior of `RubricCriterion` and a `FlexibleCriterion`.
+In Markus, one use case of shared examples is [`a criterion`](https://github.com/MarkUsProject/Markus/blob/master/spec/support/criterion.rb), which specifies the common behavior of `RubricCriterion` and a `FlexibleCriterion`.
 
 You can also use an alias for the method `it_behaves_like_a` to make the spec code read better. For example, `it_has_behavior 'enumerability'`. The aliases should be defined in [spec/support/it_behaves_like_aliases.rb](https://github.com/MarkUsProject/Markus/blob/master/spec/support/it_behaves_like_aliases.rb).
