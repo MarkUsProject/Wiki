@@ -1,73 +1,22 @@
-## Git Backend Development Wiki/Guide
+## Git Backend Development Guide
 
-### Gem Options
-There are a number of gems that could be used. Here is a short outline of each. At one point the git gem was depreciated but now it appears that both are under active development. Reading through the Documentation of both it appears they support a majority of common git commands.
+### Gems used
 
-[**rugged**](https://rubygems.org/gems/rugged)
+[**rugged**](https://github.com/libgit2/rugged)
 
-[**git**](http://rubygems.org/gems/git)
+The rugged gem provides the ruby bindings needed to interact with the libgit2 API.
 
-rugged is more efficient and more actively maintained. I'm sticking with the gem previously chosen. Furthermore, work has been put into the rugged gem with regard to MarkUs already.
+[**gitolite**](http://rubygems.org/gems/git)
 
-## Installing Ruby/Gems
-If you installed your environment according to one of the guides on the Wiki, chances are you will be required to update your environment to support rugged. 
+The gitolite gem is used for interfacing with gitolite (another piece of software), which will manage repository access permissions for git.
 
-The following are the steps taken with Ubuntu 12.04 LTS running in a Virtual Box.
+### Gem installation 
 
-###Set up rvm
-
-`$ sudo apt-get install build-essential git-core`
-
-`$ sudo apt-get install curl`
-
-`$ \curl -sSL https://get.rvm.io | bash -s stable`
-
-Now, you may need to configure your shell to use rvm. 
-Enter 
-
-`$ type rvm | head -1`
-
-and if `rvm is a function` is not the output, go to Terminal Edit>Profile Preferences>Title and Command and ensure "Run command as a login shell" is selected. Try that line again and continue. MarkUs' supported versions are 1.8.7 and 1.9.2.
-
-`$ rvm install ruby-1.9.2-p320` 
-
-`$rvm install ruby-1.8.7-p334`
-
-Confirm that it is the current version being used. 
-
-`$ rvm list`
-
-Refer to [this entry](https://github.com/MarkUsProject/Markus/wiki/RVM) if you wish to also continue development with ruby 1.8.7. 
-sidenotes: In 1.9.2, `$ require 'fastercsv'` and `$ require 'rubygems'` will throw an error and return false, respectively. Since the update (past 1.8) they are called 'csv' and baked directly into ruby, respectively. `$ require 'ruby-debug'` should still return true, however.
-
-###Git specific gem installation 
-
-Copied from [this previous MarkUs dev blog post](http://blog.markusproject.org/?p=5262)
-
-Best to install libgit2 somewhere else from MarkUs lest you want to deal with ignoring the files on every subsequent git commit.
-
-`$ sudo apt-get install cmake`
-
-`$ git clone https://github.com/libgit2/libgit2.git`
-
-`$ cd libgit2`
-
-`$ mkdir build`
-
-`$ cd build`
-
-`$ cmake ..`
-
-`$ cmake --build .`
-
-`$ gem install rugged`
-
-`$ gem install gitolite`
+You should just be able to do a `bundle install` and get all the needed gems, but you may need to also install CMake for rugged. You can do this with a `sudo apt-get install cmake` or its equivalent.
 
 ### Set up the git branch
-`$ git checkout git`
 
-Create a directory in /data/dev/repos called git_auth.
+`$ git checkout git`
 
 Update your gems and start the server.
 
@@ -75,4 +24,35 @@ Update your gems and start the server.
 
 `$ bundle exec rails server`
 
+### How repos are managed in MarkUs
 
+All repository types, git or svn, must implement the methods for the `AbstractRepository` class, found in `lib/repo/repository.rb`. Same thing goes for `AbstractRevision`. The Rails code interfaces with the repos through AbstractRepository and AbstractRevision and so does not know anything about the implementation details for git or svn repos (nor should it). So it is important that `GitRepository` and `GitRevision` work the same way as their Subversion equivalents. You should not have to touch the Rails code except for refactoring purposes.
+
+#### Important Files
+
+*config/environments/development.rb*
+- This file contains all of the configuration settings related to repos. Important keys are 
+`REPOSITORY_TYPE`, `REPOSITORY_STORAGE`, and `REPOSITORY_PERMISSION_FILE`.
+
+*lib/repo/repository.rb* and *lib/repo/git_repository.rb*
+- These files are what needs work. Mostly in git_repository.
+
+*spec/lib/repos/git_repository_spec.rb* and *git_revision_spec.rb*
+- Testing specs. A factory for GitRepository has already been created.
+
+
+#### GitRevision
+
+MarkUs relies on the concept of linear revisions as in Subversion. However, git uses commits, which aren't associated with numbers, so GitRevision must go through commits chronologically and number them so it can give every commit a version number (starting at zero, of course). The methods `get_revision_number(hash)` and `get_revision(revision_number)` convert between a commit's hash and revision.
+
+#### Repository and Revision Classes
+
+It should be noted that the Repository and Revision classes are short-lived objects. They do not get saved to a database. The classes are instantiated and destroyed for each controller action.
+
+#### Gitolite and Permissions
+
+The `gitolite` gem is used to manage permissions on repos. It requires an administrative user to do so, which is also provided by the gem. Not much work has been done on this end.
+
+#### Command-line Authentication
+
+We must be able to verify that the user is who they say they are on the command-line. I believe this is done using LDAP and public keys, but more research needs to be done on this end.
