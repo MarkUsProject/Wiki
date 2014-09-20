@@ -16,12 +16,12 @@ Next, run the following commands to connect and setup to the virtual machine:
 
 ```
 $> vagrant ssh
-$> rvm install ruby-2.1.1
-$> rvm use 2.1.1
-$> cp database.yml ../../Markus/config
+$> rvm install ruby-2.1.2
+$> rvm use 2.1.2
 $> cd ../../Markus
+$> cp config/database.yml.postgresql config/database.yml
 $> bundle install
 $> bundle exec rails server
 ```
 
-Thi commands will install ruby-2.1.1, move the database.yml file that is configured for Postgres into the Markus file, install the required gems, and boot the server which you can access on your home machine at `localhost:42069`. The message saying it is accessible at localhost:3000 is a static message and does not reflect the changed port.
+Thi commands will install ruby-2.1.2, move the database.yml file that is configured for Postgres into the Markus file, install the required gems, and boot the server which you can access on your home machine at `localhost:42069`. The message saying it is accessible at localhost:3000 is a static message and does not reflect the changed port.

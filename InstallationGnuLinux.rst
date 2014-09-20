@@ -43,11 +43,6 @@ production. You may also experience database conflicts, in particular if you
 want to test **PDF Conversion**. In case of PDF Conversion, you **MUST** use
 PostgreSQL or MySQL
 
-Older versions of MarkUs used ImageMagick for pdf conversion. You shouldn't need
-to install it, but the instructions are below.
-
-- `Setting up ImageMagick <ImageMagick.rst>`__
-
 If your want to test PDF conversion on MarkUs, don't forget to set to true the
 ``PDF_SUPPORT`` variable in ``config/environments/development.rb``
 

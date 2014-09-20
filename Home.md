@@ -62,12 +62,21 @@ Most of the low-level technical discussion takes place on the [Issue list](https
 - [Setting up a development environment on GNU/Linux](InstallationGnuLinux)
 
 ### Mac OS X
-- [Setting up a development environment on Mac](InstallationMacOsX)
+- We have not been able to get the subversion bindings compiling on Mac at all, so you should use [Vagrant](SettingUpVagrantEnvironment) or a straight VM.
 
 ### Windows
-**NOTE: Windows is not supported anymore**
 
-- [Setting up a development environment on Windows using InstantRails](InstallationWindows) (DEPRECATED)
+We have never had any success installing MarkUs on Windows.  
+
+You have three options if your primary environment is Windows:
+
+- Use [Vagrant](SettingUpVagrantEnvironment)
+- Use a Linux VM and follow the [setup instructions](InstallationGnuLinux) for Linux
+- Set up your machine to dual boot to Linux.
+
+Note: In Fall 2014, students had problems using Vagrant with Windows, but we have also seen it work well with Vagrant.  The problems with Vagrant and Windows might be related to permissions issues sharing the directory between the VM and the host machine. One way to resolve this issue is to clone MarkUs on the VM, and not use the shared directory.
+
+
 
 ### Setting up the Database
 - [SQLite](SettingUpSQLite)
