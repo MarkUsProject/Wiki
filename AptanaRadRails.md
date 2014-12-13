@@ -15,6 +15,8 @@ Install Aptana Radrails
 -   Select "Standalone" from the drop down selection menu and click on "Download Now"
 -   Unzip tarball and a execute "Aptana RadRails"
 
+![Aptana RadRails beta3 with MarkUs](images/Aptana.png "Aptana RadRails beta3 with MarkUs")
+
 ### Install the Radrails Plug-in for Eclipse (optional)
 
 This tutorial assumes that you have a working installation of Eclipse IDE (preferably Ganymede or later). After having a working Java installation this step should be pretty easy (I usually install the provided Java packages of my distribution). It is suggested to install Eclipse into one's home directory, since Eclipse's built-in plug-in installation system works most seamlessly that way. Downloading the Eclipse tar-ball (for Linux of course) and extracting it in your home directory should suffice. You may want to add the path where your eclipse executable resides to your PATH variable.
@@ -66,6 +68,7 @@ If you are asked if you want to auto-install some gems it is up to you to instal
 -   The rest of the installation should be really straight forward.
 -   Check out the EGit user guide: [http://wiki.eclipse.org/EGit/User\_Guide](http://wiki.eclipse.org/EGit/User_Guide)
 
+![Aptana RadRails Git](images/Aptana_Git.png "Aptana RadRais beta3 with Git support")
 ### Checkout MarkUs Source Code
 
 -   Create a Github user account
@@ -74,3 +77,5 @@ If you are asked if you want to auto-install some gems it is up to you to instal
 -   Figure out the Git clone URL of your fork. Should be something like [git@github.com](mailto:git@github.com):<yourgithub-username\>/Markus.git
 -   Start Eclipse and switch to the RadRails perspective
 -   Clone the MarkUs repository of your Github fork (use URL as described above) as described here: [http://wiki.eclipse.org/EGit/User\_Guide\#Cloning\_Remote\_Repositories](http://wiki.eclipse.org/EGit/User_Guide#Cloning_Remote_Repositories)
+
+![Aptana RadRails Project](images/Aptana_Project.png "Aptana RadRails - Project Configuration")
