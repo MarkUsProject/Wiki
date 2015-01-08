@@ -119,7 +119,7 @@ If you followed the above installation instructions in order, you should have a 
     $> bundle exec rake db:setup         # creates, initializes, and populates all the databases uncommented in config/database.yml
     $> bundle exec rake test
 
-Note: if you are using RVM, follow [these instuctions](RVM.rst)\_ to install subversion into the correct path
+Note: if you are using RVM, follow [these instructions](RVM) to install subversion into the correct path
 
 Now, you are ready to test your plain MarkUs installation. The most straight forward way to do this is to start the mongrel server on the command-line. You can do so by:
 
