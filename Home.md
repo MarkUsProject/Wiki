@@ -1,18 +1,11 @@
 Welcome to MarkUs
 =================
 
-MarkUs (pronounced "mark us") is an open-source tool which recreates the ease
-and flexibility of grading assignments with pen on paper, within a web
-application. Designed to support programming assignments, students may submit
-their work through the web interface or through a version control system. Students
-can form groups to collaborate on assignments. Instructors add marking schemes,
-assign graders to students and then later release the marks to the students. The
-graders can view the students submissions, fill in the marking schemes, and annotate
-the students work. MarkUs facilitates much of the administrative work of setting
-up and grading an assignment.
+MarkUs is a web application for the submission and grading of student programming assignment. The primary purpose of MarkUs is to provide TAs with simple tools that will help them to give high quality feedback to students. MarkUs also provides a straight-forward interface for students to submit their work, form groups, and receive feedback. The administrative interface allows instructors to manage groups, organize the grading, and release grades to students.
 
-MarkUs is written using Ruby on Rails, and uses Subversion to store the student submissions. MarkUs
-is the successor to the OLM project, an earlier grading tool.
+Since 2008, more than 120 undergraduate students have participated in the development of MarkUs; some as full-time summer interns, but most working part time on MarkUs as a project course. The fact that we have have uncovered so few major bugs, and that MarkUs has been so well-received by instructors is a testament to the high quality work of these students. MarkUs is used in more than a dozen courses at the University of Toronto, in several courses at the University of Waterloo, and at École Centrale Nantes (in French).
+
+MarkUs is written using Ruby on Rails, and uses Subversion (with a Git back-end in progress) to store the student submissions. 
 
 
 ## MarkUs Users
@@ -41,8 +34,31 @@ The [Developer's Blog](http://blog.markusproject.org) has quite a few useful pos
 
 Most of the low-level technical discussion takes place on the [Issue list](https://github.com/MarkUsProject/Markus/issues) and in [Code Reviews](https://github.com/MarkUsProject/Markus/pulls). There is a [guide to creating MarkUs Code Reviews](HowToCodeReview).
 
+### Getting started:
 
-- Git Resources:
+MarkUs is a Ruby on Rails application.  Thanks to various dependencies and the fact that all the current production servers run on Linux servers, all development is done on Linux. Because virtual machines are easy to install, this has become the most popular option.
+
+We have had no success ever with getting a development environment installed on Windows, and more recently we have not been able to compile subversion ruby bindings on OSX.
+
+You have two main options.  The first is to use vagrant to download a pre-configured virtual machine that has most of the required software installed on it. The second is to set up your own virtual machine.
+
+#### [Setting up a Vagrant Environment](SettingUpVagrantEnvironment)
+
+#### [Setting up a development environment on GNU/Linux](InstallationGnuLinux)
+- [Installing RVM](RVM)  
+
+    Ruby 2.x is not available through package managers, so you will need to use RVM
+    
+- Setting up the Database
+  - [SQLite](SettingUpSQLite)
+  - [MySQL](SettingUpMySQL)
+  - [PostgreSQL](SettingUpPostgreSQL)
+
+#### [Configuring MarkUs](ConfigureMarkUs)
+
+
+### Git Resources
+
   - [MarkUs and Git](GitHowTo)
   - [A Git Tutorial](http://library.edgecase.com/git_immersion/index.html)
   - [Progit Book](http://progit.org/book)
@@ -56,42 +72,7 @@ Most of the low-level technical discussion takes place on the [Issue list](https
 <!-- TODO Modify User Guide link -->
 
 
-## MarkUs Developer Installation Guides
-
-### GNU/Linux
-- [Setting up a development environment on GNU/Linux](InstallationGnuLinux)
-
-### Mac OS X
-- We have not been able to get the subversion bindings compiling on Mac at all, so you should use [Vagrant](SettingUpVagrantEnvironment) or a straight VM.
-
-### Windows
-
-We have never had any success installing MarkUs on Windows.  
-
-You have three options if your primary environment is Windows:
-
-- Use [Vagrant](SettingUpVagrantEnvironment)
-- Use a Linux VM and follow the [setup instructions](InstallationGnuLinux) for Linux
-- Set up your machine to dual boot to Linux.
-
-Note: In Fall 2014, students had problems using Vagrant with Windows, but we have also seen it work well with Vagrant.  The problems with Vagrant and Windows might be related to permissions issues sharing the directory between the VM and the host machine. One way to resolve this issue is to clone MarkUs on the VM, and not use the shared directory.
-
-
-
-### Setting up the Database
-- [SQLite](SettingUpSQLite)
-- [MySQL](SettingUpMySQL)
-- [PostgreSQL](SettingUpPostgreSQL)
-
-
-## MarkUs Developer Documentation
-
-### Project Vitals
-
-Repository: Create a GitHub account and fork MarkUsProject/MarkUs (see GitHub help for more info).
-
-
-## Screencasts
+## Old Screencasts
 
 - [Student File Submission: September 2 2009](http://www.youtube.com/watch?v=ofpyaty20FQ)
 - [Student Group Formation: August 17, 2009](http://www.youtube.com/watch?v=Ed_z_tHCAg8)
@@ -106,9 +87,11 @@ Repository: Create a GitHub account and fork MarkUsProject/MarkUs (see GitHub he
 
 
 ## Project Contributors
-Aaron Lee, Adam Goucher, Aimen Khan, Alexander Kittelberger, Alexandre Lissy, Alex Krassikov, Alysha Kwok, Amanda Manarin, Andrew Hernandez, Andrew Louis, Angelo Maralit, Anthony Le Jallé, Anton Braverman, David Das, Arianne Dee, Benjamin Thorent, Benjamin Vialle, Bertan Guven, Brian Xu, Bryan Shen, Camille Guérin, Catherine Fawcett, Christian Jacques, Christine Yu, Christopher Jonathan, Clément Delafargue, Clément Schiano, Danesh Dadachanji, Daniel St. Jules, Daniyal Liaqat, Daryn Lam, David Liu, Diane Tam, Dina Sabie, Dylan Runkel, Ealona Shmoel, Egor Philippov, Erik Traikov, Eugene Cheung, Evan Browning, Farah Juma, Fernando Garces, Gabriel Roy-Lortie, Gillian Chesnais, Geoffrey Flores, Hanson Wu, Horatiu Halmaghi, Ian Smith, Ibrahim Shahin, Jay Parekh, Jeffrey Ling, Jeremy Merkur, Jeremy Winter, Jérôme Gazel, Jiahui Xu, Jordan Saleh, Joseph Mate, Joseph Maté, Justin Foong, Karel Kahula, Kitiya Srisukvatananan, Kurtis Schmidt, Lawrence Wu, Luke Kysow, Marc Bodmer, Marc Palermo, Mark Rada, Mélanie Gaudet, Michael Lumbroso, Mike Conley, Mike Gunderloy, Mike Stewart, Mike Wu, Misa Sakamoto, Neha Kumar, Nelle Varoquaux, Nicholas Maraston, Nicolas Bouillon, Nick Lee, Nicolas Carougeau, Noé Bedetti, Oloruntobi Ogunbiyi, Ope Akanji, Rafael Padilha, Razvan Vlaicu, Robert Burke, Samuel Gougeon, Sean Budning, Severin Gehwolf, Shenglong Gao, Shion Kashimura, Simon Lavigne-Giroux, Su Zhang, Tara Clark, Tiago Chedraoui Silva, Tianhai Hu, Valentin Roger, Veronica Wong, Victoria Mui, Victor Ivri, Vivien Suen, William Roy, Xiang Yu, Yansong Zang, Zachary Munro-Cape
+Aaron Lee, Adam Goucher, Aimen Khan, Alexander Kittelberger, Alexandre Lissy, Alex Grenier, Alex Krassikov, Alysha Kwok, Amanda Manarin, Andrew Hernandez, Andrew Louis, Angelo Maralit, Anthony Le Jallé, Anton Braverman, David Das, Arianne Dee, Benjamin Thorent, Benjamin Vialle, Bertan Guven, Brian Xu, Bryan Shen, Bryan Muscedere, Camille Guérin, Catherine Fawcett, Chris Kellendonk, Christian Jacques, Christian Millar, Christine Yu, Christopher Jonathan, Clément Delafargue, Clément Schiano, Danesh Dadachanji, Daniel St. Jules, Daniyal Liaqat, Daryn Lam, David Liu, Diane Tam, Dina Sabie, Dylan Runkel, Ealona Shmoel, Egor Philippov, Erik Traikov, Eugene Cheung, Evan Browning, Farah Juma, Fernando Garces, Gabriel Roy-Lortie, Gillian Chesnais, Geoffrey Flores, Hanson Wu, Haohan David Jiang, Horatiu Halmaghi, Ian Smith, Ibrahim Shahin, Ishan Thukral, Irene Fung, Jakub Subczynski, Jay Parekh, Jeffrey Ling, Jeremy Merkur, Jeremy Winter, Jérôme Gazel, Jiahui Xu, Jordan Saleh, Joseph Mate, Joseph Maté, Joshua Dyck, Junghwan Tom Choi, Justin Foong, Karel Kahula, Kitiya Srisukvatananan, Kurtis Schmidt, Lawrence Wu, Luke Kysow, Marc Bodmer, Marc Palermo, Mark Rada, Mark Kazakevich, Maryna Moskalenko, Mélanie Gaudet, Michael Lumbroso, Mike Conley, Mike Gunderloy, Mike Stewart, Mike Wu, Misa Sakamoto, Nathan ChowNeha Kumar, Nelle Varoquaux, Nicholas Maraston, Nicolas Bouillon, Nick Lee, Nicolas Carougeau, Noé Bedetti, Oloruntobi Ogunbiyi, Ope Akanji, Paymahn Moghadasian, Peter Guanjie Zhao, Rafael Padilha, Razvan Vlaicu, Robert Burke, Ryan Spring, Samuel Gougeon, Sean Budning, Severin Gehwolf, Shenglong Gao, Shion Kashimura, Simon Lavigne-Giroux, Stephen Tsimicalis, Su Zhang, Tara Clark, Tiago Chedraoui Silva, Tianhai Hu, Valentin Roger, Veronica Wong, Victoria Mui, Victoria Verlysdonk, Victor Ivri, Vivien Suen, William Roy, Xiang Yu, Yansong Zang, Yusi Fan, Zachary Munro-Cape
 
 **Supervisors:** Karen Reid, Morgan Magnin, Benjamin Vialle, David Liu
+
+
 
 
 ## Term Work

@@ -1,4 +1,4 @@
-Developping MarkUs with RVM
+Developing MarkUs with RVM
 ===========================
 
 RVM
@@ -43,52 +43,6 @@ Don't forget to re-do a \`bundle install\` in your MarkUs root repository for ea
 
 ### Subversion Ruby bindings with RVM
 
-Moreover, as MarkUs uses libruby-svn, you will have to install it locally, for every version of Ruby you installed.
-
-Fist, download Subversion source code here :
-
-[https://subversion.apache.org/download](https://subversion.apache.org/download)/ (If you are on the virtual machine, you can use \`wget [http://mirror.its.dal.ca/apache/subversion/subversion-1.8.10.tar.gz](http://mirror.its.dal.ca/apache/subversion/subversion-1.8.10.tar.gz)\` for example)
-
-Extract it and cd into the repository:
-
-    $ tar xzf subversion-1.8.9.tar.gz
-    $ cd subversion-1.8.9
-
-You will need libaprutil-dev and swig on your system:
-
-    $ sudo aptitude install libaprutil1-dev swig
-
-Be sure to use the ruby you want to compile svn bindings with:
-
-    $ rvm use 2.1.2
-
-**Note** : Ensure that the path below (.../ruby-2.1.2/...) is correct and you do not have a different patchlevel installed through rvm.
-
-For example, here are instructions for Ruby 2.1.2:
-
-    $ CFLAGS=-fPIC ./configure \
-       --with-ruby-sitedir=~/.rvm/rubies/ruby-2.1.2/lib/ruby/ \
-       --prefix=$HOME/.rvm/rubies/ruby-2.1.2/ --disable-mod-activation \
-       --without-apache-libexecdir \
-       --enable-optimize
-    $ make
-    $ make check
-    $ make swig-rb
-    $ make check-swig-rb
-    $ make install
-    $ make install-swig-rb
-
-**Note** : Setting CFLAGS=-fPIC may not need to be explicitly set in the future
-
-You will have to repeat this operation for every version of ruby you use.
-
-**Important note:** Don't forget to set \`rvm use\` for the Ruby version you want to compile
-
-Check everything was setup correctly:
-
-    $ irb
-    :001 > require 'svn/repos'
-    => true  
 
 Update RVM
 ----------

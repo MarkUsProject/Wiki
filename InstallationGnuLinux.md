@@ -3,43 +3,94 @@ Setting up a development environment for MarkUs development on GNU/Linux
 
 **Please note the difference between "$\>" and "\#\>". The former means execute the command as simple user, the latter means execute the command as the super-user or use sudo as normal user ("\#\>" is equivalent to "\> sudo").**
 
-If your system complains about gems not found when trying to run, for example, `bundle install`, it is because you don't have the path of the binary in your `$PATH` variable. Find the path of the gem (usually `/var/lib/gems/1.9.1/bin/`) and add it to your `$PATH`.
+We are currently working with Ruby 2.1.x (January 2015).  Ruby 2.x is not avilable through package managers so you will need to install RVM.  If you want to use rbenv or something else, please add the appropriate installation documentation.
+
+[Installing RVM](RVM) and Setting up Ruby
+-----------------------------------------
+[Instructions](RVM) for installing RVM and Ruby are in a separate wiki page.
 
 Setting up Git
 --------------
 
-Git is the Source Content Management used by MarkUs. You can find some documentation on GitHub. You will also have to set-up a GitHub account. [How to set-up Git on GNU/Linux](http://help.github.com/linux-set-up-git)\_
+Git is the Source Content Management used by MarkUs. You can find some documentation on GitHub. You will also have to set-up a GitHub account. [How to set-up Git on GNU/Linux](http://help.github.com/linux-set-up-git)
 
-Setting up Ruby, Ruby on Rails, Subversion and the Subversion Ruby bindings
+You should be able to use apt-get to install git
+
+    #> apt-get install git
+
+
+
+Setting up Subversion and the Subversion Ruby bindings
 ---------------------------------------------------------------------------
 
-Issue the following command on a terminal. You need to be root or use `sudo` (the Ubuntu way) to do that. Both methods are correct. Use only one of the following methods :
+Fist, download Subversion source code here :
 
-(as root):
+[https://subversion.apache.org/download](https://subversion.apache.org/download)/ (If you are on the virtual machine, you can use \`wget [http://mirror.its.dal.ca/apache/subversion/subversion-1.8.10.tar.gz](http://mirror.its.dal.ca/apache/subversion/subversion-1.8.10.tar.gz)\` for example)
 
-    $> su  # and then enter your root password
-    #> apt-get install ruby-full build-essential git ruby-svn subversion libv8-dev
-    #> # make sure ruby-full points to the correct ruby version (1.9)
+Extract it and cd into the repository:
 
-(as normal user, with the `sudo` method):
+    $ tar xzf subversion-1.8.9.tar.gz
+    $ cd subversion-1.8.9
 
-    $> sudo apt-get install ruby-full build-essential ruby-svn subversion libv8-dev
-    $> # and then enter your root password, make sure ruby-full points to the correct ruby version (1.9)
+You will need libaprutil-dev and swig on your system:
 
+    $ sudo aptitude install libaprutil1-dev swig
+    
+MarkUs uses libruby-svn, so you will have to install it locally, for every version of Ruby you installed.
+
+Be sure to use the ruby you want to compile svn bindings with:
+
+    $ rvm use 2.1.2
+
+**Note** : Ensure that the path below (.../ruby-2.1.2/...) is correct and you do not have a different patchlevel installed through rvm.
+
+For example, here are instructions for Ruby 2.1.2:
+
+    $ CFLAGS=-fPIC ./configure \
+       --with-ruby-sitedir=~/.rvm/rubies/ruby-2.1.2/lib/ruby/ \
+       --prefix=$HOME/.rvm/rubies/ruby-2.1.2/ --disable-mod-activation \
+       --without-apache-libexecdir \
+       --enable-optimize
+    $ make
+    $ make check
+    $ make swig-rb
+    $ make check-swig-rb
+    $ make install
+    $ make install-swig-rb
+
+**Note** : Setting CFLAGS=-fPIC may not need to be explicitly set in the future
+
+You will have to repeat this operation for every version of ruby you use.
+
+**Important note:** Don't forget to set \`rvm use\` for the Ruby version you want to compile
+
+Check everything was setup correctly:
+
+    $ irb
+    :001 > require 'svn/repos'
+    => true  
+
+
+Setting up the Database
+-----------------------
 **Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
 
 SQLite3 is easier to install, but should only used in development, not in production. You may also experience database conflicts, in particular if you want to test **PDF Conversion**. In case of PDF Conversion, you **MUST** use PostgreSQL or MySQL
 
 If your want to test PDF conversion on MarkUs, don't forget to set to true the `PDF_SUPPORT` variable in `config/environments/development.rb`
 
-Setting up the Database
------------------------
-
 Once you have decided what database best suits you :
 
 -   [Setting up the Database (SQLite)](SettingUpSQLite.rst)\_
 -   [Setting up the Database (MySQL)](SettingUpMySQL.rst)\_
 -   [Setting up the Database (PostgreSQL)](SettingUpPostgreSQL.rst)\_
+
+Other dependencies
+-------------------
+ Development files for the V8 JavaScript Engine 
+ 
+    #> apt-get install libv8-dev
+
 
 Required gems for MarkUs
 ------------------------
@@ -81,8 +132,6 @@ Now, check that everything worked fine. Do the following on a terminal (as an or
     $> irb
     irb(main):003:0> require 'csv'
     => true
-    irb(main):003:0> require 'debugger'
-    => true
     irb(main):003:0> require 'svn/repos'
     => true
 
@@ -98,50 +147,3 @@ You can also run the following to check your gems:
 
 The gems, including version numbers, should include everything listed in the Gemfile.lock located in the MarkUs repository root (also available online at [https://github.com/MarkUsProject/Markus/blob/master/Gemfile.lock)](https://github.com/MarkUsProject/Markus/blob/master/Gemfile.lock)).
 
-Configure MarkUs
-----------------
-
-Precondition: You have the MarkUs source-code checked out and do not plan to use RadRails (see the following sections if you *plan* to use RadRails for development).
-
--   Read through all settings in `environment.rb`
-
--   Look at `config/environments/development.rb`
-
--   Change the REPOSITORY\_STORAGE path to an appropriate path for your setup. NOTE: it is unlikely that you need to change these values for development
-
-Test plain MarkUs installation
-------------------------------
-
-If you followed the above installation instructions in order, you should have a working MarkUs installation (in terms of required software and required configuration). But first you would need to create the development database, load relations into it and populate the db with some data. You can do so by the following series of commands (as non-root user, assuming you are in the application-root of the MarkUs source code;)(please adapt the following command):
-
-    # gets gems that you do not have yet, like thoughtbot-shoulda 
-    $> bundle install  --without (postgresql) (sqlite) (mysql)
-    $> bundle exec rake db:setup         # creates, initializes, and populates all the databases uncommented in config/database.yml
-    $> bundle exec rake test
-
-Note: if you are using RVM, follow [these instuctions](RVM.rst)\_ to install subversion into the correct path
-
-Now, you are ready to test your plain MarkUs installation. The most straight forward way to do this is to start the mongrel server on the command-line. You can do so by:
-
-    $> bundle exec rails server  #boots up the apprpropriate web server
-
-The default admin user is 'a' with any non-empty password. Look at `db/seeds.rb` for other users.
-
-If this doesn't work try
-
-    $> rails s
-
-**Common Problems**
-
-If some of the previous commands fail with error message similar to `LoadError: no such file to load -- <some-ruby-gem>`, try to install the missing Ruby gem by issuing `gem install <missing-ruby-gem>` and retry the step which failed.
-
-If everything above went fine: Congratulations! You have a working MarkUs installation. Go to [http://0.0.0.0:3000](http://0.0.0.0:3000)/ and enjoy MarkUs!
-
-However, since you are a MarkUs developer, this is only *half* of the game. You also **need** (yes, this is not optional!) *some* sort of IDE for MarkUs development. For instance, the next section describes how to install RadRails IDE, an Eclipse based Rails development environment. If you plan to use something *else* for MarkUs development, such as JEdit (with some tweaks) or VIM, you should now start configuring them.
-
-But if you *do* plan to use RadRails for development, you should get rid of some left-overs from previous steps, so that the following instructions run as smoothly as possible for you. This is what you'd need to do (If you know what you are doing, you might find this silly. But this guide tries to give detailed instructions for Rails newcomers):
-
-    $> bundle exec rake db:drop          # get rid of the database, created previously (it'll be recreated again later)
-    $> rm -rf markus_trunk   # get rid of the MarkUs source code possibly checked out previously (you might do a "cd .." prior to that)
-
-**Happy Coding!**
