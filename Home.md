@@ -38,7 +38,7 @@ Most of the low-level technical discussion takes place on the [Issue list](https
 
 MarkUs is a Ruby on Rails application.  Thanks to various dependencies and the fact that all the current production servers run on Linux servers, all development is done on Linux. Because virtual machines are easy to install, this has become the most popular option.
 
-We have had no success ever with getting a development environment installed on Windows, and more recently we have not been able to compile subversion ruby bindings on OSX.
+We have never had success getting a development environment installed on Windows, and more recently we have not been able to compile subversion ruby bindings on OSX, leaving Linux as the only development environment.
 
 You have two main options.  The first is to use vagrant to download a pre-configured virtual machine that has most of the required software installed on it. The second is to set up your own virtual machine.  You should follow one of the the two installation guides below.
 
