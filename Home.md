@@ -44,11 +44,9 @@ You have two main options.  The first is to use vagrant to download a pre-config
 
 - [Setting up a Vagrant Environment](SettingUpVagrantEnvironment)
 - [Setting up a development environment on GNU/Linux](InstallationGnuLinux)
-
     There are a few more things to install on your Linux machine.
     
     - [Installing RVM](RVM)  
-
         Ruby 2.x is not available through package managers, so you will need to use RVM
     
     - Setting up the Database
@@ -60,7 +58,6 @@ After you have the primary software components installed, it is time to get the 
 
 #### Setting up MarkUs
 - [Checking out MarkUs Software](GitHowTo)
-    
     The first part of this page on using git describes how to setup and checkout the MarkUs repository.
     
 - [Configuring MarkUs](ConfigureMarkUs)
