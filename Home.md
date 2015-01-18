@@ -40,21 +40,30 @@ MarkUs is a Ruby on Rails application.  Thanks to various dependencies and the f
 
 We have had no success ever with getting a development environment installed on Windows, and more recently we have not been able to compile subversion ruby bindings on OSX.
 
-You have two main options.  The first is to use vagrant to download a pre-configured virtual machine that has most of the required software installed on it. The second is to set up your own virtual machine.
+You have two main options.  The first is to use vagrant to download a pre-configured virtual machine that has most of the required software installed on it. The second is to set up your own virtual machine.  You should follow one of the the two installation guides below.
 
-#### [Setting up a Vagrant Environment](SettingUpVagrantEnvironment)
+- [Setting up a Vagrant Environment](SettingUpVagrantEnvironment)
+- [Setting up a development environment on GNU/Linux](InstallationGnuLinux)
 
-#### [Setting up a development environment on GNU/Linux](InstallationGnuLinux)
-- [Installing RVM](RVM)  
-
-    Ruby 2.x is not available through package managers, so you will need to use RVM
+    There are a few more things to install on your Linux machine.
     
-- Setting up the Database
-  - [SQLite](SettingUpSQLite)
-  - [MySQL](SettingUpMySQL)
-  - [PostgreSQL](SettingUpPostgreSQL)
+    - [Installing RVM](RVM)  
 
-#### [Configuring MarkUs](ConfigureMarkUs)
+        Ruby 2.x is not available through package managers, so you will need to use RVM
+    
+    - Setting up the Database
+      - [SQLite](SettingUpSQLite)
+      - [MySQL](SettingUpMySQL)
+      - [PostgreSQL](SettingUpPostgreSQL)
+
+After you have the primary software components installed, it is time to get the MarkUs source code and configure it.
+
+#### Setting up MarkUs
+- [Checking out MarkUs Software](GitHowTo)
+    
+    The first part of this page on using git describes how to setup and checkout the MarkUs repository.
+    
+- [Configuring MarkUs](ConfigureMarkUs)
 
 
 ### Git Resources

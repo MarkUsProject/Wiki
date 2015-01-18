@@ -10,11 +10,6 @@ On Debian and Ubuntu, a simple
 
     #> aptitude install sqlite3 libsqlite3-dev
 
-### Mac OS X
-
-Everything is already bundle inside Mac OS X.
-
-### Microsoft Windows
 
 Configuring SQLite3
 -------------------
@@ -44,19 +39,3 @@ If you are using SQLite3, save the following text as \`config/database.yml\` (in
       pool: 5
       timeout: 5000
 
-Now go back to the MarkUs tutorial :
-
--   Installation on GNU/Linux
-
-    -   [[Development environment|InstallationGnuLinux]]
-    -   [[Production environment|InstallProdStable]]
-    -   [[Old Stable (deprecated) environment|InstallProdOld]]
-
--   Installation on Mac OS X
-
-    -   [[Development environment|InstallationMacOsX]]
-    -   Production (need to be done)
-
--   Installation on Windows
-
-    -   [[Development environment|InstallationWindows]]

@@ -1,22 +1,16 @@
 Setting up the Database (PostgreSQL)
 ====================================
 
+Setup on the Vagrant Box
+------------------------
+
 Installing the Database
 -----------------------
-
-### GNU/Linux
 
 On Debian and Ubuntu, a simple
 
     #> apt-get install postgresql postgresql-client postgresql-contrib libpq-dev
 
-### Mac OS X
-
-To install postgres 9.3, you can use the one-click installer on the following site : [[Postgresql 9.3 Graphical Installer | http://www.postgresql.org/download/macosx]]
-
-The Postgres link above also includes alternative installation methods, including the various package managers available on OS X.
-
-### Microsoft Windows
 
 Configuring PostgreSQL
 ----------------------
@@ -88,31 +82,5 @@ You will be asked for a password, so type "markus". After that you should see th
 
 Install PostgreSQL (make sure that the created cluster is UTF-8 encoded; If not required, it also works with latin-1)
 
-### Configuring MarkUs
 
-Setup the database.yml file, in the MarkUs' root directory:
 
--   \`cp config/database.yml.postgresql config/database.yml\`
-
--   in config/database.yml, make sure that "development:" and the 5 lines under it (adapter, encoding, database, username, password) are not commented out
-
--   do the same for "test:" and the 5 lines under it to be able to run unit tests and functional tests
-
--   change the usernames and password (in development and test) to the ones you used in the section above ('markus' if you copy/pasted the instructions)
-
-Now go back to the MarkUs tutorial :
-
--   Installation on GNU/Linux
-
-    -   [[Development environment|InstallationGnuLinux]]
-    -   [[Production environment|InstallProdStable]]
-    -   [[Old Stable (deprecated) environment|InstallProdOld]]
-
--   Installation on Mac OS X
-
-    -   [[Development environment|InstallationMacOsX]]
-    -   Production (need to be done)
-
--   Installation on Windows
-
-    -   [[Development environment|InstallationWindows]]

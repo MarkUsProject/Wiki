@@ -7,6 +7,21 @@ Precondition: You have the MarkUs source-code checked out and do not plan to use
 
 -   Change the REPOSITORY\_STORAGE path to an appropriate path for your setup. NOTE: it is unlikely that you need to change these values for development
 
+Configure the database
+-----------------------
+For postgres, setup the database.yml file, in the MarkUs' root directory:
+
+-   \`cp config/database.yml.postgresql config/database.yml\`
+
+-   in config/database.yml, make sure that "development:" and the 5 lines under it (adapter, encoding, database, username, password) are not commented out
+
+-   do the same for "test:" and the 5 lines under it to be able to run unit tests and functional tests
+
+-   change the usernames and password (in development and test) to the ones you used in the section above ('markus' if you copy/pasted the instructions)
+
+For [mysql](SettingUpMySQL) or [sqlite](SettingUpSQLite), see the MarkUs configuration instructions in the relevant wiki pages.s
+
+
 Test plain MarkUs installation
 ------------------------------
 
