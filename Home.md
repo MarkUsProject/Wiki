@@ -57,7 +57,7 @@ You have two main options.  The first is to use vagrant to download a pre-config
 After you have the primary software components installed, it is time to get the MarkUs source code and configure it.
 
 #### Setting up MarkUs
-- [Checking out MarkUs Software](GitHowTo)
+- [Checking out MarkUs Software](GitHowTo)  
     The first part of this page on using git describes how to setup and checkout the MarkUs repository.
     
 - [Configuring MarkUs](ConfigureMarkUs)
