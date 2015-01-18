@@ -43,7 +43,7 @@ We have had no success ever with getting a development environment installed on 
 You have two main options.  The first is to use vagrant to download a pre-configured virtual machine that has most of the required software installed on it. The second is to set up your own virtual machine.  You should follow one of the the two installation guides below.
 
 - [Setting up a Vagrant Environment](SettingUpVagrantEnvironment)
-- [Setting up a development environment on GNU/Linux](InstallationGnuLinux)
+- [Setting up a development environment on GNU/Linux](InstallationGnuLinux)  
     There are a few more things to install on your Linux machine.
     
     - [Installing RVM](RVM)  
