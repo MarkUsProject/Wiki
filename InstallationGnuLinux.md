@@ -10,14 +10,8 @@ Installing RVM and Setting up Ruby
 - [Installing RVM](RVM)  
         Ruby 2.x is not available through package managers, so you will need to use RVM
     
-Setting up the Database
-------------------------
 
-We primarily use PostgreSQL and recommend that development work be done using it, but you should also be able to use SQLite or MySQL.
 
-- [PostgreSQL](SettingUpPostgreSQL)
-- [SQLite](SettingUpSQLite)
-- [MySQL](SettingUpMySQL)
 
 Setting up Git
 --------------
@@ -83,7 +77,7 @@ Check everything was setup correctly:
 
 Setting up the Database
 -----------------------
-**Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
+We primarily use PostgreSQL and recommend that development work be done using it, but you should also be able to use SQLite or MySQL.
 
 SQLite3 is easier to install, but should only used in development, not in production. You may also experience database conflicts, in particular if you want to test **PDF Conversion**. In case of PDF Conversion, you **MUST** use PostgreSQL or MySQL
 
@@ -91,9 +85,9 @@ If your want to test PDF conversion on MarkUs, don't forget to set to true the `
 
 Once you have decided what database best suits you :
 
--   [Setting up the Database (SQLite)](SettingUpSQLite.rst)\_
--   [Setting up the Database (MySQL)](SettingUpMySQL.rst)\_
--   [Setting up the Database (PostgreSQL)](SettingUpPostgreSQL.rst)\_
+-   [Setting up the Database (SQLite)](SettingUpSQLite)
+-   [Setting up the Database (MySQL)](SettingUpMySQL)
+-   [Setting up the Database (PostgreSQL)](SettingUpPostgreSQL)
 
 Other dependencies
 -------------------
