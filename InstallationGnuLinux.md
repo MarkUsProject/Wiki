@@ -5,9 +5,15 @@ Setting up a development environment for MarkUs development on GNU/Linux
 
 We are currently working with Ruby 2.1.x (January 2015).  Ruby 2.x is not avilable through package managers so you will need to install RVM.  If you want to use rbenv or something else, please add the appropriate installation documentation.
 
-[Installing RVM](RVM) and Setting up Ruby
+Installing RVM and Setting up Ruby
 -----------------------------------------
-[Instructions](RVM) for installing RVM and Ruby are in a separate wiki page.
+- [Installing RVM](RVM)  
+        Ruby 2.x is not available through package managers, so you will need to use RVM
+    
+- Setting up the Database
+  - [SQLite](SettingUpSQLite)
+  - [MySQL](SettingUpMySQL)
+  - [PostgreSQL](SettingUpPostgreSQL)
 
 Setting up Git
 --------------
