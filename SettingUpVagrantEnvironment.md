@@ -19,13 +19,7 @@ This will download a fairly large (3GB) Debian box from the internet, so go [tak
 Connecting to your box
 ----------------------
 
-Next, run the following commands to connect to the virtual machine and set up RVM.
-
-```
-$> vagrant ssh
-$> rvm use 2.1
-$> rvm gemset use markus
-```
+Next, run `vagrant ssh` to connect to the virtual machine.
 
 Now, you can either clone the MarkUs repo inside the box or set up shared folders.
 
