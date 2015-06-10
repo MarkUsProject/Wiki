@@ -14,8 +14,6 @@ ___
 `> eval $(ssh-agent -s)`  
 Or, if that does not work try:  
 `> ssh-agent -s`  
-You should see something like if the command is successful:  
-`Agent pid 99887`  
 2. Now add your newly generated key to the ssh-agent by running this command:  
 `> ssh-add ~/.ssh/id_rsa`  
 You should see something like:  
