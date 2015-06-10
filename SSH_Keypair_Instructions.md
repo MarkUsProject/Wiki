@@ -34,7 +34,7 @@ Then you can copy and paste your entire key into MarkUs:
 # Windows instructions
 ## Step 1: Install Git
 
-1. Download and install Git on your machine. http://git-scm.com/downloads  
+1. Download and install [Git](https://git-scm.com/) on your machine. http://git-scm.com/downloads  
 2. Open **Git bash** by clicking the start menu and typing in “git bash”.  
   
 **Windows 7**  
