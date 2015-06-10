@@ -22,7 +22,7 @@ You should see something like:
 
 ## Step 3: Add your public key to MarkUs
 1. Adding your public key to MarkUs is done by visiting this page and clicking “**New Key Pair**”  
-2. Now you can choose to upload the public key file itself (located in the hidden folder in your home directory _**~/.ssh/id_rsa.pub**_ or by executing the following commands to copy and paste your public key contents:  
+2. Now you can choose to upload the public key file itself (located in the hidden folder in your home directory `~/.ssh/id_rsa.pub` or by executing the following commands to copy and paste your public key contents:  
 `> cat ~/.ssh/id_rsa.pub`  
 Then you can copy and paste your entire key into MarkUs:  
 ![Copying the output to the clipboard from running the "cat" program on your public key](http://alexgrenier.ca/MarkUs/1.png)  
@@ -66,7 +66,7 @@ _**From now on, continue to use the Git bash for your Git commands on your Windo
 ## Step 4: Add your public key to MarkUs  
 
 1. Adding your public key to MarkUs is done by visiting this page and clicking “**New Key Pair**”  
-2. Now you can choose to upload the public key file itself (located in the hidden folder in your home directory _**~/.ssh/id_rsa.pub**_ or by executing the following commands from within your **Git bash** to copy and paste your public key contents:  
+2. Now you can choose to upload the public key file itself (located in the hidden folder in your home directory `~/.ssh/id_rsa.pub` or by executing the following commands from within your **Git bash** to copy and paste your public key contents:  
 `notepad ~/.ssh/id_rsa.pub`  
 Notepad will then open up and you can then copy the public key contents and paste it into Markus:
 ![Copy your public key contents.](http://alexgrenier.ca/MarkUs/5.png)  
