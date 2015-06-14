@@ -1,4 +1,4 @@
-# Linux / MacOS instructions
+# Linux / OSX Key-pair Generation Instructions 
 ## Step 1: Generate a new SSH key for MarkUs
 
 1. Open up your Terminal and copy and paste the following text below. If you wish, you can add a label for your key pair. (ex: Laptop, School Computer, etc)  
