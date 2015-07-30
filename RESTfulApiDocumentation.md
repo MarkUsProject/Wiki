@@ -121,6 +121,8 @@ Available Routes
     GET     /api/assignments/id/groups
     GET     /api/assignments/id/groups/id
 
+    PUT     /api/assignments/id/groups/id/update_marks
+
     GET     /api/assignments/id/groups/id/submission_downloads
 
     GET     /api/assignments/id/groups/id/test_results
@@ -398,6 +400,25 @@ Example:
         </student-membership>
       </student-memberships>
     </group>
+
+### Uploading Marks
+
+**PUT /api/assignments/id/groups/id/update\_marks**\
+Description: Updates marks for the given assignment and group.\
+Parameters should be key:value pairs, where the key is a properly\
+formatted criteria title (including punctuation and capitalization),\
+and the value is a valid mark.
+Note: this function will not succeed if the desired submission is not collected,\
+or if the marking state of the submission is set to 'complete'.
+CURL Example:
+
+    $ curl --header "Authorization: MarkUsAuth YourAuthKey" -X PUT \
+    --data "Lorem%20Ipsum=3&Quis=1" \
+    "http://example.com/api/assignments/1/groups/5/update_marks"
+    <?xml version="1.0"?>
+    <rsp status="200">
+      Success
+    </rsp>
 
 ### Submission Downloads
 
