@@ -30,6 +30,8 @@ Finally, move the `database.yml` file from the Home directory of the vagrant box
 
 Change to the `MarkUs` directory.  Before you can run the server you will need to install or update required gems with `bundle install`.  You may find that the installation of some gems will fail.  Following the instructions in the output and re-running bundle install usually resolves the problem.
 
+Create the directory used for storing repos: `mkdir data/dev/repos`.
+
 Ensure the database is correctly populated by running `bundle exec rake db:reset`
 
 Finally, run `bundle exec rails server` from the project directory. 
