@@ -50,10 +50,14 @@ We will use [Gitolite](http://gitolite.com/gitolite/index.html) to handle authen
 
 To install Gitolite, we first need to create a new user. All of the operations below should be run on the Vagrant virtual machine.
 
-1. `su git` - Switch user. (password is vagrant)
-2. `mkdir bin`
-3. `gitolite/install -ln`
-4. `bin/gitolite setup -pk vagrant.pub` - Setup Gitolite using our `vagrant` public key.
+1. `ssh-keygen` - Generate an ssh key for the vagrant user. (Say yes to overwriting the .ssh/id_rsa file, and no passphrase.)
+2. `su git` - Switch user. (password is vagrant)
+3. `cd ~` - Change to the git user's home directory
+4. `scp vagrant@localhost:.ssh/id_rsa.pub vagrant.pub` - copy the vagrant public key for gitolite to use. (password vagrant)
+5. `chmod a+r vagrant.pub` - get the permissions right
+6. `mkdir bin`
+7. `gitolite/install -ln`
+8. `bin/gitolite setup -pk vagrant.pub` - Setup Gitolite using our `vagrant` public key.
 
 Let's test our Gitolite installation:
 
@@ -79,10 +83,9 @@ Now let's setup MarkUs with some additional libraries:
 We need to switch to the `git` branch and restart MarkUs on this branch:
 
 4. `cd ~/Markus`
-5. `git checkout git`
-6. Edit `config/environments/development.rb`: the value for `REPOSITORY_TYPE` should be `'git'`, not `'svn'`.
-7. If you already have `data/dev/repos`, then do `rm -rf data/dev/repos/*`. Otherwise, create the directory: `mkdir data/dev/repos`.
-8. `bundle exec rake db:setup`
-9. `bundle exec rake db:reset`
+5. Edit `config/environments/development.rb`: the value for `REPOSITORY_TYPE` should be `'git'`, not `'svn'`.
+6. If you already have `data/dev/repos`, then do `rm -rf data/dev/repos/*`. Otherwise, create the directory: `mkdir data/dev/repos`.
+7. `bundle exec rake db:setup` - warning: this may take a very long time
+8. `bundle exec rake db:reset` 
 
 At this point you are done. If you receive an `Early EOF` error, make sure `vagrant` has access to the gitolite-admin repo by doing `ssh git@localhost` from the `vagrant` user. If this does not work, then follow the steps outlined [here](http://gitolite.com/gitolite/emergencies.html) to clone the `gitolite-admin` repo manually somewhere and add the vagrant public key to the `keys` folder.
