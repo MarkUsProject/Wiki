@@ -74,18 +74,11 @@ You should see the following output:
 		 R W    testing
 
 
-Now let's setup MarkUs with some additional libraries:
 
-1. `sudo apt-get update`
-2. `sudo apt-get install cmake libssh2* libgit2*`
-3. `sudo apt-get install ruby1.9.1-dev` - This may be already installed. [David: sure if this is necessary...]
-
-We need to switch to the `git` branch and restart MarkUs on this branch:
-
-4. `cd ~/Markus`
-5. Edit `config/environments/development.rb`: the value for `REPOSITORY_TYPE` should be `'git'`, not `'svn'`.
-6. If you already have `data/dev/repos`, then do `rm -rf data/dev/repos/*`. Otherwise, create the directory: `mkdir data/dev/repos`.
-7. `bundle exec rake db:setup` - warning: this may take a very long time
-8. `bundle exec rake db:reset` 
+5. `cd ~/Markus`
+6. Edit `config/environments/development.rb`: the value for `REPOSITORY_TYPE` should be `'git'`, not `'svn'`.
+7. If you already have `data/dev/repos`, then do `rm -rf data/dev/repos/*`. Otherwise, create the directory: `mkdir data/dev/repos`.
+8. `bundle exec rake db:setup` - warning: this may take a very long time
+9. `bundle exec rake db:reset` 
 
 At this point you are done. If you receive an `Early EOF` error, make sure `vagrant` has access to the gitolite-admin repo by doing `ssh git@localhost` from the `vagrant` user. If this does not work, then follow the steps outlined [here](http://gitolite.com/gitolite/emergencies.html) to clone the `gitolite-admin` repo manually somewhere and add the vagrant public key to the `keys` folder.
