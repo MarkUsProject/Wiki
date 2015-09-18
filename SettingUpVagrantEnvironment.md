@@ -48,20 +48,12 @@ The git branch requires some additional setup to your MarkUs instance. This is b
 
 We will use [Gitolite](http://gitolite.com/gitolite/index.html) to handle authentication.
 
-To install Gitolite, we first need to create a new user. All of the operations below should be run on the virtual machine.
+To install Gitolite, we first need to create a new user. All of the operations below should be run on the Vagrant virtual machine.
 
-1. `vagrant up` - Start vagrant if it hasn't been yet.
-2. `vagrant ssh` - Connect to vagrant if we haven't yet.
-3. `ssh-keygen` - Generate a private & public key for the Gitolite admin account.
-4. `sudo adduser git` - Gitolite requires a user named `git` to operate.
-5. `sudo adduser git sudo` - Add `git` to `sudo` group so we can install Gitolite from there.
-6. `sudo cp .ssh/id_rsa.pub /home/git/vagrant.pub` - Copy the public key we created earlier from `vagrant`'s account into `git`'s.
-7. `su git` - Switch user. (password is vagrant)
-8. `git clone git://github.com/sitaramc/gitolite` - Download the Gitolite binaries.
-9. `mkdir bin`
-10. `gitolite/install -ln`
-11. `export PATH="~/bin:$PATH"` - Add Gitolite to your PATH.
-12. `gitolite setup -pk vagrant.pub` - Setup Gitolite using our `vagrant` public key.
+1. `su git` - Switch user. (password is vagrant)
+2. `mkdir bin`
+3. `gitolite/install -ln`
+4. `bin/gitolite setup -pk vagrant.pub` - Setup Gitolite using our `vagrant` public key.
 
 Let's test our Gitolite installation:
 
@@ -80,19 +72,17 @@ You should see the following output:
 
 Now let's setup MarkUs with some additional libraries:
 
-1. `git config --global user.name "Your Name"`
-2. `git config --global user.email "your@email.com"`
-3. `git clone git@github.com:<your github username>/Markus.git`
-4. `sudo apt-get update`
-5. `sudo apt-get install cmake libssh2* libgit2*`
-6. `sudo gem install bundler` - This may be already installed.
-7. `sudo apt-get install ruby1.9.1-dev` - This may be already installed.
-8. `bundle install`
-9. `cp ~/database.yml config`
-10. `mkdir data/dev/repos`
-11. `bundle exec rake db:setup`
-12. `bundle exec rake db:reset`
+1. `sudo apt-get update`
+2. `sudo apt-get install cmake libssh2* libgit2*`
+3. `sudo apt-get install ruby1.9.1-dev` - This may be already installed. [David: sure if this is necessary...]
+
+We need to switch to the `git` branch and restart MarkUs on this branch:
+
+4. `cd ~/Markus`
+5. `git checkout git`
+6. Edit `config/environments/development.rb`: the value for `REPOSITORY_TYPE` should be `'git'`, not `'svn'`.
+7. If you already have `data/dev/repos`, then do `rm -rf data/dev/repos/*`. Otherwise, create the directory: `mkdir data/dev/repos`.
+8. `bundle exec rake db:setup`
+9. `bundle exec rake db:reset`
 
 At this point you are done. If you receive an `Early EOF` error, make sure `vagrant` has access to the gitolite-admin repo by doing `ssh git@localhost` from the `vagrant` user. If this does not work, then follow the steps outlined [here](http://gitolite.com/gitolite/emergencies.html) to clone the `gitolite-admin` repo manually somewhere and add the vagrant public key to the `keys` folder.
-
-
