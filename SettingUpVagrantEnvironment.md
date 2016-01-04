@@ -53,7 +53,7 @@ To install Gitolite, we first need to create a new user. All of the operations b
 1. `ssh-keygen` - Generate an ssh key for the vagrant user. (Say yes to overwriting the .ssh/id_rsa file, and no passphrase.)
 2. `su git` - Switch user. (password is vagrant)
 3. `cd ~` - Change to the git user's home directory
-4. `scp vagrant@localhost:.ssh/id_rsa.pub vagrant.pub` - copy the vagrant public key for gitolite to use. (password vagrant)
+4. `sudo scp vagrant@localhost:.ssh/id_rsa.pub vagrant.pub` - copy the vagrant public key for gitolite to use. (password vagrant)
 5. `chmod a+r vagrant.pub` - get the permissions right
 6. `mkdir bin`
 7. `gitolite/install -ln`
