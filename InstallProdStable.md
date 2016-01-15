@@ -28,9 +28,6 @@ Install Bundler, a gem for managing gems.
 
 **NOTE** Apache installation will not be described here. Only configuration will be.
 
-**NOTE** In Production it is highly recommended to either use PostgreSQL or MySQL databases. Do NOT use SQLite.
-
-**NOTE** If your want to test PDF conversion on MarkUs, don't forget to set to true the \`PDF\_SUPPORT\` variable in \`config/environments/development.rb\`
 
 ### Setting up the Database
 

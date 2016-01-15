@@ -37,7 +37,7 @@ Install ruby-build, which provides an rbenv install command that simplifies the 
 Next, install any missing packages:
 
     $ sudo apt-get install build-essential openssl libreadline6 libreadline6-dev \
-    curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 \
+    curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev \
     libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison  \
     subversion pkg-config
 

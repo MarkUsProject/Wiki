@@ -3,6 +3,7 @@ MarkUS development on Mac OS X - Snow Leopard
 
 *Tutorial updated September 2013, with support for Snow Leopard 10.6.8 and Snow Lion 10.8.4*
 
+
 Setting up Git
 --------------
 
@@ -20,13 +21,10 @@ Once everything is set up and you have forked MarkUs, clone your repo:
 Setting up the Database
 -----------------------
 
-**Note : You can either use PostgreSQL or MySQL or SQLite3 as database**
-
-SQLite3 is easier to install, but should only used in development, not in production. You may also experience database conflicts, in particular if you want to test **PDF Conversion**. In case of PDF Conversion, you **MUST** use PostgreSQL or MySQL
+**Note : You can either use PostgreSQL or MySQL as database**
 
 Once you have decided what database best suits you :
 
--   [[Setting up the Database (SQLite)|SettingUpSQLite]]
 -   [[Setting up the Database (MySQL)|SettingUpMySQL]]
 -   [[Setting up the Database (PostgreSQL)|SettingUpPostgreSQL]]
 
@@ -95,17 +93,15 @@ To install bundler, run the following:
 
 Please note that bundler may ask you for your root password.
 
-Bundle also allows some selective installation. To install only sqlite3 support, execute the following:
-
-    $ bundle install --without postgresql mysql
+Bundle also allows some selective installation. 
 
 To install only postgresql support, execute the following:
 
-    $ PATH=$PATH:/Library/PostgreSQL/9.0/bin/ bundle install --without sqlite mysql
+    $ PATH=$PATH:/Library/PostgreSQL/9.0/bin/ bundle install --without mysql
 
 To install only mysql support, execute the following:
 
-    $ PATH=$PATH:/usr/local/mysql/bin/ bundle install --without postgresql sqlite
+    $ PATH=$PATH:/usr/local/mysql/bin/ bundle install --without postgresql
 
 As you can see, you may have to indicate to Bundler the path where PostgreSQL or MySQL were installed.
 
@@ -141,7 +137,6 @@ Once installed, you will see a green message telling you everything is ready:
 
 ![Bundler complete message](images/Installation_MacOsX-Bundler_complete.png "Bundler complete message")
 
-Note : If your want to test PDF conversion on MarkUs, don't forget to set to true the \`PDF\_SUPPORT\` variable in \`config/environments/development.rb\`
 
 After installation, you can run the following to list all gems used by MarkUs:
 

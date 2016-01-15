@@ -19,7 +19,7 @@ For postgres, setup the database.yml file, in the MarkUs' root directory:
 
 -   change the usernames and password (in development and test) to the ones you used in the section above ('markus' if you copy/pasted the instructions)
 
-For [mysql](SettingUpMySQL) or [sqlite](SettingUpSQLite), see the MarkUs configuration instructions in the relevant wiki pages.s
+For [mysql](SettingUpMySQL), see the MarkUs configuration instructions in the relevant wiki pages.
 
 
 Test plain MarkUs installation
@@ -28,7 +28,7 @@ Test plain MarkUs installation
 If you followed the above installation instructions in order, you should have a working MarkUs installation (in terms of required software and required configuration). But first you would need to create the development database, load relations into it and populate the db with some data. You can do so by the following series of commands (as non-root user, assuming you are in the application-root of the MarkUs source code;)(please adapt the following command):
 
     # gets gems that you do not have yet, like thoughtbot-shoulda 
-    $> bundle install  --without (postgresql) (sqlite) (mysql)
+    $> bundle install  --without (postgresql) (mysql)
     $> bundle exec rake db:setup         # creates, initializes, and populates all the databases uncommented in config/database.yml
     $> bundle exec rake test
 

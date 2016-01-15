@@ -77,17 +77,12 @@ Check everything was setup correctly:
 
 Setting up the Database
 -----------------------
-We primarily use PostgreSQL and recommend that development work be done using it, but you should also be able to use SQLite or MySQL.
-
-SQLite3 is easier to install, but should only used in development, not in production. You may also experience database conflicts, in particular if you want to test **PDF Conversion**. In case of PDF Conversion, you **MUST** use PostgreSQL or MySQL
-
-If your want to test PDF conversion on MarkUs, don't forget to set to true the `PDF_SUPPORT` variable in `config/environments/development.rb`
+We primarily use PostgreSQL and recommend that development work be done using it, but MySQL can also be used.
 
 Once you have decided what database best suits you :
 
--   [Setting up the Database (SQLite)](SettingUpSQLite)
--   [Setting up the Database (MySQL)](SettingUpMySQL)
 -   [Setting up the Database (PostgreSQL)](SettingUpPostgreSQL)
+-   [Setting up the Database (MySQL)](SettingUpMySQL)
 
 Other dependencies
 -------------------
@@ -113,17 +108,15 @@ If you get the error "Could not locate Gemfile", it means you are not in the cor
 
 Please note that bundler may ask you for your root password.
 
-Bundle allows also some selective installation. To install only sqlite3 support, execute the following:
-
-    $> bundle install --without postgresql mysql
+Bundle allows also some selective installation.
 
 To install only postgresql support support, execute the following:
 
-    $> bundle install --without sqlite mysql
+    $> bundle install --without mysql
 
 To install only mysql support, execute the following:
 
-    $> bundle install --without postgresql sqlite
+    $> bundle install --without postgresql
 
 On Ubuntu and Debian systems, the system can't find bundler. You need to add bundler to your PATH or run it directly
 
