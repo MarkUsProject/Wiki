@@ -43,7 +43,8 @@ We have never had success getting a development environment installed on Windows
 You have two main options.  The first is to use vagrant to download a pre-configured virtual machine that has most of the required software installed on it. The second is to set up your own virtual machine.  You should follow one of the the two installation guides below.
 
 - [Setting up a Vagrant Environment](SettingUpVagrantEnvironment)
-- [Setting up a development environment on GNU/Linux](InstallationGnuLinux)  
+- [Setting up a development environment on GNU/Linux](InstallationGnuLinux) 
+- [Setting up to run background processes using Resque and Redis](ResqueRedis)
 
 After you have installed the primary software components, it is time to get the MarkUs source code and configure it.
 
