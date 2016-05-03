@@ -17,13 +17,13 @@ Active Job provides the framework, and we use [Resque](https://github.com/resque
     make
     sudo make install
     ```
-The output recommends that you run `make test`, but it requires a newer version of `tcl` I didn't bother.
+The output recommends that you run `make test`, but it requires a newer version of `tcl` so I didn't bother.
 
-3. Start `redis-server` in one shell by simply running the executable.  This is the memory store for keeing track of jobs in the queue.
+3. Start `redis-server` in one shell by simply running the executable.  This is the memory store for keeping track of jobs in the queue.
 
 2. Resque is a gem and should have been installed when you ran `bundle install.`
 
-To start up resque use the following.
+To start up resque use the following in another shell window.
 
 ```
  VVERBOSE=1 QUEUE=* bundle exec rake environment resque:work
