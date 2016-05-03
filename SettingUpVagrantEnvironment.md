@@ -20,13 +20,15 @@ This will download a fairly large (3GB) Debian box from the internet, so go [tak
 Connecting to your box
 ----------------------
 
-Next, run `vagrant ssh` to connect to the virtual machine. (If it asks you for a password for vagrant, the password is "vagrant".)
+Next, run `vagrant ssh` to connect to the virtual machine. (If it asks you for a password for vagrant, the password is "vagrant".)  To avoid having to enter a password each time, and to use RubyMine, [set up](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) a public private key pair, and copy the public key to `~/.ssh/authorized_keys` on the vagrant vm.
 
-Follow the instructions for [Setting up Git and MarkUs](GitHowTo) to clone the MarkUs repo on the virtual machine.
+If you plan to use RubyMine on your local machine to edit code, then you want to follow the instructions to clone the MarkUs repo on your **local** machine.  If you aren't using RubyMine then you should clone the MarkUs repo on the virtual machine. The relevant documentation for both cases is in [Setting up Git and MarkUs](GitHowTo).  (This is a document you will want to read very carefully and may come back to.)
 
-**NOTE:** It is possible to set up the vitual machine to share folders with the host machine, but in our experience, this is too slow to be a good work environment, and sometimes doesn't work at all.  If you do want to enable shared folders, you can check out that [vagrant documentation](http://docs.vagrantup.com/v2/synced-folders/).
+**NOTE:** It is possible to set up the virtual machine to share folders with the host machine, but in our experience, this is too slow to be a good work environment, and sometimes doesn't work at all.  If you do want to enable shared folders, you can check out that [vagrant documentation](http://docs.vagrantup.com/v2/synced-folders/).  We have found it more effective to work with files locally using RubyMine and deploy/upload to the vagrant box when you want to try things out.
 
-Finally, move the `database.yml` file from the Home directory of the vagrant box to the project’s `config` directory.
+If you are using RubyMine then you should jump down to the set up instructions for RubyMine below before proceeding to the next step.
+
+Finally, move the `database.yml` file from the Home directory of the vagrant box to the project’s `config` directory.   
 
 Change to the `MarkUs` directory.  Before you can run the server you will need to install or update required gems with `bundle install`.  You may find that the installation of some gems will fail.  Following the instructions in the output and re-running bundle install usually resolves the problem.
 
@@ -48,16 +50,21 @@ Install [RubyMine] (https://www.jetbrains.com/ruby/)
 
 **NOTE**: RubyMine will tell you that there are missing gems to be installed, it is okay to ignore this.
 
-Go to Files > Settings > Tools > Vagrant, set the Instance folder to your Markus directory with the Vagrantfile and leave the Provider as *Default*.
+First, o view the MarkUs files, when RubyMine runs select Open, or File > Open and navigate to your cloned MarkUs folder on your local machine.
+
+Open up Files > Settings  (in Windows) or Files > Preferences in OSX where we will configure some different settings.
+
+1) In Tools > Vagrant, set the Instance folder to your Markus directory on the *local* machine with the Vagrantfile and leave the Provider as *Default*.
 
 Before attempting the next step, you need to find the Ruby interpreter path on your virtualbox, which can be done from ssh with: `rvm gemdir`
 
-From settings as well, go to Languages & Frameworks > Ruby SDK and Gems, and click add symbol (green plus sign) and select "New remote..."
+2) Go to Languages & Frameworks > Ruby SDK and Gems, and click add symbol (green plus sign) and select "New remote..."
+
 There are two ways to set up Vagrant through RubyMine, whereby the second option should be tried if the first one fails:
 
-1) Select the Vagrant radio button, set the instance folder to the root MarkUs folder where the Vagrantfile is. Confirm the connection works by clicking on the Host URL.
+    1) Select the Vagrant radio button, set the instance folder to the root MarkUs folder where the Vagrantfile is. Confirm the connection works by clicking on the Host URL.
 
-2) If (1) does not work, then select the SSH Credentials radio button and enter the following:
+    2) If (1) does not work, then select the SSH Credentials radio button and enter the following:
 
 ```
 	Host: localhost (**NOTE:** Windows may fail if you use 127.0.0.1, try using 'localhost' first before 127.0.0.1)
@@ -68,11 +75,13 @@ There are two ways to set up Vagrant through RubyMine, whereby the second option
 	Ruby interpreter path: (Place the path you got earlier here)
 ```
 
-With the above being added and having returned to the Ruby SDK and Gems window, select the green checkmark (should be under green plus symbol).
+    Now return to the Ruby SDK and Gems window, select the green checkmark (should be under green plus symbol).
+    
+3. You can open an ssh session to the vagrant virtual machine directly in RubyMine from Tools > Start SSH Session.  You need to make sure that you have installed a public key on the vagrant vm so that you don't need a password (or passphrase) to ssh into the vagrant vm.
 
-At this point, you may need to restart RubyMine before making the next step work. There also is an option to do SSH through RubyMine and start/pause/kill Vagrant if you have not done so before starting RubyMine. This can be found at Tools > Vagrant > (command here). You may need the Vagrant server to be online for the next step:
+At this point, you may need to restart RubyMine before making the next step work. There also is an option to do SSH through RubyMine and start/pause/kill Vagrant if you have not done so before starting RubyMine. These commands can be found under Tools > Vagrant. You may need the Vagrant server to be online for the next step:
 
-To deploy the files to the server from RubyMine, select Tools > Deployment > Upload to vagrant. If this option is grayed out, you will need to either restary RubyMine, make sure you entered the correct address in the previous steps, or possibly wait a minute for it to be recognized by RubyMine. When deploying to the server, make sure you are selecting the folder from the Project view, otherwise it may not deploy the folder.
+To deploy all the MarkUs files to the server from RubyMine, first select the Markus folder in the left pane, and then select Tools > Deployment > Upload to vagrant. (If this option is grayed out, you may need to either restart RubyMine, make sure you entered the correct address in the previous steps, or possibly wait a minute for it to be recognized by RubyMine.)  The Upload command will upload whichever file or folder is selected.  If the selected file or folder hasn't changed then the option for Upload will be grayed out.
 
 Upon doing this, you will be able to edit MarkUs through RubyMine and upload successfully.
 
