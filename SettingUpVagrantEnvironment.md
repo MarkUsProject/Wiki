@@ -39,6 +39,44 @@ Finally, run `bundle exec rails server` from the project directory.
 You should now be able to access the site from your host machine's browser at `http://0.0.0.0:3000`.
 
 
+Using RubyMine
+--------------
+
+Install [RubyMine] (https://www.jetbrains.com/ruby/)
+
+**NOTE**: If you are using Windows 7, you may need to install Java 8 (JDK included) to work around a connectivity issue as RubyMine (at the time of writing this) uses Java 7 which has an incompatibility.
+
+**NOTE**: RubyMine will tell you that there are missing gems to be installed, it is okay to ignore this.
+
+Go to Files > Settings > Tools > Vagrant, set the Instance folder to your Markus directory with the Vagrantfile and leave the Provider as *Default*.
+
+Before attempting the next step, you need to find the Ruby interpreter path on your virtualbox, which can be done from ssh with: `rvm gemdir`
+
+From settings as well, go to Languages & Frameworks > Ruby SDK and Gems, and click add symbol (green plus sign) and select "New remote..."
+There are two ways to set up Vagrant through RubyMine, whereby the second option should be tried if the first one fails:
+
+1) Select the Vagrant radio button, set the instance folder to the root MarkUs folder where the Vagrantfile is. Confirm the connection works by clicking on the Host URL.
+
+2) If (1) does not work, then select the SSH Credentials radio button and enter the following:
+
+```
+	Host: localhost (**NOTE:** Windows may fail if you use 127.0.0.1, try using 'localhost' first before 127.0.0.1)
+	Port: 2222
+	User name: vagrant
+	Auth type: Password
+	Password: (your vagrant password here), the password checkbox is selected
+	Ruby interpreter path: (Place the path you got earlier here)
+```
+
+With the above being added and having returned to the Ruby SDK and Gems window, select the green checkmark (should be under green plus symbol).
+
+At this point, you may need to restart RubyMine before making the next step work. There also is an option to do SSH through RubyMine and start/pause/kill Vagrant if you have not done so before starting RubyMine. This can be found at Tools > Vagrant > (command here). You may need the Vagrant server to be online for the next step:
+
+To deploy the files to the server from RubyMine, select Tools > Deployment > Upload to vagrant. If this option is grayed out, you will need to either restary RubyMine, make sure you entered the correct address in the previous steps, or possibly wait a minute for it to be recognized by RubyMine. When deploying to the server, make sure you are selecting the folder from the Project view, otherwise it may not deploy the folder.
+
+Upon doing this, you will be able to edit MarkUs through RubyMine and upload successfully.
+
+
 Doing work on Markus's Git branch?
 ----------------------------------
 
