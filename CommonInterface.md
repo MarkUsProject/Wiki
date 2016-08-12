@@ -8,7 +8,31 @@ We  have created a common interface for our criteria, so that we can use the sam
 
 ----------
 
-<i class="icon-list"> **Methods**
+<i class="icon-list"> Common Attributes
+===================
+The following attributes are shared among all types of criteria:
+
+-- **name**
+: The name of the criterion.
+
+-- **position**
+: The position of the criterion.
+
+-- **assignment_id**
+: The id of the assignment to which this criterion belongs.
+
+-- **max_mark**
+: The maximum mark a student can achieve for this particular criterion.
+
+-- **ta_visible**
+:  Determines if the criterion is visible to teaching assistants or not.
+
+-- **peer_visible**
+: Determines if the criterion is visible to peer reviewers or not.
+
+----------
+
+<i class="icon-list"> Methods
 ===================
 All the methods below are defined in all of the criteria models.
 
@@ -34,6 +58,9 @@ All the methods below are defined in all of the criteria models.
 -- **set_mark_by_criterion(mark_to_change, mark_value)**
 :  &nbsp;&nbsp; Sets the mark for a criterion appropriately, depending on its type.
 :
-> **Note:** This method is called on an instance of a class, and therefore, it is called as follows:
+-- **weight**
+:  &nbsp;&nbsp; Returns the weight of the criterion.
+:
+> **Note:** These methods are called on an instance of a class, and therefore, they are called as follows:
 > my_instance = RubricCriterion.create(name: 'My Rubric criterion')
 > my_instance.instance_method(parameters)
