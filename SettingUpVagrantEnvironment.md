@@ -6,8 +6,7 @@ Downloading and Installing
 If you want to get started on working on MarkUs quickly and painlessly, this is the way to do it.
 
 1. Install [VirtualBox](https://www.virtualbox.org/) and [Vagrant](http://www.vagrantup.com/)
-2. Copy the [Vagrantfile](https://raw.githubusercontent.com/MarkUsProject/Markus/master/Vagrantfile) from the MarkUs github site to your machine.
-
+2. Clone the Markus repo from GitHub by following the instructions in [Setting up Git and MarkUs](GitHowTo).  (This is a document you will want to read very carefully and may come back to.) 
 3. `cd` to the repo (make sure you’re in the right directory - it should contain the Vagrantfile)
 4. `vagrant up`
 
@@ -22,21 +21,15 @@ Connecting to your box
 
 Next, run `vagrant ssh` to connect to the virtual machine. (If it asks you for a password for vagrant, the password is "vagrant".)  To avoid having to enter a password each time, and to use RubyMine, [set up](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) a public private key pair, and copy the public key to `~/.ssh/authorized_keys` on the vagrant vm.
 
-If you plan to use RubyMine on your local machine to edit code, then you want to follow the instructions to clone the MarkUs repo on your **local** machine.  If you aren't using RubyMine then you should clone the MarkUs repo on the virtual machine. The relevant documentation for both cases is in [Setting up Git and MarkUs](GitHowTo).  (This is a document you will want to read very carefully and may come back to.)
-
 **NOTE:** It is possible to set up the virtual machine to share folders with the host machine, but in our experience, this is too slow to be a good work environment, and sometimes doesn't work at all.  If you do want to enable shared folders, you can check out that [vagrant documentation](http://docs.vagrantup.com/v2/synced-folders/).  We have found it more effective to work with files locally using RubyMine and deploy/upload to the vagrant box when you want to try things out.
 
 If you are using RubyMine then you should jump down to the set up instructions for RubyMine below before proceeding to the next step.
 
-Finally, move the `database.yml` file from the Home directory of the vagrant box to the project’s `config` directory.   
+In the virtual machine, change to the `Markus` directory.  Before you can run the server you will need to install or update required gems with `bundle install`.  You may find that the installation of some gems will fail.  Following the instructions in the output and re-running bundle install usually resolves the problem.
 
-Change to the `MarkUs` directory.  Before you can run the server you will need to install or update required gems with `bundle install`.  You may find that the installation of some gems will fail.  Following the instructions in the output and re-running bundle install usually resolves the problem.
+Ensure the database is correctly populated by running `rake db:reset`.
 
-Create the directory used for storing repos: `mkdir data/dev/repos`.
-
-Ensure the database is correctly populated by running `bundle exec rake db:reset`
-
-Finally, run `bundle exec rails server` from the project directory. 
+Finally, run `rails server` from the project directory. 
 
 You should now be able to access the site from your host machine's browser at `http://0.0.0.0:3000`.
 
@@ -91,27 +84,11 @@ Doing work on Markus's Git branch?
 
 WARNING: The gitolite instructions are still a work in progress.
 
-The git branch requires some additional setup to your MarkUs instance. This is because the method student repositories are generated differs between SVN and Git.
+Gitolite should already be set up and ready to use on the virtual machine. To test it out, do a `vagrant ssh` and then run the following commands:
 
-We will use [Gitolite](http://gitolite.com/gitolite/index.html) to handle authentication.
-
-To install Gitolite, we first need to create a new user. All of the operations below should be run on the Vagrant virtual machine.
-
-1. `ssh-keygen` - Generate an ssh key for the vagrant user. (Say yes to overwriting the .ssh/id_rsa file, and no passphrase.)
-2. `su git` - Switch user. (password is vagrant)
-3. `cd ~` - Change to the git user's home directory
-4. `sudo scp vagrant@localhost:.ssh/id_rsa.pub vagrant.pub` - copy the vagrant public key for gitolite to use. (password vagrant)
-5. `chmod a+r vagrant.pub` - get the permissions right
-6. `mkdir bin`
-7. `gitolite/install -ln`
-8. `bin/gitolite setup -pk vagrant.pub` - Setup Gitolite using our `vagrant` public key.
-
-Let's test our Gitolite installation:
-
-1. `exit` - Log back into vagrant user.
-2. `eval $(ssh-agent -s)` - Start your key agent to hold the private key.
-3. `ssh-add ~/.ssh/id_rsa` - Add key to key agent.
-4. `ssh -T git@localhost` - Say `yes` if prompted.
+1. `eval $(ssh-agent -s)` - Start your key agent to hold the private key.
+2. `ssh-add ~/.ssh/id_rsa` - Add key to key agent.
+3. `ssh -T git@localhost` - Say `yes` if prompted.
 
 You should see the following output:
 
@@ -126,7 +103,7 @@ Now set up MarkUs to use git instead of svn:
 1. `cd ~/Markus`
 2. Edit `config/environments/development.rb`: the value for `REPOSITORY_TYPE` should be `'git'`, not `'svn'`.
 3. If you already have `data/dev/repos`, then do `rm -rf data/dev/repos/*`. Otherwise, create the directory: `mkdir data/dev/repos`.
-4. `bundle exec rake db:setup` - warning: this may take a very long time
-5. `bundle exec rake db:reset` 
+4. `rake db:setup` - warning: this may take a very long time
+5. `rake db:reset` 
 
 At this point you are done. If you receive an `Early EOF` error, make sure `vagrant` has access to the gitolite-admin repo by doing `ssh git@localhost` from the `vagrant` user. If this does not work, then follow the steps outlined [here](http://gitolite.com/gitolite/emergencies.html) to clone the `gitolite-admin` repo manually somewhere and add the vagrant public key to the `keys` folder.
