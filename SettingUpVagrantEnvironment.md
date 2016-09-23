@@ -19,7 +19,7 @@ This will download a fairly large (3GB) Debian box from the internet, so go [tak
 Connecting to your box
 ----------------------
 
-Next, run `vagrant ssh` to connect to the virtual machine. (If it asks you for a password for vagrant, the password is "vagrant".)  To avoid having to enter a password each time, and to use RubyMine, [set up](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) a public private key pair, and copy the public key to `~/.ssh/authorized_keys` on the vagrant vm. Then open the VagrantFile on your local machine and add `config.ssh.private_key_path = "Users/your_username/.ssh/id_rsa"' directly under `config.vm.box = markusproject/ubuntu`. 
+Next, run `vagrant ssh` to connect to the virtual machine. (If it asks you for a password for vagrant, the password is "vagrant".)  To avoid having to enter a password each time, and to use RubyMine, [set up](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) a public private key pair, and copy the public key to `~/.ssh/authorized_keys` on the vagrant vm. Then open the VagrantFile on your local machine and add `config.ssh.private_key_path = "Users/your_username/.ssh/id_rsa"` directly under `config.vm.box = markusproject/ubuntu`. 
 
 **NOTE:** It is possible to set up the virtual machine to share folders with the host machine, but in our experience, this is too slow to be a good work environment, and sometimes doesn't work at all.  If you do want to enable shared folders, you can check out that [vagrant documentation](http://docs.vagrantup.com/v2/synced-folders/).  We have found it more effective to work with files locally using RubyMine and deploy/upload to the vagrant box when you want to try things out.
 
