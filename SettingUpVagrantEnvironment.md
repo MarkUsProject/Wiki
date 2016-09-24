@@ -96,7 +96,12 @@ And under `Mappings` set:
 ```
 And click OK. 
 
-To deploy all the MarkUs files to the server from RubyMine, first select the Markus folder in the left pane, and then select Tools > Deployment > Upload to vagrant. (If this option is grayed out, you may need to either restart RubyMine, make sure you entered the correct address in the previous steps, or possibly wait a minute for it to be recognized by RubyMine.)  The Upload command will upload whichever file or folder is selected.  If the selected file or folder hasn't changed then the option for Upload will be grayed out.
+To **deploy all** the MarkUs files to the server from RubyMine, first select the Markus folder in the left pane, and then select Tools > Deployment > Upload to vagrant. 
+* If this option is grayed out, you may need to either restart RubyMine, make sure you entered the correct address in the previous steps, or possibly wait a minute for it to be recognized by RubyMine.  
+* From Windows: you may want to set your deployment configuration to exclude the dummy_validate.sh file from uploading to Vagrant VM. Go to menu Tools > Deployment > Configuration. Then select Excluded Paths and add the path to the file there.
+* You can deploy individual files or folders by selecting them, and then select Tools > Deployment > Upload to vagrant.
+
+The Upload command will upload whichever file or folder is selected.  _Note_: If the selected file or folder hasn't modified then the option for Upload will be grayed out.
 
 Upon doing this, you will be able to edit MarkUs through RubyMine and upload successfully.
 
