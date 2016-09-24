@@ -19,7 +19,7 @@ This will download a fairly large (3GB) Debian box from the internet, so go [tak
 Connecting to your box
 ----------------------
 
-Next, run `vagrant ssh` to connect to the virtual machine. (If it asks you for a password for vagrant, the password is "vagrant".)  To avoid having to enter a password each time, and to use RubyMine, [set up](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) a public private key pair, and copy the public key to `~/.ssh/authorized_keys` on the vagrant vm.
+Next, run `vagrant ssh` to connect to the virtual machine. (If it asks you for a password for vagrant, the password is "vagrant".)  To avoid having to enter a password each time, and to use RubyMine, [set up](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2) a public private key pair, and copy the public key to `~/.ssh/authorized_keys` on the vagrant vm. Then open the VagrantFile on your local machine and add `config.ssh.private_key_path = "Users/your_username/.ssh/id_rsa"` directly under `config.vm.box = markusproject/ubuntu`. 
 
 **NOTE:** It is possible to set up the virtual machine to share folders with the host machine, but in our experience, this is too slow to be a good work environment, and sometimes doesn't work at all.  If you do want to enable shared folders, you can check out that [vagrant documentation](http://docs.vagrantup.com/v2/synced-folders/).  We have found it more effective to work with files locally using RubyMine and deploy/upload to the vagrant box when you want to try things out.
 
@@ -73,6 +73,26 @@ There are two ways to set up Vagrant through RubyMine, whereby the second option
 3. You can open an ssh session to the vagrant virtual machine directly in RubyMine from Tools > Start SSH Session.  You need to make sure that you have installed a public key on the vagrant vm so that you don't need a password (or passphrase) to ssh into the vagrant vm.
 
 At this point, you may need to restart RubyMine before making the next step work. There also is an option to do SSH through RubyMine and start/pause/kill Vagrant if you have not done so before starting RubyMine. These commands can be found under Tools > Vagrant. You may need the Vagrant server to be online for the next step:
+
+In RubyMine, select Tools > Deployment > Configuration, and click the + in the top left to add a new server. After giving it a name, under `Connection` use the following settings:
+
+```
+	Type: SFTP 
+	SFTP host: 127.0.0.1
+	Port: 2222
+	Root path: /home/vagrant
+	User name: vagrant
+	Auth type: Key pair
+	Private key file: /Users/your_username/.ssh/id_rsa
+```
+
+And under `Mappings` set:
+
+```
+	Local path: [path to your local Markus repo]
+	Deployment path on server: /Markus
+```
+And click OK. 
 
 To deploy all the MarkUs files to the server from RubyMine, first select the Markus folder in the left pane, and then select Tools > Deployment > Upload to vagrant. (If this option is grayed out, you may need to either restart RubyMine, make sure you entered the correct address in the previous steps, or possibly wait a minute for it to be recognized by RubyMine.)  The Upload command will upload whichever file or folder is selected.  If the selected file or folder hasn't changed then the option for Upload will be grayed out.
 
