@@ -45,7 +45,7 @@ Install [RubyMine] (https://www.jetbrains.com/ruby/)
 
 **NOTE**: RubyMine will tell you that there are missing gems to be installed, it is okay to ignore this.
 
-First, o view the MarkUs files, when RubyMine runs select Open, or File > Open and navigate to your cloned MarkUs folder on your local machine.
+First, to view the MarkUs files, when RubyMine runs select Open, or File > Open and navigate to your cloned MarkUs folder on your local machine.
 
 Open up Files > Settings  (in Windows) or Files > Preferences in OSX where we will configure some different settings.
 
@@ -85,8 +85,9 @@ In RubyMine, select Tools > Deployment > Configuration, and click the + in the t
 	Root path: /home/vagrant
 	User name: vagrant
 	Auth type: Key pair
-	Private key file: /Users/your_username/.ssh/id_rsa
+	Private key file: ABSOLUTE_PATH
 ```
+(Again, ABSOLUTE_PATH is the path to your private key, e.g. `$HOME/.ssh/id_rsa`)
 
 And under `Mappings` set:
 
