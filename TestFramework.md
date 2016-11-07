@@ -4,7 +4,7 @@ Test Framework
 Definition
 ----------
 
-The Test Framework is a system in MarkUs allowing the automatic testing of students' code.
+The Test Framework is a system allowing the automatic testing of students' code from inside the MarkUs web portal. The tests themselves are not run within MarkUs; instead the Framework serves as an intermediary between users and existing testing systems.
 
 How does it work ?
 ------------------
@@ -18,12 +18,12 @@ Check these blog articles :
 Can I use it ?
 --------------
 
-The Test Framework is still in alpha. Use it at your own risks!
+The Test Framework is still in alpha. Use it at your own risk!
 
 How can I use it ?
 ------------------
 
-The Test Framework is not yet in the stable release of MarkUs. You will have to use the master branch of the code on GitHub to be able to test it.
+The Test Framework is under active development and is not yet in the stable release of MarkUs. You will have to use the master branch of the code on GitHub to be able to test it.
 
 ### As a SysAdmin of MarkUs instance
 
@@ -33,13 +33,13 @@ In particular, if you have errors about a *for task not found*, it is because An
 
 ### As an Administrator
 
-The administrator can define tests to be private or public. Public tests results will be available to Students. Private tests results won't be. Both private and public tests results will be available for Graders and Administrator.
+The administrator can determine whether each test is runnable by graders and/or students. Administrators are able to run all tests by default.
 
 ![Default Test Framework configuration page](images/Test_Framework-01.png "Default Test Framework configuration page")
 
 ![Test Framework configuration page once completed](images/Test_Framework-02.png "Test Framework configuration page once completed")
 
-Student access to the test framework is controlled using test tokens. A student or group can run tests as many times as they have tokens. On the test framework configuration page, the administrator can decide how many tokens to allocate to each student/group. Currently tokens refresh every day, but very soon it will be possible for an administrator to choose how often to refresh tokens (daily, hourly or never).
+In order to avoid overloading the testing system during periods of high demand, student access to the test framework is controlled using test tokens. A student or group can run tests as many times as they have tokens. On the test framework configuration page, the administrator can decide how many tokens to allocate to each student/group (or provide unlimited tokens), determine whether tokens regenerate and how often, and decide when students can begin running tests by setting a start time for token availability.
 
 ### As a Grader
 
@@ -53,7 +53,7 @@ Graders will have to report to the Admin if tests do not run.
 
 ### As a Student
 
-As mentioned above, the Student is assigned tokens for running tests. Tokens are reset every day by default, though this will easily be changeable. If a group or student has remaining tokens, they do not carry over to the new day.
+As mentioned above, the Student is assigned tokens for running tests. Tokens regenerate every hour by default, though this is easily adjustable by the administrator. If a group or student has remaining tokens, they do not carry over to the new period.
 
 ![Test frame is not available if the group is not valid](images/Test_Framework-03.png "Test frame is not available if the group is not valid")
 
