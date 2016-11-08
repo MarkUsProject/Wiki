@@ -129,7 +129,7 @@ Below you will find detailed back-end descriptions of the Test Framework system,
 ## Tokens
 The number of tokens per period for an assignment and their associated settings are stored in fields of the assignment object. 
 ### As admin -> Assignment Settings -> Test Framework
-This page allows an admin to **modify the token settings** for a given assignment. Each checkbox has an inline call to a function at the end of [assets/javascripts/create_assignment.js](app/assets/javascripts/creat_assignment.js) that **toggles any fields** tied to that checkbox.
+This page allows an admin to **modify the token settings** for a given assignment. Each checkbox has an inline call to one of the functions defined at the bottom of [assets/javascripts/create_assignment.js](app/assets/javascripts/creat_assignment.js) that **toggles any fields** tied to that checkbox.
 Code for this form: [views/automated_tests/\_form.html.erb](app/views/automated_tests/_form.html.erb)(`line 30`). 
 
 When this form is submitted, the fields are passed to `update`: [controllers/automated_tests_controller.rb](app/controllers/automated_tests_controller.rb)(`line 113`). Assuming there are no errors,`line 24` of this method calls `process_test_form`: [helpers/automated_tests_client_helper.rb](app/helpers/automated_tests_client_helper.rb)(`line 36`) with the assignment, form contents, and any script files as arguments. 
