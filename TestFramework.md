@@ -124,7 +124,7 @@ Usage of the API Key
 --------------------
 
 # For MarkUs Developers
-Below you will find detailed back-end descriptions of some of Markus' systems, to help developers quickly get a handle on their structure. Certain phrases have been **bolded** that might be relevant to someone skimming the documentation looking for a specific action/behaviour. 
+Below you will find detailed back-end descriptions of the Test Framework system, to help developers quickly get a handle on its structure. Certain phrases have been **bolded** that might be relevant to someone skimming the documentation looking for a specific action/behaviour. 
 
 ## Tokens
 The number of tokens per period for an assignment and their associated settings are stored in fields of the assignment object. 
