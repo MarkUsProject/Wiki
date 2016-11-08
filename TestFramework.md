@@ -132,7 +132,7 @@ This page allows an admin to **modify the token settings** for a given assignmen
 Code for this form: [views/automated_tests/\_form.html.erb](app/views/automated_tests/_form.html.erb)(`line 30`). 
 
 When this form is submitted, the fields are passed to `update`: [controllers/automated_tests_controller.rb](app/controllers/automated_tests_controller.rb)(`line 113`). Assuming there are no errors,`line 24` of this method calls `process_test_form`: [helpers/automated_tests_client_helper.rb](app/helpers/automated_tests_client_helper.rb)(`line 36`) with the assignment, form contents, and any script files as arguments. 
-*(note: the `assignment_params` argument here is actually a method, defined at the bottom of the `automated_tests_controller`, which packs these paramters into one object I THINK)*. 
+*(note: the `assignment_params` argument here is actually a method, defined at the bottom of the `automated_tests_controller`, which packs these paramters into one object)*. 
 
 At the very end of `process_test_form` (`line 161`), the assignment's token parameters are updated with the values from the form.
 
