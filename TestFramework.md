@@ -33,13 +33,13 @@ In particular, if you have errors about a *for task not found*, it is because An
 
 ### As an Administrator
 
-The administrator can determine whether each test is runnable by graders and/or students. Administrators are able to run all tests by default.
+The administrator can determine whether each test script is runnable by graders and/or students. Administrators are able to run all tests by default. Test scripts can be associated with a specific criterion on the assignment, and are given a total to be scored out of based on how many of the checks in the script pass. 
 
 ![Default Test Framework configuration page](images/Test_Framework-01.png "Default Test Framework configuration page")
 
 ![Test Framework configuration page once completed](images/Test_Framework-02.png "Test Framework configuration page once completed")
 
-In order to avoid overloading the testing system during periods of high demand, student access to the test framework is controlled using test tokens. A student or group can run tests as many times as they have tokens. On the test framework configuration page, the administrator can decide how many tokens to allocate to each student/group (or provide unlimited tokens), determine whether tokens regenerate and how often, and decide when students can begin running tests by setting a start time for token availability.
+In order to avoid overloading the testing system during periods of high demand, student access to the test framework is controlled using **test tokens**. A student or group can run tests as many times as they have tokens. On the test framework configuration page, the administrator can decide how many tokens to allocate to each student/group (or provide unlimited tokens), determine whether tokens regenerate and how often, and decide when students can begin running tests by setting a start time for token availability.
 
 ### As a Grader
 
@@ -88,6 +88,7 @@ MarkUs will create a folder where it will put students' files :
                                |
                                |-test/
                                |
+                               
                                |-api.txt
                                |
                                |-api_helper.py
@@ -121,3 +122,28 @@ api\_helper.py and api\_helper.rb are two identical scripts used by Ant to retur
 
 Usage of the API Key
 --------------------
+
+# For MarkUs Developers
+
+## Tokens
+The number of tokens per period for an assignment and their associated settings are stored in fields of the assignment object. 
+### As admin -> Assignment Settings -> Test Framework
+This page allows an admin to modify the token settings for a given assignment. Each checkbox has an inline call to a JavaScript function defined at the bottom of [assets/javascripts/create_assignment.js](app/assets/javascripts/creat_assignment.js) that toggles any fields that are tied to that checkbox.
+Code for this form: [views/automated_tests/\_form.html.erb](app/views/automated_tests/_form.html.erb)(`line 30`). 
+
+When this form is submitted, the fields are passed to `update`: [controllers/automated_tests_controller.rb](app/controllers/automated_tests_controller.rb)(`line 113`). 
+
+Assuming there are no errors,`line 24` of this method calls `process_test_form`: [helpers/automated_tests_client_helper.rb](app/helpers/automated_tests_client_helper.rb)(`line 36`) with the assignment, form contents, and any script files as arguments. 
+*(note: the `assignment_params` argument here is actually a method, defined at the bottom of the `automated_tests_controller`, which packs these paramters into one object I THINK)*. 
+
+At the very end of `process_test_form` (`line 161`) the assignment's token parameters are updated with the values from the form.
+
+### As student -> Assignment -> Austomated Testing
+Token information for the student is displayed here. Code for this page: [views/automated_tests/student_interface.html.erb](app/views/automated_tests/student_interface.html.erb)
+
+Clicking "Run Tests" calls `execute_test_run`: [controllers/automated_tests_controller.rb](app/controllers/automated_tests_controller.rb)(`line 92`), which updates the current user/group's tokens for the assignment by calling `fetch_latest_tokens_for_grouping`: [helpers/automated_tests_client_helper.rb](app/helpers/automated_tests_client_helper.rb)(`line 10`). This method first ensures that the current group has an associated token object, then calls this token object's `reassign_tokens` method: [models/token.rb](app/models/token.rb)(`line 32`), which handles the DateTime math for regenerating tokens to determine how many the group should currently have. 
+
+If the current group has tokens remaining, `execute_test_run` calls `run_tests` (defined directly below), which in turn calls `request_a_test_run`: [helpers/automated_tests_client_helper.rb](app/helpers/automated_tests_client_helper.rb)(`line 36`), which calls `check_user_permission`, which calls the current token's `decrease_tokens` [models/token.rb](app/models/token.rb)(`line 22`) to decrement the number of tokens remaining, and makes sure the last used time is set properly. 
+
+### Other
+Whenever any changes are made to an assignment, [models/assignment.rb](app/models/assignment.rb)(`line 127`) calls `update_assigned_tokens` (`line 952`), which in turn calls the current token's `update_tokens` method: [models/token.rb](app/models/token.rb)(`line 48`), which updates the maximum number of tokens for student tests on that assignment. 
