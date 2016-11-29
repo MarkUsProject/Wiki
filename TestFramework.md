@@ -4,16 +4,14 @@ Test Framework
 Definition
 ----------
 
-The Test Framework is a system allowing the automatic testing of students' code from inside the MarkUs web portal. The tests themselves are not run within MarkUs; instead the Framework serves as an intermediary between users and existing testing systems.
+The Test Framework allows the automated testing of students' code through the MarkUs interface. An instructor uploads test scripts, and MarkUs sends the test scripts and the student's code to a separately configured testing environment. 
+
+To allow MarkUs to run tests in many different languages, the infrastructure that runs the tests is a separate from MarkUs, and may be completely different for different instances of MarkUs.  MarkUS handles launching tests and collecting and displaying the results.
 
 How does it work ?
 ------------------
 
-Check these blog articles :
-
--   [http://blog.markusproject.org/?p=1561](http://blog.markusproject.org/?p=1561)
--   [http://blog.markusproject.org/?p=1634](http://blog.markusproject.org/?p=1634)
--   [http://blog.markusproject.org/?p=2198](http://blog.markusproject.org/?p=2198)
+TODO
 
 Can I use it ?
 --------------
@@ -25,15 +23,9 @@ How can I use it ?
 
 The Test Framework is under active development and is not yet in the stable release of MarkUs. You will have to use the master branch of the code on GitHub to be able to test it.
 
-### As a SysAdmin of MarkUs instance
-
-You will need **Ant**. Install *ant* and *ant-contrib* packages on Debian/Ubuntu distributions.
-
-In particular, if you have errors about a *for task not found*, it is because Ant has difficulties with ant-contrib. This could be a result of not using a high enough version.
-
 ### As an Administrator
 
-The administrator can determine whether each test script is runnable by graders and/or students. Administrators are able to run all tests by default. Test scripts can be associated with a specific criterion on the assignment, and are given a total to be scored out of based on how many of the checks in the script pass. 
+The administrator can determine whether each test script is runnable by graders and/or students. Administrators are able to run all tests by default. A test script can be associated with a specific criterion on the assignment, and the maximum number of marks for that criterion is based on the number of tests in the script.
 
 ![Default Test Framework configuration page](images/Test_Framework-01.png "Default Test Framework configuration page")
 
@@ -43,13 +35,9 @@ In order to avoid overloading the testing system during periods of high demand, 
 
 ### As a Grader
 
-A Grader can run tests as many times as they want. Results will show up on the grading page. If tests don't run properly, graders have access to the test logs to determine problems, but do not have the ability to correct **Ant** files.
+A Grader can run tests as many times as they want. Results will show up on the grading page. If tests don't run properly, graders have access to the test logs to determine problems
 
-![Grader View](images/Test_Framework-07.png "The Grader has the same tool to run the tests.")
-
-![Grader View](images/Test_Framework-08.png "The Grader can see the result of the tests in a modal window")
-
-Graders will have to report to the Admin if tests do not run.
+TODO: is this still true?
 
 ### As a Student
 
@@ -63,71 +51,15 @@ As mentioned above, the Student is assigned tokens for running tests. Tokens reg
 
 ![Test Frame](images/Test_Framework-06.png "The student has access to the history of all test runs.")
 
-Writting a build.xml
---------------------
 
-You can find some useful ressources here : [http://www.markusproject.org/dev/ant\_files.zip](http://www.markusproject.org/dev/ant_files.zip)
 
-Ant uses a file called build.xml to construct the project. It is this file that will describe all tasks that Ant will run when running tests.
-
-There is also a file called build.properties where we put some variable definitions.
-
-MarkUs will create a folder where it will put students' files :
-
-    automated_tests/group_0001/A1/
-                               |
-                               |-build/
-                               |
-                               |-lib/
-                               |
-                               |-parse/
-                               |
-                               |-reports/
-                               |
-                               |-src/
-                               |
-                               |-test/
-                               |
-                               
-                               |-api.txt
-                               |
-                               |-api_helper.py
-                               |
-                               |-api_helper.rb
-                               |
-                               |-build.properties
-                               |
-                               |-build.xml
-
-MarkUs will put student's files in src. MarkUs will put test files given by the Administrator in test. It will also pul librairies given by the Administrator in lib.
-
-api\_helper.py and api\_helper.rb are two identical scripts used by Ant to return test results to MarkUs. api.txt contains the user api key. It allows api\_helper to communicate with MarkUs.
-
-### Java
-
-#### build.xml
-
-#### build.properties
-
-    #build.properties
-    #Here you can add some properties for your project
-
-    src.dir = src
-    build.dir = build
-    test.dir = test
-
-    reports.dir = reports
-
-    api_key.file = api.txt
-
-Usage of the API Key
---------------------
 
 # For MarkUs Developers
 Below you will find detailed back-end descriptions of the Test Framework system, to help developers quickly get a handle on its structure. Certain phrases have been **bolded** that might be relevant to someone skimming the documentation looking for a specific action/behaviour. 
 
 ## Tokens
 The number of tokens per period for an assignment and their associated settings are stored in fields of the assignment object. 
+
 ### As admin -> Assignment Settings -> Test Framework
 This page allows an admin to **modify the token settings** for a given assignment. Each checkbox has an inline call to one of the functions defined at the bottom of [assets/javascripts/create_assignment.js](app/assets/javascripts/creat_assignment.js) that **toggles any fields** tied to that checkbox.
 Code for this form: [views/automated_tests/\_form.html.erb](app/views/automated_tests/_form.html.erb)(`line 30`). 
@@ -137,7 +69,7 @@ When this form is submitted, the fields are passed to `update`: [controllers/aut
 
 At the very end of `process_test_form` (`line 161`), the **assignment's token parameters are updated** with the values from the form.
 
-### As student -> Assignment -> Austomated Testing
+### As student -> Assignment -> Automated Testing
 This is where students **spend tokens** to run tests. Code for this page: [views/automated_tests/student_interface.html.erb](app/views/automated_tests/student_interface.html.erb)
 
 Clicking "Run Tests" calls `execute_test_run`: [controllers/automated_tests_controller.rb](app/controllers/automated_tests_controller.rb)(`line 92`), which retrieves the current user/group's tokens for the assignment through  `fetch_latest_tokens_for_grouping`: [helpers/automated_tests_client_helper.rb](app/helpers/automated_tests_client_helper.rb)(`line 10`). This method first **ensures that the current group has an associated token object**, then calls this token object's `reassign_tokens` method: [models/token.rb](app/models/token.rb)(`line 32`), which handles the DateTime math for regenerating tokens to **determine how many tokens the group should currently have**. 
