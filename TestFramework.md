@@ -43,15 +43,6 @@ TODO: is this still true?
 
 As mentioned above, the Student is assigned tokens for running tests. Tokens regenerate every hour by default, though this is easily adjustable by the administrator. If a group or student has remaining tokens, they do not carry over to the new period.
 
-![Test frame is not available if the group is not valid](images/Test_Framework-03.png "Test frame is not available if the group is not valid")
-
-![Test frame is available once the group is valid](images/Test_Framework-04.png "Test frame is available once the group is valid")
-
-![Test Frame](images/Test_Framework-05.png "The student can see the revision used for the tests.")
-
-![Test Frame](images/Test_Framework-06.png "The student has access to the history of all test runs.")
-
-
 
 
 # For MarkUs Developers
