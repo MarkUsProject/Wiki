@@ -125,7 +125,7 @@ In this case, the "keys" of the header object are user\_name, first\_name, last\
 
 The row can contain other information (like "other\_data", in this case), but since this key is not in the header, it won't be displayed. This is useful for storing information to filter or sort on, without display it. Also note the "1" preceding the row information. This is the ID of the record. See below in "Populating with Data" to see more information on how this works.
 
-In the header object, after defining the keys, we have to also provide information on how the header should be behave and be displayed. The "display" parameter determines what the header content will be. "sortable" determines whether or not that header can be clicked on in order to perform a sort. "sort\_with" allows us to define a custom sorting function - see Sorts below.
+In the header object, after defining the keys, we have to also provide information on how the header should behave and be displayed. The "display" parameter determines what the header content will be. "sortable" determines whether or not that header can be clicked on in order to perform a sort. "sort\_with" allows us to define a custom sorting function - see Sorts below.
 
 #### Filters
 
