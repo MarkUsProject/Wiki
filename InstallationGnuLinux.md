@@ -3,7 +3,7 @@ Setting up a development environment for MarkUs development on GNU/Linux
 
 **Please note the difference between "$\>" and "\#\>". The former means execute the command as simple user, the latter means execute the command as the super-user or use sudo as normal user ("\#\>" is equivalent to "\> sudo").**
 
-We are currently working with Ruby 2.1.x (January 2015).  Ruby 2.x is not avilable through package managers so you will need to install RVM.  If you want to use rbenv or something else, please add the appropriate installation documentation.
+We are currently working with Ruby 2.1.x (January 2015).  Ruby 2.x is not available through package managers so you will need to install RVM.  If you want to use rbenv or something else, please add the appropriate installation documentation.
 
 Installing RVM and Setting up Ruby
 -----------------------------------
@@ -27,7 +27,7 @@ You should be able to use apt-get to install git
 Setting up Subversion and the Subversion Ruby bindings
 ---------------------------------------------------------------------------
 
-Fist, download Subversion source code here :
+First, download Subversion source code here :
 
 [https://subversion.apache.org/download](https://subversion.apache.org/download)/ (If you are on the virtual machine, you can use \`wget [http://mirror.its.dal.ca/apache/subversion/subversion-1.8.10.tar.gz](http://mirror.its.dal.ca/apache/subversion/subversion-1.8.10.tar.gz)\` for example)
 
