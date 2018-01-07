@@ -6,7 +6,7 @@ Installation
 
 Netbeans can be downloaded here : [http://netbeans.org](http://netbeans.org)/
 
-Please check if you distribution embed Netbeans packages.
+Please check if your distribution embed Netbeans packages.
 
 ### Debian/Ubuntu
 
