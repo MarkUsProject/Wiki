@@ -40,7 +40,7 @@ The default admin user is `a` with any non-empty password. Look at `db/seeds.rb`
 Using RubyMine
 --------------
 
-Install [RubyMine] (https://www.jetbrains.com/ruby/)
+Install [RubyMine](https://www.jetbrains.com/ruby/)
 
 **NOTE**: If you are using Windows 7, you may need to install Java 8 (JDK included) to work around a connectivity issue as RubyMine (at the time of writing this) uses Java 7 which has an incompatibility.
 
