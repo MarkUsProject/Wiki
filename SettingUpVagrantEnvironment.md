@@ -35,6 +35,7 @@ Finally, run `rails server` from the project directory.
 
 You should now be able to access the site from your host machine's browser at `http://0.0.0.0:3000`.
 
+The default admin user is `a` with any non-empty password. Look at `db/seeds.rb` for other users.
 
 Using RubyMine
 --------------
