@@ -45,21 +45,21 @@ In the “Remark Request Rules” section, it's possible to choose if students c
 
 ![Add a new assignment](images/Doc_Admin_AddAssignment4.png "How To add a new assignment")
 
-Once the assignment created, you have to define the marking scheme, and annotation models that the grader can use (of course the grader can add his own markings) and the identity of the graders for this assignment.
+Once the assignment is created, you have to define the marking scheme, and annotation models that the grader can use (of course the grader can add his own markings) and the identity of the graders for this assignment.
 
 Define the marking scheme
 -------------------------
 
-The section “Marking Scheme” allows the administrator to define the way to evaluate the assignment. This scheme cans be used in an other assignment thanks to the tags “Upload” and “Download”. Once this scheme saved in MarkUs, it's possible to recover it in the formate CSV for save and then upload it in a new assignment.
+The section “Marking Scheme” allows the administrator to define the way to evaluate the assignment. This scheme can be used in an other assignment thanks to the tags “Upload” and “Download”. Once this scheme saved in MarkUs, it's possible to recover it in the formate CSV for save and then upload it in a new assignment.
 
 ![Configure Marking Scheme](images/Doc_Admin_RubricScheme.png "Marking Scheme")
 
 Define annotation models
 ------------------------
 
-MarkUs allows the administrator to define annotation models for graders. It's therefor possible to help graders to correct with defining models for comments and annotations that they will probably use. It's also convenient to unify the correction. Of course, graders can besides add their own comments on the work of the students .
+MarkUs allows the administrator to define annotation models for graders. It's therefore possible to help graders to correct with defining models for comments and annotations that they will probably use. It's also convenient to unify the correction. Of course, graders can besides add their own comments on the work of the students .
 
-*The annotation models are very easy to used for source code, however it's not yet possible to use it for pdf files, but it will be soon possible.*
+*The annotation models are very easy to use for source code, however it's not yet possible to use it for pdf files, but it will be soon possible.*
 
 Firstly, it's possible to recover a list of annotation models already saved to use it in another implementation of MarkUs (thanks to “Upload”). You should avoid to upload a list of annotations if some annotations have already been saved in MarkUs because the application will maybe delete the list already saved to keep the one which is uploaded. You can arrange the annotation in different categories clicking “Add Annotation Category”
 
@@ -72,7 +72,7 @@ Once you have created the category choose “Add annotation”, write the annota
 Affect students to an assignment
 --------------------------------
 
-This step is necessary to make MarkUs work well : affect students to an assignment. Firstly, you need to check that students are correctly registered in MakUs. Click “Users” and then “Students”. You can add students who are not present in this list clicking “Add new”. It's possible to save the graders list with “Download” in order to use it in another implementation (with “Upload”).You should avoid to upload a list of students if some annotations have already been saved in MarkUs because the application will maybe delete the list already saved to keep the one which is uploaded.
+This step is necessary to make MarkUs work well : affect students to an assignment. Firstly, you need to check that students are correctly registered in MarkUs. Click “Users” and then “Students”. You can add students who are not present in this list clicking “Add new”. It's possible to save the graders list with “Download” in order to use it in another implementation (with “Upload”).You should avoid to upload a list of students if some annotations have already been saved in MarkUs because the application will maybe delete the list already saved to keep the one which is uploaded.
 
 ![Manage Students](images/Doc_Admin_ManageStudents.png "Annotations Configuration")
 
@@ -107,7 +107,7 @@ Once the deadline reached , the administrator can force the recovery of all the 
 Recover the work of a group to test on your computer
 ----------------------------------------------------
 
-MakUs doesn't allow to test the files with the interface web yet but it will be possible soon. The administrator can however recover the work of a group of students to test in your computer. You have two solutions :
+MarkUs doesn't allow to test the files with the interface web yet but it will be possible soon. The administrator can however recover the work of a group of students to test in your computer. You have two solutions :
 
 -   The first one consists in downloading the files you want from the annotation interface of the code. You only need to click “Download”. It's possible to recover the annotation already saved by checking “Add Annotations”. In this case, annotations will appear as comments in the code downloaded with MarkUs
 -   The second solution uses Subversion. Only the administrator has this possibility. You have to go to the section “Submissions” and then export the files with SVN. It allows to download a file with the commands required to write as a command line in order to recover the files of every group of students.
@@ -131,7 +131,7 @@ Although students can save and edit their remark requests multiple times, the in
 
 Click on the Remark Request tab to view the request details. The instructor can write any additional overall comments regarding the request in this tab.
 
-\*Please note that once a remark request has been submitted by the student, the student will be unable to view both the original and partially remarked results. Only after the instructor releases the grades again will results be availabe to the students.
+\*Please note that once a remark request has been submitted by the student, the student will be unable to view both the original and partially remarked results. Only after the instructor releases the grades again will results be available to the students.
 
 ![Remark Request Tab](images/Doc_Admin_Remark_Request_Tab.png "View and Process Remark Request")
 

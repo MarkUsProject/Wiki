@@ -8,7 +8,7 @@ It allows any user which is pre-registered to connect, either as a student, as a
 Submitting a homework
 ---------------------
 
-From this web homepage, the student has to choose the project in which he will take part. Then a summary of the work is presented to him — especially the tasks to accomplish, and the different files to send before a specified deadline. The mount of students required for each subgroup is also clearly indicated. The student has moreover the possibility to “Work alone” or to “Create” his own subgroup:
+From this web homepage, the student has to choose the project in which he will take part. Then a summary of the work is presented to him — especially the tasks to accomplish, and the different files to send before a specified deadline. The amount of students required for each subgroup is also clearly indicated. The student has moreover the possibility to “Work alone” or to “Create” his own subgroup:
 
 -   In order to work alone, the student has to click on the “Work alone” link.
 -   In order to work as a team member, the student has to: Click on “Create”, And give the login(s) of the other student(s) via the “Invite” link. Each invited student must connect himself on MarkUs to accept the invitation. Nevertheless, as soon as a student invited enough persons so that the subgroup is considered as valid, he can begin to send his code (in case one of the members of the subgroup shall not accept the invitation immediately). The submission will then be made well in the name of the subgroup.
@@ -40,7 +40,7 @@ Of course, if you want to modify the file you want to submit or submit a new ver
 Correction
 ----------
 
-As we previously said, MarkUs screen allows the student to see a list of the different projects he may join/has joined. Once a project has been corrected, global appreciation is displayed (it is sometimes useful to ignore the “Mark” section, since some works has no mark for certain curses). To access the detailed results, click on “Results”. After that, the student may see the different files he submitted and, by pointing the selected text, look at the commentaries let by the teacher.
+As we previously said, MarkUs screen allows the student to see a list of the different projects he may join/has joined. Once a project has been corrected, global appreciation is displayed (it is sometimes useful to ignore the “Mark” section, since some works has no mark for certain courses). To access the detailed results, click on “Results”. After that, the student may see the different files he submitted and, by pointing the selected text, look at the commentaries let by the teacher.
 
 ![Results](images/Doc_Student_Grading.png "Page seen by the student once marks have been released")
 

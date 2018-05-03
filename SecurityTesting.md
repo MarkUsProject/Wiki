@@ -69,7 +69,7 @@ A6 - Information Leakage and Improper Error Handling
 
 *Applications can unintentionally leak information about their configuration, internal workings, or violate privacy through a variety of application problems. Attackers use this weakness to steal sensitive data, or conduct more serious attacks.* ([link](http://www.owasp.org/index.php/Top_10_2007-Information_Leakage_and_Improper_Error_Handling)\_)
 
-Testing for information leakage typically consists of causing the application to error, and examining the result. It is also worth making sure that across the codebase there is a common strategy regardig error handling. Things to look for:
+Testing for information leakage typically consists of causing the application to error, and examining the result. It is also worth making sure that across the codebase there is a common strategy regarding error handling. Things to look for:
 
 -   Errors from different levels in the application stack: database, framework, web server, your code written on top of the framework
 -   Leakage via custom error codes - they may be useful debugging, but what information to they give an attacker?

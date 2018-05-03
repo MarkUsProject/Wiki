@@ -87,7 +87,7 @@ Don't forget to re-do a \`bundle install\` in your MarkUs root repository. It wi
 
 Moreover, as MarkUs uses libruby-svn, you will have to install it locally, for every version of Ruby you installed.
 
-Fist, download Subversion source code here (ruby 1.8.7) : [http://subversion.tigris.org/downloads/subversion-1.6.17.tar.gz](http://subversion.tigris.org/downloads/subversion-1.6.17.tar.gz)
+First, download Subversion source code here (ruby 1.8.7) : [http://subversion.tigris.org/downloads/subversion-1.6.17.tar.gz](http://subversion.tigris.org/downloads/subversion-1.6.17.tar.gz)
 
 For installation with ruby 1.9.3, choose this version : [http://mir2.ovh.net/ftp.apache.org/dist/subversion/subversion-1.8.1.tar.gz](http://mir2.ovh.net/ftp.apache.org/dist/subversion/subversion-1.8.1.tar.gz)
 
