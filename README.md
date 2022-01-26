@@ -1,14 +1,19 @@
 Wiki
 ====
 
-Because MarkUs developers do not have edit permissions on the MarkUs Wiki, the practice is to check out this repo and make pull requests for changes.
+[Wiki for the current MarkUs production version](https://github.com/MarkUsProject/Wiki/blob/master/Home.md)
 
-Admins can merge changes into the MarkUs wiki. The steps are recorded below
-because I can't remember them.
+[Wiki for the current MarkUs development version](https://github.com/MarkUsProject/Wiki/blob/release/Home.md)
 
-- Set a remote for the MarkUs wiki: `git remote add https://github.com/MarkUsProject/Markus.wiki.git` (if you haven't already done this)
-- `git pull upstream master` (make sure everything is up to date)
-- `git push upstream master` (to get the changes into master)
-- `git pull markus-wiki master`  
-- `git push  markus-wiki master`
+For any other version go to this url:
 
+https://github.com/MarkUsProject/Wiki/blob/VERSION/Home.md
+
+replacing VERSION with the MarkUs version you are looking for (ex: v2.0.7).
+
+Note that wiki documentation is only available for versions:
+
+- v1.4.1
+- v2.0.6+
+
+For all other MarkUs versions, please refer to the next closest available version for the most up to date information.
