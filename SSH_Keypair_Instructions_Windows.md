@@ -1,4 +1,4 @@
-# Windows Key-Pair Generation Instructions  
+# Windows Key-Pair Generation Instructions
 ## Step 1: Install Git
 
 1. Download and install [Git](https://git-scm.com/) on your machine. http://git-scm.com/downloads
