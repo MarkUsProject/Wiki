@@ -110,7 +110,7 @@ This section lists all the fields that are common to all testers:
      2. Only display test output to students for [student-run tests](#student-run-tests)
      3. Always display test output to students
 
-    This determines whether the "Output" column will be displayed to students on the [test results table](#test-results-table). This column will always be visible to admins and graders.
+    This determines whether the "Output" column will be displayed to students on the [test results table](#test-results-table). This column will always be visible to instructors and graders.
 
  - **Criterion:** Select a [criterion](Instructor-Guide--Assignments--Marking--Marking-Schemes.md) here that has been created and to link it to this test group. This is optional.
 
@@ -118,7 +118,7 @@ This section lists all the fields that are common to all testers:
  > :spiral_notepad: **NOTE:** ALL the tests specified in a file will be run. If you wish to have tests in a separate group, you must put them in a separate file. <br/>
  > :arrow_forward: **EXAMPLE:** For a python tester, select one or more unittest or pytest files; for a java tester, select one or more Junit files. Do NOT select fixtures or data files if they do not contain tests themselves.
 
- - **Category:** Select the type of user you wish to be allowed to run this test group. If you wish for both students and yourself (admin) to be able to run tests in this group, hold down the "Ctrl" button and click on both the "admin" and "student" lines.
+ - **Category:** Select the type of user you wish to be allowed to run this test group. If you wish for both students and yourself (instructor) to be able to run tests in this group, hold down the "Ctrl" button and click on both the "instructor" and "student" lines.
  > :spiral_notepad: **NOTE:** At this time, tests are not allowed to be run by grader accounts. Graders may see test results while they are marking however they cannot initiate tests.
 
  - **Timeout:*** The amount of time (in seconds) before the tester will time out and halt all tests in this test group.
@@ -126,7 +126,7 @@ This section lists all the fields that are common to all testers:
 
  - **Feedback File:** The name of an output file to write feedback to. Avoid naming this the same thing as a test file or a submitted file in order to prevent the tester from overwriting an existing file. If a feedback file is specified you will be given two more options:
       - "Add feedback file to repo:" This file will be uploaded to the student's repository at the end of the tests.
-      - "Upload feedback file for grading:" Uploads the feedback file to the student's submission for that assignment. The student, admin and grader will be able to view and download the file from the [grading view](Instructor-Guide--Assignments--Marking--Grading-View.md).
+      - "Upload feedback file for grading:" Uploads the feedback file to the student's submission for that assignment. The student, instructor, and grader will be able to view and download the file from the [grading view](Instructor-Guide--Assignments--Marking--Grading-View.md).
 
 
 ### Tester Types

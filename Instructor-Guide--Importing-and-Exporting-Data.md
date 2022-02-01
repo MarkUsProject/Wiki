@@ -299,7 +299,7 @@ The following fields are specified for each tag.
 
 * `name`: the name of the tag. The name cannot be blank, and must be unique.
 * `description`: the description of the tag.
-* `user`: the user name of an Admin user who is the creator of the tag.
+* `user`: the user name of an instructor user who is the creator of the tag.
 
 The CSV file format consists of one row per tag, with the above three fields in the given order.
 The YML file format is a list of objects, where each object contains the three above fields.
@@ -309,8 +309,8 @@ The YML file format is a list of objects, where each object contains the three a
 CSV format:
 
 ```csv
-Sample tag,This is a sample description.,admin_user1
-Second look,This submission should be reviewed by an instructor.,admin_user1
+Sample tag,This is a sample description.,instructor_user1
+Second look,This submission should be reviewed by an instructor.,instructor_user1
 ```
 
 YML format:
@@ -318,10 +318,10 @@ YML format:
 ```yml
 - name: Sample tag
   description: This is a sample description.
-  user: admin_user1
+  user: instructor_user1
 - name: Second look
   description: This submission should be reviewed by an instructor.
-  user: admin_user2
+  user: instructor_user2
 ```
 
 ## Graders

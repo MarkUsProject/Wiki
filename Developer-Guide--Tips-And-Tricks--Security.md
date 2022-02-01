@@ -137,7 +137,7 @@ Testing for XSS consists of the following:
 -   inspection of code to ensure that all views have properly escaped code displayed back to the user
 -   scanning with automated tools such as XSS Me
 
-This attack is highly relevant to the MarkUs project, as it can be used to elevate student privileges to TA or admin level.
+This attack is highly relevant to the MarkUs project, as it can be used to elevate student privileges to TA or instructor level.
 
 ### A2 - Injection Flaws
 
@@ -229,6 +229,6 @@ This is a fairly serious issue for an application which is likely to be use on a
 
 *Frequently, an application only protects sensitive functionality by preventing the display of links or URLs to unauthorized users. Attackers can use this weakness to access and perform unauthorized operations by accessing those URLs directly.* ([link](http://www.owasp.org/index.php/Top_10_2007-Failure_to_Restrict_URL_Access))
 
-This is easy to test against. Login as an admin user and copy URLs which only the admin user has access to. Log back in as a non-admin user and try browsing to those URLs. This is known as "forced browsing." If you are able to, there is a problem with the access control mechanisms governing URL access.
+This is easy to test against. Login as an instructor user and copy URLs which only the instructor user has access to. Log back in as a non-instructor user and try browsing to those URLs. This is known as "forced browsing." If you are able to, there is a problem with the access control mechanisms governing URL access.
 
 This issue is highly relevant to MarkUs due to the possibility of privilege escalation on the part of students.

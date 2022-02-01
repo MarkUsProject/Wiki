@@ -1,14 +1,8 @@
 # Instructor Frequently Asked Questions
 
-## How do I upgrade a grader to an admin?
+## How do I upgrade a grader to an instructor?
 
-You can't. However, there is a workaround. Edit the username of the grader user to something that is unlikely to be a username of an existing user. Now you can create a new admin user with the grader's original username. The grader now has a new account with admin access.
-
-For example, to change a grader with username grader123 to an admin:
-
-1. Edit the username for grader123 to something like grader123INVALIDUSER (or something similar)
-2. Create a new admin user with the username grader123
-3. Tell grader123 to log in as normal
+You can't. However, you can give the grader permissions to do pretty much everything an instructor can do. See [grader permissions](./Instructor-Guide--Users.md#grader-permissions) for more details
 
 
 ## How do I accept a late file submitted after the final deadline?

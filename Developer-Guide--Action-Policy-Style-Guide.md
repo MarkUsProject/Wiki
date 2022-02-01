@@ -81,9 +81,9 @@ en:
     policy:
       example:
         index?: "You don't have access to the index route."
-        be_an_admin?: "You are not an admin user"
+        be_an_instructor?: "You are not an instructor user"
       other:
-        be_an_admin?: "You are still not an admin user"
+        be_an_instructor?: "You are still not an instructor user"
         be_a_ta_or_student?:  "You are not a TA or a student"
 ```
 
@@ -92,27 +92,27 @@ Scenario 1:
 ```ruby
 class ExamplePolicy < ApplicationPolicy
     def index?
-        check?(:be_an_admin?)
+        check?(:be_an_instructor?)
     end
 
-    def be_an_admin?
-        user.admin?
+    def be_an_instructor?
+        user.instructor?
     end
 end
 ```
 
-If the `index?` policy fails the error messages will be: `["You don't have access to the index route.", "You are not an admin user"]` becuase both the `index?` and `admin?` policies are called.
+If the `index?` policy fails the error messages will be: `["You don't have access to the index route.", "You are not an instructor user"]` becuase both the `index?` and `instructor?` policies are called.
 
 Scenario 2:
 
 ```ruby
 class ExamplePolicy < ApplicationPolicy
     def index?
-        user.admin?
+        user.instructor?
     end
 
-    def be_an_admin?
-        user.admin?
+    def be_an_instructor?
+        user.instructor?
     end
 end
 ```
@@ -125,12 +125,12 @@ Note that failure reasons will only be added if `check?` or `allowed_to?` is cal
 ```ruby
 class ExamplePolicy < ApplicationPolicy
     def index?
-        check?(:admin?, with: OtherPolicy)
+        check?(:instructor?, with: OtherPolicy)
     end
 end
 
 class OtherPolicy < ApplicationPolicy
-    def be_an_admin?
+    def be_an_instructor?
         !check?(:be_a_ta_or_student?)
     end
 
@@ -139,7 +139,7 @@ class OtherPolicy < ApplicationPolicy
     end
 end
 ```
-If the `index?` policy fails, the error messages will be: `["You don't have access to the index route.", "You are still not an admin user"]`. It will not include `"You are not a TA or a student"` because the `check?` function was called in a policy class different to the one that `index?` is in.
+If the `index?` policy fails, the error messages will be: `["You don't have access to the index route.", "You are still not an instructor user"]`. It will not include `"You are not a TA or a student"` because the `check?` function was called in a policy class different to the one that `index?` is in.
 
 
 #### Include additional context for policies if needed
