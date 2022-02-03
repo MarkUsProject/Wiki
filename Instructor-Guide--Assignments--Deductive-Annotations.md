@@ -54,7 +54,7 @@ Clicking on a deduction in the list under the mark value will take you to the an
 ![Hyperlinked deductions](images/deductive_annotations_gifs/scroll_to_annotation.gif)
 
 ## Applying deductive annotations and creating on the fly annotations
-To apply a pre-existing deductive annotation, select an area of the submission, then choose an annotation from one of the categories with a criterion.
+To apply a pre-existing deductive annotation, select an area of the submission, then choose an annotation from one of the categories with a criterion. Please note that currently, deductive annotations cannot be applied to a URL file submission if it has been enabled. 
 
 ![Applying an annotation](images/deductive_annotations_gifs/apply_annotation.gif)
 
@@ -66,7 +66,8 @@ If deductive annotations have been applied to a result, they will appear in the 
 
 ![Annotation table with deduction column](images/deductive_annotations_gifs/annotation_table.gif)
 
-> :spiral_notepad: **NOTE:** TAs that have been assigned criteria will not be able to apply, edit, or delete deductive annotations that do not belong to their assigned criteria.
+> :spiral_notepad: **NOTE:** 
+> TAs that have been assigned criteria will not be able to apply, edit, or delete deductive annotations that do not belong to their assigned criteria.
 
 ## Overridden deductive annotations
 Sometimes, you may want to override the automatically calculated mark value. (perhaps because you applied a particular deductive annotation to several instances of a problem in the submission, but only want to penalize the student once). An overridden mark is a mark which would normally be calculated from applied deductive annotations, but was manually set by a user. In the mark input for the mark, you can manually input a grade as usual. When this is done, a button **`Revert to automatic deductions`** will appear above the mark. From that point on, applying deductive annotations will no longer affect the mark (even though they will still be listed).
