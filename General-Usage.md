@@ -8,8 +8,8 @@
 The file manager allows you to upload a file or folder, download all files and folders (as a zip file) and to delete individual files and folders. Note that the "Delete" option is only visible if you have selected a file or folder on the table.
 ![File Manager Options](images/file-manager-options.png)
 
-To add a file, click on the "Add New File" link located on the right side of the page:
-![File Manager Options](images/file-manager-add-new-file.png)
+To add a file, click on the "Submit File" link located on the right side of the page:
+![File Manager Options](images/file-manager-submit-file.png)
 
 This will display the "Upload" modal where you will be able to browse for files to upload:
 ![Upload Files Autotesting](images/file-manager-upload-modal.png)
@@ -39,6 +39,13 @@ When a file has been added to a folder it will not be visible unless you have th
 
 In the above example, the .png files are contained within "New_Folder_1" as can be seen by their indent. If we close the folder by clicking on its name, the table looks like this:
 ![Files in Folder Example 2](images/file-manager-closed-folder.png)
+
+In addition, if an instructor has enabled the option, you are also able to submit URLs. To create a new URL, click on the "Submit Link" link located on the right side of the page:
+![File Manager Options](images/file-manager-submit-link.png)
+
+This will display the "Submit Link" modal where you will be able to enter an HTTP/HTTPS link and a name for that link:
+![Submit Link Modal Display](images/file-manager-upload-url-modal.png)
+After entering the link information and clicking on "Save", a `.markusurl` file will be created containing only the HTTP/HTTPS link and uses the name for the link as the filename. 
 
 Once you have added your files the data that may be displayed on the table (Note that the columns shown may vary slightly depending on the view):
 
