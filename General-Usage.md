@@ -45,7 +45,7 @@ In addition, if an instructor has enabled the option, you are also able to submi
 
 This will display the "Submit Link" modal where you will be able to enter an HTTP/HTTPS link and a name for that link:
 ![Submit Link Modal Display](images/file-manager-upload-url-modal.png)
-After entering the link information and clicking on "Save", a `.markusurl` file will be created containing only the HTTP/HTTPS link and uses the name for the link as the filename. 
+After entering the link information and clicking on "Save", a `.markusurl` file will be created containing only the HTTP/HTTPS link as it's content and uses the name for the link as the filename. 
 
 Once you have added your files the data that may be displayed on the table (Note that the columns shown may vary slightly depending on the view):
 
