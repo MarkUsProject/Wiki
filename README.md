@@ -1,9 +1,9 @@
 Wiki
 ====
 
-[Wiki for the current MarkUs production version](https://github.com/MarkUsProject/Wiki/blob/master/Home.md)
+[Wiki for the current MarkUs development version](https://github.com/MarkUsProject/Wiki/blob/master/Home.md)
 
-[Wiki for the current MarkUs development version](https://github.com/MarkUsProject/Wiki/blob/release/Home.md)
+[Wiki for the current MarkUs production version](https://github.com/MarkUsProject/Wiki/blob/release/Home.md)
 
 For any other version go to this url:
 
