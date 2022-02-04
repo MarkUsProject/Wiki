@@ -44,7 +44,7 @@ Once you have added your files the data that may be displayed on the table (Note
 
  - **Filename** - The name of the file that has been uploaded. You may click on the file name to download a copy of the file.
  - **Submitted At** - The time at which the file was last uploaded
- - **Revised By** - The person who last modified the file. Only admins (instructors) may add or delete test files. Graders and students may not.
+ - **Revised By** - The person who last modified the file. Only instructors may add or delete test files. Graders and students may not.
 
 You may search through all the uploaded files using the "Filter Files" search bar. The search will match all text in the file title (i.e. you can search for the file name or the file extension).
 

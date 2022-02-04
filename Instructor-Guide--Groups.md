@@ -8,7 +8,7 @@
 ## Manage Groups Page
 Groups can be managed from the "Groups" tab under "Assignments".
 
-This page allows admin users to create and remove existing groups for a given assignment, add and remove students from groups, and give extensions to individual groups.
+This page allows instructor users to create and remove existing groups for a given assignment, add and remove students from groups, and give extensions to individual groups.
 
 ## Groups Actions
 
@@ -60,7 +60,7 @@ Clicking the + icon in the "Due Date Extension" column on the right hand table w
 
 ![Extension Modal](images/groups-extension-modal.png)
 
-Extensions can be specified in any combination of weeks, days, and hours. Additionally, you may choose to apply late penalties on top of this extension (or not) by clicking the "Apply late submission policy when collecting this group's submissions" checkbox. Notes may also be added which are only visible to admins.
+Extensions can be specified in any combination of weeks, days, and hours. Additionally, you may choose to apply late penalties on top of this extension (or not) by clicking the "Apply late submission policy when collecting this group's submissions" checkbox. Notes may also be added which are only visible to instructors.
 
 To edit an existing extension for a group, click the link in the "Due Date Extension" column that replaces the + icon once an extension has been added.
 

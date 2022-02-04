@@ -204,7 +204,7 @@ describe ControllerName do
   end
 end
 ```
-`some type of user` and `some other type of user` describing the context blocks usually correspond to someone who has authorization to perform certain tasks (usually an admin) and someone who does not.
+`some type of user` and `some other type of user` describing the context blocks usually correspond to someone who has authorization to perform certain tasks (usually an instructor) and someone who does not.
 
 Code from the `groups_controller_spec.rb` file, which tests the `GroupsController` controller, will be used as reference throughout the Controller specification section of the guide. Open that file, and look through it as you follow along below.
 
