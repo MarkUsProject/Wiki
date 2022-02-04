@@ -299,7 +299,7 @@ The following fields are specified for each tag.
 
 * `name`: the name of the tag. The name cannot be blank, and must be unique.
 * `description`: the description of the tag.
-* `user`: the user name of an Admin user who is the creator of the tag.
+* `user`: the user name of an instructor user who is the creator of the tag.
 
 The CSV file format consists of one row per tag, with the above three fields in the given order.
 The YML file format is a list of objects, where each object contains the three above fields.
@@ -309,8 +309,8 @@ The YML file format is a list of objects, where each object contains the three a
 CSV format:
 
 ```csv
-Sample tag,This is a sample description.,admin_user1
-Second look,This submission should be reviewed by an instructor.,admin_user1
+Sample tag,This is a sample description.,instructor_user1
+Second look,This submission should be reviewed by an instructor.,instructor_user1
 ```
 
 YML format:
@@ -318,10 +318,10 @@ YML format:
 ```yml
 - name: Sample tag
   description: This is a sample description.
-  user: admin_user1
+  user: instructor_user1
 - name: Second look
   description: This submission should be reviewed by an instructor.
-  user: admin_user2
+  user: instructor_user2
 ```
 
 ## Graders
@@ -408,3 +408,45 @@ user_name_ta3,last_name_ta3,first_name_ta3
 - If a grader with the same username exists, then that grader's information is updated.
 - If a row does not contain a grader's username, then the entire row will be ignored.
 - MarkUs will not check the validity of a grader's username, first name, and last name.
+
+## Assignment Configuration
+
+Instructors are able to upload/download a group of files that contain all the settings and files required to configure
+an assignment (that is, it's properties, tags, criteria, annotations, starter files and automated tests).
+
+This upload/download **DOES NOT** copy assignment settings related to students or graders (i.e. section specific settings, group
+information, etc.). Hence, after copying an assignment over, it is recommended that users check the assignment's settings
+to make sure it is configured as they desire.
+
+### Supported formats
+
+A zip file that contains the following yml files for an assignment:
+
+- [properties](Instructor-Guide--Importing-and-Exporting-Data.md#assignments)
+- [tags](Instructor-Guide--Importing-and-Exporting-Data.md#tags)
+- [criteria](Instructor-Guide--Importing-and-Exporting-Data.md#criteria)
+- [annotation categories](Instructor-Guide--Importing-and-Exporting-Data.md#annotation-categories) (excluding one time annotations)
+
+In addition, the zip file has three folders that contain:
+
+- An assignment's starter files and starter file settings (`starter_file_config_files`) which includes:
+  - A starter file rules yml file which contains:
+    - The name of the default starter file group within the zip file.
+    - Information about each starter file group:
+      - The name of the starter file group within the zip file.
+      - The actual name of the starter group.
+      - Whether it uses a different display name and if so, what that display name is.
+  - Every uploaded starter file located in folders corresponding to which starter file group each file belongs to.
+    - Every starter file group does not need a corresponding folder. In such a case, the group is assumed to have no starter files.
+- An assignment's automated test settings (`automated_tests_config_files`) which includes:
+  - An automated test specs json file.
+  - A folder containing every uploaded test file.
+    - This is an optional folder. If it does not exist, that means there are no test files.
+- Settings for an assignment's peer review assignment (`peer-review-config-files`)
+  - This is an optional folder. If it exists, a peer review assignment will try to be created.
+  - This folder is formatted exactly the same as a normal assignment just without an automated tests folder and another peer review folder.
+
+> **Important:**
+> While the contents of the yml files and folders can be extracted and modified for offline configuration, this is NOT
+> recommended and may result in the assignment being unable to be copied over.
+

@@ -1,347 +1,354 @@
-The following are instructions to set up a production server for MarkUs. Note that these instructions assuming that you are setting up MarkUs on a new server without any dependencies pre-installed.
+The following are instructions to set up a production server for MarkUs. 
 
-The following steps are for installation on a machine running Ubuntu 18.04, some changes may be required if installing on other operating systems.
+The following steps are for installation on a machine running Ubuntu 20.04 and all examples given below assume that you are installing in such an environment. Some changes may be required if installing on other operating systems.
 
-## Server Setup Steps (should be run as superuser):
+## System Requirements
 
-```bash
-sudo su
+Ensure the following ubuntu packages are installed:
+
+- build-essential : (needed to install node/yarn)
+- software-properties-common : (needed to install node/yarn)
+- postgresql-client-12 : (needed to manage a postgres database, later versions should also be ok too)
+- tzdata : (needed for timezone management)
+- libpq-dev : (needed to run a postgres database)
+- libv8-dev : (needed for javascript dependencies)
+- ruby-svn : (only required if using svn repositories. It is _highly_ recommended to use git repositories instead)
+- ghostscript : (needed to manage pdfs)
+- imagemagick : (needed to manage pdfs)
+- libmagickwand-dev : (needed to manage pdfs)
+- cmake : (needed to make certain ruby gems)
+- libaprutil1-dev : (needed if using Apache as an http server)
+- libssl-dev : (needed for ssl/tsl encryption)
+- swig : (needed as an interface for certain ruby gems) 
+- graphviz : (needed by the ruby-graphviz gem)
+- git : (required if using git repositories)
+- python3 : (version 3.9 recommended. Required for optical character recognition and jupyter notebook rendering) 
+- python3-venv : (required for optical character recognition and jupyter notebook rendering) 
+- python3-dev : (required for optical character recognition and jupyter notebook rendering)
+- pandoc : (required rmarkdown and jupyter notebook rendering)
+- libgl1 : (required for optical character recognition)
+- ruby-full : (ensure that this installs at least ruby 2.7)
+
+Install [bundler](https://bundler.io/) as a system gem:
+
+```sh
+gem install bundler -v 1.17.3
 ```
 
-##### 1. create a user to run the MarkUs server and setup .ssh files
+Install [node](https://nodejs.org/en/) (note that we need at least version 12 so we can't just install the ubuntu 20.04 package directly):
 
-```bash
-adduser markusserver
+```sh
+curl https://deb.nodesource.com/setup_12.x -o node_setup.sh
+bash node_setup.sh
+sudo apt-get install nodejs
+rm node_setup.sh
 ```
 
-- in this installation script we have chosen to create a user named `markusserver` but you can choose any name you wish.
+Install [yarn](https://yarnpkg.com/):
 
-##### 2. install (most) package dependencies
-
-```bash
-apt-get update
-apt-get install build-essential \
-				libv8-dev \
-				ruby-svn \
-				ghostscript \
-				imagemagick \
-				libmagickwand-dev \
-				redis-server \
-				cmake \
-				libssh2-1-dev \
-				libaprutil1-dev \
-				swig \
-				graphviz \
-				git \
-				postgresql \
-				postgresql-client \
-				postgresql-contrib \
-				libpq-dev \
-				apache2 \
-				ruby2.5 \
-				ruby2.5-dev
+```sh
+npm install --global yarn@1.22.5
 ```
 
-##### 3. install bundler
+Update the default configuration options for imagemagick so that it will allow reading pdf files:
 
-```bash
-gem update --system
-update-alternatives --config ruby
-update-alternatives --config gem
-gem install bundler
-```
-
-##### 4. install [node](https://nodejs.org)
-
-```bash
-curl -sL https://deb.nodesource.com/setup_9.x | bash -
-apt-get install nodejs
-```
-
-##### 5. install [yarn](https://yarnpkg.com)
-
-```bash
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-apt-get update && apt-get install yarn
-```
-
-##### 6. install [python3.7](https://www.python.org)
-
-```bash
-add-apt-repository ppa:deadsnakes/ppa
-apt-get update
-apt-get install python3.7 python3-pip python3.7-venv
-```
-
-##### 7. configure imagemagick policy file to read PDFs
-
-```bash
+```sh
 sed -ri 's/(rights=")none("\s+pattern="PDF")/\1read\2/' /etc/ImageMagick-6/policy.xml
 ```
 
-##### 8. configure local timezone settings (replace with your timezone as needed)
+## Create User
 
-```bash
-rm -f /etc/localtime
-ln -s /usr/share/zoneinfo/US/Eastern /etc/localtime
-```
-
-##### 9. setup the postgres database
-
-- open the file at `/etc/postgresql/10/main/pg_hba.conf` and replace the line:
-
-```
-local 	all		all		peer
-```
-
-with
-
-```
-local 	all		all		md5
-```
-
-- choose a strong password for your server user and remember it for later
-- as the `postgres` user run the following (replace `'password'` with your chosen password):
-
-```bash
-sudo -u postgres psql -U postgres -d postgres -c "create role markus createdb login password 'password';"
-```
-
-- restart the postgres service
-
-```bash
-/etc/init.d/postgresql restart
-```
-
-## MarkUs Instance Installation Steps (should be run as the markusserver user)
-
-```bash
-sudo su markusserver
-```
-
-The steps below describe how to install a single MarkUs instance (for one course). If installing multiple instance, please note that each instance will require it's own database and own relative url root (see steps below for details).
-
-##### 1. download MarkUs source code from git
-
-Right now, the current production branch is 1.10.0:
-
-```bash
-git clone --single-branch --branch 1.10.0 https://github.com/MarkUsProject/Markus.git
-```
-
-##### 2. change directory to the Markus code root directory
-
-```bash
-cd Markus
-```
-
-##### 3. create python virtual environment and download required packages
-
-MarkUs uses python3 to display jupyter notebooks as well as to perform optical character recognition (OCR) on scanned exams. To install these python dependencies, create a python3.X virtual environment (we recommend using at least python 3.6) and then use `pip` to install all packages specified in the `requirements.txt` file. This virtual environment can be installed anywhere, in this example it is created at `/some/dir/venv`
+For security reasons, MarkUs should be run as a dedicated user. Either designate an existing user to run MarkUs or create one. In this demo we will assume that MarkUs is being run as a user named `markus` created by running:
 
 ```sh
-python3 -m venv /some/dir/venv
-/some/dir/venv/bin/pip install -r requirements.txt
+useradd -m markus
 ```
 
-Then update the settings to tell MarkUs the location of the `bin` subdirectory of your virtual environment by updating the [settings](https://github.com/MarkUsProject/Markus/wiki/Configuration#settings)
+## Set up MarkUs Rails application
+
+**The following commands should be run as the user designated or created in the [Create User](#create-user) section**
+
+Choose where you want the MarkUs source code to be downloaded and `cd` to that directory. This directory should be writeable by the `markus` user (the one created in the [create user](#create-user) section).
+
+#### Clone the MarkUs source code and change to the release branch:
+
+```sh
+git clone https://github.com/MarkUsProject/Markus.git
+cd Markus
+git checkout release
+```
+
+#### Install Ruby dependencies using [bundler](https://bundler.io/):
+
+```sh
+./bin/bundle install --deployment --without development test offline mysql sqlite
+```
+
+(Note that although MarkUs technically supports alternative database backends like mysql and sqlite, they may not be fully supported and support may be removed entirely in later versions. For this reason we recommend using Postgresql and running the `bundle install` command with the `--without` arguments above)
+
+#### Install javascript dependencies using [yarn](https://yarnpkg.com/):
+
+```sh
+./bin/yarn install
+```
+
+#### Install python dependencies in a virtual environment:
+
+```sh
+python3 -m venv ./venv
+./venv/bin/pip install -r requirements.txt
+```
+
+and make sure that your [settings files](./Configuration.md) know where the packages are installed by specifying the location of the virtual environment's bin directory in `config/settings.local.yml`:
 
 ```yaml
 python:
-  bin: /some/dir/venv/bin
+   bin: /path/to/the/venv/bin
 ```
 
-##### 4. store postgres password in database.yml file
+#### Configure MarkUs settings:
 
-```bash
-cp config/database.yml.postgresql config/database.yml
+For information on how to configure the MarkUs settings visit the [Configuration](./Configuration.md) page. Remember that any paths that you specify in the settings files should be readable/writable by the `markus` user.
 
-```
+#### Encrypt credentials
 
-- edit the config/database.yml file so that the `production` block looks like the example below except with `[password]` replaced with the password for the markus postgres user you set in the [postgres step above](#9-setup-the-postgres-database) and that `[database_name]` is replaced with a unique database name.
-
-```yml
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: [database_name]
-  username: markus
-  password: [password]
-```
-
-- since this file now contains a password it is highly recommended that you change the permissions on this file to:
-
-```bash
-chmod u=rw,g=,o= config/database.yml
-```
-
-##### 5. Install gems and yarn packages
-
-```bash
-bundle config libv8 -- --with-system-v8
-bundle config github.https true
-bundle install --deployment --without development test offline mysql sqlite
-yarn install
-```
-
-##### 6. Precompile the rails static assets
-
-In this example, we will use the relative url root `/csc108` as an example
-
-```bash
-mkdir public/javascripts
-RAILS_RELATIVE_URL_ROOT=/csc108 RAILS_ENV=production bundle exec rails i18n:js:export
-RAILS_RELATIVE_URL_ROOT=/csc108 RAILS_ENV=production bundle exec rails assets:precompile
-```
-
-##### 7. Set up Apache server
-
-MarkUs shouldn't require any special Apache server setup and how to set up an Apache server is beyond the scope of these instructions.
-
-Here is an example of how you might want to set the `ProxyPass` and `ProxyPassReverse` settings for a MarkUs instance running with a relative url root of `/csc108` and on port `5000`:
-
-```
-ProxyPass /csc108 http://localhost:5000/csc108
-ProxyPassReverse /csc108 http://localhost:5000/csc108
-```
-
-##### 8. Start the resque workers
-
-Here is an example of how you might want to start the resque workers for a MarkUs instance running with a relative url root of `/csc108`
+MarkUs is a Rails application and therefore requires a secret key to run in production mode (this key encrypts the application secrets, if any are used).
+Before continuing, run the following command (with the editor of your choice... vim is just an example):
 
 ```sh
-RAILS_RELATIVE_URL_ROOT=/csc108 BACKGROUND=true QUEUES=* bundle exec rake environment resque:work
-RAILS_RELATIVE_URL_ROOT=/csc108 BACKGROUND=true bundle exec rails resque:scheduler
+EDITOR=vim ./bin/rails credentials:edit
 ```
 
-## Autotester Installation Steps
+to generate a secret key and encrypt any credentials. For more details, see the [Rails Guide](https://edgeguides.rubyonrails.org/security.html#custom-credentials)
 
-See the [autotester README](https://github.com/MarkUsProject/markus-autotesting) for installation instruction.
+#### Configure Database settings:
 
-Once the autotester is set up, connect MarkUs to the autotester by updating MarkUs' [configuration](Configuration.md#settings) setting to point to the url that the autotester API is running at. For example, if the autotester API runs at `http://autotest.example.com`.
+MarkUs needs to know how to access the database. Database settings should be stored in `config/database.yml`. For detailed instructions on how to configure this file see the [Rails Guides](https://edgeguides.rubyonrails.org/configuring.html#configuring-a-database).
+
+For example, let's say your postgres instance was running on localhost, on port 5432, and you can connect as user `mypostgresuser` with the password `verysecret`. Also, you want MarkUs to use a database named `markusdb`. In this case, you would write the following to the `config/database.yml` file:
 
 ```yaml
-autotest:
-   url: 'http://autotest.example.com'
+production:
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  username: mypostgresuser
+  password: verysecret
+  database: markusdb
 ```
 
-Then, register this MarkUs instance with the autotester by running the `markus:markus:setup_autotest` rake task:
+Note that everything is nested under `production:` because MarkUs will run in production mode.
+
+#### Initialize the database
+
+Now that the database settings have been set, create and migrate the database with the following commands:
 
 ```sh
-RAILS_RELATIVE_URL_ROOT=/csc108 RAILS_ENV=production bundle exec rails markus:setup_autotest
+RAILS_ENV=production ./bin/bundle exec rails db:create
+RAILS_ENV=production ./bin/bundle exec rails db:migrate
 ```
 
-It is very important that the RAILS_RELATIVE_URL_ROOT is set when running this rake task (if you are using a URL root). Each MarkUs instance uses its own relative url root to identify itself to the autotester. If the relative url root is not set when it is registered, the autotester will NOT be able to run tests for this MarkUs instance.
+#### Precompile static assets
 
-## setting up MarkUs as a git ssh server
+MarkUs will run a lot faster in production if [assets are precompiled](https://guides.rubyonrails.org/asset_pipeline.html#in-production). To precompile all static assets run the following commands:
 
-_as of version 1.12.0_ [Previous Settings](Deprecated-wiki-pages.md#setting-up-MarkUs-as-a-git-ssh-server)
+```sh
+RAILS_ENV=production ./bin/bundle exec rails i18n:js:export
+RAILS_ENV=production ./bin/bundle exec rails assets:precompile
+``` 
 
-To enable key pair uploads and to allow the server running MarkUs to handle git requests over ssh:
+## Configuring the web server
 
-Set the following setting:
+MarkUs will run a [puma web server](https://puma.io/) on localhost but to make it accessible on the internet you will need to run your own web server (such as [apache](https://httpd.apache.org/) or [nginx](https://www.nginx.com/)).
+
+Here are a few things to consider when setting up the configuration files for your web server (all examples are for Apache configuration, you will have to look up the nginx equivalent if necessary):
+
+- If you have enabled the [`rails.force_ssl` configuration option](./Configuration.md#rails-specific-settings) you should make sure that you have a working ssl certificate for your domain. [Certbot](https://certbot.eff.org/instructions?ws=apache&os=ubuntufocal) has instruction on how to set this up.
+
+- If you have enabled [remote authentication](./Configuration.md#user-authentication-options) make sure that:
+  - the user name value is forwarded in the request header as the "HTTP_X_FORWARDED_USER" key
+  - authentication is optional: since MarkUs supports both local and remote authentication, we don't want to force a user to use the remote authentication option if they can also log in with the local option.
+
+  For example, you might have the following snippet in your apache config file when using [shibboleth](https://www.shibboleth.net/) for remote authentication, making all routes under '/' optionally protected by shibboleth authentication and forwarding the "user" variable from the shibboleth authetication to the header:
+
+  ```xml
+  <Location "/">
+    Require shibboleth
+    AuthType shibboleth
+    RequestHeader set X-Forwarded-User %{user}e
+  </Location>
+  ```
+
+  Then in the [configuration file](./Configuration.md#markus-settings) set the url for shibboleth logins:
+
+  ```yaml
+  remote_auth_login_url: https://my.host.com/Shibboleth.sso/Login
+  ```
+
+## Git access
+
+MarkUs stores student submissions in bare repositories on disk, if your MarkUs instance is using git repositories and you would like your users to be able to clone/pull/push to those git repositories from the command line (or local git client), you need to set up access to the git repos over SSH or HTTPS.
+
+#### Git over SSH
+
+To access git repositories over ssh, first make sure that your server can work as an ssh server by installing the `openssh-server` package (or similar) and making sure that port 22 is accessible over the internet.
+
+Then, ensure that key storage is enabled so that users can upload their public keys to MarkUs by setting the following [configuration setting]((./Configuration.md#markus-settings):
 
 ```yaml
 enable_key_storage: true
+``` 
+
+Then, you should set up the `markus` user (that you created [previously](#create-user)) so that users can ssh to your server as that user but *only* so that they can access git repositories. Make sure you follow the next steps **very** carefully. You do not want to accidentally allow users to ssh to your server and be able to perform arbitrary commands!
+
+1. change the ownership of the `lib/repo/authorized_key_command.sh` file to the user that runs the `sshd` process (usually this is root) and make it executable:
+
+   ```sh
+   chown root:root lib/repo/authorized_key_command.sh
+   chmod u=rwx lib/repo/authorized_key_command.sh
+   ```
+
+2. make sure the `lib/repo/markus-git-shell.sh` script is executable (should be owned by the `markus` user already):
+
+   ```sh
+   chmod u=rwx lib/repo/markus-git-shell.sh
+   ```
+
+3. create a `.ssh/` directory for the `markus` user:
+
+  ```sh
+  mkdir /home/markus/.ssh # or wherever the user's home directory is located
+  ``` 
+
+4. set some environment variables that will be used by the `authorized_key_command.sh` script by writing the following to the `/home/markus/.ssh/rc` file:
+
+  ```
+  export MARKUS_LOG_FILE=/path/to/some/logfile.log
+  export MARKUS_REPO_LOC_PATTERN='/some/path/to/repos/(instance)'
+  export GIT_SHELL=/path/to/markus/root/lib/repo/markus-git-shell.sh
+  ```
+
+  - where `/path/to/some/logfile.log` is an absolute path to a text file where you want the log output to be written (this is optional)
+  - where `/some/path/to/repos/` is an absolute path to the location of the git repositories specified in the [`respository.storage`](./Configuration.md#markus-settings) configuration setting.
+  - where `/path/to/markus/root/` is the path to the root of the MarkUs source code so that `/path/to/markus/root/lib/repo/markus-git-shell.sh` points to the `markus-git-shell.sh` script.
+
+5. update the sshd settings so that when users ssh as the `markus` user they will only be allowed to run git commands (and only on repositories that they have access to as determined by the `.access` file (see [Git over HTTPS](#git-over-https) for details). Append the following to the `/etc/ssh/sshd_config` file:
+
+  ```
+  Match User markus
+    PermitRootLogin no
+    AuthorizedKeysFile none
+    AuthorizedKeysCommand /path/to/markus/root/lib/repo/authorized_key_command.sh
+    AuthorizedKeysCommandUser markus
+  ```
+
+  - where `/path/to/markus/root/` is the path to the root of the MarkUs source code so that `/path/to/markus/root/lib/repo/authorized_key_command.sh` points to the `authorized_key_command.sh` script.
+
+6. start (or restart) the `sshd` process so that the new configuration settings get picked up
+
+7. Make sure that the `repository.ssh_url` configuration option is set up so that users will see the correct url to access their git repositories. For example, if your server is accessible over ssh as `my.server.com`, you should set the following configuration:
+
+  ```yaml
+  repository:
+    ssh_url: 'ssh://markus@my.server.com'
+  ```
+
+  so that users can clone repositories from urls like `ssh://markus@my.server.com/blah/group1.git`
+
+#### Git over HTTPS
+
+To access git repositories over https use the [git-http-backend](https://git-scm.com/docs/git-http-backend) program. 
+
+When setting up autorization protocols for this access, your authorization script should check who has permission to which git repos by inspecting the `.access` file in the repository storage directory (see the [configuration settings](./Configuration.md#markus-settings)).
+
+Each row of this file is a comma delimited and contains a relative path from the repository storage directory to a specific repository on disk followed by a list of user names of people who have access to this repository. For example, if [`respository.storage`](./Configuration.md#markus-settings) is `/some/path/to/repos/` and the `.access` file contains:
+
+```csv
+blah/group1.git,user1,user2
+blah/group2.git,user1
+bleh/*,user3
 ```
 
-For the rest of the setup we will assume the following settings:
+Then user1 should have permission to access repos at `/some/path/to/repos/blah/group1.git` and `/some/path/to/repos/blah/group2.git`, user2 should only have access to the first one. And user3 should have access to all repos in the `/some/path/to/repos/bleh/` directory.
+
+An example Apache configuration might look like:
+
+```xml
+<Location /git/ >
+  Require valid-user
+  AuthType Basic
+  AuthBasicProvider external
+  AuthExternal authorizegit
+  AuthName "MarkUs Git Repository"
+  SetEnv GIT_PROJECT_ROOT /some/path/to/repos
+  SetEnv GIT_HTTP_EXPORT_ALL
+</Location>
+ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
+```
+
+(where you have previously set up an external authorization script called authorizegit in your Apache configuration)
+
+Finally, make sure that the `repository.url` configuration option is set up so that users will see the correct url to access their git repositories. 
+For example, if your server's domain is `https://my.host.com` and you're using the example apache configuration above, you should set the following configuration:
 
 ```yaml
 repository:
-  storage: /MarkUs/data/prod/repos
+  url: 'https://my.host.com/git'
 ```
 
-and that you're running MarkUs on a server named `markus.example.edu`.
+So that users will be prompted to clone their repositories from urls like: `https://my.host.com/git/blah/group1.git`
 
-1. Make sure the required packages are installed:
+## Running MarkUs
+
+Running MarkUs requires 3 processes which can be started with the following commands (run as the `markus` user):
+
+- to start the Rails server (runs the main MarkUs process):
+  
+  ```sh
+  RAILS_ENV=production ./bin/bundle exec rails server -e production
+  ```
+
+- to start resque (runs background jobs): 
+
+  ```sh
+  RAILS_ENV=production QUEUES=* ./bin/bundle exec rails environment resque:work
+  ```
+
+- to start resque scheduler (schedules background jobs for later execution):
+
+  ```sh
+  RAILS_ENV=production QUEUES=* ./bin/bundle exec rails environment resque:scheduler
+  ```
+
+#### Running MarkUs with a relative url root
+
+If your server's domain is `https://my.host.com` but you want to make MarkUs available at a relative root like `https://my.host.com/markus/` for example then add this as an environment variable when starting each of the processes (above). For example, to start the Rails server you would run instead:
 
 ```sh
-$ apt-get install openssh-server git
+RAILS_RELATIVE_URL_ROOT=/markus RAILS_ENV=production ./bin/bundle exec rails server -e production
 ```
 
-2. Create a user to serve the repositories (typically this user is named `git`).
+Make sure that your web server configuration is updated to reflect this url as well as any configuration options that reference the url. 
+
+## Adding Users
+
+Users can be added and updated using the [API](./RESTful-API.md) but only as the admin user. To get the admin user's api key, run the following rake task:
 
 ```sh
-$ useradd -m -s /bin/bash git
+RAILS_ENV=production ./bin/rails db:admin
 ```
 
-This user should have read/write access to all git repositories stored in `/MarkUs/data/prod/repos` and read access to the `.authorized_keys` and `.access` files stored in the same folder. You can skip this step if you want to use the same user that runs the MarkUs web server since that user will be the owner of all repositories created by MarkUs.
+## Creating courses
 
-3. Update the config settings so that MarkUs knows where to find the `markus-git-shell.sh` wrapper script. By default, this script is located in the `lib/repos` subdirectory but if you move it elsewhere make sure that the config file is updated accordingly.
+Courses can be added and updated using the [API](./RESTful-API.md) but only as the admin user. To get the admin user's api key, run the following rake task:
 
 ```sh
-repository:
-  markus_git_shell: /Markus/lib/repos/markus-git-shell.sh
+RAILS_ENV=production ./bin/rails db:admin
 ```
 
-See the documentation in the `markus-git-shell.sh` script for more details on what this script is used for.
+#### Enabling autotesting
 
-Note: if you have multiple MarkUs instances running on a single server, they can all use the same `markus-git-shell.sh` script.
+The autotester can be installed seperately from MarkUs on a different server (or the same one if you'd prefer). Here are the autotester [Installation instructions](https://github.com/MarkUsProject/markus-autotesting/blob/release/README.md).
 
-4. Update the sshd configuration file (usually `/etc/ssh/sshd_config`) by appending the following:
+Once the autotester has been set up, you must register each course that uses autotesting by providing the URL of the autotester through the API using the `api/courses/<course_id>/update_autotest_url` route.
 
-```sh
-Match User git
- PermitRootLogin no
- AuthorizedKeysFile none
- AuthorizedKeysCommand /MarkUs/lib/repos/authorized_key_command.sh
- AuthorizedKeysCommandUser git
-```
-
-This will create a special set of rules for your new user (in this case `git`). The important field here is:
-
-`AuthorizedKeysCommand`: the path to the `authorized_key_command.sh` file. By default, this script is located in the `lib/repos` subdirectory but if you move it elsewhere make sure that the sshd config file is updated accordingly.
-
-The other fields are recommended for security reasons but not strictly necessary.
-
-See the documentation in the `authorized_key_command.sh` script for more details on what this script is used for.
-Note: if you have multiple MarkUs instances running on a single server, they must all use the same `authorized_key_command.sh` script.
-
-Note that you may have to change the ownership of the `authorized_key_command.sh` file to the user that runs sshd (usually root) and the permissions as follows:
-
-```sh
-$ chown root:root /MarkUs/lib/repos/authorized_key_command.sh
-$ chmod 655 /MarkUs/lib/repos/authorized_key_command.sh
-```
-
-5. Set environment variables in `/home/git/.ssh/rc`
-
-Both the `authorized_key_command.sh` and `markus-git-shell.sh` files require certain environment variables to be set when run. To ensure that these variables are set properly when logging in over ssh, both scripts source a file located in the home directory of the new user you created in `.ssh/rc` (see the documentation in either `authorized_key_command.sh` or `markus-git-shell.sh` for more details). If you want these scripts to source a different file, you must edit those two scripts directly.
-
-The following environment variables should be set by sourcing the `.ssh/rc` file:
-
-`MARKUS_LOG_FILE`: a path to a file on disk to write log output to. This variable is optional and if not set, no logs will be written
-
-`GIT_SHELL`: a path to the `git-shell` executable that comes with the `git` package. Usually this is `/usr/bin/git-shell` but that might vary depending on your installation of `git`. This variable is required.
-
-`MARKUS_REPO_LOC_PATTERN`: a string that is used to specify where to find a given repository on disk. If this string contains `'(instance)'`, then the `'(instance)'` will be replaced with the relative url root for a given MarkUs instance. This variable is required.
-For example, if you have multiple MarkUs instances on a server and their git repositories are stored in:
-
-```
-/Markus/csc108/data/prod/repos
-/Markus/csc209/data/prod/repos
-```
-
-Then you should set the `MARKUS_REPO_LOC_PATTERN` to `'/Markus/(instance)/data/prod/repos'` so that if a user requests the `group_123.git` repository for the `csc108` instance, then these scripts will know to actually look for it at `/Markus/csc108/data/prod/repos/group_123.git`
-
-6. Start the sshd service:
-
-```sh
-$ /usr/sbin/sshd
-```
-
-7. Set remaining config option:
-
-```yaml
-repository:
-  ssh_url: git@markus.example.edu
-```
-
-OR if you're using a relative url root make sure to include it:
-
-```yaml
-repository:
-  ssh_url: git@markus.example.edu/csc108
-```

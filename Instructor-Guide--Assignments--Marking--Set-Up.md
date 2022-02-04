@@ -10,7 +10,7 @@
 > :spiral_notepad: **NOTE:** Before you will be able to perform any numerical marking (i.e. assigning groups a numerical grade) you must set up a [marking scheme](Instructor-Guide--Assignments--Marking--Marking-Schemes.md) for your assignment.
 
 ## Setting up a Grader Account
-If anyone other than the course instructor (admin) wants to be able to grade a student (or group's) work, they must have a "Grader" account. This means if a course has 4 TAs and everyone wants to be able to grade work, you must set up 4 separate "Grader" accounts - one for each TA. The course instructor does not require a separate account for grading as all marking can also be done from the admin account.
+If anyone other than the course instructor wants to be able to grade a student (or group's) work, they must have a "Grader" account. This means if a course has 4 TAs and everyone wants to be able to grade work, you must set up 4 separate "Grader" accounts - one for each TA. The course instructor does not require a separate account for grading as all marking can also be done from the admin account.
 
 For information on setting up a "Grader" account please see "[Grader Accounts](Instructor-Guide--Users.md#grader-accounts)".
 
@@ -40,7 +40,7 @@ Before you may being grading an assignment, you must first collect the submitted
 
 When the collect command is executed it checks to see the file version for each submission that meets the due date and/or late penalty set for this assignment. It then creates the views for annotating and grading each submission.
 
-> :warning: **WARNING: If the collect operation is carried out after grading has begun (by admin or a TA) this grading work will be overwritten.** To prevent the preceding warning from occurring, ensure that you do not re-collect after any grading work has begun.
+> :warning: **WARNING: If the collect operation is carried out after grading has begun (by instructor or a TA) this grading work will be overwritten.** To prevent the preceding warning from occurring, ensure that you do not re-collect after any grading work has begun.
 
 Once the files for an assignment have been collected, the marking state of the submission will change from "Not Collected" to "In Progress".
 
@@ -50,8 +50,8 @@ An instructor can bypass the collection process to manually select which version
 
 ## Marking State
 There are six different marking states for a submission:
- 1. **Not Collected** - The group has been formed and may have submit work already but nothing has been collected by any TA or admin. All groups should have this status until the deadline to submit (with grace token extension) has passed.
- 2. **In Progress** - Either a TA or an admin has collected the submission and is currently working on grading the assignment.
+ 1. **Not Collected** - The group has been formed and may have submit work already but nothing has been collected by any TA or instructor. All groups should have this status until the deadline to submit (with grace token extension) has passed.
+ 2. **In Progress** - Either a TA or an instructor has collected the submission and is currently working on grading the assignment.
  3. **Complete** - The grading of the assignment has been completed but the mark has not yet been released to the group.
  4. **Released** - The mark has been released to the group along with any annotations that have been made.
  5. **Before Due Date** - The due date has not passed for this group.

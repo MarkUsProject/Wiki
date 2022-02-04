@@ -49,6 +49,35 @@ MarkUs has the following requirements for exam papers used as exam templates:
 
     - Other pages may or may not include identifying student information.
 
+### Automatic parsing of student information
+
+MarkUs supports automatic matching of student papers based on student user names or ID numbers written on the cover page of a test.
+If this feature is enabled, MarkUs will attempt to scan a portion of the test cover page and parse handwritten corresponding to either a student's user name or ID number attempt to match the test paper to a student in the course.
+
+*Note*: this feature is meant to assist, but not replace, the manual matching process described below. MarkUs may be unable to correctly parse this information from the test cover page, or it may be written incorrectly and not match any students.
+
+Automatic parsing is configured separately for each exam template.
+To enable and use the automatic parsing feature for an exam template:
+
+1. Go to the Settings -> Exam Templates tab, and find the exam template.
+    - Ensure that your exam template has a *rectangular grid* for where students should enter their user name or id number (see our [sample file](https://github.com/MarkUsProject/Markus/blob/master/db/data/scanned_exams/midterm1-v2-test.pdf) for an example).
+
+2. Under the "Automatic Parsing Selection" field, select the "Automatically parse student information" option.
+3. MarkUs will display the cover page of the exam template and a drop-down menu.
+
+    a. On the cover page, click-and-drag to select the region of the page where the students will write their user name/id number. We recommend including a small margin to account for positional adjustments when you scan the test papers.
+    b. On the drop down, select whether to match the information on the students' user name or id number. You must choose one or the other; MarkUs does not support matching on both.
+4. Press Save. You will be able to update these settings any time before scanning and uploading your test papers.
+5. Then after giving the test, follow the instructions under "Uploading completed test papers" below. As part of that process, MarkUs will automatically parse and handwriting in the selected region, and attempt to match it against the selected student field (user name or id number). You can view the results of this matching under the "Groups" tab, and match the remaining test papers to students by following the instructions under "Matching test papers to students" below.
+
+    **Note**: MarkUs takes a conservative approach, and will only match students if there is an exact match on the handwritten field.
+
+#### Known limitations
+
+1. MarkUs requires a rectangular grid for where students write their user name/id number.
+2. MarkUs requires the student information to be written on the first page of the test paper. Other positions (e.g., the last page) are currently not supported.
+
+
 ## Generating exam papers
 
 To administer the exam, you'll need to generate a unique test paper for each student.

@@ -41,7 +41,7 @@ When TAs press the "Create New Annotation" button, a dialog comes up for the ann
 
 There are three models that deal with annotations: `AnnotationCategory`, `AnnotationText`, and `Annotation`.
 
-- `AnnotationCategory`: a group of reusable annotations. It belongs to an `Assignment`, and has many `AnnotationText`s. It has a name for the category, like `'Style'` or `'Memory Management'`. Only admins can create annotation categories.
+- `AnnotationCategory`: a group of reusable annotations. It belongs to an `Assignment`, and has many `AnnotationText`s. It has a name for the category, like `'Style'` or `'Memory Management'`. Only instructors or graders with "manage assessment" permissions can create annotation categories.
 - `AnnotationText` contains the actual text content of an annotation. Each `AnnotationText` optionally belongs to an `AnnotationCategory`; if the association is `nil`, this text is an on-the-fly annotation, used for just a single submission file.
 - `Annotation`: an actual annotation given by a TA for a submission. It belongs to a `SubmissionFile` *and* `AnnotationText`, and also contains information about where the annotation occurs. These "location" columns are all nullable because they only apply to certain kinds of submission files.
 

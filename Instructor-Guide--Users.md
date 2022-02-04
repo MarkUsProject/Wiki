@@ -7,9 +7,7 @@
      - [Other Actions](#other-actions)
  - [Grader Accounts](#grader-accounts)
  - [Sections](#sections)
- - [Admin Accounts](#admin-accounts)
-
-> :warning: **Warning**: Do not change the username of any users after they have been created. This will prevent that user from logging in unless their log in credentials change as well. If you need to change the username of a user, make sure you let your sysadmin know so that they can make the appropriate changes.
+ - [instructor Accounts](#instructor-accounts)
 
 ## Student Accounts
 
@@ -25,17 +23,16 @@ This will bring up the "Add a Student" page:
 ![Add a student page](images/users-add-student-form.png)
 
 The page contains the following fields to be filled out:
- **- User Name:** The student's username (used to log in).
- **- Last Name:** The student's last name.
- **- First Name:** The student's first name.
- **- Email:** The student's email address.
- **- ID number:** The student's student number (optional).
- **- Grace Credits:** The number of grace credits you'd like the student to have (if you'd like them to have none or are not using grace credits enter 0).
- **- Section:** The section the student is in (you may also create a new section from here) (optional).
+
+ - **User Name:** The student's username (used to log in).
+ - **Grace Credits:** The number of grace credits you'd like the student to have (if you'd like them to have none or are not using grace credits enter 0).
+ - **Section:** The section the student is in (you may also create a new section from here) (optional).
 
 Once you've filled out the required fields, don't forget to hit save to create your student account!
 
 If you wish to modify a student account that has already been created, click on the "Edit" hyperlink and you will be brought to the student's "Edit a Student" page (same as "Add a Student").
+
+Note that a student can only be added to a course if that user already exists in the database. If you see the error message "End user must exist" this means that a user with that user name has not been added yet. Please contact the MarkUs administrator to get that user added to the MarkUs database.
 
 ### Grace Credits
 Grace credits are used to allow students to [extend assignment deadlines](Instructor-Guide--Assignments--Late-Submission-Policies.md#automatically-deduct-grace-credits).
@@ -49,11 +46,12 @@ A count of the number of grace credits a student has left can be seen in the "Gr
 
 ### Other Actions
 Three actions other than assigning grace credits may be performed from the drop down menu:
- **- Add to section**: This allows you to add the selected student(s) to the specified lecture section.
+ 
+ - **Add to section**: This allows you to add the selected student(s) to the specified lecture section.
 ![Add to section](images/users-add-to-section.png)
 
- **- Mark as inactive:** Sets the selected student(s) status to inactive.
- **- Mark as active:** Sets the selected student(s) status to active.
+ - **Mark as inactive:** Sets the selected student(s) status to inactive.
+ - **Mark as active:** Sets the selected student(s) status to active.
 
 Don't forget to click the "Apply" button to save your changes.
 
@@ -66,13 +64,19 @@ This page allows you to view a table of all the current graders set up for this 
 This will take you to the "Add a Grader" page where you will be able to fill in the necessary fields to create a new grader account:
 ![Add a Grader John Smith](images/users-add-grader-form.png)
 
-Note that a username, a first name and a last name are required for the account to be created but an email address is NOT required.
-
 Once you have added a grader, their information will show up in the table with the rest of the graders for this course.
 
 If you wish to edit or delete a grader, then select either the "delete" or "edit" link of the grader's specific row.
 
 The "delete" link will remove the user from the database and the "edit" link will bring you to a page similar to the "Add a Grader" page.
+
+### Grader Permissions
+
+By default, graders are not allowed to do anything other than view and grade student submissions that they have been assigned. If you would like to allow certain graders to do more on MarkUs you can select the checkboxes under "Grader Permissions":
+
+- Manage assessments: Grader can create/update assignments
+- Manage submissions: Grader can collect submissions and release/unrelease grades
+- Run tests: Grader can run automated tests
 
 ## Sections
 The "Sections" tab allows you to manage the lecture sections for your course. To add a new lecture section, first navigate to the "Sections" tab of MarkUs (Users -> Sections).
@@ -84,12 +88,12 @@ To add a new section, click on the "Add a new section" button at the top of the 
 
 Clicking on the name of the lecture section will allow you to see a list of all the students currently in that section.
 
-## Admin Accounts
-To see a list of all the admin accounts associated with the course, navigate to the "Admins" tab (Users -> Admins).
+## Instructor Accounts
+To see a list of all the Instructor accounts associated with the course, navigate to the "instructorns" tab (Users -> Instructors).
 
-Here you will see a table with all the admin information. If you wish to edit admin information, click on the "Edit" hyperlink under the "Actions" column. You are allowed to change your username here but must request a password change from the system admin.
+Here you will see a table with all the instructor information. If you wish to edit instructor information, click on the "Edit" hyperlink under the "Actions" column. You are allowed to change your username here but must request a password change from the system admin.
 
-To add an admin account, click on the "Add an Admin" hyperlink in the top right hand corner of the page. You will be brought to the "Add an Admin" page where you may fill out the required information:
-![Add an Admin](images/users-admin-form.png)
+To add an instructor account, click on the "Add an Instructor" hyperlink in the top right hand corner of the page. You will be brought to the "Add an Instructor" page where you may fill out the required information:
+![Add an Instructor](images/users-admin-form.png)
 
 Don't forget to hit the save button when you're finished!
