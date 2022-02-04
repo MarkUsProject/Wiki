@@ -739,44 +739,339 @@ NOTE: This will also send the updated specs to the server running the autotester
 }
 ```
 
-GET      /api/courses/:course_id/assignments/:assignment_id/groups/:id
-PATCH    /api/courses/:course_id/assignments/:assignment_id/groups/:id
-PUT      /api/courses/:course_id/assignments/:assignment_id/groups/:id
-GET      /api/courses/:course_id/assignments/:assignment_id/groups/:id/annotations
-POST     /api/courses/:course_id/assignments/:assignment_id/groups/:id/add_annotations
-POST     /api/courses/:course_id/assignments/:assignment_id/groups/:id/add_members
-POST     /api/courses/:course_id/assignments/:assignment_id/groups/:id/create_extra_marks
-PUT      /api/courses/:course_id/assignments/:assignment_id/groups/:id/update_marks
-PUT      /api/courses/:course_id/assignments/:assignment_id/groups/:id/update_marking_state
-DELETE   /api/courses/:course_id/assignments/:assignment_id/groups/:id/remove_extra_marks
+### GET /api/courses/:course_id/assignments/:assignment_id/groups/:id
 
-DELETE   /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/submission_files/remove_file
-DELETE   /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/submission_files/remove_folder
-POST     /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/submission_files/create_folders
-GET      /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/submission_files
-POST     /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/submission_files
-GET      /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/feedback_files
-POST     /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/feedback_files
+- description: Get group information for a single group
+- example response (json):
+
+```json
+{
+  "id": 1,
+  "group_name": "group_0001",
+  "members": [
+    {
+      "membership_status": "inviter",
+      "user_id": 9
+    },
+    {
+      "membership_status": "accepted",
+      "user_id": 24
+    }
+  ]
+}
+```
+
+### GET /api/courses/:course_id/assignments/:assignment_id/groups/:id/annotations
+
+- description: Get all annotations associated with the given group's submissions for the current assignment
+- example response (json):
+
+```json
+[
+    {
+    "type": "TextAnnotation",
+    "content": "Ut magni.",
+    "filename": "hello.py",
+    "path": "A0",
+    "page": null,
+    "group_id": 15,
+    "category": "asperiores",
+    "creator_id": 1,
+    "content_creator_id": 1,
+    "line_end": 12,
+    "line_start": 12,
+    "column_start": 1,
+    "column_end": 26,
+    "x1": null,
+    "y1": null,
+    "x2": null,
+    "y2": null
+  },
+  {
+    "type": "PdfAnnotation",
+    "content": "Officia et dolore.",
+    "filename": "pdf.pdf",
+    "path": "A0/another-test-files-in-inner-dirs",
+    "page": 1,
+    "group_id": 15,
+    "category": "suscipit eos",
+    "creator_id": 1,
+    "content_creator_id": 1,
+    "line_end": null,
+    "line_start": null,
+    "column_start": null,
+    "column_end": null,
+    "x1": 27740,
+    "y1": 58244,
+    "x2": 4977,
+    "y2": 29748
+  }
+]
+```
+
+### POST /api/courses/:course_id/assignments/:assignment_id/groups/:id/add_annotations
+
+- description: Add a text annotation to a file submitted by the given group for the given assignment.
+- required parameters:
+  - annotations (list of hashes)
+    - annotation_category_name (string, optional)
+    - filename (string)
+    - content (string)
+    - line_start (integer)
+    - line_end (integer)
+    - column_start (integer)
+    - column_end (integer)
+- optional parameters:
+  - force_complete (boolean : whether to assign the annotation even if the marking is complete)
+
+NOTE: adding PDF, image, or HTML annotations are not supported through the API
+
+### POST /api/courses/:course_id/assignments/:assignment_id/groups/:id/add_members
+
+- description: Add members to the given group for the given assignment
+- required parameters:
+  - members (list of strings : user names of students to add to the group)
+
+### POST /api/courses/:course_id/assignments/:assignment_id/groups/:id/create_extra_marks
+
+- description: Add extra marks to the collected result for the given group for the given assignment.
+- required parameters:
+  - extra_marks (integer : can be positive or negative)
+  - description (string)
+
+### PUT /api/courses/:course_id/assignments/:assignment_id/groups/:id/update_marks
+
+- description: Update the marks for a given group based on the criteria name.
+- required paramters:
+  - "criteria name" (integer)
+
+NOTE: "criteria name" is not the actual name of the parameter but should be replaced by the name of a criteria created for the given assignment. For example, if a criteria exists with the name "code_style", and you want to set the mark for that criteria for the given group to 9, then include the paramter "code_style=9". 
+
+### PUT /api/courses/:course_id/assignments/:assignment_id/groups/:id/update_marking_state
+
+- description: Set the marking state to either complete or incomplete for the collected result for the given group
+- required parameters:
+  - marking_state (one of "complete", "incomplete")
 
 
-GET      /api/courses/:course_id/assignments/:assignment_id/starter_file_groups
-POST     /api/courses/:course_id/assignments/:assignment_id/starter_file_groups
+### DELETE /api/courses/:course_id/assignments/:assignment_id/groups/:id/remove_extra_marks
 
-GET      /api/courses/:course_id/feedback_files/:id
-PATCH    /api/courses/:course_id/feedback_files/:id
-PUT      /api/courses/:course_id/feedback_files/:id
-DELETE   /api/courses/:course_id/feedback_files/:id
-PATCH    /api/courses/:course_id/submission_files/:id
-PUT      /api/courses/:course_id/submission_files/:id
-DELETE   /api/courses/:course_id/submission_files/:id
+- description: Delete an extra mark assigned to the given group's result based on the description and mark value.
+- required parameters:
+  - extra_marks (integer : can be positive or negative)
+  - description (string)
 
-GET      /api/courses/:course_id/starter_file_groups/:id
-PATCH    /api/courses/:course_id/starter_file_groups/:id
-PUT      /api/courses/:course_id/starter_file_groups/:id
-DELETE   /api/courses/:course_id/starter_file_groups/:id
-GET      /api/courses/:course_id/starter_file_groups/:id/entries
-POST     /api/courses/:course_id/starter_file_groups/:id/create_file
-POST     /api/courses/:course_id/starter_file_groups/:id/create_folder
-DELETE   /api/courses/:course_id/starter_file_groups/:id/remove_file
-DELETE   /api/courses/:course_id/starter_file_groups/:id/remove_folder
-GET      /api/courses/:course_id/starter_file_groups/:id/download_entries
+### DELETE /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/submission_files/remove_file
+
+- description: Remove a file from a groups repository form the given assignment
+- required parameters:
+  - filename (string)
+
+NOTE: the filename string can include a nested path if the file to remove is in a subfolder (ex: "filename=some/nested/dir/submission.txt")
+
+### DELETE /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/submission_files/remove_folder
+
+- description: Remove a folder from a groups repository for the given assignment
+- required parameters:
+  - folder_path (string)
+
+NOTE: the folder_path string can include a nested path if the folder to remove is in a subfolder (ex: "folder_path=some/nested/dir/")
+
+### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/submission_files/create_folders
+
+- description: Create a folder in a groups repository for the given assignment
+- required parameters:
+  - folder_path (string)
+
+NOTE: the folder_path string can include a nested path if the folder should be added in a subfolder (ex: "folder_path=some/nested/dir/")
+
+NOTE: not all parent directories need to exist in order to create a nested directory. For example, if "folder_path=some/nested/dir/"  and "some/" doesn't exist yet, then "some/", "some/nested", and "some/nested/dir" will all be created.
+
+### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/submission_files
+
+- description: Create a file in a groups repository for the given assignment
+- required parameters:
+  - filename (string)
+  - mime_type (string)
+  - file_content (string or binary data)
+
+NOTE: the filename string can include a nested path if the file should be added in a subfolder (ex: "filename=some/nested/dir/submission.txt")
+
+NOTE: not all parent directories need to exist in order to create a nested file. For example, if "filename=some/nested/dir/submission.txt"  and "some/" doesn't exist yet, then "some/", "some/nested", and "some/nested/dir" will all be created as well.
+
+### GET /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/submission_files
+
+- description: Download a zip archive containing submission files submitted by the given group for the given assignment **or** the content of a single file
+- optional parameters:
+  - filename (string)
+  - collected (boolean)
+
+NOTE: the filename string can include a nested path if the requested file is in a subfolder (ex: "filename=some/nested/dir/submission.txt")
+
+NOTE: if the collected parameter included, the collected version of the group's submission is downloaded. Otherwise the most recent verstion is downloaded
+
+NOTE: if the filename parameter is given, only the content from a single file will be downloaded. Otherwise, a zip archive containing the entire submission will be downloaded.
+
+### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/feedback_files
+
+- description: Create a feedback file for the given group for the given assignment
+- required parameters:
+  - filename (string)
+  - mime_type (string)
+  - file_content (string or binary data)
+
+NOTE: adding feedback files to subdirectories is currently not supported
+
+### GET /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/feedback_files
+
+- description: Get all feedback file information for a given group for a given assignment
+- optional parameters:
+  - [filter](#filter)
+  - [fields](#fields)
+- example response (json):
+
+```json
+[
+  {
+    "id": 13,
+    "filename": "humanfb.txt"
+  },
+  {
+    "id": 14,
+    "filename": "machinefb.txt"
+  }
+]
+```
+
+### GET /api/courses/:course_id/feedback_files/:id
+
+- description: Download the content of the given feedback file
+
+### PUT /api/courses/:course_id/feedback_files/:id
+
+- description: update the filename or content of the given feedback file
+- optional parameters:
+  - filename (string)
+  - file_content (string or binary data)
+
+### DELETE /api/courses/:course_id/feedback_files/:id
+
+- description: delete the given feedback file
+
+### GET /api/courses/:course_id/assignments/:assignment_id/starter_file_groups
+
+- description: get information about all starter file groups for the given assignment
+- example response (json):
+
+```json
+[
+  {
+    "id": 4,
+    "assessment_id": 1,
+    "entry_rename": "",
+    "use_rename": false,
+    "name": "A starter file group"
+  },
+  {
+    "id": 5,
+    "assessment_id": 1,
+    "entry_rename": "",
+    "use_rename": false,
+    "name": "another one"
+  }
+]
+```
+
+### POST /api/courses/:course_id/assignments/:assignment_id/starter_file_groups
+
+- description: create a starter file group for the given assignment
+- required parameters:
+  - name (string)
+- optional parameters:
+  - entry_rename (string)
+  - use_rename (boolean)
+
+
+NOTE: if use_rename is true then files (or folders) assigned as starter files from this starter file group will be renamed to the value of entry_rename when the students download the starter files (see the [starter file documentation](Instructor-Guide--Assignments--Starter-Files.md) for more details)
+
+### GET /api/courses/:course_id/starter_file_groups/:id
+
+- description: get information about a single starter file group
+- example response (json):
+
+```json
+{
+  "id": 4,
+  "assessment_id": 1,
+  "entry_rename": "",
+  "use_rename": false,
+  "name": "A starter file group"
+}
+```
+
+### PUT /api/courses/:course_id/starter_file_groups/:id
+
+- description: update the attributes of a starter file group
+- required parameters:
+  - name (string)
+- optional parameters:
+  - entry_rename (string)
+  - use_rename (boolean)
+
+### DELETE /api/courses/:course_id/starter_file_groups/:id
+
+- description: delete a starter file group
+
+### GET /api/courses/:course_id/starter_file_groups/:id/entries
+
+- description: get the path of all files and folders in this starter file group
+- example response (json):
+
+```json
+[
+  "instructions.md",
+  "some/",
+  "some/subfolder/",
+  "some/subfolder/textfile.txt",
+]
+```
+
+### POST /api/courses/:course_id/starter_file_groups/:id/create_file
+
+- description: Add a file to the given starter file group
+- required parameters:
+  - filename (string)
+  - file_content (string or binary data)
+
+NOTE: the filename string can include a nested path if the given file is in a subfolder (ex: "filename=some/nested/dir/submission.txt")
+
+### POST /api/courses/:course_id/starter_file_groups/:id/create_folder
+
+- description: Add a folder to the given starter file group
+- required parameters:
+  - folder_path (string)
+
+NOTE: the folder_path string can include a nested path if the folder should be added in a subfolder (ex: "folder_path=some/nested/dir/")
+
+### DELETE /api/courses/:course_id/starter_file_groups/:id/remove_file
+
+- description: Delete a folder from the given starter file group
+- required parameters:
+  - filename (string)
+
+NOTE: the filename string can include a nested path if the requested file is in a subfolder (ex: "filename=some/nested/dir/submission.txt")
+
+### DELETE /api/courses/:course_id/starter_file_groups/:id/remove_folder
+
+- description: Delete a folder from the given starter file group
+- required parameters:
+  - folder_path (string)
+
+NOTE: the folder_path string can include a nested path if the folder to be removed is in a subfolder (ex: "folder_path=some/nested/dir/")
+
+### GET /api/courses/:course_id/starter_file_groups/:id/download_entries
+
+- description: Download a zip archive containing all entries (files and folders) in this starter file group
+
+
+
