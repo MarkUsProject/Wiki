@@ -15,6 +15,7 @@
      - [PyTa](#pyta)
      - [Haskell](#haskell)
      - [Jupyter](#jupyter)
+     - [R](#r)
      - [Custom](#custom)
  - [Student-Run Tests](#student-run-tests)
  - [Running Tests](#running-tests)
@@ -211,6 +212,10 @@ In Racket, each test file must be added separately with the appropriate test sui
 
    > 🗒️ **NOTE**: If you wish to write more complex test with jupyter notebooks than can be supported by merging notebooks we recommend using the Python tester to write unit tests. In order to import jupyter notebooks as python modules use the [notebook_helper](https://github.com/MarkUsProject/autotest-helpers/tree/main/notebook_helper) package.
 
+
+#### R
+
+- **Package requirements**: In this section you may specify additional CRAN (https://cran.r-project.org/) packages required by your tests. Use a space to separate different package names.
 
 #### Custom
 No special fields are required for this tester type. The custom tester works by simply running an executable script (uploaded by the instructor) and reporting the results back to MarkUs. This script must report the results in a specific format [outlined here](https://github.com/MarkUsProject/markus-autotesting#the-custom-tester).
