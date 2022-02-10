@@ -37,10 +37,10 @@ This section allows you to set the name and due date for the assignment as well 
 
 If you wish to allow students to submit URLs check the "Allow students to submit URLs" box. This is especially useful if you plan on requiring students to submit videos or large files since preview support is available for content from YouTube and Google Drive/Docs.
 
+Please see the [Peer Review](Instructor-Guide--Assignments--Peer-Review.md) page for more information on Peer Review.
+
 > :spiral_notepad: **NOTE:**
 >  MarkUs does not check the "last modified time" of the target of a submitted URL. It is possible for students to submit a URL before the deadline, but change the target's contents after the deadline (e.g., by modifying the contents of a Google Doc).
-
-Please see the [Peer Review](Instructor-Guide--Assignments--Peer-Review.md) page for more information on Peer Review.
 
 ### Required Files
 This section will allow you to specify the names of files that students will be required to submit:
