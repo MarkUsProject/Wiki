@@ -4,7 +4,6 @@
 
 You can't. However, you can give the grader permissions to do pretty much everything an instructor can do. See [grader permissions](./Instructor-Guide--Users.md#grader-permissions) for more details
 
-
 ## How do I accept a late file submitted after the final deadline?
 
 Students can submit files after the final deadline - tell students to ignore the warning
@@ -29,14 +28,12 @@ assignment, tell them to submit and then follow the instructions in the previous
 If the student has not already created a group, you can do the same thing, but first you must
 create one manually for the student (under the Groups tab).
 
-
 ## How do I make a grade change?
 
 For an **assignment**: unrelease the assignment, then make the desired changes, and re-release it.
 
 For a **marks spreadsheet**: you can change the mark directly in the table, or upload
 a CSV file to update the marks. Unreleasing and re-releasing is possible, but not necessary.
-
 
 ## How do I checkout all submissions for an assignment?
 

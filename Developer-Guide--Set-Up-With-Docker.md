@@ -1,8 +1,10 @@
+# Developer Guide: Set Up with Docker
+
 ## Downloading and Installing
 
 If you want to get started on working on MarkUs quickly and painlessly, this is the way to do it.
 
-1.  If you are using **Windows**, you will need to install Windows Subsystem for Linux (WSL) by following the instructions on [this page](https://docs.microsoft.com/en-us/windows/wsl/install-win10). (The "Simplified Installation" section is probably easiest, but you need to join the Windows Insiders Program with a Microsoft account.)
+1. If you are using **Windows**, you will need to install Windows Subsystem for Linux (WSL) by following the instructions on [this page](https://docs.microsoft.com/en-us/windows/wsl/install-win10). (The "Simplified Installation" section is probably easiest, but you need to join the Windows Insiders Program with a Microsoft account.)
 
     - If you are given a choice of what operating system to use, select *Ubuntu 20.04*.
 
@@ -11,20 +13,20 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
     - On Windows, make sure you've selected the "WSL 2 backend" tab under "System Requirements" and follow those instructions.
     - On Linux, also follow the instructions on "Manage Docker as a non-root user" [here](https://docs.docker.com/install/linux/linux-postinstall/).
 
-3.  If you are using **Windows**, you'll need to open a terminal into the WSL system you installed. *This is the terminal where you'll type in the rest of the commands in this section.*
+3. If you are using **Windows**, you'll need to open a terminal into the WSL system you installed. *This is the terminal where you'll type in the rest of the commands in this section.*
 
-    1.  To start the WSL terminal, open the start menu and type in "ubuntu". Click on the "Ubuntu 20.04" application. (We recommend pinning this to your taskbar to make it easier to find in the future.)
-    2.  Type in the command `pwd`, which shows what folder you're currently in. You should see `/home/<your user name>` printed. If it isn't, switch to your home directory using the command `cd ~`.
+    1. To start the WSL terminal, open the start menu and type in "ubuntu". Click on the "Ubuntu 20.04" application. (We recommend pinning this to your taskbar to make it easier to find in the future.)
+    2. Type in the command `pwd`, which shows what folder you're currently in. You should see `/home/<your user name>` printed. If it isn't, switch to your home directory using the command `cd ~`.
 
-4.  Clone the Markus repository from GitHub by following the instructions in [Setting up Git and MarkUs](Developer-Guide--Setting-up-Git.md). (This is a document you will want to read very carefully and may come back to.)
+4. Clone the Markus repository from GitHub by following the instructions in [Setting up Git and MarkUs](Developer-Guide--Setting-up-Git.md). (This is a document you will want to read very carefully and may come back to.)
 
-5.  Change into the repository that you just cloned: `cd Markus`.
+5. Change into the repository that you just cloned: `cd Markus`.
 
-6.  Run `docker-compose build app`.
+6. Run `docker-compose build app`.
 
-7.  Run `docker-compose up rails`. The first time you run this it will take a long time because it'll install all of MarkUs' dependencies, and then seed the MarkUs application with sample data before actually running the server. When the server actually starts, you'll see some terminal output that looks like:
+7. Run `docker-compose up rails`. The first time you run this it will take a long time because it'll install all of MarkUs' dependencies, and then seed the MarkUs application with sample data before actually running the server. When the server actually starts, you'll see some terminal output that looks like:
 
-    ```
+    ```text
     Puma starting in cluster mode...
     * Version 4.3.1 (ruby 2.5.3-p105), codename: Mysterious Traveller
     * Min threads: 0, max threads: 16
@@ -48,13 +50,13 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 
     - On Windows Home Edition, you'll need to use the Docker container's IP address instead: `192.168.99.100:3000/csc108`.
 
-9.  In a new terminal window, go into the Markus directory again and run `docker-compose run rails rspec` to run the MarkUs test suite. This will take several minutes to run, but all tests should pass.
+9. In a new terminal window, go into the Markus directory again and run `docker-compose run rails rspec` to run the MarkUs test suite. This will take several minutes to run, but all tests should pass.
 
     **Troubleshooting**
 
     - If you see a test failing with the following message near the top:
 
-        ```
+        ```text
         1) SubmissionsController#get_file When the file is a jupyter notebook file should download the file as is
            Failure/Error: _stdout, stderr, status = Open3.capture3(*args, stdin_data: file_contents)
 
@@ -65,9 +67,9 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
     Run the following commands:
 
     ```console
-    $ docker-compose run --rm rails bash  # This takes you into the Docker container
-    $ python3.8 -m venv /app/nbconvertvenv
-    $ /app/nbconvertvenv/bin/pip install wheel nbconvert
+    docker-compose run --rm rails bash  # This takes you into the Docker container
+    python3.8 -m venv /app/nbconvertvenv
+    /app/nbconvertvenv/bin/pip install wheel nbconvert
     ```
 
     Then try re-running the tests. You can do this from your current terminal (inside the Docker container) simply by running `rspec`.

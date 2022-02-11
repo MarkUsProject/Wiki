@@ -1,6 +1,7 @@
 # Remark Requests
 
-## Table of Contents:
+## Table of Contents
+
 - [How it Works](#how-it-works)
 - [Uploading Files](#uploading-files)
 - [Creating Rules](#creating-rules)

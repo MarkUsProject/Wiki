@@ -1,12 +1,9 @@
 # Configuration Settings
 
-_new in version 1.12.0_
-
-Custom configuration settings for MarkUs can be set by adding a `config/settings.local.yml` file.
+*new in version 1.12.0*: Custom configuration settings for MarkUs can be set by adding a `config/settings.local.yml` file.
 Values in this file are described below and will override any default values in the `config/settings.yml` or the environment specific files in `config/settings`.
 
-
-#### Default Values
+## Default Values
 
 To show the default values for your environment, run the following command in the root directory of the installed MarkUs instance:
 
@@ -16,9 +13,9 @@ echo 'puts JSON.parse(Settings.to_json).to_yaml' | NO_SCHEMA_VALIDATE=1 bundle e
 
 By specifying `NO_SCHEMA_VALIDATE` an error will not be raised if a required key is missing.
 
-#### Settings
+## Settings
 
-##### Rails Specific Settings
+### Rails Specific Settings
 
 All values under the `rails:` key are used to set the `Rails.configuration` object when the app starts.
 
@@ -61,7 +58,7 @@ rails:
      perform_caching: # boolean indicating whether to enable fragment caching (enable this for production only)
 ```
 
-##### MarkUs settings
+### MarkUs settings
 
 ```yaml
 queues:
@@ -113,7 +110,7 @@ python:
 pandoc: # path to the pandoc executable
 ```
 
-#### Additional queue names
+## Additional queue names
 
 By default, background jobs will be run using the queue specified by the
 
@@ -135,14 +132,13 @@ queue:
 
 Will run all background jobs using a queue named "default" except for `AutotestSpectsJob` which will use a queue named "specs_queue" and `SplitPdfJob` which will use a queue named "some_other_one".
 
-
-#### Student Tests
+## Student Tests
 
 Students are only allowed to run one test at a time. This means that a student must wait until the results from a previous test have returned before they can run another one. If a test result never returns (because of an unexpected error) a student will instead have to wait `student_test_buffer_minutes` before they can run a new test.
 
-#### User Authentication Options
+## User Authentication Options
 
-When a user logs in to MarkUs they can be authenticated in one of two ways: 
+When a user logs in to MarkUs they can be authenticated in one of two ways:
 
 1. Local authentication: their username, password, and (optionally) their IP address are sent to the stdin pipe of a script file on disk. If that script exits with a 0, the user is authenticated.
 2. Remote authentication: some other service (such as a Single Sign-on provider) authenticates the user's user name and password for MarkUs. If the user is authenticated by this service, the user's user name should be sent in the request header as the value of the "HTTP_X_FORWARDED_USER" key (see Installation instructions for more details).
@@ -178,15 +174,15 @@ validate_custom_status_message:
 local_auth_login_name: shibboleth
 ```
 
-**Logout redirect**
+### Logout redirect
 
-The `logout_redirect` setting determines where the user will be redirected when they logout of MarkUs. It can be one of `DEFAULT`, `NONE`, or a URL. 
+The `logout_redirect` setting determines where the user will be redirected when they logout of MarkUs. It can be one of `DEFAULT`, `NONE`, or a URL.
 
 - `DEFAULT`: the user will be redirected to MarkUs' login page
 - `NONE`: MarkUs will render a 404 error page
 - URL: MarkUs will redirect the user to this URL
 
-#### Environment variables
+## Environment variables
 
 All of the settings described above can also be set using environment variables. Environment variables start with `MARKUS__` followed by each nested yaml key separated by `__`. For example,
 

@@ -1,4 +1,4 @@
-## About MarkUs
+# About MarkUs
 
 MarkUs is a web application for the submission and grading of student programming assignments. The primary purpose of MarkUs is to provide TAs with simple tools that will help them to give high quality feedback to students. MarkUs also provides a straight-forward interface for students to submit their work, form groups, and receive feedback. The administrative interface allows instructors to manage groups, organize the grading, and release grades to students.
 

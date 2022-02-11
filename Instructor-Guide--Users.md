@@ -1,17 +1,19 @@
 # Managing Users
 
 ## Table of Contents
- - [Student Accounts](#student-accounts)
-     - [New Student Account](#new-student-account)
-     - [Grace Credits](#grace-credits)
-     - [Other Actions](#other-actions)
- - [Grader Accounts](#grader-accounts)
- - [Sections](#sections)
- - [instructor Accounts](#instructor-accounts)
+
+- [Student Accounts](#student-accounts)
+    - [New Student Account](#new-student-account)
+    - [Grace Credits](#grace-credits)
+    - [Other Actions](#other-actions)
+- [Grader Accounts](#grader-accounts)
+- [Sections](#sections)
+- [instructor Accounts](#instructor-accounts)
 
 ## Student Accounts
 
 ### New Student Account
+
 To add a new student, navigate to the Students tab of MarkUs (Users -> Students)
 
 Once here, you will see a table with all the students listed for your course. The table will give you all the student's basic information as well as the number of grace credits they have left and whether or not they are Active or Inactive.
@@ -24,9 +26,9 @@ This will bring up the "Add a Student" page:
 
 The page contains the following fields to be filled out:
 
- - **User Name:** The student's username (used to log in).
- - **Grace Credits:** The number of grace credits you'd like the student to have (if you'd like them to have none or are not using grace credits enter 0).
- - **Section:** The section the student is in (you may also create a new section from here) (optional).
+- **User Name:** The student's username (used to log in).
+- **Grace Credits:** The number of grace credits you'd like the student to have (if you'd like them to have none or are not using grace credits enter 0).
+- **Section:** The section the student is in (you may also create a new section from here) (optional).
 
 Once you've filled out the required fields, don't forget to hit save to create your student account!
 
@@ -35,6 +37,7 @@ If you wish to modify a student account that has already been created, click on 
 Note that a student can only be added to a course if that user already exists in the database. If you see the error message "End user must exist" this means that a user with that user name has not been added yet. Please contact the MarkUs administrator to get that user added to the MarkUs database.
 
 ### Grace Credits
+
 Grace credits are used to allow students to [extend assignment deadlines](Instructor-Guide--Assignments--Late-Submission-Policies.md#automatically-deduct-grace-credits).
 
 To modify the number of grace credits a student has, select the student's check box from the left hand side of the page. If you need to modify a group's total, make sure you select all the students in the group. Then, make sure you have the "Give grace credits" action selected from the drop down menu:
@@ -45,17 +48,19 @@ You may input the number of grace credits you'd like to add to the student's tot
 A count of the number of grace credits a student has left can be seen in the "Grace Credits" column of the Students table.
 
 ### Other Actions
+
 Three actions other than assigning grace credits may be performed from the drop down menu:
- 
- - **Add to section**: This allows you to add the selected student(s) to the specified lecture section.
+
+- **Add to section**: This allows you to add the selected student(s) to the specified lecture section.
 ![Add to section](images/users-add-to-section.png)
 
- - **Mark as inactive:** Sets the selected student(s) status to inactive.
- - **Mark as active:** Sets the selected student(s) status to active.
+- **Mark as inactive:** Sets the selected student(s) status to inactive.
+- **Mark as active:** Sets the selected student(s) status to active.
 
 Don't forget to click the "Apply" button to save your changes.
 
 ## Grader Accounts
+
 To set up a "Grader" account avigate to the "Users" section of MarkUs and click on the "Graders" tab
 
 This page allows you to view a table of all the current graders set up for this course. Each row of the table includes the grader's username, first and last name(s), an email address and an actions column. To add a new grader click on the "Add a Grader" link on the top right hand corner of the page:
@@ -79,6 +84,7 @@ By default, graders are not allowed to do anything other than view and grade stu
 - Run tests: Grader can run automated tests
 
 ## Sections
+
 The "Sections" tab allows you to manage the lecture sections for your course. To add a new lecture section, first navigate to the "Sections" tab of MarkUs (Users -> Sections).
 
 Here you will see a list of all the lecture sections currently created for your course. The number in parentheses following each section represents the number of students in that section:
@@ -89,6 +95,7 @@ To add a new section, click on the "Add a new section" button at the top of the 
 Clicking on the name of the lecture section will allow you to see a list of all the students currently in that section.
 
 ## Instructor Accounts
+
 To see a list of all the Instructor accounts associated with the course, navigate to the "instructorns" tab (Users -> Instructors).
 
 Here you will see a table with all the instructor information. If you wish to edit instructor information, click on the "Edit" hyperlink under the "Actions" column. You are allowed to change your username here but must request a password change from the system admin.
