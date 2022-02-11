@@ -35,6 +35,10 @@ This section allows you to set the name and due date for the assignment as well 
 
 **6. Check boxes:** The rest of this section includes check boxes that may be selected or deselected depending on your preferences. Note that in order for students to submit online, the "Allow students to submit through the web interface" box must be checked. If you prefer students to submit through a version control system, then uncheck the "web interface" box and select "version control system".
 
+If you wish to allow students to submit URLs check the "Allow students to submit URLs" box. This is especially useful if you plan on requiring students to submit videos or large files since preview support is available for content from YouTube and Google Drive/Docs.
+> :spiral_notepad: **NOTE:**
+>  MarkUs does not check the "last modified time" of the target of a submitted URL. It is possible for students to submit a URL before the deadline, but change the target's contents after the deadline (e.g., by modifying the contents of a Google Doc).
+
 Please see the [Peer Review](Instructor-Guide--Assignments--Peer-Review.md) page for more information on Peer Review.
 
 ### Required Files
