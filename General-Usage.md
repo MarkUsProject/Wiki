@@ -1,7 +1,8 @@
-## Table of Contents:
+# General Usage
+
+## Table of Contents
 
 - [Using the File Manager](#using-the-file-manager)
-
 
 ## Using the File Manager
 
@@ -18,7 +19,7 @@ If the "unzip all zip files in place" checkbox is selected, all files with the e
 
 For example, if you want to upload a bunch of files in the following configuration:
 
-```
+```text
 dir1
 └── dir2
     ├── file.png
@@ -49,9 +50,9 @@ After entering the link information and clicking on "Save", a `.markusurl` file 
 
 Once you have added your files the data that may be displayed on the table (Note that the columns shown may vary slightly depending on the view):
 
- - **Filename** - The name of the file that has been uploaded. You may click on the file name to download a copy of the file.
- - **Submitted At** - The time at which the file was last uploaded
- - **Revised By** - The person who last modified the file. Only instructors may add or delete test files. Graders and students may not.
+- **Filename** - The name of the file that has been uploaded. You may click on the file name to download a copy of the file.
+- **Submitted At** - The time at which the file was last uploaded
+- **Revised By** - The person who last modified the file. Only instructors may add or delete test files. Graders and students may not.
 
 You may search through all the uploaded files using the "Filter Files" search bar. The search will match all text in the file title (i.e. you can search for the file name or the file extension).
 

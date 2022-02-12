@@ -1,13 +1,14 @@
 # Setting Up a Marks Spreadsheet
 
-## Table of Contents:
- - [Setup](#setup)
-     - [Properties](#properties)
-     - [Columns](#columns)
- - [Save](#save)
+## Table of Contents
 
+- [Setup](#setup)
+    - [Properties](#properties)
+    - [Columns](#columns)
+- [Save](#save)
 
 ## Setup
+
 ***Marks Spreadsheets provide the instructor a way of keeping a record of student's marks for assignments, quizzes or tests that do not require online submission.*** For example, an instructor may wish to set up a spreadsheet for a midterm and include a mark for each question on the test.
 
 To set up a marks spreadsheet navigate to the "Assignments" tab of MarkUs and click on the "Create Marks Spreadsheet" button:
@@ -16,6 +17,7 @@ To set up a marks spreadsheet navigate to the "Assignments" tab of MarkUs and cl
 This will bring you to the "Create Marks Spreadsheet" page where a few customization options are available.
 
 ### Properties
+
 This section allows you to configure some display settings of your spreadsheet:
 ![Properties Marks Spreadsheet](images/marks-spreadsheet-properties.png)
 
@@ -30,6 +32,7 @@ This section allows you to configure some display settings of your spreadsheet:
 > :spiral_notepad: **NOTE:** Even if you check this box, the spreadsheet will still be visible to graders.
 
 ### Columns
+
 In this section you may specify the columns (or marks) that you wish your spreadsheet to have:
 ![Columns Spreadsheet](images/marks-spreadsheet-columns.png)
 To add a new column, click on the "Add a column" hyperlink at the bottom of the page. In each column you may specify:
@@ -40,6 +43,7 @@ To add a new column, click on the "Add a column" hyperlink at the bottom of the 
 **4. Delete:** Check this box and select "Update Marks Spreadsheet" to remove the column from the sheet.
 
 ## Save
+
 Once you have finished configuring your spreadsheet, don't forget to hit the "Update Marks Spreadsheet" button to create/save your spreadsheet!
 
 Please see the [usage](Instructor-Guide--Marks-Spreadsheets--Assigning-Marks.md) page for information on how to use the spreadsheet to grade your students.

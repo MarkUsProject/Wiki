@@ -1,11 +1,12 @@
 # Managing Group Members
 
 ## Table of Contents
- - [Manage Groups Page](#manage-groups-page)
- - [Groups Actions](#groups-actions)
 
+- [Manage Groups Page](#manage-groups-page)
+- [Groups Actions](#groups-actions)
 
 ## Manage Groups Page
+
 Groups can be managed from the "Groups" tab under "Assignments".
 
 This page allows instructor users to create and remove existing groups for a given assignment, add and remove students from groups, and give extensions to individual groups.
@@ -52,7 +53,6 @@ Clicking the red X beside the student's name in the "Members" column on the righ
 ### Change a group's name
 
 Clicking the pencil icon beside the group's name in the "Group" column on the right hand table will allow you to edit the name of the group.
-
 
 ### Give a group an extension
 
