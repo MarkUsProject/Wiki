@@ -4,7 +4,7 @@ When submitted work is graded by a TA, or viewed later on by the student that su
 
 Here's a user story that describes what an annotation more or less is.
 
-## What is an Annotation? A User Story...
+## What is an Annotation? A User Story
 
 Jamie, the TA, is about to grade some C code submitted by c9doej. Jamie pulls up the student source code, and begins to read it through it. Jamie is pleased at how easy the code is to read, because it is syntax highlighted.
 
@@ -34,7 +34,6 @@ Each assignment has its own annotation categories.
 Annotations can also be added on-the-fly for a particular submission. For example, if c9doej submits some code where a few lines are completely unreadable, the TA might write a unique annotation just for that student.
 When TAs press the "Create New Annotation" button, a dialog comes up for the annotation text. This dialog will also ask them which category they would like to add this annotation to if they want it to be "canned". The default is to leave the annotation category as "uncategorized", meaning that it's an on-the-fly annotation not meant to be added to multiple students.
 
-
 ## Implementation Details
 
 ### Models
@@ -63,13 +62,13 @@ Because of the possibility of change, I did my best to decouple the Syntax Highl
 
 SourceCodeAdapter is an abstract class. Here is a list of the responsibilities for any implementation of SourceCodeAdapter:
 
--   To take the root of some DOM element that contains syntax highlighted source code in the constructor
+- To take the root of some DOM element that contains syntax highlighted source code in the constructor
 
--   To return an Enumerable collection of SourceCodeLine's (a class that I'll discuss in the next section) from that DOM element, using the method getSourceNodes().
+- To return an Enumerable collection of SourceCodeLine's (a class that I'll discuss in the next section) from that DOM element, using the method getSourceNodes().
 
--   Given some DOM element X, to determine whether or not X is in the currently highlighted source code, and to return the DOM element that represents the root of a SourceCodeLine. The method for this is getRootFromSelection(some\_node). This is important for determining which lines are selected after highlighting the source with the mouse cursor.
+- Given some DOM element X, to determine whether or not X is in the currently highlighted source code, and to return the DOM element that represents the root of a SourceCodeLine. The method for this is getRootFromSelection(some\_node). This is important for determining which lines are selected after highlighting the source with the mouse cursor.
 
--   To perform any run-time hackery on the syntax highlighter DOM element, using applyMods().
+- To perform any run-time hackery on the syntax highlighter DOM element, using applyMods().
 
 SyntaxHighlighter1p5Adapter is the concrete class that implements SourceCodeAdapter for the current version of the Syntax Highlighter that we're using. In applyMods, this is where I've stuffed the "A+" and "A-" text-size adjuster functions that are visible in the source code pane menu.
 
@@ -81,15 +80,15 @@ SourceCodeLine represents a single line of source code. The SourceCodeAdapter sh
 
 SourceCodeLine is an abstract class. Here is a partial list of the responsibilities for any implementation of SourceCodeLine:
 
--   To take a DOM element that represents a single source code line in the constructor, and to remember it for future manipulation
+- To take a DOM element that represents a single source code line in the constructor, and to remember it for future manipulation
 
--   To manage glowing on that single source code line using the method glow(). The glow() method will increase the glow\_depth on this source code line to an arbitrary amount. Similarly, unGlow() will decrease the glow\_depth.
+- To manage glowing on that single source code line using the method glow(). The glow() method will increase the glow\_depth on this source code line to an arbitrary amount. Similarly, unGlow() will decrease the glow\_depth.
 
--   After every glow() or unGlow() call, this class will also decorate the source code DOM element with a CSS class representing the depth of the glow. The CSS class is prefixed "source\_code\_glowing\_" followed by the depth of the glow. For example, a line of source code that has been "glowed" once, would have a CSS class "source\_code\_glowing\_1" applied to it. Similarly, once unGlow() has been called, the appropriate CSS classes will be removed.
+- After every glow() or unGlow() call, this class will also decorate the source code DOM element with a CSS class representing the depth of the glow. The CSS class is prefixed "source\_code\_glowing\_" followed by the depth of the glow. For example, a line of source code that has been "glowed" once, would have a CSS class "source\_code\_glowing\_1" applied to it. Similarly, once unGlow() has been called, the appropriate CSS classes will be removed.
 
--   Before and after every glow() and unGlow() call, there are hook functions that must be implemented. They are beforeGlow(), afterGlow(), beforeUnGlow(), and afterUnGlow().
+- Before and after every glow() and unGlow() call, there are hook functions that must be implemented. They are beforeGlow(), afterGlow(), beforeUnGlow(), and afterUnGlow().
 
--   To handle the mouseover/mouseout events on the source code line DOM element. This class remembers the functions that are associated with mouseover/mouseout events for easy stopObserving. Observations are set with the method observe(over\_func, out\_func), where the desired mouseover/mouseout functions are passed. stopObserving removes these functions.
+- To handle the mouseover/mouseout events on the source code line DOM element. This class remembers the functions that are associated with mouseover/mouseout events for easy stopObserving. Observations are set with the method observe(over\_func, out\_func), where the desired mouseover/mouseout functions are passed. stopObserving removes these functions.
 
 SyntaxHighlighter1p5Line is the concrete class that implements SourceCodeLine for the current version of the Syntax Highlighter that we're using. This implementation handles a special case for this particular Highlighter - with Syntax Highlighter, alternating lines are given a CSS class "alt". This class needs to be removed for the glow CSS class to work properly, but also needs to be put back when all glows are removed. This implementation makes use of the beforeGlow(), afterGlow(), beforeUnGlow(), afterUnGlow() hooks to handle this case.
 
@@ -103,13 +102,13 @@ The SourceCodeLineCollection is the class that maps SourceCodeLines to particula
 
 Here is a list of the responsibilities for an implementation of SourceCodeLineCollection:
 
--   To remember a SourceCodeLine for a particular line number, using the set(line\_num, source\_code\_line) method
+- To remember a SourceCodeLine for a particular line number, using the set(line\_num, source\_code\_line) method
 
--   To return the correct SourceCodeLine given a particular line number, using the get(line\_num) method
+- To return the correct SourceCodeLine given a particular line number, using the get(line\_num) method
 
--   To provide a function for iteration, using each(function(source\_code\_line))
+- To provide a function for iteration, using each(function(source\_code\_line))
 
--   Given a DOM element that *may* represent a single SourceCodeLine, to return the line\_number of that node of its found in the SourceCodeLineCollection.
+- Given a DOM element that *may* represent a single SourceCodeLine, to return the line\_number of that node of its found in the SourceCodeLineCollection.
 
 SourceCodeLineArray is the concrete class that implements SourceCodeLineCollection with an Enumerable Array.
 
@@ -117,25 +116,25 @@ SourceCodeLineArray is the concrete class that implements SourceCodeLineCollecti
 
 This class is responsible for managing and manipulating the SourceCodeLineCollection and SourceCodeLines. It's really just a simple way of binding SourceCodeLineCollections and SourceCodeLines, while reducing coupling.
 
--   The constructor SourceCodeLineManager(adapter, line\_factory, empty\_collection) takes a SourceCodeAdapter, a SourceCodeLineFactory, and an empty SourceCodeLineCollection to start.
+- The constructor SourceCodeLineManager(adapter, line\_factory, empty\_collection) takes a SourceCodeAdapter, a SourceCodeLineFactory, and an empty SourceCodeLineCollection to start.
 
--   getLineNumber(line\_node) returns the line number given a particular DOM node. This returns -1 if no node is found.
+- getLineNumber(line\_node) returns the line number given a particular DOM node. This returns -1 if no node is found.
 
--   getLine(line\_num) returns the SourceCodeLine, given a line\_number.
+- getLine(line\_num) returns the SourceCodeLine, given a line\_number.
 
 ##### AnnotationLabel.js
 
 This class represents the Annotation Label in the client-side memory. Its main responsibility is to remember the content of a particular Annotation Label, and to be updated when Annotation Labels are updated on the server side.
 
--   Constructor is as follows: AnnotationLabel(annotation\_label\_id, annotation\_category\_id, content)
+- Constructor is as follows: AnnotationLabel(annotation\_label\_id, annotation\_category\_id, content)
 
--   setContent(content) can be used to set the new Annotation Label content
+- setContent(content) can be used to set the new Annotation Label content
 
--   getContent() returns the Annotation Label content
+- getContent() returns the Annotation Label content
 
--   getId() returns the annotation\_label\_id
+- getId() returns the annotation\_label\_id
 
--   getCategoryId() returns the annotation\_category\_id
+- getCategoryId() returns the annotation\_category\_id
 
 ##### AnnotationLabelDisplayer.js
 
@@ -147,13 +146,13 @@ The two variables LABEL\_DISPLAY\_X\_OFFSET and LABEL\_DISPLAY\_Y\_OFFSET offset
 
 The AnnotationLabelManager is similar to the SourceCodeLineManager - it stores annotation labels within itself based on annotation\_ids. It has the following methods:
 
--   annotationLabelExists(annotation\_label\_id) - returns true/false based on whether or not an annotation\_label is registered at annotation\_label\_id.
+- annotationLabelExists(annotation\_label\_id) - returns true/false based on whether or not an annotation\_label is registered at annotation\_label\_id.
 
--   getAnnotationLabel(annotation\_label\_id) - returns the Annotation Label registered under annotation\_label\_id
+- getAnnotationLabel(annotation\_label\_id) - returns the Annotation Label registered under annotation\_label\_id
 
--   addAnnotationLabel(annotation\_label) - interrogates an Annotation Label for its ID, and attempts to add it to the internal collection of Annotation Labels. If an Annotation Label already exists at the given ID, an exception is thrown.
+- addAnnotationLabel(annotation\_label) - interrogates an Annotation Label for its ID, and attempts to add it to the internal collection of Annotation Labels. If an Annotation Label already exists at the given ID, an exception is thrown.
 
--   getAllAnnotationLabels() - returns an array of all of the Annotation Labels
+- getAllAnnotationLabels() - returns an array of all of the Annotation Labels
 
 ##### SourceCodeLineAnnotations.js
 
@@ -163,39 +162,39 @@ In the constructor to a SourceCodeLineAnnotations object, an AnnotationLabelMana
 
 I'm just going to list off the methods for this object one by one, giving a description of what they do.
 
--   getLineManager() - returns the SourceCodeLineManager
+- getLineManager() - returns the SourceCodeLineManager
 
--   getAnnotationLabelManager() - returns the AnnotationLabelManager
+- getAnnotationLabelManager() - returns the AnnotationLabelManager
 
--   getAnnotationLabelDisplayer() - returns the AnnotationLabelDisplayer
+- getAnnotationLabelDisplayer() - returns the AnnotationLabelDisplayer
 
--   annotateLine(annotation\_id, line\_num, annotation\_label\_id) given an annotation\_id, a line\_num of a single source code line, and an annotation\_label\_id, annotate that line such that this source code line glows, and displays its annotations once the mouse cursor is hovered over it.
+- annotateLine(annotation\_id, line\_num, annotation\_label\_id) given an annotation\_id, a line\_num of a single source code line, and an annotation\_label\_id, annotate that line such that this source code line glows, and displays its annotations once the mouse cursor is hovered over it.
 
--   annotateRange(annotation\_id, range, annotation\_label\_id) uses the $R range object from the Prototype library. For each line number in range, an annotation is created using annotateLine.
+- annotateRange(annotation\_id, range, annotation\_label\_id) uses the $R range object from the Prototype library. For each line number in range, an annotation is created using annotateLine.
 
--   removeAnnotationFromLine(annotation\_id, line\_num, annotation\_label\_id) remove a layer of glow off of the appropriate source code line, and remove the annotation associated with that source code line. If there are no more annotations on this source code line, stop observing it for mouseover/mouseout events.
+- removeAnnotationFromLine(annotation\_id, line\_num, annotation\_label\_id) remove a layer of glow off of the appropriate source code line, and remove the annotation associated with that source code line. If there are no more annotations on this source code line, stop observing it for mouseover/mouseout events.
 
--   removeAnnotationFromRange(annotation\_id, range, annotation\_label\_id) uses the $R range object from the Prototype library. For each line number in range, remove the annotation using removeAnnotationFromLine
+- removeAnnotationFromRange(annotation\_id, range, annotation\_label\_id) uses the $R range object from the Prototype library. For each line number in range, remove the annotation using removeAnnotationFromLine
 
--   registerAnnotationLabel(annotation\_label) - if a new annotation label is created, add it to the annotation label manager.
+- registerAnnotationLabel(annotation\_label) - if a new annotation label is created, add it to the annotation label manager.
 
--   addRelationship(annotation\_id, line\_num, annotation\_label\_id) - associate a particular source code line with a particular annotation\_label
+- addRelationship(annotation\_id, line\_num, annotation\_label\_id) - associate a particular source code line with a particular annotation\_label
 
--   getRelationships() - return a collection of all source code line / annotation label relationships
+- getRelationships() - return a collection of all source code line / annotation label relationships
 
--   setRelationships() - replace the collection of source code line / annotation label relationships
+- setRelationships() - replace the collection of source code line / annotation label relationships
 
--   relationshipExists(annotation\_id, line\_num, annotation\_label\_id) - returns true or false based on whether or not a relationship exists between a line\_number, an annotation\_label\_id, and an annotation\_id
+- relationshipExists(annotation\_id, line\_num, annotation\_label\_id) - returns true or false based on whether or not a relationship exists between a line\_number, an annotation\_label\_id, and an annotation\_id
 
--   removeRelationship(annotation\_id, line\_num, annotation\_label\_id) - removes the relationship between an annotation\_id, line\_num, and annotation\_label\_id.
+- removeRelationship(annotation\_id, line\_num, annotation\_label\_id) - removes the relationship between an annotation\_id, line\_num, and annotation\_label\_id.
 
--   getAnnotationLabelsForLineNum(line\_num) - given a line number, return all annotation labels associated with that source code line
+- getAnnotationLabelsForLineNum(line\_num) - given a line number, return all annotation labels associated with that source code line
 
--   hasAnnotation(line\_num) - returns true/false based on whether or not a source code line has any annotations connected to it
+- hasAnnotation(line\_num) - returns true/false based on whether or not a source code line has any annotations connected to it
 
--   hideLabel() - hide the AnnotationLabelDisplayer dynamically generated div
+- hideLabel() - hide the AnnotationLabelDisplayer dynamically generated div
 
--   displayLabelsForLine(line\_num, x, y) for a given line number, send a collection of associated annotation labels (if any) to the AnnotationLabelDisplayer, with instructions to place the display at coordinates x and y.
+- displayLabelsForLine(line\_num, x, y) for a given line number, send a collection of associated annotation labels (if any) to the AnnotationLabelDisplayer, with instructions to place the display at coordinates x and y.
 
 #### Working the Source Code Glower
 

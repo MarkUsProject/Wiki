@@ -23,14 +23,14 @@ To create a new scanned assignment:
 
     When you are done with the settings, press "Save" to create the scanned assignment.
 
-After creating the new assignment, navigate to the "Exam Templates" menu under the assignment settings.
-This is the page where you'll upload a copy of your test paper to MarkUs.
+3. After creating the new assignment, navigate to the "Exam Templates" menu under the assignment settings.
+    This is the page where you'll upload a copy of your test paper to MarkUs.
 
-3. Click on "Add Exam Template". You can specify a name (e.g., "Midterm-1") and a PDF file containing your exam paper. Please see [Exam Format Requirements] below.
+4. Click on "Add Exam Template". You can specify a name (e.g., "Midterm-1") and a PDF file containing your exam paper. Please see [Exam Format Requirements] below.
 
     - *Note*: names may only contain alphanumeric characters, hyphens, and underscores.
 
-4. After the page refreshes, you should see the new exam template. You can modify the template name, download the exam paper file to view it, and replace it if you make changes to the paper.
+5. After the page refreshes, you should see the new exam template. You can modify the template name, download the exam paper file to view it, and replace it if you make changes to the paper.
 
 MarkUs supports a scanned assignment with more than one test version (for example, if your course has multiple sections, and different test versions for each section).
 You may repeat steps 3-4 to create different exam templates for each test version.
@@ -76,7 +76,6 @@ To enable and use the automatic parsing feature for an exam template:
 
 1. MarkUs requires a rectangular grid for where students write their user name/id number.
 2. MarkUs requires the student information to be written on the first page of the test paper. Other positions (e.g., the last page) are currently not supported.
-
 
 ## Generating exam papers
 
@@ -159,4 +158,4 @@ Matching test papers to students is done manually by instructors, after submissi
 3. You'll be taken to a new page that displays the first page for the group. Type in the student's identifying information and press "Save" to match the paper to the student.
 
     - *Tip*: MarkUs supports search by student name, user name, or student number.
-4.  You'll be automatically taken to the next unmatched group. Repeat this process until all groups are matched.
+4. You'll be automatically taken to the next unmatched group. Repeat this process until all groups are matched.
