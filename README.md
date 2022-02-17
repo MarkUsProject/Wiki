@@ -7,7 +7,7 @@ Wiki
 
 For any other version go to this url:
 
-https://github.com/MarkUsProject/Wiki/blob/VERSION/Home.md
+<https://github.com/MarkUsProject/Wiki/blob/VERSION/Home.md>
 
 replacing VERSION with the MarkUs version you are looking for (ex: v2.0.7).
 

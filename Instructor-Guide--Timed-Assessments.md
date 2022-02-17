@@ -1,6 +1,7 @@
 # Timed Assessments
 
 ## Table of Contents
+
 - [How it Works](#how-it-works)
 - [Creating and Updating](#creating-and-updating)
 - [How Extensions and Penalty Periods Interact](#how-extensions-and-penalty-periods-interact)
@@ -24,13 +25,13 @@ The "Properties" section contains three relevant sections that differ from a reg
 ![Properties](images/timed-assessment-properties.png)
 
 - students may start this assessment after
-	- the earliest a student may start this assessment
-	- this can be set differently for different sections
+    - the earliest a student may start this assessment
+    - this can be set differently for different sections
 - students may start this assessment before
     - the latest a student may start this assessment (they will still have the full duration to complete it without penalty)
     - this can be set differently for different sections
 - Duration
-	- the amount of time a student has to complete the assessment once they have started.
+    - the amount of time a student has to complete the assessment once they have started.
 
 ## How Extensions and Penalty Periods Interact
 

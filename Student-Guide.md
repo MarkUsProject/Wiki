@@ -1,6 +1,7 @@
 # Student Guide
 
 ## Table of Contents
+
 - [How to Form Groups](#how-to-form-group)
 - [Download Starter Files](#download-starter-files)
 - [Submitting Work for an Assessment](#submitting-work-for-an-assessment)
@@ -30,7 +31,6 @@ Once a group meets the minimum member requirements for the assignment, you will 
 
 > :warning: **WARNING** When adding other students to a group, the inviter must type in their teammate's exact username (case sensitive) not their first/last name.
 
-
 ## Download Starter Files
 
 If starter files have been provided for an assignment, they will be available when on the Assignment page.
@@ -39,7 +39,7 @@ You can download the starter files by clicking the "Download" file in the "Start
 
 ![Starter Files](images/student-starter-files.png)
 
-If your instructor has changed the starter files _since the last time you downloaded it_, you may see a warning at the top of the page:
+If your instructor has changed the starter files *since the last time you downloaded it*, you may see a warning at the top of the page:
 
 ![Starter File Warning](images/student-starter-file-warning.png)
 
@@ -67,7 +67,7 @@ If your instructor has enable submission through version control you will see a 
 
 The repository will have the following structure:
 
-```
+```text
 group_name/
 ├── markus-hooks/
 │   └── ...
@@ -79,7 +79,7 @@ group_name/
 
 Where:
 
--  `group_name` is the name of your group for this assignemnt.
+- `group_name` is the name of your group for this assignemnt.
 - `markus-hooks` is a directory containing git hooks used by MarkUs, do *not* modify this directory or its content.
 - all other directories are named after assignments available to your group. In this case, the assignments are named `assignment1` and `assignment_other`.
 

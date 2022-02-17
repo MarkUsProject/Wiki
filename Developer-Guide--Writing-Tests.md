@@ -1,4 +1,7 @@
+# Writing Tests
+
 ## Table of Contents
+
 - [Testing with RSpec](#testing-with-rspec)
 - [How to Run Specifications](#how-to-run-specifications)
 - [Naming Conventions](#naming-conventions)
@@ -19,15 +22,17 @@ Testing with RSpec involves specifications (files containing tests), and example
 
 To run all specifications:
 
+```sh
+bundle exec rspec
 ```
-$ bundle exec rspec
-```
+
 To run a specific specification:
 
+```sh
+bundle exec rspec <file-path>
 ```
-$ bundle exec rspec <file-path>
-```
-For example, to run the group model specification, run `bundle rspec spec/models/group_spec.rb`.
+
+For example, to run the group model specification, run `bundle exec rspec spec/models/group_spec.rb`.
 
 ## Naming Conventions
 
@@ -40,6 +45,7 @@ The name of the folder which holds the specifications should have the same name 
 The name of the specification for the file being tested is the name of the file followed by `'_spec'`. For example, the group model file is named `group.rb`, so the group model specification will be `group_spec.rb`.
 
 ## Helper Gems
+
 ### FactoryBot
 
 FactoryBot is used to create instances of Models for testing. A great introduction to FactoryBot can be found [here](https://rubydoc.info/gems/factory_bot/file/GETTING_STARTED.md).
@@ -57,11 +63,13 @@ As an example, say we want to create a `Group` instance that will persist within
 ```ruby
 @group = create(:group)
 ```
+
 If the instance does not need to persist within the database we use `build_stubbed`:
 
 ```ruby
 @group = build_stubbed(:group)
 ```
+
 It is also possible to explicitly assign a value to attributes of the object you are creating. A `Group` instance has an attribute `group_name` and we'd like to make sure it has the value 'g2markus'. This is done like so:
 
 ```ruby
@@ -122,6 +130,7 @@ before :each do
   @group = create(:group, group_name: 'g2markus')
 end
 ```
+
 The code within the before block will be executed before every example. Before blocks should only be used if there is something other than initializing variables that needs to be done before each test.
 
 Another way to Initialize instances is by using `let`, or `let!`. This is the preferred method. `let` and `let!` allow for lazy and eager evaluation of an instance, respectively:
@@ -133,6 +142,7 @@ let(:group) { create(:group, group_name: 'g2markus') }
 # This will evaluate before the example is executed.
 let!(:group) { create(:group, group_name: 'g2markus') }
 ```
+
 The initialization can be placed in various places depending on need. If all methods will need the instance, it would make sense to place it at the beginning of the Model's `describe` block. If only a certain method needs it, place it at the beginning of that method's `describe` block (this would also work for other types of blocks described below).
 
 You almost certainly want to wrap initialization code in either `let` or `before` as it guarantees they are run before each enclosed example is run. If your initialization is outside of `let` and `before`, then they will only be (eagerly) evaluated once before the enclosed examples capture the variables in the closures of their blocks. This is often undesired in unit testing.
@@ -143,6 +153,7 @@ All examples should be contained within `it` blocks, all of which must be accomp
 it 'does ...' do
 it 'is ...'
 ```
+
 Each example is limited to one expectation. Bad:
 
 ```ruby
@@ -151,6 +162,7 @@ it 'does ...' do
   expect(another_thing).to be_another_thing
 end
 ```
+
 Good:
 
 ```ruby
@@ -162,6 +174,7 @@ it 'does ...' do
   expect(another_thing).to be_another_thing
 end
 ```
+
 This improves readability and ensures all aspects are tested even in the case of a failure (whereas with multiple expectations per example, later expectations won't be run if an earlier expectation fails).
 
 For a simple example of this, within `group_spec.rb`, scroll down to the method `repository_name`. An instance is created using Factory Girl, and used within the `it` block. Looking through the different examples within the specification files is a great resource for learning how to test. A starting point for understanding how to use the `expect` syntax can be found [here](https://github.com/rspec/rspec-expectations). A great introduction, but not free, resource is Aaron Sumnor's [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec).
@@ -179,6 +192,7 @@ describe '#method_name' do
   end
 end
 ```
+
 You can use as many context blocks as needed to represent the possible states the method can be called in.
 
 All methods within the model being tested, should be tested. If you feel a method should not be tested, leave a comment explaining your reasoning above the method's describe block:
@@ -187,6 +201,7 @@ All methods within the model being tested, should be tested. If you feel a metho
 # This method is not being tested because...
 describe '#method_name'
 ```
+
 This will inform other developers that the method was not accidentally forgotten, but instead, just reasoned to not be tested.
 
 ## Controller Specifications
@@ -204,6 +219,7 @@ describe ControllerName do
   end
 end
 ```
+
 `some type of user` and `some other type of user` describing the context blocks usually correspond to someone who has authorization to perform certain tasks (usually an instructor) and someone who does not.
 
 Code from the `groups_controller_spec.rb` file, which tests the `GroupsController` controller, will be used as reference throughout the Controller specification section of the guide. Open that file, and look through it as you follow along below.
@@ -219,6 +235,7 @@ describe 'GET #index' do
   method_example
 end
 ```
+
 Controller testing is not concerned with states of objects, and so mocking instances is preferred (the tests are a lot faster). Also, because we would have already tested the Model methods within the Model specification, we do not need to be retesting them when they are called within a Controller method.
 
 A stub is used to create the illusion that a method was called, returning a specified result. A mock is a stub expecting a specified method to be called. A starting point for learning to stubbing and mocking can be found [here](https://github.com/rspec/rspec-mocks). If you want another resource on mocking and stubbing, check out Code School’s Testing with RSpec videos ([Level 5 is on Mocking and Stubbing](http://rspec.codeschool.com/)).
@@ -230,11 +247,13 @@ Lets start with mocking objects (which is different than mocking methods). As se
 ```ruby
 build_stubbed(:object)
 ```
+
 If we wanted to create a mock grouping object:
 
 ```ruby
 grouping = build_stubbed(:grouping)
 ```
+
 Now `grouping` is a mock instance that does not persist in the database. All methods called on `grouping` that requires database access would fail. This is why we need stubs.
 
 Open the `groups_controller_spec.rb` file (if you haven't already). Both mock grouping, and assignment objects are created at the start using `let`. The `before` block just under these mocks contains a whole bunch of stubs. The first few are to ensure we have administrative privileges. Many of the methods tested within this file call the `Assignment` model’s `find` method. This method takes an `id` belonging to an assignment and returns the assignment. To make sure this method isn’t actually executed, we stub it (remember we don’t actually have an assignment so this search will fail). This is what the stub for the `Assignment`’s `find` method looks like:
@@ -242,6 +261,7 @@ Open the `groups_controller_spec.rb` file (if you haven't already). Both mock gr
 ```ruby
 allow(Assignment).to receive(:find).and_return(assignment)
 ```
+
 The above stub will make sure when `find` is called the mocked assignment will be returned.
 
 All Model methods called within the controller should be mocked. This is a test that ensures the methods that should be called, will be called. For example, the method `new` within the `GroupsController` calls `Assignment` model’s method `add_group`. It is called using the mock assignment we have, and returns a grouping. To make sure this method is called we create the mock, and call the controller method being tested:
@@ -252,11 +272,12 @@ get :new, assignment_id: assignment
 ```
 
 ## General Tips
+
 ### Code Duplication
+
 Sometimes you will find yourself writing very similar specs for different models or controllers. If you smell such code duplication (e.g., when you are copying and pasting a lot of old spec to create new spec without changing much of the spec code structure), you should probably use [shared examples](https://www.relishapp.com/rspec/rspec-core/docs/example-groups/shared-examples). Shared examples give you a way to specify the abstract common behavior of some objects (a model or a controller in most cases) in a single place, and apply the behavior to multiple specs of concrete objects. Shared examples that logically belong to the same group are given a name appropriate for the concrete objects they are describing. Usually, the name would be a noun starting with an article (e.g., `a duck`, `an apple`), but that might not always be the case. Think of the use case of your shared examples -- how does it read when you say `it_behaves_like 'your_shared_examples_name'` (or any other alias of `it_behaves_like`)?
 
 Shared examples are usually placed in its own file under `spec/support`, unless they are only shared by specs in one file, in which case they can placed within the same file. Name the file using the shared examples name without the article (e.g., `duck.rb`, `apple.rb`). Don't append `_spec` in the filename of shared examples, as that causes RSpec to double load the file (first by RSpec itself and later by `spec_helper.rb`) and generate warnings.
-
 
 ```ruby
 # spec/support/duck.rb

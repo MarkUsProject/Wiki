@@ -1,6 +1,7 @@
 # Student View
 
-## Table of Contents:
+## Table of Contents
+
 - [View as Another User](#view-as-another-user)
 
 ## View as Another User

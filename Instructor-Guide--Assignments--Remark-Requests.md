@@ -1,6 +1,7 @@
 # Remark Requests
 
-## Table of Contents:
+## Table of Contents
+
 - [Viewing Requests](#viewing-requests)
 - [Responding and Remarking](#responding-and-remarking)
 

@@ -1,37 +1,42 @@
 # Bulk Upload and Download Data Feature
+
 When needing to upload or download files, users are able to upload and download a grouped set of data contained in a CSV file(or in some cases also a YML file).
 
-* Features are listed in alphabetical order.
-* For more information about any file, please check the template files provided.
+- Features are listed in alphabetical order.
+- For more information about any file, please check the template files provided.
 
 ## Annotation Categories
+
 Instructors are able to upload and download annotations (including deductive annotations).
 Instructors can edit/delete annotations and add/remove annotation categories.
 
 ### Upload and Download File Format
-* CSV and YAML files are supported for both uploads and downloads.
+
+- CSV and YAML files are supported for both uploads and downloads.
 
 ### How to make a valid file of annotations for uploading to MarkUs?
-**_CSV format_**:
 
-* Each annotation category has its own row.
-* The annotation category name is the first value in the row.
-* Following the category name, is the name of the associated criterion (if the category is for deductive annotations).
-* If no criterion should be associated with the category, leave an empty column value after the category name.
-* If the criterion **is not** specified, each value in the row following the empty value should be an annotation content.
-* If the criterion **is** specified, following the criterion should be deductive annotations, represented by the annotation content value, followed by the deduction value for that content.
+***CSV format***:
+
+- Each annotation category has its own row.
+- The annotation category name is the first value in the row.
+- Following the category name, is the name of the associated criterion (if the category is for deductive annotations).
+- If no criterion should be associated with the category, leave an empty column value after the category name.
+- If the criterion **is not** specified, each value in the row following the empty value should be an annotation content.
+- If the criterion **is** specified, following the criterion should be deductive annotations, represented by the annotation content value, followed by the deduction value for that content.
 
 An example of this file format:
+
 ```csv
 syntax,,Factor out a helper method,Don't forget a return type,...
 assumptions,first proof, Preconditions need to be stated,1.0,preconditions are incorrect,0.5,...
 ```
 
-**_YAML format:_**
+***YAML format:***
 
-* All annotation categories should be under one block.
-* For an annotation category without a criterion, each annotation text under it should begin with `-` and occupy one line.
-* For an annotation category with a criterion, the object notation should be used.
+- All annotation categories should be under one block.
+- For an annotation category without a criterion, each annotation text under it should begin with `-` and occupy one line.
+- For an annotation category with a criterion, the object notation should be used.
     - The category name should be a key which has two keys as its value.
     - One of the keys should be `criterion:` which has the criterion name as a value, and the other should be `texts:` which will have a list of annotation texts.
     - Each annotation text will be a list of the text content followed by the text deduction.
@@ -55,9 +60,11 @@ Complexity:
 > :spiral_notepad: **Note:** Annotations can be blank, annotation category names cannot be blank.
 
 ## Assignments
+
 Instructors are able to upload and download assignment settings.
 
 ### Supported formats
+
 Both CSV and YML files are supported.
 
 ### Fields
@@ -92,9 +99,11 @@ The remaining fields are optional.
 > :spiral_notepad: **Note:** If the uploaded file contains a short identifier that is already used, the existing assignment is updated with the corresponding uploaded settings.
 
 ## Criteria
+
 Instructors can upload all marking criteria as a YML file.
 
 ### Supported formats
+
 YML files are supported for all criterion.
 
 ### Fields
@@ -107,6 +116,7 @@ The YML file should contain a series of key-value pairs, where each key is the *
 - `peer_visible`: boolean (default: `false`)
 
 These fields are specific to certain types of criteria:
+
 - `description`: string (flexible and checkbox criteria only)
 
 > :spiral_notepad: **Note:**
@@ -115,8 +125,8 @@ These fields are specific to certain types of criteria:
 > 2. Uploading criteria deletes existing criteria **and any associated marks**.
 > 3. The order of criteria for the assignment is the same as the order of criteria in the uploaded file.
 
-
 ### Rubric Criterion
+
 1. Users can upload a rubric criterion with levels as many as they want.
 2. For each level, it should have a unique non-empty name and non-empty description.
 3. For each level, it should have its own unique non-negative mark.
@@ -144,6 +154,7 @@ criterion_name, <level_name>, <level_description>, <level_mark>, <level_name>, .
 ```
 
 ### Checkbox/Flexible Criterion Example
+
 ```yml
 criterion_name:
   type: checkbox
@@ -153,7 +164,6 @@ criterion_name:
   ta_visible: true
   peer_visible: false
 ```
-
 
 ## Groups
 
@@ -174,11 +184,12 @@ Every row of the CSV file should have the following format:
 
 > :vhs: **Deprecation Notice** prior to version 1.12.0: The second entry in a row is the the repository name, this cannot be blank, and must also be *unique across all assignments*. This field was removed in version 1.12.0 as repository names can no longer be set by the user.
 
-
 ## Marks Spreadsheet Grades
+
 Instructors are able to upload and download a list of student grades for a mark spreadsheet.
 
 ### Supported formats
+
 Only CSV files are supported.
 
 ### File format
@@ -220,9 +231,11 @@ However, you can select "*Overwrite existing grades and columns?*" when uploadin
 Note: even when "Overwrite existing grades and columns?" is checked, students who do not appear in the uploaded file remain unchanged.
 
 ## Peer Reviews
+
 Instructors are able to upload and download a list of peer review mappings for reviewers to reviewees.
 
 ### Supported formats
+
 Only CSV files are supported.
 
 ### File format
@@ -230,7 +243,6 @@ Only CSV files are supported.
 Each line of the CSV file should have the reviewee group name followed by one or more reviewer group names.
 
 Note: when students are working individually, their corresponding group name is simply their user name.
-
 
 ## Students
 
@@ -256,15 +268,15 @@ The following fields are listed with the key names in the YML file, and in the o
 > 1. If an uploaded CSV row contains a user name that already exists, then that student's information is updated.
 > 2. When updating an existing student, if the `section_name`, `id_number`, or `email` field is blank, then any existing data for that field will be removed!
 
-
 ### Upload and Download Feature
+
 Instructors are able to upload and download a list of students.
 If an uploaded student with the same user_name exists, then that student's information is updated.
 
 ### Upload and Download Format
-* Only CSV files are supported for uploads.
-* CSV and XML files are supported for downloads.
 
+- Only CSV files are supported for uploads.
+- CSV and XML files are supported for downloads.
 
 ## TAs
 
@@ -281,7 +293,15 @@ The following fields are listed with the key names in the YML file, and in the o
 - `username`: the user name of the TA (cannot be blank)
 - `last_name`: the last name of the TA (cannot be blank)
 - `first_name`: the first name of the TA (cannot be blank)
-- `email`: the email address of the TA
+- `email`: the email address of the TA (optional)
+
+### Example File
+
+```CSV
+user_name_ta1,last_name_ta1,first_name_ta1
+user_name_ta2,last_name_ta2,first_name_ta2
+user_name_ta3,last_name_ta3,first_name_ta3
+```
 
 > :spiral_notepad: **Note:**
 
@@ -289,17 +309,20 @@ The following fields are listed with the key names in the YML file, and in the o
 > 2. When updating an existing TA, if the `email` field is blank, then any existing email address for that TA will be removed!
 
 ## Tags
+
 Instructors are able to upload and download a list of tags used to label submissions when grading.
 
 ### Supported formats
+
 Both CSV and YML files are supported.
 
 ### Fields
+
 The following fields are specified for each tag.
 
-* `name`: the name of the tag. The name cannot be blank, and must be unique.
-* `description`: the description of the tag.
-* `user`: the user name of an instructor user who is the creator of the tag.
+- `name`: the name of the tag. The name cannot be blank, and must be unique.
+- `description`: the description of the tag.
+- `user`: the user name of an instructor user who is the creator of the tag.
 
 The CSV file format consists of one row per tag, with the above three fields in the given order.
 The YML file format is a list of objects, where each object contains the three above fields.
@@ -327,10 +350,12 @@ YML format:
 ## Graders
 
 For assignments, instructors can assign graders to:
+
 - Student groups
 - Marking criteria
 
 For marks spreadsheets, instructors can assign graders to:
+
 - Individual students
 
 ### Supported formats
@@ -379,36 +404,6 @@ student_user_1,grader_user_1,grader_user_2
 > 1. Any row with non-existent grader usernames will be ignored.
 > 2. Any row with non-existent group name/criterion name/student user name will be ignored.
 
-## TAs
-
-Instructors can upload and download lists of TA users.
-
-#### Upload File Format
-
-- CSV files are supported
-
-#### Download File Format
-
-- YML and CSV files are supported
-
-#### Sample File -- A List of Graders
-
-```CSV
-user_name_ta1,last_name_ta1,first_name_ta1
-user_name_ta2,last_name_ta2,first_name_ta2
-user_name_ta3,last_name_ta3,first_name_ta3
-```
-
-- A row should have information of *exactly* one grader.
-- Each row should have a grader's username, last name, and first name in order.
-- Graders' email addresses can only be uploaded on the webpage. Email addresses following the last name of a grader will be ignored.
-- If a grader's email address is added, the email address will be shown on the downloaded CSV/YML file of a list of graders.
-
-- Uploading a list of graders will not override the current list of graders.
-- If a grader with the same username exists, then that grader's information is updated.
-- If a row does not contain a grader's username, then the entire row will be ignored.
-- MarkUs will not check the validity of a grader's username, first name, and last name.
-
 ## Assignment Configuration
 
 Instructors are able to upload/download a group of files that contain all the settings and files required to configure
@@ -430,23 +425,22 @@ A zip file that contains the following yml files for an assignment:
 In addition, the zip file has three folders that contain:
 
 - An assignment's starter files and starter file settings (`starter_file_config_files`) which includes:
-  - A starter file rules yml file which contains:
-    - The name of the default starter file group within the zip file.
-    - Information about each starter file group:
-      - The name of the starter file group within the zip file.
-      - The actual name of the starter group.
-      - Whether it uses a different display name and if so, what that display name is.
-  - Every uploaded starter file located in folders corresponding to which starter file group each file belongs to.
-    - Every starter file group does not need a corresponding folder. In such a case, the group is assumed to have no starter files.
+    - A starter file rules yml file which contains:
+        - The name of the default starter file group within the zip file.
+        - Information about each starter file group:
+            - The name of the starter file group within the zip file.
+            - The actual name of the starter group.
+            - Whether it uses a different display name and if so, what that display name is.
+    - Every uploaded starter file located in folders corresponding to which starter file group each file belongs to.
+        - Every starter file group does not need a corresponding folder. In such a case, the group is assumed to have no starter files.
 - An assignment's automated test settings (`automated_tests_config_files`) which includes:
-  - An automated test specs json file.
-  - A folder containing every uploaded test file.
-    - This is an optional folder. If it does not exist, that means there are no test files.
+    - An automated test specs json file.
+    - A folder containing every uploaded test file.
+        - This is an optional folder. If it does not exist, that means there are no test files.
 - Settings for an assignment's peer review assignment (`peer-review-config-files`)
-  - This is an optional folder. If it exists, a peer review assignment will try to be created.
-  - This folder is formatted exactly the same as a normal assignment just without an automated tests folder and another peer review folder.
+    - This is an optional folder. If it exists, a peer review assignment will try to be created.
+    - This folder is formatted exactly the same as a normal assignment just without an automated tests folder and another peer review folder.
 
 > **Important:**
 > While the contents of the yml files and folders can be extracted and modified for offline configuration, this is NOT
 > recommended and may result in the assignment being unable to be copied over.
-

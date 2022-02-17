@@ -1,3 +1,5 @@
+# Set Up with Vagrant
+
 ## Downloading and Installing
 
 If you want to get started on working on MarkUs quickly and painlessly, this is the way to do it.
@@ -10,8 +12,6 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 This will download a fairly large (3GB) Debian box from the internet, so go [take a walk](http://news.stanford.edu/news/2014/april/walking-vs-sitting-042414.html) or something. This box has GNOME, PostgreSQL, git, and all of MarkUs’s other dependencies installed. When the download is complete, VirtualBox will run the box in headless mode.
 
 **NOTE:** If, for some reason, it fails and complains about SSH, you most likely have timed out. Check your internet connection attempt to limit network activity to `vagrant up`.
-
-
 
 ## Connecting to your box
 
@@ -29,7 +29,6 @@ The default instructor user is `a` with any non-empty password. Look at `db/seed
 
 If you are using RubyMine then you should jump down to the set up instructions for RubyMine below before proceeding to the next step.
 
-
 ## Using RubyMine
 
 1. Install [RubyMine](https://www.jetbrains.com/ruby/), and then run it.
@@ -42,31 +41,31 @@ If you are using RubyMine then you should jump down to the set up instructions f
 
     2) Go to `Languages & Frameworks > Ruby SDK and Gems`, and click add symbol (plus sign) and select "New remote...". There are two ways to set up RubyMine to use the Ruby installed on the Vagrant machine.
 
-        a) Select the Vagrant radio button, set the instance folder to the root MarkUs folder where the Vagrantfile is.
+        a. Select the Vagrant radio button, set the instance folder to the root MarkUs folder where the Vagrantfile is.
            Confirm the connection works by clicking on the Host URL.
 
-        b) If (a) does not work, then select the SSH Credentials radio button and enter the following:
+        b. If (a) does not work, then select the SSH Credentials radio button and enter the following:
 
-            ```
-            Host: localhost (**NOTE:** Windows may fail if you use 127.0.0.1, try using 'localhost' first before 127.0.0.1)
-            Port: 2222
-            User name: vagrant
-            Auth type: Password
-            Password: vagrant, the password checkbox is selected
-            Ruby interpreter path: /usr/bin/ruby
-            ```
+        ```text
+        Host: localhost (**NOTE:** Windows may fail if you use 127.0.0.1, try using 'localhost' first before 127.0.0.1)
+        Port: 2222
+        User name: vagrant
+        Auth type: Password
+        Password: vagrant, the password checkbox is selected
+        Ruby interpreter path: /usr/bin/ruby
+        ```
 
         Now return to the Ruby SDK and Gems window and make sure the ruby you selected is installed.
 
     3) Click `OK` to save your settings and close the window.
 
-3. You can open an ssh session to the vagrant virtual machine directly in RubyMine from `Tools > Start SSH Session`. You need to make sure that you have installed a public key on the vagrant machine so that you don't need a password (or passphrase) to ssh into the vagrant VM.
+4. You can open an ssh session to the vagrant virtual machine directly in RubyMine from `Tools > Start SSH Session`. You need to make sure that you have installed a public key on the vagrant machine so that you don't need a password (or passphrase) to ssh into the vagrant VM.
 
-At this point, you may need to restart RubyMine before making the next step work. There also is an option to do SSH through RubyMine and start/pause/kill Vagrant if you have not done so before starting RubyMine. These commands can be found under `Tools > Vagrant`. You may need the Vagrant machine to be running for the next step:
+    At this point, you may need to restart RubyMine before making the next step work. There also is an option to do SSH through RubyMine and start/pause/kill Vagrant if you have not done so before starting RubyMine. These commands can be found under `Tools > Vagrant`. You may need the Vagrant machine to be running for the next step:
 
-4. In RubyMine, select `Tools > Deployment > Configuration`, and click the + in the top left to add a new server. After giving it a name, under `Connection` use the following settings:
+5. In RubyMine, select `Tools > Deployment > Configuration`, and click the + in the top left to add a new server. After giving it a name, under `Connection` use the following settings:
 
-    ```
+    ```text
     Type: SFTP
     Host: localhost
     Port: 2222
@@ -76,14 +75,14 @@ At this point, you may need to restart RubyMine before making the next step work
     Root path: /home/vagrant
     ```
 
-5. In the same window, under `Mappings` set:
+6. In the same window, under `Mappings` set:
 
-    ```
+    ```text
     Local path: [path to your local Markus repo]
     Deployment path on server: /Markus
     ```
 
-6. In the same window under `Excluded Paths`, add the following sets of paths.
+7. In the same window under `Excluded Paths`, add the following sets of paths.
 
     **Deployment paths**:
     - /Markus/.bundle
@@ -102,9 +101,9 @@ At this point, you may need to restart RubyMine before making the next step work
     - MARKUS_ROOT/.vagrant
     - MARKUS_ROOT/config/dummy_validate.sh
 
-7. Click `OK` to save your changes and close the window.
+8. Click `OK` to save your changes and close the window.
 
-8. Select `Tools > Options`, and set:
+9. Select `Tools > Options`, and set:
 
     - "Delete target items when source ones do not exist..." should be **checked**.
     - "Upload changed files automatically to the default server..." should be **On explicit save action**.
@@ -112,8 +111,8 @@ At this point, you may need to restart RubyMine before making the next step work
 
     Click OK to save your changes.
 
-9. To test out this configuration, first right-click on the Markus folder in the "Project" pane, and select `Deployment > Upload to vagrant`. This should take a bit of time, as your files are copied from your local machine to the virtual machine.
+10. To test out this configuration, first right-click on the Markus folder in the "Project" pane, and select `Deployment > Upload to vagrant`. This should take a bit of time, as your files are copied from your local machine to the virtual machine.
 
-    Whenever you make changes to the files, you can do an explicit save action and *all* of your changes will be uploaded to the virtual machine.
+     Whenever you make changes to the files, you can do an explicit save action and *all* of your changes will be uploaded to the virtual machine.
 
 Congratulations, you're all done and ready to get started working on MarkUs!
