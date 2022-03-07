@@ -17,7 +17,12 @@ The rest of this page goes into detail for these steps.
 To create a new scanned assignment:
 
 1. Navigate to the "Assessments" page, and click on "Create Scanned Assignment".
+
+    ![Create Scanned Assessment Link](scanned-assessment-creation-link.png)
+
 2. When creating the new scanned assignment, the settings have the same meaning as [regular assignments](Instructor-Guide--Assignments--Setting-Up.md), except the assessment must be individual (so the group options are hidden), and students do not submit files to MarkUs (so the submission rule options are hidden).
+
+    ![Create Scanned Assessment page](scanned-assessment-creation-page.png)
 
     - You can set the "due date" field to after the test is complete, but we'll need to modify this field in the [Collecting and Grading] section below.
 
@@ -26,11 +31,21 @@ To create a new scanned assignment:
 3. After creating the new assignment, navigate to the "Exam Templates" menu under the assignment settings.
     This is the page where you'll upload a copy of your test paper to MarkUs.
 
+    ![Scanned Exam Templates Home Page](scanned-exam-templates-home-page.png)
+
 4. Click on "Add Exam Template". You can specify a name (e.g., "Midterm-1") and a PDF file containing your exam paper. Please see [Exam Format Requirements] below.
+
+    ![Scanned Exam Template Creation Link](scanned-exam-template-creation-link.png)
+
+    ![Scanned Exam Template Creation Modal](scanned-exam-template-creation-modal.png)
 
     - *Note*: names may only contain alphanumeric characters, hyphens, and underscores.
 
 5. After the page refreshes, you should see the new exam template. You can modify the template name, download the exam paper file to view it, and replace it if you make changes to the paper.
+
+    ![Scanned Exam Template Edit Page](scanned-exam-template-sample-edit-page.png)
+
+    - *Note*: To save your changes click on the "Save" button underneath the Template Divisions section
 
 MarkUs supports a scanned assignment with more than one test version (for example, if your course has multiple sections, and different test versions for each section).
 You may repeat steps 3-4 to create different exam templates for each test version.
@@ -63,11 +78,23 @@ To enable and use the automatic parsing feature for an exam template:
     - Ensure that your exam template has a *rectangular grid* for where students should enter their user name or id number (see our [sample file](https://github.com/MarkUsProject/Markus/blob/master/db/data/scanned_exams/midterm1-v2-test.pdf) for an example).
 
 2. Under the "Automatic Parsing Selection" field, select the "Automatically parse student information" option.
+
+    ![Scanned Exam Template Parsing Toggle](scanned-exam-template-parsing-toggle.png)
+
 3. MarkUs will display the cover page of the exam template and a drop-down menu.
 
     a. On the cover page, click-and-drag to select the region of the page where the students will write their user name/id number. We recommend including a small margin to account for positional adjustments when you scan the test papers.
+
+    ![Scanned Exam Template Parsing Area](scanned-exam-template-parsing-area.png)
+
     b. On the drop down, select whether to match the information on the students' user name or id number. You must choose one or the other; MarkUs does not support matching on both.
+
+    ![Scanned Exam Template Parsing Info](scanned-exam-template-parsing-info.png)
+
 4. Press Save. You will be able to update these settings any time before scanning and uploading your test papers.
+
+    ![Scanned Exam Template Parsing Save](scanned-exam-template-parsing-save.png)
+
 5. Then after giving the test, follow the instructions under "Uploading completed test papers" below. As part of that process, MarkUs will automatically parse and handwriting in the selected region, and attempt to match it against the selected student field (user name or id number). You can view the results of this matching under the "Groups" tab, and match the remaining test papers to students by following the instructions under "Matching test papers to students" below.
 
     **Note**: MarkUs takes a conservative approach, and will only match students if there is an exact match on the handwritten field.
@@ -85,7 +112,12 @@ You can do so in MarkUs by following these steps:
 1. Navigate to the "Exam Templates" page of the scanned assessment.
 2. Select the Exam Template with which you wish to generate test papers for.
 3. In the top right corner of the selected Exam Template's properties find the "Generate Exam Copies" button.
+
+    ![Scanned Exam Template Generate Button](scanned-exam-template-generate-button.png)
+
 4. Fill in the two fields in the modal:
+
+    ![Scanned Exam Template Generate Modal](scanned-exam-template-generate-modal.png)
 
     - Number of copies: the number of test copies to generate.
     - Start index: the starting number for the first test copy. This index increases by 1 for each test copy.
@@ -107,6 +139,8 @@ After your test is complete, you should scan all test papers (saving the scans a
     A template division specifies a mapping of test page number to question (e.g., Question 1 appears on page 2, and Question 2 appears on pages 2-3).
     When processing scanned test papers, MarkUs will groups pages by the template divisions to make it easier to grade the same question across all submissions.
 
+    ![Scanned Exam Template Division Sample](scanned-exam-template-division-sample.png)
+
     Notes on template divisions:
 
     - The "Start" and "End" fields are both inclusive.
@@ -118,25 +152,26 @@ After your test is complete, you should scan all test papers (saving the scans a
 2. After configuring the template divisions, you are ready to upload the scanned test papers.
     To do so:
     
-    a. Navigate to the "Split Exam" section of the Exam Template page. 
+    a. Navigate to the "Split Exam" section of the Exam Template page. ![Scanned Exam Split Page](scanned-exam-split-page.png)
     
-    b. Select which exam template you want MarkUs to use when processing the pdf.
+    b. Select which exam template you want MarkUs to use when processing the pdf. ![Scanned Exam Split PDF Select](scanned-exam-split-pdf-select.png)
     
     c. Upload the pdf file containing the scanned test papers. 
     
-    d. Press the "Split" button. MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division.
+    d. Press "Split". MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division. ![Scanned Exam Split PDF button](scanned-exam-split-pdf-button.png)
 
     The Exam Templates page will then be refreshed and the "Split PDF Logs" table at the bottom of the "Split Exam" section will be updated. 
-    These logs provide a record of all uploaded files for the scanned assignment. 
+    These logs provide a record of all uploaded files for the scanned assignment. ![Scanned Exam Split Log](scanned-exam-split-log.png)
 
 3. MarkUs may be unable to parse some QR codes. Pages where there was an error in parsing will appear under "Pending errors", and you can view each page by expanding the row in the "Split PDF Logs" table.
 
     Because MarkUs prints the copy number and page number beside the QR code, instructors can manually fix parsing errors. To do so:
 
-    a. Click on the "Fix" link beside an error page.
+    a. Click on the "Fix" link beside an error page. ![Scanned Exam Split Log Fix](scanned-exam-split-log-fix.png)
 
     b. You'll be taken to a new screen where you can see the scanned page and text label, and input the copy number and page number. (The text label is in the form `<template name>-<copy number>-<page number>`.)
         You can also specify if the page was scanned upside down, so that MarkUs will reorient the page when displaying it for graders.
+        ![Scanned Exam Assign Errors](scanned-exam-assign-errors-page.png)
 
     c. Press "Save". You'll be automatically taken to the next error page, where you can repeat this process until all errors have been fixed.
 
@@ -149,7 +184,7 @@ This is done by *collecting* the submissions:
 
     **Note**: this new due date might be significantly later than when students wrote the test.
 
-2. Go to the "Submissions" tab and select all rows, and press "Collect Submissions".
+2. Go to the "Submissions" tab and select all rows, and press "Collect Submissions". ![Scanned Exam Collect All](scanned-exam-collect-all.png)
 
 This will allow grading to begin, and for instructors to match each test paper with the corresponding student.
 
@@ -164,8 +199,8 @@ After the scanned test papers have been collected, you can assign graders and [g
 Matching test papers to students is done manually by instructors, after submissions have been collected.
 
 1. Navigate to the "Groups" tab for the assignment.
-2. Every group has no members, but an "Assign Scans" link beside it. Click on the "Assign Scans" link beside the first group.
-3. You'll be taken to a new page that displays the first page for the group. Type in the student's identifying information and press "Save" to match the paper to the student.
+2. Every group has no members, but an "Assign Scans" link beside it. Click on the "Assign Scans" link beside the first group. ![Scanned Exam Assign Scans Link](scanned-exam-assign-scans-link.png)
+3. You'll be taken to a new page that displays the first page for the group. Type in the student's identifying information and press "Save" to match the paper to the student. ![Scanned Exam Assign Scans](scanned-exam-assign-scans-page.png)
 
     - *Tip*: MarkUs supports search by student name, user name, or student number.
 4. You'll be automatically taken to the next unmatched group. Repeat this process until all groups are matched.
