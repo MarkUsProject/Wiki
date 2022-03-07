@@ -83,14 +83,15 @@ To administer the exam, you'll need to generate a unique test paper for each stu
 You can do so in MarkUs by following these steps:
 
 1. Navigate to the "Exam Templates" page of the scanned assessment.
-2. Under the exam template you created earlier, find the "Generate Exam Copies" section.
-    Fill in the two fields:
+2. Select the Exam Template with which you wish to generate test papers for.
+3. In the top right corner of the selected Exam Template's properties find the "Generate Exam Copies" button.
+4. Fill in the two fields in the provided modal:
 
     - Number of copies: the number of test copies to generate.
     - Start index: the starting number for the first test copy. This index increases by 1 for each test copy.
 
     For example, if "Number of copies" is 10 and "Start index" is 1, you'll generate ten test copies, numbered 1 through 10.
-3. Press the "Generate" button. MarkUs will generate a PDF file for you to download, containing the generated test copies.
+5. Press the "Generate" button. MarkUs will generate a PDF file for you to download, containing the generated test copies.
 
     - Each generated test copy has a QR code at the top of the page, with a text code beside it in the form `<template name>-<copy number>-<page number>`.
     - It is safe to generate the same file and even the same copy number more than once. However, you should be careful to not give the same test copy to more than one student!
