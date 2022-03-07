@@ -151,16 +151,16 @@ After your test is complete, you should scan all test papers (saving the scans a
 
 2. After configuring the template divisions, you are ready to upload the scanned test papers.
     To do so:
-    
+
     a. Navigate to the "Split Exam" section of the Exam Template page. ![Scanned Exam Split Page](scanned-exam-split-page.png)
-    
+
     b. Select which exam template you want MarkUs to use when processing the pdf. ![Scanned Exam Split PDF Select](scanned-exam-split-pdf-select.png)
-    
-    c. Upload the pdf file containing the scanned test papers. 
-    
+
+    c. Upload the pdf file containing the scanned test papers.
+
     d. Press "Split". MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division. ![Scanned Exam Split PDF button](scanned-exam-split-pdf-button.png)
 
-    The Exam Templates page will then be refreshed and the "Split PDF Logs" table at the bottom of the "Split Exam" section will be updated. 
+    The Exam Templates page will then be refreshed and the "Split PDF Logs" table at the bottom of the "Split Exam" section will be updated.
     These logs provide a record of all uploaded files for the scanned assignment. ![Scanned Exam Split Log](scanned-exam-split-log.png)
 
 3. MarkUs may be unable to parse some QR codes. Pages where there was an error in parsing will appear under "Pending errors", and you can view each page by expanding the row in the "Split PDF Logs" table.
