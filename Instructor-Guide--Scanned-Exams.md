@@ -85,7 +85,7 @@ You can do so in MarkUs by following these steps:
 1. Navigate to the "Exam Templates" page of the scanned assessment.
 2. Select the Exam Template with which you wish to generate test papers for.
 3. In the top right corner of the selected Exam Template's properties find the "Generate Exam Copies" button.
-4. Fill in the two fields in the provided modal:
+4. Fill in the two fields in the modal:
 
     - Number of copies: the number of test copies to generate.
     - Start index: the starting number for the first test copy. This index increases by 1 for each test copy.
@@ -116,11 +116,20 @@ After your test is complete, you should scan all test papers (saving the scans a
     - You can also put all pages into a single template division. This normally should go from page 2 until the last page number in the test.
 
 2. After configuring the template divisions, you are ready to upload the scanned test papers.
-    To do so, navigate to the "Split Exam" section of the corresponding exam template and upload the file, and press "Split". MarkUs will process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division.
+    To do so:
+    
+    a. Navigate to the "Split Exam" section of the Exam Template page. 
+    
+    b. Select which exam template you want MarkUs to use when processing the pdf.
+    
+    c. Upload the pdf file containing the scanned test papers. 
+    
+    d. Press the "Split" button. MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division.
 
-    You'll be taken to a new page where you can view a record of all uploaded files for the scanned assignment.
-    If you don't see this page, click on the "View logs" link on the top-right corner of the exam template block.
-3. MarkUs may be unable to parse some QR codes. Pages where there was an error in parsing will appear under "Pending errors", and you can view each page by expanding the row in the log table.
+    The Exam Templates page will then be refreshed and the "Split PDF Logs" table at the bottom of the "Split Exam" section will be updated. 
+    These logs provide a record of all uploaded files for the scanned assignment. 
+
+3. MarkUs may be unable to parse some QR codes. Pages where there was an error in parsing will appear under "Pending errors", and you can view each page by expanding the row in the "Split PDF Logs" table.
 
     Because MarkUs prints the copy number and page number beside the QR code, instructors can manually fix parsing errors. To do so:
 
