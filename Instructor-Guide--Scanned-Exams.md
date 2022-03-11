@@ -137,17 +137,18 @@ After your test is complete, you should scan all test papers (saving the scans a
 
 1. **Before** uploading any scanned files to MarkUs, you need to configure *template divisions* for each exam template you specified.
     A template division specifies a mapping of test page number to question (e.g., Question 1 appears on page 2, and Question 2 appears on pages 2-3).
-    When processing scanned test papers, MarkUs will groups pages by the template divisions to make it easier to grade the same question across all submissions.
+    When processing scanned test papers, MarkUs will groups pages by template divisions to make it easier to grade the same question across all submissions.
 
     ![Scanned Exam Template Division Sample](scanned-exam-template-division-sample.png)
 
     Notes on template divisions:
-
+    
+    - The first page is assumed to be a cover page that will be grouped into a special file called "COVER.pdf". It therefore, cannot be grouped into a template division. 
     - The "Start" and "End" fields are both inclusive.
       So if a question appears on a single page, use that page number for both the "Start" and "End".
     - If a page contains more than one question, you should specify one template division for both questions (e.g., with a label "Q1-Q2").
-    - Any pages that are not included in any template divisions will be grouped into a special file called "EXTRA.pdf". This is useful if you provide additional pages for students to use during the test.
-    - You can also put all pages into a single template division. This normally should go from page 2 until the last page number in the test.
+    - Any pages (besides the first) that are not included in any template divisions will be grouped into a special file called "EXTRA.pdf". This is useful if you provide additional pages for students to use during the test.
+    - You can also put all pages (not including the first page) into a single template division. Such a template division should go from page 2 until the last page number in the test.
 
 2. After configuring the template divisions, you are ready to upload the scanned test papers.
     To do so:
