@@ -153,22 +153,22 @@ After your test is complete, you should scan all test papers (saving the scans a
 2. After configuring the template divisions, you are ready to upload the scanned test papers.
     To do so:
     
-    a. Navigate to the "Split Exam" section of the Exam Template page. ![Scanned Exam Split Page](scanned-exam-split-page.png)
+    a. Navigate to the "Upload Scans" section of the Exam Template page. ![Scanned Exam Upload Page](scanned-exam-upload-page.png)
     
-    b. Select which exam template you want MarkUs to use when processing the pdf. ![Scanned Exam Split PDF Select](scanned-exam-split-pdf-select.png)
+    b. Select which exam template you want MarkUs to use when processing the pdf. ![Scanned Exam Upload Scans Select](scanned-exam-upload-scans-select.png)
     
-    c. Upload the pdf file containing the scanned test papers. 
+    c. Select the pdf file containing the scanned test papers. 
     
-    d. Press "Split". MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division. ![Scanned Exam Split PDF button](scanned-exam-split-pdf-button.png)
+    d. Press "Upload". MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division. ![Scanned Exam Upload Scans button](scanned-exam-upload-scans-button.png)
 
-    The Exam Templates page will then be refreshed and the "Split PDF Logs" table at the bottom of the "Split Exam" section will be updated. 
-    These logs provide a record of all uploaded files for the scanned assignment. ![Scanned Exam Split Log](scanned-exam-split-log.png)
+    The Exam Templates page will then be refreshed and the "Uploaded Scans Log" table at the bottom of the "Upload Scans" section will be updated. 
+    These logs provide a record of all uploaded files for the scanned assignment. ![Scanned Exam Upload Log](scanned-exam-upload-log.png)
 
-3. MarkUs may be unable to parse some QR codes. Pages where there was an error in parsing will appear under "Pending errors", and you can view each page by expanding the row in the "Split PDF Logs" table.
+3. MarkUs may be unable to parse some QR codes. Pages where there was an error in parsing will appear under "Pending errors", and you can view each page by expanding the row in the "Uploaded Scans Log" table.
 
     Because MarkUs prints the copy number and page number beside the QR code, instructors can manually fix parsing errors. To do so:
 
-    a. Click on the "Fix" link beside an error page. ![Scanned Exam Split Log Fix](scanned-exam-split-log-fix.png)
+    a. Click on the "Fix" link beside an error page. ![Scanned Exam Upload Log Fix](scanned-exam-upload-log-fix.png)
 
     b. You'll be taken to a new screen where you can see the scanned page and text label, and input the copy number and page number. (The text label is in the form `<template name>-<copy number>-<page number>`.)
         You can also specify if the page was scanned upside down, so that MarkUs will reorient the page when displaying it for graders.
