@@ -153,11 +153,11 @@ After your test is complete, you should scan all test papers (saving the scans a
 2. After configuring the template divisions, you are ready to upload the scanned test papers.
     To do so:
     
-    a. Navigate to the "Upload Scans" section of the Exam Template page. ![Scanned Exam Upload Page](scanned-exam-upload-page.png)
+    a. Navigate to the "Upload Scans" section of the Exam Template page. ![Scanned Exam Upload Page Link](scanned-exam-upload-page-link.png)
     
     b. Select which exam template you want MarkUs to use when processing the pdf. ![Scanned Exam Upload Scans Select](scanned-exam-upload-scans-select.png)
     
-    c. Select the pdf file containing the scanned test papers. 
+    c. Select the pdf file containing the scanned test papers you wish to upload. ![Scanned Exam Upload Scans PDF Select](scanned-exam-upload-scans-pdf-select.png)
     
     d. Press "Upload". MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division. ![Scanned Exam Upload Scans button](scanned-exam-upload-scans-button.png)
 
