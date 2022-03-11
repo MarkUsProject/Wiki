@@ -158,4 +158,5 @@ Matching test papers to students is done manually by instructors, after submissi
 3. You'll be taken to a new page that displays the first page for the group. Type in the student's identifying information and press "Save" to match the paper to the student.
 
     - *Tip*: MarkUs supports search by student name, user name, or student number.
+    - *Tip*: If the student does not appear in the autofill, you can also enter the student's full name into this field before saving. Note that this must be their first and last names as listed in the students table.
 4. You'll be automatically taken to the next unmatched group. Repeat this process until all groups are matched.
