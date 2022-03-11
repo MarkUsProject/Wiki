@@ -21,7 +21,7 @@ The instructor may choose to submit overall comments on the request as well (mar
 
 ### Remarking
 
-If you wish to change the marks for this student you may [update the marks as normal](Instructor-Guide--Assignments--Marking--Grading-View.md#marks) on the "Marks" tab. You may also add new annotations as normal
+If you wish to change the marks for this student you may [update the marks as normal](Instructor-Guide--Assignments--Marking--Grading-View.md#marks) on the "Marks" tab. You may also add new annotations as normal.
 
 > 🗒️ **NOTE**: When adding new [deductive annotations](Instructor-Guide--Assignments--Deductive-Annotations.md) to a remark, the marks **will not** be updated automatically. Marks will need to be manually adjusted as needed.
 
