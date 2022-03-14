@@ -142,8 +142,8 @@ After your test is complete, you should scan all test papers (saving the scans a
     ![Scanned Exam Template Division Sample](images/scanned-exam-template-division-sample.png)
 
     Notes on template divisions:
-    
-    - The first page is assumed to be a cover page that will be grouped into a special file called "COVER.pdf". It therefore, cannot be grouped into a template division. 
+
+    - The first page is assumed to be a cover page that will be grouped into a special file called "COVER.pdf". It therefore, cannot be grouped into a template division.
     - The "Start" and "End" fields are both inclusive.
       So if a question appears on a single page, use that page number for both the "Start" and "End".
     - If a page contains more than one question, you should specify one template division for both questions (e.g., with a label "Q1-Q2").
