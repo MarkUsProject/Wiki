@@ -153,26 +153,39 @@ After your test is complete, you should scan all test papers (saving the scans a
 2. After configuring the template divisions, you are ready to upload the scanned test papers.
     To do so:
     
-    a. Navigate to the "Upload Scans" section of the Exam Template page. ![Scanned Exam Upload Page Link](images/scanned-exam-upload-page-link.png)
+    a. Navigate to the "Upload Scans" section of the Exam Template page. 
+        
+    ![Scanned Exam Upload Page Link](images/scanned-exam-upload-page-link.png)
     
-    b. Select which exam template you want MarkUs to use when processing the pdf. ![Scanned Exam Upload Scans Select](images/scanned-exam-upload-scans-select.png)
+    b. Select which exam template you want MarkUs to use when processing the pdf. 
     
-    c. Select the pdf file containing the scanned test papers you wish to upload. ![Scanned Exam Upload Scans PDF Select](images/scanned-exam-upload-scans-pdf-select.png)
+    ![Scanned Exam Upload Scans Select](images/scanned-exam-upload-scans-select.png)
     
-    d. Press "Upload". MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division. ![Scanned Exam Upload Scans button](images/scanned-exam-upload-scans-button.png)
+    c. Select the pdf file containing the scanned test papers you wish to upload. 
+    
+    ![Scanned Exam Upload Scans PDF Select](images/scanned-exam-upload-scans-pdf-select.png)
+    
+    d. Press "Upload". MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division. 
+    
+    ![Scanned Exam Upload Scans button](images/scanned-exam-upload-scans-button.png)
 
     The Exam Templates page will then be refreshed and the "Uploaded Scans Log" table at the bottom of the "Upload Scans" section will be updated. 
-    These logs provide a record of all uploaded files for the scanned assignment. ![Scanned Exam Upload Log](images/scanned-exam-upload-log.png)
+    These logs provide a record of all uploaded files for the scanned assignment. 
+    
+    ![Scanned Exam Upload Log](images/scanned-exam-upload-log.png)
 
 3. MarkUs may be unable to parse some QR codes. Pages where there was an error in parsing will appear under "Pending errors", and you can view each page by expanding the row in the "Uploaded Scans Log" table.
 
     Because MarkUs prints the copy number and page number beside the QR code, instructors can manually fix parsing errors. To do so:
 
-    a. Click on the "Fix" link beside an error page. ![Scanned Exam Upload Log Fix](images/scanned-exam-upload-log-fix.png)
+    a. Click on the "Fix" link beside an error page. 
+    
+    ![Scanned Exam Upload Log Fix](images/scanned-exam-upload-log-fix.png)
 
     b. You'll be taken to a new screen where you can see the scanned page and text label, and input the copy number and page number. (The text label is in the form `<template name>-<copy number>-<page number>`.)
         You can also specify if the page was scanned upside down, so that MarkUs will reorient the page when displaying it for graders.
-        ![Scanned Exam Assign Errors](images/scanned-exam-assign-errors-page.png)
+    
+    ![Scanned Exam Assign Errors](images/scanned-exam-assign-errors-page.png)
 
     c. Press "Save". You'll be automatically taken to the next error page, where you can repeat this process until all errors have been fixed.
 
@@ -185,7 +198,9 @@ This is done by *collecting* the submissions:
 
     **Note**: this new due date might be significantly later than when students wrote the test.
 
-2. Go to the "Submissions" tab and select all rows, and press "Collect Submissions". ![Scanned Exam Collect All](images/scanned-exam-collect-all.png)
+2. Go to the "Submissions" tab and select all rows, and press "Collect Submissions". 
+    
+    ![Scanned Exam Collect All](images/scanned-exam-collect-all.png)
 
 This will allow grading to begin, and for instructors to match each test paper with the corresponding student.
 
@@ -200,8 +215,13 @@ After the scanned test papers have been collected, you can assign graders and [g
 Matching test papers to students is done manually by instructors, after submissions have been collected.
 
 1. Navigate to the "Groups" tab for the assignment.
-2. Every group has no members, but an "Assign Scans" link beside it. Click on the "Assign Scans" link beside the first group. ![Scanned Exam Assign Scans Link](images/scanned-exam-assign-scans-link.png)
-3. You'll be taken to a new page that displays the first page for the group. Type in the student's identifying information and press "Save" to match the paper to the student. ![Scanned Exam Assign Scans](images/scanned-exam-assign-scans-page.png)
+2. Every group has no members, but an "Assign Scans" link beside it. Click on the "Assign Scans" link beside the first group. 
+
+    ![Scanned Exam Assign Scans Link](images/scanned-exam-assign-scans-link.png)
+
+3. You'll be taken to a new page that displays the first page for the group. Type in the student's identifying information and press "Save" to match the paper to the student. 
+
+    ![Scanned Exam Assign Scans](images/scanned-exam-assign-scans-page.png)
 
     - *Tip*: MarkUs supports search by student name, user name, or student number.
 4. You'll be automatically taken to the next unmatched group. Repeat this process until all groups are matched.
