@@ -44,7 +44,7 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 
     2. Run the command `rails js:routes`, which will take a moment to generate a required file.
 
-8. Open your web browser and type in the URL `localhost:3000/csc108`. The initial page load might be slow, but eventually you should see a login page. Use the username `a` and any non-empty password to login.
+8. Open your web browser and type in the URL `localhost:3000/csc108`. The initial page load might be slow, but eventually you should see a login page. Use the username `instructor` and any non-empty password to login.
 
     *Tip*: to terminate the Rails server, go to the terminal window where the server is running and press `Ctrl + C`/`⌘ + C`.
 
