@@ -7,11 +7,11 @@
 
 ## Navigating to the Administration Page
 
-After logging in to MarkUs as an Admin, you will be taken to the MarkUs Administration home page. 
+After logging in to MarkUs as an Admin, you will be taken to the MarkUs Administration home page.
 
 ![Markus Admin Dashboard](images/markus-admin-dashboard.png)
 
-If you navigate away from the Administration Page and wish to return, click on the "Administration" tab found in the header. 
+If you navigate away from the Administration Page and wish to return, click on the "Administration" tab found in the header.
 
 ![Markus Admin Tab](images/markus-admin-tab.png)
 
