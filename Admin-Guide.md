@@ -1,0 +1,18 @@
+# Admin Guide
+
+## Table of Contents
+
+- [Navigating to the Administration Page](#navigating-to-the-administration-page)
+- [Managing Courses](#managing-courses)
+
+## Navigating to the Administration Page
+
+After logging in to MarkUs as an Admin, you will be taken to the MarkUs Administration home page.
+
+![Markus Admin Dashboard](images/markus-admin-dashboard.png)
+
+If you navigate away from the Administration Page and wish to return, click on the "Administration" tab found in the header.
+
+![Markus Admin Tab](images/markus-admin-tab.png)
+
+**Note**: Ensure that you are viewing MarkUs as an admin and have not switched roles. Otherwise, you will be unable to access the "Administration" tab.

@@ -48,6 +48,7 @@
     - [Annotations](Developer-Guide--Tips-And-Tricks--Annotations.md)
     - [Security](Developer-Guide--Tips-And-Tricks--Security.md)
 - [General Usage](General-Usage.md)
+- [Admin Guide](Admin-Guide.md)
 - [Installation](Installation.md)
 - [Configuration Settings](Configuration.md)
 - [RESTful API](RESTful-API.md)
