@@ -43,7 +43,7 @@ This will redirect you to a page where you can specify the following course prop
 
 After clicking "Save", the course will be created and you will be taken to a page where you can edit any of the properties of the course.
 
-![Markus Course New Page](images/markus-admin-course-edit.png)
+![Markus Course Edit Page](images/markus-admin-course-edit.png)
 
 If you later wish to modify any properties of the course you may also navigate back to it's edit page by navigating to the list of all courses and clicking on the "edit" action of the course you wish to modify.
 
