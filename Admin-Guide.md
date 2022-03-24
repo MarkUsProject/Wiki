@@ -1,0 +1,50 @@
+# Admin Guide
+
+## Table of Contents
+
+- [Navigating to the Administration Page](#navigating-to-the-administration-page)
+- [Managing Courses](#managing-courses)
+
+## Navigating to the Administration Page
+
+After logging in to MarkUs as an Admin, you will be taken to the MarkUs Administration home page. 
+
+![Markus Admin Dashboard](images/markus-admin-dashboard.png)
+
+If you navigate away from the Administration Page and wish to return, click on the "Administration" tab found in the header. 
+
+![Markus Admin Tab](images/markus-admin-tab.png)
+
+**Note**: Ensure that you are viewing MarkUs as an admin and have not switched roles. Otherwise, you will be unable to access the "Administration" tab.
+
+## Managing Courses
+
+To manage courses, navigate to the "Courses" sub tab on the MarkUs Administration Page
+
+![Markus Course Tab](images/markus-admin-course-tab.png)
+
+This will take you to a page that lists all the courses of this particular MarkUs instance.
+
+![Markus Course List](images/markus-admin-course-list.png)
+
+### Creating and editing a course
+
+In order to create a course, click on the "Create Course" link located at the top right corner of the page.
+
+![Markus Course New Link](images/markus-admin-course-new-link.png)
+
+This will redirect you to a page where you can specify the following course properties:
+
+![Markus Course New Page](images/markus-admin-course-new.png)
+
+- **Name**: The name or course code for this course
+- **Display Name**: A longer course name or title for users to see
+- **Course Visibility**: Selecting "hidden" will hide the course from TAs and students in a course. Instructors for the course can still see and manage the course as usual.
+
+After clicking "Save", the course will be created and you will be taken to a page where you can edit any of the properties of the course.
+
+![Markus Course New Page](images/markus-admin-course-edit.png)
+
+If you later wish to modify any properties of the course you may also navigate back to it's edit page by navigating to the list of all courses and clicking on the "edit" action of the course you wish to modify.
+
+![Markus Course Edit Link](images/markus-admin-course-edit-link.png)
