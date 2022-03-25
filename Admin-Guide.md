@@ -23,7 +23,7 @@ As with courses, to manage users, navigate to the "Users" sub tab on the MarkUs 
 
 ![Markus User Tab](images/markus-admin-user-tab.png)
 
-This will take you to a page that lists all admin and end users with their information.
+This will take you to a page that lists information about all admin and end users.
 
 ![Markus User List](images/markus-admin-users-list.png)
 
