@@ -7,7 +7,7 @@
 
 ## Navigating to the Administration Page
 
-After logging in to MarkUs as an Admin, you will be taken to the MarkUs Administration home page.
+After logging in to MarkUs as an Admin, you will be directed to the MarkUs Administration home page.
 
 ![Markus Admin Dashboard](images/markus-admin-dashboard.png)
 
@@ -23,7 +23,7 @@ To manage courses, navigate to the "Courses" sub tab on the MarkUs Administratio
 
 ![Markus Course Tab](images/markus-admin-course-tab.png)
 
-This will take you to a page that lists all the courses of this particular MarkUs instance.
+This will take you to a page that lists all the courses of this particular MarkUs instance. From this page, you can view and manage information about each course. 
 
 ![Markus Course List](images/markus-admin-course-list.png)
 
@@ -45,6 +45,6 @@ After clicking "Save", the course will be created and you will be taken to a pag
 
 ![Markus Course Edit Page](images/markus-admin-course-edit.png)
 
-If you later wish to modify any properties of the course you may also navigate back to it's edit page by navigating to the list of all courses and clicking on the "edit" action of the course you wish to modify.
+If you later wish to modify any properties of a course you can reach a course's edit page by navigating to the list of all courses on the MarkUs Administration Page and clicking on the "edit" action of the course you wish to modify.
 
 ![Markus Course Edit Link](images/markus-admin-course-edit-link.png)
