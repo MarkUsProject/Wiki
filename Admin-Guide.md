@@ -41,10 +41,12 @@ This will redirect you to a page where you can specify the following course prop
 - **Display Name**: A longer course name or title for users to see
 - **Course Visibility**: Selecting "hidden" will hide the course from TAs and students in a course. Instructors for the course can still see and manage the course as usual.
 
-After clicking "Save", the course will be created and you will be taken to a page where you can edit any of the properties of the course.
-
-![Markus Course Edit Page](images/markus-admin-course-edit.png)
+After clicking "Save", the course will be created and you will be taken back to the list of all courses.
 
 If you later wish to modify any properties of a course you can reach a course's edit page by navigating to the list of all courses on the MarkUs Administration Page and clicking on the "edit" action of the course you wish to modify.
 
 ![Markus Course Edit Link](images/markus-admin-course-edit-link.png)
+
+From the edit page of a course you can modify the same properties specified when creating a course.
+
+![Markus Course Edit Page](images/markus-admin-course-edit.png)
