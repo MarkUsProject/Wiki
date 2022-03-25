@@ -23,7 +23,7 @@ To manage courses, navigate to the "Courses" sub tab on the MarkUs Administratio
 
 ![Markus Course Tab](images/markus-admin-course-tab.png)
 
-This will take you to a page that lists all the courses of this particular MarkUs instance. From this page, you can view and manage information about each course. 
+This will take you to a page that lists all the courses of this particular MarkUs instance. From this page, you can view and manage information about each course.
 
 ![Markus Course List](images/markus-admin-course-list.png)
 
