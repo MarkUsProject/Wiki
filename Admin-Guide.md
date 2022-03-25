@@ -42,7 +42,7 @@ This will redirect you to a page where you can specify the following user inform
 - **Last Name**: This user's last name.
 - **ID Number**: This user's id number. This can be blank if it is not applicable to a user.
 - **Email**: This user's email address. This can be blank if it is not applicable to a user.
-- **Type**: A user can either be an "Admin User" or an "End User". In most cases, you will likely want to create an "End User". "End Users" are regular users who can later be specified as an "Instructor", "TA", or "Student" for a particular course. "Admin Users" have the ability to manage MarkUs and view all courses as if they were instructors. Be sure to only give an Admin User account to trusted users. 
+- **Type**: A user can either be an "Admin User" or an "End User". In most cases, you will likely want to create an "End User". "End Users" are regular users who can later be specified as an "Instructor", "TA", or "Student" for a particular course. "Admin Users" have the ability to manage MarkUs and view all courses as if they were instructors. Be sure to only give an Admin User account to trusted users.
 
 After clicking "Save", the user will be created and you will be taken back to the list of all users.
 
