@@ -47,6 +47,6 @@ If you later wish to modify any properties of a course you can reach any course'
 
 ![Markus Course Edit Link](images/markus-admin-course-edit-link.png)
 
-From the edit page of a course you can modify the same properties specified when creating a course.
+From the edit page of a course you can modify the same properties specified when creating the course.
 
 ![Markus Course Edit Page](images/markus-admin-course-edit.png)
