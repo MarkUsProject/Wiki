@@ -26,6 +26,7 @@ If you wish to change the marks for this student you may [update the marks as no
 > 🗒️ **NOTE**: When adding new [deductive annotations](Instructor-Guide--Assignments--Deductive-Annotations.md) to a remark, the marks **will not** be updated automatically. Marks will need to be manually adjusted as needed.
 >
 > The "Revert to automatic deductions" action for a mark will take into account these new annotations as follows:
+>
 > - If no new deductive annotations for the mark have been added, the mark will be calculated based on the deductive annotations from the original result.
 > - If at least one deductive annotation for the mark has been added, the mark will be calculated based on the deductive annotations for the remark, *ignoring* any deductive annotations from the original result.
 
