@@ -3,11 +3,11 @@
 ## Table of Contents
 
 - [Testing with RSpec](#testing-with-rspec)
-  * [How to Run Specifications](#how-to-run-specifications)
-  * [Naming Conventions](#naming-conventions)
-  * [Helper Gems](#helper-gems)
-  * [Model Specifications](#model-specifications)
-  * [Controller Specifications](#controller-specifications)
+    - [How to Run Specifications](#how-to-run-specifications)
+    - [Naming Conventions](#naming-conventions)
+    - [Helper Gems](#helper-gems)
+    - [Model Specifications](#model-specifications)
+    - [Controller Specifications](#controller-specifications)
 - [Testing with Jest](#testing-with-jest)
 - [General Tips](#general-tips)
 
