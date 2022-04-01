@@ -19,7 +19,7 @@ If you navigate away from the Administration Page and wish to return, click on t
 
 ## Managing Courses
 
-To manage courses, navigate to the "Courses" sub tab on the MarkUs Administration Page
+To manage courses, navigate to the "Courses" sub tab on the MarkUs Administration Page.
 
 ![Markus Course Tab](images/markus-admin-course-tab.png)
 
@@ -50,3 +50,15 @@ If you later wish to modify any properties of a course you can reach any course'
 From the edit page of a course you can modify the same properties specified when creating the course.
 
 ![Markus Course Edit Page](images/markus-admin-course-edit.png)
+
+## Managing Users
+
+As with courses, to manage users, navigate to the "Users" sub tab on the MarkUs Administration Page.
+
+![Markus User Tab](images/markus-admin-user-tab.png)
+
+This will take you to a page that lists data about every admin and end user.
+
+![Markus User List](images/markus-admin-users-list.png)
+
+### Creating and Editing Users
