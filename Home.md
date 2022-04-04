@@ -33,6 +33,7 @@
         - [Windows](SSH_Keypair_Instructions_Windows.md)
         - [Linux and OSX](SSH_Keypair_Instructions_Linux-OSX.md)
     - [Grade Summary](Instructor-Guide--Grade-Summary.md)
+    - [Course Settings](Instructor-Guide--Course-Settings.md)
 - [Student Guide](Student-Guide.md)
 - Developer Guide
     - [Guidelines](Developer-Guide--Guidelines.md)
