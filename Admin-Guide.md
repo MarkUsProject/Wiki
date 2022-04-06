@@ -39,7 +39,7 @@ This will redirect you to a page where you can specify the following course prop
 
 - **Name**: The name or course code for this course
 - **Display Name**: A longer course name or title for users to see
-- **Course Visibility**: Selecting "hidden" will hide the course from TAs and students in a course. Instructors for the course can still see and manage the course as usual.
+- **Course Visibility**: Selecting "hidden" will hide the course from students in a course. Graders and instructors for the course can still see and manage the course as usual.
 
 After clicking "Save", the course will be created and you will be taken back to the list of all courses.
 
