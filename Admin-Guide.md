@@ -62,3 +62,28 @@ This will take you to a page that lists data about every admin and end user.
 ![Markus User List](images/markus-admin-users-list.png)
 
 ### Creating and Editing Users
+
+In order to create a new user, click on the "Create User" link located at the top right corner of the page.
+
+![Markus User New Link](images/markus-admin-user-new-link.png)
+
+This will redirect you to a page where you can specify the following user information:
+
+![Markus User New Page](images/markus-admin-user-new.png)
+
+- **User Name**: The username alias for this user.
+- **First Name**: This user's first name.
+- **Last Name**: This user's last name.
+- **ID Number**: This user's id number (optional).
+- **Email**: This user's email address (optional).
+- **Type**: A user can either be an "Admin User" or an "End User". In most cases, you will likely want to create an "End User". "End Users" are regular users who can later be specified as an "Instructor", "TA", or "Student" for a particular course. "Admin Users" have the ability to manage MarkUs and view all courses as if they were instructors. Be sure to only give an Admin User account to trusted users.
+
+Clicking the "Save" button will create the user and take you back to the list of all users.
+
+If you later wish to modify any properties of a user, you may do so by navigating to the list of users on the MarkUs Administration Page and clicking on the "edit" action of the user you wish to modify.
+
+![Markus User Edit Link](images/markus-admin-user-edit-link.png)
+
+This will take you to the user's edit page, where you can update the same properties specified when creating a user.
+
+![Markus User Edit Page](images/markus-admin-user-edit.png)
