@@ -63,7 +63,7 @@ This will take you to a page that lists data about every admin and end user.
 
 ### Creating and Editing Users
 
-In order to create a user, click on the "Create User" link located at the top right corner of the page.
+In order to create a new user, click on the "Create User" link located at the top right corner of the page.
 
 ![Markus User New Link](images/markus-admin-user-new-link.png)
 
@@ -74,16 +74,16 @@ This will redirect you to a page where you can specify the following user inform
 - **User Name**: The username alias for this user.
 - **First Name**: This user's first name.
 - **Last Name**: This user's last name.
-- **ID Number**: This user's id number. This can be blank if it is not applicable to a user.
-- **Email**: This user's email address. This can be blank if it is not applicable to a user.
+- **ID Number**: This user's id number (optional).
+- **Email**: This user's email address (optional).
 - **Type**: A user can either be an "Admin User" or an "End User". In most cases, you will likely want to create an "End User". "End Users" are regular users who can later be specified as an "Instructor", "TA", or "Student" for a particular course. "Admin Users" have the ability to manage MarkUs and view all courses as if they were instructors. Be sure to only give an Admin User account to trusted users.
 
-After clicking "Save", the user will be created and you will be taken back to the list of all users.
+Clicking the "Save" button will create the user. If the user was successfully created, you will be taken back to the list of users.
 
-If you later wish to modify any properties of a user you can reach a user's edit page by navigating to the list of all users on the MarkUs Administration Page and clicking on the "edit" action of the user you wish to modify.
+If you later wish to modify any properties of a user, you can get to a user's edit page by navigating to the list of all users on the MarkUs Administration Page and clicking on the "edit" action of the user you wish to modify.
 
 ![Markus User Edit Link](images/markus-admin-user-edit-link.png)
 
-From the edit page of a user you can modify the same properties specified when creating a user.
+From a user's edit page, you can update the same user properties specified when creating a user.
 
 ![Markus User Edit Page](images/markus-admin-user-edit.png)
