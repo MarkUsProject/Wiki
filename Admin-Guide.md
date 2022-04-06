@@ -78,12 +78,12 @@ This will redirect you to a page where you can specify the following user inform
 - **Email**: This user's email address (optional).
 - **Type**: A user can either be an "Admin User" or an "End User". In most cases, you will likely want to create an "End User". "End Users" are regular users who can later be specified as an "Instructor", "TA", or "Student" for a particular course. "Admin Users" have the ability to manage MarkUs and view all courses as if they were instructors. Be sure to only give an Admin User account to trusted users.
 
-Clicking the "Save" button will create the user. If the user was successfully created, you will be taken back to the list of users.
+Clicking the "Save" button will create the user and take you back to the list of all users.
 
-If you later wish to modify any properties of a user, you can get to a user's edit page by navigating to the list of all users on the MarkUs Administration Page and clicking on the "edit" action of the user you wish to modify.
+If you later wish to modify any properties of a user, you may do so by navigating to the list of users on the MarkUs Administration Page and clicking on the "edit" action of the user you wish to modify.
 
 ![Markus User Edit Link](images/markus-admin-user-edit-link.png)
 
-From a user's edit page, you can update the same user properties specified when creating a user.
+This will take you to the user's edit page, where you can update the same properties specified when creating a user.
 
 ![Markus User Edit Page](images/markus-admin-user-edit.png)
