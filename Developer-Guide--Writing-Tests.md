@@ -405,8 +405,6 @@ describe("For the StudentTable component's rendering", () => {
 
 ### Enzyme
 
-From `student_table.test.jsx`:
-
 ```js
 describe("each filterable column has a custom filter method", () => {
     let wrapper, filter_method;
