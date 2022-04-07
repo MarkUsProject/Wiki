@@ -8,8 +8,8 @@
     - [Helper Gems](#helper-gems)
     - [Model Specifications](#model-specifications)
     - [Controller Specifications](#controller-specifications)
+    - [General Tips](#general-tips)
 - [Testing with Jest](#testing-with-jest)
-- [General Tips](#general-tips)
 
 ## Testing with RSpec
 
@@ -272,9 +272,9 @@ expect(assignment).to receive(:add_group).with(nil).and_return(grouping)
 get :new, assignment_id: assignment
 ```
 
-## General Tips
+### General Tips
 
-### Code Duplication
+#### Code Duplication
 
 Sometimes you will find yourself writing very similar specs for different models or controllers. If you smell such code duplication (e.g., when you are copying and pasting a lot of old spec to create new spec without changing much of the spec code structure), you should probably use [shared examples](https://www.relishapp.com/rspec/rspec-core/docs/example-groups/shared-examples). Shared examples give you a way to specify the abstract common behavior of some objects (a model or a controller in most cases) in a single place, and apply the behavior to multiple specs of concrete objects. Shared examples that logically belong to the same group are given a name appropriate for the concrete objects they are describing. Usually, the name would be a noun starting with an article (e.g., `a duck`, `an apple`), but that might not always be the case. Think of the use case of your shared examples -- how does it read when you say `it_behaves_like 'your_shared_examples_name'` (or any other alias of `it_behaves_like`)?
 
@@ -312,3 +312,70 @@ end
 In Markus, one use case of shared examples is [`a criterion`](https://github.com/MarkUsProject/Markus/blob/master/spec/support/criterion.rb), which specifies the common behavior of `RubricCriterion` and a `FlexibleCriterion`.
 
 You can also use an alias for the method `it_behaves_like_a` to make the spec code read better. For example, `it_has_behavior 'enumerability'`. The aliases should be defined in [spec/support/it_behaves_like_aliases.rb](https://github.com/MarkUsProject/Markus/blob/master/spec/support/it_behaves_like_aliases.rb).
+
+## Testing with Jest
+
+[Jest](https://jestjs.io/) is a JavaScript testing framework focused on simplicity. It works well with multiple popular frameworks, such as Node, Angular, Vue, and of course React. It provides a test runner and several handy functions; however, to fully use its capability, Jest is often combined with some other testing libraries. As of now, both [React Testing Library (RTL)](https://testing-library.com/docs/react-testing-library/intro/) and [Enzyme](https://enzymejs.github.io/enzyme/) are being used alongside Jest in Markus.
+
+On a high level, RTL allows you to test from the user's perspective, while Enzyme gives you access to the internal states/implementation of the components.
+
+Similar to RSpec, Jest also involves specifications. It is recommended that you follow along the `__tests__` folder, under `app/assets/javascripts/Components/`, for this tutorial.
+
+## How to Run Jest Specifications
+
+**Note:** The following commands assume you are within the Markus root folder.
+
+`yarn` is the package manager we use in Markus. Its counterpart `npm` is sometimes more known.
+
+To run all specifications:
+
+```sh
+yarn test
+```
+
+To run all specifications with the test-coverage table shown:
+
+```sh
+yarn test-cov
+```
+
+To run a specific specification:
+
+```sh
+yarn test -- <filename>
+```
+
+For example, to run the `StudentTable` specification, run `yarn test student_table.test.jsx`.
+
+## Jest Configurations
+
+There are a lot of [configurations](https://jestjs.io/docs/configuration) within Jest. The main source of configuration is jest.config.js under the Markus root. Most of the settings are left as default, and each setting has a comment explaining what they are for. Make sure you update the respective settings when needed. We'll cover 3 important ones below.
+
+### setupFiles
+
+This setting points to a list of files that are run to set up the testing environment. For instance, the imports of `JQuery` and `I18n` would be in it.
+
+### setupFilesAfterEnv
+
+This setting points to a list of files that are run immediately after the setup of testing environment, before the actual tests. This is a great place for your global imports in the test files, such as the import of `React`, the configuration of `Enzyme`.
+
+### testMatch
+
+This setting points to a list of patterns that you want Jest to look at to find your tests. For instance, `**/__tests__/**/*.[jt]s?(x)` would include the path `app/assets/javascripts/Components/__tests__/student_table.test.jsx`.
+
+## Jest Naming Conventions
+
+### Folders
+
+Currently we use a centralized `__tests__` folder under `components`. The folder is intended to include tests for all the React components.
+
+### Files
+
+The name of the file should have the format `<component>.test.jsx`. For instance, the test file for the StudentTable component would be `student_table.test.jsx`. Lower cases are recommended so the `_` symbol should be used to separate words.
+
+It is also recommended to make sure a file focuses on testing one specific component. If a component makes use of other child components with sufficient complexity, you could make a test file for each of those child components in addition to the parent component.
+
+## Tips
+
+1. Consider downloading the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) chrome extension. If you aren't use chrome, consider trying it out or finding an equivalence for your browser. It allows you to select and view a component's rendering tree and states/props, and is useful in many situations, such as learning the behavior of a component, debugging, etc.
+2. Make use of Jest's [globals](https://jestjs.io/docs/api) to counter code duplication.
