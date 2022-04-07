@@ -367,7 +367,7 @@ This setting points to a list of files that are run immediately after the setup 
 
 ### testMatch
 
-This setting points to a list of patterns that you want Jest to look at to find your tests. For instance, `**/__tests__/**/*.[jt]s?(x)` would include the path `app/assets/javascripts/Components/__tests__/student_table.test.jsx`.
+This setting points to a list of patterns that entails directories/modules you want Jest to look at to find your tests. For instance, `**/__tests__/**/*.[jt]s?(x)` would include the path `app/assets/javascripts/Components/__tests__/student_table.test.jsx`.
 
 ## Jest Naming Conventions
 
@@ -381,7 +381,51 @@ The name of the file should have the format `<component>.test.jsx`. For instance
 
 It is also recommended to make sure a file focuses on testing one specific component. If a component makes use of other child components with sufficient complexity, you could make a test file for each of those child components in addition to the parent component.
 
+## Example tests
+
+From `student_table.test.jsx`:
+
+### React Testing Library
+
+```js
+describe("For the StudentTable component's rendering", () => {
+  beforeEach(() => {
+    render(<StudentTable ... />);
+  });
+
+  describe("the parent component", () => {
+    ...
+    it("renders a child StudentsActionBox", () => {
+      expect(within(screen.getByTestId("raw_student_table")).getByTestId("student_action_box"))
+        .toBeInTheDocument;
+    });
+    ...
+```
+
+### Enzyme
+
+From `student_table.test.jsx`:
+
+```js
+describe("each filterable column has a custom filter method", () => {
+    let wrapper, filter_method;
+    beforeAll(() => {
+      wrapper = mount(<StudentTable ... />);
+    });
+
+    describe("the filter method for the section column", () => {
+      beforeAll(() => {
+        filter_method =
+          wrapper.instance().wrapped.checkboxTable.wrappedInstance.props.columns[6].filterMethod;
+      });
+
+      it("returns true when the selected value is all", () => {
+        expect(filter_method({value: "all"})).toEqual(true);
+      });
+    ...
+```
+
 ## Tips
 
-1. Consider downloading the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) chrome extension. If you aren't use chrome, consider trying it out or finding an equivalence for your browser. It allows you to select and view a component's rendering tree and states/props, and is useful in many situations, such as learning the behavior of a component, debugging, etc.
+1. Consider installing the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) chrome extension. If you aren't using chrome, consider trying it out or finding an equivalence for your browser. It allows you to select and view a component's rendering tree and states/props, and is useful in many situations, such as learning the behavior of a component, debugging, etc.
 2. Make use of Jest's [globals](https://jestjs.io/docs/api) to counter code duplication.
