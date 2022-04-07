@@ -13,6 +13,7 @@
     - [How to Run Jest Specifications](#how-to-run-jest-specifications)
     - [Jest Configurations](#jest-configurations)
     - [Jest Naming Conventions](#jest-naming-conventions)
+    - [Example Tests](#example-tests)
     - [Tips](#tips)
 
 ## Testing with RSpec
@@ -112,7 +113,7 @@ We use shoulda-matchers because the examples are easily understood just by readi
 
 ### Method Examples
 
-As you  have probably noticed in the `group_spec.rb` file, all method examples are written within their own `describe` block. If the method is an instance method, the description of the block will be a hash followed by the method’s name:
+As you have probably noticed in the `group_spec.rb` file, all method examples are written within their own `describe` block. If the method is an instance method, the description of the block will be a hash followed by the method’s name:
 
 ```ruby
 describe '#method_name' do
