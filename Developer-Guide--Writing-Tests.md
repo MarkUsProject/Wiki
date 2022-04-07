@@ -10,6 +10,10 @@
     - [Controller Specifications](#controller-specifications)
     - [General Tips](#general-tips)
 - [Testing with Jest](#testing-with-jest)
+    - [How to Run Jest Specifications](#how-to-run-jest-specifications)
+    - [Jest Configurations](#jest-configurations)
+    - [Jest Naming Conventions](#jest-naming-conventions)
+    - [Tips](#tips)
 
 ## Testing with RSpec
 
@@ -346,6 +350,8 @@ yarn test -- <filename>
 ```
 
 For example, to run the `StudentTable` specification, run `yarn test student_table.test.jsx`.
+
+These commands are specified in `package.json`, under Markus root.
 
 ## Jest Configurations
 
