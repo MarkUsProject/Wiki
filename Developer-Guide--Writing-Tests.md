@@ -405,7 +405,7 @@ describe("For the StudentTable component's rendering", () => {
 
 This code snippet illustrates a commonly used Jest structure alongside several RTL methods.
 
-The `describe` block is a global in Jest used to group tests toegther. In general we aim to make sure the test cases read like complete sentences (i.e. For the StudentTable component's rendering the parent component renders a child StudentsActionBox). T
+The `describe` block is a global in Jest used to group tests toegther. In general we aim to make sure the test cases read like complete sentences (i.e. For the StudentTable component's rendering the parent component renders a child StudentsActionBox).
 
 The `beforeEach` block is a global in Jest that is executed before every example. Similarly, the `beforeAll` block is a global in Jest that is executed before all examples. If a `beforeEach` or `beforeAll` is inside a `describe` block, it runs at the beginning of the `describe` block.
 
