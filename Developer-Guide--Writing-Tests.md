@@ -444,7 +444,15 @@ describe("each filterable column has a custom filter method", () => {
     ...
 ```
 
+The overall structure is practically the same as the RTL snippet. The differences lie within the implementation of the test cases.
+
+Recall the Enzyme allows you access to the internal states of a component/element.
+
+`mount` is a render method of Enzyme that deep renders a component. Its counterpart `shallow` shallow renders a component. On a high level, the former renders a component's children while the latter does not.
+
+`wrapper.instance()` gives you this returned React component, from which you can dig deeper to find specific internal states to test/modify.
+
 ## Tips
 
-1. Consider installing the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) chrome extension. If you aren't using chrome, consider trying it out or finding an equivalence for your browser. It allows you to select and view a component's rendering tree and states/props, and is useful in many situations, such as learning the behavior of a component, debugging, etc.
+1. Consider installing the [React Developer Tools (linked to the chrome extension)](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) extension. If you aren't using chrome, there should be an equivalence for your browser. It allows you to select and view a component's rendering tree and states/props, and is useful in many situations, such as learning the behavior of a component, debugging, etc.
 2. Make use of Jest's [globals](https://jestjs.io/docs/api) to counter code duplication.
