@@ -176,4 +176,3 @@ If the `rails db:autotest_run` fails, you can still run the tests manually in yo
 5. Go to the Test Results tab and click on "Run Tests".
 6. Wait a minute, and then refresh the page. Go back to the Test Results tab. You should see that two tests have been run, and that both have passed.
 7. Repeat for the other assignments that you want to run tests for.
-
