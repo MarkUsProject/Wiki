@@ -347,7 +347,7 @@ yarn test-cov
 To run a specific specification:
 
 ```sh
-yarn test -- <filename>
+yarn test <filename>
 ```
 
 For example, to run the `StudentTable` specification, run `yarn test student_table.test.jsx`.
@@ -402,6 +402,26 @@ describe("For the StudentTable component's rendering", () => {
     });
     ...
 ```
+
+This code snippet illustrates a commonly used Jest structure alongside several RTL methods.
+
+The `describe` block is a global in Jest used to group tests toegther. In general we aim to make sure the test cases read like complete sentences (i.e. For the StudentTable component's rendering the parent component renders a child StudentsActionBox). T
+
+The `beforeEach` block is a global in Jest that is executed before every example. Similarly, the `beforeAll` block is a global in Jest that is executed before all examples. If a `beforeEach` or `beforeAll` is inside a `describe` block, it runs at the beginning of the `describe` block.
+
+Individual test cases are written with an `it` block, which consists of a description of the test case followed by the code as a callback - notice its structure is essentially the same as a `describe` block.
+
+`getByTestId("...")` is a method used to find an element using its `data-testid` value. In React we can declare such prop in the form of
+
+```js
+<ElementName ... data-testid={"some string"}/>
+```
+
+`render` is RTL's render method, which renders an element into a container (i.e. attaching to `document.body`). After calling this method we can use `screen.<query_method>` (such as `screen.getByTestId`) to locate elements. Reference the [testing library API and documentation](https://testing-library.com/docs/react-testing-library/api/) for a complete list of queries.
+
+`toBeInTheDocument` is a matcher utility provided by [Jest-DOM](https://github.com/testing-library/jest-dom). This matcher allows you to assert whether an element is present in the document or not.
+
+Again, this is only a snippet. The libraries and Jest have much more to show.
 
 ### Enzyme
 
