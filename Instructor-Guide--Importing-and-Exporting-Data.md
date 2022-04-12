@@ -178,6 +178,7 @@ Only CSV files are supported.
 Every row of the CSV file should have the following format:
 
 - The first entry is the name of the group (e.g., `group1`). This cannot be blank, and must be *unique across all assignments*.
+    - Each group name must be at most 30 characters long, and consist only of alphanumeric characters, hyphens, underscores, and spaces.
 - All subsequent entries are user names of students who are members of this group.
 
 > :spiral_notepad: **Note:** A student must belong to at most one group for the assignment. So the same student user name cannot appear in two different rows in your uploaded file, nor can the file contain a student who is already be a member of an existing group.
