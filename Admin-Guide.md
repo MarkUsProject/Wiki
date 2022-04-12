@@ -51,6 +51,10 @@ From the edit page of a course you can modify the same properties specified when
 
 ![Markus Course Edit Page](images/markus-admin-course-edit.png)
 
+### Accessing a course
+
+In order to access a specific course you may do so by going to the list of all courses and clicking on the "view" action of the course you wish to access. Doing so will take you to the course's home page where you can view and modify a course's page as if you were an instructor.
+
 ## Managing Users
 
 As with courses, to manage users, navigate to the "Users" sub tab on the MarkUs Administration Page.
