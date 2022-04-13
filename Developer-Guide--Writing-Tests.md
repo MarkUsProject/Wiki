@@ -24,7 +24,7 @@ Testing with RSpec involves specifications (files containing tests), and example
 
 ## How to Run Specifications
 
-**Note:** The following commands assume you are within the Markus root folder.
+**Note:** The following commands assume you are within the Markus root folder. If you running MarkUs with Docker, you must be in a shell in the [rails Docker container](Developer-Guide--Set-Up-With-Docker.md#running-commands-in-docker).
 
 To run all specifications:
 
@@ -326,9 +326,9 @@ On a high level, RTL allows you to test from the user's perspective, while Enzym
 
 Similar to RSpec, Jest also involves specifications. It is recommended that you follow along the `__tests__` folder, under `app/assets/javascripts/Components/`, for this tutorial.
 
-## How to Run Jest Specifications
+### How to Run Jest Specifications
 
-**Note:** The following commands assume you are within the Markus root folder.
+**Note:** The following commands assume you are within the Markus root folder. If you running MarkUs with Docker, you must be in a shell in the [rails Docker container](Developer-Guide--Set-Up-With-Docker.md#running-commands-in-docker).
 
 `yarn` is the package manager we use in Markus. Its counterpart `npm` is sometimes more known.
 
@@ -354,39 +354,39 @@ For example, to run the `StudentTable` specification, run `yarn test student_tab
 
 These commands are specified in `package.json`, under Markus root.
 
-## Jest Configurations
+### Jest Configurations
 
 There are a lot of [configurations](https://jestjs.io/docs/configuration) within Jest. The main source of configuration is jest.config.js under the Markus root. Most of the settings are left as default, and each setting has a comment explaining what they are for. Make sure you update the respective settings when needed. We'll cover 3 important ones below.
 
-### setupFiles
+#### setupFiles
 
 This setting points to a list of files that are run to set up the testing environment. For instance, the imports of `JQuery` and `I18n` would be in it.
 
-### setupFilesAfterEnv
+#### setupFilesAfterEnv
 
 This setting points to a list of files that are run immediately after the setup of testing environment, before the actual tests. This is a great place for your global imports in the test files, such as the import of `React`, the configuration of `Enzyme`.
 
-### testMatch
+#### testMatch
 
 This setting points to a list of patterns that entails directories/modules you want Jest to look at to find your tests. For instance, `**/__tests__/**/*.[jt]s?(x)` would include the path `app/assets/javascripts/Components/__tests__/student_table.test.jsx`.
 
-## Jest Naming Conventions
+### Jest Naming Conventions
 
-### Folders
+#### Folders
 
 Currently we use a centralized `__tests__` folder under `components`. The folder is intended to include tests for all the React components.
 
-### Files
+#### Files
 
-The name of the file should have the format `<component>.test.jsx`. For instance, the test file for the StudentTable component would be `student_table.test.jsx`. Lower cases are recommended so the `_` symbol should be used to separate words.
+The name of the file should have the format `<component>.test.jsx`. For instance, the test file for the StudentTable component would be `student_table.test.jsx`.
 
 It is also recommended to make sure a file focuses on testing one specific component. If a component makes use of other child components with sufficient complexity, you could make a test file for each of those child components in addition to the parent component.
 
-## Example tests
+### Example tests
 
 From `student_table.test.jsx`:
 
-### React Testing Library
+#### React Testing Library
 
 ```js
 describe("For the StudentTable component's rendering", () => {
@@ -405,13 +405,13 @@ describe("For the StudentTable component's rendering", () => {
 
 This code snippet illustrates a commonly used Jest structure alongside several RTL methods.
 
-The `describe` block is a global in Jest used to group tests toegther. In general we aim to make sure the test cases read like complete sentences (i.e. For the StudentTable component's rendering the parent component renders a child StudentsActionBox).
+The `describe` block is a global in Jest used to group tests together. In general we aim to make sure the test cases read like complete sentences (i.e. For the StudentTable component's rendering the parent component renders a child StudentsActionBox).
 
 The `beforeEach` block is a global in Jest that is executed before every example. Similarly, the `beforeAll` block is a global in Jest that is executed before all examples. If a `beforeEach` or `beforeAll` is inside a `describe` block, it runs at the beginning of the `describe` block.
 
 Individual test cases are written with an `it` block, which consists of a description of the test case followed by the code as a callback - notice its structure is essentially the same as a `describe` block.
 
-`getByTestId("...")` is a method used to find an element using its `data-testid` value. In React we can declare such prop in the form of
+`getByTestId("...")` is a method used to find an element using its `data-testid` attribute. In React we can declare such attribute in the form of
 
 ```js
 <ElementName ... data-testid={"some string"}/>
@@ -423,7 +423,7 @@ Individual test cases are written with an `it` block, which consists of a descri
 
 Again, this is only a snippet. The libraries and Jest have much more to show.
 
-### Enzyme
+#### Enzyme
 
 ```js
 describe("each filterable column has a custom filter method", () => {
@@ -452,7 +452,90 @@ Recall the Enzyme allows you access to the internal states of a component/elemen
 
 `wrapper.instance()` gives you this returned React component, from which you can dig deeper to find specific internal states to test/modify.
 
-## Tips
+#### Mocking
+
+While writing tests you might find [mocking](https://jestjs.io/docs/mock-functions) useful. It allows you to manipulate the mocked function's calls' return value.
+
+Consider the following code for the StudentTable component from `student_table.jsx` (it wraps around the RawStudentTable component so we look at this component's code):
+
+```js
+class RawStudentTable extends React.Component {
+  constructor() {
+    ...
+    this.state = {
+      data: {
+        students: [],
+        sections: {},
+        counts: {all: 0, active: 0, inactive: 0},
+      },
+      ...
+    };
+  }
+
+  ...
+
+  fetchData = () => {
+      $.ajax({
+        method: "get",
+        url: ...,
+        ...
+      }).then(res => {
+        this.setState({
+          data: res,
+          ...
+        });
+      });
+    };
+```
+
+It would be useful to mock this fetchData function so that we can test whether the component behaves as we expect it to under different scenarios:
+
+```js
+describe("For the StudentTable's display of students", () => {
+  let wrapper, students_sample;
+
+  describe("when some students are fetched", () => {
+    ...
+
+    beforeAll(() => {
+      students_sample = [...];
+      // Mocking the response returned by $.ajax, used in StudentTable fetchData
+      $.ajax = jest.fn(() =>
+        Promise.resolve({
+          students: students_sample,
+          sections: {1: "LEC0101"},
+          counts: {all: 2, active: 2, inactive: 0},
+        })
+      );
+      wrapper = mount(<StudentTable ... />);
+    });
+    ...
+  });
+
+  ...
+
+  describe("when no students are fetched", () => {
+    beforeAll(() => {
+      students_sample = [];
+      // Mocking the response returned by $.ajax, used in StudentTable fetchData
+      $.ajax = jest.fn(() =>
+        Promise.resolve({
+          students: students_sample,
+          sections: {},
+          counts: {all: 0, active: 0, inactive: 0},
+        })
+      );
+      wrapper = mount(<StudentTable ... />);
+    });
+```
+
+Here we're mocking the `$.ajax` function so that instead of its own implementation, in this test whenever it's called, it would return what we told it to. We know the function should return a promise consisting of some data that can be used to fill in the component's `data` state by reading through `fetchData`'s own implementation.
+
+In this case, we want to test how the component behaves when some students are fetched vs no students are fetched, and we easily achieve this through mocking the return value of the `$.ajax` function.
+
+**Note:** in situations like this, reading through the documentation for the specific function(s) could be helpful as well.
+
+### Tips
 
 1. Consider installing the [React Developer Tools (linked to the chrome extension)](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) extension. If you aren't using chrome, there should be an equivalence for your browser. It allows you to select and view a component's rendering tree and states/props, and is useful in many situations, such as learning the behavior of a component, debugging, etc.
 2. Make use of Jest's [globals](https://jestjs.io/docs/api) to counter code duplication.
