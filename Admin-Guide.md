@@ -53,7 +53,7 @@ From the edit page of a course you can modify the same properties specified when
 
 ### Accessing a course
 
-In order to access a specific course you may do so by going to the list of all courses and clicking on the "Go to Course" action of the course you wish to access. 
+In order to access a specific course you may do so by going to the list of all courses and clicking on the "Go to Course" action of the course you wish to access.
 
 ![Markus View Course Page](images/markus-admin-go-to-course.png)
 
