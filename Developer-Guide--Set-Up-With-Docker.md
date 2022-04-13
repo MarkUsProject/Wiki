@@ -118,8 +118,11 @@ After this, these checks will run every time you make a commit. If all checks pa
 Here's a summary of the few most common tasks you'll use in your development.
 
 - Start the MarkUs server: `docker-compose up --no-recreate rails`
-- Run the MarkUs test suite: `docker-compose run rails rspec`
-- Run a specific test file: `docker-compose run rails rspec FILE`
+- Run the MarkUs rspec test suite: `docker-compose run rails rspec`
+- Run a specific rspec test file: `docker-compose run rails rspec FILE`
+- Run the Markus Jest test suite:  `docker-compose run rails yarn test`
+- Run the Markus Jest test suite with the test coverage shown:  `docker-compose run rails yarn test-cov`
+- Run a specific Jest test file: `docker-compose run rails yarn test FILE`
 - Start a shell within the Docker Rails environment: `docker-compose run --rm rails bash`.
   Within this shell, you can:
     - Install new dependencies: `bundle install`, `yarn install`
