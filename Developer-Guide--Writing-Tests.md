@@ -529,7 +529,7 @@ describe("For the StudentTable's display of students", () => {
     });
 ```
 
-Here we're mocking the `$.ajax` function so that instead of its own implementation, in this test whenever it's called, it would return what we told it to. We know the function should return a promise consisting of some data that can be used to fill in the component's `data` state by reading through `fetchData`'s own implementation.
+Here we're mocking the `$.ajax` function so that instead of its own implementation, in this test whenever it's called, it would return what we told it to. We know the function should return a promise consisting of some data that can be used to fill in the component's `data` state by reading through `fetchData`'s own implementation. In addition, we can use the react developer tools (explained below in the [Tips](#tips) section) to examine the component's props and states too.
 
 In this case, we want to test how the component behaves when some students are fetched vs no students are fetched, and we easily achieve this through mocking the return value of the `$.ajax` function.
 
