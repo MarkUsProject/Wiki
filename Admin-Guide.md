@@ -27,6 +27,15 @@ This will take you to a page that lists all the courses of this particular MarkU
 
 ![Markus Course List](images/markus-admin-course-list.png)
 
+### Accessing a course
+
+In order to access a specific course you may do so by going to the list of all courses and clicking on the "Go to Course" action of the course you wish to access.
+
+![Markus View Course Page](images/markus-admin-go-to-course.png)
+
+Doing so will take you to the course's dashboard page where you can view and access the course as if you were an instructor. This is accomplished by giving you an "AdminRole" for the course. This role is created automatically for you when you try and access a course via the UI for the first time. If you wish to create, view or update this role manually, please see the relevant [api documentation](RESTful-API.md#get-apicoursescourse_idroles).
+> :spiral_notepad: **NOTE:** Only you have the ability to view and access the Admin role. Instructors cannot see that you have this role when using either the UI or API.
+
 ### Creating and editing a course
 
 In order to create a course, click on the "Create Course" link located at the top right corner of the page.
@@ -50,15 +59,6 @@ If you later wish to modify any properties of a course you can reach any course'
 From the edit page of a course you can modify the same properties specified when creating the course.
 
 ![Markus Course Edit Page](images/markus-admin-course-edit.png)
-
-### Accessing a course
-
-In order to access a specific course you may do so by going to the list of all courses and clicking on the "Go to Course" action of the course you wish to access.
-
-![Markus View Course Page](images/markus-admin-go-to-course.png)
-
-Doing so will take you to the course's dashboard page where you can view and access the course as if you were an instructor. This is accomplished by giving you an "AdminRole" for the course. This role is created automatically for you when you try and access a course via the UI for the first time. If you wish to create, view or update this role manually, please see the relevant [api documentation](RESTful-API.md#get-apicoursescourse_idroles).
-> :spiral_notepad: **NOTE:** Only you have the ability to view and access the Admin role. Instructors cannot see that you have this role when using either the UI or API.
 
 ## Managing Users
 
