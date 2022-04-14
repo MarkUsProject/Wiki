@@ -29,7 +29,7 @@ This will take you to a page that lists all the courses of this particular MarkU
 
 ### Accessing a course
 
-In order to access a specific course you may do so by going to the list of all courses and clicking on the "Go to Course" action of the course you wish to access.
+In order to access a specific course you may do so by going to the list of all courses and clicking on its corresponding "Go to Course" action.
 
 ![Markus Course View Link](images/markus-admin-go-to-course-link.png)
 
