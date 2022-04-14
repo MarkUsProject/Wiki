@@ -99,6 +99,7 @@ This will open a modal where you can upload a CSV file containing a list of all 
 ![Markus User CSV Upload Modal](images/markus-admin-user-csv-upload-modal.png)
 
 This CSV file must have the following fields (note that these are listed in the order they must appear in the CSV file):
+
 - User Name: The username alias for this end user (cannot be blank).
 - First Name: This end user's first name (cannot be blank).
 - Last Name: This end user's last name (cannot be blank).
@@ -106,6 +107,7 @@ This CSV file must have the following fields (note that these are listed in the 
 - Email: This end user's email address (optional).
 
 Hence, an example End User CSV file would look like:
+
 ```CSV
 username_1,first_name_1,last_name_1,id_number_1,email_1
 username_2,first_name_2,last_name_2,id_number_2,email_2
@@ -113,6 +115,7 @@ username_3,first_name_3,last_name_3,id_number_3,email_3
 ```
 
 After you have selected a file to upload, click on the "Upload" button on the modal. MarkUs will then create End Users from the list of users you provided. The users administration page will be refreshed after all users.
-> :spiral_notepad: **Note:** 
+> :spiral_notepad: **Note:**
+>
 > - Only CSV files are currently supported with this feature.
-> - Users without a username, first name or last name will not be created. 
+> - Users without a username, first name or last name will not be created.
