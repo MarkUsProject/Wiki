@@ -288,22 +288,26 @@ NOTE: this method is only available to AdminUser users
 - description: Create a role for a user in the given course
 - required parameters:
     - user_name (string: a user with this user name must exist)
-    - type (string: one of "Instructor", "Ta", "Student")
+    - type (string: one of "Instructor", "Ta", "Student", "AdminRole")
 - optional parameters:
     - grace_credits (integer)
     - hidden (boolean)
     - section_name (string: name of a Section for the given course)
+
+NOTE: the "AdminRole" type can only be used by AdminUser users
 
 ### POST /api/courses/:course_id/roles/create_or_unhide
 
 - description: Create a role for a user in the given course, if the given role already exists set the hidden attribute to `false` instead
 - required parameters:
     - user_name (string: a user with this user name must exist)
-    - type (string: one of "Instructor", "Ta", "Student")
+    - type (string: one of "Instructor", "Ta", "Student", "AdminRole")
 - optional parameters:
     - grace_credits (integer)
     - hidden (boolean)
     - section_name (string: name of a Section for the given course)
+
+NOTE: the "AdminRole" type can only be used by AdminUser users
 
 ## PUT /api/courses/:course_id/roles/update_by_username
 
