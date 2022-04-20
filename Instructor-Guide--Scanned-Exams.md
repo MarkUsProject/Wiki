@@ -214,15 +214,14 @@ After the scanned test papers have been collected, you can assign graders and [g
 
 Matching test papers to students is done manually by instructors, after submissions have been collected.
 
-1. Navigate to the "Groups" tab for the assignment.
-2. Every group has no members, but an "Assign Scans" link beside it. Click on the "Assign Scans" link beside the first group.
+1. Navigate to the "Assign Scans" section of the Exam Template page. This will take you to the first scanned exam without an associated student. Alternatively, you can navigate to the "Groups" tab for the assignment and clicking on the "Assign Scans" link beside the first group.
 
     ![Scanned Exam Assign Scans Link](images/scanned-exam-assign-scans-link.png)
 
-3. You'll be taken to a new page that displays the first page for the group. Type in the student's identifying information and press "Save" to match the paper to the student.
+2. You'll be taken to a new page that displays the first page for the group. Type in the student's identifying information and press "Save" to match the paper to the student.
 
     ![Scanned Exam Assign Scans](images/scanned-exam-assign-scans-page.png)
 
     - *Tip*: MarkUs supports search by student name, user name, or student number.
     - *Tip*: If the student does not appear in the autofill, you can also enter the student's full name into this field before saving. Note that this must be their first and last names as listed in the students table.
-4. You'll be automatically taken to the next unmatched group. Repeat this process until all groups are matched.
+3. You'll be automatically taken to the next unmatched group. Repeat this process until all groups are matched.
