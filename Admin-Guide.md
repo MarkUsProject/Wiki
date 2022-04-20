@@ -128,4 +128,4 @@ After you have selected a file to upload, click on the "Upload" button on the mo
 >
 > - Only CSV files are currently supported with this feature.
 > - Any errors such as a missing username, first name or last name will result in the entire upload to fail.
-> - If a username has already been taken and associated with a specific user, this feature will update that user with the associated user information in the CSV file.
+> - If a user has already been created and their corresponding username is listed in the CSV file, this feature will update their information with data from the CSV file.
