@@ -127,4 +127,5 @@ After you have selected a file to upload, click on the "Upload" button on the mo
 > :spiral_notepad: **Note:**
 >
 > - Only CSV files are currently supported with this feature.
-> - Users without a username, first name or last name will not be created.
+> - Any errors such as a missing username, first name or last name will result in the entire upload to fail.
+> - If a username has already been taken and associated with a specific user, this feature will update that user with the associated user information in the CSV file.
