@@ -27,6 +27,15 @@ This will take you to a page that lists all the courses of this particular MarkU
 
 ![Markus Course List](images/markus-admin-course-list.png)
 
+### Accessing a course
+
+In order to access a specific course you may do so by navigating to the list of all courses and clicking on the course's associated "Go to Course" action.
+
+![Markus Course View Link](images/markus-admin-go-to-course-link.png)
+
+Doing so will take you to the course's dashboard page where you can view and access the course as if you were an instructor. This is accomplished by giving you an "AdminRole" for the course. This role is created automatically for you when you try and access a course via the UI for the first time. If you wish to create, view or update this role manually, please see the relevant API [documentation](RESTful-API.md#get-apicoursescourse_idroles).
+> :spiral_notepad: **NOTE:** Only you have the ability to view and access the Admin role. Instructors cannot see that you have this role when using either the UI or API.
+
 ### Creating and editing a course
 
 In order to create a course, click on the "Create Course" link located at the top right corner of the page.

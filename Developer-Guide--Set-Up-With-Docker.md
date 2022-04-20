@@ -150,17 +150,32 @@ If you need to rebuild the MarkUs docker image:
 1. Clone the [markus-autotesting repo](https://github.com/MarkUsProject/markus-autotesting). Don't clone it into your `Markus` folder; we recommend cloning it into the same parent folder as your `Markus` folder.
 2. `cd` into the `markus-autotesting` folder.
 3. Run `docker compose build` to build a new Docker images for the MarkUs autotester.
-4. Run `docker compose up client` to create the new containers. The first time you run this it will take a long time because it'll install all of the MarkUs autotester's dependencies.
+4. Run `docker compose up` to create the new containers. The first time you run this it will take a long time because it'll install all of the MarkUs autotester's dependencies.
     You'll know it's done when you see "INFO success..."
 5. Stop the containers by pressing Ctrl + C (Windows/Linux) or Cmd + C (macOS). Then, restart the containers by running the command `docker compose start`.
-6. Leave the previous command running, and open a new terminal window. `cd` into your `Markus` folder and run `docker compose run --rm rails rails db:autotest` (`rails` is written twice!). This should create sample autotesting assignments.
-7. Start the MarkUs server: `docker compose up rails`.
-8. In a web browser, visit the running server, but using a different domain than `localhost`:
-    - For Windows, first open a WSL terminal and enter the command `ip addr show eth0 | grep inet`. Use the IP address found after `inet`, which is a sequence of 4 numbers separated by `.`, e.g. `100.20.200.2`. The URL you should enter in your web browser is `<IP address>:3000/csc108`.
-    - For macOS, visit `docker.for.mac.localhost:3000/csc108`.
+6. In a separate terminal, start the MarkUs server: `docker compose up rails`.
+7. In a web browser, visit the running server, but using a different domain than `localhost`:
+    - For Windows and macOS, visit `host.docker.internal:3000/csc108`. If that doesn't work:
+        - Windows: first open a WSL terminal and enter the command `ip addr show eth0 | grep inet`. Use the IP address found after `inet`, which is a sequence of 4 numbers separated by `.`, e.g. `100.20.200.2`. Try visiting `<IP address>:3000/csc108` instead.
+        - For macOS, visit `docker.for.mac.localhost:3000/csc108` instead.
     - For Linux, visit `172.17.0.1:3000/csc108`.
-9. Navigate to the `autotest_custom` assignment (under the Assignments tab), and go to Settings -> Automated Testing. This will take you to the settings page for the automated tests.
-10. On that page, change the "Timeout" field from 30 to 60, and press "Save" at the bottom of the page. You should see a message at the top of the page that shows the status of updating the settings; wait until this message changes to "Completed".
-11. Now go to the "Submissions" tab and click on the `aaaautotest` link in the leftmost column of the table. This takes you to the grading view for the submission.
-12. Go to the Test Results tab and click on "Run Tests".
-13. Wait a minute, and then refresh the page. Go back to the Test Results tab. You should see that two tests have been run, and that both have passed.
+8. Now, open a shell in the MarkUs docker container: `docker-compose run --rm rails bash`.
+9. Execute the following commands in the MarkUs container.
+    1. Create sample autotesting assignments: `rails db:autotest`.
+    2. (*The MarkUs server and autotest containers be running when you run these commands.*) Run tests for every sample autotesting asignment: `MARKUS_URL=<URL> rails db:autotest_run`, where `<URL>` is in the form `http://<DOMAIN>:3000`, and `<DOMAIN>` is the domain you used in Step 7 (e.g., `host.docker.internal`).
+
+        If you get an error when running this command, see "Running tests manually" below.
+
+Now when you visit MarkUs in the web browser, you should see the new assignments that were created, the autotest settings (under Settings -> Automated Testing), and a sample submission with autotest results.
+
+### Running tests manually
+
+If the `rails db:autotest_run` fails, you can still run the tests manually in your web browser by doing the following:
+
+1. Go to MarkUs in your web browser (using the same URL as Step 7 above).
+2. Navigate to the `autotest_custom` assignment (under the Assignments tab), and go to Settings -> Automated Testing. This will take you to the settings page for the automated tests.
+3. On that page, change the "Timeout" field from 30 to 60, and press "Save" at the bottom of the page. You should see a message at the top of the page that shows the status of updating the settings; wait until this message changes to "Completed".
+4. Now go to the "Submissions" tab to view a table of all submissions---in this case, there will be just one. Click on the link in the leftmost column of the table. This takes you to the grading view for the submission.
+5. Go to the Test Results tab and click on "Run Tests".
+6. Wait a minute, and then refresh the page. Go back to the Test Results tab. You should see that two tests have been run, and that both have passed.
+7. Repeat for the other assignments that you want to run tests for.
