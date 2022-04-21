@@ -194,11 +194,8 @@ After your test is complete, you should scan all test papers (saving the scans a
 When you are done uploading all scanned files and fixing all QR code parsing errors, you are ready to finalize the scanned files for grading.
 This is done by *collecting* the submissions:
 
-1. First, return to the assignment's "Settings" page and set the due date to the current time (*after* you are sure you've scanned all test papers and fixed all parsing errors).
-
-    **Note**: this new due date might be significantly later than when students wrote the test.
-
-2. Go to the "Submissions" tab and select all rows, and press "Collect Submissions".
+1. Go to the "Submissions" tab and select all rows.
+2. Press the "Collect Submissions" button (do this only *after* you are sure you've scanned all test papers and fixed all parsing errors).
 
     ![Scanned Exam Collect All](images/scanned-exam-collect-all.png)
 
