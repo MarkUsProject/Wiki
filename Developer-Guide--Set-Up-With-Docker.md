@@ -179,3 +179,24 @@ If the `rails db:autotest_run` fails, you can still run the tests manually in yo
 5. Go to the Test Results tab and click on "Run Tests".
 6. Wait a minute, and then refresh the page. Go back to the Test Results tab. You should see that two tests have been run, and that both have passed.
 7. Repeat for the other assignments that you want to run tests for.
+
+### Setting up the action mailer
+
+**Note**: you only need to consult this section if you'll be working on sending/recieving emails from MarkUs. This section assumes you will be working with the action mailer for development purposes only and plan on using a gmail account for testing. We will talk about configuring action mailer using the `:smtp` delivery method.
+
+1. Find the `config/settings.yml` file.
+2. Ensure action mailer is configured as follows:
+    ```yaml
+    action_mailer:
+        delivery_method: smtp
+        default_url_options:
+            host: 'localhost:3000'
+        asset_host: 'http://localhost:3000'
+        perform_deliveries: true
+        deliver_later_queue_name: ~
+        smtp_settings:
+    ```
+3. Using the gmail account you will use for testing, be sure to enable 2 factor authentication.
+4. From your gmail account security settings, create an App Password for MarkUs.
+5. Copy and paste the App Password you generated into your `smtp` settings.
+6. Start the MarkUs server: `docker compose up rails`.
