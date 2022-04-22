@@ -107,6 +107,10 @@ starter_file:
   storage: # absolute path to a directory to store starter files
 python:
    bin: # location of the bin subdirectory of the python3 virtual environment where python dependencies are installed
+exception_notification:
+  enabled: # boolean indicating whether to enable email notifactions when errors occur (See "Error Notification Emails" below for more details)
+  sender: # email address string with which to email error notifications
+  recipients: # list of string email addresses who will recieve error notification emails
 pandoc: # path to the pandoc executable
 ```
 
@@ -204,3 +208,11 @@ One setting option can only be changed by an environment variable. To set the re
 ```sh
 RAILS_RELATIVE_URL_ROOT=/csc108 bundle exec rails server
 ```
+
+## Error Notification Emails
+
+If a user happens to encounter an uncaught server error, you may wish to recieve an email notifying you of the event and its details. To do so, set the `enabled` setting (under the `exception_notification` settings) to true.
+
+In order to possibly avoid filling recipient inboxes with a lot of the same error notifications, email notifications are sent after every `2**n` occurences of the same error. For more details, visit the [exception notification](https://github.com/smartinez87/exception_notification) gem homepage.
+
+Note that in order for this feature to work, you **must** have action mailer configured. This means that you must select a `delivery_method` with the appropriate settings and you must set `perform_deliveries` to true. You will be unable to send or recieve error notification emails otherwise.
