@@ -186,6 +186,7 @@ If the `rails db:autotest_run` fails, you can still run the tests manually in yo
 
 1. Find the `config/settings.yml` file.
 2. Ensure action mailer is configured as follows:
+
     ```yaml
     action_mailer:
         delivery_method: smtp
@@ -196,6 +197,7 @@ If the `rails db:autotest_run` fails, you can still run the tests manually in yo
         deliver_later_queue_name: ~
         smtp_settings:
     ```
+
 3. Using the gmail account you will use for testing, be sure to enable 2 factor authentication.
 4. From your gmail account security settings, create an App Password for MarkUs.
 5. Copy and paste the App Password you generated into your `smtp` settings.
