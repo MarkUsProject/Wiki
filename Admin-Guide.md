@@ -96,3 +96,36 @@ If you later wish to modify any properties of a user, you may do so by navigatin
 This will take you to the user's edit page, where you can update the same properties specified when creating a user.
 
 ![Markus User Edit Page](images/markus-admin-user-edit.png)
+
+### Bulk Uploading of End Users
+
+If you plan on creating many end users, you may find it convenient to instead upload a list of users for markus to create. To do this, click on the "Upload End Users" link located at the top right corner of the page.
+
+![Markus User CSV Upload Link](images/markus-admin-user-csv-upload-link.png)
+
+This will open a modal where you can upload a CSV file containing a list of all the end users you wish to upload and create.
+
+![Markus User CSV Upload Modal](images/markus-admin-user-csv-upload-modal.png)
+
+This CSV file must have the following fields (note that these are listed in the order they must appear in the CSV file):
+
+- User Name: The username alias for this end user (cannot be blank).
+- Last Name: This end user's last name (cannot be blank).
+- First Name: This end user's first name (cannot be blank).
+- ID Number: This end user's id number (optional).
+- Email: This end user's email address (optional).
+
+Hence, an example End User CSV file would look like:
+
+```CSV
+username_1,last_name_1,first_name_1,id_number_1,email_1
+username_2,last_name_2,first_name_2,id_number_2,email_2
+username_3,last_name_3,first_name_3,id_number_3,email_3
+```
+
+After you have selected a file to upload, click on the "Upload" button on the modal. MarkUs will then create End Users from the list of users you provided. The users administration page will be refreshed after all users.
+> :spiral_notepad: **Note:**
+>
+> - Only CSV files are currently supported with this feature.
+> - Any errors such as a missing username, first name or last name will result in the entire upload to fail.
+> - If a user has already been created and their corresponding username is listed in the CSV file, this feature will update their information with data from the CSV file.
