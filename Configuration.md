@@ -211,8 +211,8 @@ RAILS_RELATIVE_URL_ROOT=/csc108 bundle exec rails server
 
 ## Error Notification Emails
 
-If a user happens to encounter an uncaught server error, you may wish to recieve an email notifying you of the event and its details. To do so, set the `enabled` setting (under the `exception_notification` settings) to true.
+If you wish to be informed when a user encounters a server error whilst using MarkUs, you can configure MarkUs to send you an email whenever such an error event happens along with its details. To do so, under the `exception_notification` settings, set the `enabled` setting to true. Be sure to then specify a `sender` email address and a list of `recipients` addresses.
 
-In order to possibly avoid filling recipient inboxes with a lot of the same error notifications, email notifications are sent after every `2**n` occurences of the same error. For more details, visit the [exception notification](https://github.com/smartinez87/exception_notification) gem homepage.
+Note that in order for this feature to work, you **must** have action mailer configured to send emails. This means that you must select an action mailer `delivery_method` with the appropriate settings and you must also set `perform_deliveries` to true. You will be unable to send or recieve error notification emails otherwise.
 
-Note that in order for this feature to work, you **must** have action mailer configured. This means that you must select a `delivery_method` with the appropriate settings and you must set `perform_deliveries` to true. You will be unable to send or recieve error notification emails otherwise.
+This feature informs you of all uncaught exceptions that occur in the MarkUs backend. In order to possibly avoid filling recipient inboxes with a lot of the same error notifications, email notifications are sent after every `2**n` occurences of the same error. For more details, visit the [exception notification](https://github.com/smartinez87/exception_notification) gem homepage with which we use to provide you this feature.

@@ -182,9 +182,9 @@ If the `rails db:autotest_run` fails, you can still run the tests manually in yo
 
 ### Setting up the action mailer
 
-**Note**: you only need to consult this section if you'll be working on sending/recieving emails from MarkUs. This section assumes you will be working with the action mailer for development purposes only and plan on using a gmail account for testing. We will talk about configuring action mailer using the `:smtp` delivery method.
+**Note**: you only need to consult this section if you'll be working on sending/recieving emails from MarkUs. We will talk about configuring action mailer with a gmail account using the `:smtp` delivery method.
 
-1. Find the `config/settings.yml` file.
+1. Find the `config/settings/development.yml` file.
 2. Ensure action mailer is configured as follows:
 
     ```yaml
@@ -196,9 +196,14 @@ If the `rails db:autotest_run` fails, you can still run the tests manually in yo
         perform_deliveries: true
         deliver_later_queue_name: ~
         smtp_settings:
+            address: smtp.gmail.com
+            port: 587
+            user_name: # Your gmail username
+            password: # Your created application password. See steps 3-4 for more details
+            authentication: plain
+            enable_starttls_auto: true
     ```
 
-3. Using the gmail account you will use for testing, be sure to enable 2 factor authentication.
-4. From your gmail account security settings, create an App Password for MarkUs.
-5. Copy and paste the App Password you generated into your `smtp` settings.
-6. Start the MarkUs server: `docker compose up rails`.
+3. Generate an app password for MarkUs. See [this](https://support.google.com/accounts/answer/185833?hl=en) page for instructions on how to do this.
+4. Copy and paste the app password into the `password` field under `smtp` settings.
+5. Start the MarkUs server: `docker compose up rails`.
