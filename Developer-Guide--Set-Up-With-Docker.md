@@ -180,9 +180,9 @@ If the `rails db:autotest_run` fails, you can still run the tests manually in yo
 6. Wait a minute, and then refresh the page. Go back to the Test Results tab. You should see that two tests have been run, and that both have passed.
 7. Repeat for the other assignments that you want to run tests for.
 
-### Setting up the action mailer
+### Setting up action mailer
 
-**Note**: you only need to consult this section if you'll be working on sending/recieving emails from MarkUs. We will talk about configuring action mailer with a gmail account using the `:smtp` delivery method.
+If you plan on doing work that involves sending/recieving emails from MarkUs, you will need to configure action mailer. To get you started quickly, here we will talk specifically about configuring action mailer with a gmail account using the `:smtp` delivery method.
 
 1. Find the `config/settings/development.yml` file.
 2. Ensure action mailer is configured as follows:
