@@ -110,6 +110,8 @@ python:
 exception_notification:
   enabled: # boolean indicating whether to enable email notifactions when errors occur (See "Error Notification Emails" below for more details)
   sender: # email address string with which to email error notifications
+  sender_display_name: # sender display name for recipients to see
+  email_prefix: # string text to prefix to the error subject line that summarizes the error
   recipients: # list of string email addresses who will recieve error notification emails
 pandoc: # path to the pandoc executable
 ```
@@ -211,7 +213,7 @@ RAILS_RELATIVE_URL_ROOT=/csc108 bundle exec rails server
 
 ## Error Notification Emails
 
-If you wish to be informed when a user encounters a server error whilst using MarkUs, you can configure MarkUs to send you an email whenever such an error event happens along with its details. To do so, under the `exception_notification` settings, set the `enabled` setting to true. Be sure to then specify a `sender` email address and a list of `recipients` addresses.
+If you wish to be informed when a user encounters a server error whilst using MarkUs, you can configure MarkUs to send you an email whenever such an error event happens along with its details. To do so, under the `exception_notification` settings, set the `enabled` setting to true. Be sure to then specify a `sender` email address and a list of `recipients` addresses. You can also optionally set a `sender_display_name` and an `email_prefix`.
 
 Note that in order for this feature to work, you **must** have action mailer configured to send emails. This means that you must select an action mailer `delivery_method` with the appropriate settings and you must also set `perform_deliveries` to true. You will be unable to send or recieve error notification emails otherwise.
 
