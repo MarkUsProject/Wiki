@@ -96,6 +96,7 @@ logging:
 scanned_exams:
   enable: # boolean indicating whether to enable scanned exams
   path: # absolute path to a directory to store scanned exam files
+resque_scheduler: # configuration for scheduling background jobs (this section can be omitted entirely)
 autotest:
   student_test_buffer_minutes: # maximum number of minutes between student tests (see "Student Tests" below)
   client_dir: # absolute path to a directory to store local autotesting files
@@ -131,6 +132,25 @@ queue:
 ```
 
 Will run all background jobs using a queue named "default" except for `AutotestSpectsJob` which will use a queue named "specs_queue" and `SplitPdfJob` which will use a queue named "some_other_one".
+
+## Scheduled background jobs
+
+MarkUs uses the [resque-scheduler gem](https://github.com/resque/resque-scheduler) to schedule background jobs. The configuration is nested under the settings key `resque_scheduler`, and can be omitted entirely.
+
+We recommend scheduling the `CleanTmpJob` to regularly clean the MarkUs `tmp/` folder. Here is a sample configuration:
+
+```yaml
+resque_scheduler:
+  CleanTmpJob:
+    class: ActiveJob::QueueAdapters::ResqueAdapter::JobWrapper
+    queue: DEFAULT_QUEUE
+    every: 2d  # run every two days 
+    # never: "* * * * * *"  # replace every: with never: if you want to run the job manually
+    args:
+      job_class:  CleanTmpJob
+      arguments:
+        - 5184000  # 60 days, in seconds; see CleanTmpJob documentation for details
+```
 
 ## Student Tests
 
