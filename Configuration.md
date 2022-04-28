@@ -144,7 +144,7 @@ resque_scheduler:
   CleanTmpJob:
     class: ActiveJob::QueueAdapters::ResqueAdapter::JobWrapper
     queue: DEFAULT_QUEUE
-    every: 2d  # run every two days 
+    every: 2d  # run every two days
     # never: "* * * * * *"  # replace every: with never: if you want to run the job manually
     args:
       job_class:  CleanTmpJob
