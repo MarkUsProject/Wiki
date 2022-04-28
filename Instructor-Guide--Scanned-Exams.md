@@ -201,7 +201,7 @@ This is done by *collecting* the submissions:
 
 This will allow grading to begin, and for instructors to match each test paper with the corresponding student.
 
-*Note*: Unlike timed or normal assignments, collecting submissions for scanned exams ignores any assignment due dates. This means that when collecting scanned exams, by default the latest scanned exam submission that is submitted will always be collected even if it is submitted past the specified assignment due date. If you wish to override this behaviour, you can still [manually override the default collection process](Instructor-Guide--Assignments--Marking--Set-Up.md#overriding-the-default-collection-process).
+*Note*: Unlike timed or normal assignments, collecting submissions for scanned exams ignores any assignment due dates. This means that when collecting scanned exams, by default the latest scanned exam submission will always be collected even if it is submitted past the specified assignment due date. If you wish to override this behaviour, you can still [manually override the default collection process](Instructor-Guide--Assignments--Marking--Set-Up.md#overriding-the-default-collection-process).
 
 ## Grading the scanned assignments
 
@@ -213,7 +213,7 @@ After the scanned test papers have been collected, you can assign graders and [g
 
 Matching test papers to students is done manually by instructors, after submissions have been collected.
 
-1. Navigate to the "Assign Scans" section of the Exam Template page. This will take you to the first scanned exam without an associated student. Alternatively, you can navigate to the "Groups" tab for the assignment and clicking on the "Assign Scans" link beside the first group.
+1. Navigate to the "Assign Scans" section of the Exam Template page. This will take you to the first scanned exam without an associated student. Alternatively, you can also navigate to the "Groups" tab for the assignment and clicking on the "Assign Scans" link beside the first group.
 
     ![Scanned Exam Assign Scans Link](images/scanned-exam-assign-scans-link.png)
 
