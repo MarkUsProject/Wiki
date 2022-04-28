@@ -201,6 +201,8 @@ This is done by *collecting* the submissions:
 
 This will allow grading to begin, and for instructors to match each test paper with the corresponding student.
 
+*Note*: Unlike timed or normal assignments, collecting submissions for scanned exams ignores any assignment due dates. This means that when collecting scanned exams, by default the latest scanned exam submission that is submitted will always be collected even if it is submitted past the specified assignment due date. If you wish to override this behaviour, you can still [manually override the default collection process](Instructor-Guide--Assignments--Marking--Set-Up.md#overriding-the-default-collection-process).
+
 ## Grading the scanned assignments
 
 After the scanned test papers have been collected, you can assign graders and [grade submissions just like regular assignments](Instructor-Guide--Assignments--Marking--Grading-View.md).
