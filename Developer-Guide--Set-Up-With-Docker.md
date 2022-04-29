@@ -182,4 +182,4 @@ If the `rails db:autotest_run` fails, you can still run the tests manually in yo
 
 ## Setting up ActionMailer
 
-If you plan on doing work that involves sending/recieving emails from MarkUs, you will need to [configure ActionMailer](https://guides.rubyonrails.org/action_mailer_basics.html). To get you started quickly on setting up ActionMailer and understanding what it is used for in MarkUs, follow the instructions outlined in [Enabling ActionMailer In Development](Developer-Guide--Tips-And-Tricks--Enabling-ActionMailer-In-Development.md)
+If you plan on doing work that involves sending/recieving emails from MarkUs, you will need to [configure ActionMailer](https://guides.rubyonrails.org/action_mailer_basics.html). To get you started quickly on setting up ActionMailer and understanding what it is used for in MarkUs, follow the instructions outlined in [Enabling ActionMailer In Development](Developer-Guide--Tips-And-Tricks--Enabling-ActionMailer-In-Development.md).
