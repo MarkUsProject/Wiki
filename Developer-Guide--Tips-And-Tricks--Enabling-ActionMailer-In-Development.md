@@ -8,10 +8,10 @@ The ActionMailer is also used to send automatic notification emails notifying an
 
 When using the ActionMailer features of MarkUs, the MarkUs administrators configure an email server. For the sake of development, you can configure MarkUs to send emails from a service you already use (such as Gmail, Outlook, etc). Here, we will talk specifically about configuring ActionMailer with a gmail account using the `:smtp` delivery method.
 
-1. Create a file in the `config` folder with the name `settings.local.yml`. This file allows you to configure Rails and/or MarkUs settings for your own local development. 
+1. Create a file in the `config` folder with the name `settings.local.yml`. This file allows you to configure Rails and/or MarkUs settings for your own local development.
 
     **Note**: This new file will not be tracked by git. Any MarkUs settings you configure in this file will not be committed.
-    
+
 2. Ensure your `config/settings.local.yml` file contains the following settings:
 
     ```yaml
