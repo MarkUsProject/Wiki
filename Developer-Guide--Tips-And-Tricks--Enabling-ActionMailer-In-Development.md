@@ -8,9 +8,9 @@ The ActionMailer is also used to send automatic notification emails notifying an
 
 When using the ActionMailer features of MarkUs, the MarkUs administrators configure an email server. For the sake of development, you can configure MarkUs to send emails from a service you already use (such as Gmail, Outlook, etc). Here, we will talk specifically about configuring ActionMailer with a gmail account using the `:smtp` delivery method.
 
-1. Create a file in the `config` folder with the name `settings.local.yml`. This file allows you to configure Rails and/or MarkUs settings for your own local development.
+1. Create a file in the `config` folder with the name `settings.local.yml`. This file allows you to configure Rails and/or MarkUs settings specifically for local development on your machine.
 
-    **Note**: This new file will not be tracked by git. Any MarkUs settings you configure in this file will not be committed.
+    **Note**: This new file will not be tracked by git. Any settings you configure in this file will not (and should not) be committed.
 
 2. Ensure your `config/settings.local.yml` file contains the following settings:
 
@@ -32,7 +32,7 @@ When using the ActionMailer features of MarkUs, the MarkUs administrators config
               enable_starttls_auto: true
     ```
 
-3. Generate an app password for MarkUs. See [this](https://support.google.com/accounts/answer/185833?hl=en) page for instructions on how to do this.
+3. Generate an app password for MarkUs. See the appropriate [Google Support](https://support.google.com/accounts/answer/185833?hl=en) page for instructions on how to do this.
 4. Copy and paste the app password into the `password` field under `smtp_settings`.
 5. Start the MarkUs server: `docker compose up rails`.
 
