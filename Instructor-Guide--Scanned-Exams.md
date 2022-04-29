@@ -194,15 +194,14 @@ After your test is complete, you should scan all test papers (saving the scans a
 When you are done uploading all scanned files and fixing all QR code parsing errors, you are ready to finalize the scanned files for grading.
 This is done by *collecting* the submissions:
 
-1. First, return to the assignment's "Settings" page and set the due date to the current time (*after* you are sure you've scanned all test papers and fixed all parsing errors).
-
-    **Note**: this new due date might be significantly later than when students wrote the test.
-
-2. Go to the "Submissions" tab and select all rows, and press "Collect Submissions".
+1. Go to the "Submissions" tab and select all rows.
+2. Press the "Collect Submissions" button (do this only *after* you are sure you've scanned all test papers and fixed all parsing errors).
 
     ![Scanned Exam Collect All](images/scanned-exam-collect-all.png)
 
 This will allow grading to begin, and for instructors to match each test paper with the corresponding student.
+
+*Note*: Unlike timed or normal assignments, collecting submissions for scanned exams ignores due dates. This means that when collecting submissions for scanned exams, by default the latest submission will always be collected even if it is submitted past the due date for the scanned exam. If you wish to override this behaviour, you can still [manually override the default collection process](Instructor-Guide--Assignments--Marking--Set-Up.md#overriding-the-default-collection-process).
 
 ## Grading the scanned assignments
 
@@ -214,15 +213,14 @@ After the scanned test papers have been collected, you can assign graders and [g
 
 Matching test papers to students is done manually by instructors, after submissions have been collected.
 
-1. Navigate to the "Groups" tab for the assignment.
-2. Every group has no members, but an "Assign Scans" link beside it. Click on the "Assign Scans" link beside the first group.
+1. Navigate to the "Assign Scans" section of the Exam Template page. This will take you to the first scanned exam without an associated student. Alternatively, you can also navigate to the "Groups" tab for the assignment and clicking on the "Assign Scans" link beside the first group.
 
     ![Scanned Exam Assign Scans Link](images/scanned-exam-assign-scans-link.png)
 
-3. You'll be taken to a new page that displays the first page for the group. Type in the student's identifying information and press "Save" to match the paper to the student.
+2. You'll be taken to a new page that displays the first page for the group. Type in the student's identifying information and press "Save" to match the paper to the student.
 
     ![Scanned Exam Assign Scans](images/scanned-exam-assign-scans-page.png)
 
     - *Tip*: MarkUs supports search by student name, user name, or student number.
     - *Tip*: If the student does not appear in the autofill, you can also enter the student's full name into this field before saving. Note that this must be their first and last names as listed in the students table.
-4. You'll be automatically taken to the next unmatched group. Repeat this process until all groups are matched.
+3. You'll be automatically taken to the next unmatched group. Repeat this process until all groups are matched.
