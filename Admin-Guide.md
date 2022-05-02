@@ -21,11 +21,11 @@ If you navigate away from the Administration Page and wish to return, click on t
 
 ## Monitoring Dashboards
 
-From the MarkUs Administration home page, you can view a list of dashboards. These dashboards are provided using third party ruby gems that allow for quick and easy monitoring of what is happening in MarkUs. 
+From the MarkUs Administration home page, you can view a list of dashboards. These dashboards are provided using third party ruby gems that allow for quick and easy monitoring of what is happening in MarkUs.
 
 ### Resque
 
-Clicking on the `Resque dashboard` link will take you to the dashboard provided by resque. 
+Clicking on the `Resque dashboard` link will take you to the dashboard provided by resque.
 
 ![Resque Link](images/resque-link.png)
 
@@ -33,7 +33,7 @@ The Resque dashboard allows you to easily monitor monitor queues, jobs, and work
 
 ### Rails Performance
 
-If you enabled the Rails Performance setting, you will have access to the `Rails Performance dashboard`. 
+If you enabled the Rails Performance setting, you will have access to the `Rails Performance dashboard`.
 
 ![Rails Performance Link](images/rails-performance-link.png)
 
