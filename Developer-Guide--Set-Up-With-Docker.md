@@ -179,3 +179,7 @@ If the `rails db:autotest_run` fails, you can still run the tests manually in yo
 5. Go to the Test Results tab and click on "Run Tests".
 6. Wait a minute, and then refresh the page. Go back to the Test Results tab. You should see that two tests have been run, and that both have passed.
 7. Repeat for the other assignments that you want to run tests for.
+
+## Setting up ActionMailer
+
+If you plan on doing work that involves sending/recieving emails from MarkUs, you will need to [configure ActionMailer](https://guides.rubyonrails.org/action_mailer_basics.html). To get you started quickly on setting up ActionMailer and understanding what it is used for in MarkUs, follow the instructions outlined in [Enabling ActionMailer In Development](Developer-Guide--Tips-And-Tricks--Enabling-ActionMailer-In-Development.md).

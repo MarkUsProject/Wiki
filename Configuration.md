@@ -108,6 +108,12 @@ starter_file:
   storage: # absolute path to a directory to store starter files
 python:
    bin: # location of the bin subdirectory of the python3 virtual environment where python dependencies are installed
+exception_notification:
+  enabled: # boolean indicating whether to enable email notifactions when errors occur (See "Error Notification Emails" below for more details)
+  sender: # email address string with which to email error notifications
+  sender_display_name: # sender display name for recipients to see
+  email_prefix: # string text to prefix to the error subject line that summarizes the error
+  recipients: # list of string email addresses who will recieve error notification emails
 pandoc: # path to the pandoc executable
 ```
 
@@ -224,3 +230,11 @@ One setting option can only be changed by an environment variable. To set the re
 ```sh
 RAILS_RELATIVE_URL_ROOT=/csc108 bundle exec rails server
 ```
+
+## Error Notification Emails
+
+If you wish to be informed when a user encounters a server error whilst using MarkUs, you can configure MarkUs to send you an email whenever such an error event happens along with its details. To do so, under the `exception_notification` settings, set the `enabled` setting to true. Be sure to then specify a `sender` email address and a list of `recipients` addresses. You can also optionally set a `sender_display_name` and an `email_prefix`.
+
+Note that in order for this feature to work, you **must** have ActionMailer [configured](https://guides.rubyonrails.org/action_mailer_basics.html) to send emails. This means that you must select an ActionMailer `delivery_method` with the appropriate settings and you must also set `perform_deliveries` to true. You will be unable to send or recieve error notification emails otherwise.
+
+This feature informs you of all uncaught exceptions that occur in the MarkUs backend. In order to possibly avoid filling recipient inboxes with a lot of the same error notifications, email notifications are sent after every `2**n` occurences of the same error. For more details, visit the [exception notification](https://github.com/smartinez87/exception_notification) gem homepage with which we use to provide you this feature.
