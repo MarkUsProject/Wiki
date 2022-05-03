@@ -108,6 +108,9 @@ starter_file:
   storage: # absolute path to a directory to store starter files
 python:
    bin: # location of the bin subdirectory of the python3 virtual environment where python dependencies are installed
+rails_performance:
+  enabled: # boolean whether to enable the rails performance dashboard
+  duration: # how far back the rails performance dashboard should monitor in minutes
 exception_notification:
   enabled: # boolean indicating whether to enable email notifactions when errors occur (See "Error Notification Emails" below for more details)
   sender: # email address string with which to email error notifications
