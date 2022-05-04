@@ -25,19 +25,19 @@ From the MarkUs Administration home page, you can view a list of dashboards. The
 
 ### Resque
 
-Clicking on the `Resque dashboard` link will take you to the dashboard provided by resque.
+The Resque dashboard allows you to easily monitor monitor queues, jobs, and workers for MarkUs' background jobs. To access this dashboard click on the `Resque dashboard` link.
 
 ![Resque Link](images/resque-link.png)
 
-The Resque dashboard allows you to easily monitor monitor queues, jobs, and workers for MarkUs' background jobs. This tool allows you to monitor the status of each worker as well as gice you detailed information about any failed jobs. For more information, please see the Resque [homepage](https://github.com/resque/resque#the-front-end).
+This tool allows you to monitor the status of each worker, give you detailed information about any delayed/failed jobs, monitor queues, and view configurations for Resque. For more information, please see the Resque [homepage](https://github.com/resque/resque#the-front-end).
 
 ### Rails Performance
 
-The Rails Performance dashboard allows you to monitor and visualize information regarding request traffic and MarkUs' response times. To enable this dashboard, in the MarkUs settings yaml file ensure you set the `enabled` setting under `rails_performance` to true. Once the MarkUs server is started and you log in to the MarkUs Administration home page, you will see a link to the Rails Performance dashboard.
+The Rails Performance dashboard allows you to monitor and visualize information regarding request traffic and MarkUs' response times. To enable this dashboard, in the MarkUs [settings yaml file](Configuration.md#markus-settings) ensure you set the `enabled` setting under `rails_performance` to true. Once you have confirmed the MarkUs server was started with this setting enabled, log in to the MarkUs Administration home page. You will see a link to the `Rails Performance dashboard`.
 
 ![Rails Performance Link](images/rails-performance-link.png)
 
-This tool allows you to visulaize information such as how many requests per minute MarkUs recieves, as well as answer questions such as which route takes the longest to load? This dashboard is currently supported through the `rails_performance` gem. For more information about what you can access see the Rails Performance [homepage](https://github.com/igorkasyanchuk/rails_performance).
+This tool allows you to monitor and visualize information surrounding each request that is made to MarkUs. You can view the time it took for MarkUs to respond to each request, how many requests per minute MarkUs recieves, any 500 errors that occurred and the most common requests MarkUs recieves. This dashboard is currently supported through the `rails_performance` gem. For more information about what you can access see the Rails Performance [homepage](https://github.com/igorkasyanchuk/rails_performance).
 
 ## Managing Courses
 
