@@ -188,10 +188,14 @@ If you plan on doing work that involves sending/recieving emails from MarkUs, yo
 
 **Note: This is an archive of problems related to Docker that are encountered by students, and their solutions.**
 
-### Q: I'm writing frontend code. The files I've changed should according to the Webpack config files trigger Webpack rebuild, but that's not happening. I've verified that
+### Q
+
+I'm writing frontend code. The files I've changed should according to the Webpack config files trigger Webpack rebuild, but that's not happening. I've verified that
 
 1. My changes are valid and should be displayed from the URL I'm accessing.
 2. There are no errors in the Webpacker container's logs.
 3. If I run `yarn build-dev` in the Webpacker container's console directly, it succeeds and I'm able to see my changes afterwards.
 
-### A: *This solution is experimental and could lead to problems such as higher CPU usage.* This is likely due to Webpack's `watch` option not working properly. According to the official Webpack [docs](https://webpack.js.org/configuration/watch/#watchoptionspoll), one suggestion when `watch` is not working in environments such as Docker, is to add `poll: true` to `watchOptions` inside the Webpack config file, which in our case, is `webpack.development.js`. This should help resolve the problem
+### A
+
+*This solution is experimental and could lead to problems such as higher CPU usage.* This is likely due to Webpack's `watch` option not working properly. According to the official Webpack [docs](https://webpack.js.org/configuration/watch/#watchoptionspoll), one suggestion when `watch` is not working in environments such as Docker, is to add `poll: true` to `watchOptions` inside the Webpack config file, which in our case, is `webpack.development.js`. This should help resolve the problem
