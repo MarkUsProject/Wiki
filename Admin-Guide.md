@@ -31,7 +31,7 @@ The Resque dashboard allows you to easily monitor monitor queues, jobs, and work
 
 ![Resque Dashboard](images/markus-admin-resque-dashboard.png)
 
-This Resque dashboard tool allows you to monitor the status of each worker, display information about any delayed/failed jobs, monitor queues and view configurations for Resque. For more information, please see the Resque [homepage](https://github.com/resque/resque#the-front-end).
+This tool allows you to monitor the status of each worker, display information about any delayed/failed jobs, monitor queues and view configurations for Resque. This dashboard is included from the Resque gem. For more information about this tool, please see the Resque [homepage](https://github.com/resque/resque#the-front-end).
 
 ### Rails Performance
 
