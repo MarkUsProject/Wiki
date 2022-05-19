@@ -665,11 +665,11 @@ NOTE: This will also send the updated specs to the server running the autotester
     "members": [
       {
         "membership_status": "inviter",
-        "user_id": 9
+        "role_id": 9
       },
       {
         "membership_status": "accepted",
-        "user_id": 24
+        "role_id": 24
       }
     ]
   }
@@ -756,11 +756,11 @@ NOTE: This will also send the updated specs to the server running the autotester
   "members": [
     {
       "membership_status": "inviter",
-      "user_id": 9
+      "role_id": 9
     },
     {
       "membership_status": "accepted",
-      "user_id": 24
+      "role_id": 24
     }
   ]
 }
