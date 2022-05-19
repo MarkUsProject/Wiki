@@ -2,9 +2,10 @@
 
 ## Summary Statistics
 
-If you wish to view a detailed summary of statistics about a particular assignment, when you click on an assignment's "summary" page, you will see a page that briefly outlines certain statistics about an assignment. 
+If you wish to view a detailed summary of statistics about a particular assignment, when you click on an assignment's "summary" page, you will see a page that briefly outlines certain statistics about an assignment.
 
 Statistics that are currently shown are:
+
 - The assignment average
 - The assignment median
 - The number of fails (and a percentage of fails among all submissions)
