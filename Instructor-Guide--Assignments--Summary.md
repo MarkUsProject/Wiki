@@ -46,3 +46,9 @@ This will take you to a page that shows an individual graph showing the distribu
 ![Assignment Grader Distribution](images/summary-stats-grader-distribution-breakdown.png)
 
 ### Summary Table
+
+Clicking on the "Summary Table" tab in the top left corner of the summary page will allow you to view a table that summarizes the grade breakdown for each student. Each row in the table corresponds to a particular submission group. For each row you can view the name of the submission group, its marking state, any tags the submission may have, a total mark for the submission, and finally a mark breakdown of the submission from associated criteria.
+
+![Assignment Summary Table](images/summary-table.png)
+
+If you wish to download this table, you can select the "Download" button in the top right. Alternatively, if you ran tests on submissions and wish to download the results of those tests, you click the "Download Test Results" button also found in the top right.
