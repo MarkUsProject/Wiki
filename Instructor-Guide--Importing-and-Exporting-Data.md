@@ -198,11 +198,11 @@ Only CSV files are supported.
 The CSV file consists of two *header rows* at the top of the file:
 
 - The first row contains the User Name, Last Name, First Name, Section, ID Number and Email (in this order). If the Show Total property is checked, the last column will also contain Total.
-- The second row contains a dummy entry (it is ignored by MarkUs), followed by the "Out of" total for each column.
+- The second row contains six dummy entries (it is ignored by MarkUs), followed by the "Out of" total for each column.
 
 Every subsequent row is a student record:
 
-- The first six entries in the row is  User Name, Last Name, First Name, Section, ID Number and Email of the student.
+- The first six entries in the row is the User Name, Last Name, First Name, Section, ID Number and Email of the student. If any of these fields are not provided, they are left blank.
 - Every subsequent entry is the grade of the student for that column. This entry can be left blank if no grade is given. The last entry is the total grade of the student and is shown only if the Show Total property is checked.
 
 *Every row in the CSV file should have the same number of entries*.
@@ -210,8 +210,8 @@ Every subsequent row is a student record:
 ### Example file
 
 ```csv
-User name, Last name, First name, Section, Id number, Email ,Q1,Q2,Q3
-, , , , Out of ,4,5,2, 12
+User name,Last name,First name,Section,Id number,Email,Q1,Q2,Q3,Total
+, , , , , ,Out of,4,5,2,12
 c5anthei,George,Antheil,LEC0101,353472201,antheil.george@example.com,3,5,2,10
 c5berkel,Lennox,Berkeley,LEC0201,815161511,berkeley.lennox@example.com,2,1,2,5
 ```
@@ -410,7 +410,8 @@ student_user_1,grader_user_1,grader_user_2
 Instructors are able to upload/download a group of files that contain all the settings and files required to configure
 an assignment (that is, it's properties, tags, criteria, annotations, starter files and automated tests).
 
-This upload/download **DOES NOT** copy assignment settings related to students or graders (i.e. section specific settings, group
+This upload/download **DOES NOT** copy assignment settings related to students or graders (i.e. 
+specific settings, group
 information, etc.). Hence, after copying an assignment over, it is recommended that users check the assignment's settings
 to make sure it is configured as they desire.
 
