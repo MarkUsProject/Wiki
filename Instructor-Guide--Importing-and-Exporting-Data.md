@@ -98,6 +98,32 @@ The remaining fields are optional.
 
 > :spiral_notepad: **Note:** If the uploaded file contains a short identifier that is already used, the existing assignment is updated with the corresponding uploaded settings.
 
+### Assignment Grades
+Instructors may download a summary of the grades for each assignment in CSV format.
+
+The CSV file consists of two *header rows* at the top of the file:
+
+- The first row contains the Group, User Name, Last Name, First Name, Section, ID Number, Email, Final Grade, and each criterion. The last entry is Bonus/Deductions.
+- The second row contains of 4 dummy entries (it is ignored by MarkUs), followed by the "Out of" total for each column.
+
+Every subsequent row is a student record:
+
+- The first six entries in the row is the Gruop, User Name, Last Name, First Name, Section, ID Number and Email of the student. If any of these fields are not provided, they are left blank.
+- Every subsequent entry is the grade of the student for that column. This entry can be left blank if no grade is given.
+- The students are ordered by their group. This means all students of the same gruop will appear consecutively.
+
+*Every row in the CSV file should have the same number of entries*.
+
+### Example file
+
+```csv
+Gruop,User name,Last name,First name,Section,Id number,Email,Final grade,dolores,iusto,Bonus/Deductions
+, , , ,Out of,10,6,4
+group_001,c5anthei,George,Antheil,LEC0101,353472201,antheil.george@example.com,5,2,3
+group_001,c5berkel,Lennox,Berkeley,LEC0201,815161511,berkeley.lennox@example.com,5,2,3
+group_002,c5berkel,Alexander,Glazunov,LEC0201,148704361,glazunov.alexander@example.com,9,5,4
+```
+
 ## Criteria
 
 Instructors can upload all marking criteria as a YML file.
