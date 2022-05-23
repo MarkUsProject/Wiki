@@ -204,6 +204,7 @@ Every subsequent row is a student record:
 
 - The first six entries in the row is the User Name, Last Name, First Name, Section, ID Number and Email of the student. If any of these fields are not provided, they are left blank.
 - Every subsequent entry is the grade of the student for that column. This entry can be left blank if no grade is given. The last entry is the total grade of the student and is shown only if the Show Total property is checked.
+- The students are ordered by their user name.
 
 *Every row in the CSV file should have the same number of entries*.
 
