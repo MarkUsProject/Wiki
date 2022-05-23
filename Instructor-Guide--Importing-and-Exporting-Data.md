@@ -99,6 +99,7 @@ The remaining fields are optional.
 > :spiral_notepad: **Note:** If the uploaded file contains a short identifier that is already used, the existing assignment is updated with the corresponding uploaded settings.
 
 ### Assignment Grades
+
 Instructors may download a summary of the grades for each assignment in CSV format.
 
 The CSV file consists of two *header rows* at the top of the file:
@@ -437,7 +438,7 @@ student_user_1,grader_user_1,grader_user_2
 Instructors are able to upload/download a group of files that contain all the settings and files required to configure
 an assignment (that is, it's properties, tags, criteria, annotations, starter files and automated tests).
 
-This upload/download **DOES NOT** copy assignment settings related to students or graders (i.e. 
+This upload/download **DOES NOT** copy assignment settings related to students or graders (i.e.
 specific settings, group
 information, etc.). Hence, after copying an assignment over, it is recommended that users check the assignment's settings
 to make sure it is configured as they desire.
