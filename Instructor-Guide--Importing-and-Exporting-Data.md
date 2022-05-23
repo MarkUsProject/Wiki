@@ -197,23 +197,23 @@ Only CSV files are supported.
 
 The CSV file consists of two *header rows* at the top of the file:
 
-- The first row contains a dummy entry (it is ignored by MarkUs), followed by column names.
+- The first row contains the User Name, Last Name, First Name, Section, ID Number and Email (in this order). If the Show Total property is checked, the last column will also contain Total.
 - The second row contains a dummy entry (it is ignored by MarkUs), followed by the "Out of" total for each column.
 
 Every subsequent row is a student record:
 
-- The first entry in the row is the user name of the student.
-- Every subsequent entry is the grade of the student for that column. This entry can be left blank if no grade is given.
+- The first six entries in the row is  User Name, Last Name, First Name, Section, ID Number and Email of the student.
+- Every subsequent entry is the grade of the student for that column. This entry can be left blank if no grade is given. The last entry is the total grade of the student and is shown only if the Show Total property is checked.
 
 *Every row in the CSV file should have the same number of entries*.
 
 ### Example file
 
 ```csv
-,Q1,Q2,Q3
-,4,5,2
-c5anthei,3,5,2
-c5granad,4,,
+User name, Last name, First name, Section, Id number, Email ,Q1,Q2,Q3
+, , , , Out of ,4,5,2, 12
+c5anthei,George,Antheil,LEC0101,353472201,antheil.george@example.com,3,5,2,10
+c5berkel,Lennox,Berkeley,LEC0201,815161511,berkeley.lennox@example.com,2,1,2,5
 ```
 
 ### Handling existing data
