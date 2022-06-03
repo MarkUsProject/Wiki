@@ -285,9 +285,9 @@ Both CSV and YML files are supported for downloading a student list. Only CSV is
 
 The following fields are listed with the key names in the YML file, and in the order they must appear in the CSV file.
 
-- `username`: the user name student
-- `last_name`: the last name student
-- `first_name`: the first name student
+- `username`: the user name of the student
+- `last_name`: the last name of the student
+- `first_name`: the first name of the student
 - `section_name`: the name of the (MarkUs) section the student belongs to
 - `id_number`: the id number of the student
 - `email`: the email address of the student
