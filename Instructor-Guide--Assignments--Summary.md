@@ -32,10 +32,10 @@ To the right of the grade distribution chart is a set of statistics that give a 
 
 - **Average:** The average grade of submissions for the given assignment (including submissions which recieved a zero)
 - **Median:** The median grade of submissions for the given assignment (including submissions which recieved a zero)
-- **Number of Fails:** How many submissions recieved a failing grade (i.e. recieved a grade under 50%)
-- **Number of Zeros:** How many submissions recieved a grade of zero
 - **Number of Submissions Collected:** The number of submissions that have been collected for marking
 - **Number of Submissions Graded:** The number of submissions that have been collected and have recieved a mark
+- **Number of Fails:** How many graded submissions recieved a failing grade (i.e. recieved a grade under 50%)
+- **Number of Zeros:** How many graded submissions recieved a grade of zero
 
 Finally, at the bottom of the view, below the grade distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution graph from the one above however, is that each bar from the graph above is broken up in order to also show the distribution of marks given by each grader.
 
