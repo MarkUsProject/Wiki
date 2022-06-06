@@ -20,9 +20,9 @@ If you wish to download this table for offline use in a CSV format, select the "
 
 ### Summary Statistics
 
-Clicking on the "Summary Statistics" tab in the top left corner of the summary page will take you to the summary statistics page. This page allows you to easily visualize and view key statistics that summarize overall student performance on the given assignment. This is an enlarged view of the summary statistics you can find on the dashboard.
+Clicking on the "Summary Statistics" tab in the top left corner of the summary page will take you to the summary statistics view. This view allows you to easily visualize and look at key statistics that summarizes overall student performance on the given assignment. This is an enlarged view of the summary statistics you can find on the dashboard.
 
-Starting in the top left section of the page, you can see a chart that displays the distribution of grades for the given assignment.
+Starting from the top left section, you can see a chart that displays the distribution of grades for the given assignment.
 
 ![Assignment Grade Distribution Graph](images/summary-stats-grade-distribution.png)
 
@@ -37,7 +37,7 @@ To the right of the grade distribution chart is a set of statistics that briefly
 - **Number of Submissions Collected:** The number of submissions that have been collected for marking
 - **Number of Submissions Graded:** The number of submissions that have been collected and have recieved a mark
 
-Finally, at the bottom of the page, below the grade distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution graph from the one above however, is that each bar from the graph above is broken up in order to also show the distribution of marks given by each grader.
+Finally, at the bottom of the view, below the grade distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution graph from the one above however, is that each bar from the graph above is broken up in order to also show the distribution of marks given by each grader.
 
 ![Assignment Grader Distribution Graph](images/summary-stats-grader-distribution.png)
 
