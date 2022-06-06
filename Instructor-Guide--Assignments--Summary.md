@@ -41,12 +41,12 @@ Finally, at the bottom of the view, below the grade distribution chart, you can 
 
 ![Assignment Grader Distribution Graph](images/summary-stats-grader-distribution.png)
 
-Each grader corresponds to a colour shown in the labels just above the graph. The labels also show how many submissions each grader has completed marking out of the number they are assigned.
+Each grader corresponds to a colour shown in the labels just above the graph. Each label also shows how many submissions each grader has completed marking out of the number they were assigned.
 
 To view a more discrete breakdown of each grader shown in the grader distribution graph, click on the "Graders" link in the bottom left corner of the grader distribution graph.
 
 ![Assignment Grader Distribution Link](images/summary-stats-grader-distribution-breakdown-link.png)
 
-This will take you to a page that shows an individual graph showing the distribution of marks for each grader.
+This will take you to a page that shows several individual graphs showing the distribution of marks for each grader.
 
 ![Assignment Grader Distribution Breakdown](images/summary-stats-grader-distribution-breakdown.png)
