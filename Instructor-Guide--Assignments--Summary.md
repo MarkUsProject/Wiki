@@ -22,7 +22,7 @@ If you wish to download this table for offline use in a CSV format, select the "
 
 Clicking on the "Summary Statistics" tab in the top left corner of the summary page will take you to the summary statistics view. This view allows you to easily visualize and look at key statistics that summarizes overall student performance on the given assignment. This is an enlarged view of the summary statistics you can find on the dashboard.
 
-Starting from the top left section, you can see a chart that displays the distribution of grades for the given assignment.
+In the top left section, you can see a chart that displays the distribution of grades for the given assignment.
 
 ![Assignment Grade Distribution Graph](images/summary-stats-grade-distribution.png)
 
