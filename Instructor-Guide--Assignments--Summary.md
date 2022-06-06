@@ -47,6 +47,6 @@ To view a more discrete breakdown of each grader shown in the grader distributio
 
 ![Assignment Grader Distribution Link](images/summary-stats-grader-distribution-breakdown-link.png)
 
-This will take you to a page that shows several individual graphs showing the distribution of marks for each grader.
+This will take you to a page that shows several individual graphs showing the distribution of marks given by each grader.
 
 ![Assignment Grader Distribution Breakdown](images/summary-stats-grader-distribution-breakdown.png)
