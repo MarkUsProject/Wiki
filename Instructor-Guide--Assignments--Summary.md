@@ -12,21 +12,21 @@ The summary tab can be used to view/visualize a variety of general statistics fo
 
 ### Summary Table
 
-As soon as you visit the summary tab, you will first see a page containing a table that summarizes the grade breakdown for each student. Each row in the table corresponds to a particular submission group. For each row you can view the name of the submission group, its marking state, any tags the submission may have, a total mark for the submission, and finally a mark breakdown of the submission from associated criteria.
+After visiting the summary tab, you will first see the summary table. This table gives a summarized grade breakdown for each student/submission. Each row in the table corresponds to a particular submission group. For each row you can view the name of the submission group, its marking state, any tags the submission may have, a total mark for the submission, and finally a mark breakdown of the submission from associated criteria.
 
 ![Assignment Summary Table](images/summary-table.png)
 
-If you wish to download this table, you can select the "Download" button in the top right. Alternatively, if you ran tests on submissions and wish to download the results of those tests, you click the "Download Test Results" button also found in the top right.
+If you wish to download a CSV format of this table, select the "Download" button in the top right. Alternatively, if you ran tests on submissions and wish to download the results of those tests, you can click the "Download Test Results" button also found in the top right.
 
 ### Summary Statistics
 
-Clicking on the "Summary Statistics" tab in the top left corner of the summary page will allow you to view key statistics which summarize overall student performance for a particular assignment. This is an enlarged view of the summary statistics you can find on the dashboard.
+Clicking on the "Summary Statistics" tab in the top left corner of the summary page will allow you to easily visualize and view key statistics that inform you of overall student performance on the given assignment. This is an enlarged view of the summary statistics you can find on the dashboard.
 
-In the top left of the page, you can see a chart that displays the distribution of grades for the given assignment.
+Starting in the top left section of the page, you can see a chart that displays the distribution of grades for the given assignment.
 
 ![Assignment Grade Distribution Graph](images/summary-stats-grade-distribution.png)
 
-To the right of the grade distribution chart is a set of statistics that summarizes overall student performance on an assignment. Statistics that are currently shown are:
+To the right of the grade distribution chart is a set of statistics data that summarizes overall student performance on an assignment. Statistics that are currently shown are:
 
 ![Assignment Summary Overview](images/summary-stats-overview.png)
 
@@ -37,7 +37,7 @@ To the right of the grade distribution chart is a set of statistics that summari
 - **Number of Submissions Collected:** The number of submissions that have been collected for marking
 - **Number of Submissions Graded:** The number of submissions that have been collected and have recieved a mark
 
-At the bottom of the page, below the grade distribution chart, you can still see a distribution of grades for an assignment however, each bar from the assignment graph above is further broken up to show the distribution of marks given by each grader.
+Finally, at the bottom of the page, below the grade distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution graph from the one above however, is that each bar from the grade distribution graph above is broken up to show the distribution of marks given by each grader.
 
 ![Assignment Grader Distribution Graph](images/summary-stats-grader-distribution.png)
 
