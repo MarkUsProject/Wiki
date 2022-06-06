@@ -16,28 +16,28 @@ After visiting the summary tab, you will first see the summary table. This table
 
 ![Assignment Summary Table](images/summary-table.png)
 
-If you wish to download a CSV format of this table, select the "Download" button in the top right. Alternatively, if you ran tests on submissions and wish to download the results of those tests, you can click the "Download Test Results" button also found in the top right.
+If you wish to download this table for offline use in a CSV format, select the "Download" button in the top right. Alternatively, if you ran tests on submissions and wish to download the results of those tests, you can click the "Download Test Results" button also found in the top right.
 
 ### Summary Statistics
 
-Clicking on the "Summary Statistics" tab in the top left corner of the summary page will allow you to easily visualize and view key statistics that inform you of overall student performance on the given assignment. This is an enlarged view of the summary statistics you can find on the dashboard.
+Clicking on the "Summary Statistics" tab in the top left corner of the summary page will take you to the summary statistics page. This page allows you to easily visualize and view key statistics that summarize overall student performance on the given assignment. This is an enlarged view of the summary statistics you can find on the dashboard.
 
 Starting in the top left section of the page, you can see a chart that displays the distribution of grades for the given assignment.
 
 ![Assignment Grade Distribution Graph](images/summary-stats-grade-distribution.png)
 
-To the right of the grade distribution chart is a set of statistics data that summarizes overall student performance on an assignment. Statistics that are currently shown are:
+To the right of the grade distribution chart is a set of statistics that briefly summarizes overall student performance on the given assignment. Statistics that are currently shown are:
 
 ![Assignment Summary Overview](images/summary-stats-overview.png)
 
-- **Average:** The average grade of submissions for an assignment (including submissions which recieved a zero)
-- **Median:** The median grade of submissions for an assignment (including submissions which recieved a zero)
+- **Average:** The average grade of submissions for the given assignment (including submissions which recieved a zero)
+- **Median:** The median grade of submissions for the given assignment (including submissions which recieved a zero)
 - **Number of Fails:** How many submissions recieved a failing grade (i.e. recieved a grade under 50%)
 - **Number of Zeros:** How many submissions recieved a grade of zero
 - **Number of Submissions Collected:** The number of submissions that have been collected for marking
 - **Number of Submissions Graded:** The number of submissions that have been collected and have recieved a mark
 
-Finally, at the bottom of the page, below the grade distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution graph from the one above however, is that each bar from the grade distribution graph above is broken up to show the distribution of marks given by each grader.
+Finally, at the bottom of the page, below the grade distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution graph from the one above however, is that each bar from the graph above is broken up in order to also show the distribution of marks given by each grader.
 
 ![Assignment Grader Distribution Graph](images/summary-stats-grader-distribution.png)
 
