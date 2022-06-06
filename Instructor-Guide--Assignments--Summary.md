@@ -26,7 +26,7 @@ Starting from the top left section, you can see a chart that displays the distri
 
 ![Assignment Grade Distribution Graph](images/summary-stats-grade-distribution.png)
 
-To the right of the grade distribution chart is a set of statistics that briefly summarizes overall student performance on the given assignment. Statistics that are currently shown are:
+To the right of the grade distribution chart is a set of statistics that give a brief overview of student performance on the given assignment. Statistics that are currently shown are:
 
 ![Assignment Summary Overview](images/summary-stats-overview.png)
 
