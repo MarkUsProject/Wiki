@@ -438,9 +438,6 @@ In addition, the zip file has three folders that contain:
     - An automated test specs json file.
     - A folder containing every uploaded test file.
         - This is an optional folder. If it does not exist, that means there are no test files.
-- Settings for an assignment's peer review assignment (`peer-review-config-files`)
-    - This is an optional folder. If it exists, a peer review assignment will try to be created.
-    - This folder is formatted exactly the same as a normal assignment just without an automated tests folder and another peer review folder.
 
 > **Important:**
 > While the contents of the yml files and folders can be extracted and modified for offline configuration, this is NOT
