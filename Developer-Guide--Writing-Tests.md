@@ -294,7 +294,7 @@ describe Action do
 end
 ```
 
-Notice that the template is similar to controller specifications. `some type of user` and `some other type of user` still generally describe context blocks that correspond to someone who has authorization to perform certain actions. The difference however, is that system tests are used to describe actions that can be performed via the UI. 
+Notice that the template is similar to controller specifications. `some type of user` and `some other type of user` still generally describe context blocks that correspond to someone who has authorization to perform certain actions. The difference however, is that system tests are used to describe actions that can be performed via the UI.
 
 ### Running System Tests
 
@@ -304,9 +304,9 @@ System tests require extra setup steps in order for you to run them locally. As 
 
 2. Download chromedriver
 
-3. Start a bash shell within the Docker Rails environment. Ensure to expose port 3434 by running `docker-compose run -p 3434:3434 --rm rails bash`. Currently, port 3434 is the port with which Capybara will use to serve the test MarkUs instance. 
+3. Start a bash shell within the Docker Rails environment. Ensure to expose port 3434 by running `docker-compose run -p 3434:3434 --rm rails bash`. Currently, port 3434 is the port with which Capybara will use to serve the test MarkUs instance.
 
-4. Run system tests by running `RAILS_RELATIVE_URL_ROOT=/ ENABLE_UI_TESTING=true rspec spec/system/` in the bash shell you created in step 3. Currently, Capybara does not support applications with a different relative url root which is why you must set `RAILS_RELATIVE_URL_ROOT=/`. The environment variable setting `ENABLE_UI_TESTING=true` is used to indicate that you have performed all the necessary setup steps and wish to run system tests. 
+4. Run system tests by running `RAILS_RELATIVE_URL_ROOT=/ ENABLE_UI_TESTING=true rspec spec/system/` in the bash shell you created in step 3. Currently, Capybara does not support applications with a different relative url root which is why you must set `RAILS_RELATIVE_URL_ROOT=/`. The environment variable setting `ENABLE_UI_TESTING=true` is used to indicate that you have performed all the necessary setup steps and wish to run system tests.
 
     **OPTIONAL**: By default system UI tests are run headless and cannot be viewed using a browser window. While this is generally faster, if you wish to view the tests in a browser window (such as for debugging tests), you can set the environment variable `DISABLE_HEADLESS_UI_TESTING=true` when running system tests.
 
