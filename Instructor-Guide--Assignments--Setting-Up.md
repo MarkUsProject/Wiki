@@ -11,7 +11,7 @@
     - [Saving Changes](#saving-changes)
 - [What Students Will See](#what-students-will-see)
 - [Modifying An Assignment After Creation](#modifying-an-assignment-after-creation)
-- []
+- [Uploading and Downloading an Existing Assignment](#uploading-and-downloading-an-existing-assignment)
 
 ## Initial Setup
 
