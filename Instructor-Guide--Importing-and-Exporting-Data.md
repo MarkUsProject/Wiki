@@ -414,6 +414,8 @@ This upload/download **DOES NOT** copy assignment settings related to students o
 information, etc.). Hence, after copying an assignment over, it is recommended that users check the assignment's settings
 to make sure it is configured as they desire.
 
+Any peer reviews for an assignment are also **NOT** copied over. If you wish to also copy peer review assignment settings, you must upload/download each one separately. Note that when uploading a peer review assignment, please ensure that you create or upload its source assignment first, otherwise, the uplod will fail.
+
 ### Supported formats
 
 A zip file that contains the following yml files for an assignment:
