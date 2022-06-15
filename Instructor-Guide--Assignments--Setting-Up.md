@@ -109,6 +109,6 @@ This will download an assignment zip file you can save and upload back later. Fo
 In order to upload an assignment zip file, navigate to the "Assignments" tab at the top of the page and click on the "Upload Configuration Zip File" link in the top right corner.
 ![Assignment Upload Link](images/assignment-upload-link.png)
 
-This will show you a modal where you can then select an assignment zip file to upload.
+This will show you a modal where you can select an assignment zip file to upload.
 ![Assignment Upload Modal](images/assignment-upload-modal.png)
 After you have selected a zip file to upload, MarkUs will then create a new assignment using the settings specified within the zip file.
