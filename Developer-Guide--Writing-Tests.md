@@ -298,7 +298,7 @@ Notice that the template is similar to controller specifications. `some type of 
 
 ### Writing System Tests
 
-System tests are written using the Capybara Design Specification Language. 
+System tests are written using the Capybara Design Specification Language.
 
 ### Running System Tests
 
@@ -321,6 +321,7 @@ System tests require extra setup steps in order for you to run them locally. As 
 **Troubleshooting**
 
 - If you see a test failing with the following message near the top:
+
 ```bash
 Failure/Error: TCPSocket.open(conn_addr, conn_port, @local_host, @local_port)
 
