@@ -309,6 +309,7 @@ System tests require extra setup steps in order for you to run them locally. As 
 2. Download ChromeDriver. This will allow our System Tests to perform actions on the Chrome browser.
 
 3. In a terminal on your machine, run ChromeDriver by typing the command `chromedriver --whitelisted-ips`. The `--whitelisted-ips` flag is used to let ChromeDriver know to allow the connection with a docker terminal.
+
 > :spirl_notepad: **Note:** On Windows ensure ChromeDriver is run from a Command Prompt or Windows Powershell.
 
 4. In a separate terminal, start a bash shell within the Docker Rails environment by running `docker-compose run -p 3434:3434 --rm rails bash`. Notice that we exposed port 3434 by adding the argument `-p 3434:3434`. Port 3434 is the port with which Capybara will use to serve the test MarkUs instance for Chrome to use.
