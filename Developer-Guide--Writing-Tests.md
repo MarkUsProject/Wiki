@@ -294,11 +294,11 @@ describe Action do
 end
 ```
 
-Notice that the template is similar to controller specifications. `some type of user` and `some other type of user` still generally describe context blocks that correspond to someone who has authorization to perform certain actions. The difference however, is that system tests are used to describe actions performed via the UI.
+Notice that the template is similar to controller specifications. `some type of user` and `some other type of user` still generally describe context blocks that correspond to someone who has authorization to perform certain actions. The difference however, is that system tests are used to describe and test actions performed via the UI. These tests use Capybara, an acceptance test framework that simulates user interaction. For more information, documentation about Capybara can be found [here](https://rubydoc.info/github/teamcapybara/capybara/master).
 
 ### Writing System Tests
 
-System tests are written using the Capybara Design Specification Language. These tests revolve around 
+System tests are written using the Capybara Design Specification Language. These tests revolve around finding elements on a given page and performing certain actions on that element; similar to how you would interact with the page as a normal user. Also like a normal user, you can only find and perform actions on elements that can be visibly seen via the UI. For a helpful quick start on learning the Capybara Design Specification Language, see the documentation on the [Capybara DSL](https://github.com/teamcapybara/capybara#the-dsl). [This cheatsheet](https://devhints.io/capybara) is also a helpful guide in learning what basic actions you can perform.
 
 ### Running System Tests
 
@@ -309,14 +309,13 @@ System tests require extra setup steps in order for you to run them locally. As 
 2. Download ChromeDriver. This will allow our System Tests to perform actions on the Chrome browser.
 
 3. In a terminal on your machine, run ChromeDriver by typing the command `chromedriver --whitelisted-ips`. The `--whitelisted-ips` flag is used to let ChromeDriver know to allow the connection with a docker terminal.
-
-    On Windows ensure ChromeDriver is run from a Command Prompt or Windows Powershell.
+> :spirl_notepad: **Note:** On Windows ensure ChromeDriver is run from a Command Prompt or Windows Powershell.
 
 4. In a separate terminal, start a bash shell within the Docker Rails environment by running `docker-compose run -p 3434:3434 --rm rails bash`. Notice that we exposed port 3434 by adding the argument `-p 3434:3434`. Port 3434 is the port with which Capybara will use to serve the test MarkUs instance for Chrome to use.
 
 5. Run system tests by running `RAILS_RELATIVE_URL_ROOT=/ rspec spec/system` in the bash shell you created in step 4. Currently, Capybara does not support applications with a different relative url root which is why you must set `RAILS_RELATIVE_URL_ROOT=/`. You will also notice that due to the additional setup, by default system tests are ignored and must be explicitly defined in order for rspec to run them. Simply running `RAILS_RELATIVE_URL_ROOT=/ rspec` will not run the tests.
 
-    **Optional**: By default system UI tests are run headless and cannot be viewed using a browser window. While this is generally faster, if you wish to view the tests in a browser window (such as for debugging tests), you can set and add the environment variable `DISABLE_HEADLESS_UI_TESTING=true` when running system tests.
+    **Optional**: By default system UI tests are run headless and cannot be viewed using a browser window. While this is generally faster, if you wish to view the tests in a browser window (such as for debugging tests), you can add and set the environment variable `DISABLE_HEADLESS_UI_TESTING=true` when running system tests.
 
 #### Troubleshooting
 
