@@ -298,7 +298,7 @@ Notice that the template is similar to controller specifications. `some type of 
 
 ### Writing System Tests
 
-System tests are written using the Capybara Design Specification Language. 
+System tests are written using the Capybara Design Specification Language. These tests revolve around 
 
 ### Running System Tests
 
@@ -318,7 +318,7 @@ System tests require extra setup steps in order for you to run them locally. As 
 
     **Optional**: By default system UI tests are run headless and cannot be viewed using a browser window. While this is generally faster, if you wish to view the tests in a browser window (such as for debugging tests), you can set and add the environment variable `DISABLE_HEADLESS_UI_TESTING=true` when running system tests.
 
-**Troubleshooting**
+#### Troubleshooting
 
 - If you see a test failing with the following message near the top:
 ```bash
@@ -330,7 +330,7 @@ Failure/Error: TCPSocket.open(conn_addr, conn_port, @local_host, @local_port)
 
 This means that Capybara cannot connect to the chromedriver running on your machine from the docker container it is running from. Check to ensure you have ran the commands above with the proper arguments. They are all necessary to allow Capybara and Chromedriver to communicate with each other. If you are still having trouble, it may be your running docker containers are configured incorrectly to communicate with Chromedriver. In this case, you may find it helpful to rebuild your docker containers.
 
-## General Tips
+### General Tips
 
 #### Code Duplication
 
