@@ -294,7 +294,7 @@ describe Action do
 end
 ```
 
-Notice that the template is similar to controller specifications. `some type of user` and `some other type of user` still generally describe context blocks that correspond to someone who has authorization to perform certain actions. The difference however, is that system tests are used to describe and test actions performed via the UI. These tests use Capybara, an acceptance test framework that simulates user interaction. For more information, documentation about Capybara can be found [here](https://rubydoc.info/github/teamcapybara/capybara/master).
+Notice that the template is similar to controller specifications. `some type of user` and `some other type of user` still generally describe context blocks that correspond to someone who has authorization to perform certain actions. The difference however, is that system tests are used to describe and test actions performed via the UI. These tests use Capybara, an acceptance test framework that simulates user interaction. For more information, documentation about Capybara can be found [here](https://rubydoc.info/github/teamcapybara/capybara/master). These simulated user interactions are run and tested on a chrome browser running on your local machine.
 
 ### Writing System Tests
 
@@ -302,11 +302,11 @@ System tests are written using the Capybara Design Specification Language. These
 
 ### Running System Tests
 
-System tests require extra setup steps in order for you to run them locally. As a result, they are disabled by default. If you wish to run and system tests on your machine you will need to perform the following steps:
+System tests require extra setup steps in order for you to run them locally. As a result, they are disabled by default. If you wish to run system tests on your machine you will need to perform the following steps:
 
-1. Download Chrome on your machine. This is the browser with which we will use to test UI actions.
+1. Download [Chrome](https://support.google.com/chrome/answer/95346?hl=en&co=GENIE.Platform%3DDesktop) on your machine. This is the browser with which we will use to test UI actions.
 
-2. Download ChromeDriver. This will allow our System Tests to perform actions on the Chrome browser.
+2. Download [ChromeDriver](https://chromedriver.chromium.org/downloads). This will allow our System Tests to perform actions on the Chrome browser.
 
 3. In a terminal on your machine, run ChromeDriver by typing the command `chromedriver --whitelisted-ips`. The `--whitelisted-ips` flag is used to let ChromeDriver know to allow the connection with a docker terminal.
 
@@ -314,9 +314,9 @@ System tests require extra setup steps in order for you to run them locally. As 
 
 4. In a separate terminal, start a bash shell within the Docker Rails environment by running `docker-compose run -p 3434:3434 --rm rails bash`. Notice that we exposed port 3434 by adding the argument `-p 3434:3434`. Port 3434 is the port with which Capybara will use to serve the test MarkUs instance for Chrome to use.
 
-5. Run system tests by running `RAILS_RELATIVE_URL_ROOT=/ rspec spec/system` in the bash shell you created in step 4. Currently, Capybara does not support applications with a different relative url root which is why you must set `RAILS_RELATIVE_URL_ROOT=/`. You will also notice that due to the additional setup, by default system tests are ignored and must be explicitly defined in order for rspec to run them. Simply running `RAILS_RELATIVE_URL_ROOT=/ rspec` will not run the tests.
+5. Run system tests by running `RAILS_RELATIVE_URL_ROOT=/ rspec spec/system` in the bash shell you created in step 4. Currently, Capybara does not support applications with a different relative url root which is why you must set `RAILS_RELATIVE_URL_ROOT=/`. You will also notice that due to the additional setup for system tests, they are ignored by default and must be explicitly defined in order for rspec to run them. Simply running `RAILS_RELATIVE_URL_ROOT=/ rspec` will not run the system test suite.
 
-    **Optional**: By default system UI tests are run headless and cannot be viewed using a browser window. While this is generally faster, if you wish to view the tests in a browser window (such as for debugging tests), you can add and set the environment variable `DISABLE_HEADLESS_UI_TESTING=true` when running system tests.
+    **Optional**: By default system UI tests are run headless and cannot be viewed using a browser window. While this is generally faster, if you wish to view the tests in a browser window (such as for debugging), you can set and add the environment variable `DISABLE_HEADLESS_UI_TESTING=true` when running system tests.
 
 #### Troubleshooting
 
@@ -329,7 +329,7 @@ Failure/Error: TCPSocket.open(conn_addr, conn_port, @local_host, @local_port)
         Failed to open TCP connection to localhost:9515 (Cannot assign requested address - connect(2) for "localhost" port 9515)
 ```
 
-This means that Capybara cannot connect to the chromedriver running on your machine from the docker container it is running from. Check to ensure you have ran the commands above with the proper arguments. They are all necessary to allow Capybara and Chromedriver to communicate with each other. If you are still having trouble, it may be your running docker containers are configured incorrectly to communicate with Chromedriver. In this case, you may find it helpful to rebuild your docker containers.
+This means that Capybara cannot connect to the ChromeDriver running on your machine from the docker container it is running from. Check to ensure you have ran the commands above with the proper arguments. They are all necessary to allow Capybara and Chromedriver to communicate with each other. If you are still having trouble, it may be your running docker containers are configured incorrectly to communicate with Chromedriver. In this case, you may find it helpful to rebuild your docker containers.
 
 ### General Tips
 
