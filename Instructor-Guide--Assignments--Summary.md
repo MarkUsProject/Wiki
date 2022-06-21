@@ -31,7 +31,7 @@ To the right of the grade distribution chart is a set of statistics that give a 
 ![Assignment Summary Overview](images/summary-stats-overview.png)
 
 - **Number of Groups:** The number of groups that have submitted work
-- **Number of Students with Submitted Work:** The number of students that have submitted work 
+- **Number of Students with Submitted Work:** The number of students that have submitted work
 - **Number of Submissions Collected:** The number of submissions that have been collected for marking
 - **Number of Submissions Graded:** The number of submissions that have been collected and have recieved a mark
 - **Average:** The average grade of submissions for the given assignment (including submissions which recieved a zero)
