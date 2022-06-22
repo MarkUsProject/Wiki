@@ -40,6 +40,7 @@ To the right of the grade distribution chart is a set of statistics that give a 
 - **Number of fails:** How many graded submissions recieved a failing grade (i.e. recieved a grade under 50%) out of the expected total number of submissions.
 - **Number of zeros:** How many graded submissions recieved a grade of zero out of the expected total number of submissions.
 - **Remark requests completed:** How many remark requests have been completed out of the total number of remark requests recieved. This statistic will only show if you have enabled remark requests for the given assignment.
+
 > :spiral_notepad: **Note:** In brackets, next to each of the statistics that are shown as a fraction, is the same statistic fraction but displayed as a percentage instead.
 
 Finally, at the bottom of the view, below the grade distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution graph from the one above however, is that each bar from the graph above is broken up in order to also show the distribution of marks given by each grader.
