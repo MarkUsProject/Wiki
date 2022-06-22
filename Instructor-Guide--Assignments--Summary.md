@@ -30,16 +30,17 @@ To the right of the grade distribution chart is a set of statistics that give a 
 
 ![Assignment Summary Overview](images/summary-stats-overview.png)
 
-- **Number of Groups:** The number of groups that have submitted work
-- **Number of Students with Submitted Work:** The number of students that have submitted work
-- **Number of Submissions Collected:** The number of submissions that have been collected for marking
-- **Number of Submissions Graded:** The number of submissions that have been collected and have recieved a mark
-- **Average:** The average grade of submissions for the given assignment (including submissions which recieved a zero)
-- **Median:** The median grade of submissions for the given assignment (including submissions which recieved a zero)
-- **Standard Deviation:** The standard deviation of submissions for the given assignment (including submissions which recieved a zero)
-- **Number of Fails:** How many graded submissions recieved a failing grade (i.e. recieved a grade under 50%)
-- **Number of Zeros:** How many graded submissions recieved a grade of zero
-- **Remark Requests Completed:** How many remark requests have been completed out of the total number of remark requests completed
+- **Number of groups:** The number of groups created for this assignment.
+- **Number of students in a group:** The number of students that are in a group out of all active students in the course.
+- **Number of submissions collected:** The number of submissions that have been collected for marking out of all of this assignment's groups.
+- **Number of submissions graded:** The number of submissions that have been collected and have recieved a mark out of all of this assignment's groups.
+- **Average:** The average point grade of submissions for the given assignment (including submissions which recieved a zero) out of the maximum possible mark.
+- **Median:** The median grade of submissions for the given assignment (including submissions which recieved a zero) out of the maximum possible mark.
+- **Standard deviation:** The point grade standard deviation of submissions for the given assignment (including submissions which recieved a zero). In brackets next to this statistic is the standard deviation of submissions given as a percentage grade.
+- **Number of fails:** How many graded submissions recieved a failing grade (i.e. recieved a grade under 50%) out of all of this assignment's groups.
+- **Number of zeros:** How many graded submissions recieved a grade of zero out of all of this assignment's groups.
+- **Remark requests completed:** How many remark requests have been completed out of the total number of remark requests completed. This statistic will only show if you have enabled remark requests for the given assignment.
+> :spiral_notepad: **Note:** In brackets, next to each of the statistics that are shown as a fraction, is the same statistic fraction but displayed as a percentage instead.
 
 Finally, at the bottom of the view, below the grade distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution graph from the one above however, is that each bar from the graph above is broken up in order to also show the distribution of marks given by each grader.
 
