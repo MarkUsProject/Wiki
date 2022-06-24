@@ -61,6 +61,12 @@ If you are missing some required files, a list of missing required files will be
 
 ![Missing Required Warning](images/student-missing-required-warning.png)
 
+If you have uploaded one file to submit, you will have the option to rename it. You will get one of three different input-boxes to rename your file based on assignment configuration.
+
+* If you can only submit the files the instructor has requested for, you can rename your file from a drop down menu.
+* If you can submit any file you want but the instructor has requested some files, you can rename your file using a textbox with a dropdown.
+* If you can submit any file you want and the instructor has not requested any, you can rename your file using a textbox.
+
 ### Submit through version control (git)
 
 If your instructor has enable submission through version control you will see a section called "Group repository URL" on the Assignment page. You may use this url to clone your repository for the given assignment.
