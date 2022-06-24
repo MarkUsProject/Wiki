@@ -70,7 +70,6 @@ If you have uploaded one file to submit, you will have the option to rename it.
 * If you can submit any file you want and the instructor has not requested any, you can rename your file using a textbox.
 ![Upload Modal Text Input](images/submission-file-upload-modal-textbox.png)
 
-
 ### Submit through version control (git)
 
 If your instructor has enable submission through version control you will see a section called "Group repository URL" on the Assignment page. You may use this url to clone your repository for the given assignment.
