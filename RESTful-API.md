@@ -905,13 +905,13 @@ NOTE: not all parent directories need to exist in order to create a nested file.
 
 ### POST /api/courses/:course_id/assignments/:assignment_id/submission_files/submit_file
 
-- description: Submit a file in the currently authenticated user's groups repository for the given assignment. If the user has no group and does not have any pending group requests, this also creates a group for the user. 
+- description: Submit a file in the currently authenticated user's groups repository for the given assignment. If the user has no group and does not have any pending group requests, this also creates a group for the user.
 - required parameters:
     - filename (string)
     - mime_type (string)
     - file_content (string or binary data)
 
-NOTE: This route is for STUDENT USE ONLY. 
+NOTE: This route is for STUDENT USE ONLY.
 
 NOTE: the filename string can include a nested path if the file should be added in a subfolder (ex: "filename=some/nested/dir/submission.txt")
 
