@@ -649,6 +649,20 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
 
 NOTE: This will also send the updated specs to the server running the autotester
 
+### POST /api/courses/:course_id/assignments/:id/submit_file
+
+- description: Submit a file in the currently authenticated user's groups repository for the given assignment. If the user does not yet have a group, this also creates a group for the user.
+- required parameters:
+    - filename (string)
+    - mime_type (string)
+    - file_content (string or binary data)
+
+NOTE: This route is for STUDENT USE ONLY.
+
+NOTE: the filename string can include a nested path if the file should be added in a subfolder (ex: "filename=some/nested/dir/submission.txt")
+
+NOTE: not all parent directories need to exist in order to create a nested file. For example, if "filename=some/nested/dir/submission.txt"  and "some/" doesn't exist yet, then "some/", "some/nested", and "some/nested/dir" will all be created as well.
+
 ### GET /api/courses/:course_id/assignments/:assignment_id/groups
 
 - description: Get all group information for the given assignment
@@ -898,20 +912,6 @@ NOTE: not all parent directories need to exist in order to create a nested direc
     - filename (string)
     - mime_type (string)
     - file_content (string or binary data)
-
-NOTE: the filename string can include a nested path if the file should be added in a subfolder (ex: "filename=some/nested/dir/submission.txt")
-
-NOTE: not all parent directories need to exist in order to create a nested file. For example, if "filename=some/nested/dir/submission.txt"  and "some/" doesn't exist yet, then "some/", "some/nested", and "some/nested/dir" will all be created as well.
-
-### POST /api/courses/:course_id/assignments/:assignment_id/submission_files/submit_file
-
-- description: Submit a file in the currently authenticated user's groups repository for the given assignment. If the user has no group and does not have any pending group requests, this also creates a group for the user. 
-- required parameters:
-    - filename (string)
-    - mime_type (string)
-    - file_content (string or binary data)
-
-NOTE: This route is for STUDENT USE ONLY. 
 
 NOTE: the filename string can include a nested path if the file should be added in a subfolder (ex: "filename=some/nested/dir/submission.txt")
 
