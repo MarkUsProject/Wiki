@@ -44,6 +44,8 @@ Once this is done, the name of the grader will appear in the "Graders" column of
 
 Upon clicking the button, a modal will pop up prompting you to assign weightings to each grader. Once this is submitted, the randomizer will assign graders so that they have as close to the ratio's specified as possible (i.e. 3 graders, 10 students, with weightings 1, 2, 0.33 should result in a grader with 3 students, a grader with 6 students, and a grader with 1 student).
 
+![Randomizer Modal](images/assignment-randomizer-modal.png)
+
 **3. Unassign grader(s):**  This action will unassign graders that have already been assigned to students. To unassign a grader, you must select the student to which they are assigned, select the grader's row in the graders column and then click on the "Unassign grader(s)" button:
 ![Unassign Graders](images/graders-unassign.png)
 
