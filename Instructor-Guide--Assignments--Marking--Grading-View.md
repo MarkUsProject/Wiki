@@ -85,7 +85,7 @@ From this window you will be able to type out a comment for the students to see.
 
 You can also quickly annotate with an emoji. After selecting a particular region, right click to open a context menu. Here, you can select any of the provided emojis to quickly annotate that region.
 
-![Context Menu](https://i.ibb.co/3YHPbwS/context-menu.png)
+![Context Menu](images/grade-view-context-menu.png)
 
 ### Annotations Tab
 
