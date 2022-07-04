@@ -81,6 +81,12 @@ This will open the following modal:
 
 From this window you will be able to type out a comment for the students to see. Since the annotation field supports basic LaTeX and markdown commands, a preview is available under the text field so that you may see what your annotation will look like when released. Don't worry if it isn't perfect as there is an option to edit later! An annotation category may be specified from the drop-down list under "Annotation Category". (See the [Annotations](Instructor-Guide--Assignments--Deductive-Annotations.md) page for information on creating annotation categories) Once finished, be sure to click on the "Create Annotation" button to save your annotation!
 
+### Quick Annotations
+
+You can also quickly annotate with an emoji. After selecting a particular region, right click to open a context menu. Here, you can select any of the provided emojis to quickly annotate that region.
+
+![Context Menu](https://i.ibb.co/3YHPbwS/context-menu.png)
+
 ### Annotations Tab
 
 In order to view all the annotation you (or anyone) has created for a submission, navigate to the annotations tab of the submission
