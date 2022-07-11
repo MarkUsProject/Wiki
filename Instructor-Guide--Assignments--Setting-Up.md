@@ -42,6 +42,8 @@ If you wish to allow students to submit URLs check the "Allow students to submit
 > :spiral_notepad: **NOTE:**
 > MarkUs does not check the "last modified time" of the target of a submitted URL. It is possible for students to submit a URL before the deadline, but change the target's contents after the deadline (e.g., by modifying the contents of a Google Doc).
 
+If you want to give students the ability to submit through the MarkUs API, you can check the "Allow students to submit through the MarkUs API" box. This is necessary if you plan on creating or using an external plugin that allows students to submit assignments such as the MarkUs Jupyter Extension.
+
 Please see the [Peer Review](Instructor-Guide--Assignments--Peer-Review.md) page for more information on Peer Review.
 
 ### Required Files
