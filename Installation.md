@@ -280,8 +280,7 @@ ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
 
 (where you have previously set up an external authorization script called authorizegit in your Apache configuration)
 
-Your authorization script should first authenticate the user and then it can check whether the user is authorized to view a given git repository using either the `check_repo_permissions.rb` script or the `.access` file (deprecated): 
-
+Your authorization script should first authenticate the user and then it can check whether the user is authorized to view a given git repository using either the `check_repo_permissions.rb` script or the `.access` file (deprecated):
 
 ##### User authorization using the check_repo_permissions.rb script
 
@@ -295,14 +294,15 @@ Where the `[user name]` is the user name of the person requesting access to the 
 
 ```sh
 ./bin/check_repo_permissions.rb student123 csc108/somerepo.git
-``` 
+```
 
 This checks if the user with username `student123` has access to the somerepo.git repository in the course whose name is `csc108`.
 
 > :warning: **WARNING:** When running in a production environment you must also specify the `RAILS_ENV=production` environment variable when calling the `check_repo_permissions.rb` script. This is because the script makes a query to the database directly and so it needs to know which database to target. The above example in a production environment should therefore be changed to:
+>
 >  ```sh
 >  RAILS_ENV=production ./bin/check_repo_permissions.rb student123 csc108/somerepo.git
->  ``` 
+>  ```
 
 ##### User authorization using the .access file (DEPRECATED)
 
@@ -317,7 +317,6 @@ bleh/*,user3
 ```
 
 Then user1 should have permission to access repos at `/some/path/to/repos/blah/group1.git` and `/some/path/to/repos/blah/group2.git`, user2 should only have access to the first one. And user3 should have access to all repos in the `/some/path/to/repos/bleh/` directory.
-
 
 ##### additional configuration settings
 
