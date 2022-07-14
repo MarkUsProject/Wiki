@@ -24,6 +24,7 @@
     - [Test Results Tab](#test-results-tab)
     - [Criterion Auto-Complete](#criterion-auto-complete)
 - [Test Runs Status](#test-runs-status)
+- [Inspecting the group name during testing](#inspecting-the-group-name-during-testing)
 
 ## How it works
 
@@ -325,3 +326,18 @@ The Test Runs Status Table will give you all the information you need about the 
     - problems this means that there were unexpected errors reported while running this test.
 - **Estimated Remaining Time:** This column will tell you how much time is estimated for the remaining test(s) to take (row only).
 - **Actions** This column will allow you to either stop the batch of tests or a single test. Note that tests that have already finished running will not be affected and the results will still be displayed as normal.
+
+### Inspecting the group name during testing
+
+The environment variable `MARKUS_GROUP` contains the name of the group that submitted the code that is currently being tested and is visible to the process that runs the tests.
+
+This can be useful if your tests need to verify that the code being tested was submitted by a given group of students.
+
+For example, you may have written a pytest test that contains the following snippet that verifies that the code currently being tested was submitted by the group named "group_001":
+
+```py
+import os
+
+def test_submitted_by_correct_group():
+    assert os.environ["MARKUS_GROUP"] == "group_001"
+```
