@@ -53,7 +53,7 @@ Below the grade distribution chart, you can further analyze the distribution of 
 
 Each criterion corresponds to a colour shown in the labels just above the graph. In order to reveal the grade distribution for a specific criterion(s), simply click on the labels of all the criterion you wish to view and compare.
 
-To help you get a quick overview of student performance for each criteria, next to the criteria distribution graph is a table that shows each criterion along with the average grade recieved for that criterion. Clicking on the drop down arrow next to each criterion will reveal additional summary statistics for that particular criterion. 
+To help you get a quick overview of student performance for each criteria, next to the criteria distribution graph is a table that shows each criterion along with the average grade recieved for that criterion. Clicking on the drop down arrow next to each criterion will reveal additional summary statistics for that particular criterion.
 
 ![Criterion Grade Distribution Table](images/criteria-summary-stats-table.png)
 
