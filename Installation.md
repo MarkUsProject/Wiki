@@ -261,17 +261,7 @@ Then, you should set up the `markus` user (that you created [previously](#create
 
 To access git repositories over https use the [git-http-backend](https://git-scm.com/docs/git-http-backend) program.
 
-When setting up autorization protocols for this access, your authorization script should check who has permission to which git repos by inspecting the `.access` file in the repository storage directory (see the [configuration settings](./Configuration.md#markus-settings)).
-
-Each row of this file is a comma delimited and contains a relative path from the repository storage directory to a specific repository on disk followed by a list of user names of people who have access to this repository. For example, if [`respository.storage`](./Configuration.md#markus-settings) is `/some/path/to/repos/` and the `.access` file contains:
-
-```csv
-blah/group1.git,user1,user2
-blah/group2.git,user1
-bleh/*,user3
-```
-
-Then user1 should have permission to access repos at `/some/path/to/repos/blah/group1.git` and `/some/path/to/repos/blah/group2.git`, user2 should only have access to the first one. And user3 should have access to all repos in the `/some/path/to/repos/bleh/` directory.
+We also recommend restricting access to git repositories by creating your own external authorization script to ensure that only authorized users can access the git repositories.
 
 An example Apache configuration might look like:
 
@@ -289,6 +279,46 @@ ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
 ```
 
 (where you have previously set up an external authorization script called authorizegit in your Apache configuration)
+
+Your authorization script should first authenticate the user and then it can check whether the user is authorized to view a given git repository using either the `check_repo_permissions.rb` script or the `.access` file (deprecated):
+
+##### User authorization using the check_repo_permissions.rb script
+
+When setting up authorization protocols for this access, your authorization script should check who has permission to access which git repos by executing the `bin/check_repo_permissions.rb` script.
+
+```sh
+./bin/check_repo_permissions.rb [user name] [relative path to git repo]
+```
+
+Where the `[user name]` is the user name of the person requesting access to the git repository and `[relative path to git repo]` is a relative path to the git repository. This relative path should only include the course name and the `.git` repository directory name. For example:
+
+```sh
+./bin/check_repo_permissions.rb student123 csc108/somerepo.git
+```
+
+This checks if the user with username `student123` has access to the somerepo.git repository in the course whose name is `csc108`.
+
+> :warning: **WARNING:** When running in a production environment you must also specify the `RAILS_ENV=production` environment variable when calling the `check_repo_permissions.rb` script. This is because the script makes a query to the database directly and so it needs to know which database to target. The above example in a production environment should therefore be changed to:
+>
+>  ```sh
+>  RAILS_ENV=production ./bin/check_repo_permissions.rb student123 csc108/somerepo.git
+>  ```
+
+##### User authorization using the .access file (DEPRECATED)
+
+When setting up autorization protocols for this access, your authorization script should check who has permission to which git repos by inspecting the `.access` file in the repository storage directory (see the [configuration settings](./Configuration.md#markus-settings)).
+
+Each row of this file is a comma delimited and contains a relative path from the repository storage directory to a specific repository on disk followed by a list of user names of people who have access to this repository. For example, if [`respository.storage`](./Configuration.md#markus-settings) is `/some/path/to/repos/` and the `.access` file contains:
+
+```csv
+blah/group1.git,user1,user2
+blah/group2.git,user1
+bleh/*,user3
+```
+
+Then user1 should have permission to access repos at `/some/path/to/repos/blah/group1.git` and `/some/path/to/repos/blah/group2.git`, user2 should only have access to the first one. And user3 should have access to all repos in the `/some/path/to/repos/bleh/` directory.
+
+##### additional configuration settings
 
 Finally, make sure that the `repository.url` configuration option is set up so that users will see the correct url to access their git repositories.
 For example, if your server's domain is `https://my.host.com` and you're using the example apache configuration above, you should set the following configuration:
