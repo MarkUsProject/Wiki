@@ -131,9 +131,12 @@ This section lists all the fields that are common to all testers:
 
     > :warning: **WARNING:** If a test hits the timeout limit, a timeout error will be reported for all tests in this group.
 
-- **Feedback File:** The name of an output file to write feedback to. Avoid naming this the same thing as a test file or a submitted file in order to prevent the tester from overwriting an existing file. If a feedback file is specified you will be given two more options:
-    - "Add feedback file to repo:" This file will be uploaded to the student's repository at the end of the tests.
-    - "Upload feedback file for grading:" Uploads the feedback file to the student's submission for that assignment. The student, instructor, and grader will be able to view and download the file from the [grading view](Instructor-Guide--Assignments--Marking--Grading-View.md).
+- **Feedback Files:** The name of files that the autotester will send back to MarkUs to display as feedback files associated with the test result. You can specify multiple feedback files by clicking the `+` icon below this section. These files should exist after the tests are run.
+
+    Possible use cases include:
+
+    - a test scripts writes additional result information to a file in the local directory that you want to make available to students.
+    - a test script renders an image that you want to be sent back to MarkUs for additional grading.
 
 ### Tester Types
 
@@ -184,7 +187,7 @@ In Racket, each test file must be added separately with the appropriate test sui
  }
  ```
 
-- **Upload annotations:** If this checkbox is selected, any errors and warnings discovered by PyTA will be added as annotations to the submitted files. Selecting this box also requires the "Annotation file" field to be filled in. The "Annotation file" field should contain a file name that does not conflict with any of the uploaded test files or student files.
+- **Upload annotations:** If this checkbox is selected, any errors and warnings discovered by PyTA will be added as annotations to the submitted files.
 
 #### Haskell
 
