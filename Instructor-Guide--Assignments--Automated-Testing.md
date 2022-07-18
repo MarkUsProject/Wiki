@@ -333,18 +333,20 @@ MarkUs makes information about the group who submitted the code that is being te
 
 The environment variable `MARKUS_GROUP` contains the name of the group that submitted the code that is currently being tested.
 
-The environment variable `MARKUS_STARTER_FILES` contains the paths of each starter file assigned to group that submitted the code that is currently being tested. Multiple starter file paths are separated by a `:` character.
+The environment variable `MARKUS_STARTER_FILES` contains a json string containing an array of dictionaries containing two key/value pairs. The first key is "starter_file_group" which maps to the the starter file group name and the other is "starter_file_path" which maps to the starter file path.
 
 Both are visible to the process that runs the tests.
 
 This can be useful if your tests need to verify that the code being tested was submitted by a given group of students or that the submitted code matches the expected starter file version.
 
-For example, you may write a pytest test that contains the following snippet that verifies that the code currently being tested was submitted by the group named "group_001" and that the starter files assigned to this group include a file named "file1.txt":
+For example, you may write a pytest test that contains the following snippet that verifies that the code currently being tested was submitted by the group named "group_001" and that the starter files assigned to this group include a file named "file1.txt" from the starter file group named "some files":
 
 ```py
 import os
+import json
 
 def test_submitted_by_correct_group():
     assert os.environ["MARKUS_GROUP"] == "group_001"
-    assert "file1.txt" in os.environ["MARKUS_STARTER_FILES"].split(":")
+    starter_info = json.loads(os.environ["MARKUS_STARTER_FILES"])
+    assert {"starter_file_path": "file1.txt", "starter_file_group": "some files"} in starter_info
 ```
