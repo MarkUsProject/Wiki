@@ -66,7 +66,7 @@ The additional criterion statistics currently shown are:
 
 #### Grader Distribution
 
-Finally, at the bottom of the view, below the criteria distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution chart from the normal chart at the top of the page however, is that this chart further breaks down the grade distribution graph in order to also show the distribution of marks given by each grader.
+Finally, at the bottom of the view, below the criteria distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution chart from the normal chart at the top of the page however, is that this chart breaks down the normal grade distribution graph in order to also show the distribution of marks given by each grader.
 
 ![Assignment Grader Distribution Graph](images/summary-stats-grader-distribution.png)
 
