@@ -49,20 +49,19 @@ To the right of the grade distribution chart is a set of statistics that give a 
 
 Below the grade distribution chart, you can further analyze the distribution of grades using the criteria distribution graph. This graph shows the distribution of marks given for each associated criterion.
 
-![Criterion Grade Distribution Graph](images/summary-stats-grade-distribution.png)
+![Criterion Grade Distribution Graph](images/criteria-summary-stats-grade-distribution.png)
 
-Each criterion corresponds to a colour shown in the labels just above the graph. In order to reveal the grade distribution for a specific criterion(s), simply click on the labels of all the criterion you wish to view and compare.
+Each criterion corresponds to a colour shown in the labels just above the graph. By default, all grade data for criterions are hidden. In order to reveal the grade distribution for a specific criterion(s), simply click on the labels of all the criterion you wish to view and compare.
 
-To help you get a quick overview of student performance for each criteria, next to the criteria distribution graph is a table that shows each criterion along with the average grade recieved for that criterion. Clicking on the drop down arrow next to each criterion will reveal additional summary statistics for that particular criterion.
+To help you get a quick overview of student performance for each criteria, next to the criteria distribution graph is a table that shows each criterion along with the average grade received for that criterion. Clicking on the drop down arrow next to each criterion will reveal additional summary statistics for that particular criterion.
 
 ![Criterion Grade Distribution Table](images/criteria-summary-stats-table.png)
 
-More specifically, this shows:
+The additional criterion statistics currently shown are:
 
 - **Average:** The average point grade of submissions for the given criterion (including submissions which recieved a zero) out of the maximum possible mark for that criterion.
 - **Median:** The median grade of submissions for the given criterion (including submissions which recieved a zero) out of the maximum possible mark for that criterion.
 - **Standard deviation:** The point grade standard deviation of submissions for the given criterion (including submissions which recieved a zero). In brackets next to this statistic is the standard deviation of submissions for the given criterion as a percentage grade.
-- **Number of fails:** How many graded submissions recieved a failing grade on this particular criterion (i.e. recieved a grade under 50%) out of the expected total number of submissions.
 - **Number of zeros:** How many graded submissions recieved a grade of zero on this particular criterion out of the expected total number of submissions.
 
 #### Grader Distribution
