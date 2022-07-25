@@ -234,7 +234,7 @@ Then, you should set up the `markus` user (that you created [previously](#create
    - where `/some/path/to/repos/` is an absolute path to the location of the git repositories specified in the [`respository.storage`](./Configuration.md#markus-settings) configuration setting.
    - where `/path/to/markus/root/` is the path to the root of the MarkUs source code so that `/path/to/markus/root/lib/repo/markus-git-shell.sh` points to the `markus-git-shell.sh` script.
 
-5. update the sshd settings so that when users ssh as the `markus` user they will only be allowed to run git commands (and only on repositories that they have access to as determined by the `.access` file (see [Git over HTTPS](#git-over-https) for details). Append the following to the `/etc/ssh/sshd_config` file:
+5. update the sshd settings so that when users ssh as the `markus` user they will only be allowed to run git commands (and only on repositories that they have access to as determined by the `.access` file or the check_repo_permissions function (see [Git over HTTPS](#git-over-https) for details). Append the following to the `/etc/ssh/sshd_config` file:
 
     ```text
     Match User markus
@@ -256,6 +256,30 @@ Then, you should set up the `markus` user (that you created [previously](#create
     ```
 
     so that users can clone repositories from urls like `ssh://markus@my.server.com/blah/group1.git`
+
+8. Make sure that the `markus-git-shell.sh` script can check repository permissions. This can be done in one of two ways:
+
+   - [Using the `.access` file](#user-authorization-using-the-access-file-deprecated): this method is deprecated but can still be used by setting the `MARKUS_USE_ACCESS_FILE` environment variable to a truthy value in the `/home/markus/.ssh/rc` file.
+   - [Using the `check_repo_permissions` function](#user-authorization-using-the-check_repo_permissions-function): this method is preferred. It requires that the markus user be able to access the database used by your markus instance. In order to do this, create a `.pg_service.conf` file in the markus user's home directory that contains access credentials. For example:
+
+       ```ini
+       [markus]
+       host=postgres
+       port=5432
+       user=mypostgresuser
+       dbname=markusdb
+       password=verysecret
+       ```
+
+     The `markus-git-shell.sh` will look up the correct service to use to connect to the database in the following manner:
+
+     - if your MarkUs instance uses a [relative url root](#running-markus-with-a-relative-url-root) then the service name should be the same as the relative url root.
+
+       For example, if your Markus instance is running at the url `my.server.com/something` then the service name in the `.pg_service.conf` should be `[something]`.
+
+       Note that this means that the urls that clients will use to access the repositories will also include this relative url root (ie. the `ssh_url` configuration setting should be set to something like: `'ssh://markus@my.server.com/something'`)
+
+     - if your MarkUs instance does not use a relative url root, the service name should be `[markus]`. If you would like to change this service name then you need to set the `DEFAULT_SERVICE` environment variable to the new name in the `/home/markus/.ssh/rc` file.
 
 #### Git over HTTPS
 
@@ -282,27 +306,21 @@ ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
 
 Your authorization script should first authenticate the user and then it can check whether the user is authorized to view a given git repository using either the `check_repo_permissions.rb` script or the `.access` file (deprecated):
 
-##### User authorization using the check_repo_permissions.rb script
+##### User authorization using the check_repo_permissions function
 
-When setting up authorization protocols for this access, your authorization script should check who has permission to access which git repos by executing the `bin/check_repo_permissions.rb` script.
+When setting up authorization protocols for this access, your authorization script should check who has permission to access which git repos by calling the `check_repo_permissions` postgresql function. This function takes 3 arguments:
+
+- the user name of the user requesting access to the instance
+- the course name
+- the repository name
+
+For example:
 
 ```sh
-./bin/check_repo_permissions.rb [user name] [relative path to git repo]
+echo "SELECT check_repo_permissions(:'user_name', :'course_name', :'repo_name')" | psql -qtA -v user_name=student123 -v course_name=csc108 -v repo_name=somerepo
 ```
 
-Where the `[user name]` is the user name of the person requesting access to the git repository and `[relative path to git repo]` is a relative path to the git repository. This relative path should only include the course name and the `.git` repository directory name. For example:
-
-```sh
-./bin/check_repo_permissions.rb student123 csc108/somerepo.git
-```
-
-This checks if the user with username `student123` has access to the somerepo.git repository in the course whose name is `csc108`.
-
-> :warning: **WARNING:** When running in a production environment you must also specify the `RAILS_ENV=production` environment variable when calling the `check_repo_permissions.rb` script. This is because the script makes a query to the database directly and so it needs to know which database to target. The above example in a production environment should therefore be changed to:
->
->  ```sh
->  RAILS_ENV=production ./bin/check_repo_permissions.rb student123 csc108/somerepo.git
->  ```
+> :warning: **WARNING:** If you receive an error that this function does not exist. Make sure that it is enabled by running the `db:functions` rake task in your production environment. This will build the function and make it available.
 
 ##### User authorization using the .access file (DEPRECATED)
 
