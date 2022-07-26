@@ -51,18 +51,20 @@ Below the grade distribution chart, you can further analyze the distribution of 
 
 ![Criterion Grade Distribution Graph](images/criteria-summary-stats-grade-distribution.png)
 
-Each criterion corresponds to a colour shown in the labels just above the graph. By default, all grade data for criterions are hidden. In order to reveal the grade distribution for a specific criterion(s), simply click on the labels of all the criterion you wish to view and compare.
+Each criterion corresponds to a colour shown in the labels just above the graph. By default, all grade data for critera are hidden. In order to reveal the grade distribution for a specific criterion, simply click on the labels of all the criteria you wish to view and compare.
 
-To help you get a quick overview of student performance for each criteria, next to the criteria distribution graph is a table that shows each criterion along with the average grade received for that criterion. Clicking on the drop down arrow next to each criterion will reveal additional summary statistics for that particular criterion.
+To help you get a quick overview of student performance for each criterion, next to the criteria distribution graph is a table that shows each criterion along with the average grade received for that criterion. Clicking on the drop down arrow next to each criterion will reveal additional summary statistics for that particular criterion.
 
 ![Criterion Grade Distribution Table](images/criteria-summary-stats-table.png)
 
 The additional criterion statistics currently shown are:
 
-- **Average:** The average point grade of submissions for the given criterion (including submissions which recieved a zero) out of the maximum possible mark for that criterion.
-- **Median:** The median grade of submissions for the given criterion (including submissions which recieved a zero) out of the maximum possible mark for that criterion.
-- **Standard deviation:** The point grade standard deviation of submissions for the given criterion (including submissions which recieved a zero). In brackets next to this statistic is the standard deviation of submissions for the given criterion as a percentage grade.
-- **Number of zeros:** How many graded submissions recieved a grade of zero on this particular criterion out of the expected total number of submissions.
+- **Average:** The average grade received for the given criterion.
+- **Median:** The median grade received for the given criterion.
+- **Standard deviation:** The point grade standard deviation for the given criterion. The percentage standard deviation for the given criterion is shown in brackets next to this statistic.
+- **Number of zeros:** The number of submissions which recieved a grade of zero on the given criterion.
+
+> :spiral_notepad: **Note:** All statistics include submissions which have been marked as complete and have a grade for the given criterion. This includes submissions that received a mark of zero on the criterion. Submissions need not be released to students in order for them to be included in the statistics.
 
 #### Grader Distribution
 
@@ -70,7 +72,7 @@ Finally, at the bottom of the view, below the criteria distribution chart, you c
 
 ![Assignment Grader Distribution Graph](images/summary-stats-grader-distribution.png)
 
-As with the criterion distribution, each grader corresponds to a colour shown in the labels just above the graph. Each label also shows how many submissions each grader has completed marking out of the number they were assigned.
+As with the criteria distribution, each grader corresponds to a colour shown in the labels just above the graph. Each label also shows how many submissions each grader has completed marking out of the number they were assigned.
 
 To view a more discrete breakdown of each grader shown in the grader distribution graph, click on the "Graders" link in the bottom left corner of the grader distribution graph.
 
