@@ -22,6 +22,8 @@ If you wish to download this table for offline use in a CSV format, select the "
 
 Clicking on the "Summary Statistics" tab in the top left corner of the summary page will take you to the summary statistics view. This view allows you to easily visualize and look at key statistics that summarizes overall student performance on the given assignment. This is an enlarged view of the summary statistics you can find on the dashboard.
 
+#### Grades Distribution
+
 In the top left section, you can see a chart that displays the distribution of grades for the given assignment.
 
 ![Assignment Grade Distribution Graph](images/summary-stats-grade-distribution.png)
@@ -43,11 +45,34 @@ To the right of the grade distribution chart is a set of statistics that give a 
 
 > :spiral_notepad: **Note:** In brackets, next to each of the statistics that are shown as a fraction, is the same statistic fraction but displayed as a percentage instead.
 
-Finally, at the bottom of the view, below the grade distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution graph from the one above however, is that each bar from the graph above is broken up in order to also show the distribution of marks given by each grader.
+#### Criteria Distribution
+
+Below the grade distribution chart, you can further analyze the distribution of grades using the criteria distribution graph. This graph shows the distribution of marks given for each associated criterion.
+
+![Criterion Grade Distribution Graph](images/criteria-summary-stats-grade-distribution.png)
+
+Each criterion corresponds to a colour shown in the labels just above the graph. By default, all grade data for criteria are hidden. In order to reveal the grade distribution for a specific criterion, simply click on the labels of all the criteria you wish to view and compare.
+
+To help you get a quick overview of student performance for each criterion, next to the criteria distribution graph is a table that shows each criterion along with the average grade received for that criterion. Clicking on the drop down arrow next to each criterion will reveal additional summary statistics for that particular criterion.
+
+![Criterion Grade Distribution Table](images/criteria-summary-stats-table.png)
+
+The additional criterion statistics currently shown are:
+
+- **Average:** The average grade received for the given criterion.
+- **Median:** The median grade received for the given criterion.
+- **Standard deviation:** The point grade standard deviation for the given criterion. The percentage standard deviation for the given criterion is shown in brackets next to this statistic.
+- **Number of zeros:** The number of submissions which recieved a grade of zero on the given criterion.
+
+> :spiral_notepad: **Note:** All statistics include submissions which have been marked as complete and have a grade for the given criterion. This includes submissions that received a mark of zero on the criterion. Submissions need not be released to students in order for them to be included in the statistics.
+
+#### Grader Distribution
+
+Finally, at the bottom of the view, below the criteria distribution chart, you can see another distribution of grades for an assignment. What differentiates this grade distribution chart from the normal chart at the top of the page however, is that this chart breaks down the normal grade distribution graph in order to also show the distribution of marks given by each grader.
 
 ![Assignment Grader Distribution Graph](images/summary-stats-grader-distribution.png)
 
-Each grader corresponds to a colour shown in the labels just above the graph. Each label also shows how many submissions each grader has completed marking out of the number they were assigned.
+As with the criteria distribution, each grader corresponds to a colour shown in the labels just above the graph. Each label also shows how many submissions each grader has completed marking out of the number they were assigned.
 
 To view a more discrete breakdown of each grader shown in the grader distribution graph, click on the "Graders" link in the bottom left corner of the grader distribution graph.
 
