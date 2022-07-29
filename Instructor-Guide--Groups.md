@@ -21,6 +21,14 @@ The table on the left side of the page contains the names of all students in the
 
 The table on the right side of the page contains the names and memberships of all groups currently created for this assignment.
 
+### View inactive students
+
+Toggle the "Display inactive students checkbox to see inactive students and groups. An **inactive group** is a group where all the members are inactive. Once you have the checkbox toggled, you can use the search function in either tables to quickly identify inactive students and groups.
+
+![Search inactive](images/search-inactive-students-groups.png)
+
+In the right table, group_0010 shows up because one of its members is inactive. It is **not** an inactive group.
+
 ### Create All Groups
 
 This option is available if the ["Students can work in groups"](Instructor-Guide--Assignments--Setting-Up.md#group-properties) checkbox is not selected. Clicking the "Create All Groups" button will create a group for all students that are not already in a group for this assignment. Each group created in this way will contain only one member.
