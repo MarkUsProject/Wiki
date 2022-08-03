@@ -34,7 +34,7 @@ Ensure the following ubuntu packages are installed:
 Install [bundler](https://bundler.io/) as a system gem:
 
 ```sh
-gem install bundler -v 1.17.3
+gem install bundler -v 2.3.17
 ```
 
 Install [node](https://nodejs.org/en/) (note that we need at least version 12 so we can't just install the ubuntu 20.04 package directly):
