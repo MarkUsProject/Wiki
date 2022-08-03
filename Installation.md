@@ -320,8 +320,6 @@ For example:
 echo "SELECT check_repo_permissions(:'user_name', :'course_name', :'repo_name')" | psql -qtA -v user_name=student123 -v course_name=csc108 -v repo_name=somerepo
 ```
 
-> :warning: **WARNING:** If you receive an error that this function does not exist. Make sure that it is enabled by running the `db:functions` rake task in your production environment. This will build the function and make it available.
-
 ##### User authorization using the .access file (DEPRECATED)
 
 When setting up autorization protocols for this access, your authorization script should check who has permission to which git repos by inspecting the `.access` file in the repository storage directory (see the [configuration settings](./Configuration.md#markus-settings)).
