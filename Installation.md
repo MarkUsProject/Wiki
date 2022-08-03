@@ -83,10 +83,8 @@ git checkout release
 ### Install Ruby dependencies using [bundler](https://bundler.io/)
 
 ```sh
-./bin/bundle install --deployment --without development test offline mysql sqlite
+./bin/bundle install --deployment --without development test offline
 ```
-
-(Note that although MarkUs technically supports alternative database backends like mysql and sqlite, they may not be fully supported and support may be removed entirely in later versions. For this reason we recommend using Postgresql and running the `bundle install` command with the `--without` arguments above)
 
 ### Install javascript dependencies using [yarn](https://yarnpkg.com/)
 
