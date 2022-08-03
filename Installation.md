@@ -210,10 +210,11 @@ Then, you should set up the `markus` user (that you created [previously](#create
    chmod u=rwx lib/repo/authorized_key_command.sh
    ```
 
-2. make sure the `lib/repo/markus-git-shell.sh` script is executable (should be owned by the `markus` user already):
+2. make sure the `lib/repo/markus-git-shell.sh` script is executable (should be owned by the `markus` user already) and in the `markus` user's PATH:
 
    ```sh
    chmod u=rwx lib/repo/markus-git-shell.sh
+   ln -s /app/lib/repo/markus-git-shell.sh /usr/local/bin/markus-git-shell.sh # for example, assuming /usr/local/bin is in the markus users's PATH
    ```
 
 3. create a `.ssh/` directory for the `markus` user:
@@ -226,13 +227,20 @@ Then, you should set up the `markus` user (that you created [previously](#create
 
     ```sh
     export MARKUS_LOG_FILE=/path/to/some/logfile.log
-    export MARKUS_REPO_LOC_PATTERN='/some/path/to/repos/(instance)'
-    export GIT_SHELL=/path/to/markus/root/lib/repo/markus-git-shell.sh
+    export MARKUS_REPO_LOC_PATTERN='/some/path/to/repos/'
+    export GIT_SHELL=/usr/bin/git-shell
     ```
 
    - where `/path/to/some/logfile.log` is an absolute path to a text file where you want the log output to be written (this is optional)
    - where `/some/path/to/repos/` is an absolute path to the location of the git repositories specified in the [`respository.storage`](./Configuration.md#markus-settings) configuration setting.
-   - where `/path/to/markus/root/` is the path to the root of the MarkUs source code so that `/path/to/markus/root/lib/repo/markus-git-shell.sh` points to the `markus-git-shell.sh` script.
+   - where `/usr/bin/git-shell` is a path to the git-shell executable installed by git. See [the git documentation](https://git-scm.com/docs/git-shell) for more details
+
+   If multiple MarkUs instances are running on your machine using relative url roots, then you can specify multiple repository locations for each instance. The `MARKUS_REPO_LOC_PATTERN` variable can contain an `(instance)` substring which will be replaced by the relative url root of the requested repository. For example, if you have two MarkUs instances running with relative url roots being `csc108/` and `csc209/` and repositories for each at:
+
+   - `/some/directory/markus/csc108/data/prod/repos/`
+   - `/some/directory/markus/csc209/data/prod/repos/`
+
+   Then setting `MARKUS_REPO_LOC_PATTERN=/some/directory/markus/(instance)/data/prod/repos` will mean that requests for repositories at either instance will be discovered properly.
 
 5. update the sshd settings so that when users ssh as the `markus` user they will only be allowed to run git commands (and only on repositories that they have access to as determined by the `.access` file or the check_repo_permissions function (see [Git over HTTPS](#git-over-https) for details). Append the following to the `/etc/ssh/sshd_config` file:
 
@@ -244,7 +252,7 @@ Then, you should set up the `markus` user (that you created [previously](#create
       AuthorizedKeysCommandUser markus
     ```
 
-   - where `/path/to/markus/root/` is the path to the root of the MarkUs source code so that `/path/to/markus/root/lib/repo/authorized_key_command.sh` points to the `authorized_key_command.sh` script.
+   - where `/path/to/markus/root/` is the path to the root of the MarkUs source code so that `/path/to/markus/root/lib/repo/authorized_key_command.sh` points to the `authorized_key_command.sh` script. You may have to change the `authorized_key_command.sh` file to be owned by the user that is running the sshd process (usually root). Feel free to also move the `authorized_key_command.sh` file elsewhere on disk if that is more convenient.
 
 6. start (or restart) the `sshd` process so that the new configuration settings get picked up
 
