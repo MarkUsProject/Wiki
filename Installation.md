@@ -152,10 +152,9 @@ RAILS_ENV=production ./bin/bundle exec rails db:migrate
 
 ### Precompile static assets
 
-MarkUs will run a lot faster in production if [assets are precompiled](https://guides.rubyonrails.org/asset_pipeline.html#in-production). To precompile all static assets run the following commands:
+MarkUs will run a lot faster in production if [assets are precompiled](https://guides.rubyonrails.org/asset_pipeline.html#in-production). To precompile all static assets run the following command:
 
 ```sh
-RAILS_ENV=production ./bin/bundle exec rails i18n:js:export
 RAILS_ENV=production ./bin/bundle exec rails assets:precompile
 ```
 
