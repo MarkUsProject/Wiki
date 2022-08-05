@@ -8,10 +8,11 @@ Values in this file are described below and will override any default values in 
 To show the default values for your environment, run the following command in the root directory of the installed MarkUs instance:
 
 ```sh
-echo 'puts JSON.parse(Settings.to_json).to_yaml' | NO_SCHEMA_VALIDATE=1 bundle exec rails console
+echo 'puts JSON.parse(Settings.to_json).to_yaml' | NO_SCHEMA_VALIDATE=1 NO_INIT_SCHEDULER=1 bundle exec rails console
 ```
 
 By specifying `NO_SCHEMA_VALIDATE` an error will not be raised if a required key is missing.
+By specifying `NO_INIT_SCHEDULER` an error will not be raised if MarkUs can't connect to a redis instance (not required for this task).
 
 ## Settings
 
