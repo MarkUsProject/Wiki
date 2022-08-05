@@ -24,6 +24,7 @@
     - [Test Results Tab](#test-results-tab)
     - [Criterion Auto-Complete](#criterion-auto-complete)
 - [Test Runs Status](#test-runs-status)
+- [Inspecting group information during testing](#inspecting-group-information-during-testing)
 
 ## How it works
 
@@ -131,9 +132,12 @@ This section lists all the fields that are common to all testers:
 
     > :warning: **WARNING:** If a test hits the timeout limit, a timeout error will be reported for all tests in this group.
 
-- **Feedback File:** The name of an output file to write feedback to. Avoid naming this the same thing as a test file or a submitted file in order to prevent the tester from overwriting an existing file. If a feedback file is specified you will be given two more options:
-    - "Add feedback file to repo:" This file will be uploaded to the student's repository at the end of the tests.
-    - "Upload feedback file for grading:" Uploads the feedback file to the student's submission for that assignment. The student, instructor, and grader will be able to view and download the file from the [grading view](Instructor-Guide--Assignments--Marking--Grading-View.md).
+- **Feedback Files:** The name of files that the autotester will send back to MarkUs to display as feedback files associated with the test result. You can specify multiple feedback files by clicking the `+` icon below this section. These files should exist after the tests are run.
+
+    Possible use cases include:
+
+    - a test scripts writes additional result information to a file in the local directory that you want to make available to students.
+    - a test script renders an image that you want to be sent back to MarkUs for additional grading.
 
 ### Tester Types
 
@@ -184,7 +188,7 @@ In Racket, each test file must be added separately with the appropriate test sui
  }
  ```
 
-- **Upload annotations:** If this checkbox is selected, any errors and warnings discovered by PyTA will be added as annotations to the submitted files. Selecting this box also requires the "Annotation file" field to be filled in. The "Annotation file" field should contain a file name that does not conflict with any of the uploaded test files or student files.
+- **Upload annotations:** If this checkbox is selected, any errors and warnings discovered by PyTA will be added as annotations to the submitted files.
 
 #### Haskell
 
@@ -325,3 +329,27 @@ The Test Runs Status Table will give you all the information you need about the 
     - problems this means that there were unexpected errors reported while running this test.
 - **Estimated Remaining Time:** This column will tell you how much time is estimated for the remaining test(s) to take (row only).
 - **Actions** This column will allow you to either stop the batch of tests or a single test. Note that tests that have already finished running will not be affected and the results will still be displayed as normal.
+
+### Inspecting group information during testing
+
+MarkUs makes information about the group who submitted the code that is being tested available to the test runs as environment variables:
+
+The environment variable `MARKUS_GROUP` contains the name of the group that submitted the code that is currently being tested.
+
+The environment variable `MARKUS_STARTER_FILES` contains a json string containing an array of dictionaries containing two key/value pairs. The first key is "starter_file_group" which maps to the the starter file group name and the other is "starter_file_path" which maps to the starter file path.
+
+Both are visible to the process that runs the tests.
+
+This can be useful if your tests need to verify that the code being tested was submitted by a given group of students or that the submitted code matches the expected starter file version.
+
+For example, you may write a pytest test that contains the following snippet that verifies that the code currently being tested was submitted by the group named "group_001" and that the starter files assigned to this group include a file named "file1.txt" from the starter file group named "some files":
+
+```py
+import os
+import json
+
+def test_submitted_by_correct_group():
+    assert os.environ["MARKUS_GROUP"] == "group_001"
+    starter_info = json.loads(os.environ["MARKUS_STARTER_FILES"])
+    assert {"starter_file_path": "file1.txt", "starter_file_group": "some files"} in starter_info
+```

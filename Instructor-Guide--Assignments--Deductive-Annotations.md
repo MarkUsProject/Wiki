@@ -62,7 +62,7 @@ Clicking on a deduction in the list under the mark value will take you to the an
 
 ## Applying deductive annotations and creating on the fly annotations
 
-To apply a pre-existing deductive annotation, select an area of the submission, then choose an annotation from one of the categories with a criterion.
+To apply a pre-existing deductive annotation, select an area of the submission, then choose an annotation from one of the categories with a criterion. Please note that currently, deductive annotations cannot be applied to a URL file submission if it has been enabled.
 
 ![Applying an annotation](images/deductive_annotations_gifs/apply_annotation.gif)
 
@@ -74,7 +74,6 @@ If deductive annotations have been applied to a result, they will appear in the 
 
 ![Annotation table with deduction column](images/deductive_annotations_gifs/annotation_table.gif)
 
-> :spiral_notepad: **NOTE:** TAs that have been assigned criteria will not be able to apply, edit, or delete deductive annotations that do not belong to their assigned criteria.
 > :spiral_notepad: **NOTE:**
 > TAs that have been assigned criteria will not be able to apply, edit, or delete deductive annotations that do not belong to their assigned criteria.
 

@@ -288,22 +288,26 @@ NOTE: this method is only available to AdminUser users
 - description: Create a role for a user in the given course
 - required parameters:
     - user_name (string: a user with this user name must exist)
-    - type (string: one of "Instructor", "Ta", "Student")
+    - type (string: one of "Instructor", "Ta", "Student", "AdminRole")
 - optional parameters:
     - grace_credits (integer)
     - hidden (boolean)
     - section_name (string: name of a Section for the given course)
+
+NOTE: the "AdminRole" type can only be used by AdminUser users
 
 ### POST /api/courses/:course_id/roles/create_or_unhide
 
 - description: Create a role for a user in the given course, if the given role already exists set the hidden attribute to `false` instead
 - required parameters:
     - user_name (string: a user with this user name must exist)
-    - type (string: one of "Instructor", "Ta", "Student")
+    - type (string: one of "Instructor", "Ta", "Student", "AdminRole")
 - optional parameters:
     - grace_credits (integer)
     - hidden (boolean)
     - section_name (string: name of a Section for the given course)
+
+NOTE: the "AdminRole" type can only be used by AdminUser users
 
 ## PUT /api/courses/:course_id/roles/update_by_username
 
@@ -645,6 +649,20 @@ NOTE: this method is only available to AdminUser users
 
 NOTE: This will also send the updated specs to the server running the autotester
 
+### POST /api/courses/:course_id/assignments/:id/submit_file
+
+- description: Submit a file in the currently authenticated user's groups repository for the given assignment. If the user does not yet have a group, this also creates a group for the user.
+- required parameters:
+    - filename (string)
+    - mime_type (string)
+    - file_content (string or binary data)
+
+NOTE: This route is for STUDENT USE ONLY.
+
+NOTE: the filename string can include a nested path if the file should be added in a subfolder (ex: "filename=some/nested/dir/submission.txt")
+
+NOTE: not all parent directories need to exist in order to create a nested file. For example, if "filename=some/nested/dir/submission.txt"  and "some/" doesn't exist yet, then "some/", "some/nested", and "some/nested/dir" will all be created as well.
+
 ### GET /api/courses/:course_id/assignments/:assignment_id/groups
 
 - description: Get all group information for the given assignment
@@ -661,11 +679,11 @@ NOTE: This will also send the updated specs to the server running the autotester
     "members": [
       {
         "membership_status": "inviter",
-        "user_id": 9
+        "role_id": 9
       },
       {
         "membership_status": "accepted",
-        "user_id": 24
+        "role_id": 24
       }
     ]
   }
@@ -752,11 +770,11 @@ NOTE: This will also send the updated specs to the server running the autotester
   "members": [
     {
       "membership_status": "inviter",
-      "user_id": 9
+      "role_id": 9
     },
     {
       "membership_status": "accepted",
-      "user_id": 24
+      "role_id": 24
     }
   ]
 }

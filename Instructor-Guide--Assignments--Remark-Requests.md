@@ -24,6 +24,11 @@ The instructor may choose to submit overall comments on the request as well (mar
 If you wish to change the marks for this student you may [update the marks as normal](Instructor-Guide--Assignments--Marking--Grading-View.md#marks) on the "Marks" tab. You may also add new annotations as normal.
 
 > 🗒️ **NOTE**: When adding new [deductive annotations](Instructor-Guide--Assignments--Deductive-Annotations.md) to a remark, the marks **will not** be updated automatically. Marks will need to be manually adjusted as needed.
+>
+> The "Revert to automatic deductions" action for a mark will take into account these new annotations as follows:
+>
+> - If no new deductive annotations for the mark have been added, the mark will be calculated based on the deductive annotations from the original result.
+> - If at least one deductive annotation for the mark has been added, the mark will be calculated based on the deductive annotations for the remark, *ignoring* any deductive annotations from the original result.
 
 Once the marks have been updated, click the "Set to Complete" and "Release Marks" buttons as normal to release the updated marks back to the student.
 

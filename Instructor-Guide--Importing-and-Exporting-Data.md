@@ -98,6 +98,33 @@ The remaining fields are optional.
 
 > :spiral_notepad: **Note:** If the uploaded file contains a short identifier that is already used, the existing assignment is updated with the corresponding uploaded settings.
 
+### Assignment Grades
+
+Instructors may download a summary of the grades for each assignment in CSV format.
+
+The CSV file consists of two *header rows* at the top of the file:
+
+- The first row contains the Group, User Name, Last Name, First Name, Section, ID Number, Email, Final Grade, and each criterion. The last entry is Bonus/Deductions.
+- The second row contains of 4 dummy entries (it is ignored by MarkUs), followed by the "Out of" total for each column.
+
+Every subsequent row is a student record:
+
+- The first six entries in the row is the Gruop, User Name, Last Name, First Name, Section, ID Number and Email of the student. If any of these fields are not provided, they are left blank.
+- Every subsequent entry is the grade of the student for that column. This entry can be left blank if no grade is given.
+- The students are ordered by their group. This means all students of the same gruop will appear consecutively.
+
+*Every row in the CSV file should have the same number of entries*.
+
+### Example file
+
+```csv
+Gruop,User name,Last name,First name,Section,Id number,Email,Final grade,dolores,iusto,Bonus/Deductions
+, , , ,Out of,10,6,4
+group_001,c5anthei,George,Antheil,LEC0101,353472201,antheil.george@example.com,5,2,3
+group_001,c5berkel,Lennox,Berkeley,LEC0201,815161511,berkeley.lennox@example.com,5,2,3
+group_002,c5berkel,Alexander,Glazunov,LEC0201,148704361,glazunov.alexander@example.com,9,5,4
+```
+
 ## Criteria
 
 Instructors can upload all marking criteria as a YML file.
@@ -178,6 +205,7 @@ Only CSV files are supported.
 Every row of the CSV file should have the following format:
 
 - The first entry is the name of the group (e.g., `group1`). This cannot be blank, and must be *unique across all assignments*.
+    - Each group name must be at most 30 characters long, and consist only of alphanumeric characters, hyphens, underscores, and spaces.
 - All subsequent entries are user names of students who are members of this group.
 
 > :spiral_notepad: **Note:** A student must belong to at most one group for the assignment. So the same student user name cannot appear in two different rows in your uploaded file, nor can the file contain a student who is already be a member of an existing group.
@@ -196,23 +224,24 @@ Only CSV files are supported.
 
 The CSV file consists of two *header rows* at the top of the file:
 
-- The first row contains a dummy entry (it is ignored by MarkUs), followed by column names.
-- The second row contains a dummy entry (it is ignored by MarkUs), followed by the "Out of" total for each column.
+- The first row contains the User Name, Last Name, First Name, Section, ID Number and Email (in this order). If the Show Total property is checked, the last column will also contain Total.
+- The second row contains six dummy entries (it is ignored by MarkUs), followed by the "Out of" total for each column.
 
 Every subsequent row is a student record:
 
-- The first entry in the row is the user name of the student.
-- Every subsequent entry is the grade of the student for that column. This entry can be left blank if no grade is given.
+- The first six entries in the row is the User Name, Last Name, First Name, Section, ID Number and Email of the student. If any of these fields are not provided, they are left blank.
+- Every subsequent entry is the grade of the student for that column. This entry can be left blank if no grade is given. The last entry is the total grade of the student and is shown only if the Show Total property is checked.
+- The students are ordered by their user name.
 
 *Every row in the CSV file should have the same number of entries*.
 
 ### Example file
 
 ```csv
-,Q1,Q2,Q3
-,4,5,2
-c5anthei,3,5,2
-c5granad,4,,
+User name,Last name,First name,Section,Id number,Email,Q1,Q2,Q3,Total
+, , , , , ,Out of,4,5,2,12
+c5anthei,George,Antheil,LEC0101,353472201,antheil.george@example.com,3,5,2,10
+c5berkel,Lennox,Berkeley,LEC0201,815161511,berkeley.lennox@example.com,2,1,2,5
 ```
 
 ### Handling existing data
@@ -256,12 +285,12 @@ Both CSV and YML files are supported for downloading a student list. Only CSV is
 
 The following fields are listed with the key names in the YML file, and in the order they must appear in the CSV file.
 
-- `username`: the user name of the TA (cannot be blank)
-- `last_name`: the last name of the TA (cannot be blank)
-- `first_name`: the first name of the TA (cannot be blank)
+- `username`: the user name of the student
+- `last_name`: the last name of the student
+- `first_name`: the first name of the student
 - `section_name`: the name of the (MarkUs) section the student belongs to
 - `id_number`: the id number of the student
-- `email`: the email address of the TA
+- `email`: the email address of the student
 
 > :spiral_notepad: **Note:**
 
@@ -276,7 +305,7 @@ If an uploaded student with the same user_name exists, then that student's infor
 ### Upload and Download Format
 
 - Only CSV files are supported for uploads.
-- CSV and XML files are supported for downloads.
+- CSV and YML files are supported for downloads.
 
 ## TAs
 
@@ -409,9 +438,12 @@ student_user_1,grader_user_1,grader_user_2
 Instructors are able to upload/download a group of files that contain all the settings and files required to configure
 an assignment (that is, it's properties, tags, criteria, annotations, starter files and automated tests).
 
-This upload/download **DOES NOT** copy assignment settings related to students or graders (i.e. section specific settings, group
+This upload/download **DOES NOT** copy assignment settings related to students or graders (i.e.
+specific settings, group
 information, etc.). Hence, after copying an assignment over, it is recommended that users check the assignment's settings
 to make sure it is configured as they desire.
+
+Any peer reviews for an assignment are also **NOT** copied over. If you wish to also copy peer review assignments, you must upload/download each one separately. Note that when uploading a peer review assignment, please ensure that you create or upload its source assignment first, otherwise, the upload will fail.
 
 ### Supported formats
 
@@ -437,9 +469,6 @@ In addition, the zip file has three folders that contain:
     - An automated test specs json file.
     - A folder containing every uploaded test file.
         - This is an optional folder. If it does not exist, that means there are no test files.
-- Settings for an assignment's peer review assignment (`peer-review-config-files`)
-    - This is an optional folder. If it exists, a peer review assignment will try to be created.
-    - This folder is formatted exactly the same as a normal assignment just without an automated tests folder and another peer review folder.
 
 > **Important:**
 > While the contents of the yml files and folders can be extracted and modified for offline configuration, this is NOT

@@ -19,6 +19,7 @@
         - [Starter Files](Instructor-Guide--Assignments--Starter-Files.md)
         - [Peer Review](Instructor-Guide--Assignments--Peer-Review.md)
         - [Assigning Graders](Instructor-Guide--Assignments--Assigning-Graders.md)
+        - [Summary](Instructor-Guide--Assignments--Summary.md)
     - [Timed Assessments](Instructor-Guide--Timed-Assessments.md)
     - [Scanned Exams](Instructor-Guide--Scanned-Exams.md)
     - Marks Spreadsheets
@@ -33,6 +34,7 @@
         - [Windows](SSH_Keypair_Instructions_Windows.md)
         - [Linux and OSX](SSH_Keypair_Instructions_Linux-OSX.md)
     - [Grade Summary](Instructor-Guide--Grade-Summary.md)
+    - [Course Settings](Instructor-Guide--Course-Settings.md)
 - [Student Guide](Student-Guide.md)
 - Developer Guide
     - [Guidelines](Developer-Guide--Guidelines.md)
@@ -48,6 +50,7 @@
     - [Annotations](Developer-Guide--Tips-And-Tricks--Annotations.md)
     - [Security](Developer-Guide--Tips-And-Tricks--Security.md)
 - [General Usage](General-Usage.md)
+- [Admin Guide](Admin-Guide.md)
 - [Installation](Installation.md)
 - [Configuration Settings](Configuration.md)
 - [RESTful API](RESTful-API.md)

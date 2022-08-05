@@ -11,6 +11,7 @@
     - [Saving Changes](#saving-changes)
 - [What Students Will See](#what-students-will-see)
 - [Modifying An Assignment After Creation](#modifying-an-assignment-after-creation)
+- [Uploading and Downloading an Existing Assignment](#uploading-and-downloading-an-existing-assignment)
 
 ## Initial Setup
 
@@ -36,6 +37,12 @@ This section allows you to set the name and due date for the assignment as well 
 > :spiral_notepad: **NOTE:** Students not assigned to any section will only be allowed to form groups with other students not assigned to any section.
 
 **6. Check boxes:** The rest of this section includes check boxes that may be selected or deselected depending on your preferences. Note that in order for students to submit online, the "Allow students to submit through the web interface" box must be checked. If you prefer students to submit through a version control system, then uncheck the "web interface" box and select "version control system".
+
+If you wish to allow students to submit URLs check the "Allow students to submit URLs" box. This is especially useful if you plan on requiring students to submit videos or large files since preview support is available for content from YouTube and Google Drive/Docs.
+> :spiral_notepad: **NOTE:**
+> MarkUs does not check the "last modified time" of the target of a submitted URL. It is possible for students to submit a URL before the deadline, but change the target's contents after the deadline (e.g., by modifying the contents of a Google Doc).
+
+If you want to give students the ability to submit through the MarkUs API, you can check the "Allow students to submit through the MarkUs API" box. This is necessary if you plan on creating or using an external plugin that allows students to submit assignments such as the MarkUs Jupyter Extension.
 
 Please see the [Peer Review](Instructor-Guide--Assignments--Peer-Review.md) page for more information on Peer Review.
 
@@ -91,3 +98,19 @@ Once an assignment has been created, you are still allowed to modify most of the
 ![Website Edit Assignment](https://user-images.githubusercontent.com/50387112/58756344-d2680680-84c4-11e9-9a4f-af50a0c5cc00.png)
 
 All the fields on this page are the same as the ones from the "Create Assignment" section.
+
+## Uploading and Downloading an Existing Assignment
+
+If you wish to save and/or transfer your settings for an existing assignment for future use, you can download a zip file of the assignment which you can later upload back to MarkUs. This is useful if you wish to reuse a specific assignment in a future offering of a course.
+
+To download an assignment, go to an assignment's properties page and click on the "Download" link in the top right corner.
+![Assignment Download Link](images/assignment-download-link.png)
+
+This will download an assignment zip file you can save and upload back later. For more information on this zip file and what settings are saved, please see the section on [importing and exporting assignment configurations](Instructor-Guide--Importing-and-Exporting-Data.md#assignment-configuration).
+
+In order to upload an assignment zip file, navigate to the "Assignments" tab at the top of the page and click on the "Upload Configuration Zip File" link in the top right corner.
+![Assignment Upload Link](images/assignment-upload-link.png)
+
+This will show you a modal where you can select an assignment zip file to upload.
+![Assignment Upload Modal](images/assignment-upload-modal.png)
+After you have selected a zip file to upload, MarkUs will then create a new assignment using the settings specified within the zip file.

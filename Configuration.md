@@ -8,10 +8,11 @@ Values in this file are described below and will override any default values in 
 To show the default values for your environment, run the following command in the root directory of the installed MarkUs instance:
 
 ```sh
-echo 'puts JSON.parse(Settings.to_json).to_yaml' | NO_SCHEMA_VALIDATE=1 bundle exec rails console
+echo 'puts JSON.parse(Settings.to_json).to_yaml' | NO_SCHEMA_VALIDATE=1 NO_INIT_SCHEDULER=1 bundle exec rails console
 ```
 
 By specifying `NO_SCHEMA_VALIDATE` an error will not be raised if a required key is missing.
+By specifying `NO_INIT_SCHEDULER` an error will not be raised if MarkUs can't connect to a redis instance (not required for this task).
 
 ## Settings
 
@@ -96,6 +97,7 @@ logging:
 scanned_exams:
   enable: # boolean indicating whether to enable scanned exams
   path: # absolute path to a directory to store scanned exam files
+resque_scheduler: # configuration for scheduling background jobs (this section can be omitted entirely)
 autotest:
   student_test_buffer_minutes: # maximum number of minutes between student tests (see "Student Tests" below)
   client_dir: # absolute path to a directory to store local autotesting files
@@ -107,6 +109,15 @@ starter_file:
   storage: # absolute path to a directory to store starter files
 python:
    bin: # location of the bin subdirectory of the python3 virtual environment where python dependencies are installed
+rails_performance:
+  enabled: # boolean whether to enable the rails performance dashboard (See the "Admin Guide" page for more information about this dashboard)
+  duration: # duration in minutes for rails performance to store data for monitoring
+exception_notification:
+  enabled: # boolean indicating whether to enable email notifactions when errors occur (See "Error Notification Emails" below for more details)
+  sender: # email address string with which to email error notifications
+  sender_display_name: # sender display name for recipients to see
+  email_prefix: # string text to prefix to the error subject line that summarizes the error
+  recipients: # list of string email addresses who will recieve error notification emails
 pandoc: # path to the pandoc executable
 ```
 
@@ -131,6 +142,25 @@ queue:
 ```
 
 Will run all background jobs using a queue named "default" except for `AutotestSpectsJob` which will use a queue named "specs_queue" and `SplitPdfJob` which will use a queue named "some_other_one".
+
+## Scheduled background jobs
+
+MarkUs uses the [resque-scheduler gem](https://github.com/resque/resque-scheduler) to schedule background jobs. The configuration is nested under the settings key `resque_scheduler`, and can be omitted entirely.
+
+We recommend scheduling the `CleanTmpJob` to regularly clean the MarkUs `tmp/` folder. Here is a sample configuration:
+
+```yaml
+resque_scheduler:
+  CleanTmpJob:
+    class: ActiveJob::QueueAdapters::ResqueAdapter::JobWrapper
+    queue: DEFAULT_QUEUE
+    every: 2d  # run every two days
+    # never: "* * * * * *"  # replace every: with never: if you want to run the job manually
+    args:
+      job_class:  CleanTmpJob
+      arguments:
+        - 5184000  # 60 days, in seconds; see CleanTmpJob documentation for details
+```
 
 ## Student Tests
 
@@ -204,3 +234,11 @@ One setting option can only be changed by an environment variable. To set the re
 ```sh
 RAILS_RELATIVE_URL_ROOT=/csc108 bundle exec rails server
 ```
+
+## Error Notification Emails
+
+If you wish to be informed when a user encounters a server error whilst using MarkUs, you can configure MarkUs to send you an email whenever such an error event happens along with its details. To do so, under the `exception_notification` settings, set the `enabled` setting to true. Be sure to then specify a `sender` email address and a list of `recipients` addresses. You can also optionally set a `sender_display_name` and an `email_prefix`.
+
+Note that in order for this feature to work, you **must** have ActionMailer [configured](https://guides.rubyonrails.org/action_mailer_basics.html) to send emails. This means that you must select an ActionMailer `delivery_method` with the appropriate settings and you must also set `perform_deliveries` to true. You will be unable to send or recieve error notification emails otherwise.
+
+This feature informs you of all uncaught exceptions that occur in the MarkUs backend. In order to possibly avoid filling recipient inboxes with a lot of the same error notifications, email notifications are sent after every `2**n` occurences of the same error. For more details, visit the [exception notification](https://github.com/smartinez87/exception_notification) gem homepage with which we use to provide you this feature.

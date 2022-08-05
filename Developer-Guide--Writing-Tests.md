@@ -3,12 +3,19 @@
 ## Table of Contents
 
 - [Testing with RSpec](#testing-with-rspec)
-- [How to Run Specifications](#how-to-run-specifications)
-- [Naming Conventions](#naming-conventions)
-- [Helper Gems](#helper-gems)
-- [Model Specifications](#model-specifications)
-- [Controller Specifications](#controller-specifications)
-- [General Tips](#general-tips)
+    - [How to Run Specifications](#how-to-run-specifications)
+    - [Naming Conventions](#naming-conventions)
+    - [Helper Gems](#helper-gems)
+    - [Model Specifications](#model-specifications)
+    - [Controller Specifications](#controller-specifications)
+    - [System Specifications](#system-specifications)
+    - [General Tips](#general-tips)
+- [Testing with Jest](#testing-with-jest)
+    - [How to Run Jest Specifications](#how-to-run-jest-specifications)
+    - [Jest Configurations](#jest-configurations)
+    - [Jest Naming Conventions](#jest-naming-conventions)
+    - [Example Tests](#example-tests)
+    - [Tips](#tips)
 
 ## Testing with RSpec
 
@@ -18,7 +25,7 @@ Testing with RSpec involves specifications (files containing tests), and example
 
 ## How to Run Specifications
 
-**Note:** The following commands assume you are within the Markus root folder.
+**Note:** The following commands assume you are within the Markus root folder. If you running MarkUs with Docker, you must be in a shell in the [rails Docker container](Developer-Guide--Set-Up-With-Docker.md#running-commands-in-docker).
 
 To run all specifications:
 
@@ -107,7 +114,7 @@ We use shoulda-matchers because the examples are easily understood just by readi
 
 ### Method Examples
 
-As you  have probably noticed in the `group_spec.rb` file, all method examples are written within their own `describe` block. If the method is an instance method, the description of the block will be a hash followed by the method’s name:
+As you have probably noticed in the `group_spec.rb` file, all method examples are written within their own `describe` block. If the method is an instance method, the description of the block will be a hash followed by the method’s name:
 
 ```ruby
 describe '#method_name' do
@@ -271,9 +278,62 @@ expect(assignment).to receive(:add_group).with(nil).and_return(grouping)
 get :new, assignment_id: assignment
 ```
 
-## General Tips
+## System Specifications
 
-### Code Duplication
+System specifications will have the following template:
+
+```ruby
+describe Action do
+  context 'some type of user' do
+    action_examples
+  end
+
+  context 'some other type of user' do
+    action_examples
+  end
+end
+```
+
+Notice that the template is similar to controller specifications. `some type of user` and `some other type of user` still generally describe context blocks that correspond to someone who has authorization to perform certain actions. The difference however, is that system tests are used to describe and test actions performed via the UI. These tests use Capybara, an acceptance test framework that simulates user interaction. For more information, documentation about Capybara can be found [here](https://rubydoc.info/github/teamcapybara/capybara/master). These simulated user interactions are run and tested on a chrome browser running on your local machine.
+
+### Writing System Tests
+
+System tests are written using the Capybara Design Specification Language. These tests revolve around finding elements on a given page and performing certain actions on that element; similar to how you would interact with the page as a normal user. Also like a normal user, you can only find and perform actions on elements that can be visibly seen via the UI. For a helpful quick start on learning the Capybara Design Specification Language, see the documentation on the [Capybara DSL](https://github.com/teamcapybara/capybara#the-dsl). [This cheatsheet](https://devhints.io/capybara) is also a helpful guide in learning what basic actions you can perform.
+
+### Running System Tests
+
+System tests require extra setup steps in order for you to run them locally. As a result, they are disabled by default. If you wish to run system tests on your machine you will need to perform the following steps:
+
+1. Download [Chrome](https://support.google.com/chrome/answer/95346?hl=en&co=GENIE.Platform%3DDesktop) on your machine. This is the browser with which we will use to test UI actions.
+
+2. Download [ChromeDriver](https://chromedriver.chromium.org/downloads). This will allow our System Tests to perform actions on the Chrome browser.
+
+3. In a terminal on your machine, run ChromeDriver by typing the command `chromedriver --whitelisted-ips`. The `--whitelisted-ips` flag is used to let ChromeDriver know to allow the connection with a docker terminal.
+
+    > :spiral_notepad: **Note:** On Windows ensure ChromeDriver is run from a Command Prompt or Windows Powershell.
+
+4. In a separate terminal, start a bash shell within the Docker Rails environment by running `docker-compose run -p 3434:3434 --rm rails bash`. Notice that we exposed port 3434 by adding the argument `-p 3434:3434`. Port 3434 is the port with which Capybara will use to serve the test MarkUs instance for Chrome to use.
+
+5. Run system tests by running `RAILS_RELATIVE_URL_ROOT=/ rspec spec/system` in the bash shell you created in step 4. Currently, Capybara does not support applications with a different relative url root which is why you must set `RAILS_RELATIVE_URL_ROOT=/`. You will also notice that due to the additional setup for system tests, they are ignored by default and must be explicitly defined in order for rspec to run them. Simply running `RAILS_RELATIVE_URL_ROOT=/ rspec` will not run the system test suite.
+
+    **Optional**: By default system UI tests are run headless and cannot be viewed using a browser window. While this is generally faster, if you wish to view the tests in a browser window (such as for debugging), you can set and add the environment variable `DISABLE_HEADLESS_UI_TESTING=true` when running system tests.
+
+#### Troubleshooting
+
+- If you see a test failing with the following message near the top:
+
+```bash
+Failure/Error: TCPSocket.open(conn_addr, conn_port, @local_host, @local_port)
+
+      Errno::EADDRNOTAVAIL:
+        Failed to open TCP connection to localhost:9515 (Cannot assign requested address - connect(2) for "localhost" port 9515)
+```
+
+This means that Capybara cannot connect to the ChromeDriver running on your machine from the docker container it is running from. Check to ensure you have ran the commands above with the proper arguments. They are all necessary to allow Capybara and Chromedriver to communicate with each other. If you are still having trouble, it may be your running docker containers are configured incorrectly to communicate with Chromedriver. In this case, you may find it helpful to rebuild your docker containers.
+
+### General Tips
+
+#### Code Duplication
 
 Sometimes you will find yourself writing very similar specs for different models or controllers. If you smell such code duplication (e.g., when you are copying and pasting a lot of old spec to create new spec without changing much of the spec code structure), you should probably use [shared examples](https://www.relishapp.com/rspec/rspec-core/docs/example-groups/shared-examples). Shared examples give you a way to specify the abstract common behavior of some objects (a model or a controller in most cases) in a single place, and apply the behavior to multiple specs of concrete objects. Shared examples that logically belong to the same group are given a name appropriate for the concrete objects they are describing. Usually, the name would be a noun starting with an article (e.g., `a duck`, `an apple`), but that might not always be the case. Think of the use case of your shared examples -- how does it read when you say `it_behaves_like 'your_shared_examples_name'` (or any other alias of `it_behaves_like`)?
 
@@ -311,3 +371,225 @@ end
 In Markus, one use case of shared examples is [`a criterion`](https://github.com/MarkUsProject/Markus/blob/master/spec/support/criterion.rb), which specifies the common behavior of `RubricCriterion` and a `FlexibleCriterion`.
 
 You can also use an alias for the method `it_behaves_like_a` to make the spec code read better. For example, `it_has_behavior 'enumerability'`. The aliases should be defined in [spec/support/it_behaves_like_aliases.rb](https://github.com/MarkUsProject/Markus/blob/master/spec/support/it_behaves_like_aliases.rb).
+
+## Testing with Jest
+
+[Jest](https://jestjs.io/) is a JavaScript testing framework focused on simplicity. It works well with multiple popular frameworks, such as Node, Angular, Vue, and of course React. It provides a test runner and several handy functions; however, to fully use its capability, Jest is often combined with some other testing libraries. As of now, both [React Testing Library (RTL)](https://testing-library.com/docs/react-testing-library/intro/) and [Enzyme](https://enzymejs.github.io/enzyme/) are being used alongside Jest in Markus.
+
+On a high level, RTL allows you to test from the user's perspective, while Enzyme gives you access to the internal states/implementation of the components.
+
+Similar to RSpec, Jest also involves specifications. It is recommended that you follow along the `__tests__` folder, under `app/assets/javascripts/Components/`, for this tutorial.
+
+### How to Run Jest Specifications
+
+**Note:** The following commands assume you are within the Markus root folder. If you running MarkUs with Docker, you must be in a shell in the [rails Docker container](Developer-Guide--Set-Up-With-Docker.md#running-commands-in-docker).
+
+`yarn` is the package manager we use in Markus. Its counterpart `npm` is sometimes more known.
+
+To run all specifications:
+
+```sh
+yarn test
+```
+
+To run all specifications with the test-coverage table shown:
+
+```sh
+yarn test-cov
+```
+
+To run a specific specification:
+
+```sh
+yarn test <filename>
+```
+
+For example, to run the `StudentTable` specification, run `yarn test student_table.test.jsx`.
+
+These commands are specified in `package.json`, under Markus root.
+
+### Jest Configurations
+
+There are a lot of [configurations](https://jestjs.io/docs/configuration) within Jest. The main source of configuration is jest.config.js under the Markus root. Most of the settings are left as default, and each setting has a comment explaining what they are for. Make sure you update the respective settings when needed. We'll cover 3 important ones below.
+
+#### setupFiles
+
+This setting points to a list of files that are run to set up the testing environment. For instance, the imports of `JQuery` and `I18n` would be in it.
+
+#### setupFilesAfterEnv
+
+This setting points to a list of files that are run immediately after the setup of testing environment, before the actual tests. This is a great place for your global imports in the test files, such as the import of `React`, the configuration of `Enzyme`.
+
+#### testMatch
+
+This setting points to a list of patterns that entails directories/modules you want Jest to look at to find your tests. For instance, `**/__tests__/**/*.[jt]s?(x)` would include the path `app/assets/javascripts/Components/__tests__/student_table.test.jsx`.
+
+### Jest Naming Conventions
+
+#### Folders
+
+Currently we use a centralized `__tests__` folder under `components`. The folder is intended to include tests for all the React components.
+
+#### Files
+
+The name of the file should have the format `<component>.test.jsx`. For instance, the test file for the StudentTable component would be `student_table.test.jsx`.
+
+It is also recommended to make sure a file focuses on testing one specific component. If a component makes use of other child components with sufficient complexity, you could make a test file for each of those child components in addition to the parent component.
+
+### Example tests
+
+From `student_table.test.jsx`:
+
+#### React Testing Library
+
+```js
+describe("For the StudentTable component's rendering", () => {
+  beforeEach(() => {
+    render(<StudentTable ... />);
+  });
+
+  describe("the parent component", () => {
+    ...
+    it("renders a child StudentsActionBox", () => {
+      expect(within(screen.getByTestId("raw_student_table")).getByTestId("student_action_box"))
+        .toBeInTheDocument;
+    });
+    ...
+```
+
+This code snippet illustrates a commonly used Jest structure alongside several RTL methods.
+
+The `describe` block is a global in Jest used to group tests together. In general we aim to make sure the test cases read like complete sentences (i.e. For the StudentTable component's rendering the parent component renders a child StudentsActionBox).
+
+The `beforeEach` block is a global in Jest that is executed before every example. Similarly, the `beforeAll` block is a global in Jest that is executed before all examples. If a `beforeEach` or `beforeAll` is inside a `describe` block, it runs at the beginning of the `describe` block.
+
+Individual test cases are written with an `it` block, which consists of a description of the test case followed by the code as a callback - notice its structure is essentially the same as a `describe` block.
+
+`getByTestId("...")` is a method used to find an element using its `data-testid` attribute. In React we can declare such attribute in the form of
+
+```js
+<ElementName ... data-testid={"some string"}/>
+```
+
+`render` is RTL's render method, which renders an element into a container (i.e. attaching to `document.body`). After calling this method we can use `screen.<query_method>` (such as `screen.getByTestId`) to locate elements. Reference the [testing library API and documentation](https://testing-library.com/docs/react-testing-library/api/) for a complete list of queries.
+
+`toBeInTheDocument` is a matcher utility provided by [Jest-DOM](https://github.com/testing-library/jest-dom). This matcher allows you to assert whether an element is present in the document or not.
+
+Again, this is only a snippet. The libraries and Jest have much more to show.
+
+#### Enzyme
+
+```js
+describe("each filterable column has a custom filter method", () => {
+    let wrapper, filter_method;
+    beforeAll(() => {
+      wrapper = mount(<StudentTable ... />);
+    });
+
+    describe("the filter method for the section column", () => {
+      beforeAll(() => {
+        filter_method =
+          wrapper.instance().wrapped.checkboxTable.wrappedInstance.props.columns[6].filterMethod;
+      });
+
+      it("returns true when the selected value is all", () => {
+        expect(filter_method({value: "all"})).toEqual(true);
+      });
+    ...
+```
+
+The overall structure is practically the same as the RTL snippet. The differences lie within the implementation of the test cases.
+
+Recall the Enzyme allows you access to the internal states of a component/element.
+
+`mount` is a render method of Enzyme that deep renders a component. Its counterpart `shallow` shallow renders a component. On a high level, the former renders a component's children while the latter does not.
+
+`wrapper.instance()` gives you this returned React component, from which you can dig deeper to find specific internal states to test/modify.
+
+#### Mocking
+
+While writing tests you might find [mocking](https://jestjs.io/docs/mock-functions) useful. It allows you to manipulate the mocked function's calls' return value.
+
+Consider the following code for the StudentTable component from `student_table.jsx` (it wraps around the RawStudentTable component so we look at this component's code):
+
+```js
+class RawStudentTable extends React.Component {
+  constructor() {
+    ...
+    this.state = {
+      data: {
+        students: [],
+        sections: {},
+        counts: {all: 0, active: 0, inactive: 0},
+      },
+      ...
+    };
+  }
+
+  ...
+
+  fetchData = () => {
+      $.ajax({
+        method: "get",
+        url: ...,
+        ...
+      }).then(res => {
+        this.setState({
+          data: res,
+          ...
+        });
+      });
+    };
+```
+
+It would be useful to mock this fetchData function so that we can test whether the component behaves as we expect it to under different scenarios:
+
+```js
+describe("For the StudentTable's display of students", () => {
+  let wrapper, students_sample;
+
+  describe("when some students are fetched", () => {
+    ...
+
+    beforeAll(() => {
+      students_sample = [...];
+      // Mocking the response returned by $.ajax, used in StudentTable fetchData
+      $.ajax = jest.fn(() =>
+        Promise.resolve({
+          students: students_sample,
+          sections: {1: "LEC0101"},
+          counts: {all: 2, active: 2, inactive: 0},
+        })
+      );
+      wrapper = mount(<StudentTable ... />);
+    });
+    ...
+  });
+
+  ...
+
+  describe("when no students are fetched", () => {
+    beforeAll(() => {
+      students_sample = [];
+      // Mocking the response returned by $.ajax, used in StudentTable fetchData
+      $.ajax = jest.fn(() =>
+        Promise.resolve({
+          students: students_sample,
+          sections: {},
+          counts: {all: 0, active: 0, inactive: 0},
+        })
+      );
+      wrapper = mount(<StudentTable ... />);
+    });
+```
+
+Here we're mocking the `$.ajax` function so that instead of its own implementation, in this test whenever it's called, it would return what we told it to. We know the function should return a promise consisting of some data that can be used to fill in the component's `data` state by reading through `fetchData`'s own implementation. In addition, we can use the react developer tools (explained below in the [Tips](#tips) section) to examine the component's props and states too.
+
+In this case, we want to test how the component behaves when some students are fetched vs no students are fetched, and we easily achieve this through mocking the return value of the `$.ajax` function.
+
+**Note:** in situations like this, reading through the documentation for the specific function(s) could be helpful as well.
+
+### Tips
+
+1. Consider installing the [React Developer Tools (linked to the chrome extension)](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) extension. If you aren't using chrome, there should be an equivalence for your browser. It allows you to select and view a component's rendering tree and states/props, and is useful in many situations, such as learning the behavior of a component, debugging, etc.
+2. Make use of Jest's [globals](https://jestjs.io/docs/api) to counter code duplication.
