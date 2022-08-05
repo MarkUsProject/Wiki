@@ -34,7 +34,7 @@ Ensure the following ubuntu packages are installed:
 Install [bundler](https://bundler.io/) as a system gem:
 
 ```sh
-gem install bundler -v 1.17.3
+gem install bundler -v 2.3.17
 ```
 
 Install [node](https://nodejs.org/en/) (note that we need at least version 12 so we can't just install the ubuntu 20.04 package directly):
@@ -83,10 +83,8 @@ git checkout release
 ### Install Ruby dependencies using [bundler](https://bundler.io/)
 
 ```sh
-./bin/bundle install --deployment --without development test offline mysql sqlite
+./bin/bundle install --deployment --without development test offline
 ```
-
-(Note that although MarkUs technically supports alternative database backends like mysql and sqlite, they may not be fully supported and support may be removed entirely in later versions. For this reason we recommend using Postgresql and running the `bundle install` command with the `--without` arguments above)
 
 ### Install javascript dependencies using [yarn](https://yarnpkg.com/)
 
@@ -152,10 +150,9 @@ RAILS_ENV=production ./bin/bundle exec rails db:migrate
 
 ### Precompile static assets
 
-MarkUs will run a lot faster in production if [assets are precompiled](https://guides.rubyonrails.org/asset_pipeline.html#in-production). To precompile all static assets run the following commands:
+MarkUs will run a lot faster in production if [assets are precompiled](https://guides.rubyonrails.org/asset_pipeline.html#in-production). To precompile all static assets run the following command:
 
 ```sh
-RAILS_ENV=production ./bin/bundle exec rails i18n:js:export
 RAILS_ENV=production ./bin/bundle exec rails assets:precompile
 ```
 
@@ -327,8 +324,6 @@ For example:
 ```sh
 echo "SELECT check_repo_permissions(:'user_name', :'course_name', :'repo_name')" | psql -qtA -v user_name=student123 -v course_name=csc108 -v repo_name=somerepo
 ```
-
-> :warning: **WARNING:** If you receive an error that this function does not exist. Make sure that it is enabled by running the `db:functions` rake task in your production environment. This will build the function and make it available.
 
 ##### User authorization using the .access file (DEPRECATED)
 
