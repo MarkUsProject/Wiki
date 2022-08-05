@@ -34,7 +34,7 @@ Ensure the following ubuntu packages are installed:
 Install [bundler](https://bundler.io/) as a system gem:
 
 ```sh
-gem install bundler -v 1.17.3
+gem install bundler -v 2.3.17
 ```
 
 Install [node](https://nodejs.org/en/) (note that we need at least version 12 so we can't just install the ubuntu 20.04 package directly):
@@ -83,10 +83,8 @@ git checkout release
 ### Install Ruby dependencies using [bundler](https://bundler.io/)
 
 ```sh
-./bin/bundle install --deployment --without development test offline mysql sqlite
+./bin/bundle install --deployment --without development test offline
 ```
-
-(Note that although MarkUs technically supports alternative database backends like mysql and sqlite, they may not be fully supported and support may be removed entirely in later versions. For this reason we recommend using Postgresql and running the `bundle install` command with the `--without` arguments above)
 
 ### Install javascript dependencies using [yarn](https://yarnpkg.com/)
 
@@ -152,10 +150,9 @@ RAILS_ENV=production ./bin/bundle exec rails db:migrate
 
 ### Precompile static assets
 
-MarkUs will run a lot faster in production if [assets are precompiled](https://guides.rubyonrails.org/asset_pipeline.html#in-production). To precompile all static assets run the following commands:
+MarkUs will run a lot faster in production if [assets are precompiled](https://guides.rubyonrails.org/asset_pipeline.html#in-production). To precompile all static assets run the following command:
 
 ```sh
-RAILS_ENV=production ./bin/bundle exec rails i18n:js:export
 RAILS_ENV=production ./bin/bundle exec rails assets:precompile
 ```
 
@@ -210,10 +207,11 @@ Then, you should set up the `markus` user (that you created [previously](#create
    chmod u=rwx lib/repo/authorized_key_command.sh
    ```
 
-2. make sure the `lib/repo/markus-git-shell.sh` script is executable (should be owned by the `markus` user already):
+2. make sure the `lib/repo/markus-git-shell.sh` script is executable (should be owned by the `markus` user already) and in the `markus` user's PATH:
 
    ```sh
    chmod u=rwx lib/repo/markus-git-shell.sh
+   ln -s /app/lib/repo/markus-git-shell.sh /usr/local/bin/markus-git-shell.sh # for example, assuming /usr/local/bin is in the markus users's PATH
    ```
 
 3. create a `.ssh/` directory for the `markus` user:
@@ -226,15 +224,22 @@ Then, you should set up the `markus` user (that you created [previously](#create
 
     ```sh
     export MARKUS_LOG_FILE=/path/to/some/logfile.log
-    export MARKUS_REPO_LOC_PATTERN='/some/path/to/repos/(instance)'
-    export GIT_SHELL=/path/to/markus/root/lib/repo/markus-git-shell.sh
+    export MARKUS_REPO_LOC_PATTERN='/some/path/to/repos/'
+    export GIT_SHELL=/usr/bin/git-shell
     ```
 
    - where `/path/to/some/logfile.log` is an absolute path to a text file where you want the log output to be written (this is optional)
    - where `/some/path/to/repos/` is an absolute path to the location of the git repositories specified in the [`respository.storage`](./Configuration.md#markus-settings) configuration setting.
-   - where `/path/to/markus/root/` is the path to the root of the MarkUs source code so that `/path/to/markus/root/lib/repo/markus-git-shell.sh` points to the `markus-git-shell.sh` script.
+   - where `/usr/bin/git-shell` is a path to the git-shell executable installed by git. See [the git documentation](https://git-scm.com/docs/git-shell) for more details
 
-5. update the sshd settings so that when users ssh as the `markus` user they will only be allowed to run git commands (and only on repositories that they have access to as determined by the `.access` file (see [Git over HTTPS](#git-over-https) for details). Append the following to the `/etc/ssh/sshd_config` file:
+   If multiple MarkUs instances are running on your machine using relative url roots, then you can specify multiple repository locations for each instance. The `MARKUS_REPO_LOC_PATTERN` variable can contain an `(instance)` substring which will be replaced by the relative url root of the requested repository. For example, if you have two MarkUs instances running with relative url roots being `csc108/` and `csc209/` and repositories for each at:
+
+   - `/some/directory/markus/csc108/data/prod/repos/`
+   - `/some/directory/markus/csc209/data/prod/repos/`
+
+   Then setting `MARKUS_REPO_LOC_PATTERN=/some/directory/markus/(instance)/data/prod/repos` will mean that requests for repositories at either instance will be discovered properly.
+
+5. update the sshd settings so that when users ssh as the `markus` user they will only be allowed to run git commands (and only on repositories that they have access to as determined by the `.access` file or the check_repo_permissions function (see [Git over HTTPS](#git-over-https) for details). Append the following to the `/etc/ssh/sshd_config` file:
 
     ```text
     Match User markus
@@ -244,7 +249,7 @@ Then, you should set up the `markus` user (that you created [previously](#create
       AuthorizedKeysCommandUser markus
     ```
 
-   - where `/path/to/markus/root/` is the path to the root of the MarkUs source code so that `/path/to/markus/root/lib/repo/authorized_key_command.sh` points to the `authorized_key_command.sh` script.
+   - where `/path/to/markus/root/` is the path to the root of the MarkUs source code so that `/path/to/markus/root/lib/repo/authorized_key_command.sh` points to the `authorized_key_command.sh` script. You may have to change the `authorized_key_command.sh` file to be owned by the user that is running the sshd process (usually root). Feel free to also move the `authorized_key_command.sh` file elsewhere on disk if that is more convenient.
 
 6. start (or restart) the `sshd` process so that the new configuration settings get picked up
 
@@ -257,21 +262,35 @@ Then, you should set up the `markus` user (that you created [previously](#create
 
     so that users can clone repositories from urls like `ssh://markus@my.server.com/blah/group1.git`
 
+8. Make sure that the `markus-git-shell.sh` script can check repository permissions. This can be done in one of two ways:
+
+   - [Using the `.access` file](#user-authorization-using-the-access-file-deprecated): this method is deprecated but can still be used by setting the `MARKUS_USE_ACCESS_FILE` environment variable to a truthy value in the `/home/markus/.ssh/rc` file.
+   - [Using the `check_repo_permissions` function](#user-authorization-using-the-check_repo_permissions-function): this method is preferred. It requires that the markus user be able to access the database used by your markus instance. In order to do this, create a `.pg_service.conf` file in the markus user's home directory that contains access credentials. For example:
+
+       ```ini
+       [markus]
+       host=postgres
+       port=5432
+       user=mypostgresuser
+       dbname=markusdb
+       password=verysecret
+       ```
+
+     The `markus-git-shell.sh` will look up the correct service to use to connect to the database in the following manner:
+
+     - if your MarkUs instance uses a [relative url root](#running-markus-with-a-relative-url-root) then the service name should be the same as the relative url root.
+
+       For example, if your Markus instance is running at the url `my.server.com/something` then the service name in the `.pg_service.conf` should be `[something]`.
+
+       Note that this means that the urls that clients will use to access the repositories will also include this relative url root (ie. the `ssh_url` configuration setting should be set to something like: `'ssh://markus@my.server.com/something'`)
+
+     - if your MarkUs instance does not use a relative url root, the service name should be `[markus]`. If you would like to change this service name then you need to set the `DEFAULT_SERVICE` environment variable to the new name in the `/home/markus/.ssh/rc` file.
+
 #### Git over HTTPS
 
 To access git repositories over https use the [git-http-backend](https://git-scm.com/docs/git-http-backend) program.
 
-When setting up autorization protocols for this access, your authorization script should check who has permission to which git repos by inspecting the `.access` file in the repository storage directory (see the [configuration settings](./Configuration.md#markus-settings)).
-
-Each row of this file is a comma delimited and contains a relative path from the repository storage directory to a specific repository on disk followed by a list of user names of people who have access to this repository. For example, if [`respository.storage`](./Configuration.md#markus-settings) is `/some/path/to/repos/` and the `.access` file contains:
-
-```csv
-blah/group1.git,user1,user2
-blah/group2.git,user1
-bleh/*,user3
-```
-
-Then user1 should have permission to access repos at `/some/path/to/repos/blah/group1.git` and `/some/path/to/repos/blah/group2.git`, user2 should only have access to the first one. And user3 should have access to all repos in the `/some/path/to/repos/bleh/` directory.
+We also recommend restricting access to git repositories by creating your own external authorization script to ensure that only authorized users can access the git repositories.
 
 An example Apache configuration might look like:
 
@@ -289,6 +308,38 @@ ScriptAlias /git/ /usr/lib/git-core/git-http-backend/
 ```
 
 (where you have previously set up an external authorization script called authorizegit in your Apache configuration)
+
+Your authorization script should first authenticate the user and then it can check whether the user is authorized to view a given git repository using either the `check_repo_permissions.rb` script or the `.access` file (deprecated):
+
+##### User authorization using the check_repo_permissions function
+
+When setting up authorization protocols for this access, your authorization script should check who has permission to access which git repos by calling the `check_repo_permissions` postgresql function. This function takes 3 arguments:
+
+- the user name of the user requesting access to the instance
+- the course name
+- the repository name
+
+For example:
+
+```sh
+echo "SELECT check_repo_permissions(:'user_name', :'course_name', :'repo_name')" | psql -qtA -v user_name=student123 -v course_name=csc108 -v repo_name=somerepo
+```
+
+##### User authorization using the .access file (DEPRECATED)
+
+When setting up autorization protocols for this access, your authorization script should check who has permission to which git repos by inspecting the `.access` file in the repository storage directory (see the [configuration settings](./Configuration.md#markus-settings)).
+
+Each row of this file is a comma delimited and contains a relative path from the repository storage directory to a specific repository on disk followed by a list of user names of people who have access to this repository. For example, if [`respository.storage`](./Configuration.md#markus-settings) is `/some/path/to/repos/` and the `.access` file contains:
+
+```csv
+blah/group1.git,user1,user2
+blah/group2.git,user1
+bleh/*,user3
+```
+
+Then user1 should have permission to access repos at `/some/path/to/repos/blah/group1.git` and `/some/path/to/repos/blah/group2.git`, user2 should only have access to the first one. And user3 should have access to all repos in the `/some/path/to/repos/bleh/` directory.
+
+##### additional configuration settings
 
 Finally, make sure that the `repository.url` configuration option is set up so that users will see the correct url to access their git repositories.
 For example, if your server's domain is `https://my.host.com` and you're using the example apache configuration above, you should set the following configuration:

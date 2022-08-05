@@ -25,7 +25,7 @@ Finally, run `markus` from the project directory.
 
 You should now be able to access the site from your host machine's browser at `http://0.0.0.0:3000/csc108`.
 
-The default instructor user is `a` with any non-empty password. Look at `db/seeds.rb` for other users.
+The default instructor user is `instructor` with any non-empty password. Look at `db/seeds.rb` for other users.
 
 If you are using RubyMine then you should jump down to the set up instructions for RubyMine below before proceeding to the next step.
 

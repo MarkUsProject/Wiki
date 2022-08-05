@@ -44,7 +44,7 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 
     2. Run the command `rails js:routes`, which will take a moment to generate a required file.
 
-8. Open your web browser and type in the URL `localhost:3000/csc108`. The initial page load might be slow, but eventually you should see a login page. Use the username `a` and any non-empty password to login.
+8. Open your web browser and type in the URL `localhost:3000/csc108`. The initial page load might be slow, but eventually you should see a login page. Use the username `instructor` and any non-empty password to login.
 
     *Tip*: to terminate the Rails server, go to the terminal window where the server is running and press `Ctrl + C`/`⌘ + C`.
 
@@ -118,8 +118,11 @@ After this, these checks will run every time you make a commit. If all checks pa
 Here's a summary of the few most common tasks you'll use in your development.
 
 - Start the MarkUs server: `docker-compose up --no-recreate rails`
-- Run the MarkUs test suite: `docker-compose run rails rspec`
-- Run a specific test file: `docker-compose run rails rspec FILE`
+- Run the MarkUs rspec test suite: `docker-compose run rails rspec`
+- Run a specific rspec test file: `docker-compose run rails rspec FILE`
+- Run the Markus Jest test suite:  `docker-compose run rails yarn test`
+- Run the Markus Jest test suite with the test coverage shown:  `docker-compose run rails yarn test-cov`
+- Run a specific Jest test file: `docker-compose run rails yarn test FILE`
 - Start a shell within the Docker Rails environment: `docker-compose run --rm rails bash`.
   Within this shell, you can:
     - Install new dependencies: `bundle install`, `yarn install`
@@ -147,17 +150,52 @@ If you need to rebuild the MarkUs docker image:
 1. Clone the [markus-autotesting repo](https://github.com/MarkUsProject/markus-autotesting). Don't clone it into your `Markus` folder; we recommend cloning it into the same parent folder as your `Markus` folder.
 2. `cd` into the `markus-autotesting` folder.
 3. Run `docker compose build` to build a new Docker images for the MarkUs autotester.
-4. Run `docker compose up client` to create the new containers. The first time you run this it will take a long time because it'll install all of the MarkUs autotester's dependencies.
+4. Run `docker compose up` to create the new containers. The first time you run this it will take a long time because it'll install all of the MarkUs autotester's dependencies.
     You'll know it's done when you see "INFO success..."
 5. Stop the containers by pressing Ctrl + C (Windows/Linux) or Cmd + C (macOS). Then, restart the containers by running the command `docker compose start`.
-6. Leave the previous command running, and open a new terminal window. `cd` into your `Markus` folder and run `docker compose run --rm rails rails db:autotest` (`rails` is written twice!). This should create sample autotesting assignments.
-7. Start the MarkUs server: `docker compose up rails`.
-8. In a web browser, visit the running server, but using a different domain than `localhost`:
-    - For Windows, first open a WSL terminal and enter the command `ip addr show eth0 | grep inet`. Use the IP address found after `inet`, which is a sequence of 4 numbers separated by `.`, e.g. `100.20.200.2`. The URL you should enter in your web browser is `<IP address>:3000/csc108`.
-    - For macOS, visit `docker.for.mac.localhost:3000/csc108`.
+6. In a separate terminal, start the MarkUs server: `docker compose up rails`.
+7. In a web browser, visit the running server, but using a different domain than `localhost`:
+    - For Windows and macOS, visit `host.docker.internal:3000/csc108`. If that doesn't work:
+        - Windows: first open a WSL terminal and enter the command `ip addr show eth0 | grep inet`. Use the IP address found after `inet`, which is a sequence of 4 numbers separated by `.`, e.g. `100.20.200.2`. Try visiting `<IP address>:3000/csc108` instead.
+        - For macOS, visit `docker.for.mac.localhost:3000/csc108` instead.
     - For Linux, visit `172.17.0.1:3000/csc108`.
-9. Navigate to the `autotest_custom` assignment (under the Assignments tab), and go to Settings -> Automated Testing. This will take you to the settings page for the automated tests.
-10. On that page, change the "Timeout" field from 30 to 60, and press "Save" at the bottom of the page. You should see a message at the top of the page that shows the status of updating the settings; wait until this message changes to "Completed".
-11. Now go to the "Submissions" tab and click on the `aaaautotest` link in the leftmost column of the table. This takes you to the grading view for the submission.
-12. Go to the Test Results tab and click on "Run Tests".
-13. Wait a minute, and then refresh the page. Go back to the Test Results tab. You should see that two tests have been run, and that both have passed.
+8. Now, open a shell in the MarkUs docker container: `docker-compose run --rm rails bash`.
+9. Execute the following commands in the MarkUs container.
+    1. Create sample autotesting assignments: `rails db:autotest`.
+    2. (*The MarkUs server and autotest containers be running when you run these commands.*) Run tests for every sample autotesting asignment: `MARKUS_URL=<URL> rails db:autotest_run`, where `<URL>` is in the form `http://<DOMAIN>:3000`, and `<DOMAIN>` is the domain you used in Step 7 (e.g., `host.docker.internal`).
+
+        If you get an error when running this command, see "Running tests manually" below.
+
+Now when you visit MarkUs in the web browser, you should see the new assignments that were created, the autotest settings (under Settings -> Automated Testing), and a sample submission with autotest results.
+
+### Running tests manually
+
+If the `rails db:autotest_run` fails, you can still run the tests manually in your web browser by doing the following:
+
+1. Go to MarkUs in your web browser (using the same URL as Step 7 above).
+2. Navigate to the `autotest_custom` assignment (under the Assignments tab), and go to Settings -> Automated Testing. This will take you to the settings page for the automated tests.
+3. On that page, change the "Timeout" field from 30 to 60, and press "Save" at the bottom of the page. You should see a message at the top of the page that shows the status of updating the settings; wait until this message changes to "Completed".
+4. Now go to the "Submissions" tab to view a table of all submissions---in this case, there will be just one. Click on the link in the leftmost column of the table. This takes you to the grading view for the submission.
+5. Go to the Test Results tab and click on "Run Tests".
+6. Wait a minute, and then refresh the page. Go back to the Test Results tab. You should see that two tests have been run, and that both have passed.
+7. Repeat for the other assignments that you want to run tests for.
+
+## Setting up ActionMailer
+
+If you plan on doing work that involves sending/recieving emails from MarkUs, you will need to [configure ActionMailer](https://guides.rubyonrails.org/action_mailer_basics.html). To get you started quickly on setting up ActionMailer and understanding what it is used for in MarkUs, follow the instructions outlined in [Enabling ActionMailer In Development](Developer-Guide--Tips-And-Tricks--Enabling-ActionMailer-In-Development.md).
+
+## Troubleshooting
+
+**Note: This is an archive of problems related to Docker that are encountered by students, and their solutions.**
+
+### Q
+
+I'm writing frontend code. The files I've changed should according to the Webpack config files trigger Webpack rebuild, but that's not happening. I've verified that
+
+1. My changes are valid and should be displayed from the URL I'm accessing.
+2. There are no errors in the Webpacker container's logs.
+3. If I run `yarn build-dev` in the Webpacker container's console directly, it succeeds and I'm able to see my changes afterwards.
+
+### A
+
+*This solution is experimental and could lead to problems such as higher CPU usage.* This is likely due to Webpack's `watch` option not working properly. According to the official Webpack [docs](https://webpack.js.org/configuration/watch/#watchoptionspoll), one suggestion when `watch` is not working in environments such as Docker, is to add `poll: true` to `watchOptions` inside the Webpack config file, which in our case, is `webpack.development.js`. This should help resolve the problem.
