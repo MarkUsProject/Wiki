@@ -52,7 +52,7 @@ A count of the number of grace credits a student has left can be seen in the "Gr
 
 Three actions other than assigning grace credits may be performed from the drop down menu:
 
-- **Update section**: This allows you to update the lecture section for the selected student(s). The available options are a "no section" - if you want the student to (temporarily) not be in any section - and the existing lecture sections for the course.
+- **Update section**: This allows you to update the section for the selected student(s). The available options are a "no section" - if you want to remove the students from their current section - and the existing sections for the course.
 ![Update section](images/users-update-section.png)
 
 - **Mark as inactive:** Sets the selected student(s) status to inactive.
