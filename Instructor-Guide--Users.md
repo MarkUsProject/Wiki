@@ -29,6 +29,7 @@ The page contains the following fields to be filled out:
 - **User Name:** The student's username (used to log in).
 - **Grace Credits:** The number of grace credits you'd like the student to have (if you'd like them to have none or are not using grace credits enter 0).
 - **Section:** The section the student is in (you may also create a new section from here) (optional).
+- **Status:** The status of the student (default is active).
 
 Once you've filled out the required fields, don't forget to hit save to create your student account!
 
@@ -51,8 +52,8 @@ A count of the number of grace credits a student has left can be seen in the "Gr
 
 Three actions other than assigning grace credits may be performed from the drop down menu:
 
-- **Add to section**: This allows you to add the selected student(s) to the specified lecture section.
-![Add to section](images/users-add-to-section.png)
+- **Update section**: This allows you to update the lecture section for the selected student(s). The available options are a "no section" - if you want the student to (temporarily) not be in any section - and the existing lecture sections for the course.
+![Update section](images/users-update-section.png)
 
 - **Mark as inactive:** Sets the selected student(s) status to inactive.
 - **Mark as active:** Sets the selected student(s) status to active.
