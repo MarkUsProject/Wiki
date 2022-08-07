@@ -460,6 +460,43 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
     - user_name (string : user name of a student in this course)
     - grade_entry_items (list of list of strings: the first string is a grade entry item name and the second is an integer to be assigned as a score. For example: `[["Q1", 100], ["Q2", 23]]`)
 
+
+### GET /api/courses/:course_id/tags
+- description: Display all tag information for a given course
+- optional parameters:
+    - [filter](#filter)
+    - [fields](#fields)
+- example response (json):
+```json
+[
+  {
+    "id": 20,
+    "name": "tag1",
+    "description": "desc",
+    "creator": "user1",
+    "use": 30,
+  }
+]
+```
+
+### POST /api/courses/:course_id/tags
+- description: Create a new tag for a given course
+- required parameters:
+    - assignment_id (integer: id of the assignment of the tag)
+- optional parameters:
+    - grouping_id (integer: id of grouping to pair the tag with)
+    - name (string)
+    - description (string)
+
+### PUT /api/courses/:course_id/tags/:id
+- description: Update a given tag
+- optional parameters:
+    - name (string)
+    - description (string)
+
+### DELETE /api/courses/:course_id/tags/:id
+- description: Delete a given tag
+
 ### GET /api/courses/:course_id/assignments
 
 - description: Display all assignment information for the given course
@@ -946,6 +983,16 @@ NOTE: adding feedback files to subdirectories is currently not supported
   }
 ]
 ```
+
+### PUT /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/add_tag
+- description: Add a tag to a grouping
+- required parameters:
+    - tag_id (integer)
+
+### PUT /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/remove_tag
+- description: Remove a tag from a grouping
+- required parameters:
+    - tag_id (integer)
 
 ### GET /api/courses/:course_id/feedback_files/:id
 
