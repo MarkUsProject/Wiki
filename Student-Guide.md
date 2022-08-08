@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [How to Form Groups](#how-to-form-group)
+- [How to Form Groups](#how-to-form-groups)
 - [Download Starter Files](#download-starter-files)
 - [Submitting Work for an Assessment](#submitting-work-for-an-assessment)
 - [View Results](#view-results)
@@ -122,7 +122,7 @@ You may cancel a remark request at any time from the "Remark Request" tab.
 
 Timed assessments differ from regular assignments in that they do not have a fixed due date before which you must complete the assignment. Instead the instructor specifies a range of times between which the you must start the assignment. After you have started the assignment, you will have a fixed number amount of time to finish the assignment.
 
-Before you can start the timed assessment you can still see the assignment details and [create a group](#how-to-form-group). On the main Assignment page you will see a "Timed Assessment" section which will tell you when you can start the assessment and how long you will have once you start. If you have been given an extension, it will be visible here as well.
+Before you can start the timed assessment you can still see the assignment details and [create a group](#how-to-form-groups). On the main Assignment page you will see a "Timed Assessment" section which will tell you when you can start the assessment and how long you will have once you start. If you have been given an extension, it will be visible here as well.
 
 Once you can start the timed assessment a "Start" button will become visible. Click this button to start the assessment. Once you click the "Start" button you will must complete and submit your work to MarkUs before the duration expires.
 

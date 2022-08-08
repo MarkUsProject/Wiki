@@ -6,7 +6,6 @@
 - [Initial Setup](#initial-setup)
     - [Test Files](#test-files)
 - [Testers](#testers)
-    - [Initial Set-Up](#initial-set-up)
     - [Test Groups](#test-groups)
     - [Shared Fields](#shared-fields)
     - [Tester Types](#tester-types)
