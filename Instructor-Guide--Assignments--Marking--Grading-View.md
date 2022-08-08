@@ -7,7 +7,7 @@
 - [Grading Bar](#grading-bar)
 - [Download](#download)
 - [Annotations](#annotations)
-    - [Creating an Annotation](#create-an-annotation)
+    - [Creating an Annotation](#creating-an-annotation)
     - [Annotations Tab](#annotations-tab)
 - [Marks and Summary](#marks-and-summary)
     - [Marks](#marks)
