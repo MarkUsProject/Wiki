@@ -81,7 +81,6 @@ repository:
   url: # (required if type == git or svn) base url used to remotely access a repository over http/https
   ssh_url: # (required if type == git and enable_key_storage == true) base url used to remotely access a repository over ssh
   is_repository_admin: # boolean indicating whether MarkUs manages repositories
-  storage: # absolute path to the directory where repositories are stored
   markus_git_shell: # (required if type == git and enable_key_storage == true) absolute path to the markus-git-shell.sh script (can be found in lib/repo/) on the ssh server (see the Installation page for more details).
 max_file_size: # maximum file size (in bytes) allowed to be uploaded through the web interface
 session_timeout: # duration of a user's session (in seconds). This setting is ignored if users log in with remote user authentication (See "User Authentication Options" below for more details)
@@ -96,17 +95,13 @@ logging:
   error_file: # relative path (from the MarkUs root) to the error log file
 scanned_exams:
   enable: # boolean indicating whether to enable scanned exams
-  path: # absolute path to a directory to store scanned exam files
 resque_scheduler: # configuration for scheduling background jobs (this section can be omitted entirely)
 autotest:
   student_test_buffer_minutes: # maximum number of minutes between student tests (see "Student Tests" below)
-  client_dir: # absolute path to a directory to store local autotesting files
   max_batch_size: # maximum number of tests to send to the markus-autotesting server in a single batch
 i18n:
   available_locales: # list of locale strings (Note that 'en' is the only option that is supported)
   default_locale: # locale string to use as default (must be one of the options in available_locales)
-starter_file:
-  storage: # absolute path to a directory to store starter files
 python:
    bin: # location of the bin subdirectory of the python3 virtual environment where python dependencies are installed
 rails_performance:
@@ -118,6 +113,13 @@ exception_notification:
   sender_display_name: # sender display name for recipients to see
   email_prefix: # string text to prefix to the error subject line that summarizes the error
   recipients: # list of string email addresses who will recieve error notification emails
+file_storage:
+  default_root_path: # absolute path to a directory where MarkUs can write and store files
+  scanned_exams: # (optional) absolute path to a directory where MarkUs can store scanned exam files (if null, a subdirectory under the default_root_path will be used)
+  starter_files: # (optional) absolute path to a directory where MarkUs can store starter files (if null, a subdirectory under the default_root_path will be used)
+  autotest: # (optional) absolute path to a directory where MarkUs can store autotest files (if null, a subdirectory under the default_root_path will be used)
+  lti: # (optional) absolute path to a directory where MarkUs can store lti key files (if null, a subdirectory under the default_root_path will be used)
+  repos: # (optional) absolute path to a directory where MarkUs can store repositories (if null, a subdirectory under the default_root_path will be used)
 pandoc: # path to the pandoc executable
 ```
 
