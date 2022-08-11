@@ -229,7 +229,7 @@ Then, you should set up the `markus` user (that you created [previously](#create
     ```
 
    - where `/path/to/some/logfile.log` is an absolute path to a text file where you want the log output to be written (this is optional)
-   - where `/some/path/to/repos/` is an absolute path to the location of the git repositories specified in the [`respository.storage`](./Configuration.md#markus-settings) configuration setting.
+   - where `/some/path/to/repos/` is an absolute path to the location of the git repositories specified in the [`file_storage.repos`](./Configuration.md#markus-settings) configuration setting.
    - where `/usr/bin/git-shell` is a path to the git-shell executable installed by git. See [the git documentation](https://git-scm.com/docs/git-shell) for more details
 
    If multiple MarkUs instances are running on your machine using relative url roots, then you can specify multiple repository locations for each instance. The `MARKUS_REPO_LOC_PATTERN` variable can contain an `(instance)` substring which will be replaced by the relative url root of the requested repository. For example, if you have two MarkUs instances running with relative url roots being `csc108/` and `csc209/` and repositories for each at:
@@ -329,7 +329,7 @@ echo "SELECT check_repo_permissions(:'user_name', :'course_name', :'repo_name')"
 
 When setting up autorization protocols for this access, your authorization script should check who has permission to which git repos by inspecting the `.access` file in the repository storage directory (see the [configuration settings](./Configuration.md#markus-settings)).
 
-Each row of this file is a comma delimited and contains a relative path from the repository storage directory to a specific repository on disk followed by a list of user names of people who have access to this repository. For example, if [`respository.storage`](./Configuration.md#markus-settings) is `/some/path/to/repos/` and the `.access` file contains:
+Each row of this file is a comma delimited and contains a relative path from the repository storage directory to a specific repository on disk followed by a list of user names of people who have access to this repository. For example, if [`file_storage.repos`](./Configuration.md#markus-settings) is `/some/path/to/repos/` and the `.access` file contains:
 
 ```csv
 blah/group1.git,user1,user2
