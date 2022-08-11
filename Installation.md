@@ -8,8 +8,8 @@ The following steps are for installation on a machine running Ubuntu 20.04 and a
 
 Ensure the following ubuntu packages are installed:
 
-- build-essential : (needed to install node/yarn)
-- software-properties-common : (needed to install node/yarn)
+- build-essential : (needed to install node/npm)
+- software-properties-common : (needed to install node/npm)
 - postgresql-client-12 : (needed to manage a postgres database, later versions should also be ok too)
 - tzdata : (needed for timezone management)
 - libpq-dev : (needed to run a postgres database)
@@ -37,19 +37,13 @@ Install [bundler](https://bundler.io/) as a system gem:
 gem install bundler -v 2.3.17
 ```
 
-Install [node](https://nodejs.org/en/) (note that we need at least version 12 so we can't just install the ubuntu 20.04 package directly):
+Install [node](https://nodejs.org/en/) (note that we need at least version 12+ so we can't just install the ubuntu 20.04 package directly; version 18+ is recommended):
 
 ```sh
-curl https://deb.nodesource.com/setup_12.x -o node_setup.sh
+curl https://deb.nodesource.com/setup_18.x -o node_setup.sh
 bash node_setup.sh
 sudo apt-get install nodejs
 rm node_setup.sh
-```
-
-Install [yarn](https://yarnpkg.com/):
-
-```sh
-npm install --global yarn@1.22.5
 ```
 
 Update the default configuration options for imagemagick so that it will allow reading pdf files:
@@ -86,10 +80,10 @@ git checkout release
 ./bin/bundle install --deployment --without development test offline
 ```
 
-### Install javascript dependencies using [yarn](https://yarnpkg.com/)
+### Install javascript dependencies using npm
 
 ```sh
-./bin/yarn install
+npm ci
 ```
 
 ### Install python dependencies in a virtual environment

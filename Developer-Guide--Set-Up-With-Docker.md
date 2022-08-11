@@ -120,12 +120,12 @@ Here's a summary of the few most common tasks you'll use in your development.
 - Start the MarkUs server: `docker-compose up --no-recreate rails`
 - Run the MarkUs rspec test suite: `docker-compose run rails rspec`
 - Run a specific rspec test file: `docker-compose run rails rspec FILE`
-- Run the Markus Jest test suite:  `docker-compose run rails yarn test`
-- Run the Markus Jest test suite with the test coverage shown:  `docker-compose run rails yarn test-cov`
-- Run a specific Jest test file: `docker-compose run rails yarn test FILE`
+- Run the Markus Jest test suite:  `docker-compose run rails npm run test`
+- Run the Markus Jest test suite with the test coverage shown:  `docker-compose run rails npm run test-cov`
+- Run a specific Jest test file: `docker-compose run rails npm run test FILE`
 - Start a shell within the Docker Rails environment: `docker-compose run --rm rails bash`.
   Within this shell, you can:
-    - Install new dependencies: `bundle install`, `yarn install`
+    - Install new dependencies: `bundle install`, `npm ci`
     - Reset the MarkUs database: `rails db:reset`
     - Run a database migration: `rails db:migrate`
     - Start the interactive Rails console: `rails c`
@@ -194,7 +194,7 @@ I'm writing frontend code. The files I've changed should according to the Webpac
 
 1. My changes are valid and should be displayed from the URL I'm accessing.
 2. There are no errors in the Webpacker container's logs.
-3. If I run `yarn build-dev` in the Webpacker container's console directly, it succeeds and I'm able to see my changes afterwards.
+3. If I run `npm run build-dev` in the Webpacker container's console directly, it succeeds and I'm able to see my changes afterwards.
 
 ### A
 
