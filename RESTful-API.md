@@ -485,9 +485,9 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
 - description: Create a new tag for a given course
 - required parameters:
     - assignment_id (integer: id of the assignment of the tag)
+    - name (string)
 - optional parameters:
     - grouping_id (integer: id of grouping to pair the tag with)
-    - name (string)
     - description (string)
 
 ### PUT /api/courses/:course_id/tags/:id
