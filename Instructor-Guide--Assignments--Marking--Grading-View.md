@@ -77,9 +77,12 @@ In the above image, an annotation is about to be made for the letter 'e'.
 Once you have selected a section, click on the "CREATE ANNOTATION" button to begin writing:
 
 This will open the following modal:
+
 ![Create Annotation Window](images/grade-view-annotation-modal.png)
 
-From this window you will be able to type out a comment for the students to see. Since the annotation field supports basic LaTeX and markdown commands, a preview is available under the text field so that you may see what your annotation will look like when released. Don't worry if it isn't perfect as there is an option to edit later! An annotation category may be specified from the drop-down list under "Annotation Category". (See the [Annotations](Instructor-Guide--Assignments--Deductive-Annotations.md) page for information on creating annotation categories) Once finished, be sure to click on the "Create Annotation" button to save your annotation!
+![Create Annotation Window Latex Tab](images/grade-view-annotation-modal-latex.png)
+
+From this window you will be able to type out a comment for the students to see. Since the annotation field supports basic LaTeX and markdown commands, a preview is in the second tab so that you may see what your annotation will look like when released. Don't worry if it isn't perfect as there is an option to edit later! An annotation category may be specified from the drop-down list under "Annotation Category". (See the [Annotations](Instructor-Guide--Assignments--Deductive-Annotations.md) page for information on creating annotation categories) Once finished, be sure to click on the "Create Annotation" button to save your annotation!
 
 ### Quick Annotations
 
