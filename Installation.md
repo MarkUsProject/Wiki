@@ -14,7 +14,6 @@ Ensure the following ubuntu packages are installed:
 - tzdata : (needed for timezone management)
 - libpq-dev : (needed to run a postgres database)
 - libv8-dev : (needed for javascript dependencies)
-- ruby-svn : (only required if using svn repositories. It is *highly* recommended to use git repositories instead)
 - ghostscript : (needed to manage pdfs)
 - imagemagick : (needed to manage pdfs)
 - libmagickwand-dev : (needed to manage pdfs)
