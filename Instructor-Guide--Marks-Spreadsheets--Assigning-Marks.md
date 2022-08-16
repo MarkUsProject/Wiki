@@ -71,7 +71,7 @@ To the right of the grade distribution chart is a set of statistics that give a 
 - **Number of fails:** How many graded students recieved a failing total grade (i.e. recieved a grade under 50%) for the given marks spreadsheet.
 - **Number of zeros:** How many graded students recieved a total grade of zero for the given marks spreadsheet.
 
-> :spiral_notepad: **Note:** In brackets, next to each of the statistics that are shown as a fraction, is the same statistic fraction but displayed as a percentage instead. All marks shown include students that recieve a zero but does not include students who have a null total grade.
+> :spiral_notepad: **Note:** In brackets, next to each of the statistics that are shown as a fraction, is the same statistic fraction but displayed as a percentage instead. All marks shown include students that recieve a total grade of zero but does not include students who have a null total grade. Students which have a null grade for certain columns but have at least one valid column mark will have their null grade in the other columns be treated as a zero for the purposes of calculating their total grade
 
 #### Column Grade Distribution
 
