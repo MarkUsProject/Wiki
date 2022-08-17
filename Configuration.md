@@ -77,9 +77,9 @@ local_auth_login_name: # (See "User Authentication Options" below)
 logout_redirect: # (See "User Authentication Options" below)
 student_csv_order: # column order of student csv upload file (choices are: user_name, last_name, first_name, section_name, id_number, email)
 repository:
-  type: # repository type used to store student submissions. Choose from 'git', 'svn', 'mem'. 'git' is preferred since 'svn' and 'mem' will be removed in future versions.
-  url: # (required if type == git or svn) base url used to remotely access a repository over http/https
-  ssh_url: # (required if type == git and enable_key_storage == true) base url used to remotely access a repository over ssh
+  type: # repository type used to store student submissions. Choose from 'git', 'mem'. 'git' is preferred since 'mem' is not persistant and should only be used for testing.
+  url: # base url used to remotely access a repository over http/https
+  ssh_url: # (required if enable_key_storage == true) base url used to remotely access a repository over ssh
   is_repository_admin: # boolean indicating whether MarkUs manages repositories
   storage: # absolute path to the directory where repositories are stored
   markus_git_shell: # (required if type == git and enable_key_storage == true) absolute path to the markus-git-shell.sh script (can be found in lib/repo/) on the ssh server (see the Installation page for more details).
