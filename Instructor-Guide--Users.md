@@ -78,7 +78,7 @@ If you wish to edit or delete a grader, then select either the "delete" or "edit
 
 The "delete" link will remove the user from the database and the "edit" link will bring you to a page similar to the "Add a Grader" page.
 
-The "edit" page also contains a status dropdown menu that allows you to change the status of a grader to either "Active" or "Inactive". "Active" graders can access and interact with a course as a regular grader whereas an "Inactive" grader cannot. All groupings/submissions assigned to an "Inactive" grader along with any other activity that grader has done are unchanged; they just cannot see or do anything in the course anymore. 
+The "edit" page also contains a status dropdown menu that allows you to change the status of a grader to either "Active" or "Inactive". "Active" graders can access and interact with a course as a regular grader whereas an "Inactive" grader cannot. All groupings/submissions assigned to an "Inactive" grader along with any other activity that grader has done are unchanged; they just cannot see or do anything in the course anymore.
 
 ### Grader Permissions
 
