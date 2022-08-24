@@ -13,7 +13,6 @@ Ensure the following ubuntu packages are installed:
 - postgresql-client-12 : (needed to manage a postgres database, later versions should also be ok too)
 - tzdata : (needed for timezone management)
 - libpq-dev : (needed to run a postgres database)
-- libv8-dev : (needed for javascript dependencies)
 - ghostscript : (needed to manage pdfs)
 - imagemagick : (needed to manage pdfs)
 - libmagickwand-dev : (needed to manage pdfs)
