@@ -458,7 +458,7 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
 - description: Update the grade(s) in this grade_entry_form for a student
 - required parameters:
     - user_name (string : user name of a student in this course)
-    - grade_entry_items (list of list of strings: the first string is a grade entry item name and the second is an integer to be assigned as a score. For example: `[["Q1", 100], ["Q2", 23]]`)
+    - grade_entry_items (list of hashes: the key is a grade entry item name and the value is an integer or float to be assigned as a score. For example: `[{"Q1": 100}, {"Q2": 23}]`)
 
 ### GET /api/courses/:course_id/tags
 
