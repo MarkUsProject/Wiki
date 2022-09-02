@@ -107,9 +107,8 @@ Once your submssion for an assignment has been marked, the Result tab will becom
 - Submit a [remark request](#submit-a-remark-request) (if available) from the "Remark Request" tab.
 - See your mark for this assignment broken down by criteria from the "Marks" tab.
 - See a summary of your marks (including any bonuses or deductions) as well as any notes or overall comments on the "Summary" tab.
-- View and download feedback files that shows where you went wrong in the "Feedback File" tab.
-    - Applicable for automated test marks only
-    - To download a specific feedback file, from the feedback file view , you can click on the "Download" button. This downloads the feedback file you are currently viewing.
+- View and download feedback files in the "Feedback File" tab.
+    - To download a specific feedback file, you can click on the "Download" button next to the feedback file dropdown. This downloads the feedback file you are currently viewing.
 
 ## Submit a Remark Request
 
