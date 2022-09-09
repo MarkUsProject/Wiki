@@ -74,6 +74,7 @@ This will redirect you to a page where you can specify the following course prop
 
 - **Name**: The name or course code for this course. Please ensure this is correct before creating the course as this cannot be edited later.
 - **Display Name**: A longer course name or title for users to see.
+- **Maximum File Size (bytes)**: The maximum file size (in bytes) that students are allowed to upload to MarkUs.
 - **Course Visibility**: Selecting "hidden" will hide the course from students in a course. Graders and instructors for the course can still see and manage the course as usual.
 
 After clicking "Save", the course will be created and you will be taken back to the list of all courses.
