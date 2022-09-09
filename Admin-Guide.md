@@ -74,6 +74,7 @@ This will redirect you to a page where you can specify the following course prop
 
 - **Name**: The name or course code for this course. Please ensure this is correct before creating the course as this cannot be edited later.
 - **Display Name**: A longer course name or title for users to see.
+- **Autotester URL**: A URL that points to the API of a running [Automated Tester](https://github.com/MarkUsProject/markus-autotesting) instance. Setting this will enable automated testing for this course. To disable automated testing, set this to the empty string.
 - **Course Visibility**: Selecting "hidden" will hide the course from students in a course. Graders and instructors for the course can still see and manage the course as usual.
 
 After clicking "Save", the course will be created and you will be taken back to the list of all courses.
@@ -85,6 +86,15 @@ If you later wish to modify the properties of a course you can reach any course'
 From the edit page of a course you can modify the "Display Name" and "Course Visibility" properties specified when creating the course. Due to internal referencing, the "Name" property cannot be edited after the course is created.
 
 ![Markus Course Edit Page](images/markus-admin-course-edit.png)
+
+#### Managing the connection to the automated tester
+
+If an Autotester URL has been set for this course, two additional buttons will be available:
+
+- **Test Connection**: Clicking this button will check if the current course can connect to the automated tester at the given URL. The result will be reported as a flash message at the top of the page.
+- **Refresh Settings**: Clicking this button will resend all automated test settings (for each assignment) to the autotester and get an updated schema (contains information about which testers are available and the options for each one). This is useful if the automated tester has been reset or updated but the url has not changed.
+
+![Manage Connection To Automated Tester](images/manage-connection-to-automated-tester.png)
 
 ## Managing Users
 
