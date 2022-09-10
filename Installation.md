@@ -14,7 +14,6 @@ Ensure the following ubuntu packages are installed:
 - tzdata : (needed for timezone management)
 - libpq-dev : (needed to run a postgres database)
 - ghostscript : (needed to manage pdfs)
-- imagemagick : (needed to manage pdfs)
 - libmagickwand-dev : (needed to manage pdfs)
 - cmake : (needed to make certain ruby gems)
 - libssl-dev : (needed for ssl/tsl encryption)
