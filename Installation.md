@@ -19,12 +19,15 @@ Ensure the following ubuntu packages are installed:
 - libssl-dev : (needed for ssl/tsl encryption)
 - graphviz : (needed by the ruby-graphviz gem)
 - git : (required if using git repositories)
-- python3 : (version 3.9 recommended. Required for optical character recognition and jupyter notebook rendering)
-- python3-venv : (required for optical character recognition and jupyter notebook rendering)
-- python3-dev : (required for optical character recognition and jupyter notebook rendering)
-- pandoc : (required rmarkdown and jupyter notebook rendering)
 - libgl1 : (required for optical character recognition)
 - ruby-full : (ensure that this installs at least ruby 2.7)
+
+The following ubuntu packages are optional:
+
+- If you would like to enable optical character recognition for scanned exams and/or jupyter notebook rendering:
+    - python3
+    - python3-venv (required if you'd like to install python packages in a virtual environment)
+    - python3-dev
 
 Install [bundler](https://bundler.io/) as a system gem:
 
@@ -81,19 +84,35 @@ git checkout release
 npm ci
 ```
 
-### Install python dependencies in a virtual environment
+### Install python dependencies (optional)
 
-```sh
-python3 -m venv ./venv
-./venv/bin/pip install -r requirements.txt
-```
+Skip this step if you do not want to enable optical character recognition for scanned exams or jupyter notebook rendering.
 
-and make sure that your [settings files](./Configuration.md) know where the packages are installed by specifying the location of the virtual environment's bin directory in `config/settings.local.yml`:
+We recommend installing python packages for MarkUs in a [virtual environment](https://docs.python.org/3/library/venv.html) since that will keep the python dependencies distinct from other python packages that you might have installed on your system.
+
+If you are using a virtual environment, make sure to point MarkUs to the location of the python executable in that environment by setting the `python:` configuration option in `settings.local.yml`
 
 ```yaml
-python:
-   bin: /path/to/the/venv/bin
+python: /path/to/the/venv/bin/python3
 ```
+
+If this is not set, then the `python3` executable that can be found in the `PATH` will be used (if it exists).
+
+#### Install python dependencies for optical character recognition for scanned exams
+
+```sh
+pip install -r requirements-scanner.txt
+```
+
+If these dependencies are installed, it will enable [automatic matching of student papers](Instructor-Guide--Scanned-Exams.md#automatic-matching-of-student-papers) using optical character recognition.
+
+#### Install python dependencies for jupyter notebook rendering
+
+```sh
+pip install -r requirements-jupyter.txt
+```
+
+If these dependencies are installed, MarkUs will render jupyter notebook files as html (converted using nbconvert), otherwise it will render them as plain text.
 
 ### Configure MarkUs settings
 
