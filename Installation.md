@@ -17,7 +17,6 @@ Ensure the following ubuntu packages are installed:
 - libmagickwand-dev : (needed to manage pdfs)
 - cmake : (needed to make certain ruby gems)
 - libssl-dev : (needed for ssl/tsl encryption)
-- graphviz : (needed by the ruby-graphviz gem)
 - git : (required if using git repositories)
 - python3 : (version 3.9 recommended. Required for optical character recognition and jupyter notebook rendering)
 - python3-venv : (required for optical character recognition and jupyter notebook rendering)
