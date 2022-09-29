@@ -4,48 +4,6 @@ The following are instructions to set up a production server for MarkUs.
 
 The following steps are for installation on a machine running Ubuntu 20.04 and all examples given below assume that you are installing in such an environment. Some changes may be required if installing on other operating systems.
 
-## System Requirements
-
-Ensure the following ubuntu packages are installed:
-
-- build-essential : (needed to install node/npm)
-- software-properties-common : (needed to install node/npm)
-- postgresql-client-12 : (needed to manage a postgres database, later versions should also be ok too)
-- tzdata : (needed for timezone management)
-- libpq-dev : (needed to run a postgres database)
-- ghostscript : (needed to manage pdfs)
-- libmagickwand-dev : (needed to manage pdfs)
-- cmake : (needed to make certain ruby gems)
-- libssl-dev : (needed for ssl/tsl encryption)
-- git : (required if using git repositories)
-- python3 : (version 3.9 recommended. Required for optical character recognition and jupyter notebook rendering)
-- python3-venv : (required for optical character recognition and jupyter notebook rendering)
-- python3-dev : (required for optical character recognition and jupyter notebook rendering)
-- pandoc : (required rmarkdown and jupyter notebook rendering)
-- libgl1 : (required for optical character recognition)
-- ruby-full : (ensure that this installs at least ruby 2.7)
-
-Install [bundler](https://bundler.io/) as a system gem:
-
-```sh
-gem install bundler -v 2.3.17
-```
-
-Install [node](https://nodejs.org/en/) (note that we need at least version 12+ so we can't just install the ubuntu 20.04 package directly; version 18+ is recommended):
-
-```sh
-curl https://deb.nodesource.com/setup_18.x -o node_setup.sh
-bash node_setup.sh
-sudo apt-get install nodejs
-rm node_setup.sh
-```
-
-Update the default configuration options for imagemagick so that it will allow reading pdf files:
-
-```sh
-sed -ri 's/(rights=")none("\s+pattern="PDF")/\1read\2/' /etc/ImageMagick-6/policy.xml
-```
-
 ## Create User
 
 For security reasons, MarkUs should be run as a dedicated user. Either designate an existing user to run MarkUs or create one. In this demo we will assume that MarkUs is being run as a user named `markus` created by running:
@@ -66,6 +24,31 @@ Choose where you want the MarkUs source code to be downloaded and `cd` to that d
 git clone https://github.com/MarkUsProject/Markus.git
 cd Markus
 git checkout release
+```
+
+## System Requirements
+
+Install system dependencies:
+
+Note that on ubuntu 20.04 the default nodejs version is less than the required node version for MarkUs (version 18). In order to install the correct version of nodejs, first run the `node_setup.sh` script:
+
+```sh
+curl https://deb.nodesource.com/setup_18.x -o node_setup.sh
+bash node_setup.sh
+sudo apt-get install --no-install-recommends ./markus_1.0_all.deb
+rm node_setup.sh
+```
+
+Install [bundler](https://bundler.io/) as a system gem:
+
+```sh
+gem install bundler -v 2.3.17
+```
+
+Update the default configuration options for imagemagick so that it will allow reading pdf files:
+
+```sh
+sed -ri 's/(rights=")none("\s+pattern="PDF")/\1read\2/' /etc/ImageMagick-6/policy.xml
 ```
 
 ### Install Ruby dependencies using [bundler](https://bundler.io/)
