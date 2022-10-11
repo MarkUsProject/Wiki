@@ -66,6 +66,8 @@ MarkUs has the following requirements for exam papers used as exam templates:
 
 ### Automatic matching of student papers
 
+*Note*: this feature is optional and may not be enabled for your MarkUs instance. Contact your system administrator to enable this feature.
+
 MarkUs supports automatic matching of student papers based on student user names or ID numbers written on the cover page of a test.
 If this feature is enabled, MarkUs will attempt to scan a portion of the test cover page and parse handwritten corresponding to either a student's user name or ID number attempt to match the test paper to a student in the course.
 
