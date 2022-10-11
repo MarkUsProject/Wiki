@@ -52,6 +52,7 @@
 - [General Usage](General-Usage.md)
 - [Admin Guide](Admin-Guide.md)
 - [Installation](Installation.md)
+- [Learning Tools Interoperability](Learning-Tools-Interoperability.md)
 - [Configuration Settings](Configuration.md)
 - [RESTful API](RESTful-API.md)
 - [Pending Changes](Pending-Changes.md)
