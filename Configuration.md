@@ -82,7 +82,6 @@ repository:
   ssh_url: # (required if enable_key_storage == true) base url used to remotely access a repository over ssh
   is_repository_admin: # boolean indicating whether MarkUs manages repositories
   markus_git_shell: # (required if type == git and enable_key_storage == true) absolute path to the markus-git-shell.sh script (can be found in lib/repo/) on the ssh server (see the Installation page for more details).
-max_file_size: # maximum file size (in bytes) allowed to be uploaded through the web interface
 session_timeout: # duration of a user's session (in seconds). This setting is ignored if users log in with remote user authentication (See "User Authentication Options" below for more details)
 enable_key_storage: # boolean indicating whether to allow ssh public key uploads (see the Installation page for more details).
 logging:
