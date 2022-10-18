@@ -94,6 +94,7 @@ logging:
   old_files: # maximum number of log files to keep (older files will be deleted)
   log_file: # relative path (from the MarkUs root) to the log file
   error_file: # relative path (from the MarkUs root) to the error log file
+  tag_with_usernames: # boolean indicating whether to tag each request written to the logs with the user_name of the user who made the request (note: this requires that rails.session_store.type == 'cookie_store')
 scanned_exams:
   enable: # boolean indicating whether to enable scanned exams
   path: # absolute path to a directory to store scanned exam files
