@@ -108,6 +108,12 @@ Once your submssion for an assignment has been marked, the Result tab will becom
 - See your mark for this assignment broken down by criteria from the "Marks" tab.
 - See a summary of your marks (including any bonuses or deductions) as well as any notes or overall comments on the "Summary" tab.
 
+### Release Tokens
+
+If your instructor chooses, you may need a "release token" to view your results. A release token is a series of random numbers and letters that is unique to your result.
+
+If a release token is required, you can request one from your instructor once they have finished grading your assignment. When you go to the Result tab you will be asked to enter your release token to view the Result page.
+
 ## Submit a Remark Request
 
 If your instructor has enabled remark requests for your assignment *and* the deadline to submit remark requests has not yet passed, you can submit a remark request from the "Remark Request" tab on the [Results](#view-results) page.
