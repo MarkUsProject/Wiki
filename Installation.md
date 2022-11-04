@@ -411,3 +411,5 @@ RAILS_ENV=production ./bin/rails db:admin
 The autotester can be installed seperately from MarkUs on a different server (or the same one if you'd prefer). Here are the autotester [Installation instructions](https://github.com/MarkUsProject/markus-autotesting/blob/release/README.md).
 
 Once the autotester has been set up, you must register each course that uses autotesting by providing the URL of the autotester through the API using the `api/courses/<course_id>/update_autotest_url` route.
+
+Note that MarkUs requires autotester version v2.3+
