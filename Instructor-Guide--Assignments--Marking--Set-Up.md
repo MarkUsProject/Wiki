@@ -8,7 +8,7 @@
 - [Marking State](#marking-state)
 - [Grading View](#grading-view)
 
-> :spiral_notepad: **NOTE:** Before you will be able to perform any numerical marking (i.e. assigning groups a numerical grade) you must set up a [marking scheme](Instructor-Guide--Assignments--Marking--Marking-Schemes.md) for your assignment.
+> :spiral_notepad: **NOTE:** Before you will be able to perform any numerical marking (i.e. assigning groups a numerical grade) you must set up at least one [criterion](Instructor-Guide--Assignments--Marking--Criteria.md) for your assignment.
 
 ## Setting up a Grader Account
 

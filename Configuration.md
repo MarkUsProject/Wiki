@@ -92,6 +92,7 @@ logging:
   old_files: # maximum number of log files to keep (older files will be deleted)
   log_file: # relative path (from the MarkUs root) to the log file
   error_file: # relative path (from the MarkUs root) to the error log file
+  tag_with_usernames: # boolean indicating whether to tag each request written to the logs with the user_name of the user who made the request (note: this requires that rails.session_store.type == 'cookie_store')
 scanned_exams:
   enable: # boolean indicating whether to enable scanned exams
 resque_scheduler: # configuration for scheduling background jobs (this section can be omitted entirely)
@@ -101,8 +102,7 @@ autotest:
 i18n:
   available_locales: # list of locale strings (Note that 'en' is the only option that is supported)
   default_locale: # locale string to use as default (must be one of the options in available_locales)
-python:
-   bin: # location of the bin subdirectory of the python3 virtual environment where python dependencies are installed
+python: # location of a python executable where python dependencies are installed (optional)
 rails_performance:
   enabled: # boolean whether to enable the rails performance dashboard (See the "Admin Guide" page for more information about this dashboard)
   duration: # duration in minutes for rails performance to store data for monitoring
@@ -119,7 +119,6 @@ file_storage:
   autotest: # (optional) absolute path to a directory where MarkUs can store autotest files (if null, a subdirectory under the default_root_path will be used)
   lti: # (optional) absolute path to a directory where MarkUs can store lti key files (if null, a subdirectory under the default_root_path will be used)
   repos: # (optional) absolute path to a directory where MarkUs can store repositories (if null, a subdirectory under the default_root_path will be used)
-pandoc: # path to the pandoc executable
 ```
 
 ## Additional queue names
