@@ -41,9 +41,9 @@ If students are not allowed to work in groups, then under the "Group" column you
 Before you may being grading an assignment, you must first collect the submitted files from each group. To do this, make sure you are on the "Submissions" page of the assignment you wish to grade and select the checkbox(es) of the groups from which you wish to collect. You may also select the box at the top of the column to select all groups. Once satisfied, click on the "Collect Submissions" button to begin collection.
 ![Collecting Assignments](images/submissions-table-collect.png)
 
-> :spiral_notepad: **NOTE:** MarkUs only allows you to collect submissions AFTER the entire grace credit period has passed.
+> :spiral_notepad: **NOTE:** By default, MarkUs only allows you to collect submissions AFTER the entire grace credit period has passed.
 
-When the collect command is executed it checks to see the file version for each submission that meets the due date and/or late penalty set for this assignment. It then creates the views for annotating and grading each submission.
+When the collect command is executed it checks to see the file version for each submission that meets the due date and/or late penalty set for this assignment. It then creates the views for annotating and grading each submission. To collect the most recent submission instead, select the "Collect most recent submissions?" box on the collection form. This can be used to collect submissions either prior to or after the due date. Instructors can also choose whether or not to apply late penalties when collecting submissions. By default, the penalties will be applied.
 
 > :warning: **WARNING: If the collect operation is carried out after grading has begun (by instructor or a TA) this grading work will be overwritten.** To prevent the preceding warning from occurring, ensure that you do not re-collect after any grading work has begun.
 
