@@ -24,6 +24,21 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 
 6. Run `docker-compose build app`.
 
+    1. On Linux running docker engine (not docker desktop): you will need to make sure that the files are owned by a user with the same UID on your host machine as in the container:
+        - Create a file named `docker-compose.override.yml` in the root directory of the MarkUs code (should be your current directory)
+        - Discover your current UID by running the `id -u` command
+        - Write the following to the newly created `docker-compose.override.yml` file (replace 1001 with the UID that you discovered in the previous step):
+
+            ```yml
+            services:
+              app:
+                build:
+                  args:
+                    UID: 1001
+            ```
+
+        - now you can run `docker-compose build app`
+
 7. Run `docker-compose up rails`. The first time you run this it will take a long time because it'll install all of MarkUs' dependencies, and then seed the MarkUs application with sample data before actually running the server. When the server actually starts, you'll see some terminal output that looks like:
 
     ```text
