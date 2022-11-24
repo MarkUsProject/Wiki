@@ -59,6 +59,18 @@ rails:
      perform_caching: # boolean indicating whether to enable fragment caching (enable this for production only)
 ```
 
+### Puma settings
+
+[Puma](https://github.com/puma/puma) is an http server for ruby and the default http server used by Rails applications (like MarkUs). MarkUs allows for some configuration of the puma processes through this file with the following settings:
+
+```yaml
+puma:
+  workers: # the number of worker processes (if this value is more than zero, puma with run in "cluster mode")
+  min_threads: # the minimum number of threads per worker process
+  max_threads: # the maximum number of threads per worker process
+  worker_timeout: # the amount of time in seconds that a puma worker can sit idle before it is restarted, (this cannot be set below 6 seconds)
+```
+
 ### MarkUs settings
 
 ```yaml
