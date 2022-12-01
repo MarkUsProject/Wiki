@@ -44,6 +44,10 @@ If you wish to allow students to submit URLs check the "Allow students to submit
 
 If you want to give students the ability to submit through the MarkUs API, you can check the "Allow students to submit through the MarkUs API" box. This is necessary if you plan on creating or using an external plugin that allows students to submit assignments such as the MarkUs Jupyter Extension.
 
+If you want to prevent students from automatically being able to view released marks select the "Only allow students to view released marks via a unique URL" box. Once you release the marks for this assignment, you can generate a unique token for each student. The student will need to enter this token in order to view the results.
+> :spiral_notepad: **NOTE:**
+> These tokens can be expired so this is a good way to make results available to students only by request and only for a specific period of time.
+
 Please see the [Peer Review](Instructor-Guide--Assignments--Peer-Review.md) page for more information on Peer Review.
 
 ### Required Files
