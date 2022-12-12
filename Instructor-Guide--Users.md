@@ -35,6 +35,8 @@ Once you've filled out the required fields, don't forget to hit save to create y
 
 If you wish to modify a student account that has already been created, click on the "Edit" hyperlink and you will be brought to the student's "Edit a Student" page (same as "Add a Student").
 
+The "edit" page also contains a status dropdown menu that allows you to change the status of a student to either "Active" or "Inactive". "Active" students can access and interact with a course as normal whereas an "Inactive" students cannot. "Inactive" students cannot view or interact with a course and cannot access their git repositories from when they were active. Any submissions, grades, and other data they provided however, before becoming "Inactive" will still remain.
+
 Note that a student can only be added to a course if that user already exists in the database. If you see the error message "End user must exist" this means that a user with that user name has not been added yet. Please contact the MarkUs administrator to get that user added to the MarkUs database.
 
 ### Grace Credits
@@ -70,6 +72,8 @@ This page allows you to view a table of all the current graders set up for this 
 This will take you to the "Add a Grader" page where you will be able to fill in the necessary fields to create a new grader account:
 ![Add a Grader John Smith](images/users-add-grader-form.png)
 
+Note that by default, the grader is created with an "active" status. If you wish to create an "inactive" grader you can use the dropdown menu to change the default. This can also be set later in the "edit" page. "Active" graders can access and interact with a course as normal whereas an "Inactive" grader cannot. "Inactive" graders cannot view any part of a course and cannot access any of the git repositories related to the course they may have had access to. However, all groupings/submissions assigned to an "Inactive" grader along with any other activity that grader may have done during their time as an active grader are unchanged.
+
 Once you have added a grader, their information will show up in the table with the rest of the graders for this course.
 
 If you wish to edit or delete a grader, then select either the "delete" or "edit" link of the grader's specific row.
@@ -100,6 +104,8 @@ Clicking on the name of the lecture section will allow you to see a list of all 
 To see a list of all the Instructor accounts associated with the course, navigate to the "instructorns" tab (Users -> Instructors).
 
 Here you will see a table with all the instructor information. If you wish to edit instructor information, click on the "Edit" hyperlink under the "Actions" column. You are allowed to change your username here but must request a password change from the system admin.
+
+Instructors can also see their status in the course (either "Active" to "Inactive"). Much like students and graders, "Active" instructors are able to access and manage their course as usual whereas an "Inactive" instructor cannot interact or access anything related to the cours. Any data associated with them however, will still remain. An instructor's status can only be changed by an admin.
 
 To add an instructor account, click on the "Add an Instructor" hyperlink in the top right hand corner of the page. You will be brought to the "Add an Instructor" page where you may fill out the required information:
 ![Add an Instructor](images/users-admin-form.png)
