@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Viewing Requests](#viewing-requests)
-- [Responding and Remarking](#responding-and-remarking)
+- [Responding to a Remark Request](#responding-to-a-remark-request)
 
 ## Viewing Requests
 

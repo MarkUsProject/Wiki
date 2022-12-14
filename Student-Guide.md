@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [How to Form Groups](#how-to-form-group)
+- [How to Form Groups](#how-to-form-groups)
 - [Download Starter Files](#download-starter-files)
 - [Submitting Work for an Assessment](#submitting-work-for-an-assessment)
 - [View Results](#view-results)
@@ -97,6 +97,19 @@ Where:
 > :arrow_forward: **EXAMPLE:**
 > To submit a file to `assignment_other`, create a file in the `assignment_other/` subdirectory and push the changes back to MarkUs.
 
+#### Enable Client Hooks
+
+When you push your changes to MarkUs using git, MarkUs may reject your changes if one of the following is true:
+
+- you have created, modified, or deleted a file or directory that is not in one of the assignment directories
+- you have force pushed your changes
+- you have submitted a file that is not required and only required files are allowed to be submitted for your assignment
+- you have submitted a file that is too big
+
+If you want to be warned early if any of your changes will be rejected by MarkUs you can set up client-side hooks. These hooks will warn you if any of your changes will be rejected by MarkUs when you *commit* your changes. That way you will have a chance to correct the issue before you *push* your changes to MarkUs.
+
+To enable client-side hooks, copy the contents of the `markus-hooks` directory to the `.git/hooks` directory.
+
 ## View Results
 
 Once your submssion for an assignment has been marked, the Result tab will become visible for your assignment. Click this tab to show the detailed results for this assignment. On this page you can:
@@ -107,6 +120,8 @@ Once your submssion for an assignment has been marked, the Result tab will becom
 - Submit a [remark request](#submit-a-remark-request) (if available) from the "Remark Request" tab.
 - See your mark for this assignment broken down by criteria from the "Marks" tab.
 - See a summary of your marks (including any bonuses or deductions) as well as any notes or overall comments on the "Summary" tab.
+- View and download feedback files in the "Feedback File" tab.
+    - To download a specific feedback file, you can click on the "Download" button next to the feedback file dropdown. This downloads the feedback file you are currently viewing.
 
 ### Release Tokens
 
@@ -128,7 +143,7 @@ You may cancel a remark request at any time from the "Remark Request" tab.
 
 Timed assessments differ from regular assignments in that they do not have a fixed due date before which you must complete the assignment. Instead the instructor specifies a range of times between which the you must start the assignment. After you have started the assignment, you will have a fixed number amount of time to finish the assignment.
 
-Before you can start the timed assessment you can still see the assignment details and [create a group](#how-to-form-group). On the main Assignment page you will see a "Timed Assessment" section which will tell you when you can start the assessment and how long you will have once you start. If you have been given an extension, it will be visible here as well.
+Before you can start the timed assessment you can still see the assignment details and [create a group](#how-to-form-groups). On the main Assignment page you will see a "Timed Assessment" section which will tell you when you can start the assessment and how long you will have once you start. If you have been given an extension, it will be visible here as well.
 
 Once you can start the timed assessment a "Start" button will become visible. Click this button to start the assessment. Once you click the "Start" button you will must complete and submit your work to MarkUs before the duration expires.
 

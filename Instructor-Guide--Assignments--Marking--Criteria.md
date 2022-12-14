@@ -1,4 +1,4 @@
-# Setting Up a Marking Scheme
+# Setting Up Assignment Criteria
 
 ## Table of Contents
 
@@ -15,8 +15,8 @@
 
 ## Initial Setup
 
-To set up a marking scheme for an assignment, navigate to the "Criteria" tab of the assignment you wish to modify:
-![Marking Scheme](images/marking-scheme-tab.png)
+Criteria are used to build marking schemes for assignments. To set up criteria for an assignment, navigate to the "Criteria" tab of the assignment you wish to modify:
+![Criteria](images/criteria-tab.png)
 
 The MarkUs software allows you to add one (or many) criterion by which you would like the assignment to be evaluated. Initially, after you've first created the assignment, there will be no criteria in the "Marking Scheme" table. To add your first criterion, simply click on the "New Criterion" link on the top right hand side of the page!
 ![New Criterion](images/new-criteria-link.png)
@@ -88,7 +88,7 @@ If you wish to reorder criteria you can do so by clicking and dragging the grey 
 
 ### Visibility
 
-Once you've chosen the visibility of your criterion a small icon will be visible under the "Visibility" column of the marking scheme that represents the type you chose:
+Once you've chosen the visibility of your criterion a small icon will be visible under the "Visibility" column of the criteria list that represents the type you chose:
 ![Visibility 3](images/criteria-visibility-icons.png)
 
 ## Learn More

@@ -384,27 +384,27 @@ Similar to RSpec, Jest also involves specifications. It is recommended that you 
 
 **Note:** The following commands assume you are within the Markus root folder. If you running MarkUs with Docker, you must be in a shell in the [rails Docker container](Developer-Guide--Set-Up-With-Docker.md#running-commands-in-docker).
 
-`yarn` is the package manager we use in Markus. Its counterpart `npm` is sometimes more known.
+`npm` is the package manager we use in Markus.
 
 To run all specifications:
 
 ```sh
-yarn test
+npm run test
 ```
 
 To run all specifications with the test-coverage table shown:
 
 ```sh
-yarn test-cov
+npm run test-cov
 ```
 
 To run a specific specification:
 
 ```sh
-yarn test <filename>
+npm run test <filename>
 ```
 
-For example, to run the `StudentTable` specification, run `yarn test student_table.test.jsx`.
+For example, to run the `StudentTable` specification, run `npm run test student_table.test.jsx`.
 
 These commands are specified in `package.json`, under Markus root.
 

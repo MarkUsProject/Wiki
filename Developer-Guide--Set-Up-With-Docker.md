@@ -24,6 +24,21 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 
 6. Run `docker-compose build app`.
 
+    1. On Linux running docker engine (not docker desktop): you will need to make sure that the files are owned by a user with the same UID on your host machine as in the container:
+        - Create a file named `docker-compose.override.yml` in the root directory of the MarkUs code (should be your current directory)
+        - Discover your current UID by running the `id -u` command
+        - Write the following to the newly created `docker-compose.override.yml` file (replace 1001 with the UID that you discovered in the previous step):
+
+            ```yml
+            services:
+              app:
+                build:
+                  args:
+                    UID: 1001
+            ```
+
+        - now you can run `docker-compose build app`
+
 7. Run `docker-compose up rails`. The first time you run this it will take a long time because it'll install all of MarkUs' dependencies, and then seed the MarkUs application with sample data before actually running the server. When the server actually starts, you'll see some terminal output that looks like:
 
     ```text
@@ -120,12 +135,12 @@ Here's a summary of the few most common tasks you'll use in your development.
 - Start the MarkUs server: `docker-compose up --no-recreate rails`
 - Run the MarkUs rspec test suite: `docker-compose run rails rspec`
 - Run a specific rspec test file: `docker-compose run rails rspec FILE`
-- Run the Markus Jest test suite:  `docker-compose run rails yarn test`
-- Run the Markus Jest test suite with the test coverage shown:  `docker-compose run rails yarn test-cov`
-- Run a specific Jest test file: `docker-compose run rails yarn test FILE`
+- Run the Markus Jest test suite:  `docker-compose run rails npm run test`
+- Run the Markus Jest test suite with the test coverage shown:  `docker-compose run rails npm run test-cov`
+- Run a specific Jest test file: `docker-compose run rails npm run test FILE`
 - Start a shell within the Docker Rails environment: `docker-compose run --rm rails bash`.
   Within this shell, you can:
-    - Install new dependencies: `bundle install`, `yarn install`
+    - Install new dependencies: `bundle install`, `npm ci`
     - Reset the MarkUs database: `rails db:reset`
     - Run a database migration: `rails db:migrate`
     - Start the interactive Rails console: `rails c`
@@ -194,7 +209,7 @@ I'm writing frontend code. The files I've changed should according to the Webpac
 
 1. My changes are valid and should be displayed from the URL I'm accessing.
 2. There are no errors in the Webpacker container's logs.
-3. If I run `yarn build-dev` in the Webpacker container's console directly, it succeeds and I'm able to see my changes afterwards.
+3. If I run `npm run build-dev` in the Webpacker container's console directly, it succeeds and I'm able to see my changes afterwards.
 
 ### A
 

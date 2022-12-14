@@ -259,6 +259,18 @@ NOTE: this method is only available to AdminUser users
 
 NOTE: this method is only available to AdminUser users
 
+### GET /api/courses/:id/test_autotest_connection
+
+- description: Test whether MarkUs can connect to the server running the [automated test software](https://github.com/MarkUsProject/markus-autotesting) for this course.
+
+NOTE: this method is only available to AdminUser users
+
+### PUT /api/courses/:id/reset_autotest_connection
+
+- description: Resend all automated test settings (for each assignment) to the [automated test software](https://github.com/MarkUsProject/markus-autotesting) for this course and get an updated schema.
+
+NOTE: this method is only available to AdminUser users
+
 ### GET /api/courses/:course_id/roles
 
 - description: Display all role information for the given course
@@ -458,7 +470,7 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
 - description: Update the grade(s) in this grade_entry_form for a student
 - required parameters:
     - user_name (string : user name of a student in this course)
-    - grade_entry_items (list of list of strings: the first string is a grade entry item name and the second is an integer to be assigned as a score. For example: `[["Q1", 100], ["Q2", 23]]`)
+    - grade_entry_items (list of hashes: the key is a grade entry item name and the value is an integer or float to be assigned as a score. For example: `[{"Q1": 100}, {"Q2": 23}]`)
 
 ### GET /api/courses/:course_id/tags
 
