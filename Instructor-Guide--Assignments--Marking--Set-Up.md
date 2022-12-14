@@ -46,15 +46,16 @@ Before you may being grading an assignment, you must first collect the submitted
 This will open a modal window with collection options:
 ![Submissions Modal](images/submissions-modal.png)
 
-By default, when the collect command is executed it will select the file version for each submission that meets the due date and/or late penalty set for this assignment. It will not recollect submissions that have previously been collected. It then creates the views for annotating and grading each submission.
+The default option when the collect command is executed will select the file version for each submission that meets the due date and/or late penalty set for this assignment. It will not recollect submissions that have previously been collected. It then creates the views for annotating and grading each submission.
 
 However, the modal offers a few additional options for collection:
 
-1. **Recollect previously collected submissions** - if this box is checked, MarkUs will recollect submissions that have previously been collected. **WARNING**: If submissions with grading work are recollected, that work will be overwritten.
-2. **Collect most recent submissions** - if this box is checked, MarkUs will collect the most recent version of files the student has submitted, regardless of the due date and grace periods. This can be used to collect submissions both before and after the due date/grace credit periods.
-3. **Apply Late Penalty** - this box is checked by default. If it is unchecked, MarkUs will not apply penalties or deduct grace credits for submissions created after the due date.
+1. **Collect most recent files submitted, regardless of assignment due date or late period.** if this box is checked, MarkUs will collect the most recent version of files the student has submitted, regardless of the due date and grace periods. This can be used to collect submissions both before and after the due date/grace credit periods. If this option is selected, you will also have the option of applying or not applying late penalties.
+2. **Recollect previously collected submissions** - if this box is checked, MarkUs will recollect submissions that have previously been collected. **WARNING**: If submissions with grading work are recollected, that work will be overwritten.
 
 Once the files for an assignment have been collected, the marking state of the submission will change from "Not Collected" to "In Progress".
+
+> :spiral_notepad: **NOTE:** Scanned exams are always collected based on the most recently submitted files, so only the recollect option is available.
 
 ### Collecting Specific Revisions
 
