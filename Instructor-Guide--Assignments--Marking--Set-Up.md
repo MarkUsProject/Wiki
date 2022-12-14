@@ -41,15 +41,25 @@ If students are not allowed to work in groups, then under the "Group" column you
 Before you may being grading an assignment, you must first collect the submitted files from each group. To do this, make sure you are on the "Submissions" page of the assignment you wish to grade and select the checkbox(es) of the groups from which you wish to collect. You may also select the box at the top of the column to select all groups. Once satisfied, click on the "Collect Submissions" button to begin collection.
 ![Collecting Assignments](images/submissions-table-collect.png)
 
-> :spiral_notepad: **NOTE:** MarkUs only allows you to collect submissions AFTER the entire grace credit period has passed.
+> :spiral_notepad: **NOTE:** By default, MarkUs only allows you to collect submissions AFTER the entire grace credit period has passed.
 
-When the collect command is executed it checks to see the file version for each submission that meets the due date and/or late penalty set for this assignment. It then creates the views for annotating and grading each submission.
+This will open a modal window with collection options:
+![Submissions Modal](images/submissions-modal.png)
 
-> :warning: **WARNING: If the collect operation is carried out after grading has begun (by instructor or a TA) this grading work will be overwritten.** To prevent the preceding warning from occurring, ensure that you do not re-collect after any grading work has begun.
+The default option when the collect command is executed will select the file version for each submission that meets the due date and/or late penalty set for this assignment. It will not recollect submissions that have previously been collected. It then creates the views for annotating and grading each submission.
+
+However, the modal offers a few additional options for collection:
+![Submissions Modal With Options](images/submissions-modal-with-options.png)
+
+1. **Collect most recent files submitted, regardless of assignment due date or late period.** - if this box is checked, MarkUs will collect the most recent version of files the student has submitted, regardless of the due date and grace periods. This can be used to collect submissions both before and after the due date/grace credit periods.
+2. **Recollect previously collected submissions** - if this box is checked, MarkUs will recollect submissions that have previously been collected. **WARNING**: If submissions with grading work are recollected, that work will be overwritten.
+3. **Apply Late Penalty** - this option will only appear when collecting the most recent submissions. When collecting by due date, the late penalties are always applied. If it is unchecked, MarkUs will not apply penalties or deduct grace credits for submissions created after the due date.
 
 Once the files for an assignment have been collected, the marking state of the submission will change from "Not Collected" to "In Progress".
 
-### Overriding the Default Collection Process
+> :spiral_notepad: **NOTE:** Scanned exams are always collected based on the most recently submitted files, so only the recollect option is available.
+
+### Collecting Specific Revisions
 
 An instructor can bypass the collection process to manually select which version of a group's files to collect and grade (this is helpful when an individual extension is given to a student, for example). To do so, first click on the "Repository Name" link for the appropriate group. Then navigate to the version of the submitted files you wish to grade, and click on the "Manually Collect and Grade Revision" button.
 
