@@ -4,7 +4,7 @@
 
 - [Grades Tab](#grades-tab)
     - [Columns](#columns)
-    - [Releasing Marks](#Releasing-marks)
+    - [Releasing Marks](#releasing-marks)
     - [Unreleasing Marks](#unreleasing-marks)
     - [Summary Statistics](#summary-statistics)
 - [Graders Tab](#graders-tab)

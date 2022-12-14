@@ -10,7 +10,7 @@
         - [Late Submission Policies](Instructor-Guide--Assignments--Late-Submission-Policies.md)
         - Marking
             - [Set Up](Instructor-Guide--Assignments--Marking--Set-Up.md)
-            - [Marking Schemes](Instructor-Guide--Assignments--Marking--Marking-Schemes.md)
+            - [Criteria](Instructor-Guide--Assignments--Marking--Criteria.md)
             - [Grading View](Instructor-Guide--Assignments--Marking--Grading-View.md)
             - [Deductive Annotations](Instructor-Guide--Assignments--Deductive-Annotations.md)
             - [Automated Testing](Instructor-Guide--Assignments--Automated-Testing.md)

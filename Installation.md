@@ -4,60 +4,6 @@ The following are instructions to set up a production server for MarkUs.
 
 The following steps are for installation on a machine running Ubuntu 20.04 and all examples given below assume that you are installing in such an environment. Some changes may be required if installing on other operating systems.
 
-## System Requirements
-
-Ensure the following ubuntu packages are installed:
-
-- build-essential : (needed to install node/yarn)
-- software-properties-common : (needed to install node/yarn)
-- postgresql-client-12 : (needed to manage a postgres database, later versions should also be ok too)
-- tzdata : (needed for timezone management)
-- libpq-dev : (needed to run a postgres database)
-- libv8-dev : (needed for javascript dependencies)
-- ruby-svn : (only required if using svn repositories. It is *highly* recommended to use git repositories instead)
-- ghostscript : (needed to manage pdfs)
-- imagemagick : (needed to manage pdfs)
-- libmagickwand-dev : (needed to manage pdfs)
-- cmake : (needed to make certain ruby gems)
-- libaprutil1-dev : (needed if using Apache as an http server)
-- libssl-dev : (needed for ssl/tsl encryption)
-- swig : (needed as an interface for certain ruby gems)
-- graphviz : (needed by the ruby-graphviz gem)
-- git : (required if using git repositories)
-- python3 : (version 3.9 recommended. Required for optical character recognition and jupyter notebook rendering)
-- python3-venv : (required for optical character recognition and jupyter notebook rendering)
-- python3-dev : (required for optical character recognition and jupyter notebook rendering)
-- pandoc : (required rmarkdown and jupyter notebook rendering)
-- libgl1 : (required for optical character recognition)
-- ruby-full : (ensure that this installs at least ruby 2.7)
-
-Install [bundler](https://bundler.io/) as a system gem:
-
-```sh
-gem install bundler -v 2.3.17
-```
-
-Install [node](https://nodejs.org/en/) (note that we need at least version 12 so we can't just install the ubuntu 20.04 package directly):
-
-```sh
-curl https://deb.nodesource.com/setup_12.x -o node_setup.sh
-bash node_setup.sh
-sudo apt-get install nodejs
-rm node_setup.sh
-```
-
-Install [yarn](https://yarnpkg.com/):
-
-```sh
-npm install --global yarn@1.22.5
-```
-
-Update the default configuration options for imagemagick so that it will allow reading pdf files:
-
-```sh
-sed -ri 's/(rights=")none("\s+pattern="PDF")/\1read\2/' /etc/ImageMagick-6/policy.xml
-```
-
 ## Create User
 
 For security reasons, MarkUs should be run as a dedicated user. Either designate an existing user to run MarkUs or create one. In this demo we will assume that MarkUs is being run as a user named `markus` created by running:
@@ -80,31 +26,79 @@ cd Markus
 git checkout release
 ```
 
+## System Requirements
+
+Install system dependencies:
+
+Note that on ubuntu 20.04 the default nodejs version is less than the required node version for MarkUs (version 18). In order to install the correct version of nodejs, first run the `node_setup.sh` script:
+
+```sh
+curl https://deb.nodesource.com/setup_18.x -o node_setup.sh
+bash node_setup.sh
+sudo apt-get install --no-install-recommends ./markus_1.0_all.deb
+rm node_setup.sh
+```
+
+The following ubuntu packages are optional:
+
+- If you would like to enable optical character recognition for scanned exams and/or jupyter notebook rendering:
+    - python3
+    - python3-venv (required if you'd like to install python packages in a virtual environment)
+    - python3-dev
+
+Install [bundler](https://bundler.io/) as a system gem:
+
+```sh
+gem install bundler -v 2.3.17
+```
+
+Update the default configuration options for imagemagick so that it will allow reading pdf files:
+
+```sh
+sed -ri 's/(rights=")none("\s+pattern="PDF")/\1read\2/' /etc/ImageMagick-6/policy.xml
+```
+
 ### Install Ruby dependencies using [bundler](https://bundler.io/)
 
 ```sh
 ./bin/bundle install --deployment --without development test offline
 ```
 
-### Install javascript dependencies using [yarn](https://yarnpkg.com/)
+### Install javascript dependencies using npm
 
 ```sh
-./bin/yarn install
+npm ci
 ```
 
-### Install python dependencies in a virtual environment
+### Install python dependencies (optional)
 
-```sh
-python3 -m venv ./venv
-./venv/bin/pip install -r requirements.txt
-```
+Skip this step if you do not want to enable optical character recognition for scanned exams or jupyter notebook rendering.
 
-and make sure that your [settings files](./Configuration.md) know where the packages are installed by specifying the location of the virtual environment's bin directory in `config/settings.local.yml`:
+We recommend installing python packages for MarkUs in a [virtual environment](https://docs.python.org/3/library/venv.html) since that will keep the python dependencies distinct from other python packages that you might have installed on your system.
+
+If you are using a virtual environment, make sure to point MarkUs to the location of the python executable in that environment by setting the `python:` configuration option in `settings.local.yml`
 
 ```yaml
-python:
-   bin: /path/to/the/venv/bin
+python: /path/to/the/venv/bin/python3
 ```
+
+If this is not set, then the `python3` executable that can be found in the `PATH` will be used (if it exists).
+
+#### Install python dependencies for optical character recognition for scanned exams
+
+```sh
+pip install -r requirements-scanner.txt
+```
+
+If these dependencies are installed, it will enable [automatic matching of student papers](Instructor-Guide--Scanned-Exams.md#automatic-matching-of-student-papers) using optical character recognition.
+
+#### Install python dependencies for jupyter notebook rendering
+
+```sh
+pip install -r requirements-jupyter.txt
+```
+
+If these dependencies are installed, MarkUs will render jupyter notebook files as html (converted using nbconvert), otherwise it will render them as plain text.
 
 ### Configure MarkUs settings
 
@@ -229,7 +223,7 @@ Then, you should set up the `markus` user (that you created [previously](#create
     ```
 
    - where `/path/to/some/logfile.log` is an absolute path to a text file where you want the log output to be written (this is optional)
-   - where `/some/path/to/repos/` is an absolute path to the location of the git repositories specified in the [`respository.storage`](./Configuration.md#markus-settings) configuration setting.
+   - where `/some/path/to/repos/` is an absolute path to the location of the git repositories specified in the [`file_storage.repos`](./Configuration.md#markus-settings) configuration setting.
    - where `/usr/bin/git-shell` is a path to the git-shell executable installed by git. See [the git documentation](https://git-scm.com/docs/git-shell) for more details
 
    If multiple MarkUs instances are running on your machine using relative url roots, then you can specify multiple repository locations for each instance. The `MARKUS_REPO_LOC_PATTERN` variable can contain an `(instance)` substring which will be replaced by the relative url root of the requested repository. For example, if you have two MarkUs instances running with relative url roots being `csc108/` and `csc209/` and repositories for each at:
@@ -329,7 +323,7 @@ echo "SELECT check_repo_permissions(:'user_name', :'course_name', :'repo_name')"
 
 When setting up autorization protocols for this access, your authorization script should check who has permission to which git repos by inspecting the `.access` file in the repository storage directory (see the [configuration settings](./Configuration.md#markus-settings)).
 
-Each row of this file is a comma delimited and contains a relative path from the repository storage directory to a specific repository on disk followed by a list of user names of people who have access to this repository. For example, if [`respository.storage`](./Configuration.md#markus-settings) is `/some/path/to/repos/` and the `.access` file contains:
+Each row of this file is a comma delimited and contains a relative path from the repository storage directory to a specific repository on disk followed by a list of user names of people who have access to this repository. For example, if [`file_storage.repos`](./Configuration.md#markus-settings) is `/some/path/to/repos/` and the `.access` file contains:
 
 ```csv
 blah/group1.git,user1,user2
@@ -404,3 +398,5 @@ RAILS_ENV=production ./bin/rails db:admin
 The autotester can be installed seperately from MarkUs on a different server (or the same one if you'd prefer). Here are the autotester [Installation instructions](https://github.com/MarkUsProject/markus-autotesting/blob/release/README.md).
 
 Once the autotester has been set up, you must register each course that uses autotesting by providing the URL of the autotester through the API using the `api/courses/<course_id>/update_autotest_url` route.
+
+Note that MarkUs requires autotester version v2.3+

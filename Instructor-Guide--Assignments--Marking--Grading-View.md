@@ -7,7 +7,7 @@
 - [Grading Bar](#grading-bar)
 - [Download](#download)
 - [Annotations](#annotations)
-    - [Creating an Annotation](#create-an-annotation)
+    - [Creating an Annotation](#creating-an-annotation)
     - [Annotations Tab](#annotations-tab)
 - [Marks and Summary](#marks-and-summary)
     - [Marks](#marks)
@@ -118,10 +118,10 @@ The Marks and Summary tabs are located to the right of the viewing screen and ar
 
 ### Marks
 
-The Marks tab will list all of the criteria that were created in the [Marking Scheme](Instructor-Guide--Assignments--Marking--Marking-Schemes.md):
+The Marks tab will list all of the criteria that were created in the [Marking Scheme](Instructor-Guide--Assignments--Marking--Criteria.md):
 ![Marks Tab](images/grade-view-criteria-tab.png)
 
-It is here where you are able to select specific criteria to assign marks. In the above image, you can see examples of the [checkbox type](Instructor-Guide--Assignments--Marking--Marking-Schemes.md#checkbox-type) and [rubric type](Instructor-Guide--Assignments--Marking--Marking-Schemes.md#rubric-type) criteria. The marks tab has three buttons at the top which do the following:
+It is here where you are able to select specific criteria to assign marks. In the above image, you can see examples of the [checkbox type](Instructor-Guide--Assignments--Marking--Criteria.md#checkbox-type) and [rubric type](Instructor-Guide--Assignments--Marking--Criteria.md#rubric-type) criteria. The marks tab has three buttons at the top which do the following:
 
  1. **Expand All** - This button expands all of the criteria to allow you to see descriptions and full rubrics.
  2. **Expand Unmarked** - This button does the same thing as the "Expand All" button but only expands unmarked criteria. It is advised to click this button before moving on to the next submission to see if there are any criteria that have been missed.
