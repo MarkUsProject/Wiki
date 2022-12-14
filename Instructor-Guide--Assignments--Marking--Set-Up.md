@@ -49,9 +49,11 @@ This will open a modal window with collection options:
 The default option when the collect command is executed will select the file version for each submission that meets the due date and/or late penalty set for this assignment. It will not recollect submissions that have previously been collected. It then creates the views for annotating and grading each submission.
 
 However, the modal offers a few additional options for collection:
+![Submissions Modal With Options](images/submissions-modal-with-options.png)
 
-1. **Collect most recent files submitted, regardless of assignment due date or late period.** if this box is checked, MarkUs will collect the most recent version of files the student has submitted, regardless of the due date and grace periods. This can be used to collect submissions both before and after the due date/grace credit periods. If this option is selected, you will also have the option of applying or not applying late penalties.
+1. **Collect most recent files submitted, regardless of assignment due date or late period.** - if this box is checked, MarkUs will collect the most recent version of files the student has submitted, regardless of the due date and grace periods. This can be used to collect submissions both before and after the due date/grace credit periods.
 2. **Recollect previously collected submissions** - if this box is checked, MarkUs will recollect submissions that have previously been collected. **WARNING**: If submissions with grading work are recollected, that work will be overwritten.
+3. **Apply Late Penalty** - this option will only appear when collecting the most recent submissions. When collecting by due date, the late penalties are always applied. If it is unchecked, MarkUs will not apply penalties or deduct grace credits for submissions created after the due date.
 
 Once the files for an assignment have been collected, the marking state of the submission will change from "Not Collected" to "In Progress".
 
