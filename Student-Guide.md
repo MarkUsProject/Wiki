@@ -97,6 +97,19 @@ Where:
 > :arrow_forward: **EXAMPLE:**
 > To submit a file to `assignment_other`, create a file in the `assignment_other/` subdirectory and push the changes back to MarkUs.
 
+#### Enable Client Hooks
+
+When you push your changes to MarkUs using git, MarkUs may reject your changes if one of the following is true:
+
+- you have created, modified, or deleted a file or directory that is not in one of the assignment directories
+- you have force pushed your changes
+- you have submitted a file that is not required and only required files are allowed to be submitted for your assignment
+- you have submitted a file that is too big
+
+If you want to be warned early if any of your changes will be rejected by MarkUs you can set up client-side hooks. These hooks will warn you if any of your changes will be rejected by MarkUs when you *commit* your changes. That way you will have a chance to correct the issue before you *push* your changes to MarkUs.
+
+To enable client-side hooks, copy the contents of the `markus-hooks` directory to the `.git/hooks` directory.
+
 ## View Results
 
 Once your submssion for an assignment has been marked, the Result tab will become visible for your assignment. Click this tab to show the detailed results for this assignment. On this page you can:
