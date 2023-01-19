@@ -88,6 +88,8 @@ remote_auth_login_name: # (See "User Authentication Options" below)
 local_auth_login_name: # (See "User Authentication Options" below)
 logout_redirect: # (See "User Authentication Options" below)
 student_csv_order: # column order of student csv upload file (choices are: user_name, last_name, first_name, section_name, id_number, email)
+jupyter_server:
+  hosts: # list of host names of servers running jupyterhub that are allowed to connect to this instance of MarkUs
 repository:
   type: # repository type used to store student submissions. Choose from 'git', 'mem'. 'git' is preferred since 'mem' is not persistant and should only be used for testing.
   url: # base url used to remotely access a repository over http/https
