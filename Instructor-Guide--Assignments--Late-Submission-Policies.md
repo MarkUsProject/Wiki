@@ -35,6 +35,8 @@ Additional time periods are added by clicking the "Add late period" button and r
 
 When grading a late submission, the penalty will be automatically applied to the group's mark, but will not decrease the mark below 0. This penalty will appear in the "Summary" tab of the grading view.
 
+Penalties are applied as a percentage of the total mark. For example, a 10% penalty for an assignment out of 90 total marks will reduce a groups's overall score by 9 marks. If a group would have received 55/90 before the penalty is deducted, they will receive 46/90 after the penalty is deducted.
+
 ## Set Manual Penalty Periods
 
 This option allows you to set percentage penalty amounts for specified time periods.
@@ -44,3 +46,5 @@ Additional time periods are added by clicking the "Add late period" button and r
 Note that for each late submission method, in order for the "From" and "To" times to be calculated, a due date must be specified in the "Properties" section. If a date is not specified then the "From" and "To" sections will be empty or read "Invalid Date"
 
 These deductions will be applied automatically, as with the "Penalty Decay Formula" option.
+
+Penalties are applied as a percentage of the total mark. For example, a 10% penalty for an assignment out of 90 total marks will reduce a groups's overall score by 9 marks. If a group would have received 55/90 before the penalty is deducted, they will receive 46/90 after the penalty is deducted.
