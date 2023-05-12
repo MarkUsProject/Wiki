@@ -40,7 +40,7 @@ Note that the following few paragraphs might be a bit confusing. Hang in there, 
 6. Next, create a "remote" to the master repository of MarkUs upstream. This will be used to keep your local copy up to date.
 
     ```console
-    git remote add upstream git://github.com/MarkUsProject/Markus.git
+    git remote add upstream git@github.com:MarkUsProject/Markus.git
     ```
 
     Note the remote origin should point to the SSH URL you cloned with. If this URL contains “https”, then you have not cloned using SSH. Run the following command to change it to the URL used when cloning.
