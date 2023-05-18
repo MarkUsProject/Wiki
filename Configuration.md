@@ -256,3 +256,12 @@ If you wish to be informed when a user encounters a server error whilst using Ma
 Note that in order for this feature to work, you **must** have ActionMailer [configured](https://guides.rubyonrails.org/action_mailer_basics.html) to send emails. This means that you must select an ActionMailer `delivery_method` with the appropriate settings and you must also set `perform_deliveries` to true. You will be unable to send or recieve error notification emails otherwise.
 
 This feature informs you of all uncaught exceptions that occur in the MarkUs backend. In order to possibly avoid filling recipient inboxes with a lot of the same error notifications, email notifications are sent after every `2**n` occurences of the same error. For more details, visit the [exception notification](https://github.com/smartinez87/exception_notification) gem homepage with which we use to provide you this feature.
+
+## LTI Settings
+
+If you wish to use Learning Tools Interoperability (LTI) with Markus, you'll need to configure the LTI settings as follows:
+`domains` must be a whitelist of all hosts you expect to receive LTI launches from
+`token_endpoint` must be the url used to generate an LTI credentials token for the external platform.
+
+You must also create a private key for generating Javascript Web Tokens to sign LTI requests.
+A private key can be automatically created with the `markus:lti_key` rake task.
