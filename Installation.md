@@ -4,48 +4,6 @@ The following are instructions to set up a production server for MarkUs.
 
 The following steps are for installation on a machine running Ubuntu 20.04 and all examples given below assume that you are installing in such an environment. Some changes may be required if installing on other operating systems.
 
-## System Requirements
-
-Ensure the following ubuntu packages are installed:
-
-- build-essential : (needed to install node/npm)
-- software-properties-common : (needed to install node/npm)
-- postgresql-client-12 : (needed to manage a postgres database, later versions should also be ok too)
-- tzdata : (needed for timezone management)
-- libpq-dev : (needed to run a postgres database)
-- ghostscript : (needed to manage pdfs)
-- libmagickwand-dev : (needed to manage pdfs)
-- cmake : (needed to make certain ruby gems)
-- libssl-dev : (needed for ssl/tsl encryption)
-- git : (required if using git repositories)
-- python3 : (version 3.9 recommended. Required for optical character recognition and jupyter notebook rendering)
-- python3-venv : (required for optical character recognition and jupyter notebook rendering)
-- python3-dev : (required for optical character recognition and jupyter notebook rendering)
-- pandoc : (required rmarkdown and jupyter notebook rendering)
-- libgl1 : (required for optical character recognition)
-- ruby-full : (ensure that this installs at least ruby 2.7)
-
-Install [bundler](https://bundler.io/) as a system gem:
-
-```sh
-gem install bundler -v 2.3.17
-```
-
-Install [node](https://nodejs.org/en/) (note that we need at least version 12+ so we can't just install the ubuntu 20.04 package directly; version 18+ is recommended):
-
-```sh
-curl https://deb.nodesource.com/setup_18.x -o node_setup.sh
-bash node_setup.sh
-sudo apt-get install nodejs
-rm node_setup.sh
-```
-
-Update the default configuration options for imagemagick so that it will allow reading pdf files:
-
-```sh
-sed -ri 's/(rights=")none("\s+pattern="PDF")/\1read\2/' /etc/ImageMagick-6/policy.xml
-```
-
 ## Create User
 
 For security reasons, MarkUs should be run as a dedicated user. Either designate an existing user to run MarkUs or create one. In this demo we will assume that MarkUs is being run as a user named `markus` created by running:
@@ -68,6 +26,38 @@ cd Markus
 git checkout release
 ```
 
+## System Requirements
+
+Install system dependencies:
+
+Note that on ubuntu 20.04 the default nodejs version is less than the required node version for MarkUs (version 18). In order to install the correct version of nodejs, first run the `node_setup.sh` script:
+
+```sh
+curl https://deb.nodesource.com/setup_18.x -o node_setup.sh
+bash node_setup.sh
+sudo apt-get install --no-install-recommends ./markus_1.0_all.deb
+rm node_setup.sh
+```
+
+The following ubuntu packages are optional:
+
+- If you would like to enable optical character recognition for scanned exams and/or jupyter notebook rendering:
+    - python3
+    - python3-venv (required if you'd like to install python packages in a virtual environment)
+    - python3-dev
+
+Install [bundler](https://bundler.io/) as a system gem:
+
+```sh
+gem install bundler -v 2.3.17
+```
+
+Update the default configuration options for imagemagick so that it will allow reading pdf files:
+
+```sh
+sed -ri 's/(rights=")none("\s+pattern="PDF")/\1read\2/' /etc/ImageMagick-6/policy.xml
+```
+
 ### Install Ruby dependencies using [bundler](https://bundler.io/)
 
 ```sh
@@ -80,19 +70,35 @@ git checkout release
 npm ci
 ```
 
-### Install python dependencies in a virtual environment
+### Install python dependencies (optional)
 
-```sh
-python3 -m venv ./venv
-./venv/bin/pip install -r requirements.txt
-```
+Skip this step if you do not want to enable optical character recognition for scanned exams or jupyter notebook rendering.
 
-and make sure that your [settings files](./Configuration.md) know where the packages are installed by specifying the location of the virtual environment's bin directory in `config/settings.local.yml`:
+We recommend installing python packages for MarkUs in a [virtual environment](https://docs.python.org/3/library/venv.html) since that will keep the python dependencies distinct from other python packages that you might have installed on your system.
+
+If you are using a virtual environment, make sure to point MarkUs to the location of the python executable in that environment by setting the `python:` configuration option in `settings.local.yml`
 
 ```yaml
-python:
-   bin: /path/to/the/venv/bin
+python: /path/to/the/venv/bin/python3
 ```
+
+If this is not set, then the `python3` executable that can be found in the `PATH` will be used (if it exists).
+
+#### Install python dependencies for optical character recognition for scanned exams
+
+```sh
+pip install -r requirements-scanner.txt
+```
+
+If these dependencies are installed, it will enable [automatic matching of student papers](Instructor-Guide--Scanned-Exams.md#automatic-matching-of-student-papers) using optical character recognition.
+
+#### Install python dependencies for jupyter notebook rendering
+
+```sh
+pip install -r requirements-jupyter.txt
+```
+
+If these dependencies are installed, MarkUs will render jupyter notebook files as html (converted using nbconvert), otherwise it will render them as plain text.
 
 ### Configure MarkUs settings
 
@@ -392,3 +398,5 @@ RAILS_ENV=production ./bin/rails db:admin
 The autotester can be installed seperately from MarkUs on a different server (or the same one if you'd prefer). Here are the autotester [Installation instructions](https://github.com/MarkUsProject/markus-autotesting/blob/release/README.md).
 
 Once the autotester has been set up, you must register each course that uses autotesting by providing the URL of the autotester through the API using the `api/courses/<course_id>/update_autotest_url` route.
+
+Note that MarkUs requires autotester version v2.3+

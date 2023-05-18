@@ -4,6 +4,7 @@
 
 - [Info](#info)
 - [Releasing Grades from Submissions Table](#releasing-grades-from-submissions-table)
+- [Managing Release Tokens](#managing-release-tokens)
 - [Releasing Grades from Grading View](#releasing-grades-from-grading-view)
 - [Unreleasing Grades](#unreleasing-grades)
 
@@ -33,6 +34,19 @@ Once you've selected at least one group, the "Release Marks" button should light
 ![Release Marks Button](images/submission-table-release-button.png)
 
 Click on the button and the marking state of selected groups should change from "Complete" to "Released". The students in that group my now view their marks, annotations, feedback files, summary, etc. for the assignment.
+
+## Managing Release Tokens
+
+If "Only allow students to view released marks via a unique URL" has been enabled for this assignment (see [here](./Instructor-Guide--Assignments--Setting-Up.md#properties)), then you can manage release tokens for groups by selecting some groups that have been collected in the submissions have and clicking the "Show Release Tokens" button.
+
+This will open a modal that shows the following data for each selected group:
+
+- The group name (and members)
+- The release token for this group
+- The expiry date of the release token for this group
+- A url that includes the release token as a parameter (this url can be given to the students to directly access the released result)
+
+A student will not be able to view a released result unless they have their release token. MarkUs itself does not make release tokens visible to students as they are to be used as an additional authentication requirement.
 
 ## Releasing Grades from Grading View
 

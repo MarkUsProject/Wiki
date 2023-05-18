@@ -95,7 +95,7 @@ If the assignment requires **multiple languages** and you wish to run tests in a
 
 ### Test Groups
 
-Tests are organized into groups which in turn can be associated with [Criteria](Instructor-Guide--Assignments--Marking--Marking-Schemes.md). Each test group can be associated with exactly one criteria and the results from the test will [automatically fill in the results](#criterion-auto-complete) when the tests finish.
+Tests are organized into groups which in turn can be associated with [Criteria](Instructor-Guide--Assignments--Marking--Criteria.md). Each test group can be associated with exactly one criteria and the results from the test will [automatically fill in the results](#criterion-auto-complete) when the tests finish.
 
 Click on the green plus button under the "*Test Groups*" section of your specific tester type to create a new group:
 ![Test Group Add](images/automated-testing-test-group-add.png)
@@ -115,7 +115,7 @@ This section lists all the fields that are common to all testers:
 
     This determines whether the "Output" column will be displayed to students on the [test results table](#test-results-table). This column will always be visible to instructors and graders.
 
-- **Criterion:** Select a [criterion](Instructor-Guide--Assignments--Marking--Marking-Schemes.md) here that has been created and to link it to this test group. This is optional.
+- **Criterion:** Select a [criterion](Instructor-Guide--Assignments--Marking--Criteria.md) here that has been created and to link it to this test group. This is optional.
 
 - **Test Files:** Select one or more test files to run in this test group. Multiple files can be selected by holding down the "Ctrl" button and clicking several files.
 

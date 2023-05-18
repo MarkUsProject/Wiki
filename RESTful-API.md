@@ -259,6 +259,18 @@ NOTE: this method is only available to AdminUser users
 
 NOTE: this method is only available to AdminUser users
 
+### GET /api/courses/:id/test_autotest_connection
+
+- description: Test whether MarkUs can connect to the server running the [automated test software](https://github.com/MarkUsProject/markus-autotesting) for this course.
+
+NOTE: this method is only available to AdminUser users
+
+### PUT /api/courses/:id/reset_autotest_connection
+
+- description: Resend all automated test settings (for each assignment) to the [automated test software](https://github.com/MarkUsProject/markus-autotesting) for this course and get an updated schema.
+
+NOTE: this method is only available to AdminUser users
+
 ### GET /api/courses/:course_id/roles
 
 - description: Display all role information for the given course

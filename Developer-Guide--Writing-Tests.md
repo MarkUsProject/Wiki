@@ -312,7 +312,7 @@ System tests require extra setup steps in order for you to run them locally. As 
 
     > :spiral_notepad: **Note:** On Windows ensure ChromeDriver is run from a Command Prompt or Windows Powershell.
 
-4. In a separate terminal, start a bash shell within the Docker Rails environment by running `docker-compose run -p 3434:3434 --rm rails bash`. Notice that we exposed port 3434 by adding the argument `-p 3434:3434`. Port 3434 is the port with which Capybara will use to serve the test MarkUs instance for Chrome to use.
+4. In a separate terminal, start a bash shell within the Docker Rails environment by running `docker compose run -p 3434:3434 --rm rails bash`. Notice that we exposed port 3434 by adding the argument `-p 3434:3434`. Port 3434 is the port with which Capybara will use to serve the test MarkUs instance for Chrome to use.
 
 5. Run system tests by running `RAILS_RELATIVE_URL_ROOT=/ rspec spec/system` in the bash shell you created in step 4. Currently, Capybara does not support applications with a different relative url root which is why you must set `RAILS_RELATIVE_URL_ROOT=/`. You will also notice that due to the additional setup for system tests, they are ignored by default and must be explicitly defined in order for rspec to run them. Simply running `RAILS_RELATIVE_URL_ROOT=/ rspec` will not run the system test suite.
 

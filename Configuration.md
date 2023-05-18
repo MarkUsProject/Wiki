@@ -59,6 +59,18 @@ rails:
      perform_caching: # boolean indicating whether to enable fragment caching (enable this for production only)
 ```
 
+### Puma settings
+
+[Puma](https://github.com/puma/puma) is an http server for ruby and the default http server used by Rails applications (like MarkUs). MarkUs allows for some configuration of the puma processes through this file with the following settings:
+
+```yaml
+puma:
+  workers: # the number of worker processes (if this value is more than zero, puma with run in "cluster mode")
+  min_threads: # the minimum number of threads per worker process
+  max_threads: # the maximum number of threads per worker process
+  worker_timeout: # the amount of time in seconds that a puma worker can sit idle before it is restarted, (this cannot be set below 6 seconds)
+```
+
 ### MarkUs settings
 
 ```yaml
@@ -76,6 +88,8 @@ remote_auth_login_name: # (See "User Authentication Options" below)
 local_auth_login_name: # (See "User Authentication Options" below)
 logout_redirect: # (See "User Authentication Options" below)
 student_csv_order: # column order of student csv upload file (choices are: user_name, last_name, first_name, section_name, id_number, email)
+jupyter_server:
+  hosts: # list of host names of servers running jupyterhub that are allowed to connect to this instance of MarkUs
 repository:
   type: # repository type used to store student submissions. Choose from 'git', 'mem'. 'git' is preferred since 'mem' is not persistant and should only be used for testing.
   url: # base url used to remotely access a repository over http/https
@@ -92,6 +106,7 @@ logging:
   old_files: # maximum number of log files to keep (older files will be deleted)
   log_file: # relative path (from the MarkUs root) to the log file
   error_file: # relative path (from the MarkUs root) to the error log file
+  tag_with_usernames: # boolean indicating whether to tag each request written to the logs with the user_name of the user who made the request (note: this requires that rails.session_store.type == 'cookie_store')
 scanned_exams:
   enable: # boolean indicating whether to enable scanned exams
 resque_scheduler: # configuration for scheduling background jobs (this section can be omitted entirely)
@@ -101,8 +116,7 @@ autotest:
 i18n:
   available_locales: # list of locale strings (Note that 'en' is the only option that is supported)
   default_locale: # locale string to use as default (must be one of the options in available_locales)
-python:
-   bin: # location of the bin subdirectory of the python3 virtual environment where python dependencies are installed
+python: # location of a python executable where python dependencies are installed (optional)
 rails_performance:
   enabled: # boolean whether to enable the rails performance dashboard (See the "Admin Guide" page for more information about this dashboard)
   duration: # duration in minutes for rails performance to store data for monitoring
@@ -119,7 +133,6 @@ file_storage:
   autotest: # (optional) absolute path to a directory where MarkUs can store autotest files (if null, a subdirectory under the default_root_path will be used)
   lti: # (optional) absolute path to a directory where MarkUs can store lti key files (if null, a subdirectory under the default_root_path will be used)
   repos: # (optional) absolute path to a directory where MarkUs can store repositories (if null, a subdirectory under the default_root_path will be used)
-pandoc: # path to the pandoc executable
 ```
 
 ## Additional queue names

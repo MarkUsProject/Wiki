@@ -36,6 +36,15 @@ When developing MarkUs, make sure to follow the following steps (where appropria
 - Use 2 (two) **spaces** (instead of tabs) for indenting
 - Make sure you provide a brief and understandable high-level-description of your Rails model/controller code (use RDoc syntax, where appropriate)).
 
+## Managing Dependencies and Databases
+
+If you create a new database migration or change one of the dependencies files, make sure that your changes are reflected in lockfiles and database schemas before you submit your changes as a pull request.
+
+- If you create a new migration: run `bundle exec rails db:migrate` and you should see changes reflected in `db/structure.sql`
+- If you update `Gemfile`: run `bundle install` and you should see changes reflected in `Gemfile.lock`
+- If you update `package.json`: run `npm ci` and you should see changes reflected in `package-lock.json`
+- If you update `markus.control`: run `equivs-build markus.control` and it should update `markus_1.0_all.deb` (this is a binary file so you won't be able to inspect the changes directly)
+
 ## Guides
 
 Rails:
