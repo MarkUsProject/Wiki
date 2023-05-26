@@ -173,7 +173,7 @@ In Racket, each test file must be added separately with the appropriate test sui
 
 - **Maximum mark:** This section will determine the mark associated with the PyTA test. Whatever number you enter here will be the mark a student receives for a perfect test. Every error detected by PyTA will reduce the student's mark by 1 down to a minumum of 0.
 
-- **PyTA configuration:** Select an uploaded file that contains configuration options for PyTA. This should be a json file that, when loaded as a python dictionary, can be passed to the `config` keyword argument for the [`check_all`](https://github.com/pyta-uoft/pyta/blob/45504df2f448754c4db4bdc38de65e0ced7cb791/python_ta/__init__.py#L52) function. This dictionary can contain any of the [Pylint option and switches](http://pylint.pycqa.org/en/latest/technical_reference/features.html) and any of the [PyTA specific configuration options](https://github.com/pyta-uoft/pyta/blob/master/python_ta/.pylintrc).
+- **PyTA configuration:** Select an uploaded file that contains configuration options for PyTA. This should be a json file that, when loaded as a python dictionary, can be passed to the `config` keyword argument for the [`check_all`](https://github.com/pyta-uoft/pyta/blob/45504df2f448754c4db4bdc38de65e0ced7cb791/python_ta/__init__.py#L52) function. This dictionary can contain any of the [Pylint option and switches](http://pylint.pycqa.org/en/latest/technical_reference/features.html) and any of the [PyTA specific configuration options](https://github.com/pyta-uoft/pyta/blob/master/python_ta/config/.pylintrc).
 
     For example, a config file that tells PyTA to ignore some pylint checks and to allow some additional import statements might look like:
 
