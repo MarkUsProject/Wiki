@@ -41,7 +41,7 @@ course's navigation (disabled by default), and needs to be added to the navigati
 ![Canvas MarkUs Navigation](images/canvas-markus-nav.png)
 
 If you believe MarkUs should be installed in your course but it does not appear,
-contact your canvas admistrators.
+contact your Canvas admistrators.
 
 > **NOTE:**
 > The additional navigation item will only be visible to instructors and
@@ -80,6 +80,6 @@ associated LMS course. Check the box for each Canvas course the grades should be
 
 #### Syncing Canvas course roster with MarkUs
 
-MarkUs will automatically attempt to sync course rosters with Canvas when grades are sent to Canvas.
-Any students in the Canvas course that are not present on MarkUs will be created.
+MarkUs will automatically attempt to sync course rosters, including both students and graders, with Canvas when grades are sent to Canvas.
+Any members of the Canvas course that are not present in the MarkUs course roster will be created.
 A roster sync can also be triggered manually on the course settings page.
