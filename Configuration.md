@@ -259,9 +259,10 @@ This feature informs you of all uncaught exceptions that occur in the MarkUs bac
 
 ## LTI Settings
 
-If you wish to use Learning Tools Interoperability (LTI) with Markus, you'll need to configure the LTI settings as follows:
-`domains` must be a whitelist of all hosts you expect to receive LTI launches from
-`token_endpoint` must be the url used to generate an LTI credentials token for the external platform.
+If you wish to use Learning Tools Interoperability (LTI) with Markus, you'll need to configure the LTI settings as follows
+
+- `lti.domains` must be a whitelist of all hosts you expect to receive LTI launches from.
+- `lti.token_endpoint` must be the url used to generate an LTI credentials token for the external platform.
 
 You must also create a private key for generating Javascript Web Tokens to sign LTI requests.
 A private key can be automatically created with the `markus:lti_key` rake task.
