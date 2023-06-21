@@ -6,6 +6,7 @@
 - [View Submitted Files](#view-submitted-files)
 - [Grading Bar](#grading-bar)
 - [Download](#download)
+- [Print](#print)
 - [Annotations](#annotations)
     - [Creating an Annotation](#creating-an-annotation)
     - [Annotations Tab](#annotations-tab)
@@ -57,6 +58,23 @@ From here you may:
 - download the single file.
 - download a zip file containing all files submitted.
 - select whether annotations should be included in the file downloads (annotations may not be supported for all file types).
+
+## Print
+
+MarkUs also allows you to print a submission with the print button.
+
+![Print Button](images/print.png)
+
+This will print all PDF files that have been submitted as a single PDF file, along with a cover page which provides information about the students in a group,
+the mark received on each criterion, a list of all annotations on the submission, and any overall comment that has been left during grading.
+
+![Printed Assignment Cover Page](images/printed-assignment-cover-page.png)
+
+In the output pdf, the location of each annotation will also be marked.
+
+![Printed Assignment Annotation](images/printed-assignment-annotation.png)
+
+> :spiral_notepad: **NOTE**: Only PDF files are supported for printing. If a submission contains files of other types, they will not be printed.
 
 ## Annotations
 
