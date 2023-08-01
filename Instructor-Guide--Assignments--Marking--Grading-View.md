@@ -60,8 +60,8 @@ This will open up a Filter Submissions modal:
 
 From here you may:
 
-- Order the submissions by either Group name, Submission date or Total mark in either ascending or descending orders. By default, the submissions are sorted based on the group name in ascending order. This option will be pre-selected when the modal is opened. 
-  
+- Order the submissions by either Group name, Submission date or Total mark in either ascending or descending orders. By default, the submissions are sorted based on the group name in ascending order. This option will be pre-selected when the modal is opened.
+
     ![Order By](images/filter-submissions-order-by.png)
 
 ## Download
