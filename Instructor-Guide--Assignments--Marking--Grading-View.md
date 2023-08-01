@@ -49,7 +49,7 @@ The right half of the bar shows you the group's current mark for the submission 
 
 ## Filter Submissions
 
-MarkUs allows you to filter and/or sort submissions based on specific criteria, such as marking state, tags, and other relevant attributes. 
+MarkUs allows you to filter and/or sort submissions based on specific criteria, such as marking state, tags, and other relevant attributes.
 To do this, click on the "Filter Submissions" button on the [Grading Bar](#grading-bar) :
 
 ![Filter Submissions button](images/filter-submissions-button.png)
@@ -60,7 +60,7 @@ This will open up a Filter Submissions modal:
 
 From here you may:
 
-- Order the submissions by either Group name (default) or Submission date. 
+- Order the submissions by either Group name (default) or Submission date.
 
 ## Download
 
