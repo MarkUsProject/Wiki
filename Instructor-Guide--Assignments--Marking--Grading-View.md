@@ -43,7 +43,7 @@ The grading bar, located at the top of the grading view page, provides some usef
 
 ![Grading Bar](images/grade-view-grading-bar.png)
 
-The left half of the bar allows you to quickly switch between submissions by clicking on the "Previous" and "Next" buttons. Filters for these submissions can be specified by graders by clicking the "Filter Submissions" button. A grader can also view a random incomplete submission by clicking the "Random Incomplete Submission" button. Further, the grading bar displays the group number of the group who's submission you're currently grading. Finally, on the right, it shows you how many submissions have been set to the "Complete" status.
+The left half of the bar allows you to quickly switch between submissions by clicking on the "Previous" and "Next" buttons. Filters for these submissions can be specified by graders by clicking the "Filter Submissions" button (see "[Filter Submissions](#filter-submissions)"). A grader can also view a random incomplete submission by clicking the "Random Incomplete Submission" button. Further, the grading bar displays the group number of the group who's submission you're currently grading. Finally, on the right, it shows you how many submissions have been set to the "Complete" status.
 
 The right half of the bar shows you the group's current mark for the submission (this will update as you assign and delete marks from the "marks" tab). It also allows you to set the marking for the submission to complete by clicking on the "Set to Complete" button. Once this has been done you may release the marks to the students by clicking on the "Release Marks" button (see "[Releasing Grades](Instructor-Guide--Assignments--Releasing-Grades.md)"). Finally, if you wish to switch to full screen mode, click on the "Fullscreen" button at the end of the bar.
 
@@ -60,8 +60,11 @@ This will open up a Filter Submissions modal:
 
 From here you may:
 
-- Order the submissions by either Group name (default) or Submission date. 
+- Order the submissions by either Group name, Submission date or Total mark in either ascending or descending orders. By default, the submissions are sorted based on the group name in ascending order. This option will be pre-selected when the modal is opened. 
+  
+    ![Order By](images/filter-submissions-order-by.png)
 
+- 
 ## Download
 
 MarkUs gives you the option of downloading the files that have been submitted. To do this, click on the "Download" button.
