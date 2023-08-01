@@ -5,6 +5,7 @@
 - [Prepare to Grade](#prepare-to-grade)
 - [View Submitted Files](#view-submitted-files)
 - [Grading Bar](#grading-bar)
+- [Filter Submissions](#filter-submissions)
 - [Download](#download)
 - [Print](#print)
 - [Annotations](#annotations)
@@ -73,7 +74,7 @@ From here you may:
     - Tags assigned to the submission (see [Tags](#tags)) : You can select multiple tags to filter all submissions that have at least one of the specified tags associated with them. 
     - Section of the group's inviter.
     - Graders assigned to grade the submission (only accessible by instructors) : You can select multiple graders to filter all submissions that have at least one of the specified graders assigned to them.
-    - Annotation: Text that must be present in an annotation for the submission.
+    - Annotation (see [Annotations](#annotations)) : Text that must be present in an annotation for the submission.
     - Total Mark : You can specify minimum and/or maximum total mark values to define a range and filter all submissions with total marks within the specified range (inclusive).
     - Total Extra Marks : You can specify minimum and/or maximum total extra marks values to define a range and filter all submissions with total extra  marks within the specified range (inclusive).
 
