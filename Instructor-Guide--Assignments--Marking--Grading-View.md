@@ -70,7 +70,7 @@ From here you may:
         - Completed
         - Released
         - Requested Review
-    - Tags assigned to the submission (see [Tags](#tags)) : You can select multiple tags to filter all submissions that have at least one of the specified tags associated with them. 
+    - Tags assigned to the submission (see [Tags](#tags)) : You can select multiple tags to filter all submissions that have at least one of the specified tags associated with them.
     - Section of the group's inviter.
     - Graders assigned to grade the submission (only accessible by instructors) : You can select multiple graders to filter all submissions that have at least one of the specified graders assigned to them.
     - Annotation: Text that must be present in an annotation for the submission.
