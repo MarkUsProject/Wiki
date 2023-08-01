@@ -60,22 +60,28 @@ This will open up a Filter Submissions modal:
 
 From here you may:
 
-- Order submissions (in ascending/descending order) by:
+- Order submissions (in ascending/descending order) by one of the following:
     - Group Name (default).
     - Submission Date.
     - Total Mark.
-- Filter submissions by:
-    - Marking State.
-    - Tags assigned to the submission.
+- Filter submissions by one or more of the following:
+    - Marking State : Filter all submissions with the specified marking state. Select one of the marking states from the dropdown:
+        - In Progress
+        - Completed
+        - Released
+        - Requested Review
+    - Tags assigned to the submission (see [Tags](#tags)) : You can select multiple tags to filter all submissions that have at least one of the specified tags associated with them. 
     - Section of the group's inviter.
-    - Graders assigned to grade the submission (only accessible by instructors).
-    - Text that must be present in an annotation for the submission.
-    - Total Mark.
-    - Total Extra Marks.
+    - Graders assigned to grade the submission (only accessible by instructors) : You can select multiple graders to filter all submissions that have at least one of the specified graders assigned to them.
+    - Annotation: Text that must be present in an annotation for the submission.
+    - Total Mark : You can specify minimum and/or maximum total mark values to define a range and filter all submissions with total marks within the specified range (inclusive).
+    - Total Extra Marks : You can specify minimum and/or maximum total extra marks values to define a range and filter all submissions with total extra  marks within the specified range (inclusive).
 
 All options will be restored to their default states when the "Clear All" button is clicked.
 After the modal is closed, submissions navigable using the "Next" and "Previous" buttons from the
-Grading Bar will be filtered/ordered according to the specified options.
+Grading Bar will be filtered and ordered according to the specified options.
+
+Note: All filters are applied using AND logic. This means that when multiple filters are applied, the submissions navigable must meet all the selected filters simultaneously.
 
 ## Download
 
