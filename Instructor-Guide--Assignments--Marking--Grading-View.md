@@ -66,7 +66,7 @@ From here you may:
     - Submission Date.
     - Total Mark.
 - Filter submissions by one or more of the following:
-    - Marking State : Filter all submissions with the specified marking state. Select one of the marking states from the dropdown:
+    - Marking State (see [Marking State](Instructor-Guide--Assignments--Marking--Set-Up.md#marking-state)) : Filter all submissions with the specified marking state. Select one of the marking states from the dropdown:
         - In Progress
         - Completed
         - Released
