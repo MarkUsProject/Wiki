@@ -50,7 +50,7 @@ The right half of the bar shows you the group's current mark for the submission 
 ## Filter Submissions
 
 MarkUs allows you to filter and/or sort submissions based on specific criteria, such as marking state, tags, and other relevant attributes.
-To do this, click on the "Filter Submissions" button on the [Grading Bar](#grading-bar) :
+To do this, click on the "Filter Submissions" button on the [Grading Bar](#grading-bar):
 
 ![Filter Submissions button](images/filter-submissions-button.png)
 
@@ -60,9 +60,22 @@ This will open up a Filter Submissions modal:
 
 From here you may:
 
-- Order the submissions by either Group name, Submission date or Total mark in either ascending or descending orders. By default, the submissions are sorted based on the group name in ascending order. This option will be pre-selected when the modal is opened.
+- Order submissions (in ascending/descending order) by:
+    - Group Name (default).
+    - Submission Date.
+    - Total Mark.
+- Filter submissions by:
+    - Marking State.
+    - Tags assigned to the submission.
+    - Section of the group's inviter.
+    - Graders assigned to grade the submission (only accessible by instructors).
+    - Text that must be present in an annotation for the submission.
+    - Total Mark.
+    - Total Extra Marks.
 
-    ![Order By](images/filter-submissions-order-by.png)
+All options will be restored to their default states when the "Clear All" button is clicked.
+After the modal is closed, submissions navigable using the "Next" and "Previous" buttons from the
+Grading Bar will be filtered/ordered according to the specified options.
 
 ## Download
 
