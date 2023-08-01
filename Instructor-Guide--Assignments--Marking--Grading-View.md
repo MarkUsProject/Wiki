@@ -49,7 +49,7 @@ The right half of the bar shows you the group's current mark for the submission 
 
 ## Filter Submissions
 
-MarkUs allows you to filter and/or sort submissions based on specific criteria, such as marking state, tags, and other relevant attributes. 
+MarkUs allows you to filter and/or sort submissions based on specific criteria, such as marking state, tags, and other relevant attributes.
 To do this, click on the "Filter Submissions" button on the [Grading Bar](#grading-bar) :
 
 ![Filter Submissions button](images/filter-submissions-button.png)
@@ -64,7 +64,6 @@ From here you may:
   
     ![Order By](images/filter-submissions-order-by.png)
 
-- 
 ## Download
 
 MarkUs gives you the option of downloading the files that have been submitted. To do this, click on the "Download" button.
