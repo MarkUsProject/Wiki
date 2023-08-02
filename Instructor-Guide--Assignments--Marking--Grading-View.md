@@ -78,7 +78,7 @@ From here you may:
     - **Total Mark**: You can specify minimum and/or maximum total mark values to define a range and filter all submissions with total marks within the specified range (inclusive).
     - **Total Extra Marks**: You can specify minimum and/or maximum total extra marks values to define a range and filter all submissions with total extra  marks within the specified range (inclusive).
     - **Criteria**: You can filter student submissions based on their marks for different criteria (see [Criteria](Instructor-Guide--Assignments--Marking--Criteria.md)). Follow these steps to apply the filter:
-        - Select a criterion from the dropdown and click the "Add Criterion" button. The criterion will show up on the list below.
+        - Select a criterion from the dropdown and click the "Add Criterion Filter" button. The criterion will show up on the list below.
         - Specify min and/or max values to define a range for that criterion.
         - Add more criteria if needed.
 
