@@ -73,10 +73,14 @@ From here you may:
         - Requested Review
     - **Tags**: You can select multiple tags (see [Tags](#tags)) to filter all submissions that have at least one of the specified tags associated with them.
     - **Section**: Filter submissions using the section of the associated group's inviter.
-    - **Graders**: Instructors can select multiple graders and filter submissions to only include those who have at least one of the specified graders assigned to them.
+    - **Graders**: Instructors can select multiple graders to filter all submissions that have at least one of the specified graders assigned to them.
     - **Annotation**: Text that must be present in an annotation (see [Annotations](#annotations)) for the submission.
     - **Total Mark**: You can specify minimum and/or maximum total mark values to define a range and filter all submissions with total marks within the specified range (inclusive).
     - **Total Extra Marks**: You can specify minimum and/or maximum total extra marks values to define a range and filter all submissions with total extra  marks within the specified range (inclusive).
+    - **Criteria**: You can filter student submissions based on their marks for different criteria (see [Criteria](Instructor-Guide--Assignments--Marking--Criteria.md)). Follow these steps to apply the filter:
+        - Select a criterion from the dropdown and click the "Add Criterion" button. The criterion will show up on the list below.
+        - Specify min and/or max values to define a range for that criterion.
+        - Add more criteria if needed.
 
 All options will be restored to their default states when the "Clear All" button is clicked.
 After the modal is closed, submissions navigable using the "Next" and "Previous" buttons from the
