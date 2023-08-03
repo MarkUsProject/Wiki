@@ -86,7 +86,7 @@ All options will be restored to their default states when the "Clear All" button
 After the modal is closed, submissions navigable using the "Next" and "Previous" buttons from the
 Grading Bar will be filtered and ordered according to the specified options.
 
-Note: All filters are applied using AND logic. This means that when multiple filters are applied, the submissions navigable must meet all the selected filters simultaneously.
+Note: When multiple filters are applied, the filtered submissions only include those that satisfy all the selected filters simultaneously.
 
 ## Download
 
