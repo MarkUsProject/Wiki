@@ -5,6 +5,7 @@
 - [Prepare to Grade](#prepare-to-grade)
 - [View Submitted Files](#view-submitted-files)
 - [Grading Bar](#grading-bar)
+- [Filter Submissions](#filter-submissions)
 - [Download](#download)
 - [Print](#print)
 - [Annotations](#annotations)
@@ -43,8 +44,49 @@ The grading bar, located at the top of the grading view page, provides some usef
 
 ![Grading Bar](images/grade-view-grading-bar.png)
 
-The left half of the bar allows you to quickly switch between assignments by clicking on the "Previous" and "Next" buttons. It also displays the group number of the group who's submission you're currently grading. Finally, on the right, it shows you how many submissions have been set to the "Complete" status.
+The left half of the bar allows you to quickly switch between submissions by clicking on the "Previous" and "Next" buttons. Filters for these submissions can be specified by graders by clicking the "Filter Submissions" button (see "[Filter Submissions](#filter-submissions)"). A grader can also view a random submission whose grading is incomplete by clicking the "Random Incomplete Submission" button. Further, the grading bar displays the group number of the group whose submission you're currently grading. Finally, on the right, it shows you how many submissions have been set to the "Complete" status.
+
 The right half of the bar shows you the group's current mark for the submission (this will update as you assign and delete marks from the "marks" tab). It also allows you to set the marking for the submission to complete by clicking on the "Set to Complete" button. Once this has been done you may release the marks to the students by clicking on the "Release Marks" button (see "[Releasing Grades](Instructor-Guide--Assignments--Releasing-Grades.md)"). Finally, if you wish to switch to full screen mode, click on the "Fullscreen" button at the end of the bar.
+
+## Filter Submissions
+
+MarkUs allows you to filter and/or sort submissions based on specific criteria, such as marking state, tags, and other relevant attributes.
+To do this, click on the "Filter Submissions" button on the [Grading Bar](#grading-bar):
+
+![Filter Submissions button](images/filter-submissions-button.png)
+
+This will open up the Filter Submissions modal:
+
+![Filter Submissions](images/filter-submissions-modal.png)
+
+From here you may:
+
+- Order submissions (in ascending/descending order) by one of the following:
+    - Group Name (default)
+    - Submission Date
+    - Total Mark
+- Filter submissions by one or more of the following:
+    - **Marking State**: Filter all submissions with the specified marking state (see [Marking State](Instructor-Guide--Assignments--Marking--Set-Up.md#marking-state)). Select one of the marking states from the dropdown:
+        - In Progress
+        - Completed
+        - Released
+        - Requested Review
+    - **Tags**: You can select multiple tags (see [Tags](#tags)) to filter all submissions that have at least one of the specified tags associated with them.
+    - **Section**: Filter submissions using the section of the associated group's inviter.
+    - **Graders**: Instructors can select multiple graders to filter all submissions that have at least one of the specified graders assigned to them.
+    - **Annotation**: Text that must be present in an annotation (see [Annotations](#annotations)) for the submission.
+    - **Total Mark**: You can specify minimum and/or maximum total mark values to define a range and filter all submissions with total marks within the specified range (inclusive).
+    - **Total Extra Marks**: You can specify minimum and/or maximum total extra marks values to define a range and filter all submissions with total extra  marks within the specified range (inclusive).
+    - **Criteria**: You can filter student submissions based on their marks for different criteria (see [Criteria](Instructor-Guide--Assignments--Marking--Criteria.md)). Follow these steps to apply the filter:
+        - Select a criterion from the dropdown and click the "Add Criterion Filter" button. The criterion will show up on the list below.
+        - Specify min and/or max values to define a range for that criterion.
+        - Add more criteria if needed.
+
+All options will be restored to their default states when the "Clear All" button is clicked.
+After the modal is closed, submissions navigable using the "Next" and "Previous" buttons from the
+Grading Bar will be filtered and ordered according to the specified options.
+
+Note: When multiple filters are applied, the filtered submissions only include those that satisfy all the selected filters simultaneously.
 
 ## Download
 
