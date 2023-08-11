@@ -22,7 +22,7 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 
 5. Change into the repository that you just cloned: `cd Markus`.
 
-6. Run `docker-compose build app`.
+6. Run `docker compose build app`.
 
     1. On Linux running docker engine (not docker desktop): you will need to make sure that the files are owned by a user with the same UID on your host machine as in the container:
         - Create a file named `docker-compose.override.yml` in the root directory of the MarkUs code (should be your current directory)
@@ -37,9 +37,9 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
                     UID: 1001
             ```
 
-        - now you can run `docker-compose build app`
+        - now you can run `docker compose build app`
 
-7. Run `docker-compose up rails`. The first time you run this it will take a long time because it'll install all of MarkUs' dependencies, and then seed the MarkUs application with sample data before actually running the server. When the server actually starts, you'll see some terminal output that looks like:
+7. Run `docker compose up rails`. The first time you run this it will take a long time because it'll install all of MarkUs' dependencies, and then seed the MarkUs application with sample data before actually running the server. When the server actually starts, you'll see some terminal output that looks like:
 
     ```text
     Puma starting in cluster mode...
@@ -55,7 +55,7 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
     - Worker 2 (pid: 201) booted, phase: 0
     ```
 
-    1. On **Windows**, open a separate WSL terminal (but leave the current one running), and type in the command `docker-compose run --rm rails bash`. This will take you into the Docker container; you'll see the prompt change to `app/$`.
+    1. On **Windows**, open a separate WSL terminal (but leave the current one running), and type in the command `docker compose run --rm rails bash`. This will take you into the Docker container; you'll see the prompt change to `app/$`.
 
     2. Run the command `rails js:routes`, which will take a moment to generate a required file.
 
@@ -65,7 +65,7 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 
     - On Windows Home Edition, you'll need to use the Docker container's IP address instead: `192.168.99.100:3000/csc108`.
 
-9. In a new terminal window, go into the Markus directory again and run `docker-compose run rails rspec` to run the MarkUs test suite. This will take several minutes to run, but all tests should pass.
+9. In a new terminal window, go into the Markus directory again and run `docker compose run rails rspec` to run the MarkUs test suite. This will take several minutes to run, but all tests should pass.
 
     **Troubleshooting**
 
@@ -82,7 +82,7 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
     Run the following commands:
 
     ```console
-    docker-compose run --rm rails bash  # This takes you into the Docker container
+    docker compose run --rm rails bash  # This takes you into the Docker container
     python3.8 -m venv /app/nbconvertvenv
     /app/nbconvertvenv/bin/pip install wheel nbconvert
     ```
@@ -107,7 +107,7 @@ We strongly recommend RubyMine (a JetBrains IDE) for all MarkUs development.
 
     If this doesn't work, please make sure you're using the latest version of RubyMine (Help -> Check for Updates...).
 
-5. To configure RubyMine to connect to the PostgreSQL database that MarkUs uses for development, first make sure the MarkUs server is running (by doing a `docker-compose run...` as above). Then follow [these instructions](https://www.jetbrains.com/help/idea/running-a-dbms-image.html#6aa07130) in RubyMine to connect to the PostgreSQL server running as the 'postgres' docker-compose service. Note that you do not need to create a new container so you should only need to follow the instructions under "Connect to the PostgreSQL server".
+5. To configure RubyMine to connect to the PostgreSQL database that MarkUs uses for development, first make sure the MarkUs server is running (by doing a `docker compose run...` as above). Then follow [these instructions](https://www.jetbrains.com/help/idea/running-a-dbms-image.html#6aa07130) in RubyMine to connect to the PostgreSQL server running as the 'postgres' docker-compose service. Note that you do not need to create a new container so you should only need to follow the instructions under "Connect to the PostgreSQL server".
 
     - hostname: `localhost`
     - port: `35432`
@@ -132,13 +132,13 @@ After this, these checks will run every time you make a commit. If all checks pa
 
 Here's a summary of the few most common tasks you'll use in your development.
 
-- Start the MarkUs server: `docker-compose up --no-recreate rails`
-- Run the MarkUs rspec test suite: `docker-compose run rails rspec`
-- Run a specific rspec test file: `docker-compose run rails rspec FILE`
-- Run the Markus Jest test suite:  `docker-compose run rails npm run test`
-- Run the Markus Jest test suite with the test coverage shown:  `docker-compose run rails npm run test-cov`
-- Run a specific Jest test file: `docker-compose run rails npm run test FILE`
-- Start a shell within the Docker Rails environment: `docker-compose run --rm rails bash`.
+- Start the MarkUs server: `docker compose up --no-recreate rails`
+- Run the MarkUs rspec test suite: `docker compose run rails rspec`
+- Run a specific rspec test file: `docker compose run rails rspec FILE`
+- Run the Markus Jest test suite:  `docker compose run rails npm run test`
+- Run the Markus Jest test suite with the test coverage shown:  `docker compose run rails npm run test-cov`
+- Run a specific Jest test file: `docker compose run rails npm run test FILE`
+- Start a shell within the Docker Rails environment: `docker compose run --rm rails bash`.
   Within this shell, you can:
     - Install new dependencies: `bundle install`, `npm ci`
     - Reset the MarkUs database: `rails db:reset`
@@ -147,15 +147,15 @@ Here's a summary of the few most common tasks you'll use in your development.
 
 Here's a summary of a few commands that are helpful for managing containers.
 
-- Stop the MarkUs server: `docker-compose stop rails`
-- Start the MarkUs server up again (after stopping it): `docker-compose start rails`
-- Remove all containers started by MarkUs: `docker-compose down`
-- Remove all containers and all volumes started by MarkUs: `docker-compose down -v`
+- Stop the MarkUs server: `docker compose stop rails`
+- Start the MarkUs server up again (after stopping it): `docker compose start rails`
+- Remove all containers started by MarkUs: `docker compose down`
+- Remove all containers and all volumes started by MarkUs: `docker compose down -v`
     - Note that removing volumes will mean that you will lose all changes made in the database
 
 If you need to rebuild the MarkUs docker image:
 
-- Stop and remove the existing containers and remove all volumes: `docker-compose down -v`
+- Stop and remove the existing containers and remove all volumes: `docker compose down -v`
 - Do steps 5 and 6 from the Downloading and Installing section [above](#downloading-and-installing)
 
 ## Setting up the autotester
@@ -174,7 +174,7 @@ If you need to rebuild the MarkUs docker image:
         - Windows: first open a WSL terminal and enter the command `ip addr show eth0 | grep inet`. Use the IP address found after `inet`, which is a sequence of 4 numbers separated by `.`, e.g. `100.20.200.2`. Try visiting `<IP address>:3000/csc108` instead.
         - For macOS, visit `docker.for.mac.localhost:3000/csc108` instead.
     - For Linux, visit `172.17.0.1:3000/csc108`.
-8. Now, open a shell in the MarkUs docker container: `docker-compose run --rm rails bash`.
+8. Now, open a shell in the MarkUs docker container: `docker compose run --rm rails bash`.
 9. Execute the following commands in the MarkUs container.
     1. Create sample autotesting assignments: `rails db:autotest`.
     2. (*The MarkUs server and autotest containers be running when you run these commands.*) Run tests for every sample autotesting asignment: `MARKUS_URL=<URL> rails db:autotest_run`, where `<URL>` is in the form `http://<DOMAIN>:3000`, and `<DOMAIN>` is the domain you used in Step 7 (e.g., `host.docker.internal`).
