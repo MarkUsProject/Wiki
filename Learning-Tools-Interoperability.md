@@ -1,5 +1,7 @@
 # Learning Tools Interoperability (LTI)
 
+>**Note**: LTI functionality is not enabled by default, and must be enabled by a system administrator.
+
 MarkUs integrates with other Learning Management Systems (LMS) via the [LTI 1.3 standard](https://www.imsglobal.org/spec/lti/v1p3).
 Currently, MarkUs supports the following LMS platforms:
 
