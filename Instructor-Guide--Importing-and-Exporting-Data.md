@@ -294,8 +294,9 @@ The following fields are listed with the key names in the YML file, and in the o
 
 > :spiral_notepad: **Note:**
 
-> 1. If an uploaded CSV row contains a user name that already exists, then that student's information is updated.
+> 1. If an uploaded CSV row contains a user name that already exists, then that student's information is updated. Only the student's `section_name` can be updated in this way.
 > 2. When updating an existing student, if the `section_name`, `id_number`, or `email` field is blank, then any existing data for that field will be removed!
+> 3. Uploaded CSV files need only contain data in the the `username` column. All other columns except `section_name` will be ignored. Only Admin users may change the `last_name`, `first_name`, `id_number`, and `email` values for a student.
 
 ### Upload and Download Feature
 

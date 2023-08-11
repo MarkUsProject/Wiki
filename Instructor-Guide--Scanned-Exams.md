@@ -167,7 +167,17 @@ After your test is complete, you should scan all test papers (saving the scans a
 
     ![Scanned Exam Upload Scans PDF Select](images/scanned-exam-upload-scans-pdf-select.png)
 
-    d. Press "Upload". MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division.
+    d. Select how you'd like to handle page duplicates. This may come up if you are re-uploading a set of scanned papers at a higher resolution, for example.
+        Options are:
+
+      - **Duplicated pages overwrite exiting pages** (default): when an uploaded page is a duplicate of an existing page,
+        the existing page is overwritten by the uploaded page.
+      - **Duplicated pages are ignored**: when an uploaded page is a duplicate of an existing page,
+        the existing page is preserved and the uploaded page is ignored.
+      - **Duplicated pages are marked as errors**: when an uploaded page is a duplicate of an existing page,
+        the existing page is preserved and the uploaded page is marked as an error and can be reviewed manually.
+
+    e. Press "Upload". MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division.
 
     ![Scanned Exam Upload Scans button](images/scanned-exam-upload-scans-button.png)
 
