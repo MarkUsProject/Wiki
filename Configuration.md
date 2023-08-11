@@ -259,6 +259,8 @@ This feature informs you of all uncaught exceptions that occur in the MarkUs bac
 
 ## LTI Settings
 
+>**Note**: LTI routes are not enabled in production by default. To enable them, you must edit `routes.rb` file.
+
 If you wish to use Learning Tools Interoperability (LTI) with Markus, you'll need to configure the LTI settings as follows
 
 - `lti.domains` must be a whitelist of all hosts you expect to receive LTI launches from.
