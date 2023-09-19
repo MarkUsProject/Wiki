@@ -1026,6 +1026,40 @@ NOTE: adding feedback files to subdirectories is currently not supported
 - required parameters:
     - tag_id (integer)
 
+### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/extension
+
+- description: Create an extension for the given group for the given assignment
+- required parameters:
+    - extension
+        - time_delta
+            - weeks (integer)
+            - days (integer)
+            - hours (integer)
+            - minutes (integer)
+        - apply_penalty (boolean, optional)
+        - note (string, optional)
+
+NOTE: for time_delta, at least one of the following is required: weeks, days, hours, minutes.
+
+### PATCH /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/extension
+
+- description: Update an extension for the given group for the given assignment
+- required parameters:
+    - extension
+        - time_delta
+            - weeks (integer)
+            - days (integer)
+            - hours (integer)
+            - minutes (integer)
+        - apply_penalty (boolean, optional)
+        - note (string, optional)
+
+NOTE: for time_delta, at least one of the following is required: weeks, days, hours, minutes.
+
+### DELETE /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/extension
+
+- description: Delete an extension for the given group for the given assignment
+
 ### GET /api/courses/:course_id/feedback_files/:id
 
 - description: Download the content of the given feedback file
