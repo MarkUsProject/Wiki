@@ -239,6 +239,7 @@ Since this is not a wide-spread issue, it's more reasonable to have the setup li
 1. Start by creating a `docker-compose.override.yml` file under Markus root. Notice that the filename is already listed in `.gitignore`.
 2. The general idea is simple - configure `TMPDIR`, then pass this configuration in. Now we need to find a potential `TMPDIR` candidate inside the container. Reading <https://github.com/ruby/ruby/blob/ruby_3_0/lib/tmpdir.rb> gives us an idea of what ruby expects (at the time of writing, Markus was in ruby 3.0, but this file shouldn't expect major changes in the future versions. If it starts using other env var(s), update this documentation to reflect the new env var(s)).
 3. You can find a directory in the rails container with the correct permissions (1777) & that is unused by Markus, or create your own. In my case `/var/tmp` fit the profile.
+    1. I found the directory by starting a shell in the `rails` container with `docker exec -it` and then running `find -type d -perm 1777`
 4. Write this env var into the `docker-compose.override.yml` file you created. For example:
 
     ```YAML
@@ -271,13 +272,11 @@ When the `rails` container is started, postgres' database migrations will be aut
 ...
 ```
 
-or other errors typically after the migration `2023-09-15 11:18:50 Assign Marks for Assignments 0-2` is run. Both of these  also occur after following the setup guide step by step.
+This would also occur after following the setup guide step by step.
 
 ### A3
 
-Again, it's unclear exactly why this happened. We'll discuss these issues separately.
-
-#### A3.1
+Again, it's unclear exactly why this happened, but there's a fix.
 
 1. If you're running into the first one, it's likely because your migrations were applied successfully the first time, but because of some unknown (likely permission) issues, postgres didn't record those migrations as complete, so next time the db is refreshed, postgres would attempt the migrations again.
 2. Verify the cause. If you've taken CSC343, this should seem very familiar:
@@ -292,7 +291,3 @@ Again, it's unclear exactly why this happened. We'll discuss these issues separa
 4. Once `rails` container is up, start a shell inside it and run `bundle exec rails db:prepare`. Without running this, you won't be able to browse markus UI.
     1. If for whatever reason this command fails, try `rails db:drop && rails db:create && rails db:migrate && rails db:seed` instead.
 5. The downside is you'll have to redo this process every time the containers are recreated, but otherwise this should resolve the issue. Verify that the `schema_migrations` tables now contain the correct number of migration records.
-
-#### A3.2
-
-If you're running into the second one, good news is it might be a simple flakiness of the mentioned migration. In this case, simply start a shell in the `rails` container and run 4 or 4.i above, and that should do the trick.
