@@ -743,6 +743,12 @@ NOTE: not all parent directories need to exist in order to create a nested file.
 ]
 ```
 
+### POST /api/courses/:course_id/assignments/:assignment_id/groups
+
+- description: Create a new group for the given assignment
+- optional parameters:
+    - new_group_name
+
 ### GET /api/courses/:course_id/assignments/:assignment_id/groups/annotations
 
 - description: Get all annotation information for the given assignment
