@@ -57,6 +57,8 @@ rails:
     deprecation: # string indicating where to write deprecation warnings (See ActiveSupport::Deprecation::Behavior for details)
   action_controller:
      perform_caching: # boolean indicating whether to enable fragment caching (enable this for production only)
+  action_cable:
+     web_socket_allowed_request_origins: # list of hosts to allow websocket upgrades from. Override in settings/production.yml
 ```
 
 ### Puma settings
