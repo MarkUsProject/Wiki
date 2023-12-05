@@ -203,7 +203,7 @@ If you plan on doing work that involves sending/recieving emails from MarkUs, yo
 
 **Note: This is an archive of problems related to Docker that are encountered by students, and their solutions.**
 
-### Q
+### Q1
 
 I'm writing frontend code. The files I've changed should according to the Webpack config files trigger Webpack rebuild, but that's not happening. I've verified that
 
@@ -211,6 +211,83 @@ I'm writing frontend code. The files I've changed should according to the Webpac
 2. There are no errors in the Webpacker container's logs.
 3. If I run `npm run build-dev` in the Webpacker container's console directly, it succeeds and I'm able to see my changes afterwards.
 
-### A
+### A1
 
 *This solution is experimental and could lead to problems such as higher CPU usage.* This is likely due to Webpack's `watch` option not working properly. According to the official Webpack [docs](https://webpack.js.org/configuration/watch/#watchoptionspoll), one suggestion when `watch` is not working in environments such as Docker, is to add `poll: true` to `watchOptions` inside the Webpack config file, which in our case, is `webpack.development.js`. This should help resolve the problem.
+
+### Q2
+
+When I run `docker compose up rails`, or when I restart my previously created `rails` container, I get a warning/error along the lines of
+
+```MARKDOWN
+markus-rails-1  | system temporary path is world-writable: /tmp
+markus-rails-1  | /tmp is world-writable: /tmp
+markus-rails-1  | . is not writable: /app
+markus-rails-1  | Exiting
+markus-rails-1  | /usr/lib/ruby/3.0.0/tmpdir.rb:39:in `tmpdir': could not find a temporary directory (ArgumentError)
+[...stacktrace]
+```
+
+after following the setup guide step by step. I've looked into my host setup and confirmed that my `/tmp`'s permissions are correct (i.e. on Linux you can expect a 1777, on mac it might be a symbolic link to `/private/tmp`, latter of which would also be a 1777). For the second warning/error, I've found that my Markus container's `/app` is owned by `root`, not `markus`.
+
+### A2
+
+It's unclear exactly why or how this occured, but one fix is as simple as using another directory for this purpose. Ruby reads a variety of environment variables (env vars) to determine the system's temporary directory that it can use, and you can customize that directory with an env var. Both warnings/errors are complaining about the same thing: no available `TMPDIR`.
+
+Since this is not a wide-spread issue, it's more reasonable to have the setup living entirely on your local (i.e. ignored by git) than committing it to the repo.
+
+1. Start by creating a `docker-compose.override.yml` file under Markus root. Notice that the filename is already listed in `.gitignore`.
+2. The general idea is simple - configure `TMPDIR`, then pass this configuration in. Now we need to find a potential `TMPDIR` candidate inside the container. Reading <https://github.com/ruby/ruby/blob/ruby_3_0/lib/tmpdir.rb> gives us an idea of what ruby expects (at the time of writing, Markus was in ruby 3.0, but this file shouldn't expect major changes in the future versions. If it starts using other env var(s), update this documentation to reflect the new env var(s)).
+3. You can find a directory in the rails container with the correct permissions (1777) & that is unused by Markus, or create your own. In my case `/var/tmp` fit the profile.
+    1. I found the directory by starting a shell in the `rails` container with `docker exec -it` and then running `find -type d -perm 1777`
+4. Write this env var into the `docker-compose.override.yml` file you created. For example:
+
+    ```YAML
+    version: '3.7'
+
+    services:
+    rails:
+        environment:
+        - TMPDIR=/var/tmp
+    ```
+
+5. Save your changes. After `docker compose build app`, make sure you run `docker compose -f docker-compose.override.yml docker-compose.yml up rails` instead of just `docker compose up rails`. This will apply the `TMPDIR` we created, which would resolve the issue.
+
+### Q3
+
+When the `rails` container is started, postgres' database migrations will be auto applied because of the line `bundle exec rails db:prepare` in `entrypoint-dev-rails.sh`. Sometimes migrations fail - sometimes outright when you first start the container with `docker compose up rails`, other times when you successfully create your `rails` container, then make some data change to markus (i.e. adding a new assignment tag) or shut down and restart the `rails` container - like
+
+```MARKDOWN
+...
+======================================
+2023-09-15 11:47:03 -- create_table(:users, {:id=>:integer})
+2023-09-15 11:47:03 rails aborted!
+2023-09-15 11:47:03 StandardError: An error has occurred, this and all later migrations canceled:
+2023-09-15 11:47:03
+2023-09-15 11:47:03 PG::DuplicateTable: ERROR:  relation "users" already exists
+2023-09-15 11:47:03 /app/db/migrate/20080729160237_create_users.rb:3:in `up'
+2023-09-15 11:47:03
+2023-09-15 11:47:03 Caused by:
+2023-09-15 11:47:03 ActiveRecord::StatementInvalid: PG::DuplicateTable: ERROR:  relation "users" already exists
+...
+```
+
+This would also occur after following the setup guide step by step.
+
+### A3
+
+Again, it's unclear exactly why this happened, but there's a fix.
+
+1. If you're running into the first one, it's likely because your migrations were applied successfully the first time, but because of some unknown (likely permission) issues, postgres didn't record those migrations as complete, so next time the db is refreshed, postgres would attempt the migrations again.
+2. Verify the cause. If you've taken CSC343, this should seem very familiar:
+    1. Start a shell inside the `postgres` container.
+    2. Run `psql -U [postgres username]`. At the time of writing, this username is postgres' image's default username, which is `postgres`. Consult `docker-compose.yml` first to check if another username has been specified.
+    3. You'll be prompted for the user's password, which you can find in `docker-compose.yml` as well.
+    4. Now you're in the postgres shell. Run `\c markus_development` to connect to the `markus_development` database. You can see the list of databases with `\l`.
+    5. On success, run `select count(*) from schema_migrations;`. Normally, the outputted count should be equal to the total number of migrations (files) under Markus/db/migrate. In this case, it might be 0 or a smaller number.
+    6. Repeat steps iv - v for `markus_test` as well, and the count should be the same.
+
+3. The fix is rather simple as well. You will start with commenting out the line `bundle exec rails db:prepare` in `entrypoint-dev-rails.sh`.
+4. Once `rails` container is up, start a shell inside it and run `bundle exec rails db:prepare`. Without running this, you won't be able to browse markus UI.
+    1. If for whatever reason this command fails, try `rails db:drop && rails db:create && rails db:migrate && rails db:seed` instead.
+5. The downside is you'll have to redo this process every time the containers are recreated, but otherwise this should resolve the issue. Verify that the `schema_migrations` tables now contain the correct number of migration records.
