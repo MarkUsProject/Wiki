@@ -1199,9 +1199,9 @@ NOTE: the folder_path string can include a nested path if the folder to be remov
 
 - description: Create a new section for the given course.
 - required parameters:
-  - section
-    - name (string)
-    
+    - section
+        - name (string)
+
 ### DELETE /api/courses/:course_id/sections/:id
 
 - description: Delete the section uniquely identified by the given course and section id's.
