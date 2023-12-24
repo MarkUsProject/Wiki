@@ -661,8 +661,8 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
 
 - description: Delete the assignment corresponding to the given course and assignment id's, if it has no groups.
 - required parameters:
-  - id (integer)
-  - course_id (integer)
+    - id (integer)
+    - course_id (integer)
 
 NOTE: this is only available to authorised instructors (or admins)
 
