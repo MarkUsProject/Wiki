@@ -16,6 +16,7 @@
         - [Haskell](#haskell)
         - [Jupyter](#jupyter)
         - [R](#r)
+        - [Rust](#rust)
         - [Custom](#custom)
 - [Student-Run Tests](#student-run-tests)
 - [Running Tests](#running-tests)
@@ -230,6 +231,13 @@ In Racket, each test file must be added separately with the appropriate test sui
 #### R
 
 - **Package requirements**: In this section you may specify additional CRAN (<https://cran.r-project.org/>) packages required by your tests. Use a space to separate different package names.
+
+#### Rust
+
+- **Test Files**: The Rust autotester does not have the typical `Test Files` property. To specify a subset of tests to run, use the **Test Module** property instead. File name information seems to be elided in a `cargo-test` build, so it is not easily able to identify tests by filename.
+- **Test Module**: A module identifier can be used to restrict the tests that are run for each test group. If this property is left empty, all tests in the project will be run. This property can also have an identifier (ex. `my_app`, `my_app::my_test_mod`, `my_app::my_test_mod::single_test_name`) that specifies a test or a module (`mod`) of tests to exclusively run. For which strings are accepted, see the `--lib` CLI option in `cargo test`. To run multiple tests from several different modules, it is recommended to create a new `mod` that composes the tests that needs to be run.
+
+> 🗒️ **NOTE:** The rust autotester expects a `Cargo.toml` in the root directory of the project. The tester also expects a valid Cargo library, which means a `src/main.rs` or `src/lib.rs` (the exact locations can be configured in Cargo.toml). The test files must be referenced in the module tree for them to be picked up by cargo. If the test files are private, it is recommended to submit an instructor `main.rs`/`lib.rs` referencing the needed test files using `mod`, or reference an empty `test` module in the student project that will be filled later with instructor tests.
 
 #### Custom
 
