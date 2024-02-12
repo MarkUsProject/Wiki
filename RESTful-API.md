@@ -1211,7 +1211,7 @@ NOTE: the folder_path string can include a nested path if the folder to be remov
 
 - description: Update the section uniquely identified by the given course and section id's.
 - required parameters:
-  - name (string)
+    - name (string)
 
 ### GET /api/courses/:course_id/sections
 
