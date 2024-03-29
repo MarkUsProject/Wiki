@@ -1215,3 +1215,17 @@ NOTE: the folder_path string can include a nested path if the folder to be remov
 
 - description: Delete the section uniquely identified by the given course and section id's.
 - NOTE: The section must be non-empty (must not have any students).
+
+### PUT /api/courses/:course_id/sections/:id
+
+- description: Update the section uniquely identified by the given course and section id's.
+- required parameters:
+    - name (string)
+
+### GET /api/courses/:course_id/sections
+
+- description: Get all sections for this course
+
+### GET /api/courses/:course_id/sections/:id
+
+- description: Get the section uniquely identified by the given course and section id's.
