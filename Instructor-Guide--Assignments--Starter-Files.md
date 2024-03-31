@@ -82,3 +82,7 @@ This is useful when using either of the "random" rules to see how the files were
 Students will be able to download the starter files according to the starter file rules you have set on this page. If you would like to download an example of these starter files, click the "Download starter files example" link (in the "Starter File Assignment Rules" section).
 
 Note that if the rules that you have chosen involve randomly assigning files, each time you click the link you may get different files.
+
+## Starter File Visibility for Graders
+
+Note that all graders of an assignment will have read-only access to the "Starter Files" tab under "Settings" on the assignment page, where they can view starter file groups and the rules the instructor sets on how to assign them. Furthermore, they will be able to download starter file mappings and example starter files. However, they cannot modify starter files or how they are assigned, unless they are authorized to do so.
