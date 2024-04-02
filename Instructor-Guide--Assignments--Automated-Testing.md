@@ -238,7 +238,6 @@ No special fields are required for this tester type. The custom tester works by 
 ## Student-Run Tests
 
 Students may also run test themselves using the autotester. To enable this, select the "Allow students to run tests" checkbox:
-
 ![Allow students to run tests](images/automated-testing-student-run.png)
 
 To avoid overloading the testing system during periods of high demand, student access to the testing system is controlled using **test tokens**.
