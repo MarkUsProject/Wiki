@@ -34,27 +34,27 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
             app:
                 build:
                     args:
-                        UID: 1000
+                        UID: <UID>
             rails:
                 build:
                     args:
-                        UID: 1000
+                        UID: <UID>
             ssh:
                 build:
                     args:
-                        UID: 1000
+                        UID: <UID>
             resque:
                 build:
                     args:
-                        UID: 1000
+                        UID: <UID>
             resque-scheduler:
                 build:
                     args:
-                        UID: 1000
+                        UID: <UID>
             webpack:
                 build:
                     args:
-                        UID: 1000
+                        UID: <UID>
         ```
 
 7. Run `docker compose build app`.
@@ -220,11 +220,11 @@ I'm writing frontend code. The files I've changed should according to the Webpac
 When I run `docker compose up rails`, or when I restart my previously created `rails` container, I get a warning/error along the lines of
 
 ```MARKDOWN
-markus-     system temporary path is world-writable: /tmp
-markus-     /tmp is world-writable: /tmp
-markus-     . is not writable: /app
-markus-     Exiting
-markus-     /usr/lib/ruby/3.0.0/tmpdir.rb:39:in `tmpdir': could not find a temporary directory (ArgumentError)
+system temporary path is world-writable: /tmp
+/tmp is world-writable: /tmp
+. is not writable: /app
+Exiting
+/usr/lib/ruby/3.0.0/tmpdir.rb:39:in `tmpdir': could not find a temporary directory (ArgumentError)
 [...stacktrace]
 ```
 
