@@ -307,8 +307,8 @@ I'm seeing a test failing with the following message near the top:
 Run the following commands:
 
 ```console
-$ docker compose run --rm rails bash  # This takes you into the Docker container
-$ ./venv/bin/python3 -m pip install -r requirements-jupyter.txt
+docker compose run --rm rails bash  # This takes you into the Docker container
+./venv/bin/python3 -m pip install -r requirements-jupyter.txt
 ```
 
 Then try re-running the tests. You can do this from your current terminal (inside the Docker container) simply by running `rspec`.
