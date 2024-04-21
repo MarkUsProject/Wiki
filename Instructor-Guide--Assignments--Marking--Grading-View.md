@@ -110,13 +110,17 @@ MarkUs also allows you to print a submission with the print button.
 This will print all PDF files that have been submitted as a single PDF file, along with a cover page which provides information about the students in a group,
 the mark received on each criterion, a list of all annotations on the submission, and any overall comment that has been left during grading.
 
+You can also bulk print from the submissions table.
+
+![Bulk Print Button](images/bulk_print.png)
+
 ![Printed Assignment Cover Page](images/printed-assignment-cover-page.png)
 
-In the output pdf, the location of each annotation will also be marked.
+For PDF files, the location of each annotation will be marked in the output.
 
 ![Printed Assignment Annotation](images/printed-assignment-annotation.png)
 
-> :spiral_notepad: **NOTE**: Only PDF files are supported for printing. If a submission contains files of other types, they will not be printed.
+> :spiral_notepad: **NOTE**: `.pdf` and `.ipynb` are the only file formats supported for printing. If a submission contains files of other types, they will not be printed.
 
 ## Annotations
 
