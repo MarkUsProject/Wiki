@@ -57,7 +57,7 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
                         UID: <UID>
         ```
 
-7. Run `docker compose build app`.
+7. Run `docker compose build`.
 
 8. Run `docker compose up rails`. The first time you run this it will take a long time because it'll install all of MarkUs' dependencies, and then seed the MarkUs application with sample data before actually running the server. When the server actually starts, you'll see some terminal output that looks like:
 
