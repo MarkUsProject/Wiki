@@ -223,7 +223,7 @@ local_auth_login_name: shibboleth
 
 Additionally, MarkUs can be set to restrict remote logins based on username and/or IP when using remote authentication.
 
-**To enable restricted remote authentication, set the following settings:**
+**To enable restricted remote authentication, set the following setting:**
 
 - `remote_validate_file:` an absolute path to a script that expects input from stdin (user name, password (blank), and IP address; separated by "\n") and returns 0 if the user is authenticated and any other positive integer otherwise.
 
