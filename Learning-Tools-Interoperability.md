@@ -58,11 +58,15 @@ Canvas course and your MarkUs course must be made.
 Click 'Launch MarkUs' in your Canvas course. If you are not logged in to MarkUs,
 you will be prompted to do so. Once you are logged in, you will be presented with
 a list of MarkUs courses for which you are an instructor. Select the course that matches your Canvas
-course and submit the form. If your course does not appear in the list,
-you may click 'Create New Course', which will create a new
-course based on the Canvas course information with you as an instructor.
+course and submit the form.
 
 ![MarkUs Link Canvas Course](images/lti-link-course.png)
+
+If your course does not appear in the list,
+you may click 'Create New Course', to request a new
+course based on the Canvas course information with you as an instructor.
+
+*Warning*: your system administrator may restrict which Canvas courses can trigger the creation of a new course on MarkUs.
 
 #### Creating a Grade Book entry for a MarkUs Assignment
 
