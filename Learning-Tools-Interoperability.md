@@ -37,6 +37,14 @@ and also choose to delete an association between the LMS and MarkUs.
 > If an association is reestablished, any assignment's LTI settings must be re-created,
 > and will create *new* LMS gradebook items.
 
+### Roster Synchronization
+
+When triggering a roster synchronization, you can choose which types of users are synchronized.
+Additionally, if 'Enable automatic syncing' is checked, MarkUs will attempt to synchronize the roster automatically
+on a schedule determined by your system administrator.
+
+![LTI Synchronization Options](images/lti-roster-sync.png)
+
 ### Canvas
 
 Once installed in your course, a 'Launch Markus' page will appear in your
