@@ -250,7 +250,7 @@ You may customize this feature using the following settings:
 
 - **Tokens available on**  This allows you to set the date and time of when you would like the students to begin testing. If you wish for the students to begin testing immediately simply set this field to the current date and time.
 
- > :spiral_notepad: **NOTE:** Students will be allowed to start tests up until the assignment deadline INCLUDING all extensions.
+- **Tokens available until**  This allows you to set the date and time of when you would like to disable testing. If you wish for the tests to run up until the assignment due date simply leave this field blank.
 
 - **Tokens regenerate after** This allows you to set the time it takes for tokens to regenerate. Once a token has been used, it will be unavailable until X hours have passed, at which point the students may use that token to perform another test. If you wish for tokens not to regenerate, select the "Tokens do not regenerate" checkbox.
 

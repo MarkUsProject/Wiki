@@ -657,6 +657,15 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
     - has_peer_review (boolean)
     - starter_file_type (one of "simple", "sections", "shuffle", "group")
 
+### DELETE /api/courses/:course_id/assignments/:id
+
+- description: Delete the assignment corresponding to the given course and assignment id's, if it has no groups.
+- required parameters:
+    - id (integer)
+    - course_id (integer)
+
+NOTE: this is only available to authorised instructors (or admins)
+
 ### GET /api/courses/:course_id/assignments/:id/test_files
 
 - description: Download a zip file containing all autotesting test files for this assignment
@@ -1206,3 +1215,17 @@ NOTE: the folder_path string can include a nested path if the folder to be remov
 
 - description: Delete the section uniquely identified by the given course and section id's.
 - NOTE: The section must be non-empty (must not have any students).
+
+### PUT /api/courses/:course_id/sections/:id
+
+- description: Update the section uniquely identified by the given course and section id's.
+- required parameters:
+    - name (string)
+
+### GET /api/courses/:course_id/sections
+
+- description: Get all sections for this course
+
+### GET /api/courses/:course_id/sections/:id
+
+- description: Get the section uniquely identified by the given course and section id's.
