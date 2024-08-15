@@ -277,3 +277,9 @@ If you wish to use Learning Tools Interoperability (LTI) with Markus, you'll nee
 
 You must also create a private key for generating Javascript Web Tokens to sign LTI requests.
 A private key can be automatically created with the `markus:lti_key` rake task.
+
+If you wish to filter course creation requests from LTI deployments, add the following keys:
+
+- `lti.course_filter_file` must be the absolute path to a Ruby file that defines a method `LtiConfig::allowed_to_create_course?(lti_deployment)`, which takes an `LtiDeployment` model instance and returns `true` or `false`.
+- `lti.unpermitted_new_course_message` must be a message to display if an LTI deployment is rejected by the filter. The message must be a string with interpolation key `%{course_name}`, which will be bound to the `title` field in the launch claim `https://purl.imsglobal.org/spec/lti/claim/context`.
+    - Example: `"You are not permitted to create a new MarkUs course for %{course_name}. Please contact your system administrator."`
