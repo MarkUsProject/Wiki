@@ -270,10 +270,11 @@ This feature informs you of all uncaught exceptions that occur in the MarkUs bac
 
 >**Note**: LTI routes are not enabled in production by default. To enable them, you must edit `routes.rb` file.
 
-If you wish to use Learning Tools Interoperability (LTI) with Markus, you'll need to configure the LTI settings as follows
+If you wish to use Learning Tools Interoperability (LTI) with MarkUs, you'll need to configure the LTI settings as follows
 
 - `lti.domains` must be a whitelist of all hosts you expect to receive LTI launches from.
 - `lti.token_endpoint` must be the url used to generate an LTI credentials token for the external platform.
+- `lti.sync_schedule` must be a cron schedule dictating when MarkUs should attempt to automatically sync its roster via LTI.
 
 You must also create a private key for generating Javascript Web Tokens to sign LTI requests.
 A private key can be automatically created with the `markus:lti_key` rake task.
