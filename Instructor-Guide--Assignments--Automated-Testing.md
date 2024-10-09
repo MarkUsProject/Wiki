@@ -131,7 +131,7 @@ This section lists all the fields that are common to all testers:
 
     > :warning: **WARNING:** If a test hits the timeout limit, a timeout error will be reported for all tests in this group.
 
-- **Feedback Files:** The name of files that the autotester will send back to MarkUs to display as feedback files associated with the test result. You can specify multiple feedback files by clicking the `+` icon below this section. These files should exist after the tests are run.
+- **Feedback Files:** The name of files that the autotester will send back to MarkUs to display as feedback files associated with the test result. You can specify multiple feedback files by clicking the `+` icon below this section. These files should exist after the tests are run. Each individual file must not exceed 1 GB in size.
 
     Possible use cases include:
 
