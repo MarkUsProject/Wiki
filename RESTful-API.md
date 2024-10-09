@@ -1008,6 +1008,8 @@ NOTE: if the filename parameter is given, only the content from a single file wi
 
 NOTE: adding feedback files to subdirectories is currently not supported
 
+NOTE: the size of file_content must not exceed 1 GB.
+
 ### GET /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/feedback_files
 
 - description: Get all feedback file information for a given group for a given assignment
