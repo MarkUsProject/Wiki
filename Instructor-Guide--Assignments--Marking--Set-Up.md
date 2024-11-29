@@ -52,7 +52,9 @@ However, the modal offers a few additional options for collection:
 ![Submissions Modal With Options](images/submissions-modal-with-options.png)
 
 1. **Collect most recent files submitted, regardless of assignment due date or late period.** - if this box is checked, MarkUs will collect the most recent version of files the student has submitted, regardless of the due date and grace periods. This can be used to collect submissions both before and after the due date/grace credit periods.
-2. **Recollect previously collected submissions** - if this box is checked, MarkUs will recollect submissions that have previously been collected. **WARNING**: If submissions with grading work are recollected, that work will be overwritten.
+2. **Recollect previously collected submissions** - if this box is checked, MarkUs will recollect submissions that have previously been collected.
+   1. When this box is checked, MarkUs provides the option to **retain grading data** (marks, annotations, feedback files, and test results) on any collected submissions that have it. **WARNING:** This option is true by default and disabling it will result in the permanent loss of all grading data on recollected submissions.
+      - For any extra marks or deductions on a graded submission, point-based extra marks will be retained, but percentage-based penalties will not. The decision to apply percentage-based penalties is solely at the instructor's discretion during collection. This means that two identical submissions may receive different percentage penalties at collection time, depending on the assignment's submission rule.
 3. **Apply Late Penalty** - this option will only appear when collecting the most recent submissions. When collecting by due date, the late penalties are always applied. If it is unchecked, MarkUs will not apply penalties or deduct grace credits for submissions created after the due date.
 
 Once the files for an assignment have been collected, the marking state of the submission will change from "Not Collected" to "In Progress".
@@ -61,7 +63,7 @@ Once the files for an assignment have been collected, the marking state of the s
 
 ### Collecting Specific Revisions
 
-An instructor can bypass the collection process to manually select which version of a group's files to collect and grade (this is helpful when an individual extension is given to a student, for example). To do so, first click on the "Repository Name" link for the appropriate group. Then navigate to the version of the submitted files you wish to grade, and click on the "Manually Collect and Grade Revision" button.
+An instructor can bypass the collection process to manually select which version of a group's files to collect and grade (this is helpful when an individual extension is given to a student, for example). To do so, first click on the "Repository Name" link for the appropriate group. Then navigate to the version of the submitted files you wish to grade, and click on the "Manually Collect and Grade Revision" button. The option to retain grading data will also appear on this page if the submission has been previously collected.
 
 ## Marking State
 
