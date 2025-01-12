@@ -8,7 +8,7 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 
     - If you are given a choice of which operating system to use, select *Ubuntu 22.04*.
 
-2. Install [Docker](https://docs.docker.com/get-docker/).
+2. If you are using **Windows** or **MacOS** you will need to install Docker by following the instructions on [this page](https://docs.docker.com/get-docker/). If you are using **Linux**, you will need to install [Docker Engine](https://docs.docker.com/engine/install/). (On Linux, Docker Desktop is known to cause issues with MarkUs, so it is important that you install Docker Engine and not Docker Desktop. If you already have Docker Desktop installed, see Q6.)
 
     - On Windows, make sure you've selected the "WSL 2 backend" tab under "System Requirements" and follow those instructions.
     - On Linux, also follow the instructions on "Manage Docker as a non-root user" [here](https://docs.docker.com/install/linux/linux-postinstall/).
@@ -312,3 +312,34 @@ docker compose run --rm rails bash  # This takes you into the Docker container
 ```
 
 Then try re-running the tests. You can do this from your current terminal (inside the Docker container) simply by running `rspec`.
+
+### Q5
+
+When I run `docker compose up rails`, I get a permission denied error along the lines of
+
+```text
+markus-rails-1 | cp: cannot create regular file 'config/database.yml': Permission denied
+markus-rails-1 exited with code 1
+```
+
+### A5
+
+If you are on **Linux**, you may have Docker Desktop installed, which is known to cause issues with MarkUs installation. Use your package manager to verify that you have Docker Desktop installed and see Q6 for further steps.
+
+### Q6
+
+I am using **Linux** and I have Docker Desktop installed instead of Docker Engine.
+
+### A6
+
+*Warning: the steps below will remove all existing docker containers, images, and volumes.*
+
+Remove Docker Desktop and all associated Docker packages using your package manager.
+
+Once the packages are removed, delete existing Docker dotfiles by running:
+
+```bash
+rm -rf ~/.docker
+```
+
+Finally, install Docker Engine by following the instructions on [this page](https://docs.docker.com/engine/install/).
