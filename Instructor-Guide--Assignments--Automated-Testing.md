@@ -148,6 +148,8 @@ This section lists all the fields that are common to all testers:
 
   > :arrow_forward: **EXAMPLE:** `hypothesis>=5.29 pandas==1.0.0 pygame`
 
+- **Package requirements file:** Along with your test files, you may also upload a requirements file and specify its name here to install packages. 
+
 - **Test runner:*** Allows you to select your unit testing framework (MarkUs currently supports pytest or unittest).
 
 - **Output verbosity:** Allows you to select how much information is displayed in the "Output" column of the test results section. Different verbosities will be able to be selected depending on the specified test runner. Please see the appropriate framework documentation for more information on output verbosity ([pytest](https://docs.pytest.org/en/stable/usage.html#modifying-python-traceback-printing), [unittest](https://docs.python.org/3/library/unittest.html))
