@@ -148,7 +148,7 @@ This section lists all the fields that are common to all testers:
 
   > :arrow_forward: **EXAMPLE:** `hypothesis>=5.29 pandas==1.0.0 pygame`
 
-- **Package requirements file:** Along with your test files, you may also upload a requirements file and specify its name here to install packages. 
+- **Package requirements file:** Along with your test files, you may also upload a [requirements file](https://pip.pypa.io/en/stable/reference/requirements-file-format/) and specify its name here to install packages.
 
 - **Test runner:*** Allows you to select your unit testing framework (MarkUs currently supports pytest or unittest).
 
