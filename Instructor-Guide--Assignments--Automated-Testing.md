@@ -205,6 +205,8 @@ In Racket, each test file must be added separately with the appropriate test sui
 
     > :arrow_forward: **EXAMPLE:** `hypothesis>=5.29 pandas==1.0.0 pygame`
 
+- **Package requirements file:** Along with your test files, you may also upload a [requirements file](https://pip.pypa.io/en/stable/reference/requirements-file-format/) and specify its name here to install packages.
+
 - **Test files**: The Jupyter tester works by taking two notebook files and merging their cells before running the merged notebook and executing the tests described in the merged file. Select one of your uploaded test files in the "Test file" dropdown and fill in the "Student file" input with the name of the file that students will submit that should be merged with the "Test file". Both files should be jupyter notebook files with a ".ipynb" extension.
 
    Files are merged by finding cells in the "Test file" and replacing them with cells that *have the same id* in the "Student file". For more details, see the `merge` function from the `notebook_helper` package [here](https://github.com/MarkUsProject/autotest-helpers/tree/main/notebook_helper#merger).
