@@ -171,6 +171,8 @@ In Racket, each test file must be added separately with the appropriate test sui
 
 - **Package requirements:** In this section you must specify the appropriate PIP package (see the same section for the [Python](#python) tester.)
 
+- **Package requirements file:** You may also specify a [requirements file](https://pip.pypa.io/en/stable/reference/requirements-file-format/) here (see the same section for the [Python](#python) tester.)
+
 - **Path:** Specify the filename of the file submitted byt the student you wish to check with PyTA. Because of this it is advised that you create [required file names](Instructor-Guide--Assignments--Setting-Up.md#required-files) for this assignment. Add another file by clicking the green + under this section.
 
 - **Maximum mark:** This section will determine the mark associated with the PyTA test. Whatever number you enter here will be the mark a student receives for a perfect test. Every error detected by PyTA will reduce the student's mark by 1 down to a minumum of 0.
