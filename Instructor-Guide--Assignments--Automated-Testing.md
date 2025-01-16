@@ -148,6 +148,8 @@ This section lists all the fields that are common to all testers:
 
   > :arrow_forward: **EXAMPLE:** `hypothesis>=5.29 pandas==1.0.0 pygame`
 
+- **Package requirements file:** Along with your test files, you may also upload a [requirements file](https://pip.pypa.io/en/stable/reference/requirements-file-format/) and specify its name here to install packages.
+
 - **Test runner:*** Allows you to select your unit testing framework (MarkUs currently supports pytest or unittest).
 
 - **Output verbosity:** Allows you to select how much information is displayed in the "Output" column of the test results section. Different verbosities will be able to be selected depending on the specified test runner. Please see the appropriate framework documentation for more information on output verbosity ([pytest](https://docs.pytest.org/en/stable/usage.html#modifying-python-traceback-printing), [unittest](https://docs.python.org/3/library/unittest.html))
@@ -168,6 +170,8 @@ In Racket, each test file must be added separately with the appropriate test sui
 - **Python version**: When you select a PyTA tester, you will be asked to specify a Python version. MarkUs currently supports Python 3.6+.
 
 - **Package requirements:** In this section you must specify the appropriate PIP package (see the same section for the [Python](#python) tester.)
+
+- **Package requirements file:** You may also specify a [requirements file](https://pip.pypa.io/en/stable/reference/requirements-file-format/) here (see the same section for the [Python](#python) tester.)
 
 - **Path:** Specify the filename of the file submitted byt the student you wish to check with PyTA. Because of this it is advised that you create [required file names](Instructor-Guide--Assignments--Setting-Up.md#required-files) for this assignment. Add another file by clicking the green + under this section.
 
@@ -202,6 +206,8 @@ In Racket, each test file must be added separately with the appropriate test sui
 - **Package requirements:** In this section you may specify additional [PyPi](https://pypi.org/) packages required by your tests. The regular `pip install` syntax is supported. Use a space to separate different packages.
 
     > :arrow_forward: **EXAMPLE:** `hypothesis>=5.29 pandas==1.0.0 pygame`
+
+- **Package requirements file:** Along with your test files, you may also upload a [requirements file](https://pip.pypa.io/en/stable/reference/requirements-file-format/) and specify its name here to install packages.
 
 - **Test files**: The Jupyter tester works by taking two notebook files and merging their cells before running the merged notebook and executing the tests described in the merged file. Select one of your uploaded test files in the "Test file" dropdown and fill in the "Student file" input with the name of the file that students will submit that should be merged with the "Test file". Both files should be jupyter notebook files with a ".ipynb" extension.
 
