@@ -235,6 +235,8 @@ In Racket, each test file must be added separately with the appropriate test sui
 
 #### R
 
+- **Use renv to set up environment**: Along with your test files, you may also upload a [renv.lock file](https://rstudio.github.io/renv/articles/lockfile.html) and select the checkbox here to install packages.
+
 - **Package requirements**: In this section you may specify additional CRAN (<https://cran.r-project.org/>) packages required by your tests. Use a space to separate different package names.
 
 #### Custom
