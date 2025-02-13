@@ -59,6 +59,8 @@ However, the modal offers a few additional options for collection:
 
 Once the files for an assignment have been collected, the marking state of the submission will change from "Not Collected" to "In Progress".
 
+**During Late Period Collection** - Submission collection can be done during the late period, however students can still submit after the collection and prior to the late period is over. If you want to mark the most recent submission, you would need to manually go through the submissions to see if students submitted again, as there are no filters to identify them.
+
 > :spiral_notepad: **NOTE:** Scanned exams are always collected based on the most recently submitted files, so only the recollect option is available.
 
 ### Collecting Specific Revisions
