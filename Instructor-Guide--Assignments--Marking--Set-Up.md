@@ -52,14 +52,13 @@ However, the modal offers a few additional options for collection:
 ![Submissions Modal With Options](images/submissions-modal-with-options.png)
 
 1. **Collect most recent files submitted, regardless of assignment due date or late period.** - if this box is checked, MarkUs will collect the most recent version of files the student has submitted, regardless of the due date and grace periods. This can be used to collect submissions both before and after the due date/grace credit periods.
+   > :spiral_notepad: **NOTE:** Submission collection can be done during the late period, however students can still submit after the marking and prior to the late period is over. If you want to mark the most recent submission prior to the late period being over, you would need to manually go through the submissions to see if students submitted again, as there are no filters to identify them.
 2. **Recollect previously collected submissions** - if this box is checked, MarkUs will recollect submissions that have previously been collected.
    1. When this box is checked, MarkUs provides the option to **retain grading data** (marks, annotations, feedback files, and test results) on any collected submissions that have it. **WARNING:** This option is true by default and disabling it will result in the permanent loss of all grading data on recollected submissions.
       - For any extra marks or deductions on a graded submission, point-based extra marks will be retained, but percentage-based penalties will not. The decision to apply percentage-based penalties is solely at the instructor's discretion during collection. This means that two identical submissions may receive different percentage penalties at collection time, depending on the assignment's submission rule.
 3. **Apply Late Penalty** - this option will only appear when collecting the most recent submissions. When collecting by due date, the late penalties are always applied. If it is unchecked, MarkUs will not apply penalties or deduct grace credits for submissions created after the due date.
 
 Once the files for an assignment have been collected, the marking state of the submission will change from "Not Collected" to "In Progress".
-
-**During Late Period Collection** - Submission collection can be done during the late period, however students can still submit after the marking and prior to the late period is over. If you want to mark the most recent submission prior to the late period being over, you would need to manually go through the submissions to see if students submitted again, as there are no filters to identify them.
 
 > :spiral_notepad: **NOTE:** Scanned exams are always collected based on the most recently submitted files, so only the recollect option is available.
 
