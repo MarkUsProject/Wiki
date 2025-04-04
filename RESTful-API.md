@@ -757,6 +757,7 @@ NOTE: not all parent directories need to exist in order to create a nested file.
 - description: Create a new group for the given assignment
 - optional parameters:
     - new_group_name
+    - members
 
 ### GET /api/courses/:course_id/assignments/:assignment_id/groups/annotations
 
