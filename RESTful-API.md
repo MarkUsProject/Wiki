@@ -1044,6 +1044,20 @@ NOTE: the size of file_content must not exceed 1 GB.
 - required parameters:
     - tag_id (integer)
 
+### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/collect_submission
+
+- description: Collect submission from a grouping
+- required parameters:
+    - collect_current (boolean)
+- optional parameters:
+    - apply_late_penalty (boolean)
+    - retain_existing_grading (boolean)
+
+NOTE: collect_current value meanings:
+
+- true: collect most recent files submitted, regardless of assignment due date or late period.
+- false: collect most recent files submitted before the due date, including any late period.
+
 ### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/extension
 
 - description: Create an extension for the given group for the given assignment
