@@ -42,7 +42,7 @@ Note that a student can only be added to a course if that user already exists in
 
 ### Remove Student Account
 
-To remove a student, you can select the "Remove" link from the student listing table under the "Actions" column. Only students who are not associated to a group can be removed.
+To remove a student, you can select the "Remove" link from the student listing table under the "Actions" column. Only students who are not associated to a group can be removed. Also, if there are any "Marks Spreadsheet" assignments, the student must not have any grades assigned to them for these assignments.
 
 ![Remove a student](images/users-remove-student-link.png)
 
