@@ -1047,9 +1047,9 @@ NOTE: the size of file_content must not exceed 1 GB.
 ### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/collect_submission
 
 - description: Collect submission from a grouping
-- required parameters:
-    - collect_current (boolean)
 - optional parameters:
+    - collect_current (boolean)
+    - revision_identifier (string, git commit hash identifier)
     - apply_late_penalty (boolean)
     - retain_existing_grading (boolean)
 
