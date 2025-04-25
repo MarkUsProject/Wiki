@@ -4,6 +4,7 @@
 
 - [Student Accounts](#student-accounts)
     - [New Student Account](#new-student-account)
+    - [Remove Student Account](#remove-student-account)
     - [Grace Credits](#grace-credits)
     - [Other Actions](#other-actions)
 - [Grader Accounts](#grader-accounts)
@@ -38,6 +39,12 @@ If you wish to modify a student account that has already been created, click on 
 The "edit" page also contains a status dropdown menu that allows you to change the status of a student to either "Active" or "Inactive". "Active" students can access and interact with a course as normal whereas an "Inactive" students cannot. "Inactive" students cannot view or interact with a course and cannot access their git repositories from when they were active. Any submissions, grades, and other data they provided however, before becoming "Inactive" will still remain.
 
 Note that a student can only be added to a course if that user already exists in the database. If you see the error message "End user must exist" this means that a user with that user name has not been added yet. Please contact the MarkUs administrator to get that user added to the MarkUs database.
+
+### Remove Student Account
+
+To remove a student, you can select the "Remove" link from the student listing table under the "Actions" column. Only students who are not associated to a group can be removed. Also, if there are any "Marks Spreadsheet" assignments, the student must not have any grades assigned to them for these assignments.
+
+![Remove a student](images/users-remove-student-link.png)
 
 ### Grace Credits
 
