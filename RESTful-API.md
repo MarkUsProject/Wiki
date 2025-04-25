@@ -757,6 +757,7 @@ NOTE: not all parent directories need to exist in order to create a nested file.
 - description: Create a new group for the given assignment
 - optional parameters:
     - new_group_name
+    - members: a list of student usernames
 
 ### GET /api/courses/:course_id/assignments/:assignment_id/groups/annotations
 
@@ -1042,6 +1043,20 @@ NOTE: the size of file_content must not exceed 1 GB.
 - description: Remove a tag from a grouping
 - required parameters:
     - tag_id (integer)
+
+### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/collect_submission
+
+- description: Collect submission from a grouping
+- optional parameters:
+    - collect_current (boolean)
+    - revision_identifier (string, git commit hash identifier)
+    - apply_late_penalty (boolean)
+    - retain_existing_grading (boolean)
+
+NOTE: collect_current value meanings:
+
+- true: collect most recent files submitted, regardless of assignment due date or late period.
+- false: collect most recent files submitted before the due date, including any late period.
 
 ### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/extension
 

@@ -8,7 +8,7 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 
     - If you are given a choice of which operating system to use, select *Ubuntu 22.04*.
 
-2. Install [Docker](https://docs.docker.com/get-docker/).
+2. If you are using **Windows** or **MacOS** you will need to install Docker by following the instructions on [this page](https://docs.docker.com/get-docker/). If you are using **Linux**, you will need to install [Docker Engine](https://docs.docker.com/engine/install/). (On Linux, Docker Desktop is known to cause issues with MarkUs, so it is important that you install Docker Engine and not Docker Desktop. If you already have Docker Desktop installed, see Q6.)
 
     - On Windows, make sure you've selected the "WSL 2 backend" tab under "System Requirements" and follow those instructions.
     - On Linux, also follow the instructions on "Manage Docker as a non-root user" [here](https://docs.docker.com/install/linux/linux-postinstall/).
@@ -32,6 +32,10 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
         ```yml
         services:
             app:
+                build:
+                    args:
+                        UID: <UID>
+            deps-updater:
                 build:
                     args:
                         UID: <UID>
@@ -59,7 +63,12 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
 
 7. Run `docker compose build`.
 
-8. Run `docker compose up rails`. The first time you run this it will take a long time because it'll install all of MarkUs' dependencies, and then seed the MarkUs application with sample data before actually running the server. When the server actually starts, you'll see some terminal output that looks like:
+8. Run `docker compose run --rm deps-updater`.
+   This will install all of MarkUs' dependencies.
+
+    > :spiral_notepad: **Note**: you don't need to run this command each time you want to run MarkUs, only during the initial setup and whenever the dependencies change.
+
+9. Run `docker compose up rails`. The first time you run this it will take a long time because it'll seed the MarkUs application with sample data before actually running the server. When the server actually starts, you'll see some terminal output that looks like:
 
     ```text
     => Booting Puma
@@ -81,13 +90,13 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
     [1] - Worker 2 (PID: 77) booted in 0.01s, phase: 0
     ```
 
-9. Open your web browser and type in the URL `localhost:3000/csc108`. The initial page load might be slow, but eventually you should see a login page. Use the username `instructor` and any non-empty password to login.
+10. Open your web browser and type in the URL `localhost:3000/csc108`. The initial page load might be slow, but eventually you should see a login page. Use the username `instructor` and any non-empty password to login.
 
     *Tip*: to terminate the Rails server, go to the terminal window where the server is running and press `Ctrl + C`/`⌘ + C`.
 
     - On Windows Home Edition, you'll need to use the Docker container's IP address instead: `192.168.99.100:3000/csc108`.
 
-10. In a new terminal window, go into the Markus directory again and run `docker compose run --rm rails rspec` to run the MarkUs test suite. This will take several minutes to run, but all tests should pass.
+11. In a new terminal window, go into the Markus directory again and run `docker compose run --rm rails rspec` to run the MarkUs test suite. This will take several minutes to run, but all tests should pass.
 
 Hooray! You have MarkUs up and running. Please keep reading for our recommended developer setup.
 
@@ -132,15 +141,16 @@ After this, these checks will run every time you make a commit. If all checks pa
 
 Here's a summary of the few most common tasks you'll use in your development.
 
-- Start the MarkUs server: `docker compose up --no-recreate rails`
+- Start the MarkUs server: `docker compose start rails`
+- Update dependencies: `docker compose run --rm deps-updater`. Run this whenever you see changes to `Gemfile`/`Gemfile.lock`, `package.json`/`package-lock.json`, and any of the `requirements-*.txt` files.
 - Run the MarkUs rspec test suite: `docker compose run --rm rails rspec`
 - Run a specific rspec test file: `docker compose run  --rm rails rspec FILE`
 - Run the Markus Jest test suite:  `docker compose run  --rm rails npm run test`
 - Run the Markus Jest test suite with the test coverage shown:  `docker compose run --rm rails npm run test-cov`
 - Run a specific Jest test file: `docker compose run  --rm rails npm run test FILE`
-- Start a shell within the Docker Rails environment: `docker compose run --rm rails bash`.
+- Start a shell within the Docker Rails environment: `docker compose exec rails bash`. This requires the `rails` service to be started, as described in "Start the MarkUs server" above.
   Within this shell, you can:
-    - Install new dependencies: `bundle install`, `npm ci`
+    - Install new dependencies: `bundle install`, `npm install`
     - Reset the MarkUs database: `rails db:reset`
     - Run a database migration: `rails db:migrate`
     - Start the interactive Rails console: `rails c`
@@ -312,3 +322,34 @@ docker compose run --rm rails bash  # This takes you into the Docker container
 ```
 
 Then try re-running the tests. You can do this from your current terminal (inside the Docker container) simply by running `rspec`.
+
+### Q5
+
+When I run `docker compose up rails`, I get a permission denied error along the lines of
+
+```text
+markus-rails-1 | cp: cannot create regular file 'config/database.yml': Permission denied
+markus-rails-1 exited with code 1
+```
+
+### A5
+
+If you are on **Linux**, you may have Docker Desktop installed, which is known to cause issues with MarkUs installation. Use your package manager to verify that you have Docker Desktop installed and see Q6 for further steps.
+
+### Q6
+
+I am using **Linux** and I have Docker Desktop installed instead of Docker Engine.
+
+### A6
+
+*Warning: the steps below will remove all existing docker containers, images, and volumes.*
+
+Remove Docker Desktop and all associated Docker packages using your package manager.
+
+Once the packages are removed, delete existing Docker dotfiles by running:
+
+```bash
+rm -rf ~/.docker
+```
+
+Finally, install Docker Engine by following the instructions on [this page](https://docs.docker.com/engine/install/).
