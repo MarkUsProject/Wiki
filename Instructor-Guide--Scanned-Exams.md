@@ -236,3 +236,12 @@ Matching test papers to students is done manually by instructors, after submissi
     - *Tip*: MarkUs supports search by student name, user name, or student number.
     - *Tip*: If the student does not appear in the autofill, you can also enter the student's full name into this field before saving. Note that this must be their first and last names as listed in the students table.
 3. You'll be automatically taken to the next unmatched group. Repeat this process until all groups are matched.
+
+There is also the option to do Automatic matching again of test papers to students.
+
+1. Navigate to the "Groups" tab for the assignment. Select the group(s) you want to do automatic matching. Click on the "Auto-match" button.
+
+    ![scanned-exam-auto-match-button.png](images/scanned-exam-auto-match-button.png)
+2. You will then be prompted to select the exam template you want to do automatic matching for.
+
+    ![scanned-exam-auto-match-exam-template-select.png](images/scanned-exam-auto-match-exam-template-select.png)
