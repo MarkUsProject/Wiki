@@ -1,14 +1,14 @@
-# Summary
+# Grades
 
 ## Table of Contents
 
-- [Summary Tab](#summary-tab)
-    - [Summary Table](#summary-table)
-    - [Summary Statistics](#summary-statistics)
+- [Grades Tab](#summary-tab)
+  - [Summary Table](#summary-table)
+  - [Summary Statistics](#summary-statistics)
 
-## Summary Tab
+## Grades Tab
 
-The summary tab can be used to view/visualize a variety of general statistics for a particular assignment. In addition, you may also view a summary of the grade breakdown for each submission. These are highlighted below.
+The grades tab can be used to view/visualize a variety of general statistics for a particular assignment. In addition, you may also view a summary of the grade breakdown for each submission. These are highlighted below.
 
 ### Summary Table
 

@@ -19,7 +19,7 @@
         - [Starter Files](Instructor-Guide--Assignments--Starter-Files.md)
         - [Peer Review](Instructor-Guide--Assignments--Peer-Review.md)
         - [Assigning Graders](Instructor-Guide--Assignments--Assigning-Graders.md)
-        - [Summary](Instructor-Guide--Assignments--Summary.md)
+        - [Summary](Instructor-Guide--Assignments--Grades.md)
     - [Timed Assessments](Instructor-Guide--Timed-Assessments.md)
     - [Scanned Exams](Instructor-Guide--Scanned-Exams.md)
     - Marks Spreadsheets
