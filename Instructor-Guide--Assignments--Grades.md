@@ -3,8 +3,8 @@
 ## Table of Contents
 
 - [Grades Tab](#grades-tab)
-  - [Summary Table](#summary-table)
-  - [Summary Statistics](#summary-statistics)
+    - [Summary Table](#summary-table)
+    - [Summary Statistics](#summary-statistics)
 
 ## Grades Tab
 
