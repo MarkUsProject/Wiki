@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Grades Tab](#summary-tab)
+- [Grades Tab](#grades-tab)
   - [Summary Table](#summary-table)
   - [Summary Statistics](#summary-statistics)
 
