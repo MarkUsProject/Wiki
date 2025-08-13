@@ -175,17 +175,23 @@ If you need to rebuild the MarkUs docker image:
 1. Clone the [markus-autotesting repo](https://github.com/MarkUsProject/markus-autotesting). Don't clone it into your `Markus` folder; we recommend cloning it into the same parent folder as your `Markus` folder.
 2. `cd` into the `markus-autotesting` folder.
 3. Run `docker compose build` to build a new Docker images for the MarkUs autotester.
-4. Run `docker compose up` to create the new containers. The first time you run this it will take a long time because it'll install all of the MarkUs autotester's dependencies.
-    You'll know it's done when you see "INFO success..."
-5. Stop the containers by pressing Ctrl + C (Windows/Linux) or Cmd + C (macOS). Then, restart the containers by running the command `docker compose start`.
-6. In a separate terminal, start the MarkUs server: `docker compose up rails`.
-7. In a web browser, visit the running server, but using a different domain than `localhost`:
+4. Run the following commands to install the autotester's dependencies.
+
+    ```bash
+    docker compose run --rm server-deps-updater
+    docker compose run --rm client-deps-updater
+    ```
+
+5. Run `docker compose up` to create the new containers.
+6. Stop the containers by pressing Ctrl + C (Windows/Linux) or Cmd + C (macOS). Then, restart the containers by running the command `docker compose start`.
+7. In a separate terminal, start the MarkUs server: `docker compose up rails`.
+8. In a web browser, visit the running server, but using a different domain than `localhost`:
     - For Windows and macOS, visit `host.docker.internal:3000/csc108`. If that doesn't work:
         - Windows: first open a WSL terminal and enter the command `ip addr show eth0 | grep inet`. Use the IP address found after `inet`, which is a sequence of 4 numbers separated by `.`, e.g. `100.20.200.2`. Try visiting `<IP address>:3000/csc108` instead.
         - For macOS, visit `docker.for.mac.localhost:3000/csc108` instead.
     - For Linux, visit `172.17.0.1:3000/csc108`.
-8. Now, open a shell in the MarkUs docker container: `docker compose run --rm rails bash`.
-9. Execute the following commands in the MarkUs container.
+9. Now, open a shell in the MarkUs docker container: `docker compose run --rm rails bash`.
+10. Execute the following commands in the MarkUs container.
     1. Create sample autotesting assignments: `rails db:autotest`.
     2. (*The MarkUs server and autotest containers be running when you run these commands.*) Run tests for every sample autotesting asignment: `MARKUS_URL=<URL> rails db:autotest_run`, where `<URL>` is in the form `http://<DOMAIN>:3000`, and `<DOMAIN>` is the domain you used in Step 7 (e.g., `host.docker.internal`).
 
