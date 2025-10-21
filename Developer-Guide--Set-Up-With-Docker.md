@@ -364,7 +364,7 @@ Finally, install Docker Engine by following the instructions on [this page](http
 
 When setting up the autotester, the script might often fail to find the required information to populate the schema required to run the automated tests.
 
-```
+```plaintext
 Set up testing environment for autotest
 Creating sample autotesting assignment autotest_custom
 bin/rails aborted!
@@ -379,8 +379,7 @@ This often happens when running the last step (#10) during the autotester [setup
 
 Save the following functions to your `.bashrc`, `.zshrc` or other shell configuration file and execute the `nuke_docker` command.
 
-```
-
+```bash
 # Docker functions
 # *****************************************************************************
 function stop_containers() {
