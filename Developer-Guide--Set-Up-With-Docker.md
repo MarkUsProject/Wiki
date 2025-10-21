@@ -375,7 +375,7 @@ NoMethodError: undefined method `[]' for nil (NoMethodError)
 /app/app/helpers/automated_tests_helper.rb:34:in `fill_in_schema_data!'
 ```
 
-This often happens when running the last step (#10) during the autotester [setup](https://github.com/MarkUsProject/Wiki/blob/master/Developer-Guide--Set-Up-With-Docker.md#setting-up-the-autotester) process, as a result of missing or corrupted database entries. The easiest and simplest solution is to restart the setup process with a clean docker environment. 
+This often happens when running the last step (#10) during the autotester [setup](https://github.com/MarkUsProject/Wiki/blob/master/Developer-Guide--Set-Up-With-Docker.md#setting-up-the-autotester) process, as a result of missing or corrupted database entries. The easiest and simplest solution is to restart the setup process with a clean docker environment.
 
 Save the following functions to your `.bashrc`, `.zshrc` or other shell configuration file and execute the `nuke_docker` command.
 
