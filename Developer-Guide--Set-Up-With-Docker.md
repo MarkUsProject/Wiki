@@ -359,3 +359,58 @@ rm -rf ~/.docker
 ```
 
 Finally, install Docker Engine by following the instructions on [this page](https://docs.docker.com/engine/install/).
+
+### Q7
+
+When setting up the autotester, the script might often fail to find the required information to populate the schema required to run the automated tests.
+
+```plaintext
+Set up testing environment for autotest
+Creating sample autotesting assignment autotest_custom
+bin/rails aborted!
+NoMethodError: undefined method `[]' for nil (NoMethodError)
+
+      schema_data['definitions']['files_list']['enum'] = files
+                                ^^^^^^^^^^^^^^
+/app/app/helpers/automated_tests_helper.rb:34:in `fill_in_schema_data!'
+```
+
+This often happens when running the last step (#10) during the autotester [setup](https://github.com/MarkUsProject/Wiki/blob/master/Developer-Guide--Set-Up-With-Docker.md#setting-up-the-autotester) process, as a result of missing or corrupted database entries. The easiest and simplest solution is to restart the setup process with a clean docker environment.
+
+Save the following functions to your `.bashrc`, `.zshrc` or other shell configuration file and execute the `nuke_docker` command.
+
+```bash
+# Docker functions
+# *****************************************************************************
+function stop_containers() {
+  docker stop $(docker ps -a -q)
+}
+
+function remove_containers() {
+  docker rm $(docker ps -a -q)
+}
+
+function remove_volumes() {
+  docker volume rm $(docker volume ls -qf dangling=true)
+}
+
+function remove_buildx_cache() {
+  docker builder prune -af
+  docker buildx prune -af
+}
+
+function clean_containers() {
+  echo "Cleaning existing containers"
+  stop_containers
+  remove_containers
+  remove_volumes
+  remove_buildx_cache
+}
+
+function nuke_docker() {
+  clean_containers
+  docker system prune -a --volumes
+}
+```
+
+We can now restart the setup process with a clean docker environment.
