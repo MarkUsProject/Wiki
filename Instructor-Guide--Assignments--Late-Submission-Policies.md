@@ -30,6 +30,16 @@ For group work, *all* members of the group must have enough grace credits availa
 ## Use Penalty Decay Formula
 
 This option will allow you to use a built-in function that deducts X grade percentage every Y hours for a duration of Z hours. You are able to create multiple time periods in case you want to deduct 5% every hour for the first four hours and then 10% every 6 hours for 12 more hours:
+
+### Penalty Type
+
+You must select a **Penalty Type** to determine how penalties are calculated (default is Percentage of assignment total):
+- **Percentage of assignment total**: Deduct a percentage of the total possible marks for the assignment (e.g., 5%)
+- **Marks**: Deduct a fixed number of marks (e.g., 5 marks)
+- **Percentage of earned mark**: Deduct a percentage of the student's earned mark (e.g., 5% of their score)
+
+The deduction unit displayed next to the input field will automatically update based on your selection (% for percentage types, marks for the marks option).
+
 ![Website Penalty Decay Formula](images/late-submission-policy-penalty-decay-formula.png)
 Additional time periods are added by clicking the "Add late period" button and removed by using the delete link. MarkUs will automatically adjust the real time periods for you when adding and deleting.
 
@@ -40,6 +50,16 @@ Penalties are applied as a percentage of the total mark. For example, a 10% pena
 ## Set Manual Penalty Periods
 
 This option allows you to set percentage penalty amounts for specified time periods.
+
+### Penalty Type
+
+You must select a **Penalty Type** to determine how penalties are calculated (default is Percentage of assignment total):
+- **Percentage of assignment total**: Deduct a percentage of the total possible marks for the assignment (e.g., 5%)
+- **Marks**: Deduct a fixed number of marks (e.g., 5 marks)
+- **Percentage of earned mark**: Deduct a percentage of the student's earned mark (e.g., 5% of their score)
+
+The deduction unit displayed next to the input field will automatically update based on your selection (% for percentage types, marks for the marks option).
+
 ![Website Manual Penalty Periods](images/late-submission-policy-penalty-period.png)
 Additional time periods are added by clicking the "Add late period" button and removed by using the delete link. MarkUs will automatically adjust the "From" and "To" times depending on the number of hours you specify in the "After" column.
 
