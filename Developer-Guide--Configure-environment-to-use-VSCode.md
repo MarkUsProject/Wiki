@@ -9,6 +9,7 @@ Install the dev containers [extension](https://marketplace.visualstudio.com/item
 Devcontainer files define the vscode environment inside a docker container. It allows us to configure VSCode extensions, environment definitions, etc when running VSCode inside the docker container.
 
 Place the following file: `devcontainer.json` at the root of your project inside a `.devcontainer` folder.
+
 ```json
 {
   "name": "MarkUs Dev",
@@ -45,16 +46,16 @@ Place the following file: `devcontainer.json` at the root of your project inside
   },
   "containerEnv": {
     "HOME": "/home/markus",
-    "LISTEN_POLLING": "1" 
+    "LISTEN_POLLING": "1"
   }
 }
 ```
 
 Brief explanation of what is happening above:
 
-* On startup, let's open up VSCode inside the `/app` folder of our appplication by defining our workspace folder `workspaceFolder` to point to the `/app` directory of our container.
-* We are installing `ruby-lsp` and `gitlens`, both VSCode extensions inside the dev container and specifying their configuration, such as ignoring certain folders from indexing specific paths. Notice that when we open up markus outside the dev container, these extensions will be absent.
-* Force the `listen` gem to poll for changes by setting the `LISTEN_POLLING` flag. This removes flakyness in our autoreloading.
+- On startup, let's open up VSCode inside the `/app` folder of our appplication by defining our workspace folder `workspaceFolder` to point to the `/app` directory of our container.
+- We are installing `ruby-lsp` and `gitlens`, both VSCode extensions inside the dev container and specifying their configuration, such as ignoring certain folders from indexing specific paths. Notice that when we open up markus outside the dev container, these extensions will be absent.
+- Force the `listen` gem to poll for changes by setting the `LISTEN_POLLING` flag. This removes flakyness in our autoreloading.
 
 ## Execution
 
