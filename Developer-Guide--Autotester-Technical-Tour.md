@@ -1,4 +1,4 @@
-# Developer Guide: A technical tour through the autotester.
+# Developer Guide: A technical tour through the autotester
 
 The autotester is a program designed to automatically run student assignments against preconfigured test files.
 
@@ -7,14 +7,15 @@ The autotester is a program designed to automatically run student assignments ag
 ![Autotest Diagram](images/autotest_diagram.png)
 
 The autotester has three major components:
+
 1. Client - Flask API Client
 2. Server - Python Server
 3. Cache - Redis Cache
 
 The python autotester has two testers to choose from:
+
 1. Pytest - Third party PyPy project
 2. Unittest - Builtin testing framework
-
 
 ### Test Creation
 
@@ -29,6 +30,3 @@ The python autotester has two testers to choose from:
 
 1. Markus
   i. When a test is scheduled, a resque
-
-
-
