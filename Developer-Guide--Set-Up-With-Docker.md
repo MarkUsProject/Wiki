@@ -102,7 +102,7 @@ Hooray! You have MarkUs up and running. Please keep reading for our recommended 
 
 ## Installing and Configuring RubyMine
 
-We strongly recommend RubyMine (a JetBrains IDE) for all MarkUs development.
+We strongly recommend RubyMine (a JetBrains IDE) for all MarkUs development. If you prefer to use VSCode, please follow the guide outlined [here](https://github.com/MarkUsProject/Wiki/blob/master/Developer-Guide--Configure-Environment-to-use-VSCode.md).
 
 1. First, install RubyMine from [here](https://www.jetbrains.com/ruby/download). Note that if you are a current university student, you can obtain a [free license](https://www.jetbrains.com/student/) for all JetBrains software.
 
