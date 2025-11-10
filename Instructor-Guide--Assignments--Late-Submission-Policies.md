@@ -34,6 +34,7 @@ This option will allow you to use a built-in function that deducts X amount of p
 ### Penalty Type
 
 You must select a **Penalty Type** to determine how penalties are calculated (default is Percentage of assignment total):
+
 - **Percentage of assignment total**: Deduct a percentage of the total possible marks for the assignment (e.g., 5%)
 - **Percentage of earned mark**: Deduct a percentage of the student's earned mark (e.g., 5% of student's earned mark)
 - **Marks**: Deduct a fixed number of marks (e.g., 5 marks)
@@ -54,6 +55,7 @@ This option allows you to set percentage/marks penalty amounts for specified tim
 ### Penalty Type
 
 You must select a **Penalty Type** to determine how penalties are calculated (default is Percentage of assignment total):
+
 - **Percentage of assignment total**: Deduct a percentage of the total possible marks for the assignment (e.g., 5%)
 - **Marks**: Deduct a fixed number of marks (e.g., 5 marks)
 - **Percentage of earned mark**: Deduct a percentage of the student's earned mark (e.g., 5% of their score)
