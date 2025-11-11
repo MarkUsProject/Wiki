@@ -35,6 +35,7 @@ This section allows you to set the name and due date for the assignment as well 
 **4. Due Date**: This section lets you set the due date for the assignment. You are able to configure the time (down to the minute) at which you would like the assignment to be due. The due date will be visible to students when they view the assignment. Note that the due date may be changed later on (ex/ to accommodate class-wide extensions). Changing the due date after submissions have been collected will not affect submitted assignments.
 
 **5. Visibility:** Controls when students can see the assignment:
+
 - **Hidden**: Students cannot see this assignment
 - **Visible**: Students can always see this assignment
 - **Visible on/until**: Assignment is only visible between specified start and end datetimes
