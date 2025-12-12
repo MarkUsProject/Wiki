@@ -1172,8 +1172,34 @@ NOTE: Authentication is required via API key. The authenticated user's role is u
 
 ### GET /api/courses/:course_id/assignments/:assignment_id/groups/:id/test_results
 
-- description: Get all automated test results for the given group for the given assignment. Returns all test runs ordered by creation date (newest first), including their test groups and individual test results.
-- example response (json):
+- description: Get automated test results for the given group for the given assignment. Supports two response formats:
+    1. **Default**: Returns only the latest test run, grouped by test group name. Matches the UI download format.
+    2. **Metadata Format** (with `include_metadata=true`): Returns all test runs with full metadata and timing information.
+- optional parameters:
+    - `include_metadata` (boolean): Set to `true` to return full test run history. Defaults to `false`.
+- supported content types: `application/json`, `application/xml`
+- example response (default format, json):
+
+```json
+{
+  "Test Group 1": [
+    {
+      "name": "Test Group 1",
+      "test_groups_id": 7,
+      "group_name": "group1",
+      "test_result_name": "test_addition",
+      "status": "pass",
+      "marks_earned": 3.0,
+      "marks_total": 5.0,
+      "output": "All test cases passed",
+      "extra_info": null,
+      "error_type": null
+    }
+  ]
+}
+```
+
+- example response (metadata format with `include_metadata=true`, json):
 
 ```json
 [
@@ -1184,7 +1210,7 @@ NOTE: Authentication is required via API key. The authenticated user's role is u
     "problems": null,
     "test_groups": [
       {
-        "name": "Python Test Group 1",
+        "name": "Test Group 1",
         "marks_earned": 5.0,
         "marks_total": 10.0,
         "time": 1250,
@@ -1196,50 +1222,19 @@ NOTE: Authentication is required via API key. The authenticated user's role is u
             "marks_total": 5.0,
             "output": "All test cases passed",
             "time": 125
-          },
-          {
-            "name": "test_subtraction",
-            "status": "fail",
-            "marks_earned": 2.0,
-            "marks_total": 5.0,
-            "output": "Expected 5, got 3\nAssertionError",
-            "time": 98
-          }
-        ]
-      },
-      {
-        "name": "Python Test Group 2",
-        "marks_earned": 7.0,
-        "marks_total": 10.0,
-        "time": 2300,
-        "tests": [
-          {
-            "name": "test_edge_cases",
-            "status": "pass",
-            "marks_earned": 7.0,
-            "marks_total": 10.0,
-            "output": "Most test cases passed",
-            "time": 450
           }
         ]
       }
     ]
-  },
-  {
-    "id": 41,
-    "status": "failed",
-    "created_at": "2025-12-02T10:15:23.123-05:00",
-    "problems": "Connection timeout: Failed to connect to test server",
-    "test_groups": []
   }
 ]
 ```
 
-NOTE: The response includes all test runs for the group, sorted by creation date (newest first).
+NOTE: The default format is consistent with the assignment test results download available through the UI.
 
-NOTE: Each test run includes its status ("complete", "in_progress", "cancelled", or "failed"), along with any problems encountered during execution.
+NOTE: The metadata format returns all test runs ordered by creation date (newest first) and includes timing data.
 
-NOTE: If a test run failed, the `problems` field will contain error details and `test_groups` will be empty.
+NOTE: Both formats support XML responses by setting the `Accept` header to `application/xml`.
 
 NOTE: Returns 404 if the group has no test results.
 
