@@ -1058,6 +1058,151 @@ NOTE: collect_current value meanings:
 - true: collect most recent files submitted, regardless of assignment due date or late period.
 - false: collect most recent files submitted before the due date, including any late period.
 
+### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/add_test_results
+
+- description: Submit automated test results for the given group for the given assignment. This endpoint is used by the autotesting service to report test execution results.
+- required parameters:
+    - test_results (object)
+        - status (string: test execution status, e.g., "pass", "fail", "finished")
+        - error (string or null: error message if test execution failed)
+        - test_groups (array of objects)
+            - time (integer or null: execution time in milliseconds)
+            - tests (array of objects)
+                - name (string: test name)
+                - status (string: one of "pass", "partial", "fail", "error", "error_all")
+                - marks_earned (integer: points earned)
+                - marks_total (integer: maximum points)
+                - output (string: test output/feedback)
+                - time (integer or null: execution time in milliseconds)
+            - extra_info (object)
+                - name (string: test group name)
+                - test_group_id (integer: ID of the test group)
+                - display_output (integer: 0=instructors, 1=instructors_and_student_tests, 2=instructors_and_students)
+                - criterion (string or null: associated criterion name)
+- optional parameters (within test_groups):
+    - timeout (integer: timeout value if test timed out)
+    - stderr (string: standard error output)
+    - malformed (string: malformed output information)
+    - annotations (array of objects: code annotations to add)
+        - content (string: annotation content)
+        - filename (string: file to annotate)
+        - type (string: "TextAnnotation", "ImageAnnotation", etc.)
+        - line_start, line_end, column_start, column_end (integers: for text annotations)
+        - x1, x2, y1, y2 (integers: for image/PDF annotations)
+    - feedback (array of objects: feedback files to attach)
+        - filename (string)
+        - mime_type (string)
+        - content (string: file content, may be base64 encoded)
+        - compression (string: "gzip" if content is compressed)
+    - tags (array of objects: tags to apply to the grouping)
+        - name (string: tag name)
+        - description (string: tag description)
+    - overall_comment (string: overall comment to add to the result)
+- example request body (json):
+
+```json
+{
+  "test_results": {
+    "status": "finished",
+    "error": null,
+    "test_groups": [
+      {
+        "time": 1250,
+        "extra_info": {
+          "name": "Correctness Tests",
+          "test_group_id": 42,
+          "display_output": 2,
+          "criterion": "Correctness"
+        },
+        "tests": [
+          {
+            "name": "test_addition",
+            "status": "pass",
+            "marks_earned": 2,
+            "marks_total": 2,
+            "time": 125,
+            "output": "All test cases passed"
+          },
+          {
+            "name": "test_subtraction",
+            "status": "fail",
+            "marks_earned": 0,
+            "marks_total": 2,
+            "time": 98,
+            "output": "Expected 5, got 3"
+          }
+        ],
+        "annotations": [
+          {
+            "content": "Consider edge cases for negative numbers",
+            "filename": "calculator.py",
+            "line_start": 10,
+            "line_end": 12,
+            "column_start": 0,
+            "column_end": 20
+          }
+        ],
+        "tags": [
+          {
+            "name": "needs_review",
+            "description": "Requires manual review"
+          }
+        ],
+        "overall_comment": "Good attempt, but edge cases need work"
+      }
+    ]
+  }
+}
+```
+
+- example success response (json):
+
+```json
+{
+  "status": "success",
+  "test_run_id": 1234
+}
+```
+
+NOTE: This endpoint creates a TestRun record with associated test results, annotations, feedback files, and tags. All operations are performed atomically within a transaction.
+
+NOTE: The request body is validated against a schema and must not exceed 10MB in size.
+
+NOTE: Authentication is required via API key. The authenticated user's role is used as the creator of the test run.
+
+### GET /api/courses/:course_id/assignments/:assignment_id/groups/:id/test_results
+
+- description: Get automated test results for the given group for the given assignment. Returns only the latest test run, grouped by test group name. Matches the UI download format.
+- supported content types: `application/json`, `application/xml`
+- example response (json):
+
+```json
+{
+  "Test Group 1": [
+    {
+      "name": "Test Group 1",
+      "test_groups_id": 7,
+      "group_name": "group1",
+      "test_result_name": "test_addition",
+      "status": "pass",
+      "marks_earned": 3.0,
+      "marks_total": 5.0,
+      "output": "All test cases passed",
+      "extra_info": null,
+      "error_type": null
+    }
+  ]
+}
+```
+
+NOTE: This endpoint returns only the most recent test run results for the group, not historical test runs.
+
+NOTE: Results are grouped by test group name (the keys in the JSON object are test group names).
+
+NOTE: Supports XML responses by setting the `Accept` header to `application/xml` or using the `.xml` extension.
+
+NOTE: Returns 404 if the group has no test results.
+
 ### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/extension
 
 - description: Create an extension for the given group for the given assignment
