@@ -1170,6 +1170,39 @@ NOTE: The request body is validated against a schema and must not exceed 10MB in
 
 NOTE: Authentication is required via API key. The authenticated user's role is used as the creator of the test run.
 
+### GET /api/courses/:course_id/assignments/:assignment_id/groups/:id/test_results
+
+- description: Get automated test results for the given group for the given assignment. Returns only the latest test run, grouped by test group name. Matches the UI download format.
+- supported content types: `application/json`, `application/xml`
+- example response (json):
+
+```json
+{
+  "Test Group 1": [
+    {
+      "name": "Test Group 1",
+      "test_groups_id": 7,
+      "group_name": "group1",
+      "test_result_name": "test_addition",
+      "status": "pass",
+      "marks_earned": 3.0,
+      "marks_total": 5.0,
+      "output": "All test cases passed",
+      "extra_info": null,
+      "error_type": null
+    }
+  ]
+}
+```
+
+NOTE: This endpoint returns only the most recent test run results for the group, not historical test runs.
+
+NOTE: Results are grouped by test group name (the keys in the JSON object are test group names).
+
+NOTE: Supports XML responses by setting the `Accept` header to `application/xml` or using the `.xml` extension.
+
+NOTE: Returns 404 if the group has no test results.
+
 ### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/extension
 
 - description: Create an extension for the given group for the given assignment
