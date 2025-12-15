@@ -33,10 +33,17 @@ This section allows you to set the name and due date for the assignment as well 
 **2. Assignment description**: This is the longer, more descriptive name of the assignment used as its full title.
 **3. Message**: This section allows you to include any additional information the students may need to know about the assignment.
 **4. Due Date**: This section lets you set the due date for the assignment. You are able to configure the time (down to the minute) at which you would like the assignment to be due. The due date will be visible to students when they view the assignment. Note that the due date may be changed later on (ex/ to accommodate class-wide extensions). Changing the due date after submissions have been collected will not affect submitted assignments.
-**5. Section Due Dates:** Checking the "Enable section due dates" box will allow you to set different due dates for different lecture sections. Note that if a due date is not specified the time in the "Due Date" section will be used by default.
+
+**5. Visibility:** Controls when students can see the assignment:
+
+- **Hidden**: Students cannot see this assignment
+- **Visible**: Students can always see this assignment
+- **Visible on/until**: Assignment is only visible between specified start and end datetimes
+
+**6. Section-Specific Settings:** Checking the "Enable section specific settings" box will allow you to set different due dates and visibility settings for different lecture sections. Each section can override the default due date and visibility settings.
 > :spiral_notepad: **NOTE:** Students not assigned to any section will only be allowed to form groups with other students not assigned to any section.
 
-**6. Check boxes:** The rest of this section includes check boxes that may be selected or deselected depending on your preferences. Note that in order for students to submit online, the "Allow students to submit through the web interface" box must be checked. If you prefer students to submit through a version control system, then uncheck the "web interface" box and select "version control system".
+**7. Check boxes:** The rest of this section includes check boxes that may be selected or deselected depending on your preferences. Note that in order for students to submit online, the "Allow students to submit through the web interface" box must be checked. If you prefer students to submit through a version control system, then uncheck the "web interface" box and select "version control system".
 
 If you wish to allow students to submit URLs check the "Allow students to submit URLs" box. This is especially useful if you plan on requiring students to submit videos or large files since preview support is available for content from YouTube and Google Drive/Docs.
 > :spiral_notepad: **NOTE:**
