@@ -1172,13 +1172,9 @@ NOTE: Authentication is required via API key. The authenticated user's role is u
 
 ### GET /api/courses/:course_id/assignments/:assignment_id/groups/:id/test_results
 
-- description: Get automated test results for the given group for the given assignment. Supports two response formats:
-    1. **Default**: Returns only the latest test run, grouped by test group name. Matches the UI download format.
-    2. **Metadata Format** (with `include_metadata=true`): Returns all test runs with full metadata and timing information.
-- optional parameters:
-    - `include_metadata` (boolean): Set to `true` to return full test run history. Defaults to `false`.
+- description: Get automated test results for the given group for the given assignment. Returns only the latest test run, grouped by test group name. Matches the UI download format.
 - supported content types: `application/json`, `application/xml`
-- example response (default format, json):
+- example response (json):
 
 ```json
 {
@@ -1199,42 +1195,11 @@ NOTE: Authentication is required via API key. The authenticated user's role is u
 }
 ```
 
-- example response (metadata format with `include_metadata=true`, json):
+NOTE: This endpoint returns only the most recent test run results for the group, not historical test runs.
 
-```json
-[
-  {
-    "id": 42,
-    "status": "complete",
-    "created_at": "2025-12-03T11:38:59.569-05:00",
-    "problems": null,
-    "test_groups": [
-      {
-        "name": "Test Group 1",
-        "marks_earned": 5.0,
-        "marks_total": 10.0,
-        "time": 1250,
-        "tests": [
-          {
-            "name": "test_addition",
-            "status": "pass",
-            "marks_earned": 3.0,
-            "marks_total": 5.0,
-            "output": "All test cases passed",
-            "time": 125
-          }
-        ]
-      }
-    ]
-  }
-]
-```
+NOTE: Results are grouped by test group name (the keys in the JSON object are test group names).
 
-NOTE: The default format is consistent with the assignment test results download available through the UI.
-
-NOTE: The metadata format returns all test runs ordered by creation date (newest first) and includes timing data.
-
-NOTE: Both formats support XML responses by setting the `Accept` header to `application/xml`.
+NOTE: Supports XML responses by setting the `Accept` header to `application/xml` or using the `.xml` extension.
 
 NOTE: Returns 404 if the group has no test results.
 
