@@ -252,6 +252,8 @@ NOTE: If not an AdminUser, this will only return courses where the current user 
     - name (string)
     - is_hidden (boolean)
     - display_name (string)
+    - start_at (datetime)
+    - end_at (datetime)
 
 NOTE: this method is only available to AdminUser users
 
