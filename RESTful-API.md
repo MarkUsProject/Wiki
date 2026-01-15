@@ -205,7 +205,9 @@ NOTE: this method is only available to AdminUser users
     "id": 1,
     "name": "course1",
     "is_hidden": false,
-    "display_name": "a longer course name to display in the UI"
+    "display_name": "a longer course name to display in the UI",
+    "start_at": null,
+    "end_at": null
   }
 ]
 ```
@@ -235,7 +237,9 @@ NOTE: this method is only available to AdminUser users
   "id": 1,
   "name": "course1",
   "is_hidden": false,
-  "display_name": "a longer course name to display in the UI"
+  "display_name": "a longer course name to display in the UI",
+  "start_at": null,
+  "end_at": null
 }
 ```
 
