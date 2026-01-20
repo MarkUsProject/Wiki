@@ -206,8 +206,8 @@ NOTE: this method is only available to AdminUser users
     "name": "course1",
     "is_hidden": false,
     "display_name": "a longer course name to display in the UI",
-    "start_at": null,
-    "end_at": null
+    "start_at": "2026-01-05T00:00:00.000-05:00",
+    "end_at": "2026-04-27T00:00:00.000-04:00"
   }
 ]
 ```
@@ -238,8 +238,8 @@ NOTE: this method is only available to AdminUser users
   "name": "course1",
   "is_hidden": false,
   "display_name": "a longer course name to display in the UI",
-  "start_at": null,
-  "end_at": null
+  "start_at": "2026-01-05T00:00:00.000-05:00",
+  "end_at": "2026-04-27T00:00:00.000-04:00"
 }
 ```
 
