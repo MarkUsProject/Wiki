@@ -90,7 +90,9 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
     [1] - Worker 2 (PID: 77) booted in 0.01s, phase: 0
     ```
 
-10. Open your web browser and type in the URL `localhost:3000/csc108`. The initial page load might be slow, but eventually you should see a login page. Use the username `instructor` and any non-empty password to login.
+10. Open your web browser and type in the URL `localhost:3000/csc108`. The initial page load might be slow, but eventually you should see a login page.
+    - To login as an instructor, use the username `instructor` and any non-empty password.
+    - To login as an admin user, use the username `.admin` and any non-empty password.
 
     *Tip*: to terminate the Rails server, go to the terminal window where the server is running and press `Ctrl + C`/`⌘ + C`.
 
