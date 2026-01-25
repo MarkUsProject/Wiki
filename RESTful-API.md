@@ -205,7 +205,9 @@ NOTE: this method is only available to AdminUser users
     "id": 1,
     "name": "course1",
     "is_hidden": false,
-    "display_name": "a longer course name to display in the UI"
+    "display_name": "a longer course name to display in the UI",
+    "start_at": "2026-01-05T00:00:00.000-05:00",
+    "end_at": "2026-04-27T00:00:00.000-04:00"
   }
 ]
 ```
@@ -235,7 +237,9 @@ NOTE: this method is only available to AdminUser users
   "id": 1,
   "name": "course1",
   "is_hidden": false,
-  "display_name": "a longer course name to display in the UI"
+  "display_name": "a longer course name to display in the UI",
+  "start_at": "2026-01-05T00:00:00.000-05:00",
+  "end_at": "2026-04-27T00:00:00.000-04:00"
 }
 ```
 
@@ -248,6 +252,8 @@ NOTE: If not an AdminUser, this will only return courses where the current user 
     - name (string)
     - is_hidden (boolean)
     - display_name (string)
+    - start_at (datetime)
+    - end_at (datetime)
 
 NOTE: this method is only available to AdminUser users
 
