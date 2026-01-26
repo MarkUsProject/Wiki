@@ -13,7 +13,9 @@
 - [Key Pairs](#key-pairs)
 
 ## Homepage
+
 When you log in to MarkUs, the homepage displays your courses. Courses are grouped into two sections:
+
 - Current Courses: courses whose end date has not passed.
 - Past Courses: courses whose end date has passed.
 
