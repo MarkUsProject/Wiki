@@ -2,7 +2,6 @@
 
 ## Table of Contents
 
-- [Homepage](#homepage)
 - [How to Form Groups](#how-to-form-groups)
 - [Download Starter Files](#download-starter-files)
 - [Submitting Work for an Assessment](#submitting-work-for-an-assessment)
@@ -11,14 +10,6 @@
 - [Timed Assessments](#timed-assessments)
 - [Email Settings](#email-settings)
 - [Key Pairs](#key-pairs)
-
-## Homepage
-When you log in to MarkUs, the homepage displays your courses. Courses are grouped into two sections:
-- Current Courses: courses whose end date has not passed.
-- Past Courses: courses whose end date has passed.
-
-If you do not have any courses in one of these groups, the section will not be shown.
-![Student View Homepage](images/student-view-homepage.png)
 
 ## How to Form Groups
 
