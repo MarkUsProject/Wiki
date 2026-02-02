@@ -94,7 +94,7 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
     - To login as an instructor, use the username `instructor` and any non-empty password.
     - To login as an admin user, use the username `.admin` and any non-empty password.
     - To login as a student, use a student username from the seed data (e.g., `c5anthei`) and any non-empty password.
- 
+
     *Tip*: to terminate the Rails server, go to the terminal window where the server is running and press `Ctrl + C`/`⌘ + C`.
 
     - On Windows Home Edition, you'll need to use the Docker container's IP address instead: `192.168.99.100:3000/csc108`.
