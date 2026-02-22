@@ -50,6 +50,7 @@
     - [Annotations](Developer-Guide--Tips-And-Tricks--Annotations.md)
     - [Security](Developer-Guide--Tips-And-Tricks--Security.md)
 - [General Usage](General-Usage.md)
+- [Homepage](Homepage.md)
 - [Admin Guide](Admin-Guide.md)
 - [Installation](Installation.md)
 - [Learning Tools Interoperability](Learning-Tools-Interoperability.md)
