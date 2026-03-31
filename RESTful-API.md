@@ -422,11 +422,27 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
 
 ### GET /api/courses/:course_id/grade_entry_forms/:id
 
-- description: Display grade entry form information including all student grades
-- optional parameters:
-    - user_name (string: filter results to a single student; returns 422 if student not found)
-    - download (string: set to `csv` to export grades as CSV)
-- example response (json):
+- description: Display grade entry form information for a single form
+- default response: CSV export of all student grades (backward compatible)
+- JSON response: Use the `.json` extension or set the `Accept: application/json` header to receive structured JSON with student grades
+- optional parameters (applies to both CSV and JSON):
+    - user_names (list of strings: filter results to specific students)
+
+#### CSV example (default)
+
+```console
+curl -H "Authorization: MarkUsAuth YourAuthKey" \
+  "http://example.com/api/courses/1/grade_entry_forms/7"
+```
+
+Returns a CSV file with columns: User name, Last name, First name, Section name, Id number, Email, followed by one column per grade entry item.
+
+#### JSON example
+
+```console
+curl -H "Authorization: MarkUsAuth YourAuthKey" \
+  "http://example.com/api/courses/1/grade_entry_forms/7.json"
+```
 
 ```json
 {
@@ -453,8 +469,8 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
   "students": [
     {
       "user_name": "c5anthei",
-      "first_name": "Antheil",
       "last_name": "George",
+      "first_name": "Antheil",
       "id_number": "0000001",
       "email": "c5anthei@example.com",
       "section_name": "LEC0101",
@@ -468,7 +484,16 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
 }
 ```
 
-Note: `total_grade` is only included when `show_total` is `true`. Students with no grades have an empty `grades` object (`{}`). Hidden students are excluded.
+#### JSON with user_names filter
+
+```console
+curl -H "Authorization: MarkUsAuth YourAuthKey" \
+  "http://example.com/api/courses/1/grade_entry_forms/7.json?user_names[]=c5anthei"
+```
+
+Returns the same JSON structure but with only the matching students in the `students` array.
+
+NOTE: `total_grade` is only included when `show_total` is `true`. Students with no grades have an empty `grades` object (`{}`). Hidden students are excluded.
 
 ### PUT api/courses/:course_id/grade_entry_forms/:id
 
