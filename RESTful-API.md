@@ -423,10 +423,26 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
 ### GET /api/courses/:course_id/grade_entry_forms/:id
 
 - description: Display grade entry form information for a single form
-- optional parameters:
-    - [filter](#filter)
-    - [fields](#fields)
-- example response (json):
+- default response: CSV export of all student grades (backward compatible)
+- JSON response: Use the `.json` extension or set the `Accept: application/json` header to receive structured JSON with student grades
+- optional parameters (applies to both CSV and JSON):
+    - user_names (list of strings: filter results to specific students)
+
+#### CSV example (default)
+
+```console
+curl -H "Authorization: MarkUsAuth YourAuthKey" \
+  "http://example.com/api/courses/1/grade_entry_forms/7"
+```
+
+Returns a CSV file with columns: User name, Last name, First name, Section name, Id number, Email, followed by one column per grade entry item.
+
+#### JSON example
+
+```console
+curl -H "Authorization: MarkUsAuth YourAuthKey" \
+  "http://example.com/api/courses/1/grade_entry_forms/7.json"
+```
 
 ```json
 {
@@ -435,26 +451,49 @@ NOTE: the "AdminRole" type can only be used by AdminUser users
   "description": "Class Quiz on Variables",
   "due_date": "2080-12-16T11:26:48.264-05:00",
   "is_hidden": false,
-  "show_total": false,
+  "show_total": true,
   "grade_entry_items": [
     {
       "id": 1,
       "name": "Q1",
-      "out_of": 3
+      "out_of": 3,
+      "bonus": false
     },
     {
       "id": 2,
       "name": "Q2",
-      "out_of": 4
-    },
+      "out_of": 4,
+      "bonus": false
+    }
+  ],
+  "students": [
     {
-      "id": 3,
-      "name": "Q3",
-      "out_of": 5
+      "user_name": "c5anthei",
+      "last_name": "George",
+      "first_name": "Antheil",
+      "id_number": "0000001",
+      "email": "c5anthei@example.com",
+      "section_name": "LEC0101",
+      "grades": {
+        "Q1": 2.0,
+        "Q2": 1.0
+      },
+      "total_grade": 3.0
     }
   ]
 }
 ```
+
+#### JSON with user_names filter
+
+```console
+curl -H "Authorization: MarkUsAuth YourAuthKey" \
+  "http://example.com/api/courses/1/grade_entry_forms/7.json?user_names[]=c5anthei"
+```
+
+Returns the same JSON structure but with only the matching students in the `students` array.
+
+NOTE: `total_grade` is only included when `show_total` is `true`. Students with no grades have an empty `grades` object (`{}`). Hidden students are excluded.
 
 ### PUT api/courses/:course_id/grade_entry_forms/:id
 
