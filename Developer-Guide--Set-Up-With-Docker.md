@@ -132,7 +132,7 @@ We strongly recommend RubyMine (a JetBrains IDE) for all MarkUs development. If 
 We use [pre-commit](https://pre-commit.com/) to run automated checks on code before each commit. To set this up on your local computer (*not* in a Docker container):
 
 1. First, install Python 3.
-2. Then, install the pre-commit library: `$ python3 -m pip install pre-commit` (or just `python` instead of `python3`, depending on your Python executable.
+2. Then, install the pre-commit library: `$ python3 -m pip install pre-commit` (or just `python` instead of `python3`, depending on your Python executable. Homebrew Python might [block](https://peps.python.org/pep-0668/) the above command. If this fails, run `brew install pipx` -> `pipx install pre-commit`. 
 3. Finally, in the `Markus` folder run `$ pre-commit install`. This will install all of the Markus pre-commit hooks.
 
 After this, these checks will run every time you make a commit. If all checks pass, the commit will proceed as normal. If a check fails, the commit *does not* occur, and there are two possibilities:
