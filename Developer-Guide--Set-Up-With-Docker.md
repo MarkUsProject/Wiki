@@ -147,6 +147,7 @@ Here's a summary of the few most common tasks you'll use in your development.
 - Start the MarkUs server: `docker compose start rails`
 - Update dependencies: `docker compose run --rm deps-updater`. Run this whenever you see changes to `Gemfile`/`Gemfile.lock`, `package.json`/`package-lock.json`, and any of the `requirements-*.txt` files.
 - Run the MarkUs rspec test suite: `docker compose run --rm rails rspec`
+- Run the MarkUs rspec test suite with the test coverage shown: `docker compose run --rm -e COVERAGE=true rails rspec`
 - Run a specific rspec test file: `docker compose run  --rm rails rspec FILE`
 - Run the Markus Jest test suite:  `docker compose run  --rm rails npm run test`
 - Run the Markus Jest test suite with the test coverage shown:  `docker compose run --rm rails npm run test-cov`
