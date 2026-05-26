@@ -1248,6 +1248,18 @@ NOTE: Supports XML responses by setting the `Accept` header to `application/xml`
 
 NOTE: Returns 404 if the group has no test results.
 
+### GET /api/course/:course_id/assignments/:assignment_id/groups/:id/overall_comment
+
+- description: Get the overall comment in the results for the given group for the given assignment for the given course
+- supported content types: `application/json`, `application/xml`
+
+### PATCH /api/course/:course_id/assignments/:assignment_id/groups/:id/overall_comment
+- description: Update the overall comment in the results for the given group for the given assignment for the given course
+- required parameters:
+    - overall_comment
+
+NOTE: Returns 422 if the assignment results have been released to students
+
 ### POST /api/courses/:course_id/assignments/:assignment_id/groups/:group_id/extension
 
 - description: Create an extension for the given group for the given assignment
