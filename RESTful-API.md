@@ -1254,6 +1254,7 @@ NOTE: Returns 404 if the group has no test results.
 - supported content types: `application/json`, `application/xml`
 
 ### PATCH /api/course/:course_id/assignments/:assignment_id/groups/:id/overall_comment
+
 - description: Update the overall comment in the results for the given group for the given assignment for the given course
 - required parameters:
     - overall_comment
