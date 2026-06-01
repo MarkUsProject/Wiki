@@ -90,7 +90,10 @@ If you want to get started on working on MarkUs quickly and painlessly, this is 
     [1] - Worker 2 (PID: 77) booted in 0.01s, phase: 0
     ```
 
-10. Open your web browser and type in the URL `localhost:3000/csc108`. The initial page load might be slow, but eventually you should see a login page. Use the username `instructor` and any non-empty password to login.
+10. Open your web browser and type in the URL `localhost:3000/csc108`. The initial page load might be slow, but eventually you should see a login page.
+    - To login as an instructor, use the username `instructor` and any non-empty password.
+    - To login as an admin user, use the username `.admin` and any non-empty password.
+    - To login as a student, use a student username from the seed data (e.g., `c5anthei`) and any non-empty password.
 
     *Tip*: to terminate the Rails server, go to the terminal window where the server is running and press `Ctrl + C`/`⌘ + C`.
 
@@ -112,7 +115,7 @@ We strongly recommend RubyMine (a JetBrains IDE) for all MarkUs development. If 
 
 3. Complete the setup steps under [Docker: Enable Docker Support JetBrains guide](https://www.jetbrains.com/help/ruby/docker.html#enable_docker).
 
-4. To configure RubyMine to use a remote Ruby interpreter from the Docker image: [JetBrains guide](https://www.jetbrains.com/help/ruby/using-docker-compose-as-a-remote-interpreter.html#set_compose_remote_interpreter). Use `rails` as the service. After you've selected this interpreter, RubyMine will take some time to index all of the Ruby gems (libraries); you'll see "Indexing"... at the bottom of the RubyMine window.
+4. To configure RubyMine to use a remote Ruby interpreter from the Docker image: [JetBrains guide](https://www.jetbrains.com/help/ruby/configuring-language-interpreter.html#add_remote_ruby_interpreter). Use `rails` as the service. After you've selected this interpreter, RubyMine will take some time to index all of the Ruby gems (libraries); you'll see "Indexing"... at the bottom of the RubyMine window.
 
     If this doesn't work, please make sure you're using the latest version of RubyMine (Help -> Check for Updates...).
 
@@ -129,7 +132,7 @@ We strongly recommend RubyMine (a JetBrains IDE) for all MarkUs development. If 
 We use [pre-commit](https://pre-commit.com/) to run automated checks on code before each commit. To set this up on your local computer (*not* in a Docker container):
 
 1. First, install Python 3.
-2. Then, install the pre-commit library: `$ python3 -m pip install pre-commit` (or just `python` instead of `python3`, depending on your Python executable.
+2. Then, install the pre-commit library: `$ python3 -m pip install pre-commit` (or just `python` instead of `python3`, depending on your Python executable. Homebrew Python might [block](https://peps.python.org/pep-0668/) the above command. If this fails, run `brew install pipx` -> `pipx install pre-commit`.
 3. Finally, in the `Markus` folder run `$ pre-commit install`. This will install all of the Markus pre-commit hooks.
 
 After this, these checks will run every time you make a commit. If all checks pass, the commit will proceed as normal. If a check fails, the commit *does not* occur, and there are two possibilities:
@@ -144,6 +147,7 @@ Here's a summary of the few most common tasks you'll use in your development.
 - Start the MarkUs server: `docker compose start rails`
 - Update dependencies: `docker compose run --rm deps-updater`. Run this whenever you see changes to `Gemfile`/`Gemfile.lock`, `package.json`/`package-lock.json`, and any of the `requirements-*.txt` files.
 - Run the MarkUs rspec test suite: `docker compose run --rm rails rspec`
+- Run the MarkUs rspec test suite with the test coverage shown: `docker compose run --rm -e COVERAGE=true rails rspec`
 - Run a specific rspec test file: `docker compose run  --rm rails rspec FILE`
 - Run the Markus Jest test suite:  `docker compose run  --rm rails npm run test`
 - Run the Markus Jest test suite with the test coverage shown:  `docker compose run --rm rails npm run test-cov`
