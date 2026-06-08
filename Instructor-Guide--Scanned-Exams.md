@@ -138,7 +138,7 @@ If you intend to have your printer staple each paper, you will need to configure
 After your test is complete, you should scan all test papers (saving the scans as PDF files) and prepare to upload them to MarkUs.
 
 1. **Before** uploading any scanned files to MarkUs, you need to configure *template divisions* for each exam template you specified.
-    A template division specifies a mapping of test page number to question (e.g., Question 1 appears on page 2, and Question 2 appears on pages 2-3). 
+    A template division specifies a mapping of test page number to question (e.g., Question 1 appears on page 2, and Question 2 appears on pages 2-3).
     When processing scanned test papers, MarkUs will groups pages by template divisions to make it easier to grade the same question across all submissions.
     If you upload scans for an exam template that has no template divisions, MarkUs will show a confirmation dialog and ask whether you want to proceed anyway.
 
@@ -178,9 +178,8 @@ After your test is complete, you should scan all test papers (saving the scans a
       - **Duplicated pages are marked as errors**: when an uploaded page is a duplicate of an existing page,
         the existing page is preserved and the uploaded page is marked as an error and can be reviewed manually.
 
-    e. Double check that you have template divisions assigned to the selected template before proceeding or you will be met with a note informing you that there are no template divisions assigned to the selected template. 
+    e. Double check that you have template divisions assigned to the selected template before proceeding or you will be met with a note informing you that there are no template divisions assigned to the selected template.
 
-   
     f. Press "Upload". MarkUs will then process the uploaded file, scanning QR codes and grouping pages by their exam number and by template division.
 
     ![Scanned Exam Upload Scans button](images/scanned-exam-upload-scans-button.png)
