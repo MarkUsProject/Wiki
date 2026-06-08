@@ -153,7 +153,7 @@ After your test is complete, you should scan all test papers (saving the scans a
     - Any pages (besides the first) that are not included in any template divisions will be grouped into a special file called "EXTRA.pdf". This is useful if you provide additional pages for students to use during the test.
     - You can also put all pages (not including the first page) into a single template division. Such a template division should go from page 2 until the last page number in the test.
 
-3. After configuring the template divisions, you are ready to upload the scanned test papers.
+2. After configuring the template divisions, you are ready to upload the scanned test papers.
     To do so:
 
     a. Navigate to the "Upload Scans" section of the Exam Template page.
@@ -189,7 +189,7 @@ After your test is complete, you should scan all test papers (saving the scans a
 
     ![Scanned Exam Upload Log](images/scanned-exam-upload-log.png)
 
-5. MarkUs may be unable to parse some QR codes. Pages where there was an error in parsing will appear under "Pending errors", and you can view each page by expanding the row in the "Uploaded Scans Log" table.
+3. MarkUs may be unable to parse some QR codes. Pages where there was an error in parsing will appear under "Pending errors", and you can view each page by expanding the row in the "Uploaded Scans Log" table.
 
     Because MarkUs prints the copy number and page number beside the QR code, instructors can manually fix parsing errors. To do so:
 
