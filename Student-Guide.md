@@ -70,6 +70,14 @@ If you have uploaded one file to submit, you will have the option to rename it.
 - If you can submit any file you want and the instructor has not requested any, you can rename your file using a textbox.
 ![Upload Modal Text Input](images/submission-file-upload-modal-textbox.png)
 
+### Late Submission Confirmation
+
+If you attempt to upload a file or submit a URL through the Submissions file manager after the assignment deadline has passed, and your instructor has configured a late submission policy that applies a mark penalty (manual penalty periods or penalty decay), MarkUs will show a confirmation dialog before your submission is processed. The dialog warns that you are submitting late, that a late penalty will apply, and that the action cannot be undone. You must confirm to proceed; canceling the dialog will stop the submission.
+
+This confirmation does not appear when submitting through git.
+
+> :warning: **WARNING** Depending on your instructor's late submission policy, submitting after the deadline may result in a grade penalty. Be sure to review your assignment's late submission policy before confirming a late submission.
+
 ### Submit through version control (git)
 
 If your instructor has enable submission through version control you will see a section called "Group repository URL" on the Assignment page. You may use this url to clone your repository for the given assignment.
