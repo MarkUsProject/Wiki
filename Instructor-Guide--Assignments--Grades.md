@@ -4,6 +4,7 @@
 
 - [Grades Tab](#grades-tab)
     - [Summary Table](#summary-table)
+    - [Uploading Grades by CSV](#uploading-grades-by-csv)
     - [Summary Statistics](#summary-statistics)
 
 ## Grades Tab
@@ -12,15 +13,37 @@ The grades tab can be used to view/visualize a variety of general statistics for
 
 ### Summary Table
 
-After visiting the summary tab, you will first see the summary table. This table gives a summarized grade breakdown for each student/submission. Each row in the table corresponds to a particular submission group. For each row you can view the name of the submission group, its marking state, any tags the submission may have, a total mark for the submission, and finally a mark breakdown of the submission from associated criteria.
+After visiting the Grades tab, you will first see the summary table. This table gives a summarized grade breakdown for each student/submission. Each row in the table corresponds to a particular submission group. For each row you can view the name of the submission group, its marking state, any tags the submission may have, a total mark for the submission, and finally a mark breakdown of the submission from associated criteria.
 
 ![Assignment Summary Table](images/summary-table.png)
 
 If you wish to download this table for offline use in a CSV format, select the "Download" button in the top right. Alternatively, if you ran tests on submissions and wish to download the results of those tests, you can click the "Download Test Results" button also found in the top right.
 
+### Uploading Grades by CSV
+
+The Grades tab can also be used to upload criterion marks from a CSV file. The easiest way to prepare the file is to first download the Grades CSV from the same tab, and then edit the criterion mark columns you wish to update.
+
+To upload assignment grades:
+
+1. Open the assignment and select the "Grades" tab.
+2. Click "Download" to download the Grades CSV.
+3. Edit the criterion mark columns in the CSV. Keep the exported "Group name" column in the file.
+4. Click "Upload" in the Grades tab.
+5. Choose the CSV file. If you want the upload to replace marks that have already been entered, check "Overwrite existing grades?".
+6. Submit the upload and review the success and error messages shown by MarkUs.
+
+When uploading:
+
+- MarkUs matches rows by group name only. Student/user columns may be included in the file, but they are ignored.
+- Only criterion mark columns are imported. The "Total Mark" and "Bonus/Deductions" columns are ignored.
+- Criterion headers must match the exported criterion headers. Bonus criteria use the exported bonus header format, for example `Style (Bonus)`.
+- By default, existing marks are not replaced. Existing marks are replaced only when "Overwrite existing grades?" is checked.
+- Released results cannot be updated by upload. If you need to change released results, unrelease them before uploading.
+- Rows with an invalid group name, unknown criterion header, invalid mark, negative mark, or mark above the criterion maximum will be reported as errors.
+
 ### Summary Statistics
 
-Clicking on the "Summary Statistics" tab in the top left corner of the summary page will take you to the summary statistics view. This view allows you to easily visualize and look at key statistics that summarizes overall student performance on the given assignment. This is an enlarged view of the summary statistics you can find on the dashboard.
+Clicking on the "Summary Statistics" tab in the top left corner of the Grades page will take you to the summary statistics view. This view allows you to easily visualize and look at key statistics that summarizes overall student performance on the given assignment. This is an enlarged view of the summary statistics you can find on the dashboard.
 
 #### Grades Distribution
 
