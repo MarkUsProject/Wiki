@@ -72,7 +72,7 @@ If you have uploaded one file to submit, you will have the option to rename it.
 
 ### Late Submission Confirmation
 
-If you attempt to upload a file or submit a URL through the Submissions file manager after the assignment deadline has passed, and your instructor has configured a late submission policy that applies a mark penalty (manual penalty periods or penalty decay), MarkUs will show a confirmation dialog before your submission is processed. The dialog warns that you are submitting late, that a late penalty will apply, and that the action cannot be undone. You must confirm to proceed; canceling the dialog will stop the submission.
+If you attempt to upload a file or submit a URL through the Submissions file manager after the assignment deadline has passed, and your instructor has configured a late submission policy, MarkUs will show a confirmation dialog before your submission is processed. The dialog warns that you are submitting late, that a late penalty might apply, and that the action cannot be undone. You must confirm to proceed; canceling the dialog will stop the submission.
 
 This confirmation does not appear when submitting through git.
 
