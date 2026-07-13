@@ -1305,6 +1305,50 @@ NOTE: Supports XML responses by setting the `Accept` header to `application/xml`
 
 NOTE: Returns 404 if the group has no test results.
 
+### GET /api/courses/:course_id/assignments/:assignment_id/groups/:id/test_runs
+
+- description: Get test runs for the given group for the given assignment. Returns all test runs and the associated test group result IDs.
+- supported content types: `application/json`, `application/xml`
+- example response (json):
+
+```json
+[
+  {
+    "id": 1,
+    "test_batch_id": null,
+    "grouping_id": 123,
+    "created_at": "2026-06-26T13:22:57.032-04:00",
+    "updated_at": "2026-06-26T13:23:08.271-04:00",
+    "submission_id": 456,
+    "revision_identifier": null,
+    "problems": null,
+    "autotest_test_id": null,
+    "status": "complete",
+    "role_id": 1,
+    "test_group_result_ids": [
+      8,
+      9
+    ]
+  },
+  {
+    "id": 2,
+    "test_batch_id": null,
+    "grouping_id": 123,
+    "created_at": "2026-06-26T13:23:14.346-04:00",
+    "updated_at": "2026-06-26T13:23:25.660-04:00",
+    "submission_id": null,
+    "revision_identifier": "251f484fa09488ac165f8396112c2b13e60d0cbe",
+    "problems": null,
+    "autotest_test_id": null,
+    "status": "complete",
+    "role_id": 2,
+    "test_group_result_ids": [
+      10
+    ]
+  }
+]
+```
+
 ### GET /api/course/:course_id/assignments/:assignment_id/groups/:id/overall_comment
 
 - description: Get the overall comment in the results for the given group for the given assignment for the given course
