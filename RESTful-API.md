@@ -944,20 +944,77 @@ NOTE: not all parent directories need to exist in order to create a nested file.
 
 ### POST /api/courses/:course_id/assignments/:assignment_id/groups/:id/add_annotations
 
-- description: Add a text annotation to a file submitted by the given group for the given assignment.
+- description: Add one or more annotations to files submitted by the given group for the given assignment. All annotation types are supported (text, image, PDF, and HTML). The annotation type is determined by the file being annotated.
 - required parameters:
     - annotations (list of hashes)
+        - filename (string: the submission file to annotate)
+        - content (string: the annotation's text content)
+        - type (string, optional: one of "TextAnnotation", "ImageAnnotation", "PdfAnnotation", "HtmlAnnotation". If omitted, the type is derived from the file. If provided, it must match the file's type, otherwise the request is rejected.)
         - annotation_category_name (string, optional)
-        - filename (string)
-        - content (string)
-        - line_start (integer)
-        - line_end (integer)
-        - column_start (integer)
-        - column_end (integer)
+        - location fields, which depend on the annotation type (see below)
 - optional parameters:
     - force_complete (boolean : whether to assign the annotation even if the marking is complete)
 
-NOTE: adding PDF, image, or HTML annotations are not supported through the API
+The annotation type is derived from the file being annotated:
+
+| File | Extension(s) | Annotation type |
+|------|--------------|-----------------|
+| Image | `.jpeg`, `.jpg`, `.gif`, `.png`, `.heic`, `.heif` | `ImageAnnotation` |
+| PDF | `.pdf` | `PdfAnnotation` |
+| Notebook / R Markdown | `.ipynb`, `.Rmd` (when R Markdown conversion is enabled) | `HtmlAnnotation` |
+| Anything else | — | `TextAnnotation` |
+
+The location fields required for each annotation type are:
+
+- `TextAnnotation`:
+    - line_start (integer)
+    - line_end (integer)
+    - column_start (integer)
+    - column_end (integer)
+- `ImageAnnotation`:
+    - x1, y1 (integers: top-left corner of the annotation rectangle)
+    - x2, y2 (integers: bottom-right corner of the annotation rectangle)
+- `PdfAnnotation`:
+    - x1, y1 (integers: top-left corner of the annotation rectangle)
+    - x2, y2 (integers: bottom-right corner of the annotation rectangle)
+    - page (integer)
+- `HtmlAnnotation`:
+    - start_node (string)
+    - start_offset (integer)
+    - end_node (string)
+    - end_offset (integer)
+
+- example request body (json):
+
+```json
+{
+  "annotations": [
+    {
+      "type": "TextAnnotation",
+      "filename": "hello.py",
+      "content": "Consider edge cases here",
+      "line_start": 10,
+      "line_end": 12,
+      "column_start": 0,
+      "column_end": 20
+    },
+    {
+      "type": "PdfAnnotation",
+      "filename": "essay.pdf",
+      "content": "See the rubric",
+      "x1": 100,
+      "y1": 200,
+      "x2": 300,
+      "y2": 250,
+      "page": 1
+    }
+  ]
+}
+```
+
+NOTE: The `type` parameter is optional. When omitted, the type is derived from the file (see the table above). When provided, it must agree with the file — for example, you cannot create a `PdfAnnotation` on a `.py` file. A mismatch returns a 422.
+
+NOTE: The entire request is validated before any annotation is created. If any annotation in the list is invalid — an unknown `type`, a `type`/file mismatch, an unknown `filename`, or a missing required location field for the type — the request is rejected with a 422 and no annotations are created.
 
 ### POST /api/courses/:course_id/assignments/:assignment_id/groups/:id/add_members
 
