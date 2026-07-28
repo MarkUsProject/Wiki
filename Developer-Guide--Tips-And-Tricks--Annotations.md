@@ -49,9 +49,11 @@ There are three models that deal with annotations: `AnnotationCategory`, `Annota
 #### Source Code Glower
 
 The code that handles the client-side Annotation behaviour can be found here:
+
 ```console
 /public/javascripts/SourceCodeGlower
 ```
+
 Inside is a series of files - each file defines a particular JavaScript Class. Here is a description of the files/classes, and how they function with each other:
 
 ##### SourceCodeAdapter.js and SyntaxHighlighter1p5Adapter.js

@@ -20,6 +20,7 @@ Windows 8:
    ```console
    > ssh-keygen -t rsa -C "LABEL GOES HERE"
    ```
+
 2. Leave the default options as is and keep pressing **Enter** until you see:
 
    ```console
@@ -49,15 +50,18 @@ An **ssh-agent** is a tool which keeps track of your private / public key pairs 
 ## Step 4: Add your public key to MarkUs
 
 1. Adding your public key to MarkUs is done by visiting this page and clicking “**New Key Pair**”
-2. Now you can choose to upload the public key file itself (located in the hidden folder in your home directory 
+2. Now you can choose to upload the public key file itself (located in the hidden folder in your home directory
+
    ```console
    ~/.ssh/id_rsa.pub
-   ``` 
+   ```
+
    or by executing the following commands from within your **Git bash** to copy and paste your public key c$
 
    ```console
    notepad ~/.ssh/id_rsa.pub
    ```
+
    Notepad will then open up, and you can then copy the public key contents and paste it into Markus:
 
    ![Copy your public key contents.](https://raw.githubusercontent.com/SoftwareDev/Wiki/5c0ab2bbbdb47ed2309cfad27bcb64ff725a022f/images/Key_Pair-05.png)

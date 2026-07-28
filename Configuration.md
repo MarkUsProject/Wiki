@@ -21,9 +21,9 @@ By specifying `NO_INIT_SCHEDULER` an error will not be raised if MarkUs can't co
 
 All values under the `rails:` key are used to set the `Rails.configuration` object when the app starts.
 
-> ▶️ **EXAMPLE:** The `queue_adapter` option sets `Rails.configuration.queue_adapter`, 
-> and `asset_host` sets `Rails.configuration.action_mailer.asset_host`. 
-> 
+> ▶️ **EXAMPLE:** The `queue_adapter` option sets `Rails.configuration.queue_adapter`,
+> and `asset_host` sets `Rails.configuration.action_mailer.asset_host`.
+>
 > For full details see [Rails Guides](https://guides.rubyonrails.org/configuring.html)
 
 The default values for these should be good enough for most applications.

@@ -26,10 +26,13 @@ This section allows you to configure some display settings of your spreadsheet:
 1. **Short Identifier:** This is the short title of the spreadsheet that will appear in the drop-down list of assignments.
 2. **Description:** This is the longer, more descriptive name of the spreadsheet used as its full title.
 3. **Message:** This section allows you to include any additional information the students may need to know about the spreadsheet.
+
 > 🗒️ **NOTE:** Anything written in the message section will be displayed to the students regardless of marks being released.
+
 4. **Date:** This section lets you give a date to the spreadsheet. Once a date has been given and the spreadsheet created, you may select the "Remove date" check box. This will remove the date from being attached to the spreadsheet once updated. If you wish for there to be no date, you may also simply leave this field blank.
 5. **Show total:** Check this box if you wish for there to be a column that adds up all of each student's marks on the spreadsheet.
 6. **Hide Spreadsheet:** Check this box if you wish for the spreadsheet to be hidden from students.
+
 > 🗒️ **NOTE:** Even if you check this box, the spreadsheet will still be visible to graders.
 
 ### Columns

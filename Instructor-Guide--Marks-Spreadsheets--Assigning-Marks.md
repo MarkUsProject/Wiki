@@ -36,6 +36,7 @@ The marks spreadsheet contains a number of columns:
     - The columns will all start empty and you may add in values for each student depending on their mark for each column. Negative values are not allowed however you may include values greater than what was specified for the column.
     - You may not modify the "Total" column.
     - The values in the table will save on their own and you do not have to press any special save button.
+
 - **State:** Contains the release state of the spreadsheet. Possible values are "blank" if the student's marks have not been released yet or "Released" if they have.
 
 ### Releasing Marks

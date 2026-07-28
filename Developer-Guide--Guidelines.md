@@ -25,6 +25,7 @@ When developing MarkUs, make sure to follow the following steps (where appropria
 - **Do** write tests! (see the [guides](#guides) for testing guides)
 
 ### DON'Ts
+
 - **Don't** mark your pull request as "Ready for review" until you're entirely happy with it. Go, have a break and come back to your code after a while. Questions you should ask yourself are: Is my controller code really controller code, or should it be moved to a model? Is there a simpler solution? Can Rails help with what I am trying to achieve?
 - **Don't** mull over problems alone for hours/days. Sometimes it's better to consult somebody else: two pairs of eyes see more than one. Maybe somebody else has had a similar problem, etc. Go ask questions!
 - **Don't** fight Rails (it'll beat you). Sometimes Rails' "magic" is irritating. However, you are better off *using* rather than fighting it!

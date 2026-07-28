@@ -10,7 +10,6 @@ Once this is done, the inviter will have to invite each member of their team to 
 
 ![Students Invite Students](https://user-images.githubusercontent.com/50387112/65207641-43293380-da60-11e9-8c8c-bc6f6966788b.png)
 
-
 ![Students invite students 2](https://user-images.githubusercontent.com/50387112/65207771-dd897700-da60-11e9-856d-93d536384ea6.png)
 
 If a student is not eligible to be a part of their group they will receive a warning:
