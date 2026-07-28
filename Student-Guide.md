@@ -14,22 +14,26 @@
 ## How to Form Groups
 
 After navigating to the appropriate assignment, click the `Create Group` button to create your group:
+
 ![Student Create Group](images/student-create-group-step1.png)
 
 You may then choose to invite other group members using the "Invite Student(s)" button:
+
 ![Students Invite Students](images/student-create-group-step2.png)
 
 ![Students invite students 2](images/student-create-group-step3-4.png)
 
 If a student is not eligible to be a part of your group, you will receive a warning:
+
 ![Could not invite](images/student-create-group-warning.png)
 
 Once you have invited someone, they will appear under the "Group invitations" list but will have a pending status until they accept the invitations. Invitations can be accepted by clicking the "Join Group" button or declined by clicking the "Decline Invitation" button.
+
 ![Join Group](images/student-create-group-step5.png)
 
 Once a group meets the minimum member requirements for the assignment, you will be allowed to submit files for the assignment.
 
-> :warning: **WARNING** When adding other students to a group, the inviter must type in their teammate's exact username (case sensitive) not their first/last name.
+> ⚠️ **WARNING** When adding other students to a group, the inviter must type in their teammate's exact username (case-sensitive) not their first/last name.
 
 ## Download Starter Files
 
@@ -63,11 +67,16 @@ If you are missing some required files, a list of missing required files will be
 
 If you have uploaded one file to submit, you will have the option to rename it.
 
-- If you can only submit the files the instructor has requested for, you can rename your file from a drop down menu.
+- If you can only submit the files the instructor has requested for, you can rename your file from a drop-down menu.
+
 ![Upload Modal Select Input](images/submission-file-upload-modal-select.png)
+
 - If you can submit any file you want but the instructor has requested some files, you can rename your file using a textbox with a dropdown.
+
 ![Upload Modal Datalist Input](images/submission-file-upload-modal-datalist.png)
+
 - If you can submit any file you want and the instructor has not requested any, you can rename your file using a textbox.
+
 ![Upload Modal Text Input](images/submission-file-upload-modal-textbox.png)
 
 ### Late Submission Confirmation
@@ -76,11 +85,11 @@ If you attempt to upload a file or submit a URL through the Submissions file man
 
 This confirmation does not appear when submitting through git.
 
-> :warning: **WARNING** Depending on your instructor's late submission policy, submitting after the deadline may result in a grade penalty. Be sure to review your assignment's late submission policy before confirming a late submission.
+> ⚠️ **WARNING** Depending on your instructor's late submission policy, submitting after the deadline may result in a grade penalty. Be sure to review your assignment's late submission policy before confirming a late submission.
 
 ### Submit through version control (git)
 
-If your instructor has enable submission through version control you will see a section called "Group repository URL" on the Assignment page. You may use this url to clone your repository for the given assignment.
+If your instructor has enabled submission through version control you will see a section called "Group repository URL" on the Assignment page. You may use this url to clone your repository for the given assignment.
 
 The repository will have the following structure:
 
@@ -96,13 +105,13 @@ group_name/
 
 Where:
 
-- `group_name` is the name of your group for this assignemnt.
+- `group_name` is the name of your group for this assignment.
 - `markus-hooks` is a directory containing git hooks used by MarkUs, do *not* modify this directory or its content.
 - all other directories are named after assignments available to your group. In this case, the assignments are named `assignment1` and `assignment_other`.
 
-> :warning: **Warning:** You may only add/remove/modify files in the assignment subdirectories. Any commits that contain changes to any other file will be rejected by MarkUs when pushed.
+> ⚠️ **Warning:** You may only add/remove/modify files in the assignment subdirectories. Any commits that contain changes to any other file will be rejected by MarkUs when pushed.
 
-> :arrow_forward: **EXAMPLE:**
+> ▶️ **EXAMPLE:**
 > To submit a file to `assignment_other`, create a file in the `assignment_other/` subdirectory and push the changes back to MarkUs.
 
 #### Enable Client Hooks
@@ -120,7 +129,7 @@ To enable client-side hooks, copy the contents of the `markus-hooks` directory t
 
 ## View Results
 
-Once your submssion for an assignment has been marked, the Result tab will become visible for your assignment. Click this tab to show the detailed results for this assignment. On this page you can:
+Once your submission for an assignment has been marked, the Result tab will become visible for your assignment. Click this tab to show the detailed results for this assignment. On this page you can:
 
 - See the files you submitted from the "Submissions files" tab.
     - If annotations have been left by graders, these will be visible by hovering over highlighted sections of the submitted files.
@@ -149,17 +158,17 @@ You may cancel a remark request at any time from the "Remark Request" tab.
 
 ## Timed Assessments
 
-Timed assessments differ from regular assignments in that they do not have a fixed due date before which you must complete the assignment. Instead the instructor specifies a range of times between which the you must start the assignment. After you have started the assignment, you will have a fixed number amount of time to finish the assignment.
+Timed assessments differ from regular assignments in that they do not have a fixed due date before which you must complete the assignment. Instead, the instructor specifies a range of times between which you must start the assignment. After you have started the assignment, you will have a fixed number amount of time to finish the assignment.
 
 Before you can start the timed assessment you can still see the assignment details and [create a group](#how-to-form-groups). On the main Assignment page you will see a "Timed Assessment" section which will tell you when you can start the assessment and how long you will have once you start. If you have been given an extension, it will be visible here as well.
 
-Once you can start the timed assessment a "Start" button will become visible. Click this button to start the assessment. Once you click the "Start" button you will must complete and submit your work to MarkUs before the duration expires.
+Once you can start the timed assessment a "Start" button will become visible. Click this button to start the assessment. Once you click the "Start" button you must complete and submit your work to MarkUs before the duration expires.
 
 In the example below, a student will have exactly 3 and a half hours to complete and submit the assessment once they have clicked the "Start" button.
 
 ![Timed Assessment Before](images/student-timed-assessment-during-before-start.png)
 
-Once you have started the assessment, the "Submissions" tab will become visible and you will be able to [submit your work](#submitting-work-for-an-assessment) as normal.
+Once you have started the assessment, the "Submissions" tab will become visible, and you will be able to [submit your work](#submitting-work-for-an-assessment) as normal.
 
 You will also be able to see how much time you have left to submit:
 
@@ -167,7 +176,7 @@ You will also be able to see how much time you have left to submit:
 
 ## Email Settings
 
-If you wish to receive emails when the results of an asessment are released and/or if you are invited to a group, navigate to the "Settings" tab and enable either of these options. To enable one of the options, select one or both of the checkboxes and click "Update Settings".
+If you wish to receive emails when the results of an assessment are released and/or if you are invited to a group, navigate to the "Settings" tab and enable either of these options. To enable one of the options, select one or both of the checkboxes and click "Update Settings".
 
 ## Key Pairs
 

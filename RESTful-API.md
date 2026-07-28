@@ -45,7 +45,7 @@ Both XML and JSON responses are supported. XML version 1.0 with UTF-8 encoding i
 If a .json extension is used in the URL, a JSON response will be rendered. Its simpler format consists of objects, represented as associative arrays. To request a JSON response using CURL, one can use the following:
 
 ```console
-curl -H "Authorization: MarkUsAuth YourAuthKey" "http://example.com/api/users/1.json"
+curl -H "Authorization: MarkUsAuth YourAuthKey" "https://example.com/api/users/1.json"
 ```
 
 Which would result in the following output:
@@ -68,7 +68,7 @@ Which would result in the following output:
 
 The filter parameter is commonly used when multiple records are expected, this parameter will filter the records so that only those that match the filter are returned.
 
-For example, if a route returns multiple user records, you may choose to filter on the first name by passing the following parameter (formatted as json):
+For example, if a route returns multiple user records, you may choose to filter on the first name by passing the following parameter (formatted as JSON):
 
 ```json
 {"filter": {"first_name": "Steve"}}
@@ -78,7 +78,7 @@ and only users with the first name "Steve" will be returned
 
 #### fields
 
-The fields parameter is commonly used when multiple fields per record are expected, this parameter will filter the fields so that only the requested fields are returned. By default all fields are returned.
+The fields parameter is commonly used when multiple fields per record are expected, this parameter will filter the fields so that only the requested fields are returned. By default, all fields are returned.
 
 For example, if a route normally returns the following user record:
 
@@ -94,7 +94,7 @@ For example, if a route normally returns the following user record:
 }
 ```
 
-but you only care about the id and user_name fields you can pass the following parameter (formatted as json):
+but you only care about the id and user_name fields you can pass the following parameter (formatted as JSON):
 
 ```json
 {"fields": ["id", "user_name"]}
@@ -261,7 +261,7 @@ NOTE: this method is only available to AdminUser users
 
 - description: Update or set the url of the server running the [automated test software](https://github.com/MarkUsProject/markus-autotesting) for this course
 - required parameters:
-    - url (string: well formed URL)
+    - url (string: well-formed URL)
 
 NOTE: this method is only available to AdminUser users
 
@@ -532,7 +532,7 @@ NOTE: `total_grade` is only included when `show_total` is `true`. Students with 
     "name": "tag1",
     "description": "desc",
     "creator": "user1",
-    "use": 30,
+    "use": 30
   }
 ]
 ```
@@ -721,7 +721,7 @@ NOTE: this is only available to authorised instructors (or admins)
 
 ### GET /api/courses/:course_id/assignments/:id/test_specs
 
-- description: Download a json string containing the autotesting settings for this assignment
+- description: Download a JSON string containing the autotesting settings for this assignment
 - example response (json):
 
 ```json
@@ -752,7 +752,7 @@ NOTE: this is only available to authorised instructors (or admins)
 
 - description: Update the autotesting settings for this assignment
 - required parameters:
-    - specs (json string : see the `GET test_specs` description above for an example of the expected format)
+    - specs (JSON string : see the `GET test_specs` description above for an example of the expected format)
 
 NOTE: This will also send the updated specs to the server running the autotester
 
@@ -868,7 +868,7 @@ NOTE: not all parent directories need to exist in order to create a nested file.
   "c9simpso": 210,
   "c7kimear": 211,
   "g9koppel": 212,
-  "c6lloydg": 213,
+  "c6lloydg": 213
 }
 ```
 
@@ -957,12 +957,12 @@ NOTE: not all parent directories need to exist in order to create a nested file.
 
 The annotation type is derived from the file being annotated:
 
-| File | Extension(s) | Annotation type |
-|------|--------------|-----------------|
-| Image | `.jpeg`, `.jpg`, `.gif`, `.png`, `.heic`, `.heif` | `ImageAnnotation` |
-| PDF | `.pdf` | `PdfAnnotation` |
-| Notebook / R Markdown | `.ipynb`, `.Rmd` (when R Markdown conversion is enabled) | `HtmlAnnotation` |
-| Anything else | — | `TextAnnotation` |
+| File                  | Extension(s)                                             | Annotation type   |
+|-----------------------|----------------------------------------------------------|-------------------|
+| Image                 | `.jpeg`, `.jpg`, `.gif`, `.png`, `.heic`, `.heif`        | `ImageAnnotation` |
+| PDF                   | `.pdf`                                                   | `PdfAnnotation`   |
+| Notebook / R Markdown | `.ipynb`, `.Rmd` (when R Markdown conversion is enabled) | `HtmlAnnotation`  |
+| Anything else         | —                                                        | `TextAnnotation`  |
 
 The location fields required for each annotation type are:
 
@@ -1032,10 +1032,10 @@ NOTE: The entire request is validated before any annotation is created. If any a
 ### PUT /api/courses/:course_id/assignments/:assignment_id/groups/:id/update_marks
 
 - description: Update the marks for a given group based on the criteria name.
-- required paramters:
+- required parameters:
     - "criteria name" (integer)
 
-NOTE: "criteria name" is not the actual name of the parameter but should be replaced by the name of a criteria created for the given assignment. For example, if a criteria exists with the name "code_style", and you want to set the mark for that criteria for the given group to 9, then include the paramter "code_style=9".
+NOTE: "criteria name" is not the actual name of the parameter but should be replaced by the name of a criteria created for the given assignment. For example, if a criteria exists with the name "code_style", and you want to set the mark for that criteria for the given group to 9, then include the parameter "code_style=9".
 
 ### PUT /api/courses/:course_id/assignments/:assignment_id/groups/:id/update_marking_state
 
@@ -1097,7 +1097,7 @@ NOTE: not all parent directories need to exist in order to create a nested file.
 
 NOTE: the filename string can include a nested path if the requested file is in a subfolder (ex: "filename=some/nested/dir/submission.txt")
 
-NOTE: if the collected parameter included, the collected version of the group's submission is downloaded. Otherwise the most recent verstion is downloaded
+NOTE: if the collected parameter included, the collected version of the group's submission is downloaded. Otherwise, the most recent version is downloaded
 
 NOTE: if the filename parameter is given, only the content from a single file will be downloaded. Otherwise, a zip archive containing the entire submission will be downloaded.
 
@@ -1440,7 +1440,7 @@ NOTE: if use_rename is true then files (or folders) assigned as starter files fr
   "instructions.md",
   "some/",
   "some/subfolder/",
-  "some/subfolder/textfile.txt",
+  "some/subfolder/textfile.txt"
 ]
 ```
 

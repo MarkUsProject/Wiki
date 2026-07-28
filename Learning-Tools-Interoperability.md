@@ -1,6 +1,6 @@
 # Learning Tools Interoperability (LTI)
 
->**Note**: LTI functionality is not enabled by default, and must be enabled by a system administrator.
+> 🗒️ **NOTE:** LTI functionality is not enabled by default, and must be enabled by a system administrator.
 
 MarkUs integrates with other Learning Management Systems (LMS) via the [LTI 1.3 standard](https://www.imsglobal.org/spec/lti/v1p3).
 Currently, MarkUs supports the following LMS platforms:
@@ -31,7 +31,7 @@ and also choose to delete an association between the LMS and MarkUs.
 
 ![LTI Course Settings](images/lti-course-settings.png)
 
-> **NOTE:**
+> 🗒️ **NOTE:**
 > Destroying an LTI association will also destroy any LTI assignment settings on MarkUs.
 > However, it will *not* destroy any data that has been sent from MarkUs to the LMS.
 > If an association is reestablished, any assignment's LTI settings must be re-created,
@@ -55,7 +55,7 @@ course's navigation (disabled by default), and needs to be added to the navigati
 If you believe MarkUs should be installed in your course, but it does not appear,
 contact your Canvas administrators.
 
-> **NOTE:**
+> 🗒️ **NOTE:**
 > The additional navigation item will only be visible to instructors and
 > administrators (not students).
 
@@ -74,7 +74,7 @@ If your course does not appear in the list,
 you may click 'Create New Course', to request a new
 course based on the Canvas course information with you as an instructor.
 
-*Warning*: your system administrator may restrict which Canvas courses can trigger the creation of a new course on MarkUs.
+> ⚠️ **WARNING:** your system administrator may restrict which Canvas courses can trigger the creation of a new course on MarkUs.
 
 #### Creating a Grade Book entry for a MarkUs Assignment
 
@@ -94,7 +94,7 @@ summary page will have a 'Sync Grades to LMS' button.
 Clicking on this button will open a modal with a checkbox for each
 associated LMS course. Check the box for each Canvas course the grades should be synced to.
 
->**Note**: Only grades in the *released* state will be synced.
+>🗒️ **NOTE:** Only grades in the *released* state will be synced.
 
 #### Syncing Canvas course roster with MarkUs
 
