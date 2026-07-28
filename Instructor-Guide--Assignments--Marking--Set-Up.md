@@ -8,7 +8,7 @@
 - [Marking State](#marking-state)
 - [Grading View](#grading-view)
 
-> :spiral_notepad: **NOTE:** Before you will be able to perform any numerical marking (i.e. assigning groups a numerical grade) you must set up at least one [criterion](Instructor-Guide--Assignments--Marking--Criteria.md) for your assignment.
+> 🗒️ **NOTE:** Before you will be able to perform any numerical marking (i.e. assigning groups a numerical grade) you must set up at least one [criterion](Instructor-Guide--Assignments--Marking--Criteria.md) for your assignment.
 
 ## Setting up a Grader Account
 
@@ -19,13 +19,14 @@ For information on setting up a "Grader" account please see "[Grader Accounts](I
 ## Submissions Table
 
 The first step in marking an assignment is to collect the assignment. To do this, navigate to the "Assignments" tab of MarkUs, click on the assignment you wish to mark and then on the "Submissions" tab:
+
 ![Submissions Tab](images/submissions-tab.png)
 
 Here you will see a table of all the groups that have been formed (see [How Students Form Groups](Student-Guide.md) and [Managing Group Repositories](Instructor-Guide--Groups.md)):
 
 | ![Submissions Table Part 1](images/submissions-table.png) |
-|--------------:|
-| *First three columns shown* |
+|----------------------------------------------------------:|
+|                               *First three columns shown* |
 
 If students are not allowed to work in groups, then under the "Group" column you will simply see a student's username (as opposed to the group number and a list of usernames). The rest of the table contains information about each group and their submission for that assignment.
 
@@ -38,21 +39,24 @@ If students are not allowed to work in groups, then under the "Group" column you
 
 ## Collecting an Assignment
 
-Before you may being grading an assignment, you must first collect the submitted files from each group. To do this, make sure you are on the "Submissions" page of the assignment you wish to grade and select the checkbox(es) of the groups from which you wish to collect. You may also select the box at the top of the column to select all groups. Once satisfied, click on the "Collect Submissions" button to begin collection.
+Before you may begin grading an assignment, you must first collect the submitted files from each group. To do this, make sure you are on the "Submissions" page of the assignment you wish to grade and select the checkbox(es) of the groups from which you wish to collect. You may also select the box at the top of the column to select all groups. Once satisfied, click on the "Collect Submissions" button to begin collection.
+
 ![Collecting Assignments](images/submissions-table-collect.png)
 
-> :spiral_notepad: **NOTE:** By default, MarkUs only allows you to collect submissions AFTER the entire grace credit period has passed.
+> 🗒️ **NOTE:** By default, MarkUs only allows you to collect submissions AFTER the entire grace credit period has passed.
 
 This will open a modal window with collection options:
+
 ![Submissions Modal](images/submissions-modal.png)
 
 The default option when the collect command is executed will select the file version for each submission that meets the due date and/or late penalty set for this assignment. It will not recollect submissions that have previously been collected. It then creates the views for annotating and grading each submission.
 
 However, the modal offers a few additional options for collection:
+
 ![Submissions Modal With Options](images/submissions-modal-with-options.png)
 
 1. **Collect most recent files submitted, regardless of assignment due date or late period.** - if this box is checked, MarkUs will collect the most recent version of files the student has submitted, regardless of the due date and grace periods. This can be used to collect submissions both before and after the due date/grace credit periods.
-   > :spiral_notepad: **NOTE:** Submission collection can be done during the late period, however students can still submit after the marking and prior to the late period is over. If you want to mark the most recent submission prior to the late period being over, you would need to manually go through the submissions to see if students submitted again, as there are no filters to identify them.
+   > 🗒️ **NOTE:** Submission collection can be done during the late period, however students can still submit after the marking and prior to the late period is over. If you want to mark the most recent submission prior to the late period being over, you would need to manually go through the submissions to see if students submitted again, as there are no filters to identify them.
 2. **Recollect previously collected submissions** - if this box is checked, MarkUs will recollect submissions that have previously been collected.
    1. When this box is checked, MarkUs provides the option to **retain grading data** (marks, annotations, feedback files, and test results) on any collected submissions that have it. **WARNING:** This option is true by default and disabling it will result in the permanent loss of all grading data on recollected submissions.
       - For any extra marks or deductions on a graded submission, point-based extra marks will be retained, but percentage-based penalties will not. The decision to apply percentage-based penalties is solely at the instructor's discretion during collection. This means that two identical submissions may receive different percentage penalties at collection time, depending on the assignment's submission rule.
@@ -60,7 +64,7 @@ However, the modal offers a few additional options for collection:
 
 Once the files for an assignment have been collected, the marking state of the submission will change from "Not Collected" to "In Progress".
 
-> :spiral_notepad: **NOTE:** Scanned exams are always collected based on the most recently submitted files, so only the recollect option is available.
+> 🗒️ **NOTE:** Scanned exams are always collected based on the most recently submitted files, so only the recollect option is available.
 
 ### Collecting Specific Revisions
 
@@ -70,7 +74,7 @@ An instructor can bypass the collection process to manually select which version
 
 There are six different marking states for a submission:
 
- 1. **Not Collected** - The group has been formed and may have submit work already but nothing has been collected by any TA or instructor. All groups should have this status until the deadline to submit (with grace token extension) has passed.
+ 1. **Not Collected** - The group has been formed and may have submitted work already but nothing has been collected by any TA or instructor. All groups should have this status until the deadline to submit (with grace token extension) has passed.
  2. **In Progress** - Either a TA or an instructor has collected the submission and is currently working on grading the assignment.
  3. **Complete** - The grading of the assignment has been completed but the mark has not yet been released to the group.
  4. **Released** - The mark has been released to the group along with any annotations that have been made.

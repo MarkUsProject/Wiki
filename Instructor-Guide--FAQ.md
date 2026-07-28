@@ -20,7 +20,7 @@ To collect:
 
 For an **individual** assignment: tell the student to submit it to the correct assignment.
 You can manually collect and grade this late submission even if it happens after the final deadline
-(see previous question).
+(see [previous question](#how-do-i-accept-a-late-file-submitted-after-the-final-deadline)).
 
 For a **group** assignment: if the student has already created a group for the correct
 assignment, tell them to submit and then follow the instructions in the previous question.
