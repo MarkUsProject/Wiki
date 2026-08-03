@@ -958,7 +958,7 @@ NOTE: not all parent directories need to exist in order to create a nested file.
 The annotation type is derived from the file being annotated:
 
 | File | Extension(s) | Annotation type |
-|------|--------------|-----------------|
+| ------ | -------------- | ----------------- |
 | Image | `.jpeg`, `.jpg`, `.gif`, `.png`, `.heic`, `.heif` | `ImageAnnotation` |
 | PDF | `.pdf` | `PdfAnnotation` |
 | Notebook / R Markdown | `.ipynb`, `.Rmd` (when R Markdown conversion is enabled) | `HtmlAnnotation` |
